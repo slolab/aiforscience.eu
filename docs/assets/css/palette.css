@@ -1,0 +1,27 @@
+/* Status badges used in practice metadata blocks. Site palette lives in
+   home.css. */
+
+.afs-badge {
+  display: inline-block;
+  padding: 0.1em 0.6em;
+  border-radius: 1em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+
+.afs-badge--draft {
+  background: #f2e8c9;
+  color: #7a5d00;
+}
+
+.afs-badge--reviewed {
+  background: #d7e9f2;
+  color: #0e6478;
+}
+
+.afs-badge--endorsed {
+  background: #d3efe9;
+  color: #0b5c50;
+}

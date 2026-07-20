@@ -1,0 +1,33 @@
+name: Propose a practice
+description: Propose a new best practice for the record.
+title: "[Proposal] "
+labels: ["practice-proposal", "triage"]
+body:
+  - type: input
+    id: statement
+    attributes:
+      label: The practice, as an imperative
+      placeholder: 'Example: "Make provenance and citation first-class."'
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Where was this learned? What kind of organisation, service, or workflow?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: What did you observe that supports this practice? Concrete cases beat principles.
+    validations:
+      required: true
+  - type: textarea
+    id: relation
+    attributes:
+      label: Relation to existing practices
+      description: Does this overlap, extend, or contradict an existing BP-nn?
+    validations:
+      required: false

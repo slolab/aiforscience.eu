@@ -1,0 +1,1058 @@
+/**
+ * aiforscience.eu landing page and site shell.
+ *
+ * Design ported from the BioCypher documentation "usability" landing:
+ * scientific infrastructure, not SaaS. Light documentation shell, dark hero,
+ * visible citation, sparse cards, obvious links. Palette shifted from green
+ * to petrol/teal.
+ */
+
+:root {
+  color-scheme: light;
+  --afs-ink: #0f1f26;
+  --afs-muted: #5b6d75;
+  --afs-line: #dbe5ea;
+  --afs-soft: #f2f7f9;
+  --afs-soft-2: #e6f2f7;
+  --afs-accent: #1892ab;
+  --afs-accent-dark: #0e6478;
+  --afs-dark: #06161d;
+  --afs-dark-2: #0f2a35;
+  /* Dark gradient reused across all dark sections. Horizontal (90deg) so
+     colour depends only on x — a divider at any height stays aligned with
+     the section body beneath it. */
+  --afs-dark-gradient: linear-gradient(90deg, #06161d, #0c2530 62%, #12384a);
+  --afs-card: #ffffff;
+  --afs-shadow: 0 1rem 2.4rem rgba(15, 31, 38, 0.10);
+  --md-primary-fg-color: #ffffff;
+  --md-primary-fg-color--dark: #ffffff;
+  --md-accent-fg-color: #1892ab;
+  --md-typeset-a-color: #0e6478;
+}
+
+body {
+  background: #ffffff;
+}
+
+.md-content .md-typeset:not(:has(.afs-home-body)) {
+  --md-typeset-a-color: var(--afs-accent-dark);
+}
+
+.md-content .md-typeset:not(:has(.afs-home-body)) a {
+  color: var(--md-typeset-a-color);
+}
+
+/* Material's default scheme sets --md-typeset-a-color to the white primary
+   colour on <body>; scope the brand link colour to the nav so the active
+   sidebar/TOC link stays legible. */
+.md-nav {
+  --md-typeset-a-color: var(--afs-accent-dark);
+}
+
+/* ------------------------------------------------------------------ *
+ * Header
+ * ------------------------------------------------------------------ */
+
+.md-header {
+  background: #ffffff;
+  color: var(--afs-ink);
+  border-bottom: 1px solid var(--afs-line);
+  box-shadow: none;
+}
+
+.md-tabs {
+  display: none;
+}
+
+.md-header__inner {
+  min-height: 3.15rem;
+  gap: 0.35rem;
+}
+
+.md-header__button {
+  color: var(--afs-ink);
+}
+
+.md-header__button.md-logo {
+  margin: 0 0.08rem 0 0;
+  padding: 0.42rem;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  width: 1.65rem;
+  height: 1.65rem;
+  fill: var(--afs-accent-dark);
+}
+
+.md-header__button.afs-brand {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.afs-header-brand {
+  display: inline-flex;
+  align-items: center;
+  min-width: max-content;
+  color: var(--afs-ink);
+  font-size: 0.92rem;
+  font-weight: 950;
+  letter-spacing: -0.035em;
+  text-decoration: none;
+}
+
+.afs-brand:hover .afs-header-brand {
+  color: var(--afs-accent-dark);
+}
+
+.afs-header-nav {
+  display: none;
+  align-items: center;
+  gap: 0.1rem;
+  margin-right: auto;
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+
+@media screen and (min-width: 60em) {
+  .afs-header-nav {
+    display: flex;
+  }
+}
+
+.afs-header-nav a {
+  color: var(--afs-ink);
+  padding: 0.45rem 0.62rem;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.afs-header-nav a:hover,
+.afs-header-nav a:focus-visible {
+  background: var(--afs-soft);
+  color: var(--afs-accent-dark);
+}
+
+.afs-header-nav__ext {
+  display: inline-flex;
+  vertical-align: -0.12em;
+  width: 0.82em;
+  height: 0.82em;
+  margin-left: 0.18em;
+}
+
+.afs-header-nav__ext svg {
+  width: 100%;
+  height: 100%;
+  fill: currentcolor;
+}
+
+.afs-header-nav__sep {
+  width: 1px;
+  height: 1.1rem;
+  margin: 0 0.5rem;
+  background: var(--afs-line);
+}
+
+.afs-header-nav a[aria-current="page"] {
+  background: var(--afs-soft-2);
+  color: var(--afs-accent-dark);
+}
+
+.md-search {
+  margin-left: 0.2rem;
+}
+
+.md-search__form {
+  background: var(--afs-soft);
+  border: 1px solid var(--afs-line);
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+.md-search__input {
+  color: var(--afs-ink);
+}
+
+.md-search__input::placeholder {
+  color: var(--afs-muted);
+}
+
+.md-search__icon,
+.md-search__icon svg,
+.md-header__button[for="__search"],
+.md-header__button[for="__search"] svg {
+  color: var(--afs-ink);
+  fill: currentColor;
+}
+
+.md-header__source {
+  color: var(--afs-ink);
+}
+
+/* Material assumes the mobile drawer header uses the primary colour and makes
+   its source card white. This site has a white drawer, so keep the repository
+   name and facts readable there. */
+.md-nav--primary .md-source {
+  color: var(--afs-ink);
+}
+
+@media screen and (max-width: 59.984em) {
+  .md-header__button.md-logo {
+    display: none;
+  }
+
+  .afs-header-brand {
+    flex: 1 1 auto;
+    margin-right: 0.4rem;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Hero
+ * ------------------------------------------------------------------ */
+
+.afs-hero {
+  position: relative;
+  overflow: hidden;
+  color: #f4fafc;
+  background:
+    radial-gradient(circle at 82% 14%, rgba(44, 168, 194, 0.24), transparent 24rem),
+    radial-gradient(circle at 9% 20%, rgba(96, 122, 247, 0.10), transparent 21rem),
+    linear-gradient(140deg, #06161d, #0c2530 62%, #12384a);
+}
+
+.afs-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 3.8rem 3.8rem;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.52), transparent 78%);
+}
+
+.afs-hero__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+  padding: clamp(2rem, 4.2vw, 3.35rem) 0.8rem clamp(1.35rem, 2.2vw, 1.9rem);
+}
+
+@media screen and (min-width: 46em) {
+  .afs-hero__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.82fr);
+  }
+}
+
+@media screen and (min-width: 68em) {
+  .afs-hero__grid {
+    grid-template-columns: minmax(0, 1.04fr) minmax(22rem, 0.82fr);
+  }
+}
+
+.afs-hero__content {
+  container-type: inline-size;
+}
+
+.afs-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 0.62rem;
+  margin-bottom: 0.95rem;
+  color: #ffffff;
+  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+  font-weight: 950;
+  letter-spacing: -0.045em;
+}
+
+.afs-hero__headline {
+  max-width: 100%;
+  margin: 0;
+  color: #ffffff;
+  /* Sized from the column width (cqi), not the viewport, so the shape is
+     stable across window size and zoom. `nowrap` keeps each line intact;
+     7.4cqi is the single knob: raise for larger type, lower if a line wraps. */
+  font-size: clamp(1.9rem, 7.4cqi, 3.2rem);
+  font-weight: 950;
+  letter-spacing: 0;
+  line-height: 1.04;
+  white-space: nowrap;
+}
+
+.afs-hero__tagline {
+  max-width: 42rem;
+  margin: 1.05rem 0 0;
+  color: #cfe4ec;
+  font-size: clamp(0.98rem, 1.35vw, 1.1rem);
+  line-height: 1.62;
+}
+
+.afs-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.3rem;
+}
+
+.afs-hero__actions a {
+  padding: 0.45rem 1.05rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  color: #e8f3f7;
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-decoration: none;
+  transition: background-color 140ms ease, color 140ms ease,
+    border-color 140ms ease, transform 140ms ease;
+}
+
+.afs-hero__actions a.afs-hero__actions--primary {
+  background: #7fd6e8;
+  border-color: #7fd6e8;
+  color: #06161d;
+}
+
+.afs-hero__actions a:hover,
+.afs-hero__actions a:focus-visible {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--afs-accent-dark);
+  transform: translateY(-1px);
+}
+
+/* The record card: hero aside, visual sibling of the docs code card. */
+
+.afs-record-card {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid rgba(211, 238, 246, 0.22);
+  border-radius: 1.25rem;
+  background: rgba(6, 20, 26, 0.78);
+  box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(14px);
+}
+
+@media screen and (max-width: 45.984em) {
+  .afs-record-card {
+    display: none;
+  }
+}
+
+.afs-record-card__header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  padding: 0.92rem 1rem 0.72rem;
+  border-bottom: 1px solid rgba(211, 238, 246, 0.14);
+}
+
+.afs-record-card__header span {
+  color: #8ee6f5;
+  font-size: 0.64rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.afs-record-card__rows {
+  margin: 0;
+  padding: 0.55rem 1rem 0.9rem;
+}
+
+.afs-record-card__rows div {
+  display: grid;
+  grid-template-columns: 7.2rem minmax(0, 1fr);
+  gap: 0.8rem;
+  padding: 0.52rem 0;
+  border-top: 1px solid rgba(211, 238, 246, 0.09);
+}
+
+.afs-record-card__rows div:first-child {
+  border-top: 0;
+}
+
+.afs-record-card__rows dt {
+  color: #9dc2ce;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.afs-record-card__rows dd {
+  margin: 0;
+  color: #e5f6fa;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.afs-record-card__rows dd a {
+  color: #8ee6f5;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.afs-record-card__rows dd a:hover {
+  text-decoration: underline;
+}
+
+/* Citation strip under the hero. */
+
+.afs-publication-strip {
+  position: relative;
+  z-index: 1;
+  background: #ddeef5;
+  color: var(--afs-ink);
+}
+
+.afs-publication-strip__grid {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: clamp(5.1rem, 8vw, 6.7rem);
+  padding: 1.85rem 0.8rem 1.25rem;
+  text-align: left;
+}
+
+.afs-publication-strip__badge {
+  display: inline-flex;
+  width: 3.4rem;
+  height: 3.4rem;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border: 0.18rem solid var(--afs-accent-dark);
+  border-radius: 50%;
+  color: var(--afs-accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+.afs-publication-strip p {
+  margin: 0;
+  color: var(--afs-ink);
+  font-size: clamp(0.95rem, 1.55vw, 1.18rem);
+  line-height: 1.55;
+}
+
+.afs-publication-strip a {
+  display: inline-block;
+  margin-left: 0.45rem;
+  color: var(--afs-accent-dark);
+  font-weight: 950;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+/* Partners strip: white band with curved dividers, static logo row. */
+
+.afs-trust-strip {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  color: var(--afs-ink);
+}
+
+.afs-trust-strip::before,
+.afs-trust-strip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 130%;
+  height: clamp(1.4rem, 3.5vw, 2.4rem);
+  border-radius: 50%;
+}
+
+.afs-trust-strip::before {
+  top: 0;
+  background: #ddeef5;
+  transform: translate(-50%, -50%);
+}
+
+.afs-trust-strip::after {
+  bottom: 0;
+  background: var(--afs-dark-gradient);
+  transform: translate(-50%, 50%);
+}
+
+.afs-trust-strip__grid {
+  padding: clamp(2.4rem, 4vw, 3.2rem) 0.8rem clamp(2.6rem, 4.4vw, 3.6rem);
+  text-align: center;
+}
+
+.afs-trust-strip__heading h2 {
+  max-width: 32rem;
+  margin: 0 auto 1.4rem;
+  color: #8b9499;
+  font-size: clamp(0.95rem, 1.55vw, 1.18rem);
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1.18;
+}
+
+.afs-trust-strip__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem clamp(1.4rem, 3.5vw, 3rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.afs-trust-strip__row li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.afs-trust-strip__wordmark {
+  display: inline-flex;
+  align-items: center;
+  color: var(--afs-ink);
+  font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+  font-weight: 950;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+.afs-trust-strip__invite {
+  color: var(--afs-accent-dark);
+  font-size: 0.82rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.afs-trust-strip__invite:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------------------------------------------ *
+ * Home body
+ * ------------------------------------------------------------------ */
+
+.afs-home-body {
+  --section-space: clamp(2.9rem, 5.8vw, 4.7rem);
+}
+
+/* On the landing page, drop Material's content-area top margin and the empty
+   sidebars so the first (dark) section meets the hero with no white gap. */
+.md-main__inner:has(.afs-home-body) {
+  margin-top: 0;
+}
+
+.md-main:has(.afs-home-body) .md-sidebar {
+  display: none;
+}
+
+.md-content__inner:has(.afs-home-body) {
+  margin: 0;
+  padding: 0;
+}
+
+.md-content__inner:has(.afs-home-body)::before {
+  display: none;
+}
+
+.md-content__inner:has(.afs-home-body) > h1:first-of-type,
+.md-content__inner:has(.afs-home-body) > .md-content__button {
+  display: none;
+}
+
+.afs-home-body .afs-section {
+  padding: var(--section-space) 0.8rem;
+}
+
+.afs-section__header {
+  max-width: 45rem;
+  margin: 0 auto 1.7rem;
+  text-align: center;
+}
+
+.afs-kicker {
+  margin: 0 0 0.5rem;
+  color: var(--afs-accent-dark);
+  font-size: 0.66rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.afs-home-body h2,
+.afs-home-body h3,
+.afs-home-body p {
+  margin-top: 0;
+}
+
+.afs-home-body h2 {
+  margin-bottom: 0.65rem;
+  color: var(--afs-ink);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+}
+
+.afs-home-body h3 {
+  color: var(--afs-ink);
+  font-weight: 930;
+  letter-spacing: -0.03em;
+  line-height: 1.14;
+}
+
+.afs-home-body p {
+  color: var(--afs-muted);
+  font-size: 0.92rem;
+  line-height: 1.64;
+}
+
+.afs-feature-grid,
+.afs-involved-grid,
+.afs-audience-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 48em) {
+  .afs-feature-grid,
+  .afs-audience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .afs-feature-grid,
+  .afs-involved-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.afs-feature-card,
+.afs-involved-card,
+.afs-audience-card {
+  position: relative;
+  padding: 1.15rem;
+  border: 1px solid var(--afs-line);
+  border-radius: 1.05rem;
+  background: var(--afs-card);
+  box-shadow: 0 0.28rem 1rem rgba(15, 31, 38, 0.04);
+}
+
+/* Light cards (matching the light section backgrounds) on the dark intro
+   band, instead of white. */
+.afs-feature-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--afs-soft);
+  border-color: rgba(15, 31, 38, 0.06);
+}
+
+.afs-feature-card__head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.afs-feature-card__head h3 {
+  margin: 0;
+}
+
+.afs-feature-card__icon {
+  display: inline-flex;
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.78rem;
+  background: #12384a;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.afs-feature-card__icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+/* Link pills, centered and pinned to the bottom of each card so the three
+   footers line up regardless of paragraph or pill count. */
+.afs-feature-card__tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.45rem;
+  width: 100%;
+  min-height: 1.55rem;
+  margin: auto 0 0;
+  padding: 0.5rem 0 0;
+}
+
+.afs-feature-card__tools a {
+  padding: 0.24rem 0.66rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: #12384a;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease,
+    border-color 140ms ease, transform 140ms ease, box-shadow 140ms ease;
+}
+
+.afs-feature-card__tools a:hover,
+.afs-feature-card__tools a:focus-visible {
+  background: var(--afs-soft-2);
+  color: var(--afs-accent-dark);
+  border-color: var(--afs-accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 0.28rem 0.7rem rgba(15, 31, 38, 0.16);
+}
+
+/* Dark band for the intro section. Full-bleed via inset trick so the colour
+   extends past the content column. */
+.afs-home-body .afs-section--intro {
+  position: relative;
+  padding-top: clamp(1.1rem, 2.3vw, 1.8rem);
+}
+
+.afs-home-body .afs-section--intro::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 calc(50% - 50vw);
+  background: var(--afs-dark-gradient);
+}
+
+.afs-section--intro .afs-section__header h2 {
+  color: #ffffff;
+}
+
+.afs-section--intro .afs-kicker {
+  color: #93cddd;
+}
+
+.afs-section--intro .afs-section__header p {
+  color: #c3dbe3;
+}
+
+/* Audience section (light band). */
+
+.afs-section--audience {
+  position: relative;
+  background: var(--afs-soft);
+  box-shadow: 0 0 0 100vmax var(--afs-soft);
+  clip-path: inset(0 -100vmax);
+}
+
+/* Convex divider at the top: the intro's dark gradient bumps down. */
+.afs-section--audience::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 130%;
+  height: clamp(0.85rem, 2.1vw, 1.45rem);
+  border-radius: 50%;
+  background: var(--afs-dark-gradient);
+  transform: translate(-50%, -50%);
+}
+
+.afs-audience-grid {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.afs-audience-card span {
+  display: inline-flex;
+  margin: 0 0 0.5rem;
+  color: var(--afs-accent-dark);
+  font-size: 0.66rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.afs-audience-card h3 {
+  margin-bottom: 0.45rem;
+  font-size: 1.35rem;
+}
+
+.afs-audience-card p {
+  margin-bottom: 0;
+}
+
+/* Involved section (dark band). */
+
+.afs-section--involved {
+  position: relative;
+}
+
+.afs-section--involved::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 calc(50% - 50vw);
+  background: var(--afs-dark-gradient);
+}
+
+.afs-section--involved .afs-section__header h2,
+.afs-section--involved .afs-section__header p {
+  color: #ffffff;
+}
+
+.afs-section--involved .afs-kicker {
+  color: #8ee6f5;
+}
+
+.afs-involved-card {
+  min-height: 12rem;
+  border-color: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.afs-involved-card h3 {
+  color: #8ee6f5;
+  font-size: 1.25rem;
+}
+
+.afs-involved-card p {
+  color: #d3e2e8;
+}
+
+.afs-involved-card a {
+  display: flex;
+  width: fit-content;
+  margin: 0.35rem 0 0;
+  color: #ffffff;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* Activity / status section (light). */
+
+.afs-section--activity {
+  background: #fbfdfd;
+}
+
+.afs-activity-stream {
+  max-width: 46rem;
+  margin: 0 auto;
+  display: grid;
+  gap: 0.9rem;
+  padding: 0.2rem 0;
+}
+
+.afs-activity-group {
+  position: relative;
+  padding: 1rem;
+  border: 1px solid var(--afs-line);
+  border-radius: 1.05rem;
+  background: #ffffff;
+  box-shadow: 0 0.28rem 1rem rgba(15, 31, 38, 0.035);
+}
+
+.afs-activity-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5.1rem minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+  padding: 0.8rem 0;
+  border-top: 1px solid rgba(15, 31, 38, 0.08);
+  color: inherit;
+  text-decoration: none;
+}
+
+.afs-activity-row:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.afs-activity-row:last-child {
+  padding-bottom: 0;
+}
+
+.afs-activity-row time {
+  margin: 0.08rem 0 0;
+  color: #64808c;
+  font-size: 0.64rem;
+  font-weight: 950;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.afs-activity-row strong {
+  display: block;
+  margin-bottom: 0.18rem;
+  color: var(--afs-ink);
+  font-size: 0.98rem;
+  font-weight: 940;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.afs-activity-row span {
+  color: var(--afs-muted);
+  font-size: 0.86rem;
+  line-height: 1.48;
+}
+
+/* ------------------------------------------------------------------ *
+ * Footer
+ * ------------------------------------------------------------------ */
+
+.afs-footer {
+  background: var(--afs-dark-gradient);
+  color: #d8e9ef;
+}
+
+/* Keep long sticky documentation sidebars visually separate from the
+   full-bleed footer. The landing page is intentionally flush. */
+.md-main:not(:has(.afs-home-body)) + .afs-footer {
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.afs-footer__grid {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem 0.8rem 1.4rem;
+}
+
+@media screen and (min-width: 58em) {
+  .afs-footer__grid {
+    grid-template-columns: minmax(14rem, 0.8fr) minmax(0, 1.4fr);
+  }
+}
+
+.afs-footer__brand strong {
+  display: block;
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 950;
+  letter-spacing: -0.04em;
+}
+
+.afs-footer__brand p {
+  max-width: 18rem;
+  margin: 0.25rem 0 0;
+  color: #a3bfca;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.afs-footer__links {
+  display: grid;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 38em) {
+  .afs-footer__links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.afs-footer__links h2 {
+  margin: 0 0 0.55rem;
+  color: #8ee6f5;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.afs-footer__links a {
+  display: block;
+  margin: 0.32rem 0;
+  color: #f0f9fc;
+  font-size: 0.82rem;
+  font-weight: 780;
+  text-decoration: none;
+}
+
+.afs-footer__links a:hover {
+  color: #8ee6f5;
+  text-decoration: underline;
+}
+
+.afs-footer__meta {
+  grid-column: 1 / -1;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #90adb9;
+  font-size: 0.7rem;
+}
+
+.afs-footer__meta a {
+  color: #b9dbe6;
+}
+
+/* ------------------------------------------------------------------ *
+ * Small screens
+ * ------------------------------------------------------------------ */
+
+@media screen and (max-width: 42em) {
+  .afs-hero__grid {
+    padding-top: 1.8rem;
+  }
+
+  .afs-hero__headline {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .afs-wordmark {
+    margin-bottom: 0.7rem;
+    font-size: 1.35rem;
+  }
+
+  .afs-hero__tagline {
+    margin-top: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .afs-publication-strip__grid {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .afs-publication-strip a {
+    display: block;
+    margin: 0.25rem 0 0;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

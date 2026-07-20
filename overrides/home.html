@@ -1,0 +1,84 @@
+{#-
+  Landing page template for aiforscience.eu.
+  Activated per-page with front matter `template: home.html` in index.md.
+  Hero + citation strip + partners strip; the section bands live in index.md.
+-#}
+{% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+
+  <section class="afs-hero" markdown="0">
+    <div class="md-grid afs-hero__grid">
+      <div class="afs-hero__content">
+        <div class="afs-wordmark" aria-label="AI for Science">
+          <span>AI for Science</span>
+        </div>
+
+        <h1 class="afs-hero__headline">
+          Best practices for<br>
+          agentic AI in science.
+        </h1>
+        <p class="afs-hero__tagline">
+          A living record, maintained by task forces and institutions across
+          Europe. Revised at the pace of the field, versioned for citation,
+          open to challenge.
+        </p>
+        <div class="afs-hero__actions">
+          <a class="afs-hero__actions--primary" href="{{ 'best-practices/' | url }}">Read the best practices</a>
+          <a href="{{ 'about/contribute/' | url }}">Contribute</a>
+        </div>
+      </div>
+
+      <aside class="afs-record-card" aria-label="State of the record">
+        <div class="afs-record-card__header">
+          <span>The record</span>
+        </div>
+        <dl class="afs-record-card__rows">
+          <div>
+            <dt>Practices</dt>
+            <dd>In drafting, from task-force observation of working groups.</dd>
+          </div>
+          <div>
+            <dt>Model</dt>
+            <dd>Running document. The live site is always current.</dd>
+          </div>
+          <div>
+            <dt>Citation</dt>
+            <dd>Monthly dated releases, each with a DOI.
+              <a href="{{ 'releases/' | url }}">Releases →</a></dd>
+          </div>
+          <div>
+            <dt>License</dt>
+            <dd>CC-BY-4.0. Reuse it, adapt it, cite it.</dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+
+    <div class="afs-publication-strip">
+      <div class="md-grid afs-publication-strip__grid">
+        <div class="afs-publication-strip__badge" aria-hidden="true">
+          <span>DOI</span>
+        </div>
+        <p>
+          <strong>Built for citation.</strong> Institutions cite a dated,
+          DOI-carrying release; practitioners read the live record.
+          <a href="{{ 'releases/' | url }}">How to cite →</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="afs-trust-strip" aria-labelledby="afs-partners-heading">
+      <div class="md-grid afs-trust-strip__grid">
+        <div class="afs-trust-strip__heading">
+          <h2 id="afs-partners-heading">Shaped by contributing organisations.</h2>
+        </div>
+        <ul class="afs-trust-strip__row">
+          <li><span class="afs-trust-strip__wordmark">Helmholtz AI</span></li>
+          <li><a class="afs-trust-strip__invite" href="{{ 'about/partners/' | url }}">Your organisation? Join us →</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,40 @@
+name: Submit a document
+description: Submit a strategy paper, report, or guideline for distillation into the library.
+title: "[Document] "
+labels: ["document", "triage"]
+body:
+  - type: input
+    id: doc-title
+    attributes:
+      label: Document title
+      placeholder: Full title of the document
+    validations:
+      required: true
+  - type: input
+    id: issuing-body
+    attributes:
+      label: Issuing body
+      placeholder: Organisation that published the document
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link or DOI
+      description: A stable, public link. Confidential documents cannot be distilled into the public record.
+    validations:
+      required: true
+  - type: textarea
+    id: relevance
+    attributes:
+      label: Why it belongs in the record
+      description: Two or three sentences. Which practices does it touch? What does it add?
+    validations:
+      required: true
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Rights
+      options:
+        - label: The document is public, or I am authorised to submit it for public distillation.
+          required: true

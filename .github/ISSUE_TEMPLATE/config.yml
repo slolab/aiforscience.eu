@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Open-ended discussion
+    url: https://github.com/slolab/aiforscience.eu/discussions
+    about: For questions, ideas, and anything that is not yet a concrete proposal, challenge, or document submission.

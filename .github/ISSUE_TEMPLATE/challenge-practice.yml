@@ -1,0 +1,33 @@
+name: Challenge a practice
+description: Disagree with a practice, or report experience that contradicts it.
+title: "[Challenge] "
+labels: ["practice-challenge", "triage"]
+body:
+  - type: input
+    id: practice
+    attributes:
+      label: Which practice
+      placeholder: "BP-nn and title"
+    validations:
+      required: true
+  - type: textarea
+    id: challenge
+    attributes:
+      label: The challenge
+      description: What is wrong, incomplete, or context-dependent about the practice as written?
+    validations:
+      required: true
+  - type: textarea
+    id: case
+    attributes:
+      label: Concrete case
+      description: The situation where the practice failed or did not apply. Challenges with cases carry the most weight.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: How should the practice be reworded, scoped, or retired?
+    validations:
+      required: false

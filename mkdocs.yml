@@ -1,0 +1,58 @@
+site_name: AI for Science
+site_url: https://aiforscience.eu
+site_description: >-
+  A living record of best practices for applying agentic AI to science.
+repo_url: https://github.com/slolab/aiforscience.eu
+repo_name: slolab/aiforscience.eu
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  custom_dir: overrides
+  icon:
+    logo: material/atom
+  palette:
+    scheme: default
+    primary: custom
+    accent: custom
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.action.edit
+
+plugins:
+  - search
+  - tags
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+      title: On this page
+
+extra_css:
+  - assets/css/palette.css
+  - assets/css/home.css
+
+nav:
+  - Home: index.md
+  - Best Practices: best-practices/index.md
+  - Library: library/index.md
+  - Releases: releases/index.md
+  - About:
+      - Mission: about/mission.md
+      - Partners: about/partners.md
+      - Governance: about/governance.md
+      - Contribute: about/contribute.md
+  - Tags: tags.md
+
+copyright: >-
+  © 2026 AI for Science contributors. Content licensed
+  <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>.
