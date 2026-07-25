@@ -46,17 +46,14 @@ receives a DOI via Zenodo.
 
 Steps that require repository-owner action:
 
-1. Create `slolab/aiforscience.eu` on GitHub (public) and push `main`.
-2. Repo settings → Pages → Source: **GitHub Actions**. The `Deploy` workflow
-   publishes on every push to `main`.
-3. Repo settings → General → Features: enable **Discussions**. Create
+1. Repo settings → General → **Discussions**. Create
    categories: "Practice pages" (Announcements type not required), "Propose
    a practice", "Challenge a practice", "General".
-4. Install the [giscus app](https://github.com/apps/giscus) on the repo,
+1. Install the [giscus app](https://github.com/apps/giscus) on the repo,
    then get `data-repo-id` and `data-category-id` from
    [giscus.app](https://giscus.app) (category: "Practice pages") and replace
    the two `TODO_GISCUS_*` placeholders in `overrides/partials/comments.html`.
-5. DNS at the registrar for `aiforscience.eu`:
+1. DNS at the registrar for `aiforscience.eu`:
    - apex `A` records → `185.199.108.153`, `185.199.109.153`,
      `185.199.110.153`, `185.199.111.153`
    - apex `AAAA` records → `2606:50c0:8000::153`, `2606:50c0:8001::153`,
@@ -64,9 +61,7 @@ Steps that require repository-owner action:
    - `www` `CNAME` → `slolab.github.io`
    Then repo settings → Pages → Custom domain: `aiforscience.eu`, and enable
    **Enforce HTTPS** once the certificate is issued.
-6. Enable the repository on [Zenodo](https://zenodo.org/account/settings/github/)
-   **before** cutting the first release, so `v2026.07` gets a DOI.
-7. Tag and release: `git tag v2026.07 && git push --tags`, then create a
+1. Tag and release: `git tag v2026.07 && git push --tags`, then create a
    GitHub Release from the tag with the changelog text from
    `docs/releases/index.md`.
 
