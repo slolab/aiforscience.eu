@@ -873,7 +873,10 @@ body {
   position: absolute;
   left: 50%;
   top: 0;
-  width: 130%;
+  /* Viewport units, not %: the audience section is a constrained content
+     column (its full-bleed colour comes from the box-shadow/clip-path trick),
+     so 130% of the column falls short of wide viewports. */
+  width: 130vw;
   height: clamp(0.85rem, 2.1vw, 1.45rem);
   border-radius: 50%;
   background: var(--afs-dark-gradient);
