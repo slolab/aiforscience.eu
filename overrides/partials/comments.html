@@ -1,22 +1,22 @@
 {#-
   giscus comments, rendered on pages with `comments: true` front matter.
-  data-repo-id and data-category-id are issued by https://giscus.app after
-  the giscus app is installed on the repository and Discussions are enabled.
-  See README.md, "One-time setup".
+  Threads live in the repo's Discussions under the "Practice page comments"
+  category, one per page, mapped by pathname. Configuration generated at
+  https://giscus.app.
 -#}
 {% if page.meta.comments %}
   <h2 id="__comments">Discussion</h2>
   <script
     src="https://giscus.app/client.js"
     data-repo="slolab/aiforscience.eu"
-    data-repo-id="TODO_GISCUS_REPO_ID"
-    data-category="Practice pages"
-    data-category-id="TODO_GISCUS_CATEGORY_ID"
+    data-repo-id="R_kgDOTjP0Lw"
+    data-category="Practice page comments"
+    data-category-id="DIC_kwDOTjP0L84DB8eU"
     data-mapping="pathname"
-    data-strict="1"
+    data-strict="0"
     data-reactions-enabled="1"
     data-emit-metadata="0"
-    data-input-position="top"
+    data-input-position="bottom"
     data-theme="preferred_color_scheme"
     data-lang="en"
     crossorigin="anonymous"
