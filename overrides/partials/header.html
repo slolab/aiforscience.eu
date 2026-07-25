@@ -26,6 +26,10 @@
         Discuss
         <span class="afs-header-nav__ext" aria-hidden="true">{% include ".icons/material/open-in-new.svg" %}</span>
       </a>
+      <a href="https://groups.google.com/g/aiforscience" target="_blank" rel="noopener noreferrer">
+        Group
+        <span class="afs-header-nav__ext" aria-hidden="true">{% include ".icons/material/open-in-new.svg" %}</span>
+      </a>
     </div>
 
     {% if config.extra.alternate %}
@@ -40,11 +44,6 @@
         </label>
         {% include "partials/search.html" %}
       {% endif %}
-    {% endif %}
-    {% if config.repo_url %}
-      <div class="md-header__source">
-        {% include "partials/source.html" %}
-      </div>
     {% endif %}
   </nav>
 </header>

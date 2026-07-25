@@ -115,6 +115,7 @@ hide:
       <h3>Discuss</h3>
       <p>Open-ended questions and ideas live in GitHub Discussions; each practice page carries its own discussion thread.</p>
       <a href="https://github.com/slolab/aiforscience.eu/discussions" target="_blank" rel="noopener noreferrer">Join the discussion →</a>
+      <a href="https://groups.google.com/g/aiforscience" target="_blank" rel="noopener noreferrer">No GitHub? Google Group →</a>
     </article>
   </div>
 </section>

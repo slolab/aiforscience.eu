@@ -30,5 +30,6 @@ agentic AI in science, there are three ways to connect it:
    record's weight.
 
 To start a conversation, open a
-[discussion](https://github.com/slolab/aiforscience.eu/discussions) or
-contact the editors (see [Governance](governance.md)).
+[discussion](https://github.com/slolab/aiforscience.eu/discussions), write to
+the [AI for Science Google Group](https://groups.google.com/g/aiforscience),
+or contact the editors (see [Governance](governance.md)).

@@ -30,6 +30,13 @@ humans before anything is published.
 [GitHub Discussions](https://github.com/slolab/aiforscience.eu/discussions).
 Each practice page also has a discussion thread at the bottom.
 
+**No GitHub account?** Use the
+[AI for Science Google Group](https://groups.google.com/g/aiforscience), or
+write to
+[aiforscience@googlegroups.com](mailto:aiforscience@googlegroups.com).
+Proposals, challenges, and comments sent there are carried into the record
+by the editors, with attribution unless you ask otherwise.
+
 **Edit directly.** Every page has an edit button that opens a pull request.
 Follow the conventions in the repository's CLAUDE.md (page structure,
 metadata schema, writing style).

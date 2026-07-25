@@ -44,7 +44,9 @@ extra_css:
 
 nav:
   - Home: index.md
-  - Best Practices: best-practices/index.md
+  - Best Practices:
+      - Overview: best-practices/index.md
+      - "BP-00 Example practice (dummy)": best-practices/00-example-practice.md
   - Library: library/index.md
   - Glossary: glossary.md
   - Releases: releases/index.md
