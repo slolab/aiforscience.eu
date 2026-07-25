@@ -29,6 +29,7 @@ plugins:
 markdown_extensions:
   - admonition
   - attr_list
+  - def_list
   - md_in_html
   - tables
   - pymdownx.details
@@ -45,11 +46,13 @@ nav:
   - Home: index.md
   - Best Practices: best-practices/index.md
   - Library: library/index.md
+  - Glossary: glossary.md
   - Releases: releases/index.md
   - About:
       - Mission: about/mission.md
       - Partners: about/partners.md
       - Governance: about/governance.md
+      - Events: about/events.md
       - Contribute: about/contribute.md
   - Tags: tags.md
 

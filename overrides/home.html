@@ -30,29 +30,44 @@
         </div>
       </div>
 
-      <aside class="afs-record-card" aria-label="State of the record">
-        <div class="afs-record-card__header">
-          <span>The record</span>
+      <aside class="afs-hero-card" aria-label="How to learn and how to get involved">
+        <input class="afs-hero-card__radio" type="radio" name="afs-hero-tab"
+               id="afs-hero-tab-async" checked>
+        <input class="afs-hero-card__radio" type="radio" name="afs-hero-tab"
+               id="afs-hero-tab-live">
+        <div class="afs-hero-card__tabs">
+          <label for="afs-hero-tab-async">At your own pace</label>
+          <label for="afs-hero-tab-live">Live</label>
         </div>
-        <dl class="afs-record-card__rows">
-          <div>
-            <dt>Practices</dt>
-            <dd>In drafting, from task-force observation of working groups.</dd>
+        <div class="afs-hero-card__panels">
+          <div class="afs-hero-card__panel afs-hero-card__panel--async">
+            <p class="afs-hero-card__lede">Learn from the record, whenever it suits.</p>
+            <a class="afs-hero-card__row" href="{{ 'best-practices/' | url }}">
+              <strong>Best practices</strong>
+              <span>Numbered and versioned, with status, sources, and endorsements.</span>
+            </a>
+            <a class="afs-hero-card__row" href="{{ 'glossary/' | url }}">
+              <strong>Glossary</strong>
+              <span>The basic terms, briefly explained.</span>
+            </a>
+            <a class="afs-hero-card__row" href="https://github.com/slolab/aiforscience.eu/discussions"
+               target="_blank" rel="noopener noreferrer">
+              <strong>Discussion</strong>
+              <span>Every practice page carries its own comment thread. Read along or weigh in.</span>
+            </a>
           </div>
-          <div>
-            <dt>Model</dt>
-            <dd>Running document. The live site is always current.</dd>
+          <div class="afs-hero-card__panel afs-hero-card__panel--live">
+            <p class="afs-hero-card__lede">Meet the people who maintain it.</p>
+            <a class="afs-hero-card__row" href="{{ 'about/events/' | url }}">
+              <strong>Monthly meeting</strong>
+              <span>An open call, once a month: what moved, what is contested, what comes next.</span>
+            </a>
+            <a class="afs-hero-card__row" href="{{ 'about/events/' | url }}#other-events">
+              <strong>Other events</strong>
+              <span>Workshops and task-force sessions, announced as they are scheduled.</span>
+            </a>
           </div>
-          <div>
-            <dt>Citation</dt>
-            <dd>Monthly dated releases, each with a DOI.
-              <a href="{{ 'releases/' | url }}">Releases →</a></dd>
-          </div>
-          <div>
-            <dt>License</dt>
-            <dd>CC-BY-4.0. Reuse it, adapt it, cite it.</dd>
-          </div>
-        </dl>
+        </div>
       </aside>
     </div>
 

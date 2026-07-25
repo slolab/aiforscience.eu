@@ -330,9 +330,10 @@ body {
   transform: translateY(-1px);
 }
 
-/* The record card: hero aside, visual sibling of the docs code card. */
+/* The hero card: two tabs, asynchronous and live routes into the record.
+   Tab state is two visually-hidden radios; no JavaScript. */
 
-.afs-record-card {
+.afs-hero-card {
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -344,67 +345,114 @@ body {
 }
 
 @media screen and (max-width: 45.984em) {
-  .afs-record-card {
+  .afs-hero-card {
     display: none;
   }
 }
 
-.afs-record-card__header {
-  display: flex;
-  align-items: baseline;
-  gap: 0.8rem;
-  padding: 0.92rem 1rem 0.72rem;
+.afs-hero-card__radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.afs-hero-card__tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   border-bottom: 1px solid rgba(211, 238, 246, 0.14);
 }
 
-.afs-record-card__header span {
-  color: #8ee6f5;
+.afs-hero-card__tabs label {
+  padding: 0.85rem 0.5rem 0.68rem;
+  border-bottom: 2px solid transparent;
+  color: #9dc2ce;
   font-size: 0.64rem;
   font-weight: 950;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.13em;
+  text-align: center;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: color 140ms ease, border-color 140ms ease;
 }
 
-.afs-record-card__rows {
-  margin: 0;
-  padding: 0.55rem 1rem 0.9rem;
-}
-
-.afs-record-card__rows div {
-  display: grid;
-  grid-template-columns: 7.2rem minmax(0, 1fr);
-  gap: 0.8rem;
-  padding: 0.52rem 0;
-  border-top: 1px solid rgba(211, 238, 246, 0.09);
-}
-
-.afs-record-card__rows div:first-child {
-  border-top: 0;
-}
-
-.afs-record-card__rows dt {
-  color: #9dc2ce;
-  font-size: 0.68rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.afs-record-card__rows dd {
-  margin: 0;
+.afs-hero-card__tabs label:hover {
   color: #e5f6fa;
-  font-size: 0.78rem;
+}
+
+.afs-hero-card:has(#afs-hero-tab-async:checked) label[for="afs-hero-tab-async"],
+.afs-hero-card:has(#afs-hero-tab-live:checked) label[for="afs-hero-tab-live"] {
+  border-bottom-color: #8ee6f5;
+  color: #8ee6f5;
+}
+
+.afs-hero-card:has(#afs-hero-tab-async:focus-visible) label[for="afs-hero-tab-async"],
+.afs-hero-card:has(#afs-hero-tab-live:focus-visible) label[for="afs-hero-tab-live"] {
+  outline: 2px solid #8ee6f5;
+  outline-offset: -2px;
+}
+
+/* Panels share one grid cell so the card keeps the height of the taller
+   panel and switching tabs does not shift the hero. */
+.afs-hero-card__panels {
+  display: grid;
+}
+
+.afs-hero-card__panel {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  padding: 0.7rem 1rem 0.95rem;
+}
+
+.afs-hero-card:has(#afs-hero-tab-async:checked) .afs-hero-card__panel--async,
+.afs-hero-card:has(#afs-hero-tab-live:checked) .afs-hero-card__panel--live {
+  visibility: visible;
+}
+
+.afs-hero-card__lede {
+  margin: 0.1rem 0 0.3rem;
+  color: #9dc2ce;
+  font-size: 0.72rem;
   line-height: 1.5;
 }
 
-.afs-record-card__rows dd a {
-  color: #8ee6f5;
-  font-weight: 800;
+.afs-hero-card__row {
+  display: block;
+  padding: 0.55rem 0;
+  border-top: 1px solid rgba(211, 238, 246, 0.09);
   text-decoration: none;
 }
 
-.afs-record-card__rows dd a:hover {
+.afs-hero-card__row:first-of-type {
+  border-top: 0;
+}
+
+.afs-hero-card__row strong {
+  display: block;
+  color: #e5f6fa;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.afs-hero-card__row strong::after {
+  content: " →";
+  color: #8ee6f5;
+}
+
+.afs-hero-card__row span {
+  display: block;
+  margin-top: 0.14rem;
+  color: #9dc2ce;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.afs-hero-card__row:hover strong,
+.afs-hero-card__row:focus-visible strong {
+  color: #8ee6f5;
   text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 /* Citation strip under the hero. */
