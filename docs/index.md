@@ -75,20 +75,25 @@ hide:
 <section class="afs-section afs-section--audience" id="audience">
   <div class="afs-section__header">
     <p class="afs-kicker">Who this is for</p>
-    <h2>Learned from pioneers, written for settlers</h2>
-    <p>Two groups of users shape the record, and it serves them differently.</p>
+    <h2>Learned from pioneers, written for everyone building on their work</h2>
+    <p>The record watches early adopters and turns what holds up into guidance for three audiences. Every practice states what it means for each.</p>
   </div>
 
   <div class="afs-audience-grid">
     <article class="afs-audience-card">
-      <span>Pioneers</span>
-      <h3>Enable and observe</h3>
-      <p>Pioneers adopt early and learn by doing. The best support for them is to remove obstacles and watch what works. What they learn is where the practices come from.</p>
+      <span>Practitioners</span>
+      <h3>Do the science</h3>
+      <p>Scientists and research groups using agentic AI in their daily work: what to adopt, what to avoid, and how to keep judgement and provenance in human hands.</p>
     </article>
     <article class="afs-audience-card">
-      <span>Settlers</span>
-      <h3>Inform well</h3>
-      <p>Settlers are far more numerous. They arrive after the pioneers and build things meant to last, so they need reliable, current guidance. The practices are written for them.</p>
+      <span>Providers</span>
+      <h3>Build the surfaces</h3>
+      <p>The teams behind scientific services, data resources, and tools: how to make them work well for agents without drowning in maintenance.</p>
+    </article>
+    <article class="afs-audience-card">
+      <span>Governance</span>
+      <h3>Set the frame</h3>
+      <p>Scientific management, from institute leadership to head offices and funders: what to enable, what to require, and what to resource.</p>
     </article>
   </div>
 </section>

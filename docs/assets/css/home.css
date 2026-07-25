@@ -213,6 +213,55 @@ body {
 }
 
 /* ------------------------------------------------------------------ *
+ * Content tabs (pymdownx.tabbed, alternate style)
+ *
+ * Used for the per-audience "What this means for you" sections on
+ * practice pages. Styled to echo the hero card tabs: uppercase labels,
+ * accent underline on the active tab.
+ * ------------------------------------------------------------------ */
+
+.md-typeset .tabbed-set {
+  border: 1px solid var(--afs-line);
+  border-radius: 0.75rem;
+  padding: 0 1rem 0.35rem;
+  background: var(--afs-soft);
+}
+
+.md-typeset .tabbed-labels {
+  box-shadow: inset 0 -1px 0 var(--afs-line);
+}
+
+.md-typeset .tabbed-labels > label {
+  color: var(--afs-muted);
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.85em 1.1em 0.7em;
+}
+
+.md-typeset .tabbed-labels > label:hover {
+  color: var(--afs-accent-dark);
+}
+
+.md-typeset .tabbed-set input:checked + .tabbed-labels label,
+.md-typeset .tabbed-labels > label[aria-selected="true"] {
+  color: var(--afs-accent-dark);
+}
+
+.md-typeset .tabbed-set > input:first-child:checked ~ .tabbed-labels > :first-child,
+.md-typeset .tabbed-set > input:nth-child(2):checked ~ .tabbed-labels > :nth-child(2),
+.md-typeset .tabbed-set > input:nth-child(3):checked ~ .tabbed-labels > :nth-child(3),
+.md-typeset .tabbed-set > input:nth-child(4):checked ~ .tabbed-labels > :nth-child(4) {
+  color: var(--afs-accent-dark);
+}
+
+.md-typeset .tabbed-labels::before {
+  background: var(--afs-accent);
+  height: 2px;
+}
+
+/* ------------------------------------------------------------------ *
  * Hero
  * ------------------------------------------------------------------ */
 
@@ -687,7 +736,8 @@ body {
 
 @media screen and (min-width: 64em) {
   .afs-feature-grid,
-  .afs-involved-grid {
+  .afs-involved-grid,
+  .afs-audience-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

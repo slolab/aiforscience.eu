@@ -25,6 +25,7 @@ comments: true
 **1. <Hook statement.>**
 The document: "<verbatim quote or tight paraphrase>" (<§section, p. N>).
 Relevance: <one sentence, neutral voice, link to BP-nn where applicable>.
+Audiences: <practitioners | providers | governance, one or more>.
 
 **2. ...**
 

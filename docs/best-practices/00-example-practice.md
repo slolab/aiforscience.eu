@@ -11,7 +11,7 @@ sources:
     locator: "July 2026"
 layer: Method
 hitl: n/a
-tags: [both, method, draft]
+tags: [practitioner, provider, method, draft]
 comments: true
 ---
 
@@ -50,6 +50,29 @@ required for agents also serves human users, so this investment pays twice.
 - Documentation is published in formats agents can retrieve directly
   (plain text, markdown, structured metadata), without requiring a browser
   session.
+
+## What this means for you
+
+=== "Practitioners"
+
+    Write your analysis code and notebooks as if an agent will re-run them,
+    because one will. State units, data versions, and assumptions in the
+    docstring, not in your head. When a tool's documentation misleads your
+    agent, report it to the provider; that feedback is how surfaces improve.
+
+=== "Providers"
+
+    Docs and docstrings are now an interface, not an afterthought. Make
+    examples executable and test them in CI so they cannot drift. Publish
+    documentation in formats agents retrieve directly (markdown, plain
+    text, structured metadata) rather than only rendered web pages.
+
+=== "Governance"
+
+    Documentation quality is now a machine-readability question, and it is
+    cheap to audit. Include agent-readable documentation in service review
+    criteria, and fund documentation work as interface work rather than
+    as overhead.
 
 ## Sources
 

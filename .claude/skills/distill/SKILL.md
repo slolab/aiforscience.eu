@@ -19,6 +19,23 @@ One of:
 If the document is long, read all of it before writing. Distillation from a
 partial read produces wrong emphasis.
 
+## Scope filter
+
+The record covers what changes how science is done. Apply this test to every
+candidate hook (full statement in `docs/about/mission.md`):
+
+> Would adopting this change how science is planned, performed, evaluated,
+> communicated, or governed?
+
+Keep: research workflows and methods; scientific services, data resources,
+and infrastructure; provenance, citation, and evaluation of agentic systems;
+research skills and training; governance of AI within scientific
+institutions. Drop: national economic and industrial policy, energy and
+compute geopolitics, security and defence, treaties. If dropped material
+directly constrains scientific practice, mention it in one sentence under
+"Cautions and gaps"; never distill it into hooks. When a document is largely
+out of scope, say so in the Summary and keep the entry short.
+
 ## Procedure
 
 1. Read the full document. Note its structure (sections, page numbers).
@@ -29,18 +46,22 @@ partial read produces wrong emphasis.
 4. Fill every section of the template:
    - **Summary**: three to five declarative sentences. What the document
      says, who says it, why it matters for agentic AI in science.
-   - **Hooks**: the passages that matter, numbered. Each hook quotes or
-     tightly paraphrases the source, gives a locator (section and page, like
-     "§3.2, p. 20"), and adds one sentence of relevance in neutral voice.
-     Aim for the 5 to 12 passages that carry the document's weight, not an
-     outline of everything.
+   - **Hooks**: the passages that matter, numbered, each of which passed the
+     scope filter. Each hook quotes or tightly paraphrases the source, gives
+     a locator (section and page, like "§3.2, p. 20"), adds one sentence of
+     relevance in neutral voice, and names the audiences it touches
+     (practitioners, providers, governance). Aim for the 5 to 12 passages
+     that carry the document's weight, not an outline of everything.
    - **Mapping to practices**: which hooks support which BP-nn, and where
      the document is in tension with a practice. Tensions are findings,
      not problems; state them plainly.
    - **Proposed changes to practices**: a checkbox list of concrete edits the
      document justifies (new practice, changed wording, added source, status
-     change). These are proposals for human review. Never apply them to the
-     practice pages yourself in the same session unless the user asks.
+     change). Where a proposal creates or reworks a practice, draft the
+     per-audience tab text ("What this means for you": Practitioners,
+     Providers, Governance) as part of the proposal. These are proposals for
+     human review. Never apply them to the practice pages yourself in the
+     same session unless the user asks.
    - **Cautions and gaps**: what the document does not support, framings to
      avoid, honest limits.
 6. Add the entry to the table in `docs/library/index.md` and to the `nav`

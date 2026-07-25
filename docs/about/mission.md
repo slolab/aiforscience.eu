@@ -4,40 +4,67 @@ title: Mission
 
 # Mission
 
-Agentic AI is developing at a pace that challenges large scientific
-organisations. Guidance written as static reports is outdated before it is
-published. This site is the alternative: a running record of best practices
-for applying agentic AI to science, revised at the pace of the field,
-versioned for citation, and open to challenge.
+## Vision
 
-## The premise
+Science that uses agentic AI well: agents do the connecting, scientists keep
+the thinking. Agentic AI is most valuable in science when it links data,
+tools, and models across groups and institutions, while the epistemic core
+of research (judgement, provenance, accountability) stays with humans.
 
-Agents do the connecting; scientists keep the thinking. Agentic AI is most
-valuable in science when it links data, tools, and models across groups and
-institutions, while the epistemic core of research (judgement, provenance,
-accountability) stays with humans. The practices on this site encode that
-position in concrete, testable form.
+## Mission
 
-## Two groups of users
+Maintain the shared, citable, current record of best practices for applying
+agentic AI to science. Guidance written as static reports is outdated before
+it is published; this record is revised at the pace of the field, versioned
+for citation, and open to challenge. It aggregates what task forces and
+institutions learn, so organisations build on each other's experience
+instead of writing siloed reports.
 
-The record serves two groups differently:
+## Scope
 
-- **Pioneers** adopt early and learn by doing. The best support for them is
-  to remove obstacles and observe what works. What they learn is where the
-  practices come from.
-- **Settlers** are far more numerous. They arrive after the pioneers and
-  build things meant to last. Their work is investment and should produce
-  stable results, so they need well-founded, current guidance. The practices
-  are written for them.
+The record covers what changes how science is done. The test for any
+practice, document hook, or discussion:
 
-## A coalition record, not a mouthpiece
+> Would adopting this change how science is planned, performed, evaluated,
+> communicated, or governed?
 
-The site grows out of task-force work on AI for science, starting with
-Helmholtz AI. It is built to grow beyond any single organisation. Every
-practice records which organisations endorse it, and any organisation can
-propose, challenge, or endorse practices. The value of a shared record grows
-with every organisation that joins; pooled insight beats siloed efforts. See
-[Partners](partners.md) for how to take part.
+**In scope**: research workflows and methods; scientific services, data
+resources, and infrastructure; provenance, citation, and evaluation of
+agentic systems; research skills and training; governance of AI within
+scientific institutions.
+
+**Out of scope**: national economic and industrial policy, energy and
+compute geopolitics, security and defence, international treaties. When such
+material directly constrains scientific practice, the record cites it as
+context; it does not distill or debate it.
+
+The same test governs the [library](../library/index.md): a distillation of
+a broad policy report keeps the passages that pass, and drops the rest.
+
+## Audiences
+
+The record is written for three roles. There are overlaps, and most
+practices speak to more than one; practice pages carry a "What this means
+for you" section adapted to each.
+
+- **Practitioners**: scientists and research groups using agentic AI in
+  their daily work.
+- **Providers**: the people who build and operate scientific services, data
+  resources, and tools that agents use (for example the teams behind
+  research-infrastructure services).
+- **Governance**: scientific management, from institute leadership to head
+  offices and funders, deciding what to enable, require, and resource.
+
+## How the record is made
+
+Two groups shape adoption, and the record treats them differently.
+**Pioneers** adopt early and learn by doing; they exist in every audience
+but concentrate among practitioners. The best support for them is to remove
+obstacles and observe. Pioneers write these practices or ignore them; either
+is fine. **Settlers** are far more numerous. They come after the pioneers
+and build things meant to last, so they need reliable, current guidance.
+The practices are learned from the first group and written for the second,
+across all three audiences.
 
 ## How it stays current
 
@@ -45,4 +72,8 @@ The record is maintained on
 [GitHub](https://github.com/slolab/aiforscience.eu). Changes go through
 public review. A dated release is cut monthly and receives a DOI, so the
 record can be cited by scientists and by institutional strategy documents
-alike. See [Governance](governance.md) and [Releases](../releases/index.md).
+alike. Every practice records which organisations endorse it, and any
+organisation can propose, challenge, or endorse practices; the value of the
+shared record grows with every organisation that joins. See
+[Partners](partners.md), [Governance](governance.md), and
+[Releases](../releases/index.md).

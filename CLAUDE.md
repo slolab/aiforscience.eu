@@ -43,7 +43,7 @@ sources:
     locator: "<section/page, e.g. §5.3, p. 28>"
 layer: Operational | Method | Ecosystem
 hitl: mandatory | optional | in-process | final-check | n/a
-tags: [<audience: pioneer/settler/both>, <layer, lowercase>, <status>]
+tags: [<audience roles, one or more: practitioner/provider/governance>, <layer, lowercase>, <status>]
 comments: true
 ---
 ```
@@ -54,8 +54,24 @@ Body sections, in this order, all present:
 2. `## Statement` — the practice in two or three sentences.
 3. `## Why it matters`
 4. `## What it looks like in practice` — concrete examples.
-5. `## Sources`
-6. `## Change history` — dated bullets, newest first. Git log is the full record.
+5. `## What this means for you` — three content tabs
+   (`=== "Practitioners"`, `=== "Providers"`, `=== "Governance"`), each two
+   to four sentences adapting the practice to that role. Keep all three tabs
+   even when one is thin; say plainly when a role is barely affected.
+6. `## Sources`
+7. `## Change history` — dated bullets, newest first. Git log is the full record.
+
+Audiences (defined in docs/about/mission.md): **practitioners** (scientists
+using agentic AI), **providers** (builders/operators of scientific services
+and resources), **governance** (scientific management and leadership).
+Pioneers/settlers is an operating principle for how the record is made, not
+a taxonomy; never use it in tags or views.
+
+Scope test for all content, including distillations: "Would adopting this
+change how science is planned, performed, evaluated, communicated, or
+governed?" Out-of-scope material (national economic/industrial policy,
+energy, defence, treaties) is cited as context at most. Full statement in
+docs/about/mission.md.
 
 Status meanings: `draft` (proposed, under discussion), `reviewed` (accepted by
 the editor group), `endorsed` (formally backed by at least one named
