@@ -46,13 +46,6 @@ receives a DOI via Zenodo.
 
 Steps that require repository-owner action:
 
-1. Repo settings → General → **Discussions**. Create
-   categories: "Practice pages" (Announcements type not required), "Propose
-   a practice", "Challenge a practice", "General".
-1. Install the [giscus app](https://github.com/apps/giscus) on the repo,
-   then get `data-repo-id` and `data-category-id` from
-   [giscus.app](https://giscus.app) (category: "Practice pages") and replace
-   the two `TODO_GISCUS_*` placeholders in `overrides/partials/comments.html`.
 1. DNS at the registrar for `aiforscience.eu`:
    - apex `A` records → `185.199.108.153`, `185.199.109.153`,
      `185.199.110.153`, `185.199.111.153`
