@@ -1,0 +1,140 @@
+---
+title: Govern agent autonomy and accountability
+nav_title: "BP3 Autonomy and accountability"
+practice_id: BP-03
+status: draft
+first_added: 2026-07-25
+last_reviewed: 2026-07-26
+endorsed_by: []
+sources:
+  - title: "Agentic AI in the higher-education system (2026)"
+    ref: library/hfd-agentic-ai-hochschulsystem-2026.md
+    locator: "§4-6, hooks 3, 5, 6, 7, 9, 10, 11, 12"
+  - title: "EU Expert Forum on Frontier AI (2026)"
+    ref: library/ec-expert-forum-2026.md
+    locator: "§4.2.3, hooks 1 and 3"
+  - title: "NIST AI Risk Management Framework (AI 100-1, 2023) and Generative AI Profile (AI 600-1, 2024)"
+    ref: https://www.nist.gov/itl/ai-risk-management-framework
+    locator: "GOVERN function; system inventory; stop-build authority"
+  - title: "EU AI Act, Articles 14 and 26"
+    ref: https://artificialintelligenceact.eu/article/14/
+    locator: "human oversight; deployer duties"
+  - title: "OECD AI Principles (2019, updated 2024)"
+    ref: https://www.oecd.org/en/topics/ai-principles.html
+    locator: "accountability; traceability"
+  - title: "ISO/IEC 42001:2023, AI management systems"
+    ref: https://www.iso.org/standard/81230.html
+    locator: "assigned accountability; AI system inventory; continual improvement"
+  - title: "OpenAI, Practices for Governing Agentic AI Systems (2023)"
+    ref: https://cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf
+    locator: "constraining the action space; human accountability; action ledger"
+  - title: "Chan et al., Visibility into AI Agents (ACM FAccT 2024)"
+    ref: https://arxiv.org/abs/2401.13138
+    locator: "agent identifiers, real-time monitoring, activity logging"
+  - title: "Kolt, Governing AI Agents (Notre Dame Law Review, 2025)"
+    ref: https://arxiv.org/abs/2501.07913
+    locator: "accountability and control of agents"
+  - title: "European Commission JRC, The Role of AI in Scientific Research (JRC143482, 2025)"
+    ref: https://publications.jrc.ec.europa.eu/repository/handle/JRC143482
+    locator: "AI as tool; human accountability in science"
+layer: Ecosystem
+hitl: n/a
+tags: [governance, provider, draft]
+comments: true
+---
+
+<!-- BP_TITLE -->
+<!-- The H1 above is generated from this page's frontmatter title by hooks/bp_pages.py. Edit `title:`, not here. -->
+
+## Practice
+
+<div class="afs-practice" markdown>
+
+- An [agent's](../glossary.md#agent) limits ([guardrails](../glossary.md#guardrails)) belong in the system that runs it, not only in written policy.
+- An agent cannot be talked into following a rule; it can only be stopped from taking an action.
+- Limits have to be implemented in permission scopes, autonomy limits, and shutdown paths.
+- Regardless of implemented safeguards, something can always go wrong.
+  { .afs-practice__pivot }
+- Thus, every agent also needs a named human owner for each responsibility it carries.
+- The agent's actions have to be logged under an attributable identity, so that accountability can be traced after the fact.
+
+</div>
+
+=== "Practitioners"
+
+    When you run an agent in your own work, set its limits where they take effect: what it can access, how far it can act on its own, and when it must stop and ask.
+    Stay the decision-maker for anything that affects results or other people.
+    A personal agent connected to your mail and files is part of the institution's risk, even if no one else set it up.
+
+=== "Providers"
+
+    Put the limits you promise in the system, not only in the docs, so an agent cannot exceed its scope by being told to.
+    Give operators the stop, escalation, and shutdown controls they need, log agent actions under attributable identities, and record which role holds each responsibility.
+    Roll out new agent features in stages, with clear success and go-live criteria.
+
+=== "Governance"
+
+    Written policy alone does not bind a system that acts.
+    Move the rules you care about into guardrails and enforced permissions.
+    Give each responsibility a named role with clear escalation and shutdown paths, keep a list of the agents in use, require that their actions are logged and attributable, and require independent evaluation where the risk is high.
+    Decide what autonomy the organisation is willing to grant, and treat governance as ongoing, not a one-time policy.
+
+## Reasons
+
+An agent acts.
+A policy document tells a person what to do.
+It does nothing to a system that only follows the actions it is allowed to take.
+As agents get more autonomous, the gap between written rules and enforced limits becomes the main risk.
+To close it, put the limits where they take effect: what the agent can access, how far it can act without a human, and when it must stop or escalate.
+Accountability has to be just as concrete.
+If responsibility sits with "the institution" in general, no one is answerable; it has to sit with named roles, with clear paths to escalate and to shut an agent down.
+Accountability also needs a record: if an agent's actions are not logged under an attributable identity, no one can reconstruct what it did or hold the right role answerable.
+Personal agents with broad access to mail, files, and calendars sit outside all of this, so governance has to cover individual use, not only institutional deployments.
+This is the consensus position across the main governance frameworks (NIST, the EU AI Act, OECD, ISO/IEC 42001), which agree on enforced limits, named accountability, an agent inventory, logging, and independent review.
+
+## Examples
+
+- Permission scopes and autonomy limits enforced by the system, so an agent cannot exceed them whatever it is told.
+- Defined stop and escalation conditions, and a shutdown path that a named role can trigger.
+- Each responsibility given to a role: strategic direction, process responsibility with human decision authority, and technical operation, with the boundaries written down.
+- Agent actions logged under an attributable identity (an action ledger), and agents given identifiers, so behaviour can be monitored live and reconstructed after an incident.
+- Staged rollout: low-risk cases first, with clear success and go-live criteria and an accepted risk limit set in advance.
+- A list of the agents in use, reviewed regularly for behaviour and output, including personal agents.
+- Independent evaluation or audit of agent behaviour where the stakes are high.
+- Governance kept up to date: guardrails revised as agents and uses change, with decisions and vetoes recorded.
+
+!!! info "Practice metadata"
+    **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
+    **Endorsed by:** none yet ·
+    **Last reviewed:** 2026-07-26
+
+## Sources
+
+- [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §4 to 6.
+  The "from guidelines to guardrails" framing is quoted at §5.2.
+  That quotation is attributed in the source paper to "Kassorla et al. (2026)", a reference we could not verify as a published work; the underlying point is independently supported by the frameworks below, which is what this practice relies on.
+- [EU Expert Forum on Frontier AI (2026)](../library/ec-expert-forum-2026.md), §4.2.3 (independent audit, evaluation and verification capacity).
+  Consistent with, grounding only.
+- [NIST AI RMF and Generative AI Profile](https://www.nist.gov/itl/ai-risk-management-framework).
+  GOVERN roles and accountability, a documented system inventory, and stop-build authority.
+- [EU AI Act, Articles 14 and 26](https://artificialintelligenceact.eu/article/14/).
+  Named natural persons for oversight and deployer duties.
+- [OECD AI Principles (2024 update)](https://www.oecd.org/en/topics/ai-principles.html).
+  Traceability placed under Accountability.
+- [ISO/IEC 42001:2023](https://www.iso.org/standard/81230.html).
+  Assigned accountability, an AI system inventory, and governance as continual improvement.
+- [OpenAI, Practices for Governing Agentic AI Systems (2023)](https://cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf).
+  Constraining the action space, human accountability, and an action ledger.
+- [Chan et al., Visibility into AI Agents (FAccT 2024)](https://arxiv.org/abs/2401.13138).
+  Agent identifiers, real-time monitoring, and activity logging as the substrate of accountability.
+- [Kolt, Governing AI Agents (2025)](https://arxiv.org/abs/2501.07913).
+  Legal treatment of agent accountability and control.
+- [European Commission JRC, The Role of AI in Scientific Research (JRC143482, 2025)](https://publications.jrc.ec.europa.eu/repository/handle/JRC143482).
+  AI as a tool with human accountability in science.
+  The HFD source attributes a "situated judgement is not automatable" claim to the JRC; we cite the JRC report for the accountability framing and do not attribute that exact wording to it without a located passage.
+
+## Change history
+
+- 2026-07-26: Rewritten to merge action-logging and attributable agent identity into the practice, add independent grounding (NIST, EU AI Act, OECD, ISO/IEC 42001, OpenAI, Chan et al., Kolt), and add two citation caveats: the "guidelines to guardrails / Kassorla et al." attribution in the source could not be verified, and the JRC "not automatable" wording is unconfirmed.
+- 2026-07-25: Created from the HFD distillation, grounded in the EU Expert Forum entry.
+  New practice added because the guidelines-to-guardrails point is a separate action, not a sub-case of stating a human-in-the-loop level ([BP8](08-human-in-the-loop.md)).

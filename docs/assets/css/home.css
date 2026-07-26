@@ -16,6 +16,10 @@
   --afs-soft-2: #e6f2f7;
   --afs-accent: #1892ab;
   --afs-accent-dark: #0e6478;
+  /* Practice atoms: orange accent bar on a light orange-tinted box. */
+  --afs-practice-accent: #e08127;
+  --afs-practice-bg: #fdf1e3;
+  --afs-practice-line: #f2dcc0;
   --afs-dark: #06161d;
   --afs-dark-2: #0f2a35;
   /* Dark gradient reused across all dark sections. Horizontal (90deg) so
@@ -215,9 +219,9 @@ body {
 /* ------------------------------------------------------------------ *
  * Content tabs (pymdownx.tabbed, alternate style)
  *
- * Used for the per-audience "What this means for you" sections on
- * practice pages. Styled to echo the hero card tabs: uppercase labels,
- * accent underline on the active tab.
+ * Used for the per-audience tabs (Practitioners, Providers, Governance)
+ * shown under each practice statement. Styled to echo the hero card tabs:
+ * uppercase labels, accent underline on the active tab.
  * ------------------------------------------------------------------ */
 
 .md-typeset .tabbed-set {
@@ -259,6 +263,112 @@ body {
 .md-typeset .tabbed-labels::before {
   background: var(--afs-accent);
   height: 2px;
+}
+
+/* ------------------------------------------------------------------ *
+ * Practice atoms
+ *
+ * The `## Practice` statement on each best-practice page is written one
+ * sentence per line, wrapped in `<div class="afs-practice" markdown>` around
+ * a Markdown list. Each sentence renders as a compact box on a shared spine,
+ * so a reader can scan the practice as a sequence of atomic statements
+ * instead of one paragraph. Light-only, matching the site shell.
+ * ------------------------------------------------------------------ */
+
+.md-typeset .afs-practice > ul {
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+  margin: 0.4rem 0 0;
+  padding: 0;
+}
+
+.md-typeset .afs-practice > ul > li {
+  position: relative;
+  margin: 0;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--afs-practice-line);
+  border-left: 3px solid var(--afs-practice-accent);
+  border-radius: 0.5rem;
+  background: var(--afs-practice-bg);
+  color: var(--afs-ink);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* An item marked `{ .afs-practice__pivot }` starts a new group (for example
+   the shift from the default to its qualifier). A little extra space and a
+   muted rule above set it apart without a second box. */
+.md-typeset .afs-practice > ul > li.afs-practice__pivot {
+  margin-top: 0.45rem;
+}
+
+.md-typeset .afs-practice > ul > li.afs-practice__pivot::before {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  top: -0.45rem;
+  border-top: 1px dashed var(--afs-practice-line);
+}
+
+/* ------------------------------------------------------------------ *
+ * Best-practice list (overview page)
+ *
+ * The list of practices on docs/best-practices/index.md, rendered as the
+ * same one-line boxes used for the practice atoms on each page. Each box is
+ * a full-width clickable link. Inactive boxes use the petrol accent; hovering
+ * shifts a box to the orange practice palette used in the BP atom boxes. The
+ * BP handle (BP1…) carries the number, so the list is not numbered.
+ * ------------------------------------------------------------------ */
+
+.md-typeset .afs-bp-list {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0.9rem 0 1.4rem;
+}
+
+.md-typeset .afs-bp-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--afs-line);
+  border-left: 3px solid var(--afs-accent);
+  border-radius: 0.5rem;
+  background: var(--afs-soft-2);
+  color: var(--afs-ink);
+  text-decoration: none;
+  transition: background-color 140ms ease, border-color 140ms ease,
+    color 140ms ease, transform 140ms ease, box-shadow 140ms ease;
+}
+
+.md-typeset .afs-bp-item__handle {
+  flex: none;
+  color: var(--afs-accent-dark);
+  font-size: 0.7rem;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+}
+
+.md-typeset .afs-bp-item__title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.md-typeset .afs-bp-item:hover,
+.md-typeset .afs-bp-item:focus-visible {
+  border-color: var(--afs-practice-line);
+  border-left-color: var(--afs-practice-accent);
+  background: var(--afs-practice-bg);
+  transform: translateY(-1px);
+  box-shadow: 0 0.28rem 0.7rem rgba(15, 31, 38, 0.10);
+}
+
+.md-typeset .afs-bp-item:hover .afs-bp-item__handle,
+.md-typeset .afs-bp-item:focus-visible .afs-bp-item__handle {
+  color: var(--afs-practice-accent);
 }
 
 /* ------------------------------------------------------------------ *
@@ -1156,4 +1266,30 @@ body {
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+/* Hide Material's navigation status icon. Practice pages and library entries
+   set `status:` in frontmatter as project metadata (draft/reviewed/endorsed),
+   which Material also reads as its reserved nav-status key and renders as a
+   small icon next to every such page. The status is shown in the page
+   metadata block, so the nav icon is redundant. */
+.md-nav__link .md-status {
+  display: none;
+}
+
+/* Hide the tag chips the tags plugin renders at the top of each page. Tags
+   stay in frontmatter (they feed the Tags index page); they are just not
+   shown at the top of the content. Match the theme's
+   `.md-typeset .md-tags:not([hidden])` specificity so this wins on source
+   order (home.css loads after the theme). */
+.md-typeset .md-tags:not([hidden]) {
+  display: none;
+}
+
+/* Hide the right-hand (per-page) table of contents. The left nav already
+   carries page structure; the secondary sidebar is not needed. Match the
+   theme's `.md-sidebar--secondary:not([hidden])` specificity so this wins on
+   source order (home.css loads after the theme), no !important needed. */
+.md-sidebar--secondary:not([hidden]) {
+  display: none;
 }

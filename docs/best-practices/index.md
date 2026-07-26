@@ -4,23 +4,40 @@ title: Best practices
 
 # Best practices for agentic AI in science
 
-This is a running document. It is revised as the field develops, discussed in
-regular task force meetings, and versioned for citation. The live site always
-shows the current state; dated snapshots are available under
-[Releases](../releases/index.md).
+This is a running document.
+It is revised as the field develops, discussed in regular task force meetings, and versioned for citation.
+The live site always shows the current state; dated snapshots are available under [Releases](../releases/index.md).
 
-!!! note "In drafting"
-    The first set of practices is being written from task-force observation
-    of working groups. Until it lands, this page describes how the record
-    works. To propose a practice now, use the
-    [issue templates](https://github.com/slolab/aiforscience.eu/issues/new/choose).
+The practices run from the most general (decisions that hold across resources and institutions) to the most specific (per-use-case mechanics).
+
+## The practices
+
+<!-- BP_LIST -->
+<!-- The list above is generated from each BP page's frontmatter title by hooks/bp_list.py. Edit the title there, not here. -->
+
+See also the [Failures log](failures.md): cases where an attempt did not work, recorded alongside the recommendations.
 
 ## How practices are recorded
 
-Each practice gets a page with a uniform structure: the statement, why it
-matters, what it looks like in practice, and its sources. Metadata at the top
-of each page records the practice's review status and which organisations
-endorse it.
+Each practice has a page with the same structure: the statement, why it matters, what it looks like in practice, what it means for each audience, and its sources.
+Metadata at the top records the review status and which organisations endorse it.
+Practices link back to [library](../library/index.md) entries, which quote the source passages with locators.
+
+## How practices are gated
+
+The record keeps a small number of high-impact practices.
+A new one gets its own page only if it passes all of these:
+
+1. **Scope.** It changes how science is planned, performed, evaluated, communicated, or governed (the [mission](../about/mission.md) test).
+2. **Generality.** It applies across audiences or many resources, not to a single service.
+3. **Not a sub-case.** If it is a narrower version of an existing practice, it becomes a "what it looks like in practice" bullet on that page, not a new page.
+   This is the main way we avoid bloat.
+4. **Backed.** It is supported by an identified library entry or task-force observation.
+5. **Distinct action.** A reader could do something differently because of it.
+
+We merge rather than add.
+A source that agrees with an existing practice grounds it (a note and a citation) instead of creating a new one.
+A source with no bearing on practice is recorded as such, so the question is not reopened.
 
 ## Status legend
 

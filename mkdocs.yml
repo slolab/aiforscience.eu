@@ -6,6 +6,17 @@ repo_url: https://github.com/slolab/aiforscience.eu
 repo_name: slolab/aiforscience.eu
 edit_uri: edit/main/docs/
 
+# Individual library entries are reached from the Library overview page, not
+# the nav, so they do not bloat the sidebar. Keep them out of the not-in-nav
+# report.
+not_in_nav: |
+  /library/*-*.md
+
+# Watch the theme overrides too, so `mkdocs serve` hot-reloads edits to
+# header/footer and other templates, not only docs and mkdocs.yml.
+watch:
+  - overrides
+
 theme:
   name: material
   custom_dir: overrides
@@ -25,6 +36,11 @@ theme:
 plugins:
   - search
   - tags
+
+# Render each best-practice title from its frontmatter `title` (the overview
+# list and each page's H1), so the title is spelled once, in the BP file.
+hooks:
+  - hooks/bp_pages.py
 
 markdown_extensions:
   - admonition
@@ -48,10 +64,22 @@ nav:
   - Home: index.md
   - Best Practices:
       - Overview: best-practices/index.md
-      - "BP-00 Example practice (dummy)": best-practices/00-example-practice.md
-  - Library: library/index.md
-  - Glossary: glossary.md
-  - Releases: releases/index.md
+      # BP page labels come from each page's frontmatter `nav_title`
+      # (applied by hooks/bp_pages.py); only ordering lives here.
+      - best-practices/01-default-to-agent-accessibility.md
+      - best-practices/02-register-and-vet-interfaces.md
+      - best-practices/03-govern-autonomy-and-accountability.md
+      - best-practices/04-documentation-and-data-for-agents.md
+      - best-practices/05-design-around-user-tasks.md
+      - best-practices/06-provenance-and-citation.md
+      - best-practices/07-evaluate-tools-before-trust.md
+      - best-practices/08-human-in-the-loop.md
+      - best-practices/09-screen-dual-use-high-consequence.md
+      - "Failures log": best-practices/failures.md
+  - Background:
+      - Library: library/index.md
+      - Glossary: glossary.md
+      - Releases: releases/index.md
   - About:
       - Mission: about/mission.md
       - Partners: about/partners.md

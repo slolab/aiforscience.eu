@@ -39,7 +39,7 @@ Audiences: <practitioners | providers | governance, one or more>.
 
 ## Proposed changes to practices
 
-- [ ] <Concrete proposal, e.g. "Add this document as a source to BP-05.">
+- [ ] <Concrete proposal, e.g. "Add this document as a source to BP5.">
 - [ ] <...>
 
 ## Cautions and gaps

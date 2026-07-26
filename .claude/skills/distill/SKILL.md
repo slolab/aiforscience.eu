@@ -58,8 +58,8 @@ out of scope, say so in the Summary and keep the entry short.
    - **Proposed changes to practices**: a checkbox list of concrete edits the
      document justifies (new practice, changed wording, added source, status
      change). Where a proposal creates or reworks a practice, draft the
-     per-audience tab text ("What this means for you": Practitioners,
-     Providers, Governance) as part of the proposal. These are proposals for
+     per-audience tab text (the Practitioners, Providers, Governance tabs
+     shown directly under the practice statement) as part of the proposal. These are proposals for
      human review. Never apply them to the practice pages yourself in the
      same session unless the user asks.
    - **Cautions and gaps**: what the document does not support, framings to

@@ -18,8 +18,7 @@
 
     <div class="afs-header-nav" aria-label="Sections">
       <a href="{{ 'best-practices/' | url }}" {% if page and page.url.startswith('best-practices/') %}aria-current="page"{% endif %}>Best Practices</a>
-      <a href="{{ 'library/' | url }}" {% if page and page.url.startswith('library/') %}aria-current="page"{% endif %}>Library</a>
-      <a href="{{ 'releases/' | url }}" {% if page and page.url.startswith('releases/') %}aria-current="page"{% endif %}>Releases</a>
+      <a href="{{ 'library/' | url }}" {% if page and (page.url.startswith('library/') or page.url.startswith('glossary/') or page.url.startswith('releases/')) %}aria-current="page"{% endif %}>Background</a>
       <a href="{{ 'about/mission/' | url }}" {% if page and page.url.startswith('about/') %}aria-current="page"{% endif %}>About</a>
       <span class="afs-header-nav__sep" aria-hidden="true"></span>
       <a href="https://github.com/slolab/aiforscience.eu/discussions" target="_blank" rel="noopener noreferrer">

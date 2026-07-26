@@ -21,6 +21,12 @@ edit, and every AI-drafted distillation.
 - Neutral coalition voice. The site speaks for its contributors collectively,
   never for a single institution. No first-person institutional framing
   ("our institute", "our strategy").
+- One sentence per line. Author prose with one sentence per source line and no
+  fixed wrap width. Markdown collapses a single newline to a space, so this
+  changes only the source (cleaner diffs, easier edits), never the rendered
+  page. Keep a blank line between paragraphs; do not end a line with two
+  trailing spaces or a backslash (either forces a hard line break). Lists,
+  tables, and code blocks keep their own line structure.
 
 ## Content conventions
 
@@ -41,23 +47,28 @@ sources:
   - title: <source title>
     ref: <path under docs/, e.g. library/ec-expert-forum-2026.md, or URL>
     locator: "<section/page, e.g. §5.3, p. 28>"
-layer: Operational | Method | Ecosystem
+layer: Operational | Method | Ecosystem   # internal only for now: not shown on pages, not in tags, not explained
 hitl: mandatory | optional | in-process | final-check | n/a
-tags: [<audience roles, one or more: practitioner/provider/governance>, <layer, lowercase>, <status>]
+tags: [<audience roles, one or more: practitioner/provider/governance>, <status>]
 comments: true
 ---
 ```
 
 Body sections, in this order, all present:
 
-1. A metadata admonition at the top (status, endorsements, last reviewed).
-2. `## Statement` — the practice in two or three sentences.
-3. `## Why it matters`
-4. `## What it looks like in practice` — concrete examples.
-5. `## What this means for you` — three content tabs
+1. `## Practice` — the practice in two or three sentences, stated in
+   audience-neutral terms. Spell out in plain words what it applies to (for
+   example agents reaching databases, public endpoints, code, tools, and
+   documents). Keep audience-specific advice and the word "you" out of this
+   paragraph; that belongs in the tabs.
+2. Three content tabs directly under the practice paragraph, with no heading
    (`=== "Practitioners"`, `=== "Providers"`, `=== "Governance"`), each two
    to four sentences adapting the practice to that role. Keep all three tabs
    even when one is thin; say plainly when a role is barely affected.
+3. `## Reasons` — why the practice matters.
+4. `## Examples` — concrete examples of what it looks like in practice.
+5. A metadata admonition after the examples (status, endorsements, last
+   reviewed).
 6. `## Sources`
 7. `## Change history` — dated bullets, newest first. Git log is the full record.
 
