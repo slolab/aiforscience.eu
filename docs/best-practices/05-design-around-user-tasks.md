@@ -11,16 +11,16 @@ sources:
     ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, item 4; July 2026 discussion"
   - title: "Anthropic, Writing effective tools for agents (2025)"
-    ref: https://www.anthropic.com/engineering/writing-tools-for-agents
+    ref: library/ref-anthropic-writing-tools-2025.md
     locator: "avoid wrapping existing endpoints; consolidate into task tools"
   - title: "Anthropic, Code execution with MCP (2025)"
-    ref: https://www.anthropic.com/engineering/code-execution-with-mcp
+    ref: library/ref-anthropic-code-execution-mcp-2025.md
     locator: "token cost of per-endpoint tool use; progressive disclosure"
   - title: "Anthropic, Advanced tool use (2025)"
-    ref: https://www.anthropic.com/engineering/advanced-tool-use
+    ref: library/ref-anthropic-advanced-tool-use-2025.md
     locator: "tool-surface size vs selection accuracy and cost"
   - title: "Model Context Protocol specification"
-    ref: https://modelcontextprotocol.io
+    ref: library/ref-mcp-spec.md
     locator: "the interface substrate (MCP servers, tools)"
 layer: Method
 hitl: n/a
@@ -36,8 +36,11 @@ comments: true
 <div class="afs-practice" markdown>
 
 - An agent [interface](../glossary.md#interface) works best when it is built around the tasks a user wants to complete.
+  { #bp5-a1 }
 - Simply passing on pre-existing endpoints ("wrapping") is fast but often does not respect agent patterns.
+  { #bp5-a2 }
 - Wrapping an API one call at a time forces the [agent](../glossary.md#agent) to assemble each task itself, which is slow, costly, and error-prone.
+  { #bp5-a3 }
 
 </div>
 
@@ -83,12 +86,12 @@ Both need to know what users are trying to do, and providers often do not, so le
 ## Sources
 
 - [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice item 4, and the July 2026 discussion on providers' limited view of their users.
-- [Anthropic, Writing effective tools for agents (2025)](https://www.anthropic.com/engineering/writing-tools-for-agents).
+- [Anthropic, Writing effective tools for agents (2025)](../library/ref-anthropic-writing-tools-2025.md).
   Wrapping existing endpoints is a common error; build a few tools for high-impact workflows.
   Vendor-primary grounding for this practice.
-- [Anthropic, Code execution with MCP (2025)](https://www.anthropic.com/engineering/code-execution-with-mcp) and [Advanced tool use (2025)](https://www.anthropic.com/engineering/advanced-tool-use).
+- [Anthropic, Code execution with MCP (2025)](../library/ref-anthropic-code-execution-mcp-2025.md) and [Advanced tool use (2025)](../library/ref-anthropic-advanced-tool-use-2025.md).
   Quantify the token cost of per-endpoint tool use and the accuracy loss from a large tool surface; document progressive disclosure as the alternative remedy.
-- [Model Context Protocol specification](https://modelcontextprotocol.io).
+- [Model Context Protocol specification](../library/ref-mcp-spec.md).
   The interface substrate the practice is about.
 
 ## Change history

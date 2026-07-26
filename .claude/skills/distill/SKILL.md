@@ -66,8 +66,19 @@ out of scope, say so in the Summary and keep the entry short.
      avoid, honest limits.
 6. Add the entry to the table in `docs/library/index.md` and to the `nav`
    section of `mkdocs.yml`.
-7. If the source file was in `sources/inbox/`, delete it in the same branch.
-8. Run `uv run mkdocs build --strict` and fix anything it reports.
+7. **Reference works and provenance.** The library is the provenance store, so
+   every source used to model a practice must be findable in it. Distilled
+   documents are one tier; standards, papers, and guidance cited as point
+   support are the other. For each such reference, create a
+   `docs/library/ref-<slug>.md` from `reference-template.md` (bibliographic
+   record only; not in nav). When a source bears on a specific practice line,
+   add an edge to `docs/assets/provenance.yml` under that atom's id
+   (`bp<N>-a<k>`), giving `ref` (the `ref_id` or distilled-source slug),
+   `stance` (`supports`, `qualifies`, `contradicts`), and a `locator`/`quote`
+   where possible. Do not duplicate the atom-level stance in the reference file;
+   the reference file stays at practice-level.
+8. If the source file was in `sources/inbox/`, delete it in the same branch.
+9. Run `uv run mkdocs build --strict` and fix anything it reports.
 
 ## Style (hard rules)
 

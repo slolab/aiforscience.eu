@@ -14,16 +14,16 @@ sources:
     ref: library/hfd-agentic-ai-hochschulsystem-2026.md
     locator: "§4.1 and §6, hooks 3 and 11"
   - title: "EU AI Act, Article 14 (human oversight)"
-    ref: https://artificialintelligenceact.eu/article/14/
+    ref: library/ref-eu-ai-act.md
     locator: "oversight must be effective; automation bias named"
   - title: "NIST Generative AI Profile (AI 600-1, 2024)"
-    ref: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf
+    ref: library/ref-nist-ai-rmf.md
     locator: "oversight calibrated to risk"
   - title: "Elish, Moral Crumple Zones (Engaging Science, Technology, and Society, 2019)"
-    ref: https://estsjournal.org/index.php/ests/article/view/260
+    ref: library/ref-elish-2019.md
     locator: "the nominal human absorbs blame for uncontrollable systems"
   - title: "Green, The Flaws of Policies Requiring Human Oversight of Government Algorithms (2022)"
-    ref: https://arxiv.org/pdf/2109.05067
+    ref: library/ref-green-2022.md
     locator: "human-oversight mandates often fail to deliver"
 layer: Operational
 hitl: in-process
@@ -39,12 +39,17 @@ comments: true
 <div class="afs-practice" markdown>
 
 - Every [agent](../glossary.md#agent) use case should state its [human-in-the-loop](../glossary.md#hitl) (HITL) level plainly.
+  { #bp8-a1 }
 - HITL involvement can be mandatory or optional; it can range between tight in-process control and a mere final check.
+  { #bp8-a2 }
 - A workflow stating no HITL involvement means it has full autonomy.
+  { #bp8-a3 }
 - Left unstated, no one knows where a person is required and where the agent acts alone.
+  { #bp8-a4 }
 - Stating the level is necessary, but not sufficient: the check has to be designed so it actually works in deployment.
-  { .afs-practice__pivot }
+  { .afs-practice__pivot #bp8-a5 }
 - HITL engagement provenance should be recorded according to [BP6](06-provenance-and-citation.md).
+  { #bp8-a6 }
 
 </div>
 
@@ -99,9 +104,9 @@ Stating and enforcing HITL levels fulfils part of [BP3](03-govern-autonomy-and-a
 - [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice item 7.
 - [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §4.1 (explicit intervention points) and §6 (defined escalation and control).
   Consistent with, grounding only.
-- [EU AI Act, Article 14](https://artificialintelligenceact.eu/article/14/) and [NIST Generative AI Profile (AI 600-1)](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf).
+- [EU AI Act, Article 14](../library/ref-eu-ai-act.md) and [NIST Generative AI Profile (AI 600-1)](../library/ref-nist-ai-rmf.md).
   Oversight must be effective and calibrated to risk; Article 14 names automation bias as a hazard the overseer must be able to counter.
-- [Elish, Moral Crumple Zones (2019)](https://estsjournal.org/index.php/ests/article/view/260) and [Green, Flaws of Policies Requiring Human Oversight (2022)](https://arxiv.org/pdf/2109.05067).
+- [Elish, Moral Crumple Zones (2019)](../library/ref-elish-2019.md) and [Green, Flaws of Policies Requiring Human Oversight (2022)](../library/ref-green-2022.md).
   Evidence that human oversight frequently fails in practice; a stated level must be designed for effectiveness.
 
 ## Change history

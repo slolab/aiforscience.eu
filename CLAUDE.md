@@ -90,10 +90,35 @@ organisation or task force).
 
 ### Library pages (docs/library/)
 
-Distilled source documents. Produced by the `distill` skill
+The library is the provenance store for the practices. Everything used to model
+a practice (whether it supported, qualified, or contradicted a claim) must be
+findable here so a reader can check it. It has two tiers, one purpose.
+
+**Distilled sources** (`docs/library/<slug>.md`). Rich documents reduced into
+hooks and a practice mapping. Produced by the `distill` skill
 (.claude/skills/distill/). Follow .claude/skills/distill/template.md. Raw
 PDFs/docx are never committed; the distilled page with a full citation is the
 durable artifact. `sources/inbox/` is a transient staging area only.
+
+**Reference works** (`docs/library/ref-<slug>.md`). One file per standard,
+paper, report, or guidance cited as point support. Bibliographic record only:
+citation, type, stable link, a one-line "What it is", and a practice-level "Role
+in the record". Follow .claude/skills/distill/reference-template.md. The
+`ref_id` in the frontmatter is the join key. Both tiers are hidden from the nav
+by the `not_in_nav: /library/*-*.md` rule and reached from the practices, the
+library index, and the provenance data.
+
+**Provenance data** (`docs/assets/provenance.yml`). The atom-level for/against
+graph. Keyed by practice-atom id (`bp<N>-a<k>`) to a list of `{ref, stance,
+locator, quote}`, where `stance` is `supports`, `qualifies`, or `contradicts`
+and `ref` matches a `ref_id` or a distilled-source slug. This is the single
+source of truth for which sources bear on which practice line, and the data a
+future hover reads. Update it when an atom is added, split, reworded, or removed.
+
+**Practice atoms.** Each `## Practice` statement is written one sentence per
+line, wrapped in `<div class="afs-practice" markdown>` around a Markdown list.
+Give each atom a stable id with `attr_list` (`{ #bp<N>-a<k> }`), so provenance
+and the future hover can address it. Ids are stable handles, not tied to wording.
 
 ## Workflow
 

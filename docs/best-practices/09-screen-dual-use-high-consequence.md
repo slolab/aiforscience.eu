@@ -8,22 +8,22 @@ last_reviewed: 2026-07-26
 endorsed_by: []
 sources:
   - title: "METR, Common Elements of Frontier AI Safety Policies (2025)"
-    ref: https://metr.org/common-elements
+    ref: library/ref-metr-common-elements-2025.md
     locator: "shared capability-threshold structure across CBRN, cyber, autonomy"
   - title: "Frontier Model Forum, Components of Frontier AI Safety Frameworks"
-    ref: https://www.frontiermodelforum.org/updates/issue-brief-components-of-frontier-ai-safety-frameworks/
+    ref: library/ref-fmf-safety-frameworks.md
     locator: "CBRN, offensive cyber, automated AI R&D as high-consequence domains"
   - title: "Urbina et al., Dual use of AI-powered drug discovery (Nature Machine Intelligence 2022)"
-    ref: https://doi.org/10.1038/s42256-022-00465-9
+    ref: library/ref-urbina-dual-use-2022.md
     locator: "40,000 toxic molecules incl. VX generated in under 6 hours"
   - title: "Wittmann et al., Strengthening nucleic acid biosecurity screening against generative protein design (Science 2025)"
-    ref: https://doi.org/10.1126/science.adu8578
+    ref: library/ref-wittmann-biosecurity-2025.md
     locator: "AI-designed sequences evaded synthesis screening; patches restored detection"
   - title: "UK AI Security Institute, Frontier AI Trends (2025)"
-    ref: https://www.aisi.gov.uk/blog/5-key-findings-from-our-first-frontier-ai-trends-report
+    ref: library/ref-aisi-frontier-trends-2025.md
     locator: "cyber-offense capability rising toward expert level"
   - title: "US Government Policy for Oversight of Dual Use Research of Concern (OSTP 2024)"
-    ref: https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/05/USG-DURC-PEPP-Implementation-Guidance.pdf
+    ref: library/ref-usg-durc-2024.md
     locator: "codified DURC oversight (bio-scoped; under 2025 revision)"
 layer: Operational
 hitl: mandatory
@@ -39,9 +39,13 @@ comments: true
 <div class="afs-practice" markdown>
 
 - Some [agents](../glossary.md#agent) carry [dual-use](../glossary.md#dual-use) risk: they can be used for good or bad.
+  { #bp9-a1 }
 - For potential dual-use agents, screening is not optional.
+  { #bp9-a2 }
 - Before an agent is given reach into the world, its capability for misuse should be evaluated against set thresholds.
+  { #bp9-a3 }
 - Any high-consequence action an agent can take should pass through a screening chokepoint, with dual-use requests refused.
+  { #bp9-a4 }
 
 </div>
 
@@ -87,18 +91,18 @@ The evidence that the risk is real spans domains too: an AI model repurposed for
 
 ## Sources
 
-- [METR, Common Elements of Frontier AI Safety Policies (2025)](https://metr.org/common-elements) and [Frontier Model Forum, Components of Frontier AI Safety Frameworks](https://www.frontiermodelforum.org/updates/issue-brief-components-of-frontier-ai-safety-frameworks/).
+- [METR, Common Elements of Frontier AI Safety Policies (2025)](../library/ref-metr-common-elements-2025.md) and [Frontier Model Forum, Components of Frontier AI Safety Frameworks](../library/ref-fmf-safety-frameworks.md).
   Independent syntheses showing the capability-threshold structure spans CBRN, cyber, and autonomy, which is the evidence this is a generic category.
-- [Urbina et al., Dual use of AI-powered drug discovery (2022)](https://doi.org/10.1038/s42256-022-00465-9).
+- [Urbina et al., Dual use of AI-powered drug discovery (2022)](../library/ref-urbina-dual-use-2022.md).
   A toxicity model inverted to generate 40,000 toxic molecules, including VX, in under 6 hours.
   The sharpest non-life-science instance.
-- [Wittmann et al., Science (2025)](https://doi.org/10.1126/science.adu8578).
+- [Wittmann et al., Science (2025)](../library/ref-wittmann-biosecurity-2025.md).
   AI-designed sequences evaded nucleic-acid synthesis screening; patches restored detection.
   The life-science instance.
-- [UK AI Security Institute, Frontier AI Trends (2025)](https://www.aisi.gov.uk/blog/5-key-findings-from-our-first-frontier-ai-trends-report).
+- [UK AI Security Institute, Frontier AI Trends (2025)](../library/ref-aisi-frontier-trends-2025.md).
   Measured cyber-offense capability rising toward expert level.
   The cyber instance.
-- [US DURC oversight policy (OSTP 2024)](https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/05/USG-DURC-PEPP-Implementation-Guidance.pdf).
+- [US DURC oversight policy (OSTP 2024)](../library/ref-usg-durc-2024.md).
   A codified dual-use oversight instrument.
   Cited as a mature worked example; note it is scoped to the life sciences and under revision, so this practice is framed on the general concept, not on that instrument.
 

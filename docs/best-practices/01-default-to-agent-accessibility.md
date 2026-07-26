@@ -11,16 +11,16 @@ sources:
     ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, items 1 and 2"
   - title: "The FAIR Guiding Principles for scientific data management and stewardship (Wilkinson et al. 2016)"
-    ref: https://doi.org/10.1038/sdata.2016.18
+    ref: library/ref-fair-2016.md
     locator: "machine-actionability; Accessible principle (auth permitted)"
   - title: "The ELIXIR Core Data Resources (Drysdale et al. 2020)"
-    ref: https://doi.org/10.1093/bioinformatics/btz959
+    ref: library/ref-elixir-cdr-2020.md
     locator: "selection by demand and importance"
   - title: "The bio.tools registry of software tools and data resources (Ison et al. 2019)"
-    ref: https://doi.org/10.1186/s13059-019-1772-6
+    ref: library/ref-biotools-2019.md
     locator: "registry model for the long tail"
   - title: "COAR survey: the impact of AI bots and crawlers on open repositories (2025)"
-    ref: https://coar-repositories.org/wp-content/uploads/2025/06/Report-of-the-COAR-Survey-on-AI-Bots-June-2025-1.pdf
+    ref: library/ref-coar-ai-bots-2025.md
     locator: "load and the blocking dilemma"
 layer: Ecosystem
 hitl: n/a
@@ -36,13 +36,19 @@ comments: true
 <div class="afs-practice" markdown>
 
 - [Agents](../glossary.md#agent) use resources like humans do: databases, public endpoints, code, tools, and documents.
+  { #bp1-a1 }
 - Often, programmatic use by agents cannot be distinguished from human users.
+  { #bp1-a2 }
 - Resources should be machine-actionable and discoverable by default.
+  { #bp1-a3 }
 - Access should be governed by resource.
+  { #bp1-a4 }
 - However, not every resource needs its own maintained agent [interface](../glossary.md#interface).
-  { .afs-practice__pivot }
+  { .afs-practice__pivot #bp1-a5 }
 - How much effort to invest depends on how widely it is used and how important it is to the community.
+  { #bp1-a6 }
 - Sorting resources into types based on usage and importance can help prioritise maintenance effort.
+  { #bp1-a7 }
 
 </div>
 
@@ -99,15 +105,15 @@ The load that automated clients now place on open resources makes governed acces
 
 - [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice items 1 and 2.
   Provider stance and the resource typology.
-- [FAIR Guiding Principles (Wilkinson et al. 2016)](https://doi.org/10.1038/sdata.2016.18).
+- [FAIR Guiding Principles (Wilkinson et al. 2016)](../library/ref-fair-2016.md).
   Grounds machine-actionability as the general goal; the Accessible principle permits authentication, so "accessible" never meant "open without limit".
-- [ELIXIR Core Data Resources (Drysdale et al. 2020)](https://doi.org/10.1093/bioinformatics/btz959).
+- [ELIXIR Core Data Resources (Drysdale et al. 2020)](../library/ref-elixir-cdr-2020.md).
   A concrete demand-and-importance typology with the top tier funded as infrastructure.
   Life-science instance, cited as an example.
-- [bio.tools registry (Ison et al. 2019)](https://doi.org/10.1186/s13059-019-1772-6).
+- [bio.tools registry (Ison et al. 2019)](../library/ref-biotools-2019.md).
   The light generic path for the long tail.
   Life-science instance, cited as an example.
-- [COAR survey on AI bots and crawlers (2025)](https://coar-repositories.org/wp-content/uploads/2025/06/Report-of-the-COAR-Survey-on-AI-Bots-June-2025-1.pdf).
+- [COAR survey on AI bots and crawlers (2025)](../library/ref-coar-ai-bots-2025.md).
   Evidence that open resources face heavy automated load and that blunt blocking also blocks real users.
   Qualifies "default accessible" toward governed access.
 

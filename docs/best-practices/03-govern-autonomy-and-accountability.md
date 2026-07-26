@@ -14,28 +14,28 @@ sources:
     ref: library/ec-expert-forum-2026.md
     locator: "§4.2.3, hooks 1 and 3"
   - title: "NIST AI Risk Management Framework (AI 100-1, 2023) and Generative AI Profile (AI 600-1, 2024)"
-    ref: https://www.nist.gov/itl/ai-risk-management-framework
+    ref: library/ref-nist-ai-rmf.md
     locator: "GOVERN function; system inventory; stop-build authority"
   - title: "EU AI Act, Articles 14 and 26"
-    ref: https://artificialintelligenceact.eu/article/14/
+    ref: library/ref-eu-ai-act.md
     locator: "human oversight; deployer duties"
   - title: "OECD AI Principles (2019, updated 2024)"
-    ref: https://www.oecd.org/en/topics/ai-principles.html
+    ref: library/ref-oecd-ai-principles-2024.md
     locator: "accountability; traceability"
   - title: "ISO/IEC 42001:2023, AI management systems"
-    ref: https://www.iso.org/standard/81230.html
+    ref: library/ref-iso-42001-2023.md
     locator: "assigned accountability; AI system inventory; continual improvement"
   - title: "OpenAI, Practices for Governing Agentic AI Systems (2023)"
-    ref: https://cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf
+    ref: library/ref-openai-governing-agentic-ai-2023.md
     locator: "constraining the action space; human accountability; action ledger"
   - title: "Chan et al., Visibility into AI Agents (ACM FAccT 2024)"
-    ref: https://arxiv.org/abs/2401.13138
+    ref: library/ref-chan-visibility-2024.md
     locator: "agent identifiers, real-time monitoring, activity logging"
   - title: "Kolt, Governing AI Agents (Notre Dame Law Review, 2025)"
-    ref: https://arxiv.org/abs/2501.07913
+    ref: library/ref-kolt-governing-agents-2025.md
     locator: "accountability and control of agents"
   - title: "European Commission JRC, The Role of AI in Scientific Research (JRC143482, 2025)"
-    ref: https://publications.jrc.ec.europa.eu/repository/handle/JRC143482
+    ref: library/ref-jrc-ai-in-science-2025.md
     locator: "AI as tool; human accountability in science"
 layer: Ecosystem
 hitl: n/a
@@ -51,12 +51,17 @@ comments: true
 <div class="afs-practice" markdown>
 
 - An [agent's](../glossary.md#agent) limits ([guardrails](../glossary.md#guardrails)) belong in the system that runs it, not only in written policy.
+  { #bp3-a1 }
 - An agent cannot be talked into following a rule; it can only be stopped from taking an action.
+  { #bp3-a2 }
 - Limits have to be implemented in permission scopes, autonomy limits, and shutdown paths.
+  { #bp3-a3 }
 - Regardless of implemented safeguards, something can always go wrong.
-  { .afs-practice__pivot }
+  { .afs-practice__pivot #bp3-a4 }
 - Thus, every agent also needs a named human owner for each responsibility it carries.
+  { #bp3-a5 }
 - The agent's actions have to be logged under an attributable identity, so that accountability can be traced after the fact.
+  { #bp3-a6 }
 
 </div>
 
@@ -115,21 +120,21 @@ This is the consensus position across the main governance frameworks (NIST, the 
   That quotation is attributed in the source paper to "Kassorla et al. (2026)", a reference we could not verify as a published work; the underlying point is independently supported by the frameworks below, which is what this practice relies on.
 - [EU Expert Forum on Frontier AI (2026)](../library/ec-expert-forum-2026.md), §4.2.3 (independent audit, evaluation and verification capacity).
   Consistent with, grounding only.
-- [NIST AI RMF and Generative AI Profile](https://www.nist.gov/itl/ai-risk-management-framework).
+- [NIST AI RMF and Generative AI Profile](../library/ref-nist-ai-rmf.md).
   GOVERN roles and accountability, a documented system inventory, and stop-build authority.
-- [EU AI Act, Articles 14 and 26](https://artificialintelligenceact.eu/article/14/).
+- [EU AI Act, Articles 14 and 26](../library/ref-eu-ai-act.md).
   Named natural persons for oversight and deployer duties.
-- [OECD AI Principles (2024 update)](https://www.oecd.org/en/topics/ai-principles.html).
+- [OECD AI Principles (2024 update)](../library/ref-oecd-ai-principles-2024.md).
   Traceability placed under Accountability.
-- [ISO/IEC 42001:2023](https://www.iso.org/standard/81230.html).
+- [ISO/IEC 42001:2023](../library/ref-iso-42001-2023.md).
   Assigned accountability, an AI system inventory, and governance as continual improvement.
-- [OpenAI, Practices for Governing Agentic AI Systems (2023)](https://cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf).
+- [OpenAI, Practices for Governing Agentic AI Systems (2023)](../library/ref-openai-governing-agentic-ai-2023.md).
   Constraining the action space, human accountability, and an action ledger.
-- [Chan et al., Visibility into AI Agents (FAccT 2024)](https://arxiv.org/abs/2401.13138).
+- [Chan et al., Visibility into AI Agents (FAccT 2024)](../library/ref-chan-visibility-2024.md).
   Agent identifiers, real-time monitoring, and activity logging as the substrate of accountability.
-- [Kolt, Governing AI Agents (2025)](https://arxiv.org/abs/2501.07913).
+- [Kolt, Governing AI Agents (2025)](../library/ref-kolt-governing-agents-2025.md).
   Legal treatment of agent accountability and control.
-- [European Commission JRC, The Role of AI in Scientific Research (JRC143482, 2025)](https://publications.jrc.ec.europa.eu/repository/handle/JRC143482).
+- [European Commission JRC, The Role of AI in Scientific Research (JRC143482, 2025)](../library/ref-jrc-ai-in-science-2025.md).
   AI as a tool with human accountability in science.
   The HFD source attributes a "situated judgement is not automatable" claim to the JRC; we cite the JRC report for the accountability framing and do not attribute that exact wording to it without a located passage.
 

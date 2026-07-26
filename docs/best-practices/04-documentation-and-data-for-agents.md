@@ -14,19 +14,19 @@ sources:
     ref: library/hfd-agentic-ai-hochschulsystem-2026.md
     locator: "§3.3, hook 2"
   - title: "The FAIR Guiding Principles (Wilkinson et al. 2016)"
-    ref: https://doi.org/10.1038/sdata.2016.18
+    ref: library/ref-fair-2016.md
     locator: "machine-actionability as the founding motivation"
   - title: "W3C Data Catalog Vocabulary (DCAT) version 3 (2024 Recommendation)"
-    ref: https://www.w3.org/TR/vocab-dcat-3/
+    ref: library/ref-dcat3-2024.md
     locator: "machine-readable dataset metadata"
   - title: "Croissant: a metadata format for ML-ready datasets (MLCommons 2024)"
-    ref: https://mlcommons.org/working-groups/data/croissant/
+    ref: library/ref-croissant-2024.md
     locator: "schema.org-based dataset description"
   - title: "Datasheets for Datasets (Gebru et al. 2021)"
-    ref: https://doi.org/10.1145/3458723
+    ref: library/ref-datasheets-2021.md
     locator: "documented dataset provenance and intended use"
   - title: "Model Cards for Model Reporting (Mitchell et al. 2019)"
-    ref: https://doi.org/10.1145/3287560.3287596
+    ref: library/ref-model-cards-2019.md
     locator: "structured model documentation"
 layer: Method
 hitl: n/a
@@ -42,9 +42,13 @@ comments: true
 <div class="afs-practice" markdown>
 
 - Documentation, data, and metadata are now an [interface](../glossary.md#interface).
+  { #bp4-a1 }
 - An [agent](../glossary.md#agent) operates a tool or dataset from its tool description / metadata, docstrings, and docs.
+  { #bp4-a2 }
 - User- and agent-facing documentation needs to be precise, current, and published in context with meaning and examples.
+  { #bp4-a3 }
 - Precise documentation helps human users and agents alike.
+  { #bp4-a4 }
 
 </div>
 
@@ -96,9 +100,9 @@ This work also benefits the people who use the resource directly, and current an
 - [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice items 3 and 5.
 - [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §3.3 (research-agent source requirements).
   Consistent with, grounding only.
-- [FAIR Guiding Principles (Wilkinson et al. 2016)](https://doi.org/10.1038/sdata.2016.18).
+- [FAIR Guiding Principles (Wilkinson et al. 2016)](../library/ref-fair-2016.md).
   Machine-actionability as the founding motivation; agents make it concrete.
-- [W3C DCAT v3 (2024)](https://www.w3.org/TR/vocab-dcat-3/), [Croissant (MLCommons 2024)](https://mlcommons.org/working-groups/data/croissant/), [Datasheets for Datasets (Gebru et al. 2021)](https://doi.org/10.1145/3458723), and [Model Cards (Mitchell et al. 2019)](https://doi.org/10.1145/3287560.3287596).
+- [W3C DCAT v3 (2024)](../library/ref-dcat3-2024.md), [Croissant (MLCommons 2024)](../library/ref-croissant-2024.md), [Datasheets for Datasets (Gebru et al. 2021)](../library/ref-datasheets-2021.md), and [Model Cards (Mitchell et al. 2019)](../library/ref-model-cards-2019.md).
   Domain-neutral standards for machine-readable data and model documentation.
 
 ## Change history

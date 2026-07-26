@@ -17,19 +17,19 @@ sources:
     ref: library/ec-expert-forum-2026.md
     locator: "§4.2.3, hook 1"
   - title: "W3C PROV-O: the PROV Ontology (2013 Recommendation)"
-    ref: https://www.w3.org/TR/prov-o/
+    ref: library/ref-prov-o-2013.md
     locator: "machine-readable provenance"
   - title: "CRediT contributor roles taxonomy (ANSI/NISO Z39.104-2022)"
-    ref: https://credit.niso.org/
+    ref: library/ref-credit-2022.md
     locator: "machine-readable contribution attribution"
   - title: "ICMJE Recommendations and COPE position on AI and authorship (2023)"
-    ref: https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools
+    ref: library/ref-icmje-cope-2023.md
     locator: "AI cannot be an author; disclosure required; humans accountable"
   - title: "NISO CREC: Communication of Retractions, Removals, and Expressions of Concern (RP-45-2024)"
-    ref: https://www.niso.org/publications/rp-45-2024-crec
+    ref: library/ref-niso-crec-2024.md
     locator: "transmitting retraction status to machine and human readers"
   - title: "Crossref and the Retraction Watch database (open since 2023)"
-    ref: https://www.crossref.org/blog/news-crossref-and-retraction-watch
+    ref: library/ref-crossref-retraction-watch-2023.md
     locator: "machine-readable retraction data"
 layer: Method
 hitl: optional
@@ -45,7 +45,9 @@ comments: true
 <div class="afs-practice" markdown>
 
 - Any answer an [agent](../glossary.md#agent) gives should be traceable to its sources and open to audit.
+  { #bp6-a1 }
 - It should be clear what was done by a human and what by an agent.
+  { #bp6-a2 }
 
 </div>
 
@@ -100,11 +102,11 @@ A research agent has to pass citation and retraction status through to its outpu
   Consistent with, grounding only.
 - [EU Expert Forum on Frontier AI (2026)](../library/ec-expert-forum-2026.md), §4.2.3 (evaluation and verification rest on traceability).
   Consistent with, grounding only.
-- [W3C PROV-O (2013)](https://www.w3.org/TR/prov-o/) and [CRediT (ANSI/NISO Z39.104-2022)](https://credit.niso.org/).
+- [W3C PROV-O (2013)](../library/ref-prov-o-2013.md) and [CRediT (ANSI/NISO Z39.104-2022)](../library/ref-credit-2022.md).
   Machine-readable provenance and contribution attribution.
-- [ICMJE / COPE on AI and authorship (2023)](https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools).
+- [ICMJE / COPE on AI and authorship (2023)](../library/ref-icmje-cope-2023.md).
   AI cannot be an author; use must be disclosed; humans remain accountable.
-- [NISO CREC RP-45-2024](https://www.niso.org/publications/rp-45-2024-crec) and [Crossref / Retraction Watch](https://www.crossref.org/blog/news-crossref-and-retraction-watch).
+- [NISO CREC RP-45-2024](../library/ref-niso-crec-2024.md) and [Crossref / Retraction Watch](../library/ref-crossref-retraction-watch-2023.md).
   The standard and the open data for propagating retraction status.
 
 ## Change history

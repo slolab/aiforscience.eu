@@ -4,17 +4,96 @@ title: Library
 
 # Library
 
-Distilled source documents: strategy papers, policy reports, and institutional documents about agentic AI in science.
-Each entry summarises its source, quotes the passages that matter with section and page locators, and maps them to the [best practices](../best-practices/index.md).
-An entry can also ground a practice it agrees with, or note that a document has no bearing on practice, so the record does not carry redundant or off-scope material.
+The library is the provenance store for the [best practices](../best-practices/index.md).
+Everything used to model a practice, whether it supported, qualified, or
+contradicted a claim, is recorded here so a reader can check it. It has two
+tiers.
 
-Raw documents are not hosted here.
-Each entry carries a full citation to the original.
+**Distilled sources** are rich documents (strategy papers, policy reports,
+institutional documents) reduced into the passages that matter, with locators
+and a mapping to the practices. **Reference works** are the standards, papers,
+reports, and guidance cited as point support, each a short bibliographic record.
 
-## Entries
+Raw documents are not hosted here. Each entry carries a full citation to the
+original. The atom-level record of which source bears on which practice line, and
+whether it is for or against, lives in the provenance data (`assets/provenance.yml`).
+
+## Distilled sources
 
 | Document | Issuing body | Date | Role in the record |
 |---|---|---|---|
 | [ELIXIR TF Agentic AI: agenda and rolling best practice](elixir-tf-agentic-ai-2026.md) | ELIXIR Europe, AI Ecosystem Focus Group | 2026 | Main source for the provider-facing practices (BP1, BP2, BP4, BP5, BP6, BP8); also seeds BP7 (evaluation). |
 | [Agentic AI in the higher-education system](hfd-agentic-ai-hochschulsystem-2026.md) | Hochschulforum Digitalisierung / KI-Campus | May 2026 | Main source for the governance practice (BP3); grounds several others. |
 | [EU Expert Forum on Frontier AI](ec-expert-forum-2026.md) | European Commission, European AI Office | July 2026 | Largely out of scope; grounds BP2, BP3, BP6 on evaluation and choice. |
+
+## Reference works
+
+The standards, papers, and reports cited by the practices, grouped by theme.
+Each links to its bibliographic record.
+
+**Data and metadata standards**
+
+- [FAIR Guiding Principles (2016)](ref-fair-2016.md)
+- [ELIXIR Core Data Resources (2020)](ref-elixir-cdr-2020.md)
+- [bio.tools registry (2019)](ref-biotools-2019.md)
+- [W3C DCAT version 3 (2024)](ref-dcat3-2024.md)
+- [Croissant dataset metadata (2024)](ref-croissant-2024.md)
+- [Datasheets for Datasets (2021)](ref-datasheets-2021.md)
+- [Model Cards for Model Reporting (2019)](ref-model-cards-2019.md)
+
+**Provenance, citation, and retraction**
+
+- [W3C PROV-O (2013)](ref-prov-o-2013.md)
+- [CRediT contributor roles taxonomy (2022)](ref-credit-2022.md)
+- [ICMJE and COPE on AI and authorship (2023)](ref-icmje-cope-2023.md)
+- [NISO CREC (RP-45-2024)](ref-niso-crec-2024.md)
+- [Crossref and the Retraction Watch database (2023)](ref-crossref-retraction-watch-2023.md)
+- [Fabricated citations from LLMs (Walters & Wilder 2023)](ref-walters-wilder-2023.md)
+- [AI tools cite retracted papers (MIT Technology Review 2025)](ref-mit-tech-review-retracted-2025.md)
+
+**Governance and risk frameworks**
+
+- [NIST AI Risk Management Framework (2023, 2024)](ref-nist-ai-rmf.md)
+- [EU AI Act (2024)](ref-eu-ai-act.md)
+- [OECD AI Principles (2024)](ref-oecd-ai-principles-2024.md)
+- [ISO/IEC 42001:2023](ref-iso-42001-2023.md)
+- [OpenAI, Practices for Governing Agentic AI Systems (2023)](ref-openai-governing-agentic-ai-2023.md)
+- [Chan et al., Visibility into AI Agents (2024)](ref-chan-visibility-2024.md)
+- [Kolt, Governing AI Agents (2025)](ref-kolt-governing-agents-2025.md)
+- [JRC, The Role of AI in Scientific Research (2025)](ref-jrc-ai-in-science-2025.md)
+- [DeepMind, An Approach to Technical AGI Safety (2025)](ref-deepmind-agi-safety-2025.md)
+
+**Interface security and channels**
+
+- [OWASP Top 10 for LLM Applications 2025](ref-owasp-llm-top10-2025.md)
+- [OWASP MCP Top 10](ref-owasp-mcp-top10.md)
+- [Invariant Labs, MCP tool poisoning (2025)](ref-invariant-tool-poisoning-2025.md)
+- [Official MCP Registry (2025)](ref-mcp-registry-2025.md)
+- [IETF AIPREF vocabulary (draft)](ref-ietf-aipref.md)
+- [COAR survey on AI bots and crawlers (2025)](ref-coar-ai-bots-2025.md)
+
+**Agent-tool design**
+
+- [Anthropic, Writing effective tools for agents (2025)](ref-anthropic-writing-tools-2025.md)
+- [Anthropic, Code execution with MCP (2025)](ref-anthropic-code-execution-mcp-2025.md)
+- [Anthropic, Advanced tool use (2025)](ref-anthropic-advanced-tool-use-2025.md)
+- [Model Context Protocol specification](ref-mcp-spec.md)
+
+**Human oversight**
+
+- [Elish, Moral Crumple Zones (2019)](ref-elish-2019.md)
+- [Green, Flaws of Policies Requiring Human Oversight (2022)](ref-green-2022.md)
+
+**Evaluation**
+
+- [REFORMS reporting standards (2024)](ref-reforms-2024.md)
+- [NeurIPS Paper Checklist](ref-neurips-checklist.md)
+
+**Dual-use and frontier safety**
+
+- [METR, Common Elements of Frontier AI Safety Policies (2025)](ref-metr-common-elements-2025.md)
+- [Frontier Model Forum, Components of Frontier AI Safety Frameworks](ref-fmf-safety-frameworks.md)
+- [Urbina et al., Dual use of AI-powered drug discovery (2022)](ref-urbina-dual-use-2022.md)
+- [Wittmann et al., Nucleic-acid biosecurity screening (2025)](ref-wittmann-biosecurity-2025.md)
+- [UK AI Security Institute, Frontier AI Trends (2025)](ref-aisi-frontier-trends-2025.md)
+- [US policy for oversight of Dual Use Research of Concern (2024)](ref-usg-durc-2024.md)

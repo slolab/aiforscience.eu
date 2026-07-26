@@ -17,22 +17,22 @@ sources:
     ref: library/ec-expert-forum-2026.md
     locator: "§4.2.2, hook 2"
   - title: "OWASP Top 10 for LLM Applications 2025 (LLM01 Prompt Injection)"
-    ref: https://owasp.org/www-project-top-10-for-large-language-model-applications/
+    ref: library/ref-owasp-llm-top10-2025.md
     locator: "LLM01; supply-chain risks"
   - title: "OWASP MCP Top 10 (MCP03 Tool Poisoning)"
-    ref: https://owasp.org/www-project-mcp-top-10/
+    ref: library/ref-owasp-mcp-top10.md
     locator: "MCP03:2025 Tool Poisoning"
   - title: "Invariant Labs: MCP tool poisoning attacks (2025)"
-    ref: https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks
+    ref: library/ref-invariant-tool-poisoning-2025.md
     locator: "poisoned tool descriptions; rug pull"
   - title: "Official Model Context Protocol Registry (preview, 2025)"
-    ref: https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/
+    ref: library/ref-mcp-registry-2025.md
     locator: "listing of self-reported data; no security review"
   - title: "EU AI Act, Article 25 (responsibilities along the value chain)"
-    ref: https://artificialintelligenceact.eu/article/25/
+    ref: library/ref-eu-ai-act.md
     locator: "substantial modification; deployer becomes provider"
   - title: "IETF AIPREF: a vocabulary for expressing AI usage preferences (draft)"
-    ref: https://ietf-wg-aipref.github.io/drafts/draft-ietf-aipref-vocab.html
+    ref: library/ref-ietf-aipref.md
     locator: "machine-readable access preferences"
 layer: Ecosystem
 hitl: mandatory
@@ -48,13 +48,19 @@ comments: true
 <div class="afs-practice" markdown>
 
 - An [agent](../glossary.md#agent) reaches tools, data, and actions outside the model through [interfaces](../glossary.md#interface) (e.g., MCP servers, skills, plugins).
+  { #bp2-a1 }
 - Each interface runs code and acts for the user, so each is a point where risk enters.
+  { #bp2-a2 }
 - Interfaces should be published through a channel that lists and vets them.
+  { #bp2-a3 }
 - Listing makes an interface discoverable and records where it comes from and who maintains it.
+  { #bp2-a4 }
 - Vetting is a separate step; a discoverable interface is not automatically safe.
-  { .afs-practice__pivot }
+  { .afs-practice__pivot #bp2-a5 }
 - Public interfaces (e.g., public GitHub repositories) are generally vulnerable to prompt injection attacks.
+  { #bp2-a6 }
 - Safety and omnipotence are on a tradeoff; a system that can run arbitrary code (e.g., from web search) is vulnerable to injection – a system that cannot is less autonomous.
+  { #bp2-a7 }
 
 </div>
 
@@ -108,15 +114,15 @@ Knowing where an interface comes from, and keeping more than one option open, av
 - [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §5.2 to 5.3 (deployer-versus-provider, infrastructure as a governance point).
 - [EU Expert Forum on Frontier AI (2026)](../library/ec-expert-forum-2026.md), §4.2.2 (provider diversity and openness).
   Consistent with, grounding only.
-- [OWASP Top 10 for LLM Applications 2025](https://owasp.org/www-project-top-10-for-large-language-model-applications/) and [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/).
+- [OWASP Top 10 for LLM Applications 2025](../library/ref-owasp-llm-top10-2025.md) and [OWASP MCP Top 10](../library/ref-owasp-mcp-top10.md).
   Prompt injection (LLM01) and tool poisoning (MCP03) as the documented risks vetting guards against.
-- [Invariant Labs, tool poisoning attacks (2025)](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
+- [Invariant Labs, tool poisoning attacks (2025)](../library/ref-invariant-tool-poisoning-2025.md).
   How a poisoned tool description hides instructions from the user.
-- [Official MCP Registry (2025)](https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/).
+- [Official MCP Registry (2025)](../library/ref-mcp-registry-2025.md).
   Evidence that the official registry lists self-reported data and does not vet, so listing and vetting must be kept distinct.
-- [EU AI Act, Article 25](https://artificialintelligenceact.eu/article/25/).
+- [EU AI Act, Article 25](../library/ref-eu-ai-act.md).
   Substantial modification can move provider responsibility to whoever changed the system.
-- [IETF AIPREF vocabulary (draft)](https://ietf-wg-aipref.github.io/drafts/draft-ietf-aipref-vocab.html).
+- [IETF AIPREF vocabulary (draft)](../library/ref-ietf-aipref.md).
   Emerging machine-readable way to declare access preferences to automated clients.
 
 ## Change history

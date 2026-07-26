@@ -11,10 +11,10 @@ sources:
     ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Cautions and gaps (evaluation of skills/MCP servers as an open question)"
   - title: "REFORMS: consensus-based recommendations for machine-learning-based science (Science Advances 2024)"
-    ref: https://doi.org/10.1126/sciadv.adk3452
+    ref: library/ref-reforms-2024.md
     locator: "reporting standards for ML-based science"
   - title: "NeurIPS Paper Checklist / ML reproducibility checklist"
-    ref: https://neurips.cc/public/guides/PaperChecklist
+    ref: library/ref-neurips-checklist.md
     locator: "reproducibility and evaluation reporting"
 layer: Operational
 hitl: n/a
@@ -30,11 +30,15 @@ comments: true
 <div class="afs-practice" markdown>
 
 - Run task-specific benchmarks before giving an [agent](../glossary.md#agent) autonomy in your workflow.
+  { #bp7-a1 }
 - Before an AI system informs scientific work, it needs to prove its suitability for the task at hand.
+  { #bp7-a2 }
 - For LLM-driven systems, there is no good general proxy (e.g., leaderboards) for their correctness in individual applications.
+  { #bp7-a3 }
 - Benchmarking is separate from safety ([BP2](02-register-and-vet-interfaces.md)) and auditability ([BP6](06-provenance-and-citation.md)).
-  { .afs-practice__pivot }
+  { .afs-practice__pivot #bp7-a4 }
 - It is the adopter measuring a tool's performance on representative tasks and recording how it fails.
+  { #bp7-a5 }
 
 </div>
 
@@ -81,9 +85,9 @@ A tool that looks capable in a demo can be wrong in ways that only representativ
 ## Sources
 
 - [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Cautions and gaps: how to assess whether a skill or MCP server is useful and safe is recorded there as an open question and a candidate future practice.
-- [REFORMS reporting standards (Science Advances 2024)](https://doi.org/10.1126/sciadv.adk3452).
+- [REFORMS reporting standards (Science Advances 2024)](../library/ref-reforms-2024.md).
   Consensus reporting standards for machine-learning-based science.
-- [NeurIPS Paper Checklist](https://neurips.cc/public/guides/PaperChecklist).
+- [NeurIPS Paper Checklist](../library/ref-neurips-checklist.md).
   Reproducibility and evaluation reporting practice.
 
 ## Change history
