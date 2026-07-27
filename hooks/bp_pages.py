@@ -50,7 +50,11 @@ def _render_list(markdown, config):
             f'<span class="afs-bp-item__handle">{_handle(num)}</span>'
             f'<span class="afs-bp-item__title">{title}</span></a>'
         )
-    block = '<div class="afs-bp-list" markdown>\n\n' + "\n".join(items) + "\n\n</div>"
+    # Emit as raw HTML (no `markdown` attr, no blank lines) so the anchors stay
+    # direct children of the grid. With the markdown attr, Python-Markdown wraps
+    # the inline anchors in a single <p>, collapsing the grid to one child and
+    # killing the gap between items.
+    block = '<div class="afs-bp-list">\n' + "\n".join(items) + "\n</div>"
     return markdown.replace(LIST_PLACEHOLDER, block)
 
 
