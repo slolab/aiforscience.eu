@@ -29,6 +29,7 @@ whether it is for or against, lives in the provenance data (`assets/provenance.y
 | [The GenAI Divide](mit-genai-divide-2025.md) | MIT Project NANDA | July 2025 | Out-of-domain enterprise report; grounds BP01, BP06, BP08 on task fit, workflow design, and outcome-based evaluation; qualifies BP03. |
 | [Expectation–Realisation Gap for Agentic AI](expectation-realisation-gap-2026.md) | Lobentanzer (Helmholtz Munich) | February 2026 | Review of controlled trials on realised vs expected benefit; downweighted context (author is a contributor); grounds BP01 on heterogeneity and benefit planning, with optional context for BP06, BP08, BP09. |
 | [EU AI Omnibus](ai-omnibus-2026.md) | European Union | July 2026 | Largely out-of-scope regulatory simplification of the AI Act; grounds BP04 and BP10 on technical safeguards against foreseeable misuse, with context for BP03, BP08. |
+| [A safer framework for patient data in AI-for-Science grants](gagneur-rare-disease-patient-data-2026.md) | Gagneur (TU Munich) | July 2026 | Individual commentary on grant data terms; grounds BP04, BP02, BP09 on data-egress control, governed access, and effective oversight; flags a gap on controlled-access data in third-party training. |
 
 ## Reference works
 
