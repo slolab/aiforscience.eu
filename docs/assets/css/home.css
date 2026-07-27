@@ -713,6 +713,15 @@ body {
   line-height: 1.18;
 }
 
+.afs-trust-strip__note {
+  max-width: 32rem;
+  margin: -0.6rem auto 1.4rem;
+  color: #6f777c;
+  font-size: clamp(0.78rem, 1.2vw, 0.9rem);
+  font-weight: 300;
+  line-height: 1.35;
+}
+
 .afs-trust-strip__row {
   display: flex;
   flex-wrap: wrap;
