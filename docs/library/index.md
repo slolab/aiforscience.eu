@@ -27,6 +27,7 @@ whether it is for or against, lives in the provenance data (`assets/provenance.y
 | [EU Expert Forum on Frontier AI](ec-expert-forum-2026.md) | European Commission, European AI Office | July 2026 | Largely out of scope; grounds BP01, BP03, BP04, BP07 on method choice, evaluation, and provider choice. |
 | [ELIXIR AI strategy](elixir-ai-strategy-2026.md) | ELIXIR Europe | June 2026 | Largely organisational; grounds BP05, BP07, BP08 on curated data, provenance, and validation. |
 | [The GenAI Divide](mit-genai-divide-2025.md) | MIT Project NANDA | July 2025 | Out-of-domain enterprise report; grounds BP01, BP06, BP08 on task fit, workflow design, and outcome-based evaluation; qualifies BP03. |
+| [Expectation–Realisation Gap for Agentic AI](expectation-realisation-gap-2026.md) | Lobentanzer (Helmholtz Munich) | February 2026 | Review of controlled trials on realised vs expected benefit; downweighted context (author is a contributor); grounds BP01 on heterogeneity and benefit planning, with optional context for BP06, BP08, BP09. |
 
 ## Reference works
 
