@@ -740,6 +740,13 @@ body {
   white-space: nowrap;
 }
 
+.afs-trust-strip__logo {
+  display: block;
+  width: auto;
+  height: clamp(2.2rem, 4.5vw, 3rem);
+  object-fit: contain;
+}
+
 .afs-trust-strip__invite {
   color: var(--afs-accent-dark);
   font-size: 0.82rem;
