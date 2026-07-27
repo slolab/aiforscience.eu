@@ -1,0 +1,149 @@
+/**
+ * Provenance citation cards on practice atoms.
+ *
+ * Each atom `<li>` that has provenance carries a small chip pinned to the right
+ * edge of the atom box (rendered by hooks/provenance.py). Hovering the chip,
+ * focusing it, or clicking it (assets/js/provenance.js pins it) reveals a card
+ * listing the sources that support, qualify, or contradict that line, each
+ * linking into the library. The card opens leftward from the chip so it stays
+ * within the content column. Light-only, matching the site shell.
+ */
+
+/* Reserve a right-hand gutter on every atom so text never runs under the chip
+   and every chip sits at the same horizontal position. Wide enough for the
+   two-number chip ("N · M") plus a clear gap. */
+.md-typeset .afs-practice > ul > li {
+  padding-right: 3rem;
+}
+
+/* The chip: pinned to the top-right of the atom box. */
+.md-typeset .afs-cite {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.6rem;
+  margin: 0;
+}
+
+.md-typeset .afs-cite__toggle {
+  cursor: pointer;
+  font-size: 0.62rem;
+  line-height: 1;
+  font-weight: 700;
+  background: #fff;
+  border: 1px solid var(--afs-practice-line);
+  border-radius: 0.6rem;
+  padding: 0.12rem 0.45rem;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.md-typeset .afs-cite__toggle:hover,
+.md-typeset .afs-cite__toggle:focus-visible {
+  border-color: var(--afs-practice-accent);
+  box-shadow: 0 0 0 2px rgba(224, 129, 39, 0.18);
+  outline: none;
+}
+
+/* The two counts: green for support, red for opposition. */
+.md-typeset .afs-cite__n--for {
+  color: #1f7a4d;
+}
+.md-typeset .afs-cite__n--against {
+  color: #b23a3a;
+}
+.md-typeset .afs-cite__sep {
+  color: var(--afs-muted);
+  margin: 0 0.2rem;
+}
+
+.md-typeset .afs-cite__empty {
+  display: block;
+  color: var(--afs-muted);
+  font-style: italic;
+}
+
+/* The card. Hidden until the chip is hovered, focused, or pinned open. It is
+   anchored to the chip's right edge and grows leftward. */
+.md-typeset .afs-cite__card {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  left: auto;
+  z-index: 30;
+  width: max-content;
+  max-width: min(24rem, 80vw);
+  padding: 0.6rem 0.75rem;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  text-align: left;
+  color: var(--afs-ink);
+  background: var(--afs-card, #fff);
+  border: 1px solid var(--afs-line);
+  border-radius: 0.5rem;
+  box-shadow: var(--afs-shadow, 0 1rem 2.4rem rgba(15, 31, 38, 0.12));
+}
+
+/* Transparent bridge across the gap so moving the pointer from the chip into
+   the card does not drop the hover. */
+.md-typeset .afs-cite__card::before {
+  content: "";
+  position: absolute;
+  top: -0.35rem;
+  left: 0;
+  right: 0;
+  height: 0.35rem;
+}
+
+.md-typeset .afs-cite:hover .afs-cite__card,
+.md-typeset .afs-cite:focus-within .afs-cite__card,
+.md-typeset .afs-cite.is-open .afs-cite__card {
+  display: block;
+}
+
+.md-typeset .afs-cite__group + .afs-cite__group {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--afs-line);
+}
+
+.md-typeset .afs-cite__label {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.25rem;
+}
+
+.md-typeset .afs-cite__group--supports .afs-cite__label {
+  color: #1f7a4d;
+}
+.md-typeset .afs-cite__group--qualifies .afs-cite__label {
+  color: #b06a00;
+}
+.md-typeset .afs-cite__group--contradicts .afs-cite__label {
+  color: #b23a3a;
+}
+
+/* Scoped under .afs-cite__card to override Material's list indentation
+   (`.md-typeset ul { margin-left: .625em }` and `ul li { margin-left: 1.25em }`),
+   so the sources sit flush under their header. */
+.md-typeset .afs-cite__card .afs-cite__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.md-typeset .afs-cite__card .afs-cite__item {
+  margin: 0;
+  padding: 0;
+}
+
+.md-typeset .afs-cite__card .afs-cite__item + .afs-cite__item {
+  margin-top: 0.25rem;
+}
+
+.md-typeset .afs-cite__loc {
+  color: var(--afs-muted);
+  font-style: italic;
+}

@@ -41,6 +41,7 @@ plugins:
 # list and each page's H1), so the title is spelled once, in the BP file.
 hooks:
   - hooks/bp_pages.py
+  - hooks/provenance.py
 
 markdown_extensions:
   - admonition
@@ -59,6 +60,10 @@ markdown_extensions:
 extra_css:
   - assets/css/palette.css
   - assets/css/home.css
+  - assets/css/provenance.css
+
+extra_javascript:
+  - assets/js/provenance.js
 
 nav:
   - Home: index.md

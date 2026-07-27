@@ -31,13 +31,16 @@ bp1-a3:  # machine-actionable and discoverable by default
   - ref: elixir-tf-agentic-ai-2026
     stance: supports
     locator: "Best Practice item 1"
+  - ref: coar-ai-bots-2025
+    stance: qualifies
+    locator: "default openness invites heavy automated load"
 bp1-a4:  # access governed by resource
   - ref: fair-2016
     stance: supports
     locator: "Accessible principle permits authentication"
   - ref: coar-ai-bots-2025
-    stance: qualifies
-    locator: "automated load; blocking harms real users"
+    stance: supports
+    locator: "governed access needed; blocking-only also harms real users"
   - ref: elixir-ai-strategy-2026
     stance: supports
     locator: "§5, §7: controlled-access sensitive data via federated, privacy-preserving methods"
@@ -76,7 +79,7 @@ bp2-a3:  # publish through a channel that lists and vets
     locator: "Best Practice item 8"
 bp2-a5:  # vetting is separate; discoverable is not automatically safe
   - ref: mcp-registry-2025
-    stance: qualifies
+    stance: supports
     locator: "official registry lists self-reported data; runs no security review"
   - ref: owasp-mcp-top10
     stance: supports
@@ -254,11 +257,11 @@ bp8-a1:  # state the HITL level for each use case
     locator: "AI 600-1: oversight calibrated to risk"
 bp8-a5:  # stating a level is necessary but not sufficient
   - ref: elish-2019
-    stance: contradicts
-    locator: "moral crumple zones"
+    stance: supports
+    locator: "moral crumple zones: token oversight makes the human a scapegoat"
   - ref: green-2022
-    stance: contradicts
-    locator: "human-oversight mandates often fail"
+    stance: supports
+    locator: "human-oversight mandates often fail unless designed for effectiveness"
   - ref: eu-ai-act
     stance: supports
     locator: "Article 14 requires oversight to be effective; names automation bias"

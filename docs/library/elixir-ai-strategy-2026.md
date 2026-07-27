@@ -3,7 +3,7 @@ title: "ELIXIR AI strategy (2026)"
 source_type: strategy paper
 issuing_body: ELIXIR Europe
 published: June 2026 (version 1.0)
-doi_or_url: Public strategy document, "ELIXIR AI strategy: Ten priorities for life sciences research", June 2026, V1.0
+doi_or_url: 'Public strategy document, "ELIXIR AI strategy: Ten priorities for life sciences research", June 2026, V1.0'
 distilled_on: 2026-07-27
 status: draft
 tags: [library, agentic-ai]
