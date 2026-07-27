@@ -38,6 +38,7 @@ jobs:
           args: >-
             --no-progress
             --accept 200,201,204,206,301,302,303,307,308,403,429
+            --root-dir ${{ github.workspace }}/site
             --exclude 'https://aiforscience\.eu'
             'site/**/*.html'
           fail: true
