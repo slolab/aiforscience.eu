@@ -28,6 +28,9 @@ sources:
   - title: "US Government Policy for Oversight of Dual Use Research of Concern (OSTP 2024)"
     ref: library/ref-usg-durc-2024.md
     locator: "codified DURC oversight (bio-scoped; under 2025 revision)"
+  - title: "EU AI Omnibus (2026)"
+    ref: library/ai-omnibus-2026.md
+    locator: "Art 5(1a)(a)(ii); Recital 12 (provider safeguards against foreseeable prohibited output)"
 layer: Operational
 hitl: mandatory
 tags: [practitioner, provider, governance, draft]
@@ -111,9 +114,12 @@ The evidence that the risk is real spans domains too: an AI model repurposed for
 - [US DURC oversight policy (OSTP 2024)](../library/ref-usg-durc-2024.md).
   A codified dual-use oversight instrument.
   Cited as a mature worked example; note it is scoped to the life sciences and under revision, so this practice is framed on the general concept, not on that instrument.
+- [EU AI Omnibus (2026)](../library/ai-omnibus-2026.md), Art 5(1a)(a)(ii).
+  Obliges providers to build technical safeguards against reasonably foreseeable and reproducible prohibited output rather than rely on intent or policy, the same provider-safeguard logic as routing high-consequence actions through a screening chokepoint (bp10-a4).
 
 ## Change history
 
+- 2026-07-27: Added the EU AI Omnibus (2026) as a supporting source on bp10-a4 (provider safeguards against foreseeable prohibited output; Art 5(1a)).
 - 2026-07-27: Renumbered from BP09 to BP10 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including an anti-pattern (unscreened path); kept the labelled cross-field instances (life sciences, chemistry, cyber).
 - 2026-07-26: Created as a domain-neutral practice on screening agents for dual-use and high-consequence risk (the frontier-framework threshold-and- mitigation pattern), with life-science, chemistry, and cyber cases as labelled examples.

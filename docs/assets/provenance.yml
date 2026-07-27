@@ -159,6 +159,10 @@ bp4-a1:  # limits belong in the system, not only in policy
   - ref: elixir-ai-strategy-2026
     stance: supports
     locator: "§10 responsible AI embedded by design across all stages"
+  - ref: ai-omnibus-2026
+    stance: supports
+    locator: "Art 5(1a)(a)(ii); Recital 12"
+    quote: "provider liable where a prohibited output is a reasonably foreseeable and reproducible outcome absent reasonable and adequate technical safety measures and other safeguards"
 bp4-a2:  # an agent cannot be persuaded, only prevented
   - ref: openai-governing-agentic-ai-2023
     stance: supports
@@ -296,6 +300,10 @@ bp8-a2:  # prove suitability before informing scientific work
   - ref: elixir-tf-agentic-ai-2026
     stance: supports
     locator: "Cautions and gaps: evaluation as an open question"
+  - ref: ai-omnibus-2026
+    stance: qualifies
+    locator: "Art 4a; Recital 9"
+    quote: "conditional legal basis to process special-category data to detect and correct bias, subject to strict safeguards"
 bp8-a3:  # no good general proxy for correctness in individual use
   - ref: reforms-2024
     stance: supports
@@ -360,3 +368,7 @@ bp10-a4:  # high-consequence actions through a screening chokepoint
     locator: "codified dual-use oversight (bio-scoped; under revision)"
   - ref: metr-common-elements-2025
     stance: supports
+  - ref: ai-omnibus-2026
+    stance: supports
+    locator: "Art 5(1a)(a)(ii); Recital 12"
+    quote: "provider must build technical safeguards against reasonably foreseeable and reproducible prohibited output, not rely on intent or policy"
