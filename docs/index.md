@@ -10,9 +10,8 @@ hide:
 
 <section class="afs-section afs-section--intro" id="what">
   <div class="afs-section__header">
-    <p class="afs-kicker">What this is</p>
-    <h2>One shared record instead of siloed reports</h2>
-    <p>Practices are learned from working groups, distilled from institutional documents, and endorsed by the organisations that stand behind them.</p>
+    <h2>One shared record</h2>
+    <p>Practices come from the groups doing the work, with the organisations that back them named.</p>
   </div>
 
   <div class="afs-feature-grid">
@@ -74,9 +73,8 @@ hide:
 
 <section class="afs-section afs-section--audience" id="audience">
   <div class="afs-section__header">
-    <p class="afs-kicker">Who this is for</p>
-    <h2>Learned from pioneers, written for everyone building on their work</h2>
-    <p>The record watches early adopters and turns what holds up into guidance for three audiences. Every practice states what it means for each.</p>
+    <h2>Written for three audiences</h2>
+    <p>The record keeps what holds up in real use. Every practice states what it means for each audience.</p>
   </div>
 
   <div class="afs-audience-grid">
@@ -100,9 +98,8 @@ hide:
 
 <section class="afs-section afs-section--involved" id="involved">
   <div class="afs-section__header">
-    <p class="afs-kicker">Community</p>
     <h2>Ways to contribute</h2>
-    <p>Open for input, curated for output. Anyone can propose; editors merge.</p>
+    <p>Anyone can propose. Editors merge.</p>
   </div>
 
   <div class="afs-involved-grid">
