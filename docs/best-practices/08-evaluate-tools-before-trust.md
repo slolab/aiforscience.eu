@@ -19,6 +19,9 @@ sources:
   - title: "MIT Project NANDA, The GenAI Divide (2025)"
     ref: library/mit-genai-divide-2025.md
     locator: "§6.2 p.20 benchmark on operational outcomes, not model benchmarks"
+  - title: "EU AI Omnibus (2026)"
+    ref: library/ai-omnibus-2026.md
+    locator: "Art 4a; Recital 9 (conditional basis for special-category data in bias detection)"
 layer: Operational
 hitl: n/a
 tags: [practitioner, provider, governance, draft]
@@ -96,9 +99,12 @@ A tool that looks capable in a demo can be wrong in ways that only representativ
   Reproducibility and evaluation reporting practice.
 - [MIT Project NANDA, The GenAI Divide (2025)](../library/mit-genai-divide-2025.md).
   Enterprise field evidence that buyers who "benchmark tools on operational outcomes, not model benchmarks" succeed far more often; general benchmark scores do not predict fitness for a specific task (§6.2, pg. 20). Out-of-domain business report; cited as external context.
+- [EU AI Omnibus (2026)](../library/ai-omnibus-2026.md), Art 4a.
+  The amended AI Act sets a conditional legal basis for processing special-category data to detect and correct bias, an evaluation dimension, subject to strict safeguards (bp8-a2).
 
 ## Change history
 
+- 2026-07-27: Added the EU AI Omnibus (2026) as a qualifying source on bp8-a2 (conditional legal basis for special-category data in bias detection; Art 4a).
 - 2026-07-27: Added The GenAI Divide (MIT NANDA 2025) as a supporting source on outcome-based evaluation over benchmark scores (bp8-a3).
 - 2026-07-27: Renumbered from BP07 to BP08 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instance (REFORMS).

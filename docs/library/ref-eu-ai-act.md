@@ -20,6 +20,8 @@ comments: true
 
 The European Union regulation on artificial intelligence. It sets a risk-based classification with obligations for providers and deployers of high-risk systems.
 
+Amended in 2026 by the [AI Omnibus](ai-omnibus-2026.md) (Regulation (EU) 2026/1744): the AI literacy duty softened from "ensure" to "support" (Art 4), a new legal basis added for processing special-category data to detect and correct bias (Art 4a), and high-risk compliance dates postponed to 2 December 2027 (Annex III) and 2 August 2028 (Annex I).
+
 ## Role in the record
 
 - Grounds [BP03](../best-practices/03-register-and-vet-interfaces.md): Article 25 (a substantial modification can turn a deployer into a provider; framed for high-risk systems, threshold not yet fully defined).

@@ -19,6 +19,9 @@ sources:
   - title: "EU AI Act, Articles 14 and 26"
     ref: library/ref-eu-ai-act.md
     locator: "human oversight; deployer duties"
+  - title: "EU AI Omnibus (2026)"
+    ref: library/ai-omnibus-2026.md
+    locator: "Art 5(1a)(a)(ii); Recital 12 (foreseeable-misuse standard)"
   - title: "OECD AI Principles (2019, updated 2024)"
     ref: library/ref-oecd-ai-principles-2024.md
     locator: "accountability; traceability"
@@ -123,6 +126,8 @@ This is the consensus position across the main governance frameworks (NIST, the 
   GOVERN roles and accountability, a documented system inventory, and stop-build authority.
 - [EU AI Act, Articles 14 and 26](../library/ref-eu-ai-act.md).
   Named natural persons for oversight and deployer duties.
+- [EU AI Omnibus (2026)](../library/ai-omnibus-2026.md), Art 5(1a)(a)(ii).
+  A provider is responsible where a prohibited output is a reasonably foreseeable and reproducible outcome absent adequate technical safeguards, which places the limit in the system rather than in policy (bp4-a1).
 - [OECD AI Principles (2024 update)](../library/ref-oecd-ai-principles-2024.md).
   Traceability placed under Accountability.
 - [ISO/IEC 42001:2023](../library/ref-iso-42001-2023.md).
@@ -139,6 +144,7 @@ This is the consensus position across the main governance frameworks (NIST, the 
 
 ## Change history
 
+- 2026-07-27: Added the EU AI Omnibus (2026) as a supporting source on bp4-a1 (technical safeguards in the system, not policy; Art 5(1a) foreseeable-misuse standard).
 - 2026-07-27: Renumbered from BP03 to BP04 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns, replacing restatements of the practice.
 - 2026-07-26: Rewritten to merge action-logging and attributable agent identity into the practice, add independent grounding (NIST, EU AI Act, OECD, ISO/IEC 42001, OpenAI, Chan et al., Kolt), and add two citation caveats: the "guidelines to guardrails / Kassorla et al." attribution in the source could not be verified, and the JRC "not automatable" wording is unconfirmed.
