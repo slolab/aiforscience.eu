@@ -125,6 +125,7 @@ hide:
   </div>
 </section>
 
+<!-- Timeline section disabled for now; re-enable by removing these comment markers.
 <section class="afs-section afs-section--activity" id="activity">
   <div class="afs-section__header">
     <p class="afs-kicker">Status</p>
@@ -150,5 +151,6 @@ hide:
     </div>
   </div>
 </section>
+-->
 
 </div>
