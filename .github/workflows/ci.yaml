@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      - name: Check provenance integrity
+        run: uv run python scripts/check_provenance.py
+
       - name: Strict build
         run: uv run mkdocs build --strict
 
