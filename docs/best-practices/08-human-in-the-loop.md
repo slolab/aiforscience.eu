@@ -93,7 +93,7 @@ Stating and enforcing HITL levels fulfils part of [BP3](03-govern-autonomy-and-a
 - A pipeline has a mandatory "human approves each item" step, but at hundreds of items an hour the reviewer clicks approve without reading; the check exists on paper and fails in practice.
 - The check is designed so the human can actually judge: it shows what changed, at a realistic volume, with approve, edit, veto, and stop, and the strength of the check is set by the stakes.
 - The stated level is enforced by the system rather than left to habit, which ties it to the guardrails in [BP3](03-govern-autonomy-and-accountability.md), and the HITL engagement is recorded in provenance ([BP6](06-provenance-and-citation.md)) so oversight is auditable instead of assumed.
-- A reviewer uploads a confidential manuscript to an external model against the stated boundary of the conference for a high-stakes task. They submit the AI-generated review without declaring the AI use. The conference had inserted a prompt injection into their review version and catches the reviewer with the prompted output form. The reviewer is barred from conference participation for two years.
+- A reviewer uploads a confidential manuscript to an external model against the stated boundary of the conference for a high-stakes task. They submit the AI-generated review without declaring the AI use. The conference had inserted a [prompt injection](../glossary.md#prompt-injection) into their review version and catches the reviewer with the prompted output form. The reviewer is barred from conference participation for two years.
 
 !!! info "Practice metadata"
     **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·

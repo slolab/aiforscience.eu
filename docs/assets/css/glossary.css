@@ -1,0 +1,134 @@
+/* Glossary page. Scoped to .afs-glossary so it never touches def_lists
+   elsewhere. Palette variables live in home.css. */
+
+/* Selectors are prefixed with .md-typeset so they outrank Material's own
+   `.md-typeset dl dd` rules (which otherwise re-add the dd left margin). */
+.md-typeset .afs-glossary dl {
+  margin: 2rem 0 0;
+}
+
+/* Each term. Divider-separated entries, term set in the accent colour. */
+.md-typeset .afs-glossary dt {
+  margin: 0;
+  padding: 1.6rem 0 0;
+  border-top: 1px solid var(--afs-line);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--afs-accent-dark);
+  /* Keep the term clear of the sticky header when reached from an anchor. */
+  scroll-margin-top: 4.5rem;
+}
+
+.md-typeset .afs-glossary dl > dt:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+/* Definition body. Reset Material's default dd indent, add breathing room. */
+.md-typeset .afs-glossary dd {
+  margin: 0.35rem 0 1.6rem;
+  color: var(--afs-ink);
+}
+
+.md-typeset .afs-glossary dd :last-child {
+  margin-bottom: 0;
+}
+
+/* Highlight the entry that was linked to. dt:target styles the term; the
+   adjacent dd is its single definition block, so both light up together. */
+.md-typeset .afs-glossary dt:target,
+.md-typeset .afs-glossary dt:target + dd {
+  background: var(--afs-soft-2);
+  border-left: 3px solid var(--afs-accent);
+  animation: afs-glossary-flash 1.4s ease-out 1;
+}
+
+.md-typeset .afs-glossary dt:target {
+  margin-top: 1.6rem;
+  padding: 0.9rem 1rem 0.5rem;
+  border-top: 0;
+  border-radius: 6px 6px 0 0;
+}
+
+/* Close the gap to the term above so the two halves read as one box. */
+.md-typeset .afs-glossary dt:target + dd {
+  margin-top: 0;
+  padding: 0 1rem 0.9rem;
+  border-radius: 0 0 6px 6px;
+}
+
+.md-typeset .afs-glossary dt:target + dd :last-child {
+  margin-bottom: 0;
+}
+
+@keyframes afs-glossary-flash {
+  from {
+    background: var(--afs-practice-bg);
+    border-left-color: var(--afs-practice-accent);
+  }
+  to {
+    background: var(--afs-soft-2);
+    border-left-color: var(--afs-accent);
+  }
+}
+
+/* Glossary-term hover cards. Any link into the glossary (hooks/glossary_terms.py
+   wraps it in .afs-term) shows the term's definition on hover or focus. The link
+   stays a normal, clickable link; only the card is added. */
+.md-typeset .afs-term {
+  position: relative;
+}
+
+/* Dotted underline hints that the term carries a definition on hover. */
+.md-typeset .afs-term > a {
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+}
+
+.md-typeset .afs-term__card {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  z-index: 30;
+  width: max-content;
+  max-width: min(24rem, 90vw);
+  padding: 0.6rem 0.75rem;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: left;
+  color: var(--afs-ink);
+  background: var(--afs-card, #fff);
+  border: 1px solid var(--afs-line);
+  border-left: 3px solid var(--afs-accent);
+  border-radius: 0.5rem;
+  box-shadow: var(--afs-shadow, 0 1rem 2.4rem rgba(15, 31, 38, 0.12));
+}
+
+/* Transparent bridge across the gap so moving into the card keeps it open. */
+.md-typeset .afs-term__card::before {
+  content: "";
+  position: absolute;
+  top: -0.4rem;
+  left: 0;
+  right: 0;
+  height: 0.4rem;
+}
+
+.md-typeset .afs-term:hover .afs-term__card,
+.md-typeset .afs-term:focus-within .afs-term__card {
+  display: block;
+}
+
+.md-typeset .afs-term__title {
+  display: block;
+  font-weight: 700;
+  color: var(--afs-accent-dark);
+  margin-bottom: 0.2rem;
+}
+
+.md-typeset .afs-term__def {
+  display: block;
+  color: var(--afs-ink);
+}

@@ -99,7 +99,7 @@ This is the consensus position across the main governance frameworks (NIST, the 
 
 ## Examples
 
-- A policy document says the agent must not delete production records, but nothing in the system stops it; a prompt-injected instruction gets it to do exactly that.
+- A policy document says the agent must not delete production records, but nothing in the system stops it; a [prompt-injected](../glossary.md#prompt-injection) instruction gets it to do exactly that.
   The rule was written, not enforced.
 - The same agent runs with a scoped token that carries no delete permission and a shutdown control a named on-call engineer can trigger, so the injected instruction fails because the action was never available to it.
 - After an agent writes a wrong value to a shared dataset, the team traces it through the action ledger to the run, the model version, and the role that owned that workflow, and closes the gap.

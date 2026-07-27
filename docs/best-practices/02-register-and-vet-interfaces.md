@@ -47,7 +47,7 @@ comments: true
 
 <div class="afs-practice" markdown>
 
-- An [agent](../glossary.md#agent) reaches tools, data, and actions outside the model through [interfaces](../glossary.md#interface) (e.g., MCP servers, skills, plugins).
+- An [agent](../glossary.md#agent) reaches tools, data, and actions outside the model through [interfaces](../glossary.md#interface) (e.g., [MCP](../glossary.md#mcp) servers, skills, plugins).
   { #bp2-a1 }
 - Each interface runs code and acts for the user, so each is a point where risk enters.
   { #bp2-a2 }
@@ -57,7 +57,7 @@ comments: true
   { #bp2-a4 }
 - Vetting is a separate step; a discoverable interface is not automatically safe.
   { .afs-practice__pivot #bp2-a5 }
-- Public interfaces (e.g., public GitHub repositories) are generally vulnerable to prompt injection attacks.
+- Public interfaces (e.g., public GitHub repositories) are generally vulnerable to [prompt injection](../glossary.md#prompt-injection) attacks.
   { #bp2-a6 }
 - Safety and omnipotence are on a tradeoff; a system that can run arbitrary code (e.g., from web search) is vulnerable to injection – a system that cannot is less autonomous.
   { #bp2-a7 }

@@ -67,7 +67,7 @@ Registration and vetting ([BP2](02-register-and-vet-interfaces.md)) concern secu
 Evaluation (this practice) concerns accuracy and reliability at use time.
 Goodhart's law states that a metric that becomes the target ceases to be a good metric; LLM leaderboards today decide on highest-volume investments for frontier AI companies.
 Evaluation is the task of users, adopters, and community; only they know the task *and* possess the necessary stakes and incentives to desire an objective evaluation.
-The evidence is clear that this cannot be skipped: a single benchmark score does not predict deployment reliability, agents vary run to run, and confabulation is common.
+The evidence is clear that this cannot be skipped: a single benchmark score does not predict deployment reliability, agents vary run to run, and [confabulation](../glossary.md#confabulation) is common.
 A tool that looks capable in a demo can be wrong in ways that only representative testing reveals.
 
 ## Examples

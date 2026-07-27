@@ -39,7 +39,7 @@ comments: true
   { #bp1-a1 }
 - Often, programmatic use by agents cannot be distinguished from human users.
   { #bp1-a2 }
-- Resources should be machine-actionable and discoverable by default.
+- Resources should be [machine-actionable](../glossary.md#machine-actionable) and discoverable by default.
   { #bp1-a3 }
 - Access should be governed by resource.
   { #bp1-a4 }
