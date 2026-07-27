@@ -378,6 +378,17 @@ bp10-a3:  # evaluate misuse capability against set thresholds
   - ref: fmf-safety-frameworks
     stance: supports
     locator: "CBRN, cyber, autonomy as parallel domains"
+bp10-a5:  # revocable consent cannot authorise irreversible training
+  - ref: helsinki
+    stance: supports
+    locator: "voluntary participation; right to withdraw at any time"
+  - ref: gdpr
+    stance: supports
+    locator: "Art 7(3) right to withdraw consent; Art 17 right to erasure"
+  - ref: gagneur-rare-disease-patient-data-2026
+    stance: supports
+    locator: "no perpetual licence taken; analysis is not training permission"
+    quote: "Permission to analyse them does not imply permission to transfer them, or derived patient-level information, to a third party for model training or product development"
 bp10-a4:  # high-consequence actions through a screening chokepoint
   - ref: usg-durc-2024
     stance: supports

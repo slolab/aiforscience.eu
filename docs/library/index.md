@@ -112,3 +112,8 @@ Each links to its bibliographic record.
 - [UK AI Security Institute, Frontier AI Trends (2025)](ref-aisi-frontier-trends-2025.md)
 - [Autonomous agent breach of Hugging Face (2026)](ref-hf-openai-agent-breach-2026.md)
 - [US policy for oversight of Dual Use Research of Concern (2024)](ref-usg-durc-2024.md)
+
+**Research ethics and data protection**
+
+- [WMA Declaration of Helsinki (2024)](ref-helsinki-2024.md)
+- [EU General Data Protection Regulation (2016)](ref-gdpr-2016.md)

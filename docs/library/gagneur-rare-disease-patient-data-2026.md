@@ -71,7 +71,8 @@ Audiences: practitioners, providers, governance.
 | 6 | [BP02](../best-practices/02-default-to-agent-accessibility.md) (bp2-a4); context for [BP07](../best-practices/07-provenance-and-citation.md) | |
 
 No direct contradictions with the current practices.
-The article exposes a gap rather than a conflict: the record governs agent autonomy, access, and oversight, but has no explicit line on controlling what data an agent may send outward and keeping controlled-access data out of third-party training and retention.
+The article exposed a gap rather than a conflict: the record governed agent autonomy, access, and oversight, but had no explicit line on irreversible data commitments.
+That gap is now filled by [BP10](../best-practices/10-screen-dual-use-high-consequence.md) atom bp10-a5, which the article supports as adjacent evidence (the revocable-consent argument itself is grounded on the Declaration of Helsinki and GDPR, not on this commentary).
 
 ## Proposed changes to practices
 
@@ -80,10 +81,7 @@ These are proposals for editor review, not applied here.
 - [ ] Add `gagneur-rare-disease-patient-data-2026` as a supporting source on [BP04](../best-practices/04-govern-autonomy-and-accountability.md) (bp4-a1, bp4-a6): egress controls that prevent an agent from transmitting sensitive data, and audit of what the agent can access and send, are guardrails in the system.
 - [ ] Add it as a supporting source on [BP02](../best-practices/02-default-to-agent-accessibility.md) (bp2-a4): controlled-access data governed by local or approved secure processing.
 - [ ] Add it as a supporting source on [BP09](../best-practices/09-human-in-the-loop.md) (bp9-a5): a concrete case where approving agent-generated code without review defeats the stated oversight.
-- [ ] Consider a new atom or Examples bullet on [BP04](../best-practices/04-govern-autonomy-and-accountability.md) on data egress: an agent's outbound data should be constrained and auditable, and controlled-access data (with patient-level data as the labelled example) should be excluded from third-party model training and retention unless an agreement permits it. Draft tab text for editor review:
-    - **Practitioners:** Before you point an agent at sensitive or controlled-access data, know what it can read and where it can send it; agent-run code can transmit that data to an external service without a deliberate upload, so do not approve generated code you have not read.
-    - **Providers:** Give operators controls that constrain and log an agent's outbound data, keep controlled-access data in an approved environment, and offer terms that exclude it from training and retention; put those terms in a data-processing agreement.
-    - **Governance:** Require that agents handling controlled-access data run under enforced egress limits and audit, and that third-party processing and training of that data is barred unless an agreement allows it.
+- [x] Add a new atom on the irreversibility of data commitments. Done as [BP10](../best-practices/10-screen-dual-use-high-consequence.md) bp10-a5: data under withdrawable consent cannot be authorised for third-party model training or a perpetual licence, grounded on the Declaration of Helsinki and GDPR with this commentary as adjacent support.
 - [ ] Optionally add a reference entry for Anthropic's AI-for-Science rare-disease grants as the program the critique responds to.
 
 ## Cautions and gaps
