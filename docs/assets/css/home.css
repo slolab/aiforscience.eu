@@ -1033,6 +1033,21 @@ body {
   margin-bottom: 0;
 }
 
+/* Only the governance card links onward, to the decision-makers' digest. */
+.afs-audience-card__link {
+  display: inline-block;
+  margin-top: 0.7rem;
+  color: var(--afs-accent-dark);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.afs-audience-card__link:hover,
+.afs-audience-card__link:focus-visible {
+  text-decoration: underline;
+}
+
 /* Involved section (dark band). */
 
 .afs-section--involved {

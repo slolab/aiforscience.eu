@@ -92,6 +92,7 @@ hide:
       <span>Governance</span>
       <h3>Set the frame</h3>
       <p>Scientific management, from institute leadership to head offices and funders: what to enable, what to require, and what to resource.</p>
+      <a class="afs-audience-card__link" href="for-decision-makers/">The decision-makers' digest →</a>
     </article>
   </div>
 </section>

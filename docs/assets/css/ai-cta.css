@@ -1,0 +1,70 @@
+/**
+ * "Ask your own assistant" call-to-action, used on the decision-makers digest.
+ * Reuses the site design tokens from home.css (--afs-*) so the block reads as
+ * native on a light content page. This is the reusable slot a future grounded
+ * Q&A widget would occupy.
+ */
+
+.afs-ai-cta {
+  margin: 1.5rem 0 0.5rem;
+  padding: 1.15rem 1.25rem;
+  background: var(--afs-soft);
+  border: 1px solid var(--afs-line);
+  border-radius: 0.7rem;
+}
+
+.afs-ai-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.afs-ai-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.05rem;
+  border: 1px solid var(--afs-accent);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--afs-accent-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease,
+    border-color 140ms ease, transform 140ms ease;
+}
+
+.afs-ai-cta__btn--primary {
+  background: var(--afs-accent);
+  border-color: var(--afs-accent);
+  color: #ffffff;
+}
+
+.afs-ai-cta__btn:hover,
+.afs-ai-cta__btn:focus-visible {
+  background: var(--afs-accent-dark);
+  border-color: var(--afs-accent-dark);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Brief confirmation state for the copy button, toggled by ai_cta.js. */
+.afs-ai-cta__btn[data-afs-copied="true"] {
+  background: var(--afs-accent-dark);
+  border-color: var(--afs-accent-dark);
+  color: #ffffff;
+}
+
+.afs-ai-cta__note {
+  margin: 0.85rem 0 0;
+  color: var(--afs-muted);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.afs-ai-cta__note a {
+  color: var(--afs-accent-dark);
+}

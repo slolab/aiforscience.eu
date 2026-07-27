@@ -43,6 +43,9 @@ hooks:
   - hooks/bp_pages.py
   - hooks/provenance.py
   - hooks/glossary_terms.py
+  # Emit llms.txt, llms-full.txt and per-page .md mirrors. Last, so it captures
+  # the same Markdown the pages render from (BP titles already substituted).
+  - hooks/llms_txt.py
 
 markdown_extensions:
   - admonition
@@ -63,12 +66,15 @@ extra_css:
   - assets/css/home.css
   - assets/css/provenance.css
   - assets/css/glossary.css
+  - assets/css/ai-cta.css
 
 extra_javascript:
   - assets/js/provenance.js
+  - assets/js/ai_cta.js
 
 nav:
   - Home: index.md
+  - "For decision-makers": for-decision-makers/index.md
   - Best Practices:
       - Overview: best-practices/index.md
       # BP page labels come from each page's frontmatter `nav_title`
