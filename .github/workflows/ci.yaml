@@ -26,14 +26,8 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      - name: Check provenance integrity
+        run: uv run python scripts/check_provenance.py
+
       - name: Strict build
         run: uv run mkdocs build --strict
-
-      - name: Check external links
-        uses: lycheeverse/lychee-action@v2
-        with:
-          args: >-
-            --no-progress
-            --accept 200,201,204,206,301,302,303,307,308,403,429
-            'site/**/*.html'
-          fail: true

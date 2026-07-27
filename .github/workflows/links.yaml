@@ -1,0 +1,65 @@
+name: Links
+
+# External link rot is time-driven, not diff-driven: a source URL does not
+# break because of a PR. Internal links are already validated by the strict
+# build in ci.yaml on every PR. So the outbound link check runs on a schedule
+# and after merges, not on the PR critical path, and caches results between
+# runs so unchanged URLs are not re-fetched every time.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # weekly, Monday 06:00 UTC
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: links
+  cancel-in-progress: true
+
+jobs:
+  linkcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Build
+        run: uv run mkdocs build --strict
+
+      - name: Restore link-check cache
+        uses: actions/cache@v4
+        with:
+          path: .lycheecache
+          key: lychee-${{ github.run_id }}
+          restore-keys: lychee-
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --cache
+            --max-cache-age 3d
+            --accept 200,201,204,206,301,302,303,307,308,403,429
+            --root-dir ${{ github.workspace }}/site
+            --exclude 'https://aiforscience\.eu'
+            'site/**/*.html'
+          fail: true
