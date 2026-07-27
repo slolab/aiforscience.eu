@@ -6,7 +6,7 @@ issuing_body: "UK AI Security Institute"
 published: 2025
 doi_or_url: https://www.aisi.gov.uk/blog/5-key-findings-from-our-first-frontier-ai-trends-report
 added_on: 2026-07-27
-grounds: [BP-09]
+grounds: [BP-10]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ The first frontier AI trends report from the UK AI Security Institute. It measur
 
 ## Role in the record
 
-- Grounds [BP9](../best-practices/09-screen-dual-use-high-consequence.md): the cyber instance, with measured cyber-offense capability rising toward expert level.
+- Grounds [BP10](../best-practices/10-screen-dual-use-high-consequence.md): the cyber instance, with measured cyber-offense capability rising toward expert level.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

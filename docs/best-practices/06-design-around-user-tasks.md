@@ -1,7 +1,7 @@
 ---
 title: Design agent interfaces around user tasks, not raw endpoints
-nav_title: "BP5 User-centric design"
-practice_id: BP-05
+nav_title: "BP06 User-centric design"
+practice_id: BP-06
 status: draft
 first_added: 2026-07-25
 last_reviewed: 2026-07-26
@@ -36,11 +36,11 @@ comments: true
 <div class="afs-practice" markdown>
 
 - An agent [interface](../glossary.md#interface) works best when it is built around the tasks a user wants to complete.
-  { #bp5-a1 }
+  { #bp6-a1 }
 - Simply passing on pre-existing endpoints ("wrapping") is fast but often does not respect agent patterns.
-  { #bp5-a2 }
+  { #bp6-a2 }
 - Wrapping an API one call at a time forces the [agent](../glossary.md#agent) to assemble each task itself, which is slow, costly, and error-prone.
-  { #bp5-a3 }
+  { #bp6-a3 }
 
 </div>
 
@@ -96,6 +96,7 @@ Both need to know what users are trying to do, and providers often do not, so le
 
 ## Change history
 
+- 2026-07-27: Renumbered from BP05 to BP06 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including an anti-pattern, replacing restatements of the practice.
 - 2026-07-26: Rewritten to add vendor-primary grounding (the Anthropic tool-design guidance, with quantified evidence) and to note the two accepted remedies to endpoint-wrapping (task-level tools and code execution for very large APIs).
   "Providers don't know their users" kept as stated judgement.

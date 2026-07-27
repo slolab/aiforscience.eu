@@ -6,7 +6,7 @@ issuing_body: "Anthropic"
 published: 2025
 doi_or_url: https://www.anthropic.com/engineering/code-execution-with-mcp
 added_on: 2026-07-27
-grounds: [BP-05]
+grounds: [BP-06]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ Engineering guidance on using code execution with MCP. It measures the token cos
 
 ## Role in the record
 
-- Grounds [BP5](../best-practices/05-design-around-user-tasks.md): quantifies the token cost of per-endpoint tool use; progressive disclosure as an alternative remedy.
+- Grounds [BP06](../best-practices/06-design-around-user-tasks.md): quantifies the token cost of per-endpoint tool use; progressive disclosure as an alternative remedy.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

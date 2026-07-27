@@ -73,15 +73,16 @@ nav:
       - Overview: best-practices/index.md
       # BP page labels come from each page's frontmatter `nav_title`
       # (applied by hooks/bp_pages.py); only ordering lives here.
-      - best-practices/01-default-to-agent-accessibility.md
-      - best-practices/02-register-and-vet-interfaces.md
-      - best-practices/03-govern-autonomy-and-accountability.md
-      - best-practices/04-documentation-and-data-for-agents.md
-      - best-practices/05-design-around-user-tasks.md
-      - best-practices/06-provenance-and-citation.md
-      - best-practices/07-evaluate-tools-before-trust.md
-      - best-practices/08-human-in-the-loop.md
-      - best-practices/09-screen-dual-use-high-consequence.md
+      - best-practices/01-match-method-to-task.md
+      - best-practices/02-default-to-agent-accessibility.md
+      - best-practices/03-register-and-vet-interfaces.md
+      - best-practices/04-govern-autonomy-and-accountability.md
+      - best-practices/05-documentation-and-data-for-agents.md
+      - best-practices/06-design-around-user-tasks.md
+      - best-practices/07-provenance-and-citation.md
+      - best-practices/08-evaluate-tools-before-trust.md
+      - best-practices/09-human-in-the-loop.md
+      - best-practices/10-screen-dual-use-high-consequence.md
       - "Failures log": best-practices/failures.md
   - Background:
       - Library: library/index.md

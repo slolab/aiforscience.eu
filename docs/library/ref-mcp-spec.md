@@ -6,7 +6,7 @@ issuing_body: "Model Context Protocol project"
 published: "n.d."
 doi_or_url: https://modelcontextprotocol.io
 added_on: 2026-07-27
-grounds: [BP-02, BP-05]
+grounds: [BP-03, BP-06]
 tags: [library, reference]
 comments: true
 ---
@@ -22,7 +22,7 @@ The specification for the Model Context Protocol. It defines MCP servers and too
 
 ## Role in the record
 
-- Grounds [BP2](../best-practices/02-register-and-vet-interfaces.md): the interface substrate that registration and vetting practices concern.
-- Grounds [BP5](../best-practices/05-design-around-user-tasks.md): the interface substrate that the design practice concerns.
+- Grounds [BP03](../best-practices/03-register-and-vet-interfaces.md): the interface substrate that registration and vetting practices concern.
+- Grounds [BP06](../best-practices/06-design-around-user-tasks.md): the interface substrate that the design practice concerns.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

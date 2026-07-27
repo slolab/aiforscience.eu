@@ -22,15 +22,23 @@ whether it is for or against, lives in the provenance data (`assets/provenance.y
 
 | Document | Issuing body | Date | Role in the record |
 |---|---|---|---|
-| [ELIXIR TF Agentic AI: agenda and rolling best practice](elixir-tf-agentic-ai-2026.md) | ELIXIR Europe, AI Ecosystem Focus Group | 2026 | Main source for the provider-facing practices (BP1, BP2, BP4, BP5, BP6, BP8); also seeds BP7 (evaluation). |
-| [Agentic AI in the higher-education system](hfd-agentic-ai-hochschulsystem-2026.md) | Hochschulforum Digitalisierung / KI-Campus | May 2026 | Main source for the governance practice (BP3); grounds several others. |
-| [EU Expert Forum on Frontier AI](ec-expert-forum-2026.md) | European Commission, European AI Office | July 2026 | Largely out of scope; grounds BP2, BP3, BP6 on evaluation and choice. |
-| [ELIXIR AI strategy](elixir-ai-strategy-2026.md) | ELIXIR Europe | June 2026 | Largely organisational; grounds BP4, BP6, BP7 on curated data, provenance, and validation. |
+| [ELIXIR TF Agentic AI: agenda and rolling best practice](elixir-tf-agentic-ai-2026.md) | ELIXIR Europe, AI Ecosystem Focus Group | 2026 | Main source for the provider-facing practices (BP02, BP03, BP05, BP06, BP07, BP09); also seeds BP08 (evaluation). |
+| [Agentic AI in the higher-education system](hfd-agentic-ai-hochschulsystem-2026.md) | Hochschulforum Digitalisierung / KI-Campus | May 2026 | Main source for the governance practice (BP04); grounds several others. |
+| [EU Expert Forum on Frontier AI](ec-expert-forum-2026.md) | European Commission, European AI Office | July 2026 | Largely out of scope; grounds BP01, BP03, BP04, BP07 on method choice, evaluation, and provider choice. |
+| [ELIXIR AI strategy](elixir-ai-strategy-2026.md) | ELIXIR Europe | June 2026 | Largely organisational; grounds BP05, BP07, BP08 on curated data, provenance, and validation. |
+| [The GenAI Divide](mit-genai-divide-2025.md) | MIT Project NANDA | July 2025 | Out-of-domain enterprise report; grounds BP01, BP06, BP08 on task fit, workflow design, and outcome-based evaluation; qualifies BP03. |
 
 ## Reference works
 
 The standards, papers, and reports cited by the practices, grouped by theme.
 Each links to its bibliographic record.
+
+**Method selection**
+
+- [Building Effective AI Agents (Anthropic 2024)](ref-anthropic-building-effective-agents-2024.md)
+- [AI Agents That Matter (Kapoor et al. 2024)](ref-kapoor-agents-that-matter-2024.md)
+- [Fine-tuned small LLMs beat zero-shot frontier models (Bucher & Martini 2024)](ref-bucher-fine-tuned-2024.md)
+- [Leakage and the reproducibility crisis in ML-based science (Kapoor & Narayanan 2023)](ref-kapoor-narayanan-leakage-2023.md)
 
 **Data and metadata standards**
 

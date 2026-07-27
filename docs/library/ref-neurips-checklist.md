@@ -6,7 +6,7 @@ issuing_body: "NeurIPS"
 published: "n.d."
 doi_or_url: https://neurips.cc/public/guides/PaperChecklist
 added_on: 2026-07-27
-grounds: [BP-07]
+grounds: [BP-08]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A checklist authors complete for NeurIPS submissions. It covers reproducibility 
 
 ## Role in the record
 
-- Grounds [BP7](../best-practices/07-evaluate-tools-before-trust.md): reproducibility and evaluation reporting practice.
+- Grounds [BP08](../best-practices/08-evaluate-tools-before-trust.md): reproducibility and evaluation reporting practice.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

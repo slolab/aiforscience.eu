@@ -19,6 +19,8 @@ Agentic AI { #agentic-ai }
 :   The use of agents for real work.
     In science: literature triage, data analysis, coding, drafting.
     The subject of this record.
+    Distinct from AI used as a scientific instrument (a predictor, a generative model, a classifier), which has its own established norms.
+    The record treats an agent or model as a method chosen for a task rather than a default, and cites those norms rather than restating them (see [Match the method to the task](best-practices/01-match-method-to-task.md)).
 
 Best practice { #best-practice }
 :   A numbered, versioned statement of what works, written as an imperative.
@@ -38,7 +40,7 @@ Distillation { #distillation }
 
 Dual use { #dual-use }
 :   Knowledge, tools, or capabilities that serve legitimate research and can also be turned to serious harm, for example designing a toxin, uplifting a cyberattack, or enhancing a pathogen.
-    A dual-use request to an agent is one whose output could enable such harm, which is why high-consequence capabilities are screened (see [Screen agents for dual-use and high-consequence risk](best-practices/09-screen-dual-use-high-consequence.md)).
+    A dual-use request to an agent is one whose output could enable such harm, which is why high-consequence capabilities are screened (see [Screen agents for dual-use and high-consequence risk](best-practices/10-screen-dual-use-high-consequence.md)).
 
 Endorsement { #endorsement }
 :   A named organisation's formal backing of a practice.
@@ -47,7 +49,7 @@ Endorsement { #endorsement }
 Guardrails { #guardrails }
 :   Limits on what an agent can do, enforced by the system that runs it rather than stated only in policy.
     They take the form of permission scopes, autonomy limits, stop and escalation conditions, and shutdown paths.
-    An agent cannot be talked out of a guardrail; it can only be stopped from taking the action (see [Govern agent autonomy and accountability](best-practices/03-govern-autonomy-and-accountability.md)).
+    An agent cannot be talked out of a guardrail; it can only be stopped from taking the action (see [Govern agent autonomy and accountability](best-practices/04-govern-autonomy-and-accountability.md)).
 
 Harness { #harness }
 :   Everything in an agent except the language model itself: the loop that runs it, the tools and [interfaces](#interface) it can call, and the connections to outside systems.
@@ -59,7 +61,7 @@ Human in the loop (HITL) { #hitl }
 
 Interface { #interface }
 :   A component added to an agent's [harness](#harness) so it can reach a tool, data source, or action outside the model, for example an [MCP](#mcp) server, a skill, or a plugin.
-    An interface runs code and acts for the user, so it is where much of the risk enters, which is why interfaces are registered and vetted (see [Register, vet, and manage agent interfaces](best-practices/02-register-and-vet-interfaces.md)).
+    An interface runs code and acts for the user, so it is where much of the risk enters, which is why interfaces are registered and vetted (see [Register, vet, and manage agent interfaces](best-practices/03-register-and-vet-interfaces.md)).
 
 Living record { #living-record }
 :   This site.

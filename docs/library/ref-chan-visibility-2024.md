@@ -6,7 +6,7 @@ issuing_body: "Chan et al."
 published: 2024
 doi_or_url: https://arxiv.org/abs/2401.13138
 added_on: 2026-07-27
-grounds: [BP-03]
+grounds: [BP-04]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A paper on measures that make AI agent activity visible. It examines agent ident
 
 ## Role in the record
 
-- Grounds [BP3](../best-practices/03-govern-autonomy-and-accountability.md): agent identifiers, real-time monitoring, and activity logging as the substrate of accountability.
+- Grounds [BP04](../best-practices/04-govern-autonomy-and-accountability.md): agent identifiers, real-time monitoring, and activity logging as the substrate of accountability.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

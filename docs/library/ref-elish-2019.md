@@ -6,7 +6,7 @@ issuing_body: "Elish, Engaging Science, Technology, and Society"
 published: 2019
 doi_or_url: https://estsjournal.org/index.php/ests/article/view/260
 added_on: 2026-07-27
-grounds: [BP-08]
+grounds: [BP-09]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ An analysis of how responsibility falls on human operators in automated systems.
 
 ## Role in the record
 
-- Grounds [BP8](../best-practices/08-human-in-the-loop.md): a qualification on stated human-in-the-loop, showing the human can become a blame sink rather than an effective control.
+- Grounds [BP09](../best-practices/09-human-in-the-loop.md): a qualification on stated human-in-the-loop, showing the human can become a blame sink rather than an effective control.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

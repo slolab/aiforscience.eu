@@ -6,7 +6,7 @@ issuing_body: "OpenAI"
 published: 2023
 doi_or_url: https://cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf
 added_on: 2026-07-27
-grounds: [BP-03]
+grounds: [BP-04]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A report on governance practices for agentic AI systems. It proposes measures to
 
 ## Role in the record
 
-- Grounds [BP3](../best-practices/03-govern-autonomy-and-accountability.md): constraining the action space, human accountability, and an action ledger.
+- Grounds [BP04](../best-practices/04-govern-autonomy-and-accountability.md): constraining the action space, human accountability, and an action ledger.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

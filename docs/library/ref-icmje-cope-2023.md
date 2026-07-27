@@ -6,7 +6,7 @@ issuing_body: "COPE and ICMJE"
 published: 2023
 doi_or_url: https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools
 added_on: 2026-07-27
-grounds: [BP-06]
+grounds: [BP-07]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ Editorial positions on the use of AI tools in scholarly writing. They hold that 
 
 ## Role in the record
 
-- Grounds [BP6](../best-practices/06-provenance-and-citation.md): AI cannot be an author; AI use must be disclosed; humans remain accountable (settled editorial consensus).
+- Grounds [BP07](../best-practices/07-provenance-and-citation.md): AI cannot be an author; AI use must be disclosed; humans remain accountable (settled editorial consensus).
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

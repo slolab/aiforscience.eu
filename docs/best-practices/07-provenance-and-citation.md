@@ -1,7 +1,7 @@
 ---
 title: Make provenance and citation first-class
-nav_title: "BP6 Provenance and citation"
-practice_id: BP-06
+nav_title: "BP07 Provenance and citation"
+practice_id: BP-07
 status: draft
 first_added: 2026-07-25
 last_reviewed: 2026-07-26
@@ -45,9 +45,9 @@ comments: true
 <div class="afs-practice" markdown>
 
 - Any answer an [agent](../glossary.md#agent) gives should be traceable to its sources and open to audit.
-  { #bp6-a1 }
+  { #bp7-a1 }
 - It should be clear what was done by a human and what by an agent.
-  { #bp6-a2 }
+  { #bp7-a2 }
 
 </div>
 
@@ -111,6 +111,7 @@ A research agent has to pass citation and retraction status through to its outpu
 
 ## Change history
 
+- 2026-07-27: Renumbered from BP06 to BP07 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instances (NISO CREC, Crossref/Retraction Watch, PROV, RO-Crate, CRediT).
 - 2026-07-26: Rewritten to add standards grounding (PROV-O, CRediT, ICMJE/COPE, NISO CREC, Crossref/Retraction Watch), fold in run-level recording (reproducibility) and disclosure of agent use, and cite the fabricated-citation and cite-retracted-work evidence as support.
 - 2026-07-25: Created from the ELIXIR TF distillation (hook 7), grounded in the HFD paper and the EU Expert Forum entry.

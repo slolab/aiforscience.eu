@@ -6,7 +6,7 @@ issuing_body: "US OSTP"
 published: 2024
 doi_or_url: https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/05/USG-DURC-PEPP-Implementation-Guidance.pdf
 added_on: 2026-07-27
-grounds: [BP-09]
+grounds: [BP-10]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A codified US dual-use oversight instrument. It is scoped to the life sciences a
 
 ## Role in the record
 
-- Grounds [BP9](../best-practices/09-screen-dual-use-high-consequence.md): a mature worked example of dual-use oversight. Because it is scoped to the life sciences and under revision, the practice is framed on the general concept, not this instrument.
+- Grounds [BP10](../best-practices/10-screen-dual-use-high-consequence.md): a mature worked example of dual-use oversight. Because it is scoped to the life sciences and under revision, the practice is framed on the general concept, not this instrument.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

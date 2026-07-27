@@ -6,7 +6,7 @@ issuing_body: "Google DeepMind"
 published: 2025
 doi_or_url: https://arxiv.org/abs/2504.01849
 added_on: 2026-07-27
-grounds: [BP-03]
+grounds: [BP-04]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A report on technical approaches to AGI safety and security. It sets out system-
 
 ## Role in the record
 
-- Grounds [BP3](../best-practices/03-govern-autonomy-and-accountability.md): system-level controls (access control, monitoring, action restrictions) treating the model as untrusted.
+- Grounds [BP04](../best-practices/04-govern-autonomy-and-accountability.md): system-level controls (access control, monitoring, action restrictions) treating the model as untrusted.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

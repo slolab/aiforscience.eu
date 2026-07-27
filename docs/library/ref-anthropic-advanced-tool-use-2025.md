@@ -6,7 +6,7 @@ issuing_body: "Anthropic"
 published: 2025
 doi_or_url: https://www.anthropic.com/engineering/advanced-tool-use
 added_on: 2026-07-27
-grounds: [BP-05]
+grounds: [BP-06]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ Engineering guidance on advanced tool use for agents. It reports how the size of
 
 ## Role in the record
 
-- Grounds [BP5](../best-practices/05-design-around-user-tasks.md): a large tool surface raises token cost and lowers tool-selection accuracy.
+- Grounds [BP06](../best-practices/06-design-around-user-tasks.md): a large tool surface raises token cost and lowers tool-selection accuracy.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

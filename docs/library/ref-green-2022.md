@@ -6,7 +6,7 @@ issuing_body: "Green, Computer Law & Security Review"
 published: 2022
 doi_or_url: https://arxiv.org/pdf/2109.05067
 added_on: 2026-07-27
-grounds: [BP-08]
+grounds: [BP-09]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A study of policies that mandate human oversight of algorithms. It finds these m
 
 ## Role in the record
 
-- Grounds [BP8](../best-practices/08-human-in-the-loop.md): a qualification on stated human-in-the-loop, showing oversight mandates often do not deliver their intended protections.
+- Grounds [BP09](../best-practices/09-human-in-the-loop.md): a qualification on stated human-in-the-loop, showing oversight mandates often do not deliver their intended protections.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

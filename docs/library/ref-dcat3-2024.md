@@ -6,7 +6,7 @@ issuing_body: "W3C"
 published: 2024
 doi_or_url: https://www.w3.org/TR/vocab-dcat-3/
 added_on: 2026-07-27
-grounds: [BP-04]
+grounds: [BP-05]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A vocabulary for describing datasets and data catalogues in a machine-readable f
 
 ## Role in the record
 
-- Grounds [BP4](../best-practices/04-documentation-and-data-for-agents.md): machine-readable dataset metadata.
+- Grounds [BP05](../best-practices/05-documentation-and-data-for-agents.md): machine-readable dataset metadata.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

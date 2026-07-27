@@ -6,7 +6,7 @@ issuing_body: "Science Advances"
 published: 2024
 doi_or_url: https://doi.org/10.1126/sciadv.adk3452
 added_on: 2026-07-27
-grounds: [BP-07]
+grounds: [BP-08]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A consensus set of reporting standards for machine-learning-based science. It de
 
 ## Role in the record
 
-- Grounds [BP7](../best-practices/07-evaluate-tools-before-trust.md): consensus reporting standards for machine-learning-based science.
+- Grounds [BP08](../best-practices/08-evaluate-tools-before-trust.md): consensus reporting standards for machine-learning-based science.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

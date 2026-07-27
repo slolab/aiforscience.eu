@@ -6,7 +6,7 @@ issuing_body: "NISO"
 published: 2024
 doi_or_url: https://www.niso.org/publications/rp-45-2024-crec
 added_on: 2026-07-27
-grounds: [BP-06]
+grounds: [BP-07]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A recommended practice for how retractions, removals, and expressions of concern
 
 ## Role in the record
 
-- Grounds [BP6](../best-practices/06-provenance-and-citation.md): transmitting retraction status to machine and human readers.
+- Grounds [BP07](../best-practices/07-provenance-and-citation.md): transmitting retraction status to machine and human readers.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

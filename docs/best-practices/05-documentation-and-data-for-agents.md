@@ -1,7 +1,7 @@
 ---
 title: Write documentation and data for agents
-nav_title: "BP4 Documentation"
-practice_id: BP-04
+nav_title: "BP05 Documentation"
+practice_id: BP-05
 status: draft
 first_added: 2026-07-25
 last_reviewed: 2026-07-26
@@ -42,13 +42,13 @@ comments: true
 <div class="afs-practice" markdown>
 
 - Documentation, data, and metadata are now an [interface](../glossary.md#interface).
-  { #bp4-a1 }
+  { #bp5-a1 }
 - An [agent](../glossary.md#agent) operates a tool or dataset from its tool description / metadata, docstrings, and docs.
-  { #bp4-a2 }
+  { #bp5-a2 }
 - User- and agent-facing documentation needs to be precise, current, and published in context with meaning and examples.
-  { #bp4-a3 }
+  { #bp5-a3 }
 - Precise documentation helps human users and agents alike.
-  { #bp4-a4 }
+  { #bp5-a4 }
 
 </div>
 
@@ -107,6 +107,7 @@ This work also benefits the people who use the resource directly, and current an
 
 ## Change history
 
+- 2026-07-27: Renumbered from BP04 to BP05 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instances (DCAT, Croissant, datasheets, model cards, Bioschemas, llms.txt).
 - 2026-07-26: Rewritten to be domain-neutral (FAIR, DCAT, Croissant, datasheets, and model cards as the general anchors; Bioschemas and SPARQL/Cypher demoted to labelled examples), to add tool descriptions alongside datasets, and to flag `llms.txt` as a proposed convention rather than a standard.
 - 2026-07-25: Created from the ELIXIR TF distillation (hooks 4, 6), grounded in the HFD paper.

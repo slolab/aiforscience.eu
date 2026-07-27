@@ -1,7 +1,7 @@
 ---
 title: Screen agents for dual-use and high-consequence risk
-nav_title: "BP9 Dual-use screening"
-practice_id: BP-09
+nav_title: "BP10 Dual-use screening"
+practice_id: BP-10
 status: draft
 first_added: 2026-07-26
 last_reviewed: 2026-07-26
@@ -42,13 +42,13 @@ comments: true
 <div class="afs-practice" markdown>
 
 - Some [agents](../glossary.md#agent) carry [dual-use](../glossary.md#dual-use) risk: they can be used for good or bad.
-  { #bp9-a1 }
+  { #bp10-a1 }
 - For potential dual-use agents, screening is not optional.
-  { #bp9-a2 }
+  { #bp10-a2 }
 - Before an agent is given reach into the world, its capability for misuse should be evaluated against set thresholds.
-  { #bp9-a3 }
+  { #bp10-a3 }
 - Any high-consequence action an agent can take should pass through a screening chokepoint, with dual-use requests refused.
-  { #bp9-a4 }
+  { #bp10-a4 }
 
 </div>
 
@@ -114,5 +114,6 @@ The evidence that the risk is real spans domains too: an AI model repurposed for
 
 ## Change history
 
+- 2026-07-27: Renumbered from BP09 to BP10 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including an anti-pattern (unscreened path); kept the labelled cross-field instances (life sciences, chemistry, cyber).
 - 2026-07-26: Created as a domain-neutral practice on screening agents for dual-use and high-consequence risk (the frontier-framework threshold-and- mitigation pattern), with life-science, chemistry, and cyber cases as labelled examples.

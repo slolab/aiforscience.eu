@@ -1,7 +1,7 @@
 ---
 title: State human-in-the-loop requirements explicitly
-nav_title: "BP8 Human-in-the-loop"
-practice_id: BP-08
+nav_title: "BP09 Human-in-the-loop"
+practice_id: BP-09
 status: draft
 first_added: 2026-07-25
 last_reviewed: 2026-07-26
@@ -39,17 +39,17 @@ comments: true
 <div class="afs-practice" markdown>
 
 - Every [agent](../glossary.md#agent) use case should state its [human-in-the-loop](../glossary.md#hitl) (HITL) level plainly.
-  { #bp8-a1 }
+  { #bp9-a1 }
 - HITL involvement can be mandatory or optional; it can range between tight in-process control and a mere final check.
-  { #bp8-a2 }
+  { #bp9-a2 }
 - A workflow stating no HITL involvement means it has full autonomy.
-  { #bp8-a3 }
+  { #bp9-a3 }
 - Left unstated, no one knows where a person is required and where the agent acts alone.
-  { #bp8-a4 }
+  { #bp9-a4 }
 - Stating the level is necessary, but not sufficient: the check has to be designed so it actually works in deployment.
-  { .afs-practice__pivot #bp8-a5 }
-- HITL engagement provenance should be recorded according to [BP6](06-provenance-and-citation.md).
-  { #bp8-a6 }
+  { .afs-practice__pivot #bp9-a5 }
+- HITL engagement provenance should be recorded according to [BP07](07-provenance-and-citation.md).
+  { #bp9-a6 }
 
 </div>
 
@@ -84,7 +84,7 @@ So the check must be designed for effectiveness, giving the human what they need
 Pipelines need to be assessed for realistically achievable volumes.
 The four labels used here (mandatory / optional, in-process / final check) are a useful shorthand, not settled standards.
 Agent autonomy is a spectrum from tight supervision to full autonomy.
-Stating and enforcing HITL levels fulfils part of [BP3](03-govern-autonomy-and-accountability.md) at the single use case level.
+Stating and enforcing HITL levels fulfils part of [BP04](04-govern-autonomy-and-accountability.md) at the single use case level.
 
 ## Examples
 
@@ -92,7 +92,7 @@ Stating and enforcing HITL levels fulfils part of [BP3](03-govern-autonomy-and-a
 - Every use case instead declares its level from a short list (mandatory, optional, in-process, final check), and a workflow that declares none is understood to run at full autonomy, so the choice is explicit.
 - A pipeline has a mandatory "human approves each item" step, but at hundreds of items an hour the reviewer clicks approve without reading; the check exists on paper and fails in practice.
 - The check is designed so the human can actually judge: it shows what changed, at a realistic volume, with approve, edit, veto, and stop, and the strength of the check is set by the stakes.
-- The stated level is enforced by the system rather than left to habit, which ties it to the guardrails in [BP3](03-govern-autonomy-and-accountability.md), and the HITL engagement is recorded in provenance ([BP6](06-provenance-and-citation.md)) so oversight is auditable instead of assumed.
+- The stated level is enforced by the system rather than left to habit, which ties it to the guardrails in [BP04](04-govern-autonomy-and-accountability.md), and the HITL engagement is recorded in provenance ([BP07](07-provenance-and-citation.md)) so oversight is auditable instead of assumed.
 - A reviewer uploads a confidential manuscript to an external model against the stated boundary of the conference for a high-stakes task. They submit the AI-generated review without declaring the AI use. The conference had inserted a [prompt injection](../glossary.md#prompt-injection) into their review version and catches the reviewer with the prompted output form. The reviewer is barred from conference participation for two years.
 
 !!! info "Practice metadata"
@@ -112,7 +112,8 @@ Stating and enforcing HITL levels fulfils part of [BP3](03-govern-autonomy-and-a
 
 ## Change history
 
+- 2026-07-27: Renumbered from BP08 to BP09 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns (unstated level, rubber-stamping at volume), replacing restatements of the practice.
-- 2026-07-26: Renumbered from BP7 to BP8 in the reordering.
+- 2026-07-26: Renumbered from BP08 to BP09 in the reordering.
   Added grounding (EU AI Act Article 14, NIST AI 600-1) and a caveat that a stated level is necessary but not sufficient (automation bias, rubber-stamping, moral crumple zones; Elish 2019, Green 2022), plus a peer-review confidentiality instance.
 - 2026-07-25: Created from the ELIXIR TF distillation (hook 8), grounded in the HFD paper.

@@ -1,7 +1,7 @@
 ---
 title: Govern agent autonomy and accountability
-nav_title: "BP3 Autonomy and accountability"
-practice_id: BP-03
+nav_title: "BP04 Autonomy and accountability"
+practice_id: BP-04
 status: draft
 first_added: 2026-07-25
 last_reviewed: 2026-07-26
@@ -51,17 +51,17 @@ comments: true
 <div class="afs-practice" markdown>
 
 - An [agent's](../glossary.md#agent) limits ([guardrails](../glossary.md#guardrails)) belong in the system that runs it, not only in written policy.
-  { #bp3-a1 }
+  { #bp4-a1 }
 - An agent cannot be talked into following a rule; it can only be stopped from taking an action.
-  { #bp3-a2 }
+  { #bp4-a2 }
 - Limits have to be implemented in permission scopes, autonomy limits, and shutdown paths.
-  { #bp3-a3 }
+  { #bp4-a3 }
 - Regardless of implemented safeguards, something can always go wrong.
-  { .afs-practice__pivot #bp3-a4 }
+  { .afs-practice__pivot #bp4-a4 }
 - Thus, every agent also needs a named human owner for each responsibility it carries.
-  { #bp3-a5 }
+  { #bp4-a5 }
 - The agent's actions have to be logged under an attributable identity, so that accountability can be traced after the fact.
-  { #bp3-a6 }
+  { #bp4-a6 }
 
 </div>
 
@@ -139,7 +139,8 @@ This is the consensus position across the main governance frameworks (NIST, the 
 
 ## Change history
 
+- 2026-07-27: Renumbered from BP03 to BP04 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns, replacing restatements of the practice.
 - 2026-07-26: Rewritten to merge action-logging and attributable agent identity into the practice, add independent grounding (NIST, EU AI Act, OECD, ISO/IEC 42001, OpenAI, Chan et al., Kolt), and add two citation caveats: the "guidelines to guardrails / Kassorla et al." attribution in the source could not be verified, and the JRC "not automatable" wording is unconfirmed.
 - 2026-07-25: Created from the HFD distillation, grounded in the EU Expert Forum entry.
-  New practice added because the guidelines-to-guardrails point is a separate action, not a sub-case of stating a human-in-the-loop level ([BP8](08-human-in-the-loop.md)).
+  New practice added because the guidelines-to-guardrails point is a separate action, not a sub-case of stating a human-in-the-loop level ([BP09](09-human-in-the-loop.md)).

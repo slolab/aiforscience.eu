@@ -6,7 +6,7 @@ issuing_body: "Anthropic"
 published: 2025
 doi_or_url: https://www.anthropic.com/engineering/writing-tools-for-agents
 added_on: 2026-07-27
-grounds: [BP-05]
+grounds: [BP-06]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ Engineering guidance on how to design tools for agents. It argues for a small se
 
 ## Role in the record
 
-- Grounds [BP5](../best-practices/05-design-around-user-tasks.md): tools that merely wrap existing endpoints perform worse than a few tools built for high-impact workflows.
+- Grounds [BP06](../best-practices/06-design-around-user-tasks.md): tools that merely wrap existing endpoints perform worse than a few tools built for high-impact workflows.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

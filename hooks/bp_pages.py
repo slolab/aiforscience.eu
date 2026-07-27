@@ -34,7 +34,7 @@ def _load_meta(path):
 
 
 def _handle(num):
-    return f"BP{num.lstrip('0') or '0'}"
+    return f"BP{num.zfill(2)}"
 
 
 def _render_list(markdown, config):

@@ -6,7 +6,7 @@ issuing_body: "MIT Technology Review"
 published: 2025
 doi_or_url: https://www.technologyreview.com/2025/09/23/1123897/ai-models-are-using-material-from-retracted-scientific-papers/
 added_on: 2026-07-27
-grounds: [BP-06]
+grounds: [BP-07]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A report finding that AI research assistants draw on and cite retracted papers. 
 
 ## Role in the record
 
-- Grounds [BP6](../best-practices/06-provenance-and-citation.md): evidence that AI research tools cite retracted papers without flagging them.
+- Grounds [BP07](../best-practices/07-provenance-and-citation.md): evidence that AI research tools cite retracted papers without flagging them.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

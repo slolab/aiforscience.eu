@@ -28,6 +28,11 @@ The test for any practice, document hook, or discussion:
 **Out of scope**: national economic and industrial policy, energy and compute geopolitics, security and defence, international treaties.
 When such material directly constrains scientific practice, the record cites it as context; it does not distill or debate it.
 
+The record also draws a method boundary.
+It covers the practice of applying agents to scientific work.
+The design and validation of AI methods as scientific instruments (predictors, generative models, classifiers) have their own established community norms (FAIR, DOME, model cards, datasheets, REFORMS).
+The record cites these rather than restating them, and treats an agent or model as a method chosen for a task, not a default (see [Match the method to the task](../best-practices/01-match-method-to-task.md)).
+
 The same test governs the [library](../library/index.md): a distillation of a broad policy report keeps the passages that pass, and drops the rest.
 
 ## Audiences

@@ -1,7 +1,7 @@
 ---
 title: Evaluate / benchmark agentic tools before trusting their outputs
-nav_title: "BP7 Evaluate before trust"
-practice_id: BP-07
+nav_title: "BP08 Evaluate before trust"
+practice_id: BP-08
 status: draft
 first_added: 2026-07-26
 last_reviewed: 2026-07-26
@@ -30,15 +30,15 @@ comments: true
 <div class="afs-practice" markdown>
 
 - Run task-specific benchmarks before giving an [agent](../glossary.md#agent) autonomy in your workflow.
-  { #bp7-a1 }
+  { #bp8-a1 }
 - Before an AI system informs scientific work, it needs to prove its suitability for the task at hand.
-  { #bp7-a2 }
+  { #bp8-a2 }
 - For LLM-driven systems, there is no good general proxy (e.g., leaderboards) for their correctness in individual applications.
-  { #bp7-a3 }
-- Benchmarking is separate from safety ([BP2](02-register-and-vet-interfaces.md)) and auditability ([BP6](06-provenance-and-citation.md)).
-  { .afs-practice__pivot #bp7-a4 }
+  { #bp8-a3 }
+- Benchmarking is separate from safety ([BP03](03-register-and-vet-interfaces.md)) and auditability ([BP07](07-provenance-and-citation.md)).
+  { .afs-practice__pivot #bp8-a4 }
 - It is the adopter measuring a tool's performance on representative tasks and recording how it fails.
-  { #bp7-a5 }
+  { #bp8-a5 }
 
 </div>
 
@@ -63,7 +63,7 @@ comments: true
 ## Reasons
 
 Whether a tool is safe to connect and whether it is correct are different questions, answered by different people.
-Registration and vetting ([BP2](02-register-and-vet-interfaces.md)) concern security at connect time; provenance and auditability ([BP6](06-provenance-and-citation.md)) concern the ability to trace answers after execution.
+Registration and vetting ([BP03](03-register-and-vet-interfaces.md)) concern security at connect time; provenance and auditability ([BP07](07-provenance-and-citation.md)) concern the ability to trace answers after execution.
 Evaluation (this practice) concerns accuracy and reliability at use time.
 Goodhart's law states that a metric that becomes the target ceases to be a good metric; LLM leaderboards today decide on highest-volume investments for frontier AI companies.
 Evaluation is the task of users, adopters, and community; only they know the task *and* possess the necessary stakes and incentives to desire an objective evaluation.
@@ -94,7 +94,8 @@ A tool that looks capable in a demo can be wrong in ways that only representativ
 
 ## Change history
 
+- 2026-07-27: Renumbered from BP07 to BP08 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instance (REFORMS).
 - 2026-07-26: Created.
-  New practice for adopter-side evaluation of agentic tools, distinct from vetting at registration ([BP2](02-register-and-vet-interfaces.md)) and from self-audit of one's own agent ([BP3](03-govern-autonomy-and-accountability.md)).
+  New practice for adopter-side evaluation of agentic tools, distinct from vetting at registration ([BP03](03-register-and-vet-interfaces.md)) and from self-audit of one's own agent ([BP04](04-govern-autonomy-and-accountability.md)).
   The ELIXIR task force flagged evaluation as an unresolved open question; red-teaming and hallucination-rate testing fold in as its safety and correctness dimensions.

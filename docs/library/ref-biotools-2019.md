@@ -6,7 +6,7 @@ issuing_body: "Ison et al., Genome Biology"
 published: 2019
 doi_or_url: https://doi.org/10.1186/s13059-019-1772-6
 added_on: 2026-07-27
-grounds: [BP-01]
+grounds: [BP-02]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A registry that catalogues life-science software tools and data resources throug
 
 ## Role in the record
 
-- Grounds [BP1](../best-practices/01-default-to-agent-accessibility.md): a light generic registry keeping many tools discoverable through shared metadata (life-science instance).
+- Grounds [BP02](../best-practices/02-default-to-agent-accessibility.md): a light generic registry keeping many tools discoverable through shared metadata (life-science instance).
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

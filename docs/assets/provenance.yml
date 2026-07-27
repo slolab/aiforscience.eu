@@ -15,15 +15,62 @@
 #
 # Every atom id here exists on its page as `{ #bp<N>-a<k> }` on the atom.
 # A few reference works ground a practice through its Examples rather than a
-# Practice atom (for example ietf-aipref on BP2 traffic management); those have a
+# Practice atom (for example ietf-aipref on BP03 traffic management); those have a
 # library entry but no atom edge here.
 
-# ------------------------------------------------------------------ BP1
-bp1-a2:  # programmatic use often indistinguishable from human users
+# ------------------------------------------------------------------ BP01
+bp1-a1:  # method fit; an agent or frontier model is one option, not the default
+  - ref: anthropic-building-effective-agents-2024
+    stance: supports
+    locator: "find the simplest solution; increase complexity only when needed"
+    quote: "we recommend finding the simplest solution possible, and only increasing complexity when needed"
+  - ref: jrc-ai-in-science-2025
+    stance: supports
+    locator: "AI as a tool in science"
+  - ref: mit-genai-divide-2025
+    stance: supports
+    locator: "§4.3, pg. 13"
+    quote: "AI has already won the war for simple work ... But for anything complex or long-term, humans dominate by 9-to-1 margins. The dividing line isn't intelligence, it's memory, adaptability, and learning capability"
+bp1-a2:  # for well-defined work, a deterministic or specialized method often fits better
+  - ref: kapoor-agents-that-matter-2024
+    stance: supports
+    locator: "cost-controlled evaluation; complex agents do not beat simple baselines"
+    quote: "SOTA agents are needlessly complex and costly"
+  - ref: mit-genai-divide-2025
+    stance: supports
+    locator: "Executive Summary, pg. 3"
+    quote: "This divide does not seem to be driven by model quality or regulation, but seems to be determined by approach"
+  - ref: bucher-fine-tuned-2024
+    stance: supports
+    locator: "fine-tuned smaller models beat zero-shot frontier models"
+    quote: "smaller, fine-tuned LLMs (still) consistently and significantly outperform larger, zero-shot prompted models in text classification"
+  - ref: ec-expert-forum-2026
+    stance: supports
+    locator: "§3.2.3, p. 21; §3.2.2, p. 20"
+    quote: "tools of this type ... can outperform general-purpose models within their domains while requiring substantially less capital and compute to develop"
+  - ref: ec-expert-forum-2026
+    stance: qualifies
+    locator: "§3.2.2, p. 20; ch. 4, p. 22"
+    quote: "non-frontier access is an imperfect substitute for frontier access"
+bp1-a3:  # agentic autonomy earns its cost only when flexibility at scale is needed
+  - ref: anthropic-building-effective-agents-2024
+    stance: supports
+    locator: "workflows for well-defined tasks; agents when flexibility needed at scale"
+    quote: "Agentic systems often trade latency and cost for better task performance"
+bp1-a4:  # frontier model where a specialized method fits -> avoidable failure modes
+  - ref: walters-wilder-2023
+    stance: supports
+    locator: "55% (GPT-3.5) / 18% (GPT-4) of generated citations fabricated"
+  - ref: kapoor-narayanan-leakage-2023
+    stance: supports
+    locator: "leakage across 294 papers in 17 fields; over-optimistic, non-reproducible"
+
+# ------------------------------------------------------------------ BP02
+bp2-a2:  # programmatic use often indistinguishable from human users
   - ref: coar-ai-bots-2025
     stance: supports
     locator: "2025 survey"
-bp1-a3:  # machine-actionable and discoverable by default
+bp2-a3:  # machine-actionable and discoverable by default
   - ref: fair-2016
     stance: supports
     locator: "machine-actionability"
@@ -34,7 +81,7 @@ bp1-a3:  # machine-actionable and discoverable by default
   - ref: coar-ai-bots-2025
     stance: qualifies
     locator: "default openness invites heavy automated load"
-bp1-a4:  # access governed by resource
+bp2-a4:  # access governed by resource
   - ref: fair-2016
     stance: supports
     locator: "Accessible principle permits authentication"
@@ -44,26 +91,26 @@ bp1-a4:  # access governed by resource
   - ref: elixir-ai-strategy-2026
     stance: supports
     locator: "§5, §7: controlled-access sensitive data via federated, privacy-preserving methods"
-bp1-a5:  # not every resource needs its own maintained interface
+bp2-a5:  # not every resource needs its own maintained interface
   - ref: elixir-tf-agentic-ai-2026
     stance: supports
     locator: "Best Practice items 1 and 2"
-bp1-a6:  # invest by how widely used and important
+bp2-a6:  # invest by how widely used and important
   - ref: elixir-cdr-2020
     stance: supports
     locator: "selection indicators for core data resources"
   - ref: elixir-tf-agentic-ai-2026
     stance: supports
     locator: "service tier / taxonomy"
-bp1-a7:  # sort resources into types to prioritise effort
+bp2-a7:  # sort resources into types to prioritise effort
   - ref: elixir-cdr-2020
     stance: supports
   - ref: biotools-2019
     stance: supports
     locator: "registry for the long tail"
 
-# ------------------------------------------------------------------ BP2
-bp2-a2:  # each interface runs code; a point where risk enters
+# ------------------------------------------------------------------ BP03
+bp3-a2:  # each interface runs code; a point where risk enters
   - ref: owasp-llm-top10-2025
     stance: supports
     locator: "LLM01 prompt injection"
@@ -73,24 +120,28 @@ bp2-a2:  # each interface runs code; a point where risk enters
   - ref: owasp-mcp-top10
     stance: supports
     locator: "MCP03 tool poisoning"
-bp2-a3:  # publish through a channel that lists and vets
+bp3-a3:  # publish through a channel that lists and vets
   - ref: elixir-tf-agentic-ai-2026
     stance: supports
     locator: "Best Practice item 8"
-bp2-a5:  # vetting is separate; discoverable is not automatically safe
+  - ref: mit-genai-divide-2025
+    stance: qualifies
+    locator: "§3.3, pg. 8"
+    quote: "workers from over 90% of the companies we surveyed reported regular use of personal AI tools for work tasks ... This 'shadow AI' often delivers better ROI than formal initiatives"
+bp3-a5:  # vetting is separate; discoverable is not automatically safe
   - ref: mcp-registry-2025
     stance: supports
     locator: "official registry lists self-reported data; runs no security review"
   - ref: owasp-mcp-top10
     stance: supports
-bp2-a6:  # public interfaces vulnerable to prompt injection
+bp3-a6:  # public interfaces vulnerable to prompt injection
   - ref: owasp-llm-top10-2025
     stance: supports
   - ref: invariant-tool-poisoning-2025
     stance: supports
 
-# ------------------------------------------------------------------ BP3
-bp3-a1:  # limits belong in the system, not only in policy
+# ------------------------------------------------------------------ BP04
+bp4-a1:  # limits belong in the system, not only in policy
   - ref: hfd-agentic-ai-hochschulsystem-2026
     stance: supports
     locator: "§5.2 from guidelines to guardrails"
@@ -100,13 +151,13 @@ bp3-a1:  # limits belong in the system, not only in policy
   - ref: elixir-ai-strategy-2026
     stance: supports
     locator: "§10 responsible AI embedded by design across all stages"
-bp3-a2:  # an agent cannot be persuaded, only prevented
+bp4-a2:  # an agent cannot be persuaded, only prevented
   - ref: openai-governing-agentic-ai-2023
     stance: supports
     locator: "constraining the action space"
   - ref: deepmind-agi-safety-2025
     stance: supports
-bp3-a3:  # limits in permission scopes, autonomy limits, shutdown paths
+bp4-a3:  # limits in permission scopes, autonomy limits, shutdown paths
   - ref: nist-ai-rmf
     stance: supports
   - ref: iso-42001-2023
@@ -114,7 +165,7 @@ bp3-a3:  # limits in permission scopes, autonomy limits, shutdown paths
   - ref: eu-ai-act
     stance: supports
     locator: "Article 14 human oversight"
-bp3-a5:  # named human owner for each responsibility
+bp4-a5:  # named human owner for each responsibility
   - ref: openai-governing-agentic-ai-2023
     stance: supports
     locator: "human accountability"
@@ -126,7 +177,7 @@ bp3-a5:  # named human owner for each responsibility
   - ref: jrc-ai-in-science-2025
     stance: supports
     locator: "human accountability in science"
-bp3-a6:  # actions logged under an attributable identity
+bp4-a6:  # actions logged under an attributable identity
   - ref: chan-visibility-2024
     stance: supports
     locator: "agent identifiers, monitoring, activity logging"
@@ -140,8 +191,8 @@ bp3-a6:  # actions logged under an attributable identity
     stance: supports
     locator: "traceability under Accountability"
 
-# ------------------------------------------------------------------ BP4
-bp4-a1:  # documentation, data, metadata are now an interface
+# ------------------------------------------------------------------ BP05
+bp5-a1:  # documentation, data, metadata are now an interface
   - ref: fair-2016
     stance: supports
     locator: "machine-actionability as founding motivation"
@@ -151,7 +202,7 @@ bp4-a1:  # documentation, data, metadata are now an interface
   - ref: osai-2025
     stance: supports
     locator: "openness and documentation that make data, software, models reusable per FAIR"
-bp4-a2:  # an agent operates from docs, metadata, docstrings
+bp5-a2:  # an agent operates from docs, metadata, docstrings
   - ref: dcat3-2024
     stance: supports
   - ref: croissant-2024
@@ -161,8 +212,8 @@ bp4-a2:  # an agent operates from docs, metadata, docstrings
   - ref: model-cards-2019
     stance: supports
 
-# ------------------------------------------------------------------ BP5
-bp5-a1:  # an interface works best built around user tasks
+# ------------------------------------------------------------------ BP06
+bp6-a1:  # an interface works best built around user tasks
   - ref: anthropic-writing-tools-2025
     stance: supports
     locator: "tools built for high-impact workflows"
@@ -172,11 +223,15 @@ bp5-a1:  # an interface works best built around user tasks
   - ref: elixir-ai-strategy-2026
     stance: supports
     locator: "§6 adopt and adapt MCP and agentic frameworks as external standards"
-bp5-a2:  # wrapping is fast but does not respect agent patterns
+  - ref: mit-genai-divide-2025
+    stance: supports
+    locator: "Executive Summary, pg. 3; §5.1, pg. 15"
+    quote: "Most fail due to brittle workflows, lack of contextual learning, and misalignment with day-to-day operations"
+bp6-a2:  # wrapping is fast but does not respect agent patterns
   - ref: anthropic-writing-tools-2025
     stance: supports
     locator: "tools that merely wrap existing endpoints"
-bp5-a3:  # wrapping one call at a time is slow, costly, error-prone
+bp6-a3:  # wrapping one call at a time is slow, costly, error-prone
   - ref: anthropic-code-execution-mcp-2025
     stance: supports
     locator: "token cost of per-endpoint tool use"
@@ -184,8 +239,8 @@ bp5-a3:  # wrapping one call at a time is slow, costly, error-prone
     stance: supports
     locator: "tool-surface size vs accuracy"
 
-# ------------------------------------------------------------------ BP6
-bp6-a1:  # answers traceable to sources, open to audit
+# ------------------------------------------------------------------ BP07
+bp7-a1:  # answers traceable to sources, open to audit
   - ref: prov-o-2013
     stance: supports
   - ref: elixir-ai-strategy-2026
@@ -206,7 +261,7 @@ bp6-a1:  # answers traceable to sources, open to audit
   - ref: mit-tech-review-retracted-2025
     stance: supports
     locator: "AI tools cite retracted papers unflagged"
-bp6-a2:  # clear what a human did and what an agent did
+bp7-a2:  # clear what a human did and what an agent did
   - ref: credit-2022
     stance: supports
     locator: "contribution attribution"
@@ -217,8 +272,8 @@ bp6-a2:  # clear what a human did and what an agent did
     stance: supports
     locator: "AI cannot be an author; disclosure required"
 
-# ------------------------------------------------------------------ BP7
-bp7-a1:  # run task-specific benchmarks before granting autonomy
+# ------------------------------------------------------------------ BP08
+bp8-a1:  # run task-specific benchmarks before granting autonomy
   - ref: reforms-2024
     stance: supports
   - ref: neurips-checklist
@@ -229,11 +284,11 @@ bp7-a1:  # run task-specific benchmarks before granting autonomy
   - ref: elixir-ai-strategy-2026
     stance: supports
     locator: "Introduction, p.2: curated, expert-validated benchmarks are a community endeavour"
-bp7-a2:  # prove suitability before informing scientific work
+bp8-a2:  # prove suitability before informing scientific work
   - ref: elixir-tf-agentic-ai-2026
     stance: supports
     locator: "Cautions and gaps: evaluation as an open question"
-bp7-a3:  # no good general proxy for correctness in individual use
+bp8-a3:  # no good general proxy for correctness in individual use
   - ref: reforms-2024
     stance: supports
     locator: "reporting standards over leaderboard scores"
@@ -243,9 +298,13 @@ bp7-a3:  # no good general proxy for correctness in individual use
   - ref: elixir-ai-strategy-2026
     stance: supports
     locator: "§6 train and test on independent data as standard practice"
+  - ref: mit-genai-divide-2025
+    stance: supports
+    locator: "§6.2, pg. 20"
+    quote: "Benchmarked tools on operational outcomes, not model benchmarks"
 
-# ------------------------------------------------------------------ BP8
-bp8-a1:  # state the HITL level for each use case
+# ------------------------------------------------------------------ BP09
+bp9-a1:  # state the HITL level for each use case
   - ref: elixir-tf-agentic-ai-2026
     stance: supports
     locator: "Best Practice item 7"
@@ -255,7 +314,7 @@ bp8-a1:  # state the HITL level for each use case
   - ref: nist-ai-rmf
     stance: supports
     locator: "AI 600-1: oversight calibrated to risk"
-bp8-a5:  # stating a level is necessary but not sufficient
+bp9-a5:  # stating a level is necessary but not sufficient
   - ref: elish-2019
     stance: supports
     locator: "moral crumple zones: token oversight makes the human a scapegoat"
@@ -266,8 +325,8 @@ bp8-a5:  # stating a level is necessary but not sufficient
     stance: supports
     locator: "Article 14 requires oversight to be effective; names automation bias"
 
-# ------------------------------------------------------------------ BP9
-bp9-a1:  # some agents carry dual-use risk
+# ------------------------------------------------------------------ BP10
+bp10-a1:  # some agents carry dual-use risk
   - ref: urbina-dual-use-2022
     stance: supports
     locator: "40,000 toxic molecules incl. VX in under 6 hours (chemistry)"
@@ -280,14 +339,14 @@ bp9-a1:  # some agents carry dual-use risk
   - ref: hf-openai-agent-breach-2026
     stance: supports
     locator: "autonomous agent breached Hugging Face production infrastructure (cyber, realised)"
-bp9-a3:  # evaluate misuse capability against set thresholds
+bp10-a3:  # evaluate misuse capability against set thresholds
   - ref: metr-common-elements-2025
     stance: supports
     locator: "capability threshold, evaluation, mitigation"
   - ref: fmf-safety-frameworks
     stance: supports
     locator: "CBRN, cyber, autonomy as parallel domains"
-bp9-a4:  # high-consequence actions through a screening chokepoint
+bp10-a4:  # high-consequence actions through a screening chokepoint
   - ref: usg-durc-2024
     stance: supports
     locator: "codified dual-use oversight (bio-scoped; under revision)"

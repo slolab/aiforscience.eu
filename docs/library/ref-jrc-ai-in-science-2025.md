@@ -6,7 +6,7 @@ issuing_body: "European Commission Joint Research Centre"
 published: 2025
 doi_or_url: https://publications.jrc.ec.europa.eu/repository/handle/JRC143482
 added_on: 2026-07-27
-grounds: [BP-03]
+grounds: [BP-01, BP-04]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,7 @@ A report on how AI is used across scientific research. It frames AI as a tool wi
 
 ## Role in the record
 
-- Grounds [BP3](../best-practices/03-govern-autonomy-and-accountability.md): AI as a tool with human accountability in science.
+- Grounds [BP01](../best-practices/01-match-method-to-task.md): AI framed as a tool in science, so an agent or model is a chosen instrument rather than a default.
+- Grounds [BP04](../best-practices/04-govern-autonomy-and-accountability.md): AI as a tool with human accountability in science.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

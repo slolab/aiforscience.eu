@@ -6,7 +6,7 @@ issuing_body: "Invariant Labs"
 published: 2025
 doi_or_url: https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks
 added_on: 2026-07-27
-grounds: [BP-02]
+grounds: [BP-03]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A security notification describing tool poisoning attacks against the Model Cont
 
 ## Role in the record
 
-- Grounds [BP2](../best-practices/02-register-and-vet-interfaces.md): a poisoned tool description hides instructions from the user; the rug-pull variant mutates a tool after approval.
+- Grounds [BP03](../best-practices/03-register-and-vet-interfaces.md): a poisoned tool description hides instructions from the user; the rug-pull variant mutates a tool after approval.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

@@ -6,7 +6,7 @@ issuing_body: "Walsh et al. (ELIXIR Machine Learning Focus Group), Nature Method
 published: 2021
 doi_or_url: https://doi.org/10.1038/s41592-021-01205-4
 added_on: 2026-07-27
-grounds: [BP-07, BP-04]
+grounds: [BP-08, BP-05]
 tags: [library, reference]
 comments: true
 ---
@@ -22,7 +22,7 @@ A community set of reporting recommendations, from the ELIXIR Machine Learning F
 
 ## Role in the record
 
-- Grounds [BP7](../best-practices/07-evaluate-tools-before-trust.md): reporting standards for ML validation in biology, including guards against data leakage between training and test sets.
-- Grounds [BP4](../best-practices/04-documentation-and-data-for-agents.md): structured reporting of the data and model so a resource is reusable.
+- Grounds [BP08](../best-practices/08-evaluate-tools-before-trust.md): reporting standards for ML validation in biology, including guards against data leakage between training and test sets.
+- Grounds [BP05](../best-practices/05-documentation-and-data-for-agents.md): structured reporting of the data and model so a resource is reusable.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

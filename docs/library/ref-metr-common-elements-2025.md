@@ -6,7 +6,7 @@ issuing_body: "METR"
 published: 2025
 doi_or_url: https://metr.org/common-elements
 added_on: 2026-07-27
-grounds: [BP-09]
+grounds: [BP-10]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ An independent synthesis of frontier AI safety policies. It finds a shared capab
 
 ## Role in the record
 
-- Grounds [BP9](../best-practices/09-screen-dual-use-high-consequence.md): evidence that the high-consequence category is generic, with one capability-threshold structure recurring across domains.
+- Grounds [BP10](../best-practices/10-screen-dual-use-high-consequence.md): evidence that the high-consequence category is generic, with one capability-threshold structure recurring across domains.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

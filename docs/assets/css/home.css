@@ -319,7 +319,7 @@ body {
  * same one-line boxes used for the practice atoms on each page. Each box is
  * a full-width clickable link. Inactive boxes use the petrol accent; hovering
  * shifts a box to the orange practice palette used in the BP atom boxes. The
- * BP handle (BP1…) carries the number, so the list is not numbered.
+ * BP handle (BP01…) carries the number, so the list is not numbered.
  * ------------------------------------------------------------------ */
 
 .md-typeset .afs-bp-list {

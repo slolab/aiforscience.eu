@@ -6,7 +6,7 @@ issuing_body: "Farrell et al., arXiv"
 published: 2025
 doi_or_url: https://arxiv.org/abs/2505.16619
 added_on: 2026-07-27
-grounds: [BP-04, BP-06]
+grounds: [BP-05, BP-07]
 tags: [library, reference]
 comments: true
 ---
@@ -22,7 +22,7 @@ A community framework, the Open and Sustainable AI (OSAI) recommendations, addre
 
 ## Role in the record
 
-- Grounds [BP4](../best-practices/04-documentation-and-data-for-agents.md): openness and documentation that make data, software, and models reusable in line with FAIR.
-- Grounds [BP6](../best-practices/06-provenance-and-citation.md): reproducibility and traceability of AI-related work.
+- Grounds [BP05](../best-practices/05-documentation-and-data-for-agents.md): openness and documentation that make data, software, and models reusable in line with FAIR.
+- Grounds [BP07](../best-practices/07-provenance-and-citation.md): reproducibility and traceability of AI-related work.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

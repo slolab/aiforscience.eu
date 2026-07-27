@@ -6,7 +6,7 @@ issuing_body: "Gebru et al., Communications of the ACM"
 published: 2021
 doi_or_url: https://doi.org/10.1145/3458723
 added_on: 2026-07-27
-grounds: [BP-04]
+grounds: [BP-05]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A proposal to accompany every dataset with a structured record of its motivation
 
 ## Role in the record
 
-- Grounds [BP4](../best-practices/04-documentation-and-data-for-agents.md): documented dataset provenance and intended use.
+- Grounds [BP05](../best-practices/05-documentation-and-data-for-agents.md): documented dataset provenance and intended use.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

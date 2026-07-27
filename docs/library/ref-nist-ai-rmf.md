@@ -6,7 +6,7 @@ issuing_body: "US National Institute of Standards and Technology"
 published: 2023
 doi_or_url: https://www.nist.gov/itl/ai-risk-management-framework
 added_on: 2026-07-27
-grounds: [BP-03, BP-08]
+grounds: [BP-04, BP-09]
 tags: [library, reference]
 comments: true
 ---
@@ -22,7 +22,7 @@ A voluntary framework for managing AI risk across a GOVERN, MAP, MEASURE, MANAGE
 
 ## Role in the record
 
-- Grounds [BP3](../best-practices/03-govern-autonomy-and-accountability.md): defined roles and accountability, an agent inventory, and go/no-go authority.
-- Grounds [BP8](../best-practices/08-human-in-the-loop.md): oversight calibrated to the risk level.
+- Grounds [BP04](../best-practices/04-govern-autonomy-and-accountability.md): defined roles and accountability, an agent inventory, and go/no-go authority.
+- Grounds [BP09](../best-practices/09-human-in-the-loop.md): oversight calibrated to the risk level.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

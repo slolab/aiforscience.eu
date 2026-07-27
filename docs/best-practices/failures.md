@@ -18,5 +18,5 @@ To add a failure, use the [Submit a document](https://github.com/slolab/aiforsci
   Where a resource had no task-shaped agent interface, agents fell back to legacy APIs or scraped the service.
   This is fragile and adds load.
   Seen for several life-science resources.
-  Related practices: [BP1](01-default-to-agent-accessibility.md), [BP5](05-design-around-user-tasks.md).
+  Related practices: [BP02](02-default-to-agent-accessibility.md), [BP06](06-design-around-user-tasks.md).
   Source: [ELIXIR TF Agentic AI (2026)](../library/elixir-tf-agentic-ai-2026.md), Failures section.

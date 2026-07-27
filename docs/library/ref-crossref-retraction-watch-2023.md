@@ -6,7 +6,7 @@ issuing_body: "Crossref"
 published: 2023
 doi_or_url: https://www.crossref.org/blog/news-crossref-and-retraction-watch
 added_on: 2026-07-27
-grounds: [BP-06]
+grounds: [BP-07]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ Crossref acquired the Retraction Watch database and made it openly available. Re
 
 ## Role in the record
 
-- Grounds [BP6](../best-practices/06-provenance-and-citation.md): open, machine-readable retraction data that makes propagation feasible.
+- Grounds [BP07](../best-practices/07-provenance-and-citation.md): open, machine-readable retraction data that makes propagation feasible.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

@@ -1,7 +1,7 @@
 ---
 title: Register, vet, and manage agent interfaces through trusted channels
-nav_title: "BP2 Trusted interfaces"
-practice_id: BP-02
+nav_title: "BP03 Trusted interfaces"
+practice_id: BP-03
 status: draft
 first_added: 2026-07-25
 last_reviewed: 2026-07-26
@@ -48,19 +48,19 @@ comments: true
 <div class="afs-practice" markdown>
 
 - An [agent](../glossary.md#agent) reaches tools, data, and actions outside the model through [interfaces](../glossary.md#interface) (e.g., [MCP](../glossary.md#mcp) servers, skills, plugins).
-  { #bp2-a1 }
+  { #bp3-a1 }
 - Each interface runs code and acts for the user, so each is a point where risk enters.
-  { #bp2-a2 }
+  { #bp3-a2 }
 - Interfaces should be published through a channel that lists and vets them.
-  { #bp2-a3 }
+  { #bp3-a3 }
 - Listing makes an interface discoverable and records where it comes from and who maintains it.
-  { #bp2-a4 }
+  { #bp3-a4 }
 - Vetting is a separate step; a discoverable interface is not automatically safe.
-  { .afs-practice__pivot #bp2-a5 }
+  { .afs-practice__pivot #bp3-a5 }
 - Public interfaces (e.g., public GitHub repositories) are generally vulnerable to [prompt injection](../glossary.md#prompt-injection) attacks.
-  { #bp2-a6 }
+  { #bp3-a6 }
 - Safety and omnipotence are on a tradeoff; a system that can run arbitrary code (e.g., from web search) is vulnerable to injection – a system that cannot is less autonomous.
-  { #bp2-a7 }
+  { #bp3-a7 }
 
 </div>
 
@@ -129,6 +129,7 @@ Knowing where an interface comes from, and keeping more than one option open, av
 
 ## Change history
 
+- 2026-07-27: Renumbered from BP02 to BP03 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instances (IETF AIPREF, EU AI Act Article 25) and cross-references.
 - 2026-07-26: Rewritten to separate listing from vetting (the official MCP Registry lists but does not vet), merge agent-traffic management into this practice, reframe traffic control around identified traffic rather than IP blocking, qualify the Article 25 point, and add OWASP, MITRE-adjacent, and AIPREF grounding.
 - 2026-07-25: Created from the ELIXIR TF distillation (hooks 9, 10), grounded in the HFD paper and the EU Expert Forum entry.

@@ -6,7 +6,7 @@ issuing_body: "OWASP"
 published: 2025
 doi_or_url: https://owasp.org/www-project-mcp-top-10/
 added_on: 2026-07-27
-grounds: [BP-02]
+grounds: [BP-03]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A ranked list of security risks specific to the Model Context Protocol. It is ma
 
 ## Role in the record
 
-- Grounds [BP2](../best-practices/02-register-and-vet-interfaces.md): MCP03 Tool Poisoning as a schema/supply-chain compromise of agent interfaces.
+- Grounds [BP03](../best-practices/03-register-and-vet-interfaces.md): MCP03 Tool Poisoning as a schema/supply-chain compromise of agent interfaces.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

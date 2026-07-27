@@ -6,7 +6,7 @@ issuing_body: "OECD"
 published: 2024
 doi_or_url: https://www.oecd.org/en/topics/ai-principles.html
 added_on: 2026-07-27
-grounds: [BP-03]
+grounds: [BP-04]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ Intergovernmental principles for trustworthy AI. They cover human agency, transp
 
 ## Role in the record
 
-- Grounds [BP3](../best-practices/03-govern-autonomy-and-accountability.md): traceability placed under the Accountability principle; human agency and oversight.
+- Grounds [BP04](../best-practices/04-govern-autonomy-and-accountability.md): traceability placed under the Accountability principle; human agency and oversight.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

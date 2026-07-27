@@ -6,7 +6,7 @@ issuing_body: "Mitchell et al., FAccT '19"
 published: 2019
 doi_or_url: https://doi.org/10.1145/3287560.3287596
 added_on: 2026-07-27
-grounds: [BP-04]
+grounds: [BP-05]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A short structured document that reports a trained model's intended use, perform
 
 ## Role in the record
 
-- Grounds [BP4](../best-practices/04-documentation-and-data-for-agents.md): structured model documentation.
+- Grounds [BP05](../best-practices/05-documentation-and-data-for-agents.md): structured model documentation.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

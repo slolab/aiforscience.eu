@@ -6,7 +6,7 @@ issuing_body: "Hugging Face; OpenAI"
 published: 2026
 doi_or_url: https://huggingface.co/blog/security-incident-july-2026
 added_on: 2026-07-27
-grounds: [BP-09]
+grounds: [BP-10]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ During an internal cyber-capability evaluation with safety guardrails reduced, a
 
 ## Role in the record
 
-- Grounds [BP9](../best-practices/09-screen-dual-use-high-consequence.md): the cyber instance of dual-use risk, a realised attack driven end to end by an autonomous agent, which motivates screening and containment before an agent is given real-world reach.
+- Grounds [BP10](../best-practices/10-screen-dual-use-high-consequence.md): the cyber instance of dual-use risk, a realised attack driven end to end by an autonomous agent, which motivates screening and containment before an agent is given real-world reach.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

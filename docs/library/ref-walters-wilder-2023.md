@@ -6,7 +6,7 @@ issuing_body: "Walters & Wilder"
 published: 2023
 doi_or_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11031695/
 added_on: 2026-07-27
-grounds: [BP-06]
+grounds: [BP-01, BP-07]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,7 @@ A study measuring the accuracy of citations produced by a large language model. 
 
 ## Role in the record
 
-- Grounds [BP6](../best-practices/06-provenance-and-citation.md): evidence that a large fraction of LLM-generated citations are fabricated or erroneous (support for requiring a source trail).
+- Grounds [BP01](../best-practices/01-match-method-to-task.md): fabricated citations are a failure mode of using a frontier LLM where a specialized retrieval method fits.
+- Grounds [BP07](../best-practices/07-provenance-and-citation.md): evidence that a large fraction of LLM-generated citations are fabricated or erroneous (support for requiring a source trail).
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

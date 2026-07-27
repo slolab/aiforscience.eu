@@ -6,7 +6,7 @@ issuing_body: "W3C"
 published: 2013
 doi_or_url: https://www.w3.org/TR/prov-o/
 added_on: 2026-07-27
-grounds: [BP-06]
+grounds: [BP-07]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ An ontology for expressing provenance: which entities, activities, and agents pr
 
 ## Role in the record
 
-- Grounds [BP6](../best-practices/06-provenance-and-citation.md): machine-readable provenance.
+- Grounds [BP07](../best-practices/07-provenance-and-citation.md): machine-readable provenance.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

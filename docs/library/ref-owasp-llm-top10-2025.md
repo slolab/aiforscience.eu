@@ -6,7 +6,7 @@ issuing_body: "OWASP"
 published: 2025
 doi_or_url: https://owasp.org/www-project-top-10-for-large-language-model-applications/
 added_on: 2026-07-27
-grounds: [BP-02]
+grounds: [BP-03]
 tags: [library, reference]
 comments: true
 ---
@@ -22,6 +22,6 @@ A ranked list of the top security risks for applications built on large language
 
 ## Role in the record
 
-- Grounds [BP2](../best-practices/02-register-and-vet-interfaces.md): prompt injection (LLM01) is the top-ranked risk; the documented risk that vetting guards against.
+- Grounds [BP03](../best-practices/03-register-and-vet-interfaces.md): prompt injection (LLM01) is the top-ranked risk; the documented risk that vetting guards against.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.
