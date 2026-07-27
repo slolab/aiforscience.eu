@@ -97,7 +97,7 @@ The evidence that the risk is real spans domains too: an AI model repurposed for
 Some high-consequence actions are irreversible in a second sense: they cannot be walked back once taken.
 Training a third-party model on data, or granting a perpetual licence over it, cannot be undone, and the data cannot be reliably removed from the model afterwards.
 When the consent behind that data can be withdrawn, as it can be for human-subjects data under research ethics and data-protection law, no one can validly authorise a use that could not later honour a withdrawal.
-The safeguard is the same as for any irreversible harm: prevent the action before it happens rather than review it after.
+The safeguard is the same as for any irreversible harm: prevent the action before it happens.
 In agentic workflows this means constraining and auditing what an agent can send outward, because an agent that runs code and reads files can transmit such data without a deliberate upload.
 
 ## Examples
