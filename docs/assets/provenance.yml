@@ -99,6 +99,10 @@ bp2-a4:  # access governed by resource
   - ref: elixir-ai-strategy-2026
     stance: supports
     locator: "§5, §7: controlled-access sensitive data via federated, privacy-preserving methods"
+  - ref: gagneur-rare-disease-patient-data-2026
+    stance: supports
+    locator: "protected research tier"
+    quote: "sensitive data remain within an institutionally approved environment, with analysis against those data performed locally or through an approved secure-processing arrangement"
 bp2-a5:  # not every resource needs its own maintained interface
   - ref: elixir-tf-agentic-ai-2026
     stance: supports
@@ -163,6 +167,10 @@ bp4-a1:  # limits belong in the system, not only in policy
     stance: supports
     locator: "Art 5(1a)(a)(ii); Recital 12"
     quote: "provider liable where a prohibited output is a reasonably foreseeable and reproducible outcome absent reasonable and adequate technical safety measures and other safeguards"
+  - ref: gagneur-rare-disease-patient-data-2026
+    stance: supports
+    locator: "protected research tier"
+    quote: "technical controls prevent patient-level information from being transmitted to Anthropic and allow institutions to audit what the agent can access and send"
 bp4-a2:  # an agent cannot be persuaded, only prevented
   - ref: openai-governing-agentic-ai-2023
     stance: supports
@@ -202,6 +210,10 @@ bp4-a6:  # actions logged under an attributable identity
   - ref: oecd-ai-principles-2024
     stance: supports
     locator: "traceability under Accountability"
+  - ref: gagneur-rare-disease-patient-data-2026
+    stance: supports
+    locator: "protected research tier: audit what the agent can access and send"
+    quote: "allow institutions to audit what the agent can access and send"
 
 # ------------------------------------------------------------------ BP05
 bp5-a1:  # documentation, data, metadata are now an interface
@@ -340,6 +352,10 @@ bp9-a5:  # stating a level is necessary but not sufficient
   - ref: eu-ai-act
     stance: supports
     locator: "Article 14 requires oversight to be effective; names automation bias"
+  - ref: gagneur-rare-disease-patient-data-2026
+    stance: supports
+    locator: "agent-run code can transmit data without a deliberate upload"
+    quote: "Study-participant-level information can therefore leave the approved environment without a deliberate upload"
 
 # ------------------------------------------------------------------ BP10
 bp10-a1:  # some agents carry dual-use risk
@@ -362,6 +378,17 @@ bp10-a3:  # evaluate misuse capability against set thresholds
   - ref: fmf-safety-frameworks
     stance: supports
     locator: "CBRN, cyber, autonomy as parallel domains"
+bp10-a5:  # revocable consent cannot authorise irreversible training
+  - ref: helsinki
+    stance: supports
+    locator: "voluntary participation; right to withdraw at any time"
+  - ref: gdpr
+    stance: supports
+    locator: "Art 7(3) right to withdraw consent; Art 17 right to erasure"
+  - ref: gagneur-rare-disease-patient-data-2026
+    stance: supports
+    locator: "no perpetual licence taken; analysis is not training permission"
+    quote: "Permission to analyse them does not imply permission to transfer them, or derived patient-level information, to a third party for model training or product development"
 bp10-a4:  # high-consequence actions through a screening chokepoint
   - ref: usg-durc-2024
     stance: supports
