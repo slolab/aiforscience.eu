@@ -72,10 +72,12 @@ A tool that looks capable in a demo can be wrong in ways that only representativ
 
 ## Examples
 
-- A tool tested on representative tasks with known answers before it informs a study, with its error rate, consistency across repeated runs, and failure modes recorded.
-- Providers publishing evaluation evidence (tasks, metrics, known limits) that an adopter can reproduce, not only a feature description.
-- Red-teaming and hallucination/confabulation testing treated as the safety-and-correctness dimension of the same evaluation, not a separate afterthought.
-- Reporting that follows an established checklist (for example REFORMS for ML-based science, or a reproducibility checklist), so evaluations are comparable.
+- A team adopts a tool because it tops a public leaderboard, then finds it wrong on their own data; the leaderboard measured a different task from theirs.
+- Before relying on a tool, the adopter runs it on cases where the answer is known, checks it across repeated runs, and records where it breaks; that evidence is what justifies trusting the result.
+- A tool that looked convincing in a demo is wired into a study without testing, and a confabulated value reaches an analysis before anyone checks it.
+- A provider ships evaluation evidence with the tool (tasks, metrics, error rate, known failure modes) that an adopter can reproduce, not only a feature description.
+- Red-teaming and hallucination/confabulation testing are run as the safety-and-correctness side of the same evaluation, not a separate afterthought.
+- Evaluations follow an established checklist (for example REFORMS for ML-based science, or a reproducibility checklist), so different groups' results are comparable.
 
 !!! info "Practice metadata"
     **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
@@ -92,6 +94,7 @@ A tool that looks capable in a demo can be wrong in ways that only representativ
 
 ## Change history
 
+- 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instance (REFORMS).
 - 2026-07-26: Created.
   New practice for adopter-side evaluation of agentic tools, distinct from vetting at registration ([BP2](02-register-and-vet-interfaces.md)) and from self-audit of one's own agent ([BP3](03-govern-autonomy-and-accountability.md)).
   The ELIXIR task force flagged evaluation as an unresolved open question; red-teaming and hallucination-rate testing fold in as its safety and correctness dimensions.

@@ -79,13 +79,13 @@ The evidence that the risk is real spans domains too: an AI model repurposed for
 
 ## Examples
 
-- A capability/misuse evaluation run before an agent is given real-world reach, with deployment gated on the result and thresholds updated as capability rises.
-- A screening chokepoint in the path of any high-consequence action, so the agent cannot trigger it unscreened.
-- Dual-use refusal behaviour required of the agent, and tested.
-- Concrete instances of the same pattern across fields:
+- An agent's misuse capability is evaluated against set thresholds before it is given real-world reach, deployment is gated on the result, and the thresholds are raised as capability rises.
+- An agent is wired straight to an ordering or execution capability with no screen in the path, and a dual-use request goes through because nothing was positioned to catch it.
+- The agent is required to refuse dual-use requests, and that refusal is tested rather than assumed.
+- The same screen-before-acting pattern recurs across fields:
     - Life sciences: routing sequence orders through synthesis providers that screen them, after work showed AI-designed sequences can evade that screening.
     - Chemistry: guarding against generation of toxic compounds or precursors, after a toxicity model was inverted to design chemical-warfare agents.
-    - Cyber: evaluating and limiting an agent's offensive-cyber uplift before it can act against real systems.
+    - Cyber: evaluating and limiting an agent's offensive-cyber uplift before it can act against real systems, after an autonomous system was shown to break out of containment.
 
 !!! info "Practice metadata"
     **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
@@ -114,4 +114,5 @@ The evidence that the risk is real spans domains too: an AI model repurposed for
 
 ## Change history
 
+- 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including an anti-pattern (unscreened path); kept the labelled cross-field instances (life sciences, chemistry, cyber).
 - 2026-07-26: Created as a domain-neutral practice on screening agents for dual-use and high-consequence risk (the frontier-framework threshold-and- mitigation pattern), with life-science, chemistry, and cyber cases as labelled examples.

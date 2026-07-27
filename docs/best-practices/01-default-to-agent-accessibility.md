@@ -88,13 +88,19 @@ The load that automated clients now place on open resources makes governed acces
 
 ## Examples
 
-- A default that resources are machine-actionable and discoverable, with the level of support and the access controls set per resource.
-- A list of resource types by how widely used and important they are (for example core resources, interoperability resources, archives, and minor tools), each tied to a level of investment.
-  The ELIXIR Core Data Resources are one worked instance in the life sciences: a tier selected on quantitative and qualitative indicators and funded as infrastructure.
-- A light generic path for minor resources, so they stay reachable without their own maintained interface.
-  A registry such as bio.tools (life sciences) shows the pattern: many tools kept discoverable through shared metadata rather than a bespoke interface each.
-- Demand (agent traffic, user requests) guiding which interfaces to improve next.
-- Access governed per tier: default reachability paired with authentication and rate-shaping, so a resource is not knocked over by the traffic its openness invites.
+- The maintainer of a heavily-used database ships a first-party MCP server covering the queries people actually run, and links it from the documentation.
+  Traffic that used to arrive as thousands of small REST calls now comes through one path the provider designed, and answers improve because the agent is no longer reverse-engineering the API.
+- With no first-party interface on offer, a scientist reaches a popular resource through a third-party MCP server they have not checked.
+  It maps one field to the wrong column, the analysis runs on the wrong data, and the output looks plausible while being wrong.
+  A vetted first-party path is what would have avoided the detour (checking a third-party tool before trusting it is [BP7](07-evaluate-tools-before-trust.md); vetting at connect time is [BP2](02-register-and-vet-interfaces.md)).
+- A team spends weeks building and maintaining a bespoke agent interface for a niche tool that one group runs twice a year.
+  The same effort spent on a top-tier resource would have served far more people; the work did not follow demand.
+- A minor tool stays reachable through a shared registry's metadata instead of a bespoke interface, so an agent can still discover and call it.
+  A registry such as bio.tools (life sciences) is one worked instance of this light generic path.
+- A provider sorts its resources into tiers by how widely used and important they are, funds the top tier as maintained infrastructure, and leaves minor resources on the generic path.
+  The ELIXIR Core Data Resources (life sciences) are one such tier, selected on quantitative and qualitative indicators.
+- A resource keeps a default-open path but authenticates and rate-shapes automated traffic, so a burst of agent calls does not knock it over for its human users.
+  Its logs cannot tell agents from people, which is why the limit is set at the resource rather than inferred from the client.
 
 !!! info "Practice metadata"
     **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
@@ -119,5 +125,6 @@ The load that automated clients now place on open resources makes governed acces
 
 ## Change history
 
+- 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns, replacing restatements of the practice; kept the labelled life-science instances (Core Data Resources, bio.tools).
 - 2026-07-26: Rewritten to be domain-neutral (FAIR as the general anchor; ELIXIR and bio.tools demoted to labelled examples) and to replace "open to agents" with machine-actionable, discoverable, and governed-per-tier, grounded in FAIR and the COAR load survey.
 - 2026-07-25: Created from the ELIXIR TF distillation (hooks 2, 3).

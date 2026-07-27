@@ -72,11 +72,11 @@ Both need to know what users are trying to do, and providers often do not, so le
 
 ## Examples
 
-- Operations named and scoped for user tasks, so a common goal takes one call or a few, not a long chain of primitives.
-- Task design based on the queries users actually make, not the shape of the existing endpoints.
-- A watch on call patterns: an interface that triggers many small calls is probably misaligned with how it is used.
-- For very large APIs, a code-execution or search-and-call surface as an alternative to hand-building a task tool for every workflow.
-- Effort spent understanding users, since providers rarely have a full picture of what agents are asked to do.
+- A provider exposes its API one endpoint per tool; to answer one common question the agent makes dozens of small calls, hits rate limits, and stitches the pieces together wrong.
+- The provider replaces those with a single operation shaped around the question users actually ask, and the same task now takes one call.
+- Watching real usage, a provider finds users mostly want a comparison the API never offered directly, adds a task-level tool for it, and drops an assumption about what people wanted that turned out to be wrong.
+- A spike of many tiny calls aimed at one goal flags an interface that is misaligned with how it is used, and prompts a redesign.
+- For a very large API, instead of hand-building a task tool for every workflow, the provider lets the agent write code against the endpoints (progressive disclosure and code execution).
 
 !!! info "Practice metadata"
     **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
@@ -96,6 +96,7 @@ Both need to know what users are trying to do, and providers often do not, so le
 
 ## Change history
 
+- 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including an anti-pattern, replacing restatements of the practice.
 - 2026-07-26: Rewritten to add vendor-primary grounding (the Anthropic tool-design guidance, with quantified evidence) and to note the two accepted remedies to endpoint-wrapping (task-level tools and code execution for very large APIs).
   "Providers don't know their users" kept as stated judgement.
 - 2026-07-25: Created from the ELIXIR TF distillation (hooks 5, 12).

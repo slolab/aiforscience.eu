@@ -88,11 +88,12 @@ Stating and enforcing HITL levels fulfils part of [BP3](03-govern-autonomy-and-a
 
 ## Examples
 
-- A stated HITL level for each use case, chosen from a short list: mandatory, optional, in-process, final check.
-- The check defined concretely: what the human sees, when, and what they can do (approve, edit, veto, stop), designed so they can actually judge the output.
-- The level matched to the stakes, so actions that change records, results, or outside state get stronger checks than read-only queries.
-- The stated level enforced by the system, not left to habit, which ties it to the guardrails in [BP3](03-govern-autonomy-and-accountability.md).
-- Peer-review confidentiality respected: no uploading of confidential manuscripts to external models, and reviewer AI use declared.
+- A workflow never states its HITL level; each user assumes someone else checks, and an unreviewed agent edit reaches a shared record.
+- Every use case instead declares its level from a short list (mandatory, optional, in-process, final check), and a workflow that declares none is understood to run at full autonomy, so the choice is explicit.
+- A pipeline has a mandatory "human approves each item" step, but at hundreds of items an hour the reviewer clicks approve without reading; the check exists on paper and fails in practice.
+- The check is designed so the human can actually judge: it shows what changed, at a realistic volume, with approve, edit, veto, and stop, and the strength of the check is set by the stakes.
+- The stated level is enforced by the system rather than left to habit, which ties it to the guardrails in [BP3](03-govern-autonomy-and-accountability.md), and the HITL engagement is recorded in provenance ([BP6](06-provenance-and-citation.md)) so oversight is auditable instead of assumed.
+- A reviewer does not upload a confidential manuscript to an external model and declares any AI use, a stated boundary for a high-stakes task.
 
 !!! info "Practice metadata"
     **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
@@ -111,6 +112,7 @@ Stating and enforcing HITL levels fulfils part of [BP3](03-govern-autonomy-and-a
 
 ## Change history
 
+- 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns (unstated level, rubber-stamping at volume), replacing restatements of the practice.
 - 2026-07-26: Renumbered from BP7 to BP8 in the reordering.
   Added grounding (EU AI Act Article 14, NIST AI 600-1) and a caveat that a stated level is necessary but not sufficient (automation bias, rubber-stamping, moral crumple zones; Elish 2019, Green 2022), plus a peer-review confidentiality instance.
 - 2026-07-25: Created from the ELIXIR TF distillation (hook 8), grounded in the HFD paper.

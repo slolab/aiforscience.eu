@@ -99,14 +99,13 @@ This is the consensus position across the main governance frameworks (NIST, the 
 
 ## Examples
 
-- Permission scopes and autonomy limits enforced by the system, so an agent cannot exceed them whatever it is told.
-- Defined stop and escalation conditions, and a shutdown path that a named role can trigger.
-- Each responsibility given to a role: strategic direction, process responsibility with human decision authority, and technical operation, with the boundaries written down.
-- Agent actions logged under an attributable identity (an action ledger), and agents given identifiers, so behaviour can be monitored live and reconstructed after an incident.
-- Staged rollout: low-risk cases first, with clear success and go-live criteria and an accepted risk limit set in advance.
-- A list of the agents in use, reviewed regularly for behaviour and output, including personal agents.
-- Independent evaluation or audit of agent behaviour where the stakes are high.
-- Governance kept up to date: guardrails revised as agents and uses change, with decisions and vetoes recorded.
+- A policy document says the agent must not delete production records, but nothing in the system stops it; a prompt-injected instruction gets it to do exactly that.
+  The rule was written, not enforced.
+- The same agent runs with a scoped token that carries no delete permission and a shutdown control a named on-call engineer can trigger, so the injected instruction fails because the action was never available to it.
+- After an agent writes a wrong value to a shared dataset, the team traces it through the action ledger to the run, the model version, and the role that owned that workflow, and closes the gap.
+- Responsibility for an agent sits with "the department" in general; when it misbehaves, no one is answerable and no one has clear authority to shut it down.
+- A new agent feature goes live for low-risk cases first, with success and go-live criteria and an accepted risk limit set in advance, before any wider rollout.
+- A personal agent connected to a researcher's mail and files is entered in the institution's agent inventory and reviewed like any deployed one, because its broad access is part of the same risk.
 
 !!! info "Practice metadata"
     **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
@@ -140,6 +139,7 @@ This is the consensus position across the main governance frameworks (NIST, the 
 
 ## Change history
 
+- 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns, replacing restatements of the practice.
 - 2026-07-26: Rewritten to merge action-logging and attributable agent identity into the practice, add independent grounding (NIST, EU AI Act, OECD, ISO/IEC 42001, OpenAI, Chan et al., Kolt), and add two citation caveats: the "guidelines to guardrails / Kassorla et al." attribution in the source could not be verified, and the JRC "not automatable" wording is unconfirmed.
 - 2026-07-25: Created from the HFD distillation, grounded in the EU Expert Forum entry.
   New practice added because the guidelines-to-guardrails point is a separate action, not a sub-case of stating a human-in-the-loop level ([BP8](08-human-in-the-loop.md)).

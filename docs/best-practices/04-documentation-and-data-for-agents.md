@@ -81,13 +81,13 @@ This work also benefits the people who use the resource directly, and current an
 
 ## Examples
 
-- Docstrings and tool descriptions that state parameter types, units, valid ranges, and failure modes, not only prose descriptions.
-- Examples that run and are tested in CI, so they cannot drift from the code (the documentation-as-code practice: doctests, executable notebooks).
-- One description per capability, instead of the same thing repeated in several places that then disagree.
-- Data published with its meaning: schemas, ontologies or controlled vocabularies, and machine-readable metadata including provenance and, where relevant, retraction status.
-  General-purpose formats such as W3C DCAT, Croissant, datasheets, and model cards carry this; domain profiles (for example Bioschemas in the life sciences) are concrete instances of the same idea.
-- Worked examples of how to retrieve the data, including natural-language-to-query pairs where a query language applies (for example SPARQL or Cypher).
-- Formats agents can read directly (plain text, markdown, structured metadata), not only web pages.
+- A parameter is renamed but its docstring still shows the old name; a human reader infers the new one from context, while the agent calls it verbatim, the run fails, and a plausible but wrong number comes back.
+- Examples in the documentation run as doctests in CI, so when the API changes a broken example fails the build and is fixed before it can mislead a human or an agent.
+- A tool description gives only prose, with no parameter types, units, or valid ranges; the agent passes an out-of-range value and cannot interpret the error it gets back.
+- A dataset is published with its meaning attached: a schema, controlled vocabularies, and machine-readable metadata including provenance and, where relevant, retraction status, so the agent does not have to guess at units or fields.
+  General-purpose formats such as W3C DCAT, Croissant, datasheets, and model cards carry this; domain profiles such as Bioschemas (life sciences) are concrete instances of the same idea.
+- A resource ships natural-language-to-query examples, for a query language such as SPARQL or Cypher, so an agent can turn a user's question into a correct query.
+- The same documentation is offered in a form an agent can read directly (plain text, markdown, structured metadata), not only as a rendered web page.
   A convention like `llms.txt` is one proposed approach, not yet a ratified standard.
 
 !!! info "Practice metadata"
@@ -107,6 +107,7 @@ This work also benefits the people who use the resource directly, and current an
 
 ## Change history
 
+- 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instances (DCAT, Croissant, datasheets, model cards, Bioschemas, llms.txt).
 - 2026-07-26: Rewritten to be domain-neutral (FAIR, DCAT, Croissant, datasheets, and model cards as the general anchors; Bioschemas and SPARQL/Cypher demoted to labelled examples), to add tool descriptions alongside datasets, and to flag `llms.txt` as a proposed convention rather than a standard.
 - 2026-07-25: Created from the ELIXIR TF distillation (hooks 4, 6), grounded in the HFD paper.
   Replaces the dummy BP0 on documentation and adds the data-and-examples dimension.

@@ -82,13 +82,13 @@ A research agent has to pass citation and retraction status through to its outpu
 
 ## Examples
 
-- Every answer carries references to its sources, detailed enough to check the specific claim.
-- Retraction and version status travel with cited sources, so the agent does not present withdrawn or outdated work as current.
+- An agent returns a confident literature summary with no sources; a reader cannot tell a sound claim from a fabricated one, and later finds that one cited paper does not exist.
+- Each answer instead carries references detailed enough to check the specific claim, and cited work passes through retraction status, so a withdrawn study is flagged rather than presented as current.
   The NISO CREC recommended practice and the open Crossref/Retraction Watch data make this checkable.
-- Human and agent contributions are labelled, in outputs and in anything the agent writes to, and agent use is disclosed where the work is published.
-- The trace is machine-readable (for example W3C PROV, RO-Crate, or CRediT for contributions), so it can be checked automatically, not only read.
-- The run is recorded: model version, inputs, and tool calls kept so a result can be re-examined and, where possible, re-run.
-- Judgement stays with the human: the agent supplies the traceable evidence, the person decides.
+- An agent-written passage is pasted into a manuscript with no marking; a co-author cannot tell which text and which analysis were the agent's, and authorship and error-tracing get muddled.
+- Human and agent contributions are labelled, in outputs and in anything the agent writes to, agent use is disclosed where the work is published, and the trace is machine-readable (for example W3C PROV, RO-Crate, or CRediT) so it can be checked automatically.
+- The run is recorded: model version, inputs, and tool calls kept so a surprising result can be re-examined and, where possible, re-run.
+- The agent supplies the traceable evidence and the person makes the call, remaining accountable for the judgement.
 
 !!! info "Practice metadata"
     **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
@@ -111,5 +111,6 @@ A research agent has to pass citation and retraction status through to its outpu
 
 ## Change history
 
+- 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instances (NISO CREC, Crossref/Retraction Watch, PROV, RO-Crate, CRediT).
 - 2026-07-26: Rewritten to add standards grounding (PROV-O, CRediT, ICMJE/COPE, NISO CREC, Crossref/Retraction Watch), fold in run-level recording (reproducibility) and disclosure of agent use, and cite the fabricated-citation and cite-retracted-work evidence as support.
 - 2026-07-25: Created from the ELIXIR TF distillation (hook 7), grounded in the HFD paper and the EU Expert Forum entry.

@@ -95,13 +95,15 @@ Knowing where an interface comes from, and keeping more than one option open, av
 
 ## Examples
 
-- A channel that both lists an interface (source, maintainer, review date) and vets it (review or signing) before it is trusted, instead of open self-publication treated as if it were a safety check.
-- A record of each interface's maintainer, review date, and permitted scope, visible to its users, with a signed provenance record where the channel supports it.
-- An approved, identified channel for shaping and rate-limiting agent traffic by identity, instead of blocking addresses.
-  Machine-readable access preferences (for example the emerging IETF AIPREF vocabulary) let a provider declare what automated clients may do.
-- Attention to who is responsible: adapting, fine-tuning, or repurposing an interface can move responsibility to whoever changed it.
-  Under the EU AI Act, a substantial modification can turn a deployer into a provider with the provider's duties, though the threshold is defined for high-risk systems and its exact bounds are still being clarified.
-- More than one provider kept open, so a resource is not reachable only through one company's agent ecosystem.
+- A lab installs an MCP server because a public registry lists it and it has many stars, treating the listing as a safety check.
+  The tool description carries instructions the model reads but the user never sees, and the agent leaks data on first use; nothing in the listing had vetted it.
+- A provider publishes its interface through a channel that records source, maintainer, and review date and signs it, so a user can see it was reviewed before trusting it with their data or actions.
+- An agent with web search and code execution reads a public repository issue that contains injected instructions and runs them; a colleague's agent, limited to a fixed set of read-only tools, is unaffected but can do less.
+  The reach that makes an agent useful is the same reach that exposes it, so the safeguard has to match the capability.
+- A resource routes agent calls through an approved, identified channel and rate-limits per identity, instead of blocking address ranges that also lock out real users.
+  It declares what automated clients may do in machine-readable form; the emerging IETF AIPREF vocabulary is one instance.
+- A group fine-tunes and repackages someone else's interface and ships it under their own name, without realising that under the EU AI Act a substantial modification can move the provider's duties onto them (the threshold is defined for high-risk systems and its exact bounds are still being clarified).
+- An institution keeps more than one agent ecosystem in use, so a critical resource is not reachable only through a single vendor's channel.
 
 !!! info "Practice metadata"
     **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
@@ -127,5 +129,6 @@ Knowing where an interface comes from, and keeping more than one option open, av
 
 ## Change history
 
+- 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instances (IETF AIPREF, EU AI Act Article 25) and cross-references.
 - 2026-07-26: Rewritten to separate listing from vetting (the official MCP Registry lists but does not vet), merge agent-traffic management into this practice, reframe traffic control around identified traffic rather than IP blocking, qualify the Article 25 point, and add OWASP, MITRE-adjacent, and AIPREF grounding.
 - 2026-07-25: Created from the ELIXIR TF distillation (hooks 9, 10), grounded in the HFD paper and the EU Expert Forum entry.
