@@ -31,6 +31,10 @@ bp1-a1:  # method fit; an agent or frontier model is one option, not the default
     stance: supports
     locator: "§4.3, pg. 13"
     quote: "AI has already won the war for simple work ... But for anything complex or long-term, humans dominate by 9-to-1 margins. The dividing line isn't intelligence, it's memory, adaptability, and learning capability"
+  - ref: expectation-realisation-gap-2026
+    stance: supports
+    locator: "Heterogeneity as the default"
+    quote: "there is currently no stable, globally positive treatment effect for agentic AI. Average headline figures ... will systematically misrepresent the benefit realised by any specific user, team, or organisation"
 bp1-a2:  # for well-defined work, a deterministic or specialized method often fits better
   - ref: kapoor-agents-that-matter-2024
     stance: supports
@@ -57,6 +61,10 @@ bp1-a3:  # agentic autonomy earns its cost only when flexibility at scale is nee
     stance: supports
     locator: "workflows for well-defined tasks; agents when flexibility needed at scale"
     quote: "Agentic systems often trade latency and cost for better task performance"
+  - ref: expectation-realisation-gap-2026
+    stance: supports
+    locator: "software engineering copilots; METR RCT"
+    quote: "the net slowdown occurred because the time spent reviewing, debugging, and integrating AI-generated code exceeded the time saved in initial generation"
 bp1-a4:  # frontier model where a specialized method fits -> avoidable failure modes
   - ref: walters-wilder-2023
     stance: supports

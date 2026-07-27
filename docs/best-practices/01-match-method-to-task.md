@@ -31,6 +31,9 @@ sources:
   - title: "MIT Project NANDA, The GenAI Divide (2025)"
     ref: library/mit-genai-divide-2025.md
     locator: "§4.3 p.13 task type, not model capability, decides fit"
+  - title: "Lobentanzer, Quantifying the Expectation–Realisation Gap for Agentic AI Systems (2026)"
+    ref: library/expectation-realisation-gap-2026.md
+    locator: "Heterogeneity as the default; controlled trials on miscalibrated, task-dependent benefit"
 layer: Method
 hitl: n/a
 tags: [practitioner, provider, draft]
@@ -85,6 +88,8 @@ When real cost is measured, complex agents often fail to beat simple baselines.
 On well-specified tasks, a specialized or fine-tuned model can be more accurate than a larger general model, at a fraction of the cost.
 The reverse choice has a record of concrete harm in science: a frontier model asked to supply references fabricates a large share of them, and treating a model as a scientific instrument without method rigour produces over-optimistic results that do not reproduce.
 You cannot pick the right method without first understanding the task.
+Understanding the task includes understanding the net benefit expected from it.
+Controlled trials show forecast gains from agentic tools are frequently miscalibrated and vary by task and user, so state the expected benefit against a baseline with human oversight cost deducted, then measure the realised outcome against it.
 
 ## Examples
 
@@ -94,6 +99,7 @@ You cannot pick the right method without first understanding the task.
 - A scientist asks a chat model for supporting references and pastes them into a manuscript; several do not exist, a failure that a bibliographic search against a real index would not have produced.
 - A scientist uses a literature agent that is validated against a real index to autonomously find evidence for their opinion piece. The cited papers really exist, but on review, it becomes clear that the agent only read the abstracts of the papers, citing works for sentences they do not really support. The opinion piece is rejected.
 - A pipeline reports strong accuracy that collapses on re-run because the model was applied where the evaluation leaked; a simpler method with proper train/test separation would have been both honest and reproducible.
+- A group expects a large speedup from an agent and, before committing, writes down the expected net benefit against its current baseline with review and correction time subtracted; for its experienced users the projected gain is marginal, so it keeps the existing workflow and re-checks the estimate on a small pilot.
 
 !!! info "Practice metadata"
     **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
@@ -119,8 +125,11 @@ You cannot pick the right method without first understanding the task.
   Domain-specific systems can outperform general-purpose models within their domains at far lower cost (§3.2.3), qualified by the report's caution that demand for smaller models is uncertain and that non-frontier access is an imperfect substitute for frontier access.
 - [MIT Project NANDA, The GenAI Divide (2025)](../library/mit-genai-divide-2025.md).
   Enterprise field evidence that task type, not model capability, decides fit: users prefer AI for simple work but humans by 9-to-1 for complex or long-term work (§4.3, pg. 13). Out-of-domain business report; cited as external context.
+- [Lobentanzer, Expectation–Realisation Gap for Agentic AI (2026)](../library/expectation-realisation-gap-2026.md).
+  Review of controlled trials finding that forecast gains from agentic tools are miscalibrated and heterogeneous: constrained tasks sped up while expert high-context work was slowed, so method fit is decided per task and per user rather than by an average gain. Downweighted external context; the author is a contributor to this record.
 
 ## Change history
 
+- 2026-07-27: Added the Expectation–Realisation Gap review (Lobentanzer 2026) as downweighted context on heterogeneous, miscalibrated benefit, with a Reasons and Examples note that method choice includes stating and re-measuring expected net benefit with oversight cost deducted (bp1-a1, bp1-a3).
 - 2026-07-27: Added The GenAI Divide (MIT NANDA 2025) as a supporting source on task-based method fit (bp1-a1).
 - 2026-07-27: Created as BP01. Method-selection practice at the general end of the record; grounds the disciplined stance that an agent or frontier model is chosen, not assumed. Existing BP01 through BP09 renumbered to BP02 through BP10.
