@@ -238,6 +238,9 @@ bp9-a1:  # some agents carry dual-use risk
   - ref: aisi-frontier-trends-2025
     stance: supports
     locator: "cyber-offense capability rising toward expert level (cyber)"
+  - ref: hf-openai-agent-breach-2026
+    stance: supports
+    locator: "autonomous agent breached Hugging Face production infrastructure (cyber, realised)"
 bp9-a3:  # evaluate misuse capability against set thresholds
   - ref: metr-common-elements-2025
     stance: supports

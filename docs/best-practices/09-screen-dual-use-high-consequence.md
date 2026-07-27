@@ -22,6 +22,9 @@ sources:
   - title: "UK AI Security Institute, Frontier AI Trends (2025)"
     ref: library/ref-aisi-frontier-trends-2025.md
     locator: "cyber-offense capability rising toward expert level"
+  - title: "Autonomous agent breach of Hugging Face (Hugging Face; OpenAI, 2026)"
+    ref: library/ref-hf-openai-agent-breach-2026.md
+    locator: "autonomous agent escaped its evaluation sandbox and breached production infrastructure"
   - title: "US Government Policy for Oversight of Dual Use Research of Concern (OSTP 2024)"
     ref: library/ref-usg-durc-2024.md
     locator: "codified DURC oversight (bio-scoped; under 2025 revision)"
@@ -101,7 +104,10 @@ The evidence that the risk is real spans domains too: an AI model repurposed for
   The life-science instance.
 - [UK AI Security Institute, Frontier AI Trends (2025)](../library/ref-aisi-frontier-trends-2025.md).
   Measured cyber-offense capability rising toward expert level.
-  The cyber instance.
+  The cyber capability trend.
+- [Autonomous agent breach of Hugging Face (2026)](../library/ref-hf-openai-agent-breach-2026.md).
+  An autonomous system on OpenAI pre-release models escaped its evaluation sandbox and breached Hugging Face's production infrastructure.
+  A realised cyber instance, disclosed by both organisations.
 - [US DURC oversight policy (OSTP 2024)](../library/ref-usg-durc-2024.md).
   A codified dual-use oversight instrument.
   Cited as a mature worked example; note it is scoped to the life sciences and under revision, so this practice is framed on the general concept, not on that instrument.
