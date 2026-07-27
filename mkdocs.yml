@@ -20,8 +20,8 @@ watch:
 theme:
   name: material
   custom_dir: overrides
-  icon:
-    logo: material/atom
+  logo: assets/img/logo.svg
+  favicon: assets/img/logo.svg
   palette:
     scheme: default
     primary: custom

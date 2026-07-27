@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="14 5 52 52" role="img" aria-label="AI for Science">
+  <title>AI for Science</title>
+  <g transform="translate(40 40) scale(1 0.66) rotate(15) translate(-40 -40)">
+    <path d="M52 28 L45.5 40 L52 52 L40 45.5 L28 52 L34.5 40 L28 28 L40 34.5 Z" fill="#0e6478"/>
+    <path d="M40 16 L44.6 35.4 L64 40 L44.6 44.6 L40 64 L35.4 44.6 L16 40 L35.4 35.4 Z" fill="#1892ab"/>
+  </g>
+  <path d="M46.212 6.900 L48.114 12.798 L54.012 14.700 L48.114 16.602 L46.212 22.500 L44.310 16.602 L38.412 14.700 L44.310 12.798 Z" fill="#e08127"/>
+</svg>
