@@ -28,6 +28,9 @@ sources:
   - title: "EU Expert Forum on Frontier AI (2026)"
     ref: library/ec-expert-forum-2026.md
     locator: "§3.2.3 p.21 domain-specific systems outperform general models within their domains"
+  - title: "MIT Project NANDA, The GenAI Divide (2025)"
+    ref: library/mit-genai-divide-2025.md
+    locator: "§4.3 p.13 task type, not model capability, decides fit"
 layer: Method
 hitl: n/a
 tags: [practitioner, provider, draft]
@@ -114,7 +117,10 @@ You cannot pick the right method without first understanding the task.
   AI framed as a tool in science, a chosen instrument rather than a default.
 - [EU Expert Forum on Frontier AI (2026)](../library/ec-expert-forum-2026.md).
   Domain-specific systems can outperform general-purpose models within their domains at far lower cost (§3.2.3), qualified by the report's caution that demand for smaller models is uncertain and that non-frontier access is an imperfect substitute for frontier access.
+- [MIT Project NANDA, The GenAI Divide (2025)](../library/mit-genai-divide-2025.md).
+  Enterprise field evidence that task type, not model capability, decides fit: users prefer AI for simple work but humans by 9-to-1 for complex or long-term work (§4.3, pg. 13). Out-of-domain business report; cited as external context.
 
 ## Change history
 
+- 2026-07-27: Added The GenAI Divide (MIT NANDA 2025) as a supporting source on task-based method fit (bp1-a1).
 - 2026-07-27: Created as BP01. Method-selection practice at the general end of the record; grounds the disciplined stance that an agent or frontier model is chosen, not assumed. Existing BP01 through BP09 renumbered to BP02 through BP10.

@@ -34,6 +34,9 @@ sources:
   - title: "IETF AIPREF: a vocabulary for expressing AI usage preferences (draft)"
     ref: library/ref-ietf-aipref.md
     locator: "machine-readable access preferences"
+  - title: "MIT Project NANDA, The GenAI Divide (2025)"
+    ref: library/mit-genai-divide-2025.md
+    locator: "§3.3 p.8 shadow AI outpaces governed deployment"
 layer: Ecosystem
 hitl: mandatory
 tags: [provider, governance, draft]
@@ -104,6 +107,7 @@ Knowing where an interface comes from, and keeping more than one option open, av
   It declares what automated clients may do in machine-readable form; the emerging IETF AIPREF vocabulary is one instance.
 - A group fine-tunes and repackages someone else's interface and ships it under their own name, without realising that under the EU AI Act a substantial modification can move the provider's duties onto them (the threshold is defined for high-risk systems and its exact bounds are still being clarified).
 - An institution keeps more than one agent ecosystem in use, so a critical resource is not reachable only through a single vendor's channel.
+- When the approved list is too narrow to do real work, people route around it: in one enterprise survey 40% of organisations bought an official tool while staff at over 90% used personal AI tools unofficially, often to better effect. A vetting process that watches what people actually reach for, and brings the useful cases into the trusted channel, holds up better than one that only blocks.
 
 !!! info "Practice metadata"
     **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
@@ -126,9 +130,12 @@ Knowing where an interface comes from, and keeping more than one option open, av
   Substantial modification can move provider responsibility to whoever changed the system.
 - [IETF AIPREF vocabulary (draft)](../library/ref-ietf-aipref.md).
   Emerging machine-readable way to declare access preferences to automated clients.
+- [MIT Project NANDA, The GenAI Divide (2025)](../library/mit-genai-divide-2025.md).
+  Enterprise field evidence of a "shadow AI economy": unsanctioned personal-tool use outpaces governed deployment and often delivers better results (§3.3, pg. 8), so vetting should learn from observed usage rather than only restrict it. Out-of-domain business report; qualifies rather than grounds the practice.
 
 ## Change history
 
+- 2026-07-27: Added a "what it looks like in practice" example on shadow usage and vetting that learns from observed use, grounded in The GenAI Divide (MIT NANDA 2025) as a qualifier (bp3-a3).
 - 2026-07-27: Renumbered from BP02 to BP03 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instances (IETF AIPREF, EU AI Act Article 25) and cross-references.
 - 2026-07-26: Rewritten to separate listing from vetting (the official MCP Registry lists but does not vet), merge agent-traffic management into this practice, reframe traffic control around identified traffic rather than IP blocking, qualify the Article 25 point, and add OWASP, MITRE-adjacent, and AIPREF grounding.

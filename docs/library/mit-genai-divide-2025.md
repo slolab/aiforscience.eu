@@ -94,10 +94,10 @@ The report is co-produced by Project NANDA, an agent-infrastructure effort, so t
 
 ## Proposed changes to practices
 
-- [ ] Add this report as a supporting source to [BP-08](../best-practices/08-evaluate-tools-before-trust.md): field evidence that buyers who benchmark on task outcomes rather than model benchmarks succeed far more often (atom bp8-a3).
-- [ ] Add as a supporting source to [BP-06](../best-practices/06-design-around-user-tasks.md): tools that miss workflow fit stall regardless of model quality (atom bp6-a1).
-- [ ] Add as a supporting source to [BP-01](../best-practices/01-match-method-to-task.md): task type, not model capability, decides fit; simple tasks suit generic tools, complex work stays with humans (atoms bp1-a1, bp1-a2).
-- [ ] Consider a one-line "what it looks like in practice" note on [BP-03](../best-practices/03-register-and-vet-interfaces.md): unsanctioned personal-tool use outpaces governed deployment when approved tools do not fit real work, so vetting should learn from observed usage. No wording change to the practice statement itself.
+- [x] Add this report as a supporting source to [BP-08](../best-practices/08-evaluate-tools-before-trust.md): field evidence that buyers who benchmark on task outcomes rather than model benchmarks succeed far more often (atom bp8-a3). Applied 2026-07-27.
+- [x] Add as a supporting source to [BP-06](../best-practices/06-design-around-user-tasks.md): tools that miss workflow fit stall regardless of model quality (atom bp6-a1). Applied 2026-07-27.
+- [x] Add as a supporting source to [BP-01](../best-practices/01-match-method-to-task.md): task type, not model capability, decides fit; simple tasks suit generic tools, complex work stays with humans (atom bp1-a1). Applied 2026-07-27.
+- [x] Add a "what it looks like in practice" note on [BP-03](../best-practices/03-register-and-vet-interfaces.md): unsanctioned personal-tool use outpaces governed deployment when approved tools do not fit real work, so vetting should learn from observed usage. No wording change to the practice statement itself. Applied 2026-07-27.
 - [ ] No new practice. The report grounds existing practices; it does not clear the gating bar for a new one (it is out-of-domain enterprise evidence, and its distinct actions are already covered).
 
 ## Cautions and gaps

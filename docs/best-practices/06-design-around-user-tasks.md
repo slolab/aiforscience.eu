@@ -22,6 +22,9 @@ sources:
   - title: "Model Context Protocol specification"
     ref: library/ref-mcp-spec.md
     locator: "the interface substrate (MCP servers, tools)"
+  - title: "MIT Project NANDA, The GenAI Divide (2025)"
+    ref: library/mit-genai-divide-2025.md
+    locator: "Executive Summary p.3; §5.1 p.15 tools fail on workflow fit"
 layer: Method
 hitl: n/a
 tags: [provider, practitioner, draft]
@@ -93,9 +96,12 @@ Both need to know what users are trying to do, and providers often do not, so le
   Quantify the token cost of per-endpoint tool use and the accuracy loss from a large tool surface; document progressive disclosure as the alternative remedy.
 - [Model Context Protocol specification](../library/ref-mcp-spec.md).
   The interface substrate the practice is about.
+- [MIT Project NANDA, The GenAI Divide (2025)](../library/mit-genai-divide-2025.md).
+  Enterprise field evidence that tools fail on workflow fit rather than model quality: custom systems stall due to "brittle workflows ... and misalignment with day-to-day operations", and buyers want a "deep understanding of our workflow" (pg. 3, pg. 15). Out-of-domain business report; cited as external context.
 
 ## Change history
 
+- 2026-07-27: Added The GenAI Divide (MIT NANDA 2025) as a supporting source on workflow fit (bp6-a1).
 - 2026-07-27: Renumbered from BP05 to BP06 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including an anti-pattern, replacing restatements of the practice.
 - 2026-07-26: Rewritten to add vendor-primary grounding (the Anthropic tool-design guidance, with quantified evidence) and to note the two accepted remedies to endpoint-wrapping (task-level tools and code execution for very large APIs).

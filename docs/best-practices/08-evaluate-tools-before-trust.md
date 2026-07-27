@@ -16,6 +16,9 @@ sources:
   - title: "NeurIPS Paper Checklist / ML reproducibility checklist"
     ref: library/ref-neurips-checklist.md
     locator: "reproducibility and evaluation reporting"
+  - title: "MIT Project NANDA, The GenAI Divide (2025)"
+    ref: library/mit-genai-divide-2025.md
+    locator: "§6.2 p.20 benchmark on operational outcomes, not model benchmarks"
 layer: Operational
 hitl: n/a
 tags: [practitioner, provider, governance, draft]
@@ -91,9 +94,12 @@ A tool that looks capable in a demo can be wrong in ways that only representativ
   Consensus reporting standards for machine-learning-based science.
 - [NeurIPS Paper Checklist](../library/ref-neurips-checklist.md).
   Reproducibility and evaluation reporting practice.
+- [MIT Project NANDA, The GenAI Divide (2025)](../library/mit-genai-divide-2025.md).
+  Enterprise field evidence that buyers who "benchmark tools on operational outcomes, not model benchmarks" succeed far more often; general benchmark scores do not predict fitness for a specific task (§6.2, pg. 20). Out-of-domain business report; cited as external context.
 
 ## Change history
 
+- 2026-07-27: Added The GenAI Divide (MIT NANDA 2025) as a supporting source on outcome-based evaluation over benchmark scores (bp8-a3).
 - 2026-07-27: Renumbered from BP07 to BP08 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instance (REFORMS).
 - 2026-07-26: Created.
