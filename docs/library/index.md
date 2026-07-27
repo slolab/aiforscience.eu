@@ -25,6 +25,7 @@ whether it is for or against, lives in the provenance data (`assets/provenance.y
 | [ELIXIR TF Agentic AI: agenda and rolling best practice](elixir-tf-agentic-ai-2026.md) | ELIXIR Europe, AI Ecosystem Focus Group | 2026 | Main source for the provider-facing practices (BP1, BP2, BP4, BP5, BP6, BP8); also seeds BP7 (evaluation). |
 | [Agentic AI in the higher-education system](hfd-agentic-ai-hochschulsystem-2026.md) | Hochschulforum Digitalisierung / KI-Campus | May 2026 | Main source for the governance practice (BP3); grounds several others. |
 | [EU Expert Forum on Frontier AI](ec-expert-forum-2026.md) | European Commission, European AI Office | July 2026 | Largely out of scope; grounds BP2, BP3, BP6 on evaluation and choice. |
+| [ELIXIR AI strategy](elixir-ai-strategy-2026.md) | ELIXIR Europe | June 2026 | Largely organisational; grounds BP4, BP6, BP7 on curated data, provenance, and validation. |
 
 ## Reference works
 
@@ -88,6 +89,8 @@ Each links to its bibliographic record.
 
 - [REFORMS reporting standards (2024)](ref-reforms-2024.md)
 - [NeurIPS Paper Checklist](ref-neurips-checklist.md)
+- [DOME recommendations for ML validation in biology (2021)](ref-dome-2021.md)
+- [Open and Sustainable AI in the life sciences (OSAI, 2025)](ref-osai-2025.md)
 
 **Dual-use and frontier safety**
 

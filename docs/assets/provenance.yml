@@ -38,6 +38,9 @@ bp1-a4:  # access governed by resource
   - ref: coar-ai-bots-2025
     stance: qualifies
     locator: "automated load; blocking harms real users"
+  - ref: elixir-ai-strategy-2026
+    stance: supports
+    locator: "§5, §7: controlled-access sensitive data via federated, privacy-preserving methods"
 bp1-a5:  # not every resource needs its own maintained interface
   - ref: elixir-tf-agentic-ai-2026
     stance: supports
@@ -91,6 +94,9 @@ bp3-a1:  # limits belong in the system, not only in policy
   - ref: deepmind-agi-safety-2025
     stance: supports
     locator: "system-level controls; model as untrusted"
+  - ref: elixir-ai-strategy-2026
+    stance: supports
+    locator: "§10 responsible AI embedded by design across all stages"
 bp3-a2:  # an agent cannot be persuaded, only prevented
   - ref: openai-governing-agentic-ai-2023
     stance: supports
@@ -136,6 +142,12 @@ bp4-a1:  # documentation, data, metadata are now an interface
   - ref: fair-2016
     stance: supports
     locator: "machine-actionability as founding motivation"
+  - ref: elixir-ai-strategy-2026
+    stance: supports
+    locator: "§6 DOME/OSAI/FAIR reference framework for reusable data, software, models"
+  - ref: osai-2025
+    stance: supports
+    locator: "openness and documentation that make data, software, models reusable per FAIR"
 bp4-a2:  # an agent operates from docs, metadata, docstrings
   - ref: dcat3-2024
     stance: supports
@@ -154,6 +166,9 @@ bp5-a1:  # an interface works best built around user tasks
   - ref: mcp-spec
     stance: supports
     locator: "the interface substrate"
+  - ref: elixir-ai-strategy-2026
+    stance: supports
+    locator: "§6 adopt and adapt MCP and agentic frameworks as external standards"
 bp5-a2:  # wrapping is fast but does not respect agent patterns
   - ref: anthropic-writing-tools-2025
     stance: supports
@@ -170,6 +185,12 @@ bp5-a3:  # wrapping one call at a time is slow, costly, error-prone
 bp6-a1:  # answers traceable to sources, open to audit
   - ref: prov-o-2013
     stance: supports
+  - ref: elixir-ai-strategy-2026
+    stance: supports
+    locator: "§5 references to primary sources; §10 reproducible research extended to AI"
+  - ref: osai-2025
+    stance: supports
+    locator: "reproducibility and reusability of AI outputs across the ecosystem"
   - ref: niso-crec-2024
     stance: supports
     locator: "retraction status travels with citations"
@@ -186,6 +207,9 @@ bp6-a2:  # clear what a human did and what an agent did
   - ref: credit-2022
     stance: supports
     locator: "contribution attribution"
+  - ref: elixir-ai-strategy-2026
+    stance: supports
+    locator: "§4, §8: credit to experts and to underlying services where derived models overshadow them"
   - ref: icmje-cope-2023
     stance: supports
     locator: "AI cannot be an author; disclosure required"
@@ -196,6 +220,12 @@ bp7-a1:  # run task-specific benchmarks before granting autonomy
     stance: supports
   - ref: neurips-checklist
     stance: supports
+  - ref: dome-2021
+    stance: supports
+    locator: "Data, Optimization, Model, Evaluation reporting for supervised ML in biology"
+  - ref: elixir-ai-strategy-2026
+    stance: supports
+    locator: "Introduction, p.2: curated, expert-validated benchmarks are a community endeavour"
 bp7-a2:  # prove suitability before informing scientific work
   - ref: elixir-tf-agentic-ai-2026
     stance: supports
@@ -204,6 +234,12 @@ bp7-a3:  # no good general proxy for correctness in individual use
   - ref: reforms-2024
     stance: supports
     locator: "reporting standards over leaderboard scores"
+  - ref: dome-2021
+    stance: supports
+    locator: "independence of training and test data; guards against data leakage"
+  - ref: elixir-ai-strategy-2026
+    stance: supports
+    locator: "§6 train and test on independent data as standard practice"
 
 # ------------------------------------------------------------------ BP8
 bp8-a1:  # state the HITL level for each use case
