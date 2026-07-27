@@ -74,7 +74,7 @@ hide:
 <section class="afs-section afs-section--audience" id="audience">
   <div class="afs-section__header">
     <h2>Written for three audiences</h2>
-    <p>The record keeps what holds up in real use. Every practice states what it means for each audience.</p>
+    <p>Every practice states what it means for each audience.</p>
   </div>
 
   <div class="afs-audience-grid">
