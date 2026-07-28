@@ -11,6 +11,7 @@ edit_uri: edit/main/docs/
 # report.
 not_in_nav: |
   /index.md
+  /for-decision-makers/index.md
   /library/*-*.md
 
 # Watch the theme overrides too, so `mkdocs serve` hot-reloads edits to
@@ -74,7 +75,6 @@ extra_javascript:
   - assets/js/ai_cta.js
 
 nav:
-  - "For decision-makers": for-decision-makers/index.md
   - Best Practices:
       - Overview: best-practices/index.md
       # BP page labels come from each page's frontmatter `nav_title`

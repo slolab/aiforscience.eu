@@ -1471,6 +1471,83 @@ body {
   border-left: 1px solid var(--afs-line);
 }
 
+/* Both sidebars scroll with the page instead of sticking, and drop their
+   internal scroll (and scrollbar), so the TOCs stay tied to the page. Scoped to
+   the desktop breakpoints where each sidebar is a column; below them the primary
+   sidebar is an off-canvas drawer and must keep its own scroll. */
+@media screen and (min-width: 60em) {
+  .md-sidebar--secondary {
+    position: static;
+  }
+  .md-sidebar--secondary .md-sidebar__scrollwrap {
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    position: static;
+  }
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    height: auto !important;
+    overflow: visible !important;
+  }
+  /* Site title and repository source belong to the mobile drawer; hide them on
+     the desktop rail so the "For decision-makers" card sits at the top. */
+  .md-nav--primary > .md-nav__title,
+  .md-nav--primary > .md-nav__source {
+    display: none;
+  }
+  /* Divider on the content-facing edge of the practices list, so it begins
+     below the card (flush with it) and runs alongside the nav. */
+  .md-nav--primary > .md-nav__list {
+    border-right: 1px solid var(--afs-line);
+  }
+}
+
+/* "For decision-makers" card at the top of the left nav (mirrors the right-rail
+   "About this practice" card). */
+.afs-nav-card {
+  display: block;
+  margin: 0 0 1.2rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--afs-line);
+  border-radius: 8px;
+  background: var(--afs-soft);
+  text-decoration: none;
+}
+
+a.afs-nav-card:hover,
+a.afs-nav-card:focus-visible {
+  border-color: var(--afs-accent);
+}
+
+/* Greyed, non-clickable when already on the decision-makers page. */
+.afs-nav-card--current {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.afs-nav-card--current .afs-nav-card__title {
+  color: var(--afs-muted);
+}
+
+.afs-nav-card__title {
+  display: block;
+  color: var(--afs-accent-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.afs-nav-card__sub {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--afs-muted);
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+
 /* Right rail: "About this practice" card below the TOC (from frontmatter).
    Material includes the TOC partial twice (right rail, and nested under the
    active page in the left nav), so suppress the copy inside the primary nav. */
