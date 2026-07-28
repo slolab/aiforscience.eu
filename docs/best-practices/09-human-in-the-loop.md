@@ -1,6 +1,6 @@
 ---
 title: State human-in-the-loop requirements explicitly
-nav_title: "BP09 Human-in-the-loop"
+nav_title: "BP09 State human-in-the-loop requirements"
 practice_id: BP-09
 status: draft
 first_added: 2026-07-25
@@ -53,19 +53,19 @@ comments: true
 
 </div>
 
-=== "Practitioners"
+=== "For practitioners"
 
     Know the HITL level of the agent workflows you use, and do not assume a check that has not been stated.
     For anything that changes results or affects others, keep a real human decision point even if the tool lets you skip it.
     Do not automate approval; acceptance without scrutiny is not oversight.
 
-=== "Providers"
+=== "For providers"
 
     State the HITL level for each use case you support, and build the check into the workflow; do not count on the user to remember or even know.
     Match the check to the stakes, have the system enforce the stated level, and design the check so the human can actually understand and override the output.
     Try to facilitate understanding and to prevent "just clicking approve."
 
-=== "Governance"
+=== "For governance"
 
     Stated HITL levels make oversight auditable.
     Require each use case to declare its level and enforce it.

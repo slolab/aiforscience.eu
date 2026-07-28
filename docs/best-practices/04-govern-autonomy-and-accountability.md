@@ -1,6 +1,6 @@
 ---
 title: Govern agent autonomy and accountability
-nav_title: "BP04 Autonomy and accountability"
+nav_title: "BP04 Govern agent autonomy and accountability"
 practice_id: BP-04
 status: draft
 first_added: 2026-07-25
@@ -68,19 +68,19 @@ comments: true
 
 </div>
 
-=== "Practitioners"
+=== "For practitioners"
 
     When you run an agent in your own work, set its limits where they take effect: what it can access, how far it can act on its own, and when it must stop and ask.
     Stay the decision-maker for anything that affects results or other people.
     A personal agent connected to your mail and files is part of the institution's risk, even if no one else set it up.
 
-=== "Providers"
+=== "For providers"
 
     Put the limits you promise in the system, not only in the docs, so an agent cannot exceed its scope by being told to.
     Give operators the stop, escalation, and shutdown controls they need, log agent actions under attributable identities, and record which role holds each responsibility.
     Roll out new agent features in stages, with clear success and go-live criteria.
 
-=== "Governance"
+=== "For governance"
 
     Written policy alone does not bind a system that acts.
     Move the rules you care about into guardrails and enforced permissions.

@@ -11,7 +11,44 @@ databases, public endpoints, code, tools, and documents. The agents do the
 connecting and the routine assembly. The judgement, the provenance, and the
 accountability stay with people. This page is the short version of the
 [record](../best-practices/index.md) for the people who decide what to enable,
-require, and resource. Each point links to the practice it comes from.
+resource, and require. Each point links to the practice it comes from.
+
+## What to enable
+
+- **A default that resources are open to agents.** Agents reach resources
+  whether or not those were built for them. Planning for that access means
+  agents can be steered to interfaces that work, instead of falling back to
+  fragile ones. Set the default to open and decide the level of support per
+  resource. See [BP02](../best-practices/02-default-to-agent-accessibility.md).
+- **More than one provider.** Keep more than one interface provider in use so
+  the institution is not locked to a single vendor's agent ecosystem. See
+  [BP03](../best-practices/03-register-and-vet-interfaces.md).
+
+## What to resource
+
+- **Method choice and evaluation, not model spend.** An agent or a frontier
+  model is one option among several, and often not the cheapest reliable one.
+  Fund the work of choosing the method that fits the task and evaluating it.
+  Total token spend is not a productivity metric. See
+  [BP01](../best-practices/01-match-method-to-task.md).
+- **Core interfaces as infrastructure.** Fund maintained agent interfaces for
+  the resources that are most used and most important, and tie the level of
+  investment to demand and importance. This keeps resources open to agents
+  without an open-ended maintenance bill. See
+  [BP02](../best-practices/02-default-to-agent-accessibility.md).
+- **Documentation and data meaning as interface work.** Agents operate a tool or
+  dataset from its documentation and metadata. Fund precise, current
+  documentation and machine-readable data meaning. It is cheap to check, now
+  load-bearing, and it helps the people who use the resource directly. See
+  [BP05](../best-practices/05-documentation-and-data-for-agents.md).
+- **User research behind task-shaped interfaces.** Interfaces built around the
+  tasks users actually perform cut load, cost, and error. Fund the work of
+  learning those tasks. See
+  [BP06](../best-practices/06-design-around-user-tasks.md).
+- **Shared benchmarks and independent evaluation.** Fund shared evaluation
+  practice so adopters are not each testing blind, and support independent
+  challenges on held-out data. See
+  [BP08](../best-practices/08-evaluate-tools-before-trust.md).
 
 ## What to require
 
@@ -46,43 +83,6 @@ require, and resource. Each point links to the practice it comes from.
   and refuse grant or service terms that would train third-party models on data
   held under withdrawable consent, because training cannot be undone. See
   [BP10](../best-practices/10-screen-dual-use-high-consequence.md).
-
-## What to resource
-
-- **Method choice and evaluation, not model spend.** An agent or a frontier
-  model is one option among several, and often not the cheapest reliable one.
-  Fund the work of choosing the method that fits the task and evaluating it.
-  Total token spend is not a productivity metric. See
-  [BP01](../best-practices/01-match-method-to-task.md).
-- **Core interfaces as infrastructure.** Fund maintained agent interfaces for
-  the resources that are most used and most important, and tie the level of
-  investment to demand and importance. This keeps resources open to agents
-  without an open-ended maintenance bill. See
-  [BP02](../best-practices/02-default-to-agent-accessibility.md).
-- **Documentation and data meaning as interface work.** Agents operate a tool or
-  dataset from its documentation and metadata. Fund precise, current
-  documentation and machine-readable data meaning. It is cheap to check, now
-  load-bearing, and it helps the people who use the resource directly. See
-  [BP05](../best-practices/05-documentation-and-data-for-agents.md).
-- **User research behind task-shaped interfaces.** Interfaces built around the
-  tasks users actually perform cut load, cost, and error. Fund the work of
-  learning those tasks. See
-  [BP06](../best-practices/06-design-around-user-tasks.md).
-- **Shared benchmarks and independent evaluation.** Fund shared evaluation
-  practice so adopters are not each testing blind, and support independent
-  challenges on held-out data. See
-  [BP08](../best-practices/08-evaluate-tools-before-trust.md).
-
-## What to enable
-
-- **A default that resources are open to agents.** Agents reach resources
-  whether or not those were built for them. Planning for that access means
-  agents can be steered to interfaces that work, instead of falling back to
-  fragile ones. Set the default to open and decide the level of support per
-  resource. See [BP02](../best-practices/02-default-to-agent-accessibility.md).
-- **More than one provider.** Keep more than one interface provider in use so
-  the institution is not locked to a single vendor's agent ecosystem. See
-  [BP03](../best-practices/03-register-and-vet-interfaces.md).
 
 ## Where the risk is if you do nothing
 

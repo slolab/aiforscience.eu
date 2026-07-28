@@ -1,6 +1,6 @@
 ---
 title: Make provenance and citation first-class
-nav_title: "BP07 Provenance and citation"
+nav_title: "BP07 Make provenance and citation first-class"
 practice_id: BP-07
 status: draft
 first_added: 2026-07-25
@@ -51,21 +51,21 @@ comments: true
 
 </div>
 
-=== "Practitioners"
+=== "For practitioners"
 
     Treat an agent answer with no source trail as unchecked.
     Keep the link between a result and its evidence, and mark what the agent produced and what you did, so the work can be checked and cited later.
     Disclose agent use where it matters (in a paper, a report, a review).
     You are still accountable for the judgement, whatever the agent found.
 
-=== "Providers"
+=== "For providers"
 
     Make provenance part of the output, not an add-on.
     Return sources with each answer, detailed enough to verify, pass through citation and retraction status, and mark agent-generated content.
     Record enough of each run (model version, inputs, tool calls) that it can be re-examined.
     Machine-readable provenance is what lets others evaluate and audit your system.
 
-=== "Governance"
+=== "For governance"
 
     Provenance comes before audit and trust.
     Require that agent outputs be traceable, that human and agent contributions be clearly separated, and that agent use be disclosed where results are published.

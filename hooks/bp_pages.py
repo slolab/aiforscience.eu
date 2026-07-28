@@ -66,7 +66,11 @@ def on_page_markdown(markdown, page, config, files):
     match = BP_PAGE.match(src)
     if match and TITLE_PLACEHOLDER in markdown:
         title = page.meta.get("title", "")
-        return markdown.replace(TITLE_PLACEHOLDER, f"# {_handle(match.group(1))}: {title}")
+        # Title as the lead: a quiet "Best practice N" kicker above the title,
+        # and the title itself as the H1 (styled small in home.css), instead of
+        # a heavy "BPN: <title>" heading.
+        kicker = f'<p class="afs-bp-kicker">Best practice {int(match.group(1))}</p>'
+        return markdown.replace(TITLE_PLACEHOLDER, f"{kicker}\n\n# {title}")
 
     return markdown
 

@@ -1,6 +1,6 @@
 ---
 title: Design agent interfaces around user tasks, not raw endpoints
-nav_title: "BP06 User-centric design"
+nav_title: "BP06 Design interfaces around user tasks"
 practice_id: BP-06
 status: draft
 first_added: 2026-07-25
@@ -47,18 +47,18 @@ comments: true
 
 </div>
 
-=== "Practitioners"
+=== "For practitioners"
 
     If a routine task takes many awkward steps, report it.
     Providers shape interfaces around real use from this kind of feedback, and your cases are the evidence they need.
 
-=== "Providers"
+=== "For providers"
 
     Start from the tasks users do, not the endpoints you already have.
     Shape operations so a common goal takes as few calls as possible, and watch for ones that trigger many small calls.
     Learn what your users want; it may be different from your assumptions.
 
-=== "Governance"
+=== "For governance"
 
     Interfaces built around user tasks cut load and cost, and work more reliably.
     Governance is barely involved directly, but it is worth supporting and funding the user research that makes this possible.

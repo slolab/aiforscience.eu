@@ -10,6 +10,7 @@ edit_uri: edit/main/docs/
 # the nav, so they do not bloat the sidebar. Keep them out of the not-in-nav
 # report.
 not_in_nav: |
+  /index.md
   /library/*-*.md
 
 # Watch the theme overrides too, so `mkdocs serve` hot-reloads edits to
@@ -73,7 +74,6 @@ extra_javascript:
   - assets/js/ai_cta.js
 
 nav:
-  - Home: index.md
   - "For decision-makers": for-decision-makers/index.md
   - Best Practices:
       - Overview: best-practices/index.md

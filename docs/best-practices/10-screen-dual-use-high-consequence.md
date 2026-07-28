@@ -1,6 +1,6 @@
 ---
 title: Screen agents for dual-use and high-consequence risk
-nav_title: "BP10 Dual-use screening"
+nav_title: "BP10 Screen for dual-use and high-consequence risk"
 practice_id: BP-10
 status: draft
 first_added: 2026-07-26
@@ -66,20 +66,20 @@ comments: true
 
 </div>
 
-=== "Practitioners"
+=== "For practitioners"
 
     If your agent can act where a mistake or misuse could cause serious harm (ordering synthesis, running code against live systems, driving instruments), do not connect it to that capability without screening.
     Route high-consequence actions through providers or controls that screen them, and expect the agent to refuse dual-use requests.
     The same holds for data you cannot take back: never let an agent send data held under withdrawable consent to a service that will train on it or take a perpetual licence, and do not accept terms that authorise this.
 
-=== "Providers"
+=== "For providers"
 
     Evaluate an agent's misuse potential before granting real-world reach, and gate deployment on the result.
     Where an agent can trigger a high-consequence action, put a screening chokepoint in the path (for example a synthesis or service provider that screens orders), and build in dual-use refusal.
     Scale the safeguard to the capability, following the threshold-and-mitigation model the frontier safety frameworks share.
     Constrain and audit what an agent can send outward, exclude controlled-access data from third-party training and retention, and do not require a perpetual licence over data whose consent can be withdrawn.
 
-=== "Governance"
+=== "For governance"
 
     Decide which agent capabilities require screening before deployment, and make it mandatory for those that could cause serious harm.
     This is cross-domain: the same capability-threshold structure covers biological, chemical, and cyber risk.

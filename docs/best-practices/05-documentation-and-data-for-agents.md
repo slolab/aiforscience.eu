@@ -1,6 +1,6 @@
 ---
 title: Write documentation and data for agents
-nav_title: "BP05 Documentation"
+nav_title: "BP05 Write documentation and data for agents"
 practice_id: BP-05
 status: draft
 first_added: 2026-07-25
@@ -52,19 +52,19 @@ comments: true
 
 </div>
 
-=== "Practitioners"
+=== "For practitioners"
 
     Write your code and notebooks as if an agent will re-run them; assume that one will.
     Put units, data versions, and assumptions in the docstring or close to the code.
     When a resource's documentation misleads your agent, raise the issue with the provider.
 
-=== "Providers"
+=== "For providers"
 
     Treat docs, docstrings, tool descriptions, and metadata as an interface.
     Run examples and test them in CI so they cannot drift (e.g., using `doctest`).
     Publish data with schemas, controlled vocabularies, and machine-readable metadata, and give examples of how to query it.
 
-=== "Governance"
+=== "For governance"
 
     Machine-readable documentation is cheap to check and more important than ever.
     Include it in resource review, and fund documentation and data meaning as essential interface work.

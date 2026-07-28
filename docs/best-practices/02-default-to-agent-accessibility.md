@@ -1,6 +1,6 @@
 ---
 title: Default to agent-accessibility; prioritise effort by demand and importance
-nav_title: "BP02 Accessibility"
+nav_title: "BP02 Default to agent-accessibility"
 practice_id: BP-02
 status: draft
 first_added: 2026-07-25
@@ -52,20 +52,20 @@ comments: true
 
 </div>
 
-=== "Practitioners"
+=== "For practitioners"
 
     The resources you use will support agents to different degrees, by design.
     If one you depend on is poorly supported, say so.
     Providers use demand to decide what to improve.
 
-=== "Providers"
+=== "For providers"
 
     Make resources machine-actionable and discoverable by default, then set the level of support by type.
     Sort resources by how widely used and important they are, and invest accordingly.
     Keep a generic path for minor resources instead of building a custom interface for each.
     Govern access (authenticate and rate-shape where needed); a default of accessibility does not mean unmetered access.
 
-=== "Governance"
+=== "For governance"
 
     Prioritisation is a funding decision.
     Back a scheme that ties interface investment to how used and important a resource is, and fund the top-tier interfaces as infrastructure.

@@ -1,6 +1,6 @@
 ---
 title: Match the method to the task; do not default to an agent or a frontier LLM
-nav_title: "BP01 Match method to task"
+nav_title: "BP01 Match the method to the task"
 practice_id: BP-01
 status: draft
 first_added: 2026-07-27
@@ -60,19 +60,19 @@ comments: true
 
 </div>
 
-=== "Practitioners"
+=== "For practitioners"
 
     Before reaching for an agent, ask whether a script, a fixed workflow, or an existing specialized model already does the job as well or better.
     Keep the frontier model for the open-ended, judgement-heavy steps where its flexibility is the point.
     A method that fits the task is usually cheapest to run and easiest to reproduce.
 
-=== "Providers"
+=== "For providers"
 
     Expose deterministic operations and specialized models as first-class tools.
     Incentivise the use of classical workflows where they are well established and functional.
     Do not assume every capability should be reached through a general model; the same demand-and-importance logic that governs where to invest in agent interfaces ([BP02](02-default-to-agent-accessibility.md)) applies to method choice.
 
-=== "Governance"
+=== "For governance"
 
     Fund method choice and evaluation, not model spend.
     "Total token spend" is not a useful productivity metric.

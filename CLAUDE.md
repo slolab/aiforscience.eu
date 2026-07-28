@@ -62,9 +62,9 @@ Body sections, in this order, all present:
    documents). Keep audience-specific advice and the word "you" out of this
    paragraph; that belongs in the tabs.
 2. Three content tabs directly under the practice paragraph, with no heading
-   (`=== "Practitioners"`, `=== "Providers"`, `=== "Governance"`), each two
-   to four sentences adapting the practice to that role. Keep all three tabs
-   even when one is thin; say plainly when a role is barely affected.
+   (`=== "For practitioners"`, `=== "For providers"`, `=== "For governance"`),
+   each two to four sentences adapting the practice to that role. Keep all three
+   tabs even when one is thin; say plainly when a role is barely affected.
 3. `## Reasons` — why the practice matters.
 4. `## Examples` — concrete examples of what it looks like in practice.
 5. A metadata admonition after the examples (status, endorsements, last
