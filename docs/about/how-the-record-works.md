@@ -1,21 +1,14 @@
 ---
-title: Best practices
+title: How the record works
 ---
 
-# Best practices for agentic AI in science
+# How the record works
 
 This is a running document.
 It is revised as the field develops, discussed in regular task force meetings, and versioned for citation.
 The live site always shows the current state; dated snapshots are available under [Releases](../releases/index.md).
 
 The practices run from the most general (decisions that hold across resources and institutions) to the most specific (per-use-case mechanics).
-
-## The practices
-
-<!-- BP_LIST -->
-<!-- The list above is generated from each BP page's frontmatter title by hooks/bp_list.py. Edit the title there, not here. -->
-
-See also the [Failures log](failures.md): cases where an attempt did not work, recorded alongside the recommendations.
 
 ## How practices are recorded
 
@@ -28,7 +21,7 @@ Practices link back to [library](../library/index.md) entries, which quote the s
 The record keeps a small number of high-impact practices.
 A new one gets its own page only if it passes all of these:
 
-1. **Scope.** It changes how science is planned, performed, evaluated, communicated, or governed (the [mission](../about/mission.md) test).
+1. **Scope.** It changes how science is planned, performed, evaluated, communicated, or governed (the [mission](mission.md) test).
 2. **Generality.** It applies across audiences or many resources, not to a single service.
 3. **Not a sub-case.** If it is a narrower version of an existing practice, it becomes a "what it looks like in practice" bullet on that page, not a new page.
    This is the main way we avoid bloat.

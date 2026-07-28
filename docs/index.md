@@ -17,7 +17,7 @@ hide:
   <div class="afs-feature-grid">
     <article class="afs-feature-card">
       <img class="afs-feature-card__graphic" src="assets/img/cards/practices.svg" alt="" loading="lazy">
-      <a class="afs-card-title" href="best-practices/">Practices →</a>
+      <a class="afs-card-title" href="best-practices/01-match-method-to-task/">Practices →</a>
       <p>Numbered, versioned practices, each with reasons, examples, and sources.</p>
     </article>
     <article class="afs-feature-card">

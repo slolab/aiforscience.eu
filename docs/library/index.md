@@ -4,7 +4,7 @@ title: Library
 
 # Library
 
-The library is the provenance store for the [best practices](../best-practices/index.md).
+The library is the provenance store for the [best practices](../best-practices/01-match-method-to-task.md).
 Everything used to model a practice, whether it supported, qualified, or
 contradicted a claim, is recorded here so a reader can check it. It has two
 tiers.

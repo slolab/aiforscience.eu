@@ -10,7 +10,7 @@ Agentic AI puts software agents to work across the resources research runs on:
 databases, public endpoints, code, tools, and documents. The agents do the
 connecting and the routine assembly. The judgement, the provenance, and the
 accountability stay with people. This page is the short version of the
-[record](../best-practices/index.md) for the people who decide what to enable,
+[record](../best-practices/01-match-method-to-task.md) for the people who decide what to enable,
 resource, and require. Each point links to the practice it comes from.
 
 ## What to enable

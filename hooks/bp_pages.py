@@ -1,17 +1,14 @@
 """MkDocs hook: keep best-practice titles spelled once.
 
-Each best-practice title lives only in the BP page's frontmatter `title`. This
-hook renders two things from it, so no literal copy is kept in page bodies:
+Each best-practice title lives only in the BP page's frontmatter. This hook
+renders two things from it, so no literal copy is kept in page bodies:
 
-- The overview list (best-practices/index.md): the `<!-- BP_LIST -->`
-  placeholder becomes clickable boxes, one per BP page, ordered by filename.
-- Each BP page's H1: the `<!-- BP_TITLE -->` placeholder becomes
-  `# BPn: <title>`.
+- Each BP page's H1: the `<!-- BP_TITLE -->` placeholder becomes a
+  "Best practice N" kicker plus the title as the page lead.
 - Each BP page's sidebar nav label: from the page's frontmatter `nav_title`,
   so the short label lives in the page, not in mkdocs.yml.
 
-The BPn handle comes from the numeric filename prefix. No new dependency:
-PyYAML ships with MkDocs, and `hooks` is built in.
+No new dependency: PyYAML ships with MkDocs, and `hooks` is built in.
 """
 
 import re
@@ -19,10 +16,7 @@ from pathlib import Path
 
 import yaml
 
-OVERVIEW = "best-practices/index.md"
-LIST_PLACEHOLDER = "<!-- BP_LIST -->"
 TITLE_PLACEHOLDER = "<!-- BP_TITLE -->"
-BP_GLOB = "best-practices/[0-9][0-9]-*.md"
 BP_PAGE = re.compile(r"best-practices/(\d\d)-.*\.md$")
 
 _FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)
@@ -33,53 +27,22 @@ def _load_meta(path):
     return yaml.safe_load(match.group(1)) if match else {}
 
 
-def _handle(num):
-    return f"BP{num.zfill(2)}"
-
-
-def _render_list(markdown, config):
-    docs_dir = Path(config["docs_dir"])
-    items = []
-    for src in sorted(docs_dir.glob(BP_GLOB)):
-        title = _load_meta(src).get("title")
-        if not title:
-            continue
-        num = src.stem.split("-", 1)[0]
-        items.append(
-            f'<a class="afs-bp-item" href="{src.stem}/">'
-            f'<span class="afs-bp-item__handle">{_handle(num)}</span>'
-            f'<span class="afs-bp-item__title">{title}</span></a>'
-        )
-    # Emit as raw HTML (no `markdown` attr, no blank lines) so the anchors stay
-    # direct children of the grid. With the markdown attr, Python-Markdown wraps
-    # the inline anchors in a single <p>, collapsing the grid to one child and
-    # killing the gap between items.
-    block = '<div class="afs-bp-list">\n' + "\n".join(items) + "\n</div>"
-    return markdown.replace(LIST_PLACEHOLDER, block)
-
-
 def on_page_markdown(markdown, page, config, files):
-    src = page.file.src_uri
-    if src == OVERVIEW and LIST_PLACEHOLDER in markdown:
-        return _render_list(markdown, config)
-
-    match = BP_PAGE.match(src)
+    match = BP_PAGE.match(page.file.src_uri)
     if match and TITLE_PLACEHOLDER in markdown:
         title = page.meta.get("title", "")
         # Title as the lead: a quiet "Best practice N" kicker above the title,
-        # and the title itself as the H1 (styled small in home.css), instead of
-        # a heavy "BPN: <title>" heading.
+        # and the title itself as the H1 (styled small in home.css).
         kicker = f'<p class="afs-bp-kicker">Best practice {int(match.group(1))}</p>'
         return markdown.replace(TITLE_PLACEHOLDER, f"{kicker}\n\n# {title}")
-
     return markdown
 
 
 def on_nav(nav, config, files):
     # Set each BP page's sidebar label from its frontmatter `nav_title`. Runs
-    # before pages are read, so read the frontmatter from disk. Leaving the
-    # nav entry untitled in mkdocs.yml keeps page.title None here, so this set
-    # sticks (MkDocs only fills an unset title from meta/H1 afterwards).
+    # before pages are read, so read the frontmatter from disk. Leaving the nav
+    # entry untitled in mkdocs.yml keeps page.title None here, so this set sticks
+    # (MkDocs only fills an unset title from meta/H1 afterwards).
     docs_dir = Path(config["docs_dir"])
     for page in nav.pages:
         if BP_PAGE.match(page.file.src_uri):

@@ -76,7 +76,6 @@ extra_javascript:
 
 nav:
   - Best Practices:
-      - Overview: best-practices/index.md
       # BP page labels come from each page's frontmatter `nav_title`
       # (applied by hooks/bp_pages.py); only ordering lives here.
       - best-practices/01-match-method-to-task.md
@@ -96,6 +95,7 @@ nav:
       - Releases: releases/index.md
   - About:
       - Mission: about/mission.md
+      - How the record works: about/how-the-record-works.md
       - Partners: about/partners.md
       - Governance: about/governance.md
       - Events: about/events.md
