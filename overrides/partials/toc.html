@@ -1,0 +1,49 @@
+{#-
+  Override of Material's toc partial. Renders the standard "On this page" table
+  of contents, then, on best-practice pages, an "About this practice" card built
+  from the page frontmatter (status, endorsement, last reviewed). This keeps the
+  practice metadata in the info rail rather than the page body, and sourced from
+  the frontmatter (its single source) so it cannot drift.
+-#}
+{% set title = lang.t("toc") %}
+{% if config.mdx_configs.toc and config.mdx_configs.toc.title %}
+  {% set title = config.mdx_configs.toc.title %}
+{% endif %}
+<nav class="md-nav md-nav--secondary" aria-label="{{ title | e }}">
+  {% set toc = page.toc %}
+  {% set first = toc | first %}
+  {% if first and first.level == 1 %}
+    {% set toc = first.children %}
+  {% endif %}
+  {% if toc %}
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      {{ title }}
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      {% for toc_item in toc %}
+        {% include "partials/toc-item.html" %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</nav>
+{% if page.meta and page.meta.practice_id %}
+  {% set status = page.meta.status | default("draft") %}
+  <div class="afs-about-practice">
+    <p class="afs-about-practice__title">About this practice</p>
+    <dl class="afs-about-practice__list">
+      <div class="afs-about-practice__row">
+        <dt>Status</dt>
+        <dd><span class="afs-badge afs-badge--{{ status }}">{{ status }}</span></dd>
+      </div>
+      <div class="afs-about-practice__row">
+        <dt>Endorsement</dt>
+        <dd>{% if page.meta.endorsed_by %}{{ page.meta.endorsed_by | join(", ") }}{% else %}none yet{% endif %}</dd>
+      </div>
+      <div class="afs-about-practice__row">
+        <dt>Last reviewed</dt>
+        <dd>{{ page.meta.last_reviewed | default("—") }}</dd>
+      </div>
+    </dl>
+  </div>
+{% endif %}

@@ -109,11 +109,6 @@ Knowing where an interface comes from, and keeping more than one option open, av
 - An institution keeps more than one agent ecosystem in use, so a critical resource is not reachable only through a single vendor's channel.
 - When the approved list is too narrow to do real work, people route around it: in one enterprise survey 40% of organisations bought an official tool while staff at over 90% used personal AI tools unofficially, often to better effect. A vetting process that watches what people actually reach for, and brings the useful cases into the trusted channel, holds up better than one that only blocks.
 
-!!! info "Practice metadata"
-    **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
-    **Endorsed by:** none yet ·
-    **Last reviewed:** 2026-07-26
-
 ## Sources
 
 - [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice items 8 and 9 (registration implies review; managing agent traffic through an approved channel).

@@ -102,11 +102,6 @@ The load that automated clients now place on open resources makes governed acces
 - A resource keeps a default-open path but authenticates and rate-shapes automated traffic, so a burst of agent calls does not knock it over for its human users.
   Its logs cannot tell agents from people, which is why the limit is set at the resource rather than inferred from the client.
 
-!!! info "Practice metadata"
-    **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
-    **Endorsed by:** none yet ·
-    **Last reviewed:** 2026-07-26
-
 ## Sources
 
 - [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice items 1 and 2.

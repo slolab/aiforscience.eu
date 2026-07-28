@@ -288,37 +288,47 @@ body {
 .md-typeset .afs-practice > ul {
   list-style: none;
   display: grid;
-  gap: 0.4rem;
-  margin: 0.4rem 0 0;
+  gap: 0.7rem;
+  margin: 0.7rem 0 0;
   padding: 0;
 }
 
 .md-typeset .afs-practice > ul > li {
   position: relative;
   margin: 0;
-  padding: 0.5rem 0.85rem;
-  border: 1px solid var(--afs-practice-line);
-  border-left: 3px solid var(--afs-practice-accent);
-  border-radius: 0.5rem;
-  background: var(--afs-practice-bg);
+  padding: 0 3rem 0 1.35rem;
+  border: 0;
+  background: none;
   color: var(--afs-ink);
-  font-size: 0.8rem;
-  line-height: 1.5;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+/* Orange square marker, in the atom accent. */
+.md-typeset .afs-practice > ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.38rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 2px;
+  background: var(--afs-practice-accent);
 }
 
 /* An item marked `{ .afs-practice__pivot }` starts a new group (for example
-   the shift from the default to its qualifier). A little extra space and a
-   muted rule above set it apart without a second box. */
+   the shift from the default to its qualifier). Extra space and a muted dashed
+   rule above set it apart. */
 .md-typeset .afs-practice > ul > li.afs-practice__pivot {
-  margin-top: 0.45rem;
+  margin-top: 0.55rem;
 }
 
-.md-typeset .afs-practice > ul > li.afs-practice__pivot::before {
+.md-typeset .afs-practice > ul > li.afs-practice__pivot::after {
   content: "";
   position: absolute;
-  left: 0.9rem;
-  right: 0.9rem;
-  top: -0.45rem;
+  left: 1.35rem;
+  right: 3.9rem;
+  top: -0.35rem;
   border-top: 1px dashed var(--afs-practice-line);
 }
 
@@ -1411,7 +1421,7 @@ body {
 
 /* "Best practice N" kicker above the title. */
 .afs-bp-kicker {
-  margin: 0 0 0.2rem;
+  margin: 0.5rem 0 0.8rem;
   color: var(--afs-muted);
   font-size: 0.68rem;
   font-weight: 700;
@@ -1423,16 +1433,90 @@ body {
    adjacent-sibling selector scopes this to practice pages. */
 .afs-bp-kicker + h1 {
   margin-top: 0.15rem;
-  font-size: clamp(1.5rem, 3.4vw, 1.95rem);
+  font-size: clamp(1.3rem, 2.6vw, 1.6rem);
   font-weight: 500;
   letter-spacing: -0.01em;
-  line-height: 1.25;
+  line-height: 1.3;
 }
 
-/* Section separators on content pages (the landing wraps its body in
-   `.afs-home-body` and is excluded). */
-.md-content__inner:not(:has(.afs-home-body)) .md-typeset h2 {
+/* Section separators + smaller headings on content pages (the landing wraps its
+   body in `.afs-home-body` and is excluded). The content article carries both
+   `md-content__inner` and `md-typeset`, so target headings directly. */
+.md-content__inner.md-typeset:not(:has(.afs-home-body)) h2 {
   margin-top: 2.2rem;
   padding-top: 1.4rem;
   border-top: 1px solid var(--afs-line);
+}
+
+/* Drop the ¶ permalink on the page title only; keep it on subheaders. */
+.md-content__inner.md-typeset:not(:has(.afs-home-body)) h1 .headerlink {
+  display: none;
+}
+
+/* Main page title in near-black. */
+.md-content__inner.md-typeset:not(:has(.afs-home-body)) h1 {
+  color: var(--afs-ink);
+}
+
+/* Right rail: the "On this page" table of contents. */
+.md-nav--secondary .md-nav__title {
+  color: var(--afs-muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.md-nav--secondary .md-nav__list {
+  border-left: 1px solid var(--afs-line);
+}
+
+/* Right rail: "About this practice" card below the TOC (from frontmatter).
+   Material includes the TOC partial twice (right rail, and nested under the
+   active page in the left nav), so suppress the copy inside the primary nav. */
+.md-nav--primary .afs-about-practice {
+  display: none;
+}
+
+.afs-about-practice {
+  margin: 1.6rem 0 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--afs-line);
+  border-radius: 8px;
+  background: var(--afs-soft);
+}
+
+.afs-about-practice__title {
+  margin: 0 0 0.55rem;
+  color: var(--afs-muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.afs-about-practice__list {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.55;
+}
+
+.afs-about-practice__row {
+  margin-bottom: 0.2rem;
+}
+
+.afs-about-practice__row dt {
+  display: inline;
+  color: var(--afs-muted);
+}
+
+.afs-about-practice__row dt::after {
+  content: ": ";
+}
+
+.afs-about-practice__row dd {
+  display: inline;
+  margin: 0;
+  color: var(--afs-ink);
+  font-weight: 600;
 }

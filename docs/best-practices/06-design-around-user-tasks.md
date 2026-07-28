@@ -81,11 +81,6 @@ Both need to know what users are trying to do, and providers often do not, so le
 - A spike of many tiny calls aimed at one goal flags an interface that is misaligned with how it is used, and prompts a redesign.
 - For a very large API, instead of hand-building a task tool for every workflow, the provider lets the agent write code against the endpoints (progressive disclosure and code execution).
 
-!!! info "Practice metadata"
-    **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
-    **Endorsed by:** none yet ·
-    **Last reviewed:** 2026-07-26
-
 ## Sources
 
 - [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice item 4, and the July 2026 discussion on providers' limited view of their users.

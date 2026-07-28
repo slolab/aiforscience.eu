@@ -90,11 +90,6 @@ A research agent has to pass citation and retraction status through to its outpu
 - The run is recorded: model version, inputs, and tool calls kept so a surprising result can be re-examined and, where possible, re-run.
 - The agent supplies the traceable evidence and the person makes the call, remaining accountable for the judgement.
 
-!!! info "Practice metadata"
-    **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
-    **Endorsed by:** none yet ·
-    **Last reviewed:** 2026-07-26
-
 ## Sources
 
 - [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice item 6.

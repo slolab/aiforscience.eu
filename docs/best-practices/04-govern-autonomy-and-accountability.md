@@ -110,11 +110,6 @@ This is the consensus position across the main governance frameworks (NIST, the 
 - A new agent feature goes live for low-risk cases first, with success and go-live criteria and an accepted risk limit set in advance, before any wider rollout.
 - A personal agent connected to a researcher's mail and files is entered in the institution's agent inventory and reviewed like any deployed one, because its broad access is part of the same risk.
 
-!!! info "Practice metadata"
-    **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
-    **Endorsed by:** none yet ·
-    **Last reviewed:** 2026-07-26
-
 ## Sources
 
 - [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §4 to 6.

@@ -101,11 +101,6 @@ Controlled trials show forecast gains from agentic tools are frequently miscalib
 - A pipeline reports strong accuracy that collapses on re-run because the model was applied where the evaluation leaked; a simpler method with proper train/test separation would have been both honest and reproducible.
 - A group expects a large speedup from an agent and, before committing, writes down the expected net benefit against its current baseline with review and correction time subtracted; for its experienced users the projected gain is marginal, so it keeps the existing workflow and re-checks the estimate on a small pilot.
 
-!!! info "Practice metadata"
-    **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
-    **Endorsed by:** none yet ·
-    **Last reviewed:** 2026-07-27
-
 ## Sources
 
 - [Anthropic, Building Effective AI Agents (2024)](../library/ref-anthropic-building-effective-agents-2024.md).

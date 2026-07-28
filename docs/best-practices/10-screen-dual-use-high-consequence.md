@@ -111,11 +111,6 @@ In agentic workflows this means constraining and auditing what an agent can send
     - Cyber: evaluating and limiting an agent's offensive-cyber uplift before it can act against real systems, after an autonomous system was shown to break out of containment.
 - Human-subjects data: an agent working on consented patient or genomic data is blocked from sending it to a third-party service that would train on it or take a perpetual licence, and grant or service terms requiring such a licence are refused, because consent for that data can be withdrawn and training cannot be undone.
 
-!!! info "Practice metadata"
-    **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
-    **Endorsed by:** none yet ·
-    **Last reviewed:** 2026-07-28
-
 ## Sources
 
 - [METR, Common Elements of Frontier AI Safety Policies (2025)](../library/ref-metr-common-elements-2025.md) and [Frontier Model Forum, Components of Frontier AI Safety Frameworks](../library/ref-fmf-safety-frameworks.md).

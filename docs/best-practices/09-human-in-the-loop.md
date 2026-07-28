@@ -95,11 +95,6 @@ Stating and enforcing HITL levels fulfils part of [BP04](04-govern-autonomy-and-
 - The stated level is enforced by the system rather than left to habit, which ties it to the guardrails in [BP04](04-govern-autonomy-and-accountability.md), and the HITL engagement is recorded in provenance ([BP07](07-provenance-and-citation.md)) so oversight is auditable instead of assumed.
 - A reviewer uploads a confidential manuscript to an external model against the stated boundary of the conference for a high-stakes task. They submit the AI-generated review without declaring the AI use. The conference had inserted a [prompt injection](../glossary.md#prompt-injection) into their review version and catches the reviewer with the prompted output form. The reviewer is barred from conference participation for two years.
 
-!!! info "Practice metadata"
-    **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
-    **Endorsed by:** none yet ·
-    **Last reviewed:** 2026-07-26
-
 ## Sources
 
 - [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice item 7.

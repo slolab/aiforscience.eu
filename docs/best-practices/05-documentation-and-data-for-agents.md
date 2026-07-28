@@ -90,11 +90,6 @@ This work also benefits the people who use the resource directly, and current an
 - The same documentation is offered in a form an agent can read directly (plain text, markdown, structured metadata), not only as a rendered web page.
   A convention like `llms.txt` is one proposed approach, not yet a ratified standard.
 
-!!! info "Practice metadata"
-    **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
-    **Endorsed by:** none yet ·
-    **Last reviewed:** 2026-07-26
-
 ## Sources
 
 - [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice items 3 and 5.
