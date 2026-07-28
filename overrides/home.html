@@ -41,11 +41,10 @@
         {% for item in nav %}
           {% if item.is_section and item.title == 'Best Practices' %}
             {% for p in item.children %}
-              {% if p.is_page and p.title and p.title.startswith('BP') %}
-                {% set parts = p.title.split(' ', 1) %}
+              {% if p.is_page and not p.file.src_uri.endswith('failures.md') %}
                 <a class="afs-hero-index__row" href="{{ p.url | url }}">
-                  <span class="afs-hero-index__num">{{ parts[0][2:] | int }}</span>
-                  <span class="afs-hero-index__title">{{ parts[1] }}</span>
+                  <span class="afs-hero-index__num">{{ loop.index }}</span>
+                  <span class="afs-hero-index__title">{{ p.title }}</span>
                 </a>
               {% endif %}
             {% endfor %}

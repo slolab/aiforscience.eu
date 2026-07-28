@@ -1,6 +1,6 @@
 ---
 title: Make provenance and citation first-class
-nav_title: "BP07 Make provenance and citation first-class"
+nav_title: "Make provenance and citation first-class"
 practice_id: BP-07
 status: draft
 first_added: 2026-07-25

@@ -1,6 +1,6 @@
 ---
 title: Match the method to the task; do not default to an agent or a frontier LLM
-nav_title: "BP01 Match the method to the task"
+nav_title: "Match the method to the task"
 practice_id: BP-01
 status: draft
 first_added: 2026-07-27

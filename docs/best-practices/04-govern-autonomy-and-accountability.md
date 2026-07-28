@@ -1,6 +1,6 @@
 ---
 title: Govern agent autonomy and accountability
-nav_title: "BP04 Govern agent autonomy and accountability"
+nav_title: "Govern agent autonomy and accountability"
 practice_id: BP-04
 status: draft
 first_added: 2026-07-25

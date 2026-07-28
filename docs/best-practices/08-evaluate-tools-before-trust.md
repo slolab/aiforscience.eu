@@ -1,6 +1,6 @@
 ---
 title: Evaluate / benchmark agentic tools before trusting their outputs
-nav_title: "BP08 Evaluate tools before trust"
+nav_title: "Evaluate tools before trust"
 practice_id: BP-08
 status: draft
 first_added: 2026-07-26

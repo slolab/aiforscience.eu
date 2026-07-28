@@ -1,6 +1,6 @@
 ---
 title: Register, vet, and manage agent interfaces through trusted channels
-nav_title: "BP03 Register and vet interfaces"
+nav_title: "Register and vet interfaces"
 practice_id: BP-03
 status: draft
 first_added: 2026-07-25

@@ -1,6 +1,6 @@
 ---
 title: Write documentation and data for agents
-nav_title: "BP05 Write documentation and data for agents"
+nav_title: "Write documentation and data for agents"
 practice_id: BP-05
 status: draft
 first_added: 2026-07-25

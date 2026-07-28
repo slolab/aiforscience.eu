@@ -1,6 +1,6 @@
 ---
 title: Default to agent-accessibility; prioritise effort by demand and importance
-nav_title: "BP02 Default to agent-accessibility"
+nav_title: "Default to agent-accessibility"
 practice_id: BP-02
 status: draft
 first_added: 2026-07-25

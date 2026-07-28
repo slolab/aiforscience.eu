@@ -1419,10 +1419,18 @@ body {
 @media screen and (min-width: 60em) {
   .md-sidebar--secondary {
     position: static;
+    /* Material sets the sticky sidebar to height:0; give it real height so it
+       occupies the flow and the footer clears it on short pages. */
+    height: auto !important;
   }
   .md-sidebar--secondary .md-sidebar__scrollwrap {
     height: auto !important;
     overflow: visible !important;
+  }
+  /* With static sidebars, let the row grow to the tallest column (the nav on
+     short pages) instead of being capped, so the footer clears the nav. */
+  .md-main__inner {
+    height: auto;
   }
 }
 
@@ -1487,6 +1495,102 @@ a.afs-nav-card:focus-visible {
   color: var(--afs-muted);
   font-size: 0.7rem;
   line-height: 1.35;
+}
+
+/* ------------------------------------------------------------------ *
+ * Practices in the left nav
+ *
+ * The Best Practices section (first top-level item) is forced open on desktop
+ * so the practices always show; Background and About stay collapsible below a
+ * separator. The practices carry a mono number column (a CSS counter, so it
+ * follows nav order = the BP number); the failures log (last item) is greyed
+ * with no number; the active practice is highlighted.
+ * ------------------------------------------------------------------ */
+
+/* Shorthand: BP = the Best Practices section item. */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    height: auto !important;
+  }
+  /* Force the section's expanded state (Material collapses via grid-template-rows
+     + visibility, not display, so those must be overridden). */
+  .md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav {
+    grid-template-rows: minmax(0, 1fr) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+  .md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav__link {
+    cursor: default;
+    color: var(--afs-muted);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav__link .md-nav__icon {
+    display: none;
+  }
+  .md-nav--primary > .md-nav__list > .md-nav__item:first-child {
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--afs-line);
+  }
+  /* The active page's in-page TOC is embedded in the primary nav (level 2);
+     hide it on desktop, where the right rail already shows it. */
+  .md-nav--primary .md-nav[data-md-level="2"] {
+    display: none;
+  }
+}
+
+/* Drop the nested list's default 0.6rem indent so the practices (and their
+   numbers) line up with the "BEST PRACTICES" header. */
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav > .md-nav__list {
+  counter-reset: afs-bp;
+  padding-left: 0;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav > .md-nav__list > .md-nav__item:not(:last-child) {
+  counter-increment: afs-bp;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav > .md-nav__list > .md-nav__item:not(:last-child) > .md-nav__link {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav > .md-nav__list > .md-nav__item:not(:last-child) > .md-nav__link::before {
+  content: counter(afs-bp);
+  position: absolute;
+  left: 0;
+  width: 1rem;
+  text-align: left;
+  color: var(--afs-muted);
+  font-family: ui-monospace, "SFMono-Regular", monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+/* Failures log (last item): greyed, no number, title aligned with the practices. */
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav > .md-nav__list > .md-nav__item:last-child > .md-nav__link {
+  padding-left: 1.5rem;
+  color: var(--afs-muted);
+}
+
+/* Reserve the active bar's width and add right breathing room on every practice
+   and failures link, so activating an item never changes the wrapping. */
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+  padding-right: 0.9rem;
+  border-right: 3px solid transparent;
+}
+
+/* Active practice: soft fill, accent bar on the right, accent-dark text. The
+   weight is left unchanged so the label metrics (and wrapping) do not shift on
+   activation. */
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link--active {
+  border-right-color: var(--afs-accent);
+  background: var(--afs-soft);
+  color: var(--afs-accent-dark);
 }
 
 /* Right rail: "About this practice" card below the TOC (from frontmatter).

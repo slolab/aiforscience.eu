@@ -29,7 +29,9 @@ theme:
     primary: custom
     accent: custom
   features:
-    - navigation.sections
+    # No navigation.sections: top-level sections are collapsible. Best Practices
+    # is forced open on desktop in home.css so the practices always show, while
+    # Background and About stay collapsed.
     - navigation.top
     - search.suggest
     - search.highlight
@@ -93,6 +95,7 @@ nav:
       - Library: library/index.md
       - Glossary: glossary.md
       - Releases: releases/index.md
+      - Tags: tags.md
   - About:
       - Mission: about/mission.md
       - How the record works: about/how-the-record-works.md
@@ -100,7 +103,6 @@ nav:
       - Governance: about/governance.md
       - Events: about/events.md
       - Contribute: about/contribute.md
-  - Tags: tags.md
 
 copyright: >-
   © 2026 AI for Science contributors. Content licensed

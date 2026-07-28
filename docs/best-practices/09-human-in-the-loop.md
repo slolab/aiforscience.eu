@@ -1,6 +1,6 @@
 ---
 title: State human-in-the-loop requirements explicitly
-nav_title: "BP09 State human-in-the-loop requirements"
+nav_title: "State human-in-the-loop requirements"
 practice_id: BP-09
 status: draft
 first_added: 2026-07-25

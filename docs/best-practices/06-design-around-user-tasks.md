@@ -1,6 +1,6 @@
 ---
 title: Design agent interfaces around user tasks, not raw endpoints
-nav_title: "BP06 Design interfaces around user tasks"
+nav_title: "Design interfaces around user tasks"
 practice_id: BP-06
 status: draft
 first_added: 2026-07-25

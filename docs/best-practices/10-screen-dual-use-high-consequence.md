@@ -1,6 +1,6 @@
 ---
 title: Screen agents for dual-use and high-consequence risk
-nav_title: "BP10 Screen for dual-use and high-consequence risk"
+nav_title: "Screen for dual-use and high-consequence risk"
 practice_id: BP-10
 status: draft
 first_added: 2026-07-26
