@@ -897,6 +897,26 @@ body {
   background: rgba(255, 255, 255, 0.045);
   box-shadow: none;
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.afs-feature-card:hover {
+  border-color: rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.075);
+}
+
+/* The title link is stretched over the whole card, so a click anywhere on the
+   card follows it while keeping a single real link for accessibility. */
+.afs-feature-card .afs-card-title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.afs-feature-card:hover .afs-card-title,
+.afs-feature-card:focus-within .afs-card-title {
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
 }
 
 /* Glass items on the dark band, matching the hero practices index. Card padding
@@ -922,16 +942,16 @@ body {
   margin: 0;
 }
 
-/* Full-bleed graphic at the top of each card (placeholder art for now; swap
-   the files in assets/img/cards/ for the generated graphics). Negative margins
-   pull it to the card edges past the card padding. */
+/* Full-bleed graphic at the top of each card. The SVGs are transparent and sit
+   directly on the card glass; a faint divider separates the graphic from the
+   caption below. */
 .afs-feature-card__graphic {
   display: block;
   width: 100%;
   margin: 0 0 0.9rem;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  background: rgba(255, 255, 255, 0.06);
+  background: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
