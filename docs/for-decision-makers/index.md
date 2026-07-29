@@ -37,7 +37,7 @@ Each point is tagged by the kind of decision it is (<span class="afs-badge afs-b
   Total token spend is not a productivity metric.
   See [BP01](../best-practices/01-match-method-to-task.md).
 - <span class="afs-badge afs-badge--require">Require</span> **Screening for serious-harm capabilities.** Some agent capabilities carry dual-use or high-consequence risk.
-  Screen them before an agent is given reach, make screening mandatory where a mistake or misuse could cause serious harm, and refuse grant or service terms that would train third-party models on data held under withdrawable consent, because training cannot be undone.
+  Screen them before an agent is given reach, make screening mandatory where a mistake or misuse could cause serious harm.
   See [BP10](../best-practices/10-screen-dual-use-high-consequence.md).
 - <span class="afs-badge afs-badge--risk">Risk</span> **Harm that cannot be undone.** Misuse of a high-consequence capability, or training a third-party model on data whose consent can be withdrawn, cannot be walked back after the fact.
   The safeguard is to screen and contain before the action, not to review it afterwards.
