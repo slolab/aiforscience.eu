@@ -1,0 +1,22 @@
+{
+  "title": "Best Practices for Agentic AI in Science",
+  "description": "A living, citable record of best practices for applying agentic AI to science, aggregating what task forces and institutions learn so organisations build on each other's experience. Each deposit is a dated snapshot of the record published at https://aiforscience.eu; the live site always shows the current state.",
+  "upload_type": "publication",
+  "publication_type": "other",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "keywords": [
+    "agentic AI",
+    "artificial intelligence",
+    "best practices",
+    "research infrastructure",
+    "scientific method",
+    "provenance",
+    "governance",
+    "reproducibility"
+  ],
+  "creators": [
+    { "name": "AI for Science contributors" }
+  ]
+}
