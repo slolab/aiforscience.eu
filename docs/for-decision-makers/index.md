@@ -47,6 +47,12 @@ Each point is tagged by the kind of decision it is (<span class="afs-badge afs-b
 - <span class="afs-badge afs-badge--require">Require</span> **Limits enforced by the system, with named owners.** A system that acts cannot be talked into following a rule; it can only be stopped from taking an action.
   The limits you care about belong in permission scopes and guardrails, not only in a policy document, and every agent responsibility needs a named human owner with clear stop, escalation, and shutdown paths.
   See [BP04](../best-practices/04-govern-autonomy-and-accountability.md).
+- <span class="afs-badge afs-badge--risk">Risk</span> **Policy that a system ignores.** The gap between written rules and enforced limits is the main risk as agents get more autonomous.
+  Personal agents connected to staff mail, files, and calendars are part of the institution's risk even when no one deployed them centrally.
+  See [BP04](../best-practices/04-govern-autonomy-and-accountability.md).
+- <span class="afs-badge afs-badge--require">Require</span> **Evaluation before reliance.** A tool being popular, available, or convincing in a demo is not evidence that it is correct for your work.
+  Require that tools feeding into results or decisions are tested on representative tasks first, in proportion to the stakes.
+  See [BP08](../best-practices/08-evaluate-tools-before-trust.md).
 - <span class="afs-badge afs-badge--resource">Resource</span> **Shared benchmarks and independent evaluation.** Fund shared evaluation practice so adopters are not each testing blind, and support independent tests on data the tool has not seen.
   See [BP08](../best-practices/08-evaluate-tools-before-trust.md).
 - <span class="afs-badge afs-badge--require">Require</span> **Vetted, catalogued interfaces.** Agent interfaces (such as MCP servers, skills, and plugins) should reach staff through a catalogue that reviews them and records who maintains each one and when it was last checked.
@@ -56,9 +62,6 @@ Each point is tagged by the kind of decision it is (<span class="afs-badge afs-b
   Fund precise, current documentation and machine-readable descriptions of what the data means.
   It is cheap to check, it now carries real weight, and it helps the people who use the resource directly.
   See [BP05](../best-practices/05-documentation-and-data-for-agents.md).
-- <span class="afs-badge afs-badge--risk">Risk</span> **Policy that a system ignores.** The gap between written rules and enforced limits is the main risk as agents get more autonomous.
-  Personal agents connected to staff mail, files, and calendars are part of the institution's risk even when no one deployed them centrally.
-  See [BP04](../best-practices/04-govern-autonomy-and-accountability.md).
 - <span class="afs-badge afs-badge--require">Require</span> **Stated human-in-the-loop levels.** Every use case should declare where human review is required and where the agent acts alone, and the system should enforce that level.
   Stronger checks apply where an action changes records, results, or the outside world.
   See [BP09](../best-practices/09-human-in-the-loop.md).
@@ -67,19 +70,16 @@ Each point is tagged by the kind of decision it is (<span class="afs-badge afs-b
   See [BP07](../best-practices/07-provenance-and-citation.md).
 - <span class="afs-badge afs-badge--risk">Risk</span> **Confident wrong answers.** Without a source trail, a wrong answer that looks right cannot be told from a correct one, and retracted work gets presented as current.
   See [BP07](../best-practices/07-provenance-and-citation.md).
-- <span class="afs-badge afs-badge--require">Require</span> **Evaluation before reliance.** A tool being popular, available, or convincing in a demo is not evidence that it is correct for your work.
-  Require that tools feeding into results or decisions are tested on representative tasks first, in proportion to the stakes.
-  See [BP08](../best-practices/08-evaluate-tools-before-trust.md).
 - <span class="afs-badge afs-badge--resource">Resource</span> **Core interfaces as infrastructure.** Fund maintained agent interfaces for the resources that are most used and most important, and tie the level of investment to demand and importance.
   This keeps resources open to agents without an open-ended maintenance bill.
-  See [BP02](../best-practices/02-default-to-agent-accessibility.md).
-- <span class="afs-badge afs-badge--enable">Enable</span> **Open resources to agents by default.** Agents reach resources whether or not those were built for them.
-  Planning for that access means agents can be steered to interfaces that work, instead of falling back to fragile ones.
-  Set the default to open and decide the level of support per resource.
   See [BP02](../best-practices/02-default-to-agent-accessibility.md).
 - <span class="afs-badge afs-badge--risk">Risk</span> **Agents route around missing interfaces.** Where a resource has no clean agent interface, agents fall back to older interfaces or scrape data from pages built for people.
   This is fragile and adds load.
   (One observed instance is recorded in the [failures log](../best-practices/failures.md).)
+- <span class="afs-badge afs-badge--enable">Enable</span> **Open resources to agents by default.** Agents reach resources whether or not those were built for them.
+  Planning for that access means agents can be steered to interfaces that work, instead of falling back to fragile ones.
+  Set the default to open and decide the level of support per resource.
+  See [BP02](../best-practices/02-default-to-agent-accessibility.md).
 - <span class="afs-badge afs-badge--resource">Resource</span> **Interfaces built around users' real tasks.** Interfaces built around the tasks users actually perform cut load, cost, and error.
   Fund the work of learning those tasks.
   See [BP06](../best-practices/06-design-around-user-tasks.md).
