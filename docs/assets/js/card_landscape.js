@@ -13,10 +13,12 @@
  *
  * The grid bleeds past all four edges and is cropped by the media box (rounded
  * corners and all), so the terrain fills the whole card. Each card gets one
- * canvas, chosen over thousands of SVG nodes so the draw and the hover redraw
- * stay cheap. On hover the dots near the cursor brighten, so a patch of the
- * terrain lights up as the pointer moves. Without JavaScript the media simply
- * keeps its base tint.
+ * canvas, chosen over thousands of SVG nodes so the draw stays cheap. The
+ * terrain height is computed once; a small travelling-swell layer is added per
+ * frame so the waves roll toward the viewer (a shared rAF ticker drives every
+ * on-screen card, paused when scrolled away and disabled for
+ * prefers-reduced-motion). On hover the dots near the cursor brighten, more so
+ * on the crests. Without JavaScript the media simply keeps its base tint.
  */
 (function () {
   "use strict";
@@ -48,6 +50,9 @@
     hoverBoost: 0.1, // extra opacity at the cursor on hover
     hoverRadius: 80, // reach of the hover light, field units
     peakHoverGain: 3.0, // extra cursor light on peaks (0 = uniform glow)
+    animate: true, // roll the waves (forced off for prefers-reduced-motion)
+    animAmp: 0.35, // height of the moving swell over the static terrain (z units)
+    animSpeed: 0.1, // wave speed (roughly cycles per second)
     baseFx: 2.3, // noise features across the width (low = long wave crests)
     baseFy: 2.3, // noise features across the depth (high = many crest lines)
     warpAmp: 1.2, // domain-warp strength: how hard the field swirls
@@ -134,9 +139,41 @@
     return h * 2 - 1;
   }
 
-  // The dots for one card, in field units, with a base opacity each. Far rows
-  // bunch toward the horizon, splay narrower, sit dimmer, and carry less
-  // relief; near rows spread apart and overflow the sides (cropped later).
+  // A dot's peak factor and base opacity from its current height z, normalised
+  // to a fixed range so brightness never flickers as the waves move. The peak
+  // factor is 0 below the threshold height and smoothsteps to 1 at the top; it
+  // drives both the static peak boost and the peak-weighted hover.
+  function shade(d, z, zMin, span) {
+    var nz = (z - zMin) / span;
+    if (nz < 0) nz = 0;
+    else if (nz > 1) nz = 1;
+    var tspan = 1 - CFG.peakThreshold || 1;
+    var pk = (nz - CFG.peakThreshold) / tspan;
+    pk = pk <= 0 ? 0 : pk >= 1 ? 1 : pk * pk * (3 - 2 * pk);
+    d.pk = pk;
+    d.base = Math.min(0.5, d.opd + CFG.peakBoost * pk);
+  }
+
+  // The moving part of the height: three travelling sinusoids rolling toward the
+  // viewer (crests march from the horizon to the front as t grows). Cheap
+  // enough to evaluate for every dot every frame, and it loops forever with no
+  // seam, so points transition monotonically. Scaled by animAmp.
+  function waveDisp(u, v, t) {
+    var s = CFG.animSpeed;
+    return (
+      CFG.animAmp *
+      (0.5 * Math.sin(TAU * (1.2 * v - 0.9 * s * t)) +
+        0.3 * Math.sin(TAU * (0.5 * u + 2.0 * v - 1.3 * s * t) + 1.7) +
+        0.2 * Math.sin(TAU * (-0.8 * u + 2.9 * v - 1.7 * s * t) + 4.2))
+    );
+  }
+
+  // The dots for one card, in field units. Each keeps the static terrain height
+  // (z0) plus the fields needed to re-place and re-shade it per frame. Far rows
+  // bunch toward the horizon, splay narrower, sit dimmer, and carry less relief;
+  // near rows spread apart and overflow the sides (cropped later). Returns the
+  // dots and the fixed shading range (static span padded by the wave amplitude
+  // so moving crests never clip).
   function computeDots(index) {
     var ox = index * CFG.cardStep;
     var oy = index * CFG.cardStep * 0.7;
@@ -161,25 +198,34 @@
         dots.push({
           x: cx + (u - 0.5) * W * scale,
           y: groundY - z * relief,
-          z: z,
-          opd: opd
+          u: u,
+          v: v,
+          groundY: groundY,
+          relief: relief,
+          opd: opd,
+          z0: z
         });
       }
     }
 
-    var span = zMax - zMin || 1;
-    var tspan = 1 - CFG.peakThreshold || 1;
+    var pad = CFG.animate ? CFG.animAmp : 0;
+    var lo = zMin - pad;
+    var span = zMax + pad - lo || 1;
+    for (var k = 0; k < dots.length; k++) shade(dots[k], dots[k].z0, lo, span);
+
+    return { dots: dots, zMin: lo, span: span };
+  }
+
+  // Re-place and re-shade every dot for time t (seconds): static height plus the
+  // moving swell, giving smooth vertical motion as the waves roll through.
+  function computeFrame(view, t) {
+    var dots = view.dots;
     for (var k = 0; k < dots.length; k++) {
       var d = dots[k];
-      var nz = (d.z - zMin) / span; // 0 low, 1 high
-      // Peak factor: 0 below the threshold height, smoothly ramping to 1 at the
-      // top. Drives both the static peak boost and the peak-weighted hover.
-      var pk = (nz - CFG.peakThreshold) / tspan;
-      pk = pk <= 0 ? 0 : pk >= 1 ? 1 : pk * pk * (3 - 2 * pk);
-      d.pk = pk;
-      d.base = Math.min(0.5, d.opd + CFG.peakBoost * pk);
+      var z = d.z0 + waveDisp(d.u, d.v, t);
+      d.y = d.groundY - z * d.relief;
+      shade(d, z, view.zMin, view.span);
     }
-    return dots;
   }
 
   // Paint the field. Dots are bucketed by opacity so the whole frame is a
@@ -241,46 +287,104 @@
     media.insertBefore(canvas, media.firstChild);
 
     var ctx = canvas.getContext("2d");
-    var dots = computeDots(index);
+    var field = computeDots(index);
     var sc = size(canvas, media);
-    if (sc) draw(ctx, dots, sc, null);
+    var view = {
+      canvas: canvas,
+      ctx: ctx,
+      media: media,
+      dots: field.dots,
+      zMin: field.zMin,
+      span: field.span,
+      sc: sc,
+      cursor: null
+    };
+    if (sc) draw(ctx, view.dots, sc, null);
+    return view;
+  }
 
-    return { canvas: canvas, ctx: ctx, media: media, dots: dots, sc: sc };
+  // One shared rAF ticker drives every animating, on-screen card, so there is a
+  // single loop rather than one per card. It stops itself when nothing is
+  // visible and restarts when a card scrolls back in.
+  var ticking = [];
+  var rafId = 0;
+  function tick(ts) {
+    var t = ts * 0.001;
+    for (var i = 0; i < ticking.length; i++) {
+      var view = ticking[i];
+      if (!view.sc) continue;
+      computeFrame(view, t);
+      draw(view.ctx, view.dots, view.sc, view.cursor);
+    }
+    rafId = ticking.length ? requestAnimationFrame(tick) : 0;
+  }
+  function startTicking(view) {
+    if (ticking.indexOf(view) === -1) ticking.push(view);
+    if (!rafId) rafId = requestAnimationFrame(tick);
+  }
+  function stopTicking(view) {
+    var idx = ticking.indexOf(view);
+    if (idx !== -1) ticking.splice(idx, 1);
+  }
+
+  function paint(view) {
+    if (view.sc) draw(view.ctx, view.dots, view.sc, view.cursor);
   }
 
   function wire(card, view) {
-    var raf = 0;
-    var cursor = null;
+    var reduce =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var animate = !!(CFG.animate && !reduce);
 
-    function render() {
-      raf = 0;
-      if (view.sc) draw(view.ctx, view.dots, view.sc, cursor);
-    }
+    // A rAF for one-off redraws on the static path (hover, resize while paused).
+    var raf = 0;
     function schedule() {
-      if (!raf) raf = requestAnimationFrame(render);
+      if (!raf)
+        raf = requestAnimationFrame(function () {
+          raf = 0;
+          paint(view);
+        });
     }
 
     card.addEventListener("pointermove", function (e) {
       var rect = view.media.getBoundingClientRect();
       if (!rect.width || !rect.height) return;
-      cursor = {
+      view.cursor = {
         x: ((e.clientX - rect.left) / rect.width) * W,
         y: ((e.clientY - rect.top) / rect.height) * H
       };
-      schedule();
+      if (!animate) schedule(); // animating views redraw every frame anyway
     });
     card.addEventListener("pointerleave", function () {
-      cursor = null;
-      schedule();
+      view.cursor = null;
+      if (!animate) schedule();
     });
 
     // Redraw at the new resolution when the card is resized.
     if (typeof ResizeObserver === "function") {
-      var ro = new ResizeObserver(function () {
+      new ResizeObserver(function () {
         view.sc = size(view.canvas, view.media);
-        schedule();
-      });
-      ro.observe(view.media);
+        paint(view);
+      }).observe(view.media);
+    }
+
+    if (!animate) return;
+
+    // Animate only while the card is on-screen; the observer starts and stops
+    // the shared ticker as it enters and leaves the viewport.
+    if (typeof IntersectionObserver === "function") {
+      new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) startTicking(view);
+          else {
+            stopTicking(view);
+            paint(view);
+          }
+        }
+      }).observe(view.media);
+    } else {
+      startTicking(view);
     }
   }
 
