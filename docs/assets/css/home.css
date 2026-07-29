@@ -121,6 +121,32 @@ body {
   font-weight: 850;
 }
 
+/* Practices: the single button between the title and search. */
+.afs-header-practices {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.72rem;
+  border-radius: 999px;
+  background: var(--afs-soft);
+  color: var(--afs-accent-dark);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.afs-header-practices:hover,
+.afs-header-practices:focus-visible {
+  background: var(--afs-soft-2);
+}
+
+.afs-header-practices[aria-current="page"] {
+  background: var(--afs-accent-dark);
+  color: #fff;
+}
+
 /* Desktop header layout: logo left, search centred, community links right. */
 @media screen and (min-width: 60em) {
   .afs-header-nav {
@@ -128,6 +154,9 @@ body {
     order: 3;
   }
   .md-header__inner .afs-brand {
+    order: 1;
+  }
+  .md-header__inner .afs-header-practices {
     order: 1;
   }
   .md-header__inner .md-search {
@@ -384,15 +413,16 @@ body {
   container-type: inline-size;
 }
 
-.afs-wordmark {
+.afs-hero__title {
   display: flex;
   align-items: center;
-  gap: 0.62rem;
-  margin-bottom: 0.95rem;
-  color: #ffffff;
-  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
-  font-weight: 950;
-  letter-spacing: -0.045em;
+  gap: clamp(0.9rem, 2.2vw, 1.6rem);
+}
+
+.afs-hero__logo {
+  flex: 0 0 auto;
+  width: clamp(3.4rem, 8cqi, 5.4rem);
+  height: auto;
 }
 
 .afs-hero__headline {
@@ -898,11 +928,75 @@ body {
   box-shadow: none;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  transition: background-color 320ms ease, border-color 320ms ease,
+    box-shadow 320ms ease,
+    backdrop-filter 320ms ease, -webkit-backdrop-filter 320ms ease;
 }
 
-.afs-feature-card:hover {
-  border-color: rgba(255, 255, 255, 0.26);
-  background: rgba(255, 255, 255, 0.075);
+/* On hover the glass itself carries the response: brighter fill, a stronger
+   blur, a small lift, and a gradient light that travels around the rim (the
+   ::before below). No text underline: the card is the affordance. */
+.afs-feature-card:hover,
+.afs-feature-card:focus-within {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0.65rem 1.7rem rgba(3, 18, 24, 0.28);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+/* Animated gradient rim. A masked pseudo-element paints only the 1.5px border
+   band; a conic gradient rotated by --afs-rim-angle sends a light slowly around
+   the edge on hover. Where @property is unsupported the rim shows as a static
+   gradient (still fine); reduced-motion drops the travel below. */
+@property --afs-rim-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.afs-feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from calc(var(--afs-rim-angle) + 135deg),
+    rgba(142, 215, 228, 0) 0deg,
+    rgba(142, 215, 228, 0) 60deg,
+    rgba(142, 215, 228, 0.28) 150deg,
+    rgba(167, 240, 208, 0.34) 180deg,
+    rgba(142, 215, 228, 0.28) 210deg,
+    rgba(142, 215, 228, 0) 300deg,
+    rgba(142, 215, 228, 0) 360deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 320ms ease;
+  pointer-events: none;
+}
+
+.afs-feature-card:hover::before,
+.afs-feature-card:focus-within::before {
+  opacity: 1;
+  animation: afs-rim-travel 9s linear infinite;
+}
+
+@keyframes afs-rim-travel {
+  to {
+    --afs-rim-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .afs-feature-card:hover::before,
+  .afs-feature-card:focus-within::before {
+    animation: none;
+  }
 }
 
 /* The title link is stretched over the whole card, so a click anywhere on the
@@ -913,10 +1007,12 @@ body {
   inset: 0;
 }
 
+/* No underline on hover: the glass and travelling rim are the affordance. The
+   title only brightens so the link still reads as active. */
 .afs-feature-card:hover .afs-card-title,
 .afs-feature-card:focus-within .afs-card-title {
-  text-decoration: underline;
-  text-underline-offset: 0.16em;
+  color: #b6ecf5;
+  text-decoration: none;
 }
 
 /* Glass items on the dark band, matching the hero practices index. Card padding
@@ -1330,9 +1426,8 @@ body {
     white-space: normal;
   }
 
-  .afs-wordmark {
-    margin-bottom: 0.7rem;
-    font-size: 1.35rem;
+  .afs-hero__logo {
+    width: 3.2rem;
   }
 
   .afs-hero__tagline {
