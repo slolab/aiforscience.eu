@@ -16,6 +16,10 @@
       <span class="afs-header-brand">{{ config.site_name }}</span>
     </a>
 
+    {#- Primary entry point to the record, sitting next to the title as the one
+        button to the left of search. -#}
+    <a class="afs-header-practices" href="{{ 'best-practices/01-match-method-to-task/' | url }}" {% if page and page.url.startswith('best-practices/') %}aria-current="page"{% endif %}>Practices</a>
+
     {#- Doc-section links live in the left sidebar; the header carries only the
         community entry points, present on every page. "Meeting" is internal
         (the events page); Discuss and Group are external. -#}
