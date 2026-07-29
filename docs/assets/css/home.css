@@ -495,12 +495,49 @@ body {
    practices themselves above the fold. Replaces the old tabbed hero card; the
    `.afs-hero-card` rules below are now unused. */
 .afs-hero-index {
+  position: relative;
   align-self: stretch;
   border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.045);
   padding: 1.1rem 1.35rem 0.75rem;
   backdrop-filter: blur(4px);
+}
+
+/* Keep the list above the rim layer below. */
+.afs-hero-index__head,
+.afs-hero-index__row {
+  position: relative;
+  z-index: 1;
+}
+
+/* Cursor-following rim, matching the feature cards. No dots and no fill
+   brightening here: only the rim lights up. Pointer position comes from
+   card_spotlight.js (--afs-cx/--afs-cy); defaults to centre without JS. */
+.afs-hero-index::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    18rem 18rem at var(--afs-cx, 50%) var(--afs-cy, 50%),
+    rgba(167, 240, 208, 0.25),
+    rgba(142, 215, 228, 0.16) 42%,
+    rgba(142, 215, 228, 0) 74%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 320ms ease;
+  pointer-events: none;
+}
+
+.afs-hero-index:hover::after,
+.afs-hero-index:focus-within::after {
+  opacity: 1;
 }
 
 .afs-hero-index__head {
