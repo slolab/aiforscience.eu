@@ -76,6 +76,7 @@ extra_javascript:
   - assets/js/provenance.js
   - assets/js/ai_cta.js
   - assets/js/card_spotlight.js
+  - assets/js/card_landscape.js
 
 nav:
   - Best Practices:

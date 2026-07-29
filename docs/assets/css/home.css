@@ -1016,11 +1016,14 @@ body {
 }
 
 /* The title link is stretched over the whole card, so a click anywhere on the
-   card follows it while keeping a single real link for accessibility. */
+   card follows it while keeping a single real link for accessibility. z-index
+   lifts it above the media graphic (z-index 1), so the top of the card is
+   clickable too; the rim and dot canvas already pass clicks through. */
 .afs-feature-card .afs-card-title::after {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 2;
 }
 
 /* No underline on hover: the glass and travelling rim are the affordance. The
@@ -1055,9 +1058,8 @@ body {
 }
 
 /* Media zone at the top of each card. The SVGs are transparent line art, so the
-   backdrop is painted here: a tight grid of tiny dots as a static texture, with
-   a divider to the caption below. Origin is top-left (0 0) so the dots align
-   with the hover sweep's mask regardless of the bottom border. */
+   backdrop is painted here: a uniform base tint plus a dot landscape drawn on
+   a canvas by card_landscape.js (see .afs-feature-card__dots). */
 .afs-feature-card__media {
   position: relative;
   width: 100%;
@@ -1069,9 +1071,6 @@ body {
      1px border. */
   border-radius: 11px 11px 0 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  /* Uniform base tint only. The dot texture is painted by ::before so the two
-     rounded top corners can drop their dots (which otherwise crowd the curve)
-     without the fill itself being cut, keeping the corner tint homogeneous. */
   background-color: rgba(255, 255, 255, 0.015);
 }
 
@@ -1084,69 +1083,18 @@ body {
   object-fit: cover;
 }
 
-/* Static dot texture. A tight grid of tiny dots, cleared at the two rounded top
-   corners so no dot crowds the curve. Sits above the base fill and below the
-   line art (z-index 0 < graphic z-index 1). `round` tiles a whole number of
-   dots per axis so every edge gets an equal half-cell gutter and no dot is
-   clipped. */
-.afs-feature-card__media::before {
-  content: "";
+/* Generated dot landscape (a <canvas> painted by card_landscape.js). Fills the
+   media as the backdrop, behind the line art (z-index 0 < graphic z-index 1).
+   The field bleeds past the edges and is clipped here by the media's rounded
+   overflow, so it fills the card with no dot crowding the corners. */
+.afs-feature-card__dots {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.1) 0.6px,
-    transparent 1.1px
-  );
-  background-size: 0.46rem 0.46rem;
-  background-repeat: round;
-  background-position: center;
-  /* Clear a disc at each top corner so only the corner dots drop out. The base
-     fill lives on the element, so the corner keeps the same tint as the rest. */
-  -webkit-mask:
-    radial-gradient(circle 12px at 0 0, transparent 11px, #000 12px),
-    radial-gradient(circle 12px at 100% 0, transparent 11px, #000 12px);
-  -webkit-mask-composite: source-in;
-  mask:
-    radial-gradient(circle 12px at 0 0, transparent 11px, #000 12px),
-    radial-gradient(circle 12px at 100% 0, transparent 11px, #000 12px);
-  mask-composite: intersect;
+  display: block;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
-}
-
-/* Hover spotlight: a soft teal radial glow centred on the cursor (--afs-mx /
-   --afs-my, fed by card_spotlight.js; defaults to centre without JS), masked by
-   the dot pattern so only the dots carry it. Dots near the pointer brighten
-   faintly and fade to nothing further out, so a patch of lit dots follows the
-   mouse. Sits above the static dots to light them, and behind the line art
-   (z-index 0 < graphic z-index 1). */
-.afs-feature-card__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: radial-gradient(
-    12rem 12rem at var(--afs-mx, 50%) var(--afs-my, 50%),
-    rgba(142, 215, 228, 0.16),
-    rgba(142, 215, 228, 0) 72%
-  );
-  -webkit-mask: radial-gradient(circle, #000 0.6px, transparent 1.1px);
-          mask: radial-gradient(circle, #000 0.6px, transparent 1.1px);
-  -webkit-mask-size: 0.46rem 0.46rem;
-          mask-size: 0.46rem 0.46rem;
-  -webkit-mask-repeat: round;
-          mask-repeat: round;
-  -webkit-mask-position: center;
-          mask-position: center;
-  opacity: 0;
-  transition: opacity 320ms ease;
-  pointer-events: none;
-}
-
-.afs-feature-card:hover .afs-feature-card__media::after,
-.afs-feature-card:focus-within .afs-feature-card__media::after {
-  opacity: 1;
 }
 
 /* Card title acting as the card's single link (feature and involved cards). */
