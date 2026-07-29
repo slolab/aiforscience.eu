@@ -1069,29 +1069,10 @@ body {
      1px border. */
   border-radius: 11px 11px 0 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* Uniform base tint only. The dot texture is painted by ::before so the two
+     rounded top corners can drop their dots (which otherwise crowd the curve)
+     without the fill itself being cut, keeping the corner tint homogeneous. */
   background-color: rgba(255, 255, 255, 0.015);
-  background-image: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.1) 0.6px,
-    transparent 1.1px
-  );
-  background-size: 0.46rem 0.46rem;
-  /* `round` tiles a whole number of dots per axis, scaling the cell to fit, so
-     every edge gets an equal half-cell gutter and no dot is clipped or runs
-     into the rim. Position is irrelevant with round but kept explicit. */
-  background-repeat: round;
-  background-position: center;
-  /* Clear the two rounded top corners: intersect a disc cut at each so no dot
-     is left half-clipped by the corner curve. The mask applies to the whole
-     media group, so it also trims the ::before spotlight and the image there. */
-  -webkit-mask:
-    radial-gradient(circle 12px at 0 0, transparent 11px, #000 12px),
-    radial-gradient(circle 12px at 100% 0, transparent 11px, #000 12px);
-  -webkit-mask-composite: source-in;
-  mask:
-    radial-gradient(circle 12px at 0 0, transparent 11px, #000 12px),
-    radial-gradient(circle 12px at 100% 0, transparent 11px, #000 12px);
-  mask-composite: intersect;
 }
 
 .afs-feature-card__graphic {
@@ -1103,12 +1084,44 @@ body {
   object-fit: cover;
 }
 
+/* Static dot texture. A tight grid of tiny dots, cleared at the two rounded top
+   corners so no dot crowds the curve. Sits above the base fill and below the
+   line art (z-index 0 < graphic z-index 1). `round` tiles a whole number of
+   dots per axis so every edge gets an equal half-cell gutter and no dot is
+   clipped. */
+.afs-feature-card__media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0.6px,
+    transparent 1.1px
+  );
+  background-size: 0.46rem 0.46rem;
+  background-repeat: round;
+  background-position: center;
+  /* Clear a disc at each top corner so only the corner dots drop out. The base
+     fill lives on the element, so the corner keeps the same tint as the rest. */
+  -webkit-mask:
+    radial-gradient(circle 12px at 0 0, transparent 11px, #000 12px),
+    radial-gradient(circle 12px at 100% 0, transparent 11px, #000 12px);
+  -webkit-mask-composite: source-in;
+  mask:
+    radial-gradient(circle 12px at 0 0, transparent 11px, #000 12px),
+    radial-gradient(circle 12px at 100% 0, transparent 11px, #000 12px);
+  mask-composite: intersect;
+  pointer-events: none;
+}
+
 /* Hover spotlight: a soft teal radial glow centred on the cursor (--afs-mx /
    --afs-my, fed by card_spotlight.js; defaults to centre without JS), masked by
    the dot pattern so only the dots carry it. Dots near the pointer brighten
    faintly and fade to nothing further out, so a patch of lit dots follows the
-   mouse. Sits behind the line art (z-index 0 < graphic z-index 1). */
-.afs-feature-card__media::before {
+   mouse. Sits above the static dots to light them, and behind the line art
+   (z-index 0 < graphic z-index 1). */
+.afs-feature-card__media::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -1131,8 +1144,8 @@ body {
   pointer-events: none;
 }
 
-.afs-feature-card:hover .afs-feature-card__media::before,
-.afs-feature-card:focus-within .afs-feature-card__media::before {
+.afs-feature-card:hover .afs-feature-card__media::after,
+.afs-feature-card:focus-within .afs-feature-card__media::after {
   opacity: 1;
 }
 
