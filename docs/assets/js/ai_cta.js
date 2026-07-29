@@ -1,5 +1,5 @@
 /*
- * "Ask your own assistant" call-to-action.
+ * "Ask your own AI Assistant" call-to-action.
  *
  * The Open-in-ChatGPT / Open-in-Claude links work without JavaScript: their
  * hrefs are pre-filled in the HTML. This script only enhances the block:

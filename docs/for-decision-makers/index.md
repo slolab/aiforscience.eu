@@ -13,6 +13,18 @@ accountability stay with people. This page is the short version of the
 [record](../best-practices/01-match-method-to-task.md) for the people who decide what to enable,
 resource, and require. Each point links to the practice it comes from.
 
+<div class="afs-ai-strip" markdown="0" data-afs-ai-cta data-afs-corpus="https://aiforscience.eu/llms-full.txt">
+  <div class="afs-ai-strip__bar">
+    <span class="afs-ai-strip__label">Ask your own AI Assistant</span>
+    <div class="afs-ai-strip__actions">
+      <a class="afs-ai-strip__btn afs-ai-strip__btn--primary" data-afs-ai-chatgpt rel="noopener noreferrer" target="_blank" href="https://chatgpt.com/?q=Read%20the%20AI%20for%20Science%20record%20of%20best%20practices%20for%20agentic%20AI%20in%20research%20at%20https%3A%2F%2Faiforscience.eu%2Fllms-full.txt%20and%20answer%20my%20questions%20using%20only%20that%20source%2C%20citing%20the%20practice%20each%20point%20comes%20from.%20My%20question%3A%20">ChatGPT</a>
+      <a class="afs-ai-strip__btn afs-ai-strip__btn--primary" data-afs-ai-claude rel="noopener noreferrer" target="_blank" href="https://claude.ai/new?q=Read%20the%20AI%20for%20Science%20record%20of%20best%20practices%20for%20agentic%20AI%20in%20research%20at%20https%3A%2F%2Faiforscience.eu%2Fllms-full.txt%20and%20answer%20my%20questions%20using%20only%20that%20source%2C%20citing%20the%20practice%20each%20point%20comes%20from.%20My%20question%3A%20">Claude</a>
+      <button class="afs-ai-strip__btn" type="button" data-afs-ai-copy>Copy as Markdown</button>
+    </div>
+  </div>
+  <p class="afs-ai-strip__note">Answers from the record's <a href="https://aiforscience.eu/llms-full.txt">own text</a>, citing each practice. No account, no install.</p>
+</div>
+
 ## What to enable
 
 - **A default that resources are open to agents.** Agents reach resources
@@ -130,20 +142,3 @@ A short checklist. Each item links to the practice that defines it.
 Governance here is ongoing, not a one-time policy. Guardrails are revised as
 agents and their uses change, and decisions are recorded. See
 [BP04](../best-practices/04-govern-autonomy-and-accountability.md).
-
-## Ask your own assistant
-
-The record is a living document, and it is written to be read by AI as well as
-by people. To ask a question in your own words, open the record in the
-assistant you already use. It will answer from the record's own text, so you
-can check any answer against the practice it cites. This needs no account with
-us and no software to install.
-
-<div class="afs-ai-cta" markdown="0" data-afs-ai-cta data-afs-corpus="https://aiforscience.eu/llms-full.txt">
-  <div class="afs-ai-cta__actions">
-    <a class="afs-ai-cta__btn afs-ai-cta__btn--primary" data-afs-ai-chatgpt rel="noopener noreferrer" target="_blank" href="https://chatgpt.com/?q=Read%20the%20AI%20for%20Science%20record%20of%20best%20practices%20for%20agentic%20AI%20in%20research%20at%20https%3A%2F%2Faiforscience.eu%2Fllms-full.txt%20and%20answer%20my%20questions%20using%20only%20that%20source%2C%20citing%20the%20practice%20each%20point%20comes%20from.%20My%20question%3A%20">Open in ChatGPT</a>
-    <a class="afs-ai-cta__btn afs-ai-cta__btn--primary" data-afs-ai-claude rel="noopener noreferrer" target="_blank" href="https://claude.ai/new?q=Read%20the%20AI%20for%20Science%20record%20of%20best%20practices%20for%20agentic%20AI%20in%20research%20at%20https%3A%2F%2Faiforscience.eu%2Fllms-full.txt%20and%20answer%20my%20questions%20using%20only%20that%20source%2C%20citing%20the%20practice%20each%20point%20comes%20from.%20My%20question%3A%20">Open in Claude</a>
-    <button class="afs-ai-cta__btn" type="button" data-afs-ai-copy>Copy as Markdown</button>
-  </div>
-  <p class="afs-ai-cta__note">The buttons open your assistant with a prompt that points it at the full record (<a href="https://aiforscience.eu/llms-full.txt">llms-full.txt</a>). "Copy as Markdown" copies this page for pasting anywhere.</p>
-</div>
