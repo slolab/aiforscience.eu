@@ -35,10 +35,20 @@
       <span class="afs-nav-card__sub">The short read for administrators and regulators</span>
     </a>
   {% endif %}
-  <ul class="md-nav__list" data-md-scrollfix>
-    {% for nav_item in nav.items %}
-      {% set path = "__nav_" ~ loop.index %}
-      {{ item.render(nav_item, path, 1) }}
-    {% endfor %}
-  </ul>
+  {#- On the decision-makers page the full practices list would compete with
+      the digest, so it is replaced by one subtle card back to the record
+      (the same practice-1 target as the home hero button). -#}
+  {% if page and page.url.startswith("for-decision-makers") %}
+    <a class="afs-nav-card afs-nav-card--practices" href="{{ 'best-practices/01-match-method-to-task/' | url }}">
+      <span class="afs-nav-card__title">← The practices</span>
+      <span class="afs-nav-card__sub">The full record each point above links to</span>
+    </a>
+  {% else %}
+    <ul class="md-nav__list" data-md-scrollfix>
+      {% for nav_item in nav.items %}
+        {% set path = "__nav_" ~ loop.index %}
+        {{ item.render(nav_item, path, 1) }}
+      {% endfor %}
+    </ul>
+  {% endif %}
 </nav>
