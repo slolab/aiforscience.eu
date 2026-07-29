@@ -25,3 +25,34 @@
   background: #d3efe9;
   color: #0b5c50;
 }
+
+/* Category tags used on the decision-makers page to mark the kind of decision
+   each point is (enable / resource / require) or the risk of not acting. */
+
+.afs-badge--enable,
+.afs-badge--resource,
+.afs-badge--require,
+.afs-badge--risk {
+  margin-right: 0.45em;
+  text-transform: uppercase;
+}
+
+.afs-badge--enable {
+  background: #d3efe9;
+  color: #0b5c50;
+}
+
+.afs-badge--resource {
+  background: #f5e7c0;
+  color: #7a5d00;
+}
+
+.afs-badge--require {
+  background: #d7e9f2;
+  color: #0e6478;
+}
+
+.afs-badge--risk {
+  background: #f7dcdc;
+  color: #a12222;
+}
