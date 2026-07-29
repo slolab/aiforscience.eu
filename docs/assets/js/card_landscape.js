@@ -30,30 +30,35 @@
   // All the shape knobs in one place. Coordinates are field units unless the
   // name says "frac" (a fraction of the box).
   var CFG = {
-    cols: 140, // dots across a row
-    rows: 88, // dot rows, back (0) to front (1)
-    bleedTopFrac: 0.19, // rows start this far above the top edge (cropped)
+    cols: 160, // dots across a row
+    rows: 90, // dot rows, back (0) to front (1)
+    bleedTopFrac: 0.1, // rows start this far above the top edge (cropped)
     bleedBottomFrac: 0.1, // rows end this far below the bottom edge (cropped)
-    rowGamma: 2.1, // >1 bunches the far rows toward the horizon (tilt/depth)
-    backScaleX: 1.0, // row width at the back, relative to the box
-    frontScaleX: 1.62, // row width at the front (wider, so near rows splay out)
-    zLift: 31, // field units a unit of height rises on screen
-    reliefBack: 0.45, // relief kept at the back (0..1); full relief at the front
-    dotR: 0.3, // dot radius, constant (depth reads from spacing, not size)
-    opBack: 0.014, // base opacity of the far rows (hazier)
-    opFront: 0.095, // base opacity of the near rows
-    peakBoost: 0.03, // extra opacity for the highest dots
-    hoverBoost: 0.16, // extra opacity at the cursor on hover
-    hoverRadius: 65, // reach of the hover light, field units
-    baseFx: 2.2, // noise features across the width (higher = more, smaller)
-    baseFy: 1.85, // noise features across the depth
-    warpAmp: 1.65, // domain-warp strength: how hard the field swirls
-    ridgeMix: 0.52, // blend of ridged (sharp crests) vs rounded fBm, 0..1
-    octaves: 5, // noise octaves (detail depth)
-    gain: 0.55, // octave amplitude falloff (higher = more mid/fine activity)
+    rowGamma: 2.5, // >1 bunches the far rows toward the horizon (tilt/depth)
+    backScaleX: .5, // row width at the back, relative to the box
+    frontScaleX: 1.85, // row width at the front (wider, so near rows splay out)
+    zLift: 48, // field units a unit of height rises on screen
+    reliefBack: 0.8, // relief kept at the back (0..1); full relief at the front
+    dotR: 0.25, // dot radius, constant (depth reads from spacing, not size)
+    opBack: 0.02, // base opacity of the far rows (hazier)
+    opFront: 0.02, // base opacity of the near rows
+    peakBoost: 0.2, // extra opacity for the highest dots
+    peakThreshold: 0.35, // height (0..1) where a dot counts as a "peak"; boost
+    //                     and peak-lit hover ramp in from here up to the top
+    hoverBoost: 0.1, // extra opacity at the cursor on hover
+    hoverRadius: 80, // reach of the hover light, field units
+    peakHoverGain: 3.0, // extra cursor light on peaks (0 = uniform glow)
+    baseFx: 2.3, // noise features across the width (low = long wave crests)
+    baseFy: 2.3, // noise features across the depth (high = many crest lines)
+    warpAmp: 1.2, // domain-warp strength: how hard the field swirls
+    ridgeMix: 0.6, // blend of ridged (sharp crests) vs rounded fBm, 0..1
+    swellMix: 0.6, // weight of the big rolling swell under the chop, 0..1
+    swellF: 0.5, // swell frequency relative to the chop (low = broad rollers)
+    octaves: 8, // noise octaves (detail depth)
+    gain: 0.5, // octave amplitude falloff (higher = more mid/fine activity)
     lac: 2.03, // octave frequency step (off 2 so octaves never phase-lock)
-    cardStep: 37.0, // how far each card samples into the noise (all differ)
-    quant: 28 // opacity levels to batch fills into
+    cardStep: 5.5, // how far each card samples into the noise (all differ)
+    quant: 24 // opacity levels to batch fills into
   };
 
   // Deterministic hash and smooth value noise (no Math.random, so the terrain
@@ -110,10 +115,12 @@
   }
 
   // The surface height in [-1, 1]. u, v in [0, 1] run left-right and back-front;
-  // ox, oy offset the sample point so each card gets a different stretch of
-  // terrain. Domain warping (sampling fBm at a point that fBm itself displaces)
-  // turns smooth swells into swirling, non-repeating ridges and basins; a
-  // ridged layer blended on top sharpens the crests.
+  // ox, oy offset the sample point so each card gets a different stretch of sea.
+  // The base coordinates are anisotropic (long crests across the width, many
+  // crest lines in depth), so the chop reads as swell lines. Domain warping
+  // (sampling fBm at a point that fBm itself displaces) breaks their regularity
+  // into non-repeating waves; a ridged layer sharpens the crests. A broad,
+  // low-frequency swell is mixed under the chop so big rollers ride beneath it.
   function heightAt(u, v, ox, oy) {
     var px = u * CFG.baseFx + ox;
     var py = v * CFG.baseFy + oy;
@@ -121,7 +128,9 @@
     var wy = fbm(px + 5.2, py + 1.3);
     var qx = px + CFG.warpAmp * (wx - 0.5) * 2;
     var qy = py + CFG.warpAmp * (wy - 0.5) * 2;
-    var h = fbm(qx, qy) * (1 - CFG.ridgeMix) + ridged(qx + 3.7, qy - 2.1) * CFG.ridgeMix;
+    var chop = fbm(qx, qy) * (1 - CFG.ridgeMix) + ridged(qx + 3.7, qy - 2.1) * CFG.ridgeMix;
+    var swell = fbm(px * CFG.swellF + 7.0, py * CFG.swellF - 4.0);
+    var h = chop * (1 - CFG.swellMix) + swell * CFG.swellMix;
     return h * 2 - 1;
   }
 
@@ -159,10 +168,16 @@
     }
 
     var span = zMax - zMin || 1;
+    var tspan = 1 - CFG.peakThreshold || 1;
     for (var k = 0; k < dots.length; k++) {
       var d = dots[k];
       var nz = (d.z - zMin) / span; // 0 low, 1 high
-      d.base = Math.min(0.5, d.opd + CFG.peakBoost * nz);
+      // Peak factor: 0 below the threshold height, smoothly ramping to 1 at the
+      // top. Drives both the static peak boost and the peak-weighted hover.
+      var pk = (nz - CFG.peakThreshold) / tspan;
+      pk = pk <= 0 ? 0 : pk >= 1 ? 1 : pk * pk * (3 - 2 * pk);
+      d.pk = pk;
+      d.base = Math.min(0.5, d.opd + CFG.peakBoost * pk);
     }
     return dots;
   }
@@ -190,7 +205,7 @@
         var dx = d.x - cursor.x;
         var dy = d.y - cursor.y;
         var t = 1 - Math.sqrt(dx * dx + dy * dy) / reach;
-        if (t > 0) op += CFG.hoverBoost * t * t;
+        if (t > 0) op += CFG.hoverBoost * t * t * (1 + CFG.peakHoverGain * d.pk);
       }
       var lvl = (op * levels) | 0;
       if (lvl < 0) lvl = 0;
