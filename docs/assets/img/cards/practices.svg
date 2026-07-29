@@ -5,10 +5,16 @@
         <rect x="-11.811" y="-18.575" width="346.954" height="220.654" style="fill:none;"/>
         <g transform="matrix(1.08423,0,0,1.22586,1.20018,4.71635)">
             <g transform="matrix(1.05373,0,0,1.05373,-25.5039,-44.1814)">
-                <path d="M120,128L152,62L192,100L232,44L272,88L286,134" style="fill:none;fill-rule:nonzero;stroke:rgb(142,215,228);stroke-opacity:0.28;stroke-width:1px;"/>
-                <path d="M152,62L200,146L232,44" style="fill:none;fill-rule:nonzero;stroke:rgb(142,215,228);stroke-opacity:0.28;stroke-width:1px;"/>
-                <path d="M120,128L200,146L272,88" style="fill:none;fill-rule:nonzero;stroke:rgb(142,215,228);stroke-opacity:0.28;stroke-width:1px;"/>
-                <path d="M192,100L200,146" style="fill:none;fill-rule:nonzero;stroke:rgb(142,215,228);stroke-opacity:0.28;stroke-width:1px;"/>
+                <path d="M120,128L152,62L192,100L232,44L272,88L286,134" style="fill:none;fill-rule:nonzero;stroke:rgb(17,103,120);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(1.05373,0,0,1.05373,-25.5039,-44.1814)">
+                <path d="M152,62L200,146L232,44" style="fill:none;fill-rule:nonzero;stroke:rgb(17,103,120);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(1.05373,0,0,1.05373,-25.5039,-44.1814)">
+                <path d="M120,128L200,146L272,88" style="fill:none;fill-rule:nonzero;stroke:rgb(17,103,120);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(1.05373,0,0,1.05373,-25.5039,-44.1814)">
+                <path d="M192,100L200,146" style="fill:none;fill-rule:nonzero;stroke:rgb(17,103,120);stroke-width:1px;"/>
             </g>
             <g transform="matrix(1.05373,0,0,1.05373,-25.5039,-44.1814)">
                 <g id="spark" transform="matrix(1,0,0,1,120,128)">
@@ -34,25 +40,25 @@
                 </g>
             </g>
             <g transform="matrix(1.05373,0,0,1.05373,92.1117,102.174)">
-                <text x="0px" y="0px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:8.5px;fill:white;fill-opacity:0.4;">1</text>
+                <text x="0px" y="0px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:8.5px;fill:rgb(128,142,147);">1</text>
             </g>
             <g transform="matrix(1.05373,0,0,1.05373,126.231,16.5309)">
-                <text x="0px" y="0px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:8.5px;fill:white;fill-opacity:0.4;">2</text>
+                <text x="0px" y="0px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:8.5px;fill:rgb(128,142,147);">2</text>
             </g>
             <g transform="matrix(1.05373,0,0,1.05373,180.821,70.5884)">
-                <text x="0px" y="0px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:8.5px;fill:white;fill-opacity:0.4;">4</text>
+                <text x="0px" y="0px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:8.5px;fill:rgb(128,142,147);">4</text>
             </g>
             <g transform="matrix(1.05373,0,0,1.05373,221.937,-1.87435)">
-                <text x="0px" y="0px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:8.5px;fill:white;fill-opacity:0.4;">5</text>
+                <text x="0px" y="0px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:8.5px;fill:rgb(128,142,147);">5</text>
             </g>
             <g transform="matrix(1.05373,0,0,1.05373,264.639,44.4998)">
-                <text x="0px" y="0px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:8.5px;fill:white;fill-opacity:0.4;">8</text>
+                <text x="0px" y="0px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:8.5px;fill:rgb(128,142,147);">8</text>
             </g>
             <g transform="matrix(1.05373,0,0,1.05373,279.67,107.409)">
-                <text x="0px" y="0px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:8.5px;fill:white;fill-opacity:0.4;">10</text>
+                <text x="0px" y="0px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:8.5px;fill:rgb(128,142,147);">10</text>
             </g>
             <g transform="matrix(1.05373,0,0,1.05373,189.059,120.098)">
-                <text x="0px" y="0px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:8.5px;fill:white;fill-opacity:0.4;">7</text>
+                <text x="0px" y="0px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:8.5px;fill:rgb(128,142,147);">7</text>
             </g>
             <g id="rose" transform="matrix(1.44851,0.256164,-0.388127,0.956017,5.20384,68.473)">
                 <path d="M52,28L45.5,40L52,52L40,45.5L28,52L34.5,40L28,28L40,34.5L52,28Z" style="fill:rgb(14,100,120);fill-rule:nonzero;"/>
