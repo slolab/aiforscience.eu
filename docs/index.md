@@ -16,17 +16,23 @@ hide:
 
   <div class="afs-feature-grid">
     <article class="afs-feature-card">
-      <img class="afs-feature-card__graphic" src="assets/img/cards/practices.svg" alt="" loading="lazy">
+      <div class="afs-feature-card__media">
+        <img class="afs-feature-card__graphic" src="assets/img/cards/practices.svg" alt="" loading="lazy">
+      </div>
       <a class="afs-card-title" href="best-practices/01-match-method-to-task/">Practices →</a>
       <p>Numbered, versioned practices, each with reasons, examples, and sources.</p>
     </article>
     <article class="afs-feature-card">
-      <img class="afs-feature-card__graphic" src="assets/img/cards/library.svg" alt="" loading="lazy">
+      <div class="afs-feature-card__media">
+        <img class="afs-feature-card__graphic" src="assets/img/cards/library.svg" alt="" loading="lazy">
+      </div>
       <a class="afs-card-title" href="library/">Library →</a>
       <p>The evidence base behind every citation, annotated and kept current.</p>
     </article>
     <article class="afs-feature-card">
-      <img class="afs-feature-card__graphic" src="assets/img/cards/challenge.svg" alt="" loading="lazy">
+      <div class="afs-feature-card__media">
+        <img class="afs-feature-card__graphic" src="assets/img/cards/challenge.svg" alt="" loading="lazy">
+      </div>
       <a class="afs-card-title" href="about/governance/">Challenge →</a>
       <p>Disagree with a practice? Challenges are formal, public, and logged.</p>
     </article>

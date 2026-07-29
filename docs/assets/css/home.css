@@ -920,7 +920,6 @@ body {
 .afs-feature-card {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   padding: 0;
   border-radius: 12px;
   border-color: rgba(255, 255, 255, 0.13);
@@ -939,38 +938,32 @@ body {
 .afs-feature-card:hover,
 .afs-feature-card:focus-within {
   border-color: rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
   box-shadow: 0 0.65rem 1.7rem rgba(3, 18, 24, 0.28);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
 }
 
-/* Animated gradient rim. A masked pseudo-element paints only the 1.5px border
-   band; a conic gradient rotated by --afs-rim-angle sends a light slowly around
-   the edge on hover. Where @property is unsupported the rim shows as a static
-   gradient (still fine); reduced-motion drops the travel below. */
-@property --afs-rim-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
+/* Cursor-following rim glow. A masked pseudo-element paints only the 1.5px
+   border band; the same radial gradient idea as the interior spotlight, but
+   centred on the cursor relative to the whole card (--afs-cx / --afs-cy, fed by
+   card_spotlight.js; defaults to centre without JS). The arc of rim nearest the
+   pointer lights up and fades with distance, so the rim tracks the mouse
+   instead of rotating on its own. */
 .afs-feature-card::before {
   content: "";
   position: absolute;
-  inset: 0;
+  /* -1px so the band rides the outer edge, over the card's 1px border, rather
+     than sitting inside it. */
+  inset: -1px;
   z-index: 1;
   border-radius: inherit;
-  padding: 1.5px;
-  background: conic-gradient(
-    from calc(var(--afs-rim-angle) + 135deg),
-    rgba(142, 215, 228, 0) 0deg,
-    rgba(142, 215, 228, 0) 60deg,
-    rgba(142, 215, 228, 0.28) 150deg,
-    rgba(167, 240, 208, 0.34) 180deg,
-    rgba(142, 215, 228, 0.28) 210deg,
-    rgba(142, 215, 228, 0) 300deg,
-    rgba(142, 215, 228, 0) 360deg
+  padding: 1px;
+  background: radial-gradient(
+    18rem 18rem at var(--afs-cx, 50%) var(--afs-cy, 50%),
+    rgba(167, 240, 208, 0.25),
+    rgba(142, 215, 228, 0.16) 42%,
+    rgba(142, 215, 228, 0) 74%
   );
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
@@ -983,20 +976,6 @@ body {
 .afs-feature-card:hover::before,
 .afs-feature-card:focus-within::before {
   opacity: 1;
-  animation: afs-rim-travel 9s linear infinite;
-}
-
-@keyframes afs-rim-travel {
-  to {
-    --afs-rim-angle: 360deg;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .afs-feature-card:hover::before,
-  .afs-feature-card:focus-within::before {
-    animation: none;
-  }
 }
 
 /* The title link is stretched over the whole card, so a click anywhere on the
@@ -1038,17 +1017,86 @@ body {
   margin: 0;
 }
 
-/* Full-bleed graphic at the top of each card. The SVGs are transparent and sit
-   directly on the card glass; a faint divider separates the graphic from the
-   caption below. */
+/* Media zone at the top of each card. The SVGs are transparent line art, so the
+   backdrop is painted here: a tight grid of tiny dots as a static texture, with
+   a divider to the caption below. Origin is top-left (0 0) so the dots align
+   with the hover sweep's mask regardless of the bottom border. */
+.afs-feature-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 0.9rem;
+  overflow: hidden;
+  /* Round the top corners here now that the card no longer clips (the rim
+     below extends over the card border). Inner radius = card 12px minus the
+     1px border. */
+  border-radius: 11px 11px 0 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.015);
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0.6px,
+    transparent 1.1px
+  );
+  background-size: 0.46rem 0.46rem;
+  /* `round` tiles a whole number of dots per axis, scaling the cell to fit, so
+     every edge gets an equal half-cell gutter and no dot is clipped or runs
+     into the rim. Position is irrelevant with round but kept explicit. */
+  background-repeat: round;
+  background-position: center;
+  /* Clear the two rounded top corners: intersect a disc cut at each so no dot
+     is left half-clipped by the corner curve. The mask applies to the whole
+     media group, so it also trims the ::before spotlight and the image there. */
+  -webkit-mask:
+    radial-gradient(circle 12px at 0 0, transparent 11px, #000 12px),
+    radial-gradient(circle 12px at 100% 0, transparent 11px, #000 12px);
+  -webkit-mask-composite: source-in;
+  mask:
+    radial-gradient(circle 12px at 0 0, transparent 11px, #000 12px),
+    radial-gradient(circle 12px at 100% 0, transparent 11px, #000 12px);
+  mask-composite: intersect;
+}
+
 .afs-feature-card__graphic {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
-  margin: 0 0 0.9rem;
-  aspect-ratio: 16 / 9;
+  height: 100%;
   object-fit: cover;
-  background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover spotlight: a soft teal radial glow centred on the cursor (--afs-mx /
+   --afs-my, fed by card_spotlight.js; defaults to centre without JS), masked by
+   the dot pattern so only the dots carry it. Dots near the pointer brighten
+   faintly and fade to nothing further out, so a patch of lit dots follows the
+   mouse. Sits behind the line art (z-index 0 < graphic z-index 1). */
+.afs-feature-card__media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    12rem 12rem at var(--afs-mx, 50%) var(--afs-my, 50%),
+    rgba(142, 215, 228, 0.16),
+    rgba(142, 215, 228, 0) 72%
+  );
+  -webkit-mask: radial-gradient(circle, #000 0.6px, transparent 1.1px);
+          mask: radial-gradient(circle, #000 0.6px, transparent 1.1px);
+  -webkit-mask-size: 0.46rem 0.46rem;
+          mask-size: 0.46rem 0.46rem;
+  -webkit-mask-repeat: round;
+          mask-repeat: round;
+  -webkit-mask-position: center;
+          mask-position: center;
+  opacity: 0;
+  transition: opacity 320ms ease;
+  pointer-events: none;
+}
+
+.afs-feature-card:hover .afs-feature-card__media::before,
+.afs-feature-card:focus-within .afs-feature-card__media::before {
+  opacity: 1;
 }
 
 /* Card title acting as the card's single link (feature and involved cards). */
