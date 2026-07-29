@@ -13,7 +13,7 @@ accountability stay with people. This page is the short version of the
 [record](../best-practices/01-match-method-to-task.md) for the people who decide what to enable,
 resource, and require. Each point links to the practice it comes from.
 
-<div class="afs-ai-strip" markdown="0" data-afs-ai-cta data-afs-corpus="https://aiforscience.eu/llms-full.txt">
+<div class="afs-ai-strip" markdown="0" data-afs-ai-cta>
   <div class="afs-ai-strip__bar">
     <span class="afs-ai-strip__label">Ask your own AI Assistant</span>
     <div class="afs-ai-strip__actions">
@@ -22,7 +22,7 @@ resource, and require. Each point links to the practice it comes from.
       <button class="afs-ai-strip__btn" type="button" data-afs-ai-copy>Copy as Markdown</button>
     </div>
   </div>
-  <p class="afs-ai-strip__note">Answers from the record's <a href="https://aiforscience.eu/llms-full.txt">own text</a>, citing each practice. No account, no install.</p>
+  <p class="afs-ai-strip__note">Answers from the record's <a href="../llms-full.txt">own text</a>, citing each practice. No account, no install.</p>
 </div>
 
 ## What to enable
