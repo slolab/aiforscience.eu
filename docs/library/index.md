@@ -4,7 +4,7 @@ title: Library
 
 # Library
 
-The library is the provenance store for the [best practices](../best-practices/index.md).
+The library is the provenance store for the [best practices](../best-practices/01-match-method-to-task.md).
 Everything used to model a practice, whether it supported, qualified, or
 contradicted a claim, is recorded here so a reader can check it. It has two
 tiers.
@@ -83,6 +83,7 @@ Each links to its bibliographic record.
 - [Official MCP Registry (2025)](ref-mcp-registry-2025.md)
 - [IETF AIPREF vocabulary (draft)](ref-ietf-aipref.md)
 - [COAR survey on AI bots and crawlers (2025)](ref-coar-ai-bots-2025.md)
+- [Web-scraping AI bots disrupt scientific databases (Nature news, 2025)](ref-nature-scraping-bots-2025.md)
 
 **Agent-tool design**
 

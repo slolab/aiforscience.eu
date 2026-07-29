@@ -16,11 +16,15 @@
       <span class="afs-header-brand">{{ config.site_name }}</span>
     </a>
 
-    <div class="afs-header-nav" aria-label="Sections">
-      <a href="{{ 'best-practices/' | url }}" {% if page and page.url.startswith('best-practices/') %}aria-current="page"{% endif %}>Best Practices</a>
-      <a href="{{ 'library/' | url }}" {% if page and (page.url.startswith('library/') or page.url.startswith('glossary/') or page.url.startswith('releases/')) %}aria-current="page"{% endif %}>Background</a>
-      <a href="{{ 'about/mission/' | url }}" {% if page and page.url.startswith('about/') %}aria-current="page"{% endif %}>About</a>
-      <span class="afs-header-nav__sep" aria-hidden="true"></span>
+    {#- Primary entry point to the record, sitting next to the title as the one
+        button to the left of search. -#}
+    <a class="afs-header-practices" href="{{ 'best-practices/01-match-method-to-task/' | url }}" {% if page and page.url.startswith('best-practices/') %}aria-current="page"{% endif %}>Practices</a>
+
+    {#- Doc-section links live in the left sidebar; the header carries only the
+        community entry points, present on every page. "Meeting" is internal
+        (the events page); Discuss and Group are external. -#}
+    <div class="afs-header-nav" aria-label="Community">
+      <a href="{{ 'about/events/' | url }}" {% if page and page.url.startswith('about/events') %}aria-current="page"{% endif %}>Meeting</a>
       <a href="https://github.com/slolab/aiforscience.eu/discussions" target="_blank" rel="noopener noreferrer">
         Discuss
         <span class="afs-header-nav__ext" aria-hidden="true">{% include ".icons/material/open-in-new.svg" %}</span>

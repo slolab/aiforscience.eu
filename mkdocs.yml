@@ -10,6 +10,8 @@ edit_uri: edit/main/docs/
 # the nav, so they do not bloat the sidebar. Keep them out of the not-in-nav
 # report.
 not_in_nav: |
+  /index.md
+  /for-decision-makers/index.md
   /library/*-*.md
 
 # Watch the theme overrides too, so `mkdocs serve` hot-reloads edits to
@@ -27,7 +29,9 @@ theme:
     primary: custom
     accent: custom
   features:
-    - navigation.sections
+    # No navigation.sections: top-level sections are collapsible. Best Practices
+    # is forced open on desktop in home.css so the practices always show, while
+    # Background and About stay collapsed.
     - navigation.top
     - search.suggest
     - search.highlight
@@ -43,6 +47,9 @@ hooks:
   - hooks/bp_pages.py
   - hooks/provenance.py
   - hooks/glossary_terms.py
+  # Emit llms.txt, llms-full.txt and per-page .md mirrors. Last, so it captures
+  # the same Markdown the pages render from (BP titles already substituted).
+  - hooks/llms_txt.py
 
 markdown_extensions:
   - admonition
@@ -63,14 +70,15 @@ extra_css:
   - assets/css/home.css
   - assets/css/provenance.css
   - assets/css/glossary.css
+  - assets/css/ai-cta.css
 
 extra_javascript:
   - assets/js/provenance.js
+  - assets/js/ai_cta.js
+  - assets/js/card_spotlight.js
 
 nav:
-  - Home: index.md
   - Best Practices:
-      - Overview: best-practices/index.md
       # BP page labels come from each page's frontmatter `nav_title`
       # (applied by hooks/bp_pages.py); only ordering lives here.
       - best-practices/01-match-method-to-task.md
@@ -88,13 +96,14 @@ nav:
       - Library: library/index.md
       - Glossary: glossary.md
       - Releases: releases/index.md
+      - Tags: tags.md
   - About:
       - Mission: about/mission.md
+      - How the record works: about/how-the-record-works.md
       - Partners: about/partners.md
       - Governance: about/governance.md
       - Events: about/events.md
       - Contribute: about/contribute.md
-  - Tags: tags.md
 
 copyright: >-
   © 2026 AI for Science contributors. Content licensed

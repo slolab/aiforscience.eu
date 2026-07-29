@@ -1,6 +1,6 @@
 ---
 title: Evaluate / benchmark agentic tools before trusting their outputs
-nav_title: "BP08 Evaluate before trust"
+nav_title: "Evaluate tools before trust"
 practice_id: BP-08
 status: draft
 first_added: 2026-07-26
@@ -48,19 +48,19 @@ comments: true
 
 </div>
 
-=== "Practitioners"
+=== "For practitioners"
 
     A tool being available, popular, or well-described is not evidence that it is correct for your task.
     Before you rely on its output, run it on cases where you know the answer, check it across repeated runs, and note where it breaks.
     Keep that evidence; it is what justifies trusting the result.
 
-=== "Providers"
+=== "For providers"
 
     Publish evaluation evidence for what you ship: how the tool was tested, on what tasks, with what error rate and known failure modes.
     Make it easy for adopters to reproduce your evaluation.
     Benchmark scores on general tasks do not tell a user whether the tool is reliable for theirs.
 
-=== "Governance"
+=== "For governance"
 
     Require evaluation before reliance for tools that feed into results or decisions, proportionate to the stakes.
     Fund shared benchmarks and evaluation practice so adopters are not each testing blind.
@@ -84,11 +84,6 @@ A tool that looks capable in a demo can be wrong in ways that only representativ
 - A provider ships evaluation evidence with the tool (tasks, metrics, error rate, known failure modes) that an adopter can reproduce, not only a feature description.
 - Red-teaming and hallucination/confabulation testing are run as the safety-and-correctness side of the same evaluation, not a separate afterthought.
 - Evaluations follow an established checklist (for example REFORMS for ML-based science, or a reproducibility checklist), so different groups' results are comparable.
-
-!!! info "Practice metadata"
-    **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
-    **Endorsed by:** none yet ·
-    **Last reviewed:** 2026-07-26
 
 ## Sources
 

@@ -78,6 +78,9 @@ bp2-a2:  # programmatic use often indistinguishable from human users
   - ref: coar-ai-bots-2025
     stance: supports
     locator: "2025 survey"
+  - ref: nature-scraping-bots-2025
+    stance: supports
+    locator: "DiscoverLife hit by millions of daily requests"
 bp2-a3:  # machine-actionable and discoverable by default
   - ref: fair-2016
     stance: supports
@@ -89,6 +92,9 @@ bp2-a3:  # machine-actionable and discoverable by default
   - ref: coar-ai-bots-2025
     stance: qualifies
     locator: "default openness invites heavy automated load"
+  - ref: nature-scraping-bots-2025
+    stance: qualifies
+    locator: "scraping load degraded or broke open scientific databases in 2025"
 bp2-a4:  # access governed by resource
   - ref: fair-2016
     stance: supports

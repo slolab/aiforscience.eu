@@ -1,6 +1,6 @@
 ---
 title: Default to agent-accessibility; prioritise effort by demand and importance
-nav_title: "BP02 Accessibility"
+nav_title: "Default to agent-accessibility"
 practice_id: BP-02
 status: draft
 first_added: 2026-07-25
@@ -52,20 +52,20 @@ comments: true
 
 </div>
 
-=== "Practitioners"
+=== "For practitioners"
 
     The resources you use will support agents to different degrees, by design.
     If one you depend on is poorly supported, say so.
     Providers use demand to decide what to improve.
 
-=== "Providers"
+=== "For providers"
 
     Make resources machine-actionable and discoverable by default, then set the level of support by type.
     Sort resources by how widely used and important they are, and invest accordingly.
     Keep a generic path for minor resources instead of building a custom interface for each.
     Govern access (authenticate and rate-shape where needed); a default of accessibility does not mean unmetered access.
 
-=== "Governance"
+=== "For governance"
 
     Prioritisation is a funding decision.
     Back a scheme that ties interface investment to how used and important a resource is, and fund the top-tier interfaces as infrastructure.
@@ -101,11 +101,6 @@ The load that automated clients now place on open resources makes governed acces
   The ELIXIR Core Data Resources (life sciences) are one such tier, selected on quantitative and qualitative indicators.
 - A resource keeps a default-open path but authenticates and rate-shapes automated traffic, so a burst of agent calls does not knock it over for its human users.
   Its logs cannot tell agents from people, which is why the limit is set at the resource rather than inferred from the client.
-
-!!! info "Practice metadata"
-    **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
-    **Endorsed by:** none yet ·
-    **Last reviewed:** 2026-07-26
 
 ## Sources
 

@@ -1,0 +1,96 @@
+/**
+ * "Ask your own AI Assistant" strip, used on the decision-makers digest.
+ * A thin bar modelled on the home page's citation/partner strips: the label and
+ * the assistant buttons sit on one line, with a smaller explainer line below.
+ * Buttons use the hero's accent fill and a Zenodo-badge rectangle. Reuses the
+ * site design tokens from home.css (--afs-*). This is the reusable slot a future
+ * grounded Q&A widget would occupy.
+ */
+
+.afs-ai-strip {
+  margin: 1rem 0 1.5rem;
+  padding: 0.55rem 0.8rem;
+  background: var(--afs-soft);
+  border: 1px solid var(--afs-line);
+  border-radius: 0.5rem;
+}
+
+.afs-ai-strip__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.9rem;
+}
+
+.afs-ai-strip__label {
+  flex: none;
+  color: var(--afs-ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.afs-ai-strip__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: auto;
+}
+
+/* Selectors carry the .md-content .md-typeset .afs-ai-strip prefix so their
+   specificity clears home.css's broad content-anchor colour rule
+   (`.md-content .md-typeset:not(:has(.afs-home-body)) a`), which would
+   otherwise force the link buttons' type to the brand link colour. */
+
+/* Base (the two assistant links): solid accent fill, white type, like the
+   hero's first CTA. */
+.md-content .md-typeset .afs-ai-strip .afs-ai-strip__btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.24rem 0.6rem;
+  border: 1px solid var(--afs-accent);
+  border-radius: 3px;
+  background: var(--afs-accent);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 120ms ease, color 120ms ease,
+    border-color 120ms ease;
+}
+
+/* Copy button: white background at rest, like the hero's second CTA. */
+.md-content .md-typeset .afs-ai-strip .afs-ai-strip__btn:not(.afs-ai-strip__btn--primary) {
+  background: #ffffff;
+  color: var(--afs-accent-dark);
+}
+
+.md-content .md-typeset .afs-ai-strip .afs-ai-strip__btn:hover,
+.md-content .md-typeset .afs-ai-strip .afs-ai-strip__btn:focus-visible {
+  background: #7fd6e8;
+  border-color: #7fd6e8;
+  color: #06161d;
+}
+
+/* Brief confirmation state for the copy button, toggled by ai_cta.js. */
+.md-content .md-typeset .afs-ai-strip .afs-ai-strip__btn[data-afs-copied="true"] {
+  background: #7fd6e8;
+  border-color: #7fd6e8;
+  color: #06161d;
+}
+
+.afs-ai-strip__note {
+  margin: 0.4rem 0 0;
+  color: var(--afs-muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.afs-ai-strip__note a {
+  color: var(--afs-accent-dark);
+}

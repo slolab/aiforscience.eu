@@ -143,4 +143,22 @@ def on_page_content(html_out, page, config, files):
         html_out = pattern.sub(
             lambda m: m.group(1) + m.group(2) + card + m.group(3), html_out, count=1
         )
+
+    # A "pro · con" legend on the Practice heading explaining the chips, shown
+    # only when the page actually has them. Reuses the chip's for/against colours.
+    if 'class="afs-cite"' in html_out:
+        legend = (
+            '<span class="afs-cite-legend" aria-hidden="true">'
+            '<span class="afs-cite__n--for">pro</span>'
+            '<span class="afs-cite__sep">·</span>'
+            '<span class="afs-cite__n--against">con</span>'
+            "</span>"
+        )
+        html_out = re.sub(
+            r'(<h2 id="practice"[^>]*>)(.*?)(</h2>)',
+            lambda m: m.group(1) + m.group(2) + legend + m.group(3),
+            html_out,
+            count=1,
+            flags=re.DOTALL,
+        )
     return html_out

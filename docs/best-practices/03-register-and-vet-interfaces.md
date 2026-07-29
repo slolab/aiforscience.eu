@@ -1,6 +1,6 @@
 ---
 title: Register, vet, and manage agent interfaces through trusted channels
-nav_title: "BP03 Trusted interfaces"
+nav_title: "Register and vet interfaces"
 practice_id: BP-03
 status: draft
 first_added: 2026-07-25
@@ -67,19 +67,19 @@ comments: true
 
 </div>
 
-=== "Practitioners"
+=== "For practitioners"
 
     Prefer interfaces that have been vetted, not just listed.
     Before trusting one with your data or actions, check who maintains it, when it was reviewed, and what it is allowed to do.
     Presence in a registry is not a safety check on its own: an unvetted interface can carry prompt-injection or malware risk you cannot see from its description.
 
-=== "Providers"
+=== "For providers"
 
     List your interfaces through a channel that records their source and maintainer, and have them vetted (reviewed or signed) before they are trusted.
     Route agent traffic through an approved, identified channel so you can shape and rate-limit it by identity, which beats blocking addresses that also blocks real users.
     If you adapt or repurpose someone else's interface, you may take on the duties of its provider.
 
-=== "Governance"
+=== "For governance"
 
     Treat listing and vetting as two things: an inventory and a safety check.
     Back a trusted channel, require listed interfaces to record their source and review date, and make vetting (not mere registration) the point where risk is assessed.
@@ -108,11 +108,6 @@ Knowing where an interface comes from, and keeping more than one option open, av
 - A group fine-tunes and repackages someone else's interface and ships it under their own name, without realising that under the EU AI Act a substantial modification can move the provider's duties onto them (the threshold is defined for high-risk systems and its exact bounds are still being clarified).
 - An institution keeps more than one agent ecosystem in use, so a critical resource is not reachable only through a single vendor's channel.
 - When the approved list is too narrow to do real work, people route around it: in one enterprise survey 40% of organisations bought an official tool while staff at over 90% used personal AI tools unofficially, often to better effect. A vetting process that watches what people actually reach for, and brings the useful cases into the trusted channel, holds up better than one that only blocks.
-
-!!! info "Practice metadata"
-    **Status:** <span class="afs-badge afs-badge--draft">draft</span> ·
-    **Endorsed by:** none yet ·
-    **Last reviewed:** 2026-07-26
 
 ## Sources
 

@@ -38,7 +38,7 @@ body {
   background: #ffffff;
 }
 
-.md-content .md-typeset:not(:has(.afs-home-body)) {
+.md-content .md-typeset {
   --md-typeset-a-color: var(--afs-accent-dark);
 }
 
@@ -117,14 +117,53 @@ body {
   display: none;
   align-items: center;
   gap: 0.1rem;
-  margin-right: auto;
   font-size: 0.72rem;
   font-weight: 850;
 }
 
+/* Practices: the single button between the title and search. */
+.afs-header-practices {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.72rem;
+  border-radius: 999px;
+  background: var(--afs-soft);
+  color: var(--afs-accent-dark);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.afs-header-practices:hover,
+.afs-header-practices:focus-visible {
+  background: var(--afs-soft-2);
+}
+
+.afs-header-practices[aria-current="page"] {
+  background: var(--afs-accent-dark);
+  color: #fff;
+}
+
+/* Desktop header layout: logo left, search centred, community links right. */
 @media screen and (min-width: 60em) {
   .afs-header-nav {
     display: flex;
+    order: 3;
+  }
+  .md-header__inner .afs-brand {
+    order: 1;
+  }
+  .md-header__inner .afs-header-practices {
+    order: 1;
+  }
+  .md-header__inner .md-search {
+    order: 2;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -278,97 +317,48 @@ body {
 .md-typeset .afs-practice > ul {
   list-style: none;
   display: grid;
-  gap: 0.4rem;
-  margin: 0.4rem 0 0;
+  gap: 0.7rem;
+  margin: 0.7rem 0 0;
   padding: 0;
 }
 
 .md-typeset .afs-practice > ul > li {
   position: relative;
   margin: 0;
-  padding: 0.5rem 0.85rem;
-  border: 1px solid var(--afs-practice-line);
-  border-left: 3px solid var(--afs-practice-accent);
-  border-radius: 0.5rem;
-  background: var(--afs-practice-bg);
+  padding: 0 3rem 0 1.35rem;
+  border: 0;
+  background: none;
   color: var(--afs-ink);
-  font-size: 0.8rem;
-  line-height: 1.5;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+/* Orange square marker, in the atom accent. */
+.md-typeset .afs-practice > ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.38rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 2px;
+  background: var(--afs-practice-accent);
 }
 
 /* An item marked `{ .afs-practice__pivot }` starts a new group (for example
-   the shift from the default to its qualifier). A little extra space and a
-   muted rule above set it apart without a second box. */
+   the shift from the default to its qualifier). Extra space and a muted dashed
+   rule above set it apart. */
 .md-typeset .afs-practice > ul > li.afs-practice__pivot {
-  margin-top: 0.45rem;
+  margin-top: 0.55rem;
 }
 
-.md-typeset .afs-practice > ul > li.afs-practice__pivot::before {
+.md-typeset .afs-practice > ul > li.afs-practice__pivot::after {
   content: "";
   position: absolute;
-  left: 0.9rem;
-  right: 0.9rem;
-  top: -0.45rem;
+  left: 1.35rem;
+  right: 3.9rem;
+  top: -0.35rem;
   border-top: 1px dashed var(--afs-practice-line);
-}
-
-/* ------------------------------------------------------------------ *
- * Best-practice list (overview page)
- *
- * The list of practices on docs/best-practices/index.md, rendered as the
- * same one-line boxes used for the practice atoms on each page. Each box is
- * a full-width clickable link. Inactive boxes use the petrol accent; hovering
- * shifts a box to the orange practice palette used in the BP atom boxes. The
- * BP handle (BP01…) carries the number, so the list is not numbered.
- * ------------------------------------------------------------------ */
-
-.md-typeset .afs-bp-list {
-  display: grid;
-  gap: 0.2rem;
-  margin: 0.9rem 0 1.4rem;
-}
-
-.md-typeset .afs-bp-item {
-  display: flex;
-  align-items: baseline;
-  gap: 0.7rem;
-  padding: 0.32rem 0.9rem;
-  border: 1px solid var(--afs-line);
-  border-left: 3px solid var(--afs-accent);
-  border-radius: 0.5rem;
-  background: var(--afs-soft-2);
-  color: var(--afs-ink);
-  text-decoration: none;
-  transition: background-color 140ms ease, border-color 140ms ease,
-    color 140ms ease, transform 140ms ease, box-shadow 140ms ease;
-}
-
-.md-typeset .afs-bp-item__handle {
-  flex: none;
-  color: var(--afs-accent-dark);
-  font-size: 0.8rem;
-  font-weight: 300;
-  letter-spacing: 0.04em;
-}
-
-.md-typeset .afs-bp-item__title {
-  font-size: 0.80rem;
-  font-weight: 500;
-  line-height: 1.4;
-}
-
-.md-typeset .afs-bp-item:hover,
-.md-typeset .afs-bp-item:focus-visible {
-  border-color: var(--afs-practice-line);
-  border-left-color: var(--afs-practice-accent);
-  background: var(--afs-practice-bg);
-  transform: translateY(-1px);
-  box-shadow: 0 0.28rem 0.7rem rgba(15, 31, 38, 0.10);
-}
-
-.md-typeset .afs-bp-item:hover .afs-bp-item__handle,
-.md-typeset .afs-bp-item:focus-visible .afs-bp-item__handle {
-  color: var(--afs-practice-accent);
 }
 
 /* ------------------------------------------------------------------ *
@@ -423,15 +413,16 @@ body {
   container-type: inline-size;
 }
 
-.afs-wordmark {
+.afs-hero__title {
   display: flex;
   align-items: center;
-  gap: 0.62rem;
-  margin-bottom: 0.95rem;
-  color: #ffffff;
-  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
-  font-weight: 950;
-  letter-spacing: -0.045em;
+  gap: clamp(0.9rem, 2.2vw, 1.6rem);
+}
+
+.afs-hero__logo {
+  flex: 0 0 auto;
+  width: clamp(3.4rem, 8cqi, 5.4rem);
+  height: auto;
 }
 
 .afs-hero__headline {
@@ -458,27 +449,32 @@ body {
 
 .afs-hero__actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  margin-top: 1.3rem;
+  flex-direction: column;
+  align-items: stretch;
+  width: fit-content;
+  gap: 0.7rem;
+  margin-top: 1.6rem;
 }
 
 .afs-hero__actions a {
-  padding: 0.45rem 1.05rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 999px;
-  color: #e8f3f7;
-  font-size: 0.78rem;
-  font-weight: 850;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  font-weight: 600;
   text-decoration: none;
   transition: background-color 140ms ease, color 140ms ease,
     border-color 140ms ease, transform 140ms ease;
 }
 
 .afs-hero__actions a.afs-hero__actions--primary {
-  background: #7fd6e8;
-  border-color: #7fd6e8;
-  color: #06161d;
+  background: var(--afs-accent);
+  border-color: var(--afs-accent);
+  color: #ffffff;
 }
 
 .afs-hero__actions a:hover,
@@ -486,7 +482,121 @@ body {
   background: #ffffff;
   border-color: #ffffff;
   color: var(--afs-accent-dark);
-  transform: translateY(-1px);
+}
+
+.afs-hero__actions a.afs-hero__actions--primary:hover,
+.afs-hero__actions a.afs-hero__actions--primary:focus-visible {
+  background: #7fd6e8;
+  border-color: #7fd6e8;
+  color: #06161d;
+}
+
+/* The ten-practices index in the hero: a compact, scannable list that puts the
+   practices themselves above the fold. Replaces the old tabbed hero card; the
+   `.afs-hero-card` rules below are now unused. */
+.afs-hero-index {
+  position: relative;
+  align-self: stretch;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.045);
+  padding: 1.1rem 1.35rem 0.75rem;
+  backdrop-filter: blur(4px);
+}
+
+/* Keep the list above the rim layer below. */
+.afs-hero-index__head,
+.afs-hero-index__row {
+  position: relative;
+  z-index: 1;
+}
+
+/* Cursor-following rim, matching the feature cards. No dots and no fill
+   brightening here: only the rim lights up. Pointer position comes from
+   card_spotlight.js (--afs-cx/--afs-cy); defaults to centre without JS. */
+.afs-hero-index::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    18rem 18rem at var(--afs-cx, 50%) var(--afs-cy, 50%),
+    rgba(167, 240, 208, 0.25),
+    rgba(142, 215, 228, 0.16) 42%,
+    rgba(142, 215, 228, 0) 74%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 320ms ease;
+  pointer-events: none;
+}
+
+.afs-hero-index:hover::after,
+.afs-hero-index:focus-within::after {
+  opacity: 1;
+}
+
+.afs-hero-index__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.55rem;
+}
+
+.afs-hero-index__overline {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.afs-hero-index__overview {
+  color: #8ed7e4;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.afs-hero-index__overview:hover,
+.afs-hero-index__overview:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.afs-hero-index__row {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.42rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  text-decoration: none;
+}
+
+.afs-hero-index__num {
+  flex: none;
+  width: 1.2rem;
+  padding-top: 0.12rem;
+  color: rgba(255, 255, 255, 0.38);
+  font: 600 0.72rem/1 ui-monospace, "SFMono-Regular", monospace;
+}
+
+.afs-hero-index__title {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  line-height: 1.32;
+}
+
+.afs-hero-index__row:hover .afs-hero-index__title,
+.afs-hero-index__row:focus-visible .afs-hero-index__title {
+  color: #8ee6f5;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 /* The hero card: two tabs, asynchronous and live routes into the record.
@@ -614,156 +724,116 @@ body {
   text-underline-offset: 0.18em;
 }
 
-/* Citation strip under the hero. */
+/* Citation bar under the hero: a compact dark strip, seamless with the hero. */
 
 .afs-publication-strip {
   position: relative;
   z-index: 1;
-  background: #ddeef5;
-  color: var(--afs-ink);
+  background: var(--afs-dark);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .afs-publication-strip__grid {
-  position: relative;
-  z-index: 1;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  min-height: clamp(5.1rem, 8vw, 6.7rem);
-  padding: 1.85rem 0.8rem 1.25rem;
-  text-align: left;
+  gap: 0.5rem 0.9rem;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.8rem;
 }
 
-.afs-publication-strip__badge {
+/* DOI pill in the style of a Zenodo badge. */
+.afs-doi {
   display: inline-flex;
-  width: 3.4rem;
-  height: 3.4rem;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  border: 0.18rem solid var(--afs-accent-dark);
-  border-radius: 50%;
-  color: var(--afs-accent-dark);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.82rem;
-  font-weight: 700;
-  line-height: 0.9;
+  flex: none;
+  overflow: hidden;
+  border-radius: 3px;
+  font: 600 0.66rem/1 ui-monospace, "SFMono-Regular", monospace;
 }
 
-.afs-publication-strip p {
-  margin: 0;
-  color: var(--afs-ink);
-  font-size: clamp(0.95rem, 1.55vw, 1.18rem);
-  line-height: 1.55;
+.afs-doi__key {
+  padding: 0.25rem 0.45rem;
+  background: #33434a;
+  color: #ffffff;
 }
 
-.afs-publication-strip a {
-  display: inline-block;
-  margin-left: 0.45rem;
-  color: var(--afs-accent-dark);
-  font-weight: 950;
+.afs-doi__val {
+  padding: 0.25rem 0.45rem;
+  background: var(--afs-accent);
+  color: #ffffff;
+}
+
+.afs-publication-strip__note {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+}
+
+.afs-publication-strip__link {
+  margin-left: auto;
+  color: #8ed7e4;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.afs-publication-strip__link:hover,
+.afs-publication-strip__link:focus-visible {
   text-decoration: underline;
   text-underline-offset: 0.18em;
 }
 
-/* Partners strip: white band with curved dividers, static logo row. */
+/* Partners bar: a humble light strip. */
 
 .afs-trust-strip {
   position: relative;
   z-index: 1;
-  background: #ffffff;
+  background: var(--afs-soft);
   color: var(--afs-ink);
-}
-
-.afs-trust-strip::before,
-.afs-trust-strip::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 130%;
-  height: clamp(1.4rem, 3.5vw, 2.4rem);
-  border-radius: 50%;
-}
-
-.afs-trust-strip::before {
-  top: 0;
-  background: #ddeef5;
-  transform: translate(-50%, -50%);
-}
-
-.afs-trust-strip::after {
-  bottom: 0;
-  background: var(--afs-dark-gradient);
-  transform: translate(-50%, 50%);
+  border-top: 1px solid var(--afs-line);
 }
 
 .afs-trust-strip__grid {
-  padding: clamp(2.4rem, 4vw, 3.2rem) 0.8rem clamp(2.6rem, 4.4vw, 3.6rem);
-  text-align: center;
-}
-
-.afs-trust-strip__heading h2 {
-  max-width: 32rem;
-  margin: 0 auto 1.4rem;
-  color: #8b9499;
-  font-size: clamp(0.95rem, 1.55vw, 1.18rem);
-  font-weight: 300;
-  letter-spacing: 0;
-  line-height: 1.18;
-}
-
-.afs-trust-strip__note {
-  max-width: 32rem;
-  margin: -0.6rem auto 1.4rem;
-  color: #6f777c;
-  font-size: clamp(0.78rem, 1.2vw, 0.9rem);
-  font-weight: 300;
-  line-height: 1.35;
-}
-
-.afs-trust-strip__row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  gap: 0.8rem clamp(1.4rem, 3.5vw, 3rem);
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  gap: 0.5rem 0.9rem;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.8rem;
 }
 
-.afs-trust-strip__row li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.afs-trust-strip__wordmark {
-  display: inline-flex;
-  align-items: center;
-  color: var(--afs-ink);
-  font-size: clamp(1.15rem, 2.4vw, 1.55rem);
-  font-weight: 950;
-  letter-spacing: -0.04em;
-  white-space: nowrap;
+.afs-trust-strip__label {
+  flex: none;
+  color: var(--afs-muted);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .afs-trust-strip__logo {
   display: block;
   width: auto;
-  height: clamp(2.2rem, 4.5vw, 3rem);
+  height: 1.5rem;
   object-fit: contain;
 }
 
-.afs-trust-strip__invite {
-  color: var(--afs-accent-dark);
-  font-size: 0.82rem;
-  font-weight: 850;
-  text-decoration: none;
+.afs-trust-strip__note {
+  color: var(--afs-muted);
+  font-size: 0.72rem;
 }
 
-.afs-trust-strip__invite:hover {
+.afs-trust-strip__invite {
+  margin-left: auto;
+  color: var(--afs-accent-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.afs-trust-strip__invite:hover,
+.afs-trust-strip__invite:focus-visible {
   text-decoration: underline;
 }
 
@@ -853,17 +923,20 @@ body {
   gap: 1rem;
 }
 
+@media screen and (min-width: 40em) {
+  .afs-involved-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media screen and (min-width: 48em) {
-  .afs-feature-grid,
-  .afs-audience-grid {
+  .afs-feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media screen and (min-width: 64em) {
-  .afs-feature-grid,
-  .afs-involved-grid,
-  .afs-audience-grid {
+  .afs-feature-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
@@ -884,8 +957,90 @@ body {
 .afs-feature-card {
   display: flex;
   flex-direction: column;
-  background: var(--afs-soft);
-  border-color: rgba(15, 31, 38, 0.06);
+  padding: 0;
+  border-radius: 12px;
+  border-color: rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background-color 320ms ease, border-color 320ms ease,
+    box-shadow 320ms ease,
+    backdrop-filter 320ms ease, -webkit-backdrop-filter 320ms ease;
+}
+
+/* On hover the glass itself carries the response: brighter fill, a stronger
+   blur, a small lift, and a gradient light that travels around the rim (the
+   ::before below). No text underline: the card is the affordance. */
+.afs-feature-card:hover,
+.afs-feature-card:focus-within {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0.65rem 1.7rem rgba(3, 18, 24, 0.28);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+/* Cursor-following rim glow. A masked pseudo-element paints only the 1.5px
+   border band; the same radial gradient idea as the interior spotlight, but
+   centred on the cursor relative to the whole card (--afs-cx / --afs-cy, fed by
+   card_spotlight.js; defaults to centre without JS). The arc of rim nearest the
+   pointer lights up and fades with distance, so the rim tracks the mouse
+   instead of rotating on its own. */
+.afs-feature-card::before {
+  content: "";
+  position: absolute;
+  /* -1px so the band rides the outer edge, over the card's 1px border, rather
+     than sitting inside it. */
+  inset: -1px;
+  z-index: 1;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    18rem 18rem at var(--afs-cx, 50%) var(--afs-cy, 50%),
+    rgba(167, 240, 208, 0.25),
+    rgba(142, 215, 228, 0.16) 42%,
+    rgba(142, 215, 228, 0) 74%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 320ms ease;
+  pointer-events: none;
+}
+
+.afs-feature-card:hover::before,
+.afs-feature-card:focus-within::before {
+  opacity: 1;
+}
+
+/* The title link is stretched over the whole card, so a click anywhere on the
+   card follows it while keeping a single real link for accessibility. */
+.afs-feature-card .afs-card-title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* No underline on hover: the glass and travelling rim are the affordance. The
+   title only brightens so the link still reads as active. */
+.afs-feature-card:hover .afs-card-title,
+.afs-feature-card:focus-within .afs-card-title {
+  color: #b6ecf5;
+  text-decoration: none;
+}
+
+/* Glass items on the dark band, matching the hero practices index. Card padding
+   is zero so the graphic sits flush to the edges; the text is padded on its own. */
+.afs-feature-card .afs-card-title {
+  color: #8ed7e4;
+  margin: 0 1.15rem;
+}
+
+.afs-feature-card p {
+  color: rgba(255, 255, 255, 0.62);
+  margin: 0.4rem 1.15rem 1.15rem;
 }
 
 .afs-feature-card__head {
@@ -899,22 +1054,103 @@ body {
   margin: 0;
 }
 
-.afs-feature-card__icon {
-  display: inline-flex;
-  flex: none;
-  width: 2.25rem;
-  height: 2.25rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.78rem;
-  background: #12384a;
-  color: #ffffff;
-  line-height: 1;
+/* Media zone at the top of each card. The SVGs are transparent line art, so the
+   backdrop is painted here: a tight grid of tiny dots as a static texture, with
+   a divider to the caption below. Origin is top-left (0 0) so the dots align
+   with the hover sweep's mask regardless of the bottom border. */
+.afs-feature-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 0.9rem;
+  overflow: hidden;
+  /* Round the top corners here now that the card no longer clips (the rim
+     below extends over the card border). Inner radius = card 12px minus the
+     1px border. */
+  border-radius: 11px 11px 0 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.015);
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0.6px,
+    transparent 1.1px
+  );
+  background-size: 0.46rem 0.46rem;
+  /* `round` tiles a whole number of dots per axis, scaling the cell to fit, so
+     every edge gets an equal half-cell gutter and no dot is clipped or runs
+     into the rim. Position is irrelevant with round but kept explicit. */
+  background-repeat: round;
+  background-position: center;
+  /* Clear the two rounded top corners: intersect a disc cut at each so no dot
+     is left half-clipped by the corner curve. The mask applies to the whole
+     media group, so it also trims the ::before spotlight and the image there. */
+  -webkit-mask:
+    radial-gradient(circle 12px at 0 0, transparent 11px, #000 12px),
+    radial-gradient(circle 12px at 100% 0, transparent 11px, #000 12px);
+  -webkit-mask-composite: source-in;
+  mask:
+    radial-gradient(circle 12px at 0 0, transparent 11px, #000 12px),
+    radial-gradient(circle 12px at 100% 0, transparent 11px, #000 12px);
+  mask-composite: intersect;
 }
 
-.afs-feature-card__icon svg {
-  width: 1.35rem;
-  height: 1.35rem;
+.afs-feature-card__graphic {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hover spotlight: a soft teal radial glow centred on the cursor (--afs-mx /
+   --afs-my, fed by card_spotlight.js; defaults to centre without JS), masked by
+   the dot pattern so only the dots carry it. Dots near the pointer brighten
+   faintly and fade to nothing further out, so a patch of lit dots follows the
+   mouse. Sits behind the line art (z-index 0 < graphic z-index 1). */
+.afs-feature-card__media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    12rem 12rem at var(--afs-mx, 50%) var(--afs-my, 50%),
+    rgba(142, 215, 228, 0.16),
+    rgba(142, 215, 228, 0) 72%
+  );
+  -webkit-mask: radial-gradient(circle, #000 0.6px, transparent 1.1px);
+          mask: radial-gradient(circle, #000 0.6px, transparent 1.1px);
+  -webkit-mask-size: 0.46rem 0.46rem;
+          mask-size: 0.46rem 0.46rem;
+  -webkit-mask-repeat: round;
+          mask-repeat: round;
+  -webkit-mask-position: center;
+          mask-position: center;
+  opacity: 0;
+  transition: opacity 320ms ease;
+  pointer-events: none;
+}
+
+.afs-feature-card:hover .afs-feature-card__media::before,
+.afs-feature-card:focus-within .afs-feature-card__media::before {
+  opacity: 1;
+}
+
+/* Card title acting as the card's single link (feature and involved cards). */
+.afs-card-title {
+  display: inline-block;
+  margin: 0.6rem 0 0;
+  color: var(--afs-accent-dark);
+  font-size: 1.05rem;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.afs-card-title:hover,
+.afs-card-title:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
 }
 
 /* Link pills, centered and pinned to the bottom of each card so the three
@@ -961,7 +1197,7 @@ body {
    extends past the content column. */
 .afs-home-body .afs-section--intro {
   position: relative;
-  padding-top: clamp(1.1rem, 2.3vw, 1.8rem);
+  padding-top: clamp(2rem, 3.5vw, 3rem);
 }
 
 .afs-home-body .afs-section--intro::before {
@@ -1033,52 +1269,73 @@ body {
   margin-bottom: 0;
 }
 
-/* Involved section (dark band). */
+/* Only the governance card links onward, to the decision-makers' digest. */
+.afs-audience-card__link {
+  display: inline-block;
+  margin-top: 0.7rem;
+  color: var(--afs-accent-dark);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.afs-audience-card__link:hover,
+.afs-audience-card__link:focus-visible {
+  text-decoration: underline;
+}
+
+/* Get-involved section (light band). A convex divider carries the dark intro
+   band above down into this light section. */
 
 .afs-section--involved {
   position: relative;
+  background: var(--afs-soft);
+  box-shadow: 0 0 0 100vmax var(--afs-soft);
+  clip-path: inset(0 -100vmax);
 }
 
 .afs-section--involved::before {
   content: "";
   position: absolute;
-  z-index: -1;
-  inset: 0 calc(50% - 50vw);
+  left: 50%;
+  top: 0;
+  width: 130vw;
+  height: clamp(0.85rem, 2.1vw, 1.45rem);
+  border-radius: 50%;
   background: var(--afs-dark-gradient);
+  transform: translate(-50%, -50%);
 }
 
-.afs-section--involved .afs-section__header h2,
-.afs-section--involved .afs-section__header p {
-  color: #ffffff;
-}
-
-.afs-section--involved .afs-kicker {
-  color: #8ee6f5;
+.afs-involved-grid {
+  margin: 0 auto;
 }
 
 .afs-involved-card {
-  min-height: 12rem;
-  border-color: rgba(255, 255, 255, 0.10);
-  background: rgba(255, 255, 255, 0.035);
-}
-
-.afs-involved-card h3 {
-  color: #8ee6f5;
-  font-size: 1.25rem;
+  background: var(--afs-card);
+  border-color: var(--afs-line);
+  border-radius: 12px;
+  box-shadow: 0 0.28rem 1rem rgba(15, 31, 38, 0.05);
 }
 
 .afs-involved-card p {
-  color: #d3e2e8;
+  margin: 0.55rem 0 0;
 }
 
-.afs-involved-card a {
-  display: flex;
-  width: fit-content;
-  margin: 0.35rem 0 0;
-  color: #ffffff;
-  font-weight: 900;
+.afs-home-body .afs-involved-note {
+  margin: 2.6rem 0 0;
+  color: var(--afs-muted);
+  font-size: 0.82rem;
+}
+
+.afs-involved-note a {
+  color: var(--afs-accent-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.afs-involved-note a:hover,
+.afs-involved-note a:focus-visible {
   text-decoration: underline;
-  text-underline-offset: 0.2em;
 }
 
 /* Activity / status section (light). */
@@ -1254,24 +1511,13 @@ body {
     white-space: normal;
   }
 
-  .afs-wordmark {
-    margin-bottom: 0.7rem;
-    font-size: 1.35rem;
+  .afs-hero__logo {
+    width: 3.2rem;
   }
 
   .afs-hero__tagline {
     margin-top: 0.8rem;
     font-size: 0.95rem;
-  }
-
-  .afs-publication-strip__grid {
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-
-  .afs-publication-strip a {
-    display: block;
-    margin: 0.25rem 0 0;
   }
 }
 
@@ -1302,10 +1548,297 @@ body {
   display: none;
 }
 
-/* Hide the right-hand (per-page) table of contents. The left nav already
-   carries page structure; the secondary sidebar is not needed. Match the
-   theme's `.md-sidebar--secondary:not([hidden])` specificity so this wins on
-   source order (home.css loads after the theme), no !important needed. */
-.md-sidebar--secondary:not([hidden]) {
+/* The per-page table of contents ("On this page") is shown on content pages.
+   The landing hides it via `hide: [toc]` in its front matter. */
+
+/* Active left-nav item: accent label. */
+.md-nav__link--active {
+  color: var(--afs-accent-dark);
+}
+
+/* ------------------------------------------------------------------ *
+ * Content pages: practice-page hierarchy
+ * ------------------------------------------------------------------ */
+
+/* "Best practice N" kicker above the title. */
+.afs-bp-kicker {
+  margin: 0.5rem 0 0.8rem;
+  color: var(--afs-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Title as a lead line, not a heavy header. The kicker precedes it, so the
+   adjacent-sibling selector scopes this to practice pages. */
+.afs-bp-kicker + h1 {
+  margin-top: 0.15rem;
+  font-size: clamp(1.3rem, 2.6vw, 1.6rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+/* Section separators + smaller headings on content pages (the landing wraps its
+   body in `.afs-home-body` and is excluded). The content article carries both
+   `md-content__inner` and `md-typeset`, so target headings directly. */
+.md-content__inner.md-typeset:not(:has(.afs-home-body)) h2 {
+  margin-top: 2.2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--afs-line);
+}
+
+/* Drop the ¶ permalink on the page title only; keep it on subheaders. */
+.md-content__inner.md-typeset:not(:has(.afs-home-body)) h1 .headerlink {
   display: none;
+}
+
+/* Main page title in near-black. */
+.md-content__inner.md-typeset:not(:has(.afs-home-body)) h1 {
+  color: var(--afs-ink);
+}
+
+/* Right rail: the "On this page" table of contents. */
+.md-nav--secondary .md-nav__title {
+  color: var(--afs-muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.md-nav--secondary .md-nav__list {
+  border-left: 1px solid var(--afs-line);
+}
+
+/* Both sidebars scroll with the page instead of sticking, and drop their
+   internal scroll (and scrollbar), so the TOCs stay tied to the page. Scoped to
+   the desktop breakpoints where each sidebar is a column; below them the primary
+   sidebar is an off-canvas drawer and must keep its own scroll. */
+@media screen and (min-width: 60em) {
+  .md-sidebar--secondary {
+    position: static;
+    /* Material sets the sticky sidebar to height:0; give it real height so it
+       occupies the flow and the footer clears it on short pages. */
+    height: auto !important;
+  }
+  .md-sidebar--secondary .md-sidebar__scrollwrap {
+    height: auto !important;
+    overflow: visible !important;
+  }
+  /* With static sidebars, let the row grow to the tallest column (the nav on
+     short pages) instead of being capped, so the footer clears the nav. */
+  .md-main__inner {
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    position: static;
+  }
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    height: auto !important;
+    overflow: visible !important;
+  }
+  /* Site title and repository source belong to the mobile drawer; hide them on
+     the desktop rail so the "For decision-makers" card sits at the top. */
+  .md-nav--primary > .md-nav__title,
+  .md-nav--primary > .md-nav__source {
+    display: none;
+  }
+  /* Divider on the content-facing edge of the practices list, so it begins
+     below the card (flush with it) and runs alongside the nav. */
+  .md-nav--primary > .md-nav__list {
+    border-right: 1px solid var(--afs-line);
+  }
+}
+
+/* "For decision-makers" card at the top of the left nav (mirrors the right-rail
+   "About this practice" card). */
+.afs-nav-card {
+  display: block;
+  margin: 0 0 1.2rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--afs-line);
+  border-radius: 8px;
+  background: var(--afs-soft);
+  text-decoration: none;
+}
+
+a.afs-nav-card:hover,
+a.afs-nav-card:focus-visible {
+  border-color: var(--afs-accent);
+}
+
+/* Greyed, non-clickable when already on the decision-makers page. */
+.afs-nav-card--current {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.afs-nav-card--current .afs-nav-card__title {
+  color: var(--afs-muted);
+}
+
+.afs-nav-card__title {
+  display: block;
+  color: var(--afs-accent-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.afs-nav-card__sub {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--afs-muted);
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+
+/* ------------------------------------------------------------------ *
+ * Practices in the left nav
+ *
+ * The Best Practices section (first top-level item) is forced open on desktop
+ * so the practices always show; Background and About stay collapsible below a
+ * separator. The practices carry a mono number column (a CSS counter, so it
+ * follows nav order = the BP number); the failures log (last item) is greyed
+ * with no number; the active practice is highlighted.
+ * ------------------------------------------------------------------ */
+
+/* Shorthand: BP = the Best Practices section item. */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    height: auto !important;
+  }
+  /* Force the section's expanded state (Material collapses via grid-template-rows
+     + visibility, not display, so those must be overridden). */
+  .md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav {
+    grid-template-rows: minmax(0, 1fr) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+  .md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav__link {
+    cursor: default;
+    color: var(--afs-muted);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav__link .md-nav__icon {
+    display: none;
+  }
+  .md-nav--primary > .md-nav__list > .md-nav__item:first-child {
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--afs-line);
+  }
+  /* The active page's in-page TOC is embedded in the primary nav (level 2);
+     hide it on desktop, where the right rail already shows it. */
+  .md-nav--primary .md-nav[data-md-level="2"] {
+    display: none;
+  }
+}
+
+/* Drop the nested list's default 0.6rem indent so the practices (and their
+   numbers) line up with the "BEST PRACTICES" header. */
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav > .md-nav__list {
+  counter-reset: afs-bp;
+  padding-left: 0;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav > .md-nav__list > .md-nav__item:not(:last-child) {
+  counter-increment: afs-bp;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav > .md-nav__list > .md-nav__item:not(:last-child) > .md-nav__link {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav > .md-nav__list > .md-nav__item:not(:last-child) > .md-nav__link::before {
+  content: counter(afs-bp);
+  position: absolute;
+  left: 0;
+  width: 1rem;
+  text-align: left;
+  color: var(--afs-muted);
+  font-family: ui-monospace, "SFMono-Regular", monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+/* Failures log (last item): greyed, no number, title aligned with the practices. */
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav > .md-nav__list > .md-nav__item:last-child > .md-nav__link {
+  padding-left: 1.5rem;
+  color: var(--afs-muted);
+}
+
+/* Reserve the active bar's width and add right breathing room on every practice
+   and failures link, so activating an item never changes the wrapping. */
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+  padding-right: 0.9rem;
+  border-right: 3px solid transparent;
+}
+
+/* Active practice: soft fill, accent bar on the right, accent-dark text. The
+   weight is left unchanged so the label metrics (and wrapping) do not shift on
+   activation. */
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link--active {
+  border-right-color: var(--afs-accent);
+  background: var(--afs-soft);
+  color: var(--afs-accent-dark);
+}
+
+/* Right rail: "About this practice" card below the TOC (from frontmatter).
+   Material includes the TOC partial twice (right rail, and nested under the
+   active page in the left nav), so suppress the copy inside the primary nav. */
+.md-nav--primary .afs-about-practice {
+  display: none;
+}
+
+.afs-about-practice {
+  margin: 1.6rem 0 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--afs-line);
+  border-radius: 8px;
+  background: var(--afs-soft);
+}
+
+.afs-about-practice__title {
+  margin: 0 0 0.55rem;
+  color: var(--afs-muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.afs-about-practice__list {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.55;
+}
+
+.afs-about-practice__row {
+  margin-bottom: 0.2rem;
+}
+
+.afs-about-practice__row dt {
+  display: inline;
+  color: var(--afs-muted);
+}
+
+.afs-about-practice__row dt::after {
+  content: ": ";
+}
+
+.afs-about-practice__row dd {
+  display: inline;
+  margin: 0;
+  color: var(--afs-ink);
+  font-weight: 600;
 }

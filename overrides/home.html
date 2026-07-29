@@ -11,85 +11,66 @@
   <section class="afs-hero" markdown="0">
     <div class="md-grid afs-hero__grid">
       <div class="afs-hero__content">
-        <div class="afs-wordmark" aria-label="AI for Science">
-          <span>AI for Science</span>
+        <div class="afs-hero__title">
+          <h1 class="afs-hero__headline">
+            Best practices for<br>
+            agentic AI in science.
+          </h1>
+          <img class="afs-hero__logo" src="{{ 'assets/img/logo.svg' | url }}" alt="AI for Science" loading="lazy">
         </div>
-
-        <h1 class="afs-hero__headline">
-          Best practices for<br>
-          agentic AI in science.
-        </h1>
         <p class="afs-hero__tagline">
           A living record, maintained by task forces and institutions across
           Europe. Frequently updated, versioned for citation, open to challenge.
         </p>
         <div class="afs-hero__actions">
-          <a class="afs-hero__actions--primary" href="{{ 'best-practices/' | url }}">Read the best practices</a>
-          <a href="{{ 'about/contribute/' | url }}">Contribute</a>
+          <a class="afs-hero__actions--primary" href="{{ 'best-practices/01-match-method-to-task/' | url }}">Explore the practices →</a>
+          <a href="{{ 'for-decision-makers/' | url }}">For decision-makers →</a>
         </div>
       </div>
 
-      <aside class="afs-hero-card" aria-label="How to learn and how to get involved">
-        <input class="afs-hero-card__radio" type="radio" name="afs-hero-tab"
-               id="afs-hero-tab-async" checked>
-        <input class="afs-hero-card__radio" type="radio" name="afs-hero-tab"
-               id="afs-hero-tab-live">
-        <div class="afs-hero-card__tabs">
-          <label for="afs-hero-tab-async">At your own pace</label>
-          <label for="afs-hero-tab-live">Live</label>
+      {#- The ten practices, straight in the hero: the primary thing a reader
+          comes for. Rendered from the Best Practices nav section so the list,
+          order, and labels have one source (the BP pages' `nav_title`, applied
+          by hooks/bp_pages.py). Each nav_title is "BP0N Label"; the handle
+          gives the number column, the rest the title. -#}
+      <aside class="afs-hero-index" aria-label="The practices">
+        <div class="afs-hero-index__head">
+          <span class="afs-hero-index__overline">The practices</span>
         </div>
-        <div class="afs-hero-card__panels">
-          <div class="afs-hero-card__panel afs-hero-card__panel--async">
-            <a class="afs-hero-card__row" href="{{ 'best-practices/' | url }}">
-              <strong>Best practices</strong>
-              <span>Numbered, versioned, grounded, endorsed.</span>
-            </a>
-            <a class="afs-hero-card__row" href="{{ 'glossary/' | url }}">
-              <strong>Glossary</strong>
-              <span>The basic terms explained.</span>
-            </a>
-            <a class="afs-hero-card__row" href="https://github.com/slolab/aiforscience.eu/discussions"
-               target="_blank" rel="noopener noreferrer">
-              <strong>Discussion</strong>
-              <span>Add or challenge practices.</span>
-            </a>
-          </div>
-          <div class="afs-hero-card__panel afs-hero-card__panel--live">
-            <a class="afs-hero-card__row" href="{{ 'about/events/' | url }}">
-              <strong>Monthly meeting</strong>
-              <span>Open call to align on recent events.</span>
-            </a>
-            <a class="afs-hero-card__row" href="{{ 'about/events/' | url }}#other-events">
-              <strong>Other events</strong>
-              <span>Workshops and other meet-ups.</span>
-            </a>
-          </div>
-        </div>
+        {% for item in nav %}
+          {% if item.is_section and item.title == 'Best Practices' %}
+            {% for p in item.children %}
+              {% if p.is_page and not p.file.src_uri.endswith('failures.md') %}
+                <a class="afs-hero-index__row" href="{{ p.url | url }}">
+                  <span class="afs-hero-index__num">{{ loop.index }}</span>
+                  <span class="afs-hero-index__title">{{ p.title }}</span>
+                </a>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
       </aside>
     </div>
 
     <div class="afs-publication-strip">
       <div class="md-grid afs-publication-strip__grid">
-        <div class="afs-publication-strip__badge" aria-hidden="true">
-          <span>DOI</span>
-        </div>
-        <p>
-          <strong>Frequent updates, individually citable.</strong> Each release has a Zenodo-backed DOI.
-          <a href="{{ 'releases/' | url }}">How to cite →</a>
-        </p>
+        {#- DOI pill in the style of a Zenodo badge; swap for the real
+            zenodo.org/badge SVG once a DOI is minted. -#}
+        <span class="afs-doi">
+          <span class="afs-doi__key">DOI</span>
+          <span class="afs-doi__val">10.5281/zenodo.xxxxx</span>
+        </span>
+        <span class="afs-publication-strip__note">Frequent updates, individually citable.</span>
+        <a class="afs-publication-strip__link" href="{{ 'releases/' | url }}">How to cite →</a>
       </div>
     </div>
 
     <div class="afs-trust-strip" aria-labelledby="afs-partners-heading">
       <div class="md-grid afs-trust-strip__grid">
-        <div class="afs-trust-strip__heading">
-          <h2 id="afs-partners-heading">Shaped by contributing organisations.</h2>
-          <p class="afs-trust-strip__note">Preview version. We are reaching out to organisations for the initial round.</p>
-        </div>
-        <ul class="afs-trust-strip__row">
-          <li><img class="afs-trust-strip__logo" src="{{ 'assets/img/Helmholtz-AI-ColorCMYK_2.png' | url }}" alt="Helmholtz AI" loading="lazy"></li>
-          <li><a class="afs-trust-strip__invite" href="{{ 'about/partners/' | url }}">Your organisation? Join us →</a></li>
-        </ul>
+        <span class="afs-trust-strip__label" id="afs-partners-heading">Partners</span>
+        <img class="afs-trust-strip__logo" src="{{ 'assets/img/Helmholtz-AI-ColorCMYK_2.png' | url }}" alt="Helmholtz AI" loading="lazy">
+        <span class="afs-trust-strip__note">Preview; we are reaching out to organisations for the first round.</span>
+        <a class="afs-trust-strip__invite" href="{{ 'about/partners/' | url }}">Your organisation? Join us →</a>
       </div>
     </div>
   </section>

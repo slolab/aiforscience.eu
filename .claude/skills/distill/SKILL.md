@@ -64,6 +64,16 @@ out of scope, say so in the Summary and keep the entry short.
      same session unless the user asks.
    - **Cautions and gaps**: what the document does not support, framings to
      avoid, honest limits.
+5. **Failures.** Scan the source for failures: things that did not work, were
+   abandoned, or caused harm when agentic AI met scientific practice (a
+   dedicated failures/lessons section, a postmortem, a reported incident, or a
+   negative result in passing). For each in-scope failure, add a dated bullet to
+   `docs/best-practices/failures.md` under `## Entries`, newest first, following
+   the format there: a one-line what-happened, the related practices, and a
+   `Source:` link to this entry (or a `ref-` page for an incident report).
+   These are observations for the editors to review, not practices; add them
+   even when they do not yet map to a practice. If the source records no
+   failures, do nothing here.
 6. Add the entry to the table in `docs/library/index.md` and to the `nav`
    section of `mkdocs.yml`.
 7. **Reference works and provenance.** The library is the provenance store, so
@@ -94,5 +104,5 @@ out of scope, say so in the Summary and keep the entry short.
 ## Output
 
 Report to the user: the new page path, the number of hooks, the proposed
-practice changes (the checklist), and any tensions found. The user reviews
-and opens the PR.
+practice changes (the checklist), any tensions found, and any failures added to
+the failures log for editor review. The user reviews and opens the PR.
