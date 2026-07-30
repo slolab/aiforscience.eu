@@ -49,22 +49,6 @@ A dated release is cut monthly (`vYYYY.MM`) and mirrored at
 [aiforscience.eu/releases](https://aiforscience.eu/releases/). Each release
 receives a DOI via Zenodo.
 
-## One-time setup (deployment checklist)
-
-Steps that require repository-owner action:
-
-1. DNS at the registrar for `aiforscience.eu`:
-   - apex `A` records → `185.199.108.153`, `185.199.109.153`,
-     `185.199.110.153`, `185.199.111.153`
-   - apex `AAAA` records → `2606:50c0:8000::153`, `2606:50c0:8001::153`,
-     `2606:50c0:8002::153`, `2606:50c0:8003::153`
-   - `www` `CNAME` → `slolab.github.io`
-   Then repo settings → Pages → Custom domain: `aiforscience.eu`, and enable
-   **Enforce HTTPS** once the certificate is issued.
-1. Tag and release: `git tag v2026.07 && git push --tags`, then create a
-   GitHub Release from the tag with the changelog text from
-   `docs/releases/index.md`.
-
 ## License
 
 Site configuration and code: [MIT](LICENSE). Written content under `docs/`:
