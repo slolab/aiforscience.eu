@@ -54,7 +54,7 @@ hide:
       <p>Questions, debate, and proposals, in the open. Start a thread or challenge a practice at any time.</p>
     </article>
   </div>
-  <p class="afs-involved-note">Also: <a href="https://github.com/slolab/aiforscience.eu/issues/new/choose">propose or challenge a practice</a> · <a href="about/contribute/">submit a document</a>.</p>
+  <p class="afs-involved-note">Also: <a href="https://github.com/slolab/aiforscience.eu/issues/new/choose">propose or challenge a practice</a> · <a href="about/contribute/">submit a document</a> · <a href="about/editors/">become an editor</a>.</p>
 </section>
 
 <!-- Timeline section disabled for now; re-enable by removing these comment markers.

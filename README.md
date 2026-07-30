@@ -40,6 +40,9 @@ the drafted library entry, open a PR. Raw documents are never committed to
 
 - Sebastian Lobentanzer (Helmholtz Munich)
 
+The role, the time it takes, and how to join:
+[aiforscience.eu/about/editors](https://aiforscience.eu/about/editors/).
+
 ## Releases
 
 A dated release is cut monthly (`vYYYY.MM`) and mirrored at

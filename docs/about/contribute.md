@@ -4,8 +4,7 @@ title: Contribute
 
 # Contribute
 
-Everything on this site is maintained in a public GitHub repository: [slolab/aiforscience.eu](https://github.com/slolab/aiforscience.eu).
-All routes into the record run through it.
+Everything on this site is maintained in a [public GitHub repository](https://github.com/slolab/aiforscience.eu).
 
 ## Ways to contribute
 
@@ -14,21 +13,24 @@ Use the [Propose a practice](https://github.com/slolab/aiforscience.eu/issues/ne
 State the practice as an imperative, the context in which it was learned, and the evidence.
 
 **Challenge a practice.** You disagree with a practice, or your experience contradicts it.
-Use the "Challenge a practice" template.
+Use the [Challenge a practice](https://github.com/slolab/aiforscience.eu/issues/new/choose) template.
 Challenges with concrete cases are the most useful input the record gets.
 
-**Submit a document.** Your organisation has a strategy paper, report, or guideline the record should digest.
-Use the "Submit a document" template with a link or DOI.
-An editor distills it into a [Library](../library/index.md) entry, with an AI-assisted draft reviewed by humans before anything is published.
+**Submit a document.** You know of a document (e.g., scientific manuscript, strategy paper, report, guideline) the record should digest.
+Use the [Submit a document](https://github.com/slolab/aiforscience.eu/issues/new/choose) template with a link or DOI.
+An AI-assisted process distills it into a [Library](../library/index.md) entry, with an editor approving the proposed changes before anything is published.
 
 **Discuss.** For open-ended topics, use [GitHub Discussions](https://github.com/slolab/aiforscience.eu/discussions).
 Each practice page also has a discussion thread at the bottom.
 
 **No GitHub account?** Use the [AI for Science Google Group](https://groups.google.com/g/aiforscience), or write to [aiforscience@googlegroups.com](mailto:aiforscience@googlegroups.com).
 Proposals, challenges, and comments sent there are carried into the record by the editors, with attribution unless you ask otherwise.
+The Google Group doubles as a mailing list, so sign up if you'd like to stay up to date.
 
 **Edit directly.** Every page has an edit button that opens a pull request.
 Follow the conventions in the repository's CLAUDE.md (page structure, metadata schema, writing style).
+
+**Join the editor group.** If you want to help maintain the record, see [Become an editor](editors.md).
 
 ## Editorial standards
 

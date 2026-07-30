@@ -15,7 +15,7 @@ A small editor group decides what is merged.
   No affiliation is required.
 - **Editors**: a small group drawn from the contributing task forces.
   Editors review contributions, maintain editorial standards, and merge changes.
-  The current editors are listed in the repository's [README](https://github.com/slolab/aiforscience.eu#readme).
+  The current editors, what the role involves, and how to join are on [Become an editor](editors.md).
 - **Endorsing organisations**: organisations that formally back specific practices after their own review.
   Endorsements are recorded in the practice's metadata.
 

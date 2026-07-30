@@ -34,16 +34,17 @@ It covers the practice of applying agents to scientific work.
 The design and validation of AI methods as scientific instruments (predictors, generative models, classifiers) have their own established community norms (FAIR, DOME, model cards, datasheets, REFORMS).
 The record cites these rather than restating them, and treats an agent or model as a method chosen for a task, not a default (see [Match the method to the task](../best-practices/01-match-method-to-task.md)).
 
-The same test governs the [library](../library/index.md): a distillation of a broad policy report keeps the passages that fit into this scope.
+The [library](../library/index.md) likewise extracts relevant context from the cited materials.
 
 ## Audiences
 
 The record is written for three roles.
-There are overlaps, and most practices speak to more than one; practice pages carry audience-specific section for each.
+There are overlaps, and most practices speak to all audiences.
+To give concrete guidance, all practice pages carry an audience-specific section.
 
 - **Practitioners**: scientists and research groups using agentic AI in their daily work.
 - **Providers**: the people who build and operate scientific services, data resources, and tools that agents use (for example the teams behind research-infrastructure services).
-- **Governance**: scientific management, from institute leadership to head offices and funders, deciding what to enable, require, and resource.
+- **Governance**: scientific management and administration, from institute leadership to head offices and funders, deciding what to enable, require, and resource.
 
 ## How the record is made
 
@@ -51,11 +52,12 @@ Two groups shape adoption.
 
 **Pioneers** adopt early and learn by doing; they exist in every audience but concentrate among practitioners.
 The best support for them is to remove obstacles and observe.
-Pioneers write these practices or ignore them; either is fine.
+Pioneers contribute to the practices or ignore them (either is fine).
+Learning from pioneers is one of the central aims of this record.
 
 **Settlers** are far more numerous.
 They come after the pioneers and build things meant to last, so they need reliable, current guidance.
-The practices are learned from the first group and written for the second, across all three audiences.
+The practices are learned from the pioneers and written for the settlers, across all three audiences.
 
 ## How it stays current
 
