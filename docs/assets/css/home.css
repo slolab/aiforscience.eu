@@ -749,6 +749,13 @@ body {
   overflow: hidden;
   border-radius: 3px;
   font: 600 0.66rem/1 ui-monospace, "SFMono-Regular", monospace;
+  text-decoration: none;
+}
+
+.afs-doi:hover .afs-doi__val,
+.afs-doi:focus-visible .afs-doi__val {
+  background: #8ed7e4;
+  color: var(--afs-dark);
 }
 
 .afs-doi__key {

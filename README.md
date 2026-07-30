@@ -47,7 +47,9 @@ The role, the time it takes, and how to join:
 
 A dated release is cut monthly (`vYYYY.MM`) and mirrored at
 [aiforscience.eu/releases](https://aiforscience.eu/releases/). Each release
-receives a DOI via Zenodo.
+receives a version DOI via Zenodo. The concept DOI
+[10.5281/zenodo.21709875](https://doi.org/10.5281/zenodo.21709875) is stable
+across releases and resolves to the latest snapshot.
 
 ## License
 

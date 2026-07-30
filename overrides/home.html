@@ -54,12 +54,12 @@
 
     <div class="afs-publication-strip">
       <div class="md-grid afs-publication-strip__grid">
-        {#- DOI pill in the style of a Zenodo badge; swap for the real
-            zenodo.org/badge SVG once a DOI is minted. -#}
-        <span class="afs-doi">
+        {#- DOI pill in the style of a Zenodo badge. Concept DOI: resolves to
+            the latest dated snapshot, stable across all releases. -#}
+        <a class="afs-doi" href="https://doi.org/10.5281/zenodo.21709875">
           <span class="afs-doi__key">DOI</span>
-          <span class="afs-doi__val">10.5281/zenodo.xxxxx</span>
-        </span>
+          <span class="afs-doi__val">10.5281/zenodo.21709875</span>
+        </a>
         <span class="afs-publication-strip__note">Frequent updates, individually citable.</span>
         <a class="afs-publication-strip__link" href="{{ 'releases/' | url }}">How to cite →</a>
       </div>
