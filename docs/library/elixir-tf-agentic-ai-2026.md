@@ -3,7 +3,7 @@ title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
 source_type: other
 issuing_body: ELIXIR Europe, AI Ecosystem Focus Group, TF Agentic AI
 published: 2026 (rolling document; meetings May to July 2026)
-doi_or_url: Internal task-force working document, not publicly hosted
+doi_or_url: https://docs.google.com/document/d/1brlPU2qEvx6bpzUNmHSjmGragoR21bbQqiobGJlZ_NQ/
 distilled_on: 2026-07-25
 status: draft
 tags: [library, agentic-ai]
@@ -13,8 +13,8 @@ comments: true
 # ELIXIR TF Agentic AI: agenda and rolling best practice (2026)
 
 !!! info "Source"
-    **Document:** "TF Agentic AI, Agenda 2026" (working agenda and rolling best-practice document). **Issuing body:** ELIXIR Europe, AI Ecosystem Focus Group, Task Force Agentic AI. **Date:** rolling; meetings May to July 2026. **Distilled:** 2026-07-25.
-    Personal data (attendee lists, apologies, chat transcripts) is excluded by design; this entry distills the rolling Best Practice and Failures sections and the framing text.
+    **Document:** "Agenda 2026 TF Agentic AI Agenda", the task force's working agenda, which carries two rolling sub-documents: "Best Practice – Agentic AI" and "Failures in Agentic AI". **Issuing body:** ELIXIR Europe, AI Ecosystem Focus Group, Task Force Agentic AI. **Date:** rolling; meetings May to July 2026. **Link:** [open to read](https://docs.google.com/document/d/1brlPU2qEvx6bpzUNmHSjmGragoR21bbQqiobGJlZ_NQ/). **Distilled:** 2026-07-25.
+    Personal data (attendee lists, apologies, chat transcripts) is excluded by design; this entry distills the Best Practice and Worst Practice sections and the framing text.
 
 ## Summary
 
@@ -98,12 +98,13 @@ Audiences: providers, governance.
 
 **11.
 Collect failures as readily as success stories.** The document: "Clear examples of what did not work are as important as the recommendations."
-A parallel Failures document lists cases such as agents falling back to legacy endpoints or scraping when no clean interface exists (Best Practice, item 10; Failures section).
+The parallel document, "Failures in Agentic AI", lists cases such as agents reaching legacy APIs over HTTP instead of REST, and scraping of services and databases (Best Practice, item 10; Worst Practice).
 Relevance: seeds the [Failures log](../best-practices/failures.md), a record convention rather than a practice.
 Audiences: practitioners, providers.
 
 **12.
-Providers lack a clear handle on their users.** The document (meeting note, paraphrased and de-identified): service providers do not have a good handle on their users, which needs to inform the use-case-driven development of agentic interfaces (July 2026 discussion).
+Providers lack a clear handle on their users.** The document: "Service providers don't have a good handle on their users, which needs to inform the user case-driven development of agentic interfaces for that service."
+(Minutes, 1 July 2026, item 4.5, summarising insights from the ELIXIR All-Hands workshop.)
 Relevance: reinforces the task-first design in [BP06](../best-practices/06-design-around-user-tasks.md).
 Audiences: providers.
 

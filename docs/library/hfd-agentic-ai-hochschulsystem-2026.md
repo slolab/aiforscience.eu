@@ -3,7 +3,7 @@ title: "Agentic AI in the higher-education system (2026)"
 source_type: strategy paper
 issuing_body: Hochschulforum Digitalisierung / KI-Campus (Stifterverband)
 published: 2026-05 (May 2026)
-doi_or_url: Discussion paper, Hochschulforum Digitalisierung / KI-Campus, May 2026
+doi_or_url: https://hochschulforumdigitalisierung.de/wp-content/uploads/2026/04/Agentische-KI-im-Hochschulsystem.pdf
 distilled_on: 2026-07-25
 status: draft
 tags: [library, agentic-ai, governance]
@@ -13,7 +13,7 @@ comments: true
 # Agentic AI in the higher-education system (2026)
 
 !!! info "Source"
-    **Document:** "Agentische KI im Hochschulsystem: Einsatzszenarien, Kompetenzverschiebungen und Steuerungsmöglichkeiten". **Authors:** Göllner, Ionica, Meier, Miram, Möller, Richter, Sexauer. **Issuing body:** Hochschulforum Digitalisierung / KI-Campus (Stifterverband). **Date:** May 2026 (reflecting discussion as of January 2026). **Distilled:** 2026-07-25.
+    **Document:** "Agentische KI im Hochschulsystem: Einsatzszenarien, Kompetenzverschiebungen und Steuerungsmöglichkeiten". **Authors:** Göllner, Ionica, Meier, Miram, Möller, Richter, Sexauer. **Issuing body:** Hochschulforum Digitalisierung / KI-Campus (Stifterverband). **Date:** May 2026 (reflecting discussion as of January 2026). **Link:** [PDF](https://hochschulforumdigitalisierung.de/wp-content/uploads/2026/04/Agentische-KI-im-Hochschulsystem.pdf). **Distilled:** 2026-07-25.
     German-language public discussion paper.
     Quotations below are given verbatim in German with an English rendering.
 
