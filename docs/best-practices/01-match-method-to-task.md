@@ -94,6 +94,8 @@ Controlled trials show forecast gains from agentic tools are frequently miscalib
 ## Examples
 
 - A team needs to extract one field from a fixed report format every week; a short parser does it deterministically, and the agent that was drafted for the job would have cost more and varied run to run.
+- A bulk record-matching job is sent through a frontier model rather than a matching routine; it runs up about $1.8 million in tokens, ends 860% over its budget, and never ships.
+  From a [reported corporate case](../library/ref-amazon-ai-cost-overruns-2026.md), not a scientific one, but the method choice is the one any large curation or record-linkage task presents.
 - A group classifying thousands of records fine-tunes a small model on labelled examples; it beats a zero-shot frontier model on their data and runs on their own hardware.
 - A literature step genuinely needs open-ended judgement across messy sources, so an agent is the right tool; the routine lookups it depends on are exposed as deterministic tools it calls rather than reasons about.
 - A scientist asks a chat model for supporting references and pastes them into a manuscript; several do not exist, a failure that a bibliographic search against a real index would not have produced.
@@ -125,6 +127,7 @@ Controlled trials show forecast gains from agentic tools are frequently miscalib
 
 ## Change history
 
+- 2026-07-31: Added a costed Example from the reported Amazon cost overruns (bulk record matching through a frontier model, about $1.8m, 860% over budget, never shipped), labelled as an out-of-domain corporate case. Provenance edges added on bp1-a2 and bp1-a3.
 - 2026-07-27: Added the Expectation–Realisation Gap review (Lobentanzer 2026) as downweighted context on heterogeneous, miscalibrated benefit, with a Reasons and Examples note that method choice includes stating and re-measuring expected net benefit with oversight cost deducted (bp1-a1, bp1-a3).
 - 2026-07-27: Added The GenAI Divide (MIT NANDA 2025) as a supporting source on task-based method fit (bp1-a1).
 - 2026-07-27: Created as BP01. Method-selection practice at the general end of the record; grounds the disciplined stance that an agent or frontier model is chosen, not assumed. Existing BP01 through BP09 renumbered to BP02 through BP10.

@@ -57,7 +57,7 @@ comments: true
   { #bp4-a1 }
 - An agent cannot be talked into following a rule; it can only be stopped from taking an action.
   { #bp4-a2 }
-- Limits have to be implemented in permission scopes, autonomy limits, and shutdown paths.
+- Limits have to be implemented in permission scopes, autonomy limits, resource and spend caps, and shutdown paths.
   { #bp4-a3 }
 - Regardless of implemented safeguards, something can always go wrong.
   { .afs-practice__pivot #bp4-a4 }
@@ -70,14 +70,14 @@ comments: true
 
 === "For practitioners"
 
-    When you run an agent in your own work, set its limits where they take effect: what it can access, how far it can act on its own, and when it must stop and ask.
+    When you run an agent in your own work, set its limits where they take effect: what it can access, how far it can act on its own, how much it may consume, and when it must stop and ask.
     Stay the decision-maker for anything that affects results or other people.
     A personal agent connected to your mail and files is part of the institution's risk, even if no one else set it up.
 
 === "For providers"
 
     Put the limits you promise in the system, not only in the docs, so an agent cannot exceed its scope by being told to.
-    Give operators the stop, escalation, and shutdown controls they need, log agent actions under attributable identities, and record which role holds each responsibility.
+    Give operators the stop, escalation, spend-cap, and shutdown controls they need, log agent actions under attributable identities, and record which role holds each responsibility.
     Roll out new agent features in stages, with clear success and go-live criteria.
 
 === "For governance"
@@ -85,6 +85,7 @@ comments: true
     Written policy alone does not bind a system that acts.
     Move the rules you care about into guardrails and enforced permissions.
     Give each responsibility a named role with clear escalation and shutdown paths, keep a list of the agents in use, require that their actions are logged and attributable, and require independent evaluation where the risk is high.
+    A budget an agent can exceed is not a limit; the cap belongs in the system that meters the spending.
     Decide what autonomy the organisation is willing to grant, and treat governance as ongoing, not a one-time policy.
 
 ## Reasons
@@ -93,7 +94,9 @@ An agent acts.
 A policy document tells a person what to do.
 It does nothing to a system that only follows the actions it is allowed to take.
 As agents get more autonomous, the gap between written rules and enforced limits becomes the main risk.
-To close it, put the limits where they take effect: what the agent can access, how far it can act without a human, and when it must stop or escalate.
+To close it, put the limits where they take effect: what the agent can access, how far it can act without a human, how much it may consume, and when it must stop or escalate.
+Consumption belongs in that list because an agent that loops does not crash.
+It keeps working, and it keeps billing, so an unmetered run can exhaust a budget while staying inside every permission it was granted.
 Accountability has to be just as concrete.
 If responsibility sits with "the institution" in general, no one is answerable; it has to sit with named roles, with clear paths to escalate and to shut an agent down.
 Accountability also needs a record: if an agent's actions are not logged under an attributable identity, no one can reconstruct what it did or hold the right role answerable.
@@ -107,6 +110,7 @@ This is the consensus position across the main governance frameworks (NIST, the 
 - The same agent runs with a scoped token that carries no delete permission and a shutdown control a named on-call engineer can trigger, so the injected instruction fails because the action was never available to it.
 - After an agent writes a wrong value to a shared dataset, the team traces it through the action ledger to the run, the model version, and the role that owned that workflow, and closes the gap.
 - Responsibility for an agent sits with "the department" in general; when it misbehaves, no one is answerable and no one has clear authority to shut it down.
+- An agent runs against a token ceiling set per run and an alert at half of it; when a misconfiguration sends it looping over the same records, it stops at the ceiling instead of billing for months against a budget that existed only on paper.
 - A new agent feature goes live for low-risk cases first, with success and go-live criteria and an accepted risk limit set in advance, before any wider rollout.
 - A personal agent connected to a researcher's mail and files is entered in the institution's agent inventory and reviewed like any deployed one, because its broad access is part of the same risk.
 
@@ -139,6 +143,7 @@ This is the consensus position across the main governance frameworks (NIST, the 
 
 ## Change history
 
+- 2026-07-31: Extended bp4-a3 to name resource and spend caps alongside permission scopes, autonomy limits, and shutdown paths, with matching Reasons, tab, and Example text. An agent inside every permission it was granted can still exhaust a budget, because a looping agent does not crash. Prompted by the reported Amazon cost overruns, recorded in the provenance data as a qualification on bp4-a3.
 - 2026-07-27: Added the EU AI Omnibus (2026) as a supporting source on bp4-a1 (technical safeguards in the system, not policy; Art 5(1a) foreseeable-misuse standard).
 - 2026-07-27: Renumbered from BP03 to BP04 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns, replacing restatements of the practice.
