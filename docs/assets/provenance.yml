@@ -56,6 +56,10 @@ bp1-a2:  # for well-defined work, a deterministic or specialized method often fi
     stance: qualifies
     locator: "§3.2.2, p. 20; ch. 4, p. 22"
     quote: "non-frontier access is an imperfect substitute for frontier access"
+  - ref: amazon-ai-cost-overruns-2026
+    stance: supports
+    locator: "frontier model used for bulk author-record matching; about $1.8m, never shipped"
+    quote: "catastrophically expensive"
 bp1-a3:  # agentic autonomy earns its cost only when flexibility at scale is needed
   - ref: anthropic-building-effective-agents-2024
     stance: supports
@@ -65,6 +69,9 @@ bp1-a3:  # agentic autonomy earns its cost only when flexibility at scale is nee
     stance: supports
     locator: "software engineering copilots; METR RCT"
     quote: "the net slowdown occurred because the time spent reviewing, debugging, and integrating AI-generated code exceeded the time saved in initial generation"
+  - ref: amazon-ai-cost-overruns-2026
+    stance: supports
+    locator: "internal token-consumption leaderboards; agents assigned to unnecessary work (\"tokenmaxxing\")"
 bp1-a4:  # frontier model where a specialized method fits -> avoidable failure modes
   - ref: walters-wilder-2023
     stance: supports
@@ -177,6 +184,9 @@ bp4-a1:  # limits belong in the system, not only in policy
     stance: supports
     locator: "protected research tier"
     quote: "technical controls prevent patient-level information from being transmitted to Anthropic and allow institutions to audit what the agent can access and send"
+  - ref: amazon-ai-cost-overruns-2026
+    stance: supports
+    locator: "budget as a plan, not an enforced cap; 860% overrun undetected for five months; automated spend caps built afterwards"
 bp4-a2:  # an agent cannot be persuaded, only prevented
   - ref: openai-governing-agentic-ai-2023
     stance: supports
@@ -191,6 +201,9 @@ bp4-a3:  # limits in permission scopes, autonomy limits, shutdown paths
   - ref: eu-ai-act
     stance: supports
     locator: "Article 14 human oversight"
+  - ref: amazon-ai-cost-overruns-2026
+    stance: qualifies
+    locator: "resource consumption is a fourth limit; an agent within its permissions and autonomy limit can still cause harm by spending"
 bp4-a5:  # named human owner for each responsibility
   - ref: openai-governing-agentic-ai-2023
     stance: supports

@@ -42,6 +42,7 @@ Each links to its bibliographic record.
 - [AI Agents That Matter (Kapoor et al. 2024)](ref-kapoor-agents-that-matter-2024.md)
 - [Fine-tuned small LLMs beat zero-shot frontier models (Bucher & Martini 2024)](ref-bucher-fine-tuned-2024.md)
 - [Leakage and the reproducibility crisis in ML-based science (Kapoor & Narayanan 2023)](ref-kapoor-narayanan-leakage-2023.md)
+- [Unmetered agent spend at Amazon (2026)](ref-amazon-ai-cost-overruns-2026.md)
 
 **Data and metadata standards**
 
