@@ -51,6 +51,10 @@ jobs:
           key: lychee-${{ github.run_id }}
           restore-keys: lychee-
 
+      # The accepted status codes include some that are not plain 200s but do
+      # not indicate rot: 403 and 429 are bot mitigation, and 202 is what
+      # EUR-Lex returns for every one of its URL forms (ELI, OJ, CELEX) when
+      # fetched by a client it does not recognise as a browser.
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
@@ -58,7 +62,7 @@ jobs:
             --no-progress
             --cache
             --max-cache-age 3d
-            --accept 200,201,204,206,301,302,303,307,308,403,429
+            --accept 200,201,202,204,206,301,302,303,307,308,403,429
             --root-dir ${{ github.workspace }}/site
             --exclude 'https://aiforscience\.eu'
             'site/**/*.html'
