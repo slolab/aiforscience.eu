@@ -453,6 +453,32 @@ def render_entry(
     return lines
 
 
+RELEASE_LINK = "[GitHub release]"
+
+
+def keep_doi(old: list[str], entry: list[str]) -> list[str]:
+    """Carry a DOI already on the page over to a redrafted entry.
+
+    The entry is redrafted from the repository, which has no way to know the
+    DOI: `scripts/fill_release_doi.py` reads that from Zenodo after the release
+    is published. Without this, re-preparing a version that has already been
+    released would drop its DOI from the page.
+    """
+    prefix = next(
+        (
+            line[: line.index(RELEASE_LINK)]
+            for line in old
+            if line.startswith("DOI:") and RELEASE_LINK in line
+        ),
+        "",
+    )
+    if not prefix:
+        return entry
+    return [
+        prefix + line if line.startswith(RELEASE_LINK) else line for line in entry
+    ]
+
+
 def update_releases_page(text: str, version: str, entry: list[str]) -> str:
     lines = text.splitlines()
     heading = f"### {version} ("
@@ -468,7 +494,7 @@ def update_releases_page(text: str, version: str, entry: list[str]) -> str:
         )
         while end > start and lines[end - 1].strip() == "":
             end -= 1
-        lines[start:end] = entry
+        lines[start:end] = keep_doi(lines[start:end], entry)
     else:
         anchor = next(
             (i for i, l in enumerate(lines) if l.strip() == PAST_RELEASES), None
@@ -513,7 +539,8 @@ def render_pr_body(
             "the merge will land on another day.",
             "- [ ] Nothing else merged since this PR was prepared. The tag "
             "lands on the merge commit, so anything merged in between is in "
-            "the snapshot without being in these notes. To redraft: "
+            "the snapshot without being in these notes. `release-drift.yaml` "
+            "keeps a comment below current with what has landed. To redraft: "
             f"`gh workflow run release.yaml -f version={version} "
             "-f refresh=true` (this replaces edits made on the branch).",
             "",
@@ -524,9 +551,16 @@ def render_pr_body(
             "the release is yours to publish when you want it archived.",
             "",
             "```",
-            f'gh release create {version} --title "{version}" '
+            "git pull",
+            f'gh release create {version} --title "{version}" --verify-tag '
             f"--notes-file {notes_path}",
             "```",
+            "",
+            f"`git pull` is what brings `{notes_path}` into your checkout. "
+            "`--verify-tag` makes the command fail rather than create the tag "
+            "itself: if the tag is missing because `release-tag.yaml` did not "
+            "run, a plain `gh release create` would tag whatever `main` is at "
+            "instead of the commit reviewed here.",
             "",
             "That publication is what makes Zenodo mint the version DOI. The "
             "entry above carries no DOI yet, because the DOI does not exist "

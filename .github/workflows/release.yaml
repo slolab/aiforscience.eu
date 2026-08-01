@@ -91,8 +91,29 @@ jobs:
           FORCE: ${{ github.event.inputs.force }}
           REFRESH: ${{ github.event.inputs.refresh }}
         run: |
-          open_pr=$(gh pr list --head "release/$VERSION" --state open \
-            --json number --jq '.[0].number // empty')
+          # Every open release PR, not only this month's. The DOI PRs use
+          # release/vYYYY.MM-doi, which this pattern does not match.
+          open_prs=$(gh pr list --state open --limit 100 \
+            --json number,headRefName --jq '.[] | "\(.number) \(.headRefName)"' \
+            | grep -E ' release/v[0-9]{4}\.[0-9]{2}$' || true)
+          open_pr=$(printf '%s' "$open_prs" \
+            | awk -v b="release/$VERSION" 'NF && $2 == b {print $1}')
+          others=$(printf '%s' "$open_prs" \
+            | awk -v b="release/$VERSION" \
+                'NF && $2 != b {printf "%s#%s (%s)", sep, $1, $2; sep = ", "}')
+
+          # An earlier snapshot that is still open has not been tagged, so this
+          # month would be drafted against the tag before it and would re-list
+          # that month's changes as its own. Both PRs would also rewrite the
+          # same part of the releases page.
+          if [ -n "$others" ]; then
+            echo "GO=false" >> "$GITHUB_ENV"
+            echo "An earlier release PR is still open: $others." \
+              "Merge or close it before preparing $VERSION;" \
+              "until it is tagged, this month's diff would repeat its changes." \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
           if [ -n "$open_pr" ] && [ "$REFRESH" != "true" ]; then
             echo "GO=false" >> "$GITHUB_ENV"
             echo "PR #$open_pr for $VERSION is already open. Edit it, close it," \

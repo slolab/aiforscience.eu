@@ -5,6 +5,8 @@ description = "Source for aiforscience.eu"
 requires-python = ">=3.11"
 dependencies = [
     "mkdocs-material>=9.6",
+    # Used directly by the scripts under scripts/, not only by mkdocs.
+    "pyyaml>=6",
 ]
 
 [tool.uv]

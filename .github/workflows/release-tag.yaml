@@ -19,10 +19,13 @@ permissions:
 jobs:
   tag:
     # Only the monthly release PRs. The DOI PR uses release/vYYYY.MM-doi, which
-    # the exact-version check in the first step rejects.
+    # the exact-version check in the first step rejects. The branch has to be in
+    # this repository: what gets tagged is decided by a branch name, and a fork
+    # can pick any name it likes.
     if: >-
       github.event.pull_request.merged == true
       && startsWith(github.event.pull_request.head.ref, 'release/v')
+      && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     steps:
       - name: Read the version from the branch name
@@ -86,8 +89,11 @@ jobs:
             "Publishing the release is what makes Zenodo archive the snapshot and mint the version DOI:" \
             "" \
             '```' \
-            "gh release create $VERSION --title \"$VERSION\" --notes-file release-notes/$VERSION.md" \
+            "git pull" \
+            "gh release create $VERSION --title \"$VERSION\" --verify-tag --notes-file release-notes/$VERSION.md" \
             '```' \
+            "" \
+            "\`git pull\` brings \`release-notes/$VERSION.md\` into your checkout. \`--verify-tag\` keeps the command from creating the tag itself: without it, a missing tag means the release is cut at whatever \`main\` is at rather than at the reviewed commit." \
             "" \
             "\`release-doi.yaml\` then waits for the mint and opens a one-line PR that records the DOI.")
           gh pr comment "$PR" --body "$body"

@@ -24,6 +24,13 @@ review at each gate.
 - runs the provenance check and the strict build,
 - opens `release: vYYYY.MM` from branch `release/vYYYY.MM`.
 
+`.github/workflows/release-drift.yaml` (automated, on every push to main):
+
+- counts what has landed on main since the open release PR was drafted and keeps
+  one comment on that PR current with it,
+- touches nothing else: redrafting would discard the reviewer's edits, so the
+  decision to redraft stays with them.
+
 `.github/workflows/release-tag.yaml` (automated, when the release PR merges):
 
 - tags `vYYYY.MM` at the merge commit, so the tag is the reviewed state,
@@ -84,12 +91,23 @@ script cannot make:
 3. Check the statuses against what the editor group actually accepted, and the
    entry date in `docs/releases/index.md` against when the tag will land.
    The script dates the entry the day it ran.
-4. Run `uv run mkdocs build --strict` after any edit.
+4. Read the `release-drift.yaml` comment on the PR. It lists what has landed on
+   main since the drafts were written. Those commits are in the snapshot
+   regardless, because the tag lands on the merge commit, so decide whether the
+   notes have to account for them. Redrafting with `-f refresh=true` picks them
+   up and discards any edits made on the branch, so do it before step 2, not
+   after.
+5. Run `uv run mkdocs build --strict` after any edit.
 
-If there is no PR, the month had no changes, the month is already tagged, or the
-workflow is off. For an off-cycle or forced release, either run the workflow
-manually (`gh workflow run release.yaml -f version=vYYYY.MM -f force=true`) or
-do it yourself:
+If there is no PR, the month had no changes, the month is already tagged, an
+earlier release PR is still open, or the workflow is off. Only one release PR
+may be open at a time: an untagged snapshot is not a diff base, so the next
+month would be drafted against the tag before it and would re-list the open
+month's changes as its own. Merge or close the earlier one first.
+
+For an off-cycle or forced release, either run the workflow manually
+(`gh workflow run release.yaml -f version=vYYYY.MM -f force=true`) or do it
+yourself:
 
 ```
 uv run python scripts/prepare_release.py --version vYYYY.MM --pr-body-out /tmp/pr-body.md
@@ -102,30 +120,37 @@ Do not tag in this phase.
 
 ### Phase B: tag and mint (human owns; you prepare)
 
-5. The merge tags `vYYYY.MM` on its own. The human decides when to publish the
+6. The merge tags `vYYYY.MM` on its own. The human decides when to publish the
    release, which is the act that archives the snapshot. Prepare the command for
    them to run or approve:
 
    ```
-   gh release create vYYYY.MM --title "vYYYY.MM" --notes-file release-notes/vYYYY.MM.md
+   git pull
+   gh release create vYYYY.MM --title "vYYYY.MM" --verify-tag --notes-file release-notes/vYYYY.MM.md
    ```
+
+   Both parts matter. `release-notes/vYYYY.MM.md` only reaches the checkout on
+   `git pull`, and `--verify-tag` makes the command fail on a missing tag
+   instead of creating one: without it, a `release-tag.yaml` that did not run
+   means the release is cut at whatever `main` is at, not at the reviewed
+   commit, and Zenodo archives that.
 
    `.zenodo.json` at the repo root supplies the deposit metadata; do not inline
    author or license data into the release for Zenodo's sake. If the tag needs to
    move because something merged wrong, do it before publishing: an unpublished
    tag has no deposit and no DOI depending on it.
-6. Zenodo catches the release webhook and mints the DOI automatically. This is
+7. Zenodo catches the release webhook and mints the DOI automatically. This is
    asynchronous. The DOI does not exist until after the release is published, so
    the tagged snapshot itself does not contain its own DOI. That is expected.
    Publishing the release also starts `release-doi.yaml`.
 
 ### Phase C: record the DOI (automated; you review the PR)
 
-7. `release-doi.yaml` waits for the mint, then opens
+8. `release-doi.yaml` waits for the mint, then opens
    `release: record the vYYYY.MM DOI`. Check two things on that PR: the DOI
    resolves, and the version it belongs to is this release. Then the human
    merges. The concept DOI is unchanged; only the version DOI is new.
-8. If that workflow did not run or Zenodo timed out, do it by hand:
+9. If that workflow did not run or Zenodo timed out, do it by hand:
 
    ```
    uv run python scripts/fill_release_doi.py --version vYYYY.MM
