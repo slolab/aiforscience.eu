@@ -58,7 +58,14 @@ markdown_extensions:
   - md_in_html
   - tables
   - pymdownx.details
-  - pymdownx.superfences
+  # ```mermaid fences render as diagrams. Material's own integration handles
+  # them, which means the mermaid library is fetched from unpkg when a page
+  # that has a diagram is opened.
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tasklist:
       custom_checkbox: true
       clickable_checkbox: true

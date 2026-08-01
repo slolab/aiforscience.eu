@@ -1,0 +1,164 @@
+name: Release PR
+
+# Cutting a citable snapshot stays a human act: an editor reads what the month
+# changed, and the tag is what Zenodo mints a DOI from. Only the mechanical half
+# is automated here. On the 25th this drafts the release body from the diff
+# against the previous tag, updates the releases page, and opens a PR for the
+# editor group. Nothing is tagged, nothing is published, no DOI is minted.
+#
+# The PR is opened with GITHUB_TOKEN, and PRs opened that way do not trigger
+# other workflows, so ci.yaml will not run on it. The same two checks it runs
+# (provenance integrity, strict build) run here before the PR is opened.
+
+on:
+  schedule:
+    - cron: "0 6 25 * *" # 25th of each month, 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to prepare (vYYYY.MM). Defaults to the current month."
+        required: false
+        type: string
+      force:
+        description: "Open the PR even if nothing changed since the previous tag."
+        type: boolean
+        default: false
+      refresh:
+        description: "Redraft an open release PR. Discards edits on its branch."
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: release-pr
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history: the drafts come from the diff
+          fetch-tags: true # and the diff is against the previous tag
+
+      # Without tags the diff would silently look like the first release ever
+      # and the PR would re-list the whole record as new. Fail loudly instead.
+      # (Only v2026.07 onwards; before that there was nothing to compare to.)
+      - name: Check that tags are present
+        run: |
+          if [ -z "$(git tag --list 'v2*')" ]; then
+            echo "::error::no v2* tag after checkout; the diff would be wrong"
+            exit 1
+          fi
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Prepare the release drafts
+        id: prep
+        env:
+          VERSION_INPUT: ${{ github.event.inputs.version }}
+        run: |
+          uv run python scripts/prepare_release.py \
+            ${VERSION_INPUT:+--version "$VERSION_INPUT"} \
+            --pr-body-out "${{ runner.temp }}/pr-body.md"
+
+      # A month with no changes needs no snapshot, and a month already tagged
+      # has one. An open release PR is left alone: force-pushing over it would
+      # throw away whatever the reviewer wrote there.
+      - name: Decide whether to open a PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.prep.outputs.version }}
+          PREVIOUS: ${{ steps.prep.outputs.previous }}
+          PROCEED: ${{ steps.prep.outputs.proceed }}
+          TAG_EXISTS: ${{ steps.prep.outputs.tag_exists }}
+          FORCE: ${{ github.event.inputs.force }}
+          REFRESH: ${{ github.event.inputs.refresh }}
+        run: |
+          open_pr=$(gh pr list --head "release/$VERSION" --state open \
+            --json number --jq '.[0].number // empty')
+          if [ -n "$open_pr" ] && [ "$REFRESH" != "true" ]; then
+            echo "GO=false" >> "$GITHUB_ENV"
+            echo "PR #$open_pr for $VERSION is already open. Edit it, close it," \
+              "or re-run with refresh to redraft it." \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          if [ -n "$open_pr" ]; then
+            echo "Redrafting PR #$open_pr; edits on its branch are replaced." \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ "$PROCEED" = "true" ] || [ "$FORCE" = "true" ]; then
+            echo "GO=true" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          echo "GO=false" >> "$GITHUB_ENV"
+          if [ "$TAG_EXISTS" = "true" ]; then
+            reason="tag $VERSION already exists"
+          else
+            reason="nothing changed since $PREVIOUS"
+          fi
+          echo "No release PR for $VERSION: $reason." \
+            "Run this workflow manually with force to override." \
+            | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Check provenance integrity
+        if: env.GO == 'true'
+        run: uv run python scripts/check_provenance.py
+
+      - name: Strict build
+        if: env.GO == 'true'
+        run: uv run mkdocs build --strict
+
+      - name: Commit the drafts on a release branch
+        if: env.GO == 'true'
+        env:
+          VERSION: ${{ steps.prep.outputs.version }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "release/$VERSION"
+          git add docs/releases/index.md release-notes
+          # Reachable when a run is forced after the snapshot already merged:
+          # the drafts then match main and there is nothing to open a PR from.
+          if git diff --cached --quiet; then
+            echo "GO=false" >> "$GITHUB_ENV"
+            echo "The drafts already match main; nothing to commit." \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git commit -m "release: prepare $VERSION"
+          git push --force-with-lease origin "release/$VERSION"
+
+      # gh pr create is a no-op error if the PR is already open (the refresh
+      # path), so ask first and only report the URL.
+      - name: Open the release PR
+        if: env.GO == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.prep.outputs.version }}
+        run: |
+          url=$(gh pr list --head "release/$VERSION" --state open \
+            --json url --jq '.[0].url // empty')
+          if [ -z "$url" ]; then
+            url=$(gh pr create --base main --head "release/$VERSION" \
+              --title "release: $VERSION" \
+              --body-file "${{ runner.temp }}/pr-body.md")
+          fi
+          echo "Release PR: $url" | tee -a "$GITHUB_STEP_SUMMARY"

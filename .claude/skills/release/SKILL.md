@@ -16,31 +16,52 @@ review at each gate.
 
 ## The split
 
+`.github/workflows/release.yaml` (automated, 25th of each month):
+
+- runs `scripts/prepare_release.py`, which determines the version, diffs against
+  the previous tag, writes the release body to `release-notes/vYYYY.MM.md`, and
+  adds the entry to `docs/releases/index.md`,
+- runs the provenance check and the strict build,
+- opens `release: vYYYY.MM` from branch `release/vYYYY.MM`.
+
+`.github/workflows/release-tag.yaml` (automated, when the release PR merges):
+
+- tags `vYYYY.MM` at the merge commit, so the tag is the reviewed state,
+- comments the `gh release create` command on the merged PR,
+- publishes nothing: Zenodo mints from a published release, not from a tag.
+
+`.github/workflows/release-doi.yaml` (automated, on release publication):
+
+- runs `scripts/fill_release_doi.py`, which waits for Zenodo to mint, verifies
+  the deposit's version against the tag, records the DOI on the entry, and moves
+  the citation example to this release,
+- opens `release: record the vYYYY.MM DOI` from branch `release/vYYYY.MM-doi`.
+
 You (agent):
 
-- determine the version and the change summary,
-- draft the GitHub Release body,
-- update `docs/releases/index.md`,
-- run the strict build,
+- review or rewrite what the scripts cannot judge: the change summary as prose,
+  the statuses, the entry date,
 - prepare the tag and release commands,
-- fill the DOI into the two placeholder spots once the human gives you the number.
+- take over either script's job by hand when a workflow is off or a release is
+  off-cycle.
+
+Everything the scripts write is derived from the repository or read from Zenodo
+(frontmatter, the diff, file counts, the deposit), so it is checkable. Nothing in
+it is generated prose.
 
 Human / repository owner:
 
-- decides the repo's permanent home before the first DOI (see gate below),
-- enables the Zenodo GitHub integration once (owner action in the Zenodo UI),
+- keeps the Zenodo GitHub integration enabled (one-time owner action, done),
 - reviews and merges the release PR,
 - creates the tag and Release (or approves you running the prepared command),
-- copies the minted concept DOI from Zenodo back to you.
+- copies the minted version DOI from Zenodo back to you.
 
-## Gate before the first release
+## The citation identity is bound to this repo
 
-The first release fixes the citation identity. Zenodo's GitHub integration
-binds the concept DOI to the specific repo owner and name. If the repo may move
-to a neutral organisation later, that move must happen before the first DOI is
-minted, or the DOI lineage splits across two repos. Do not cut the first
-release until the human confirms the repo is in its permanent home. State this
-gate and stop if it is unresolved.
+Zenodo's GitHub integration binds the concept DOI to one repo owner and name.
+`v2026.07` was minted from `slolab/aiforscience.eu`, so that binding exists now.
+A move to a neutral organisation later splits the DOI lineage across two repos.
+Raise this before any repo move, not after.
 
 ## Version scheme
 
@@ -49,65 +70,87 @@ the release month, not a semver bump. Do not infer a version from commit types.
 
 ## Procedure
 
-### Phase A: prepare (you do this, human reviews the PR)
+### Phase A: prepare (the workflow drafts it, you review, human merges)
 
-1. Determine the version `vYYYY.MM` from the release month the user names, or the
-   current month if they do not.
-2. Find the previous tag (`git tag --list 'v*' --sort=-v:refname | head -1`).
-   For the first release there is none.
-3. Collect what changed since the previous tag: new and reworded practices,
-   status changes (`draft` -> `reviewed` -> `endorsed`), new endorsements, new
-   library entries, and failures logged. Read the practice frontmatter and the
-   git log for the range; write the summary for a reader, not as a commit dump.
-4. Draft the GitHub Release body (see template below).
-5. Update `docs/releases/index.md`:
-   - On the first release, replace the "No releases yet" note with a
-     `## Past releases` list.
-   - Add the new entry at the top of that list, newest first, following the
-     entry format below. Leave the DOI as a clearly marked slot
-     (`DOI: CONCEPT_DOI` and `DOI: VERSION_DOI`) for Phase C.
-   - Keep the "How to cite" block; update its example to this release.
-6. Run `uv run mkdocs build --strict` and fix anything it reports.
-7. Open a PR titled `release: vYYYY.MM` for editor review. Do not tag yet.
+The 25th-of-the-month workflow has usually opened the PR already. Check with
+`gh pr list --search "release:" --state open`. Your work is the judgement the
+script cannot make:
+
+1. Read the PR. `uv run python scripts/prepare_release.py --dry-run` prints the
+   same drafts locally without writing anything.
+2. Rewrite `## What changed` in `release-notes/vYYYY.MM.md` if the month
+   deserves a summary rather than a list of facts. Two to four sentences.
+   Leave the practice list alone: it is generated from frontmatter.
+3. Check the statuses against what the editor group actually accepted, and the
+   entry date in `docs/releases/index.md` against when the tag will land.
+   The script dates the entry the day it ran.
+4. Run `uv run mkdocs build --strict` after any edit.
+
+If there is no PR, the month had no changes, the month is already tagged, or the
+workflow is off. For an off-cycle or forced release, either run the workflow
+manually (`gh workflow run release.yaml -f version=vYYYY.MM -f force=true`) or
+do it yourself:
+
+```
+uv run python scripts/prepare_release.py --version vYYYY.MM --pr-body-out /tmp/pr-body.md
+git checkout -b release/vYYYY.MM
+git add docs/releases/index.md release-notes && git commit -m "release: prepare vYYYY.MM"
+gh pr create --title "release: vYYYY.MM" --body-file /tmp/pr-body.md
+```
+
+Do not tag in this phase.
 
 ### Phase B: tag and mint (human owns; you prepare)
 
-8. After the PR merges, the human ensures the Zenodo toggle is on (one-time) and
-   creates the tag and Release from `main`. Prepare the command for them to run
-   or approve:
+5. The merge tags `vYYYY.MM` on its own. The human decides when to publish the
+   release, which is the act that archives the snapshot. Prepare the command for
+   them to run or approve:
 
    ```
-   gh release create vYYYY.MM --title "vYYYY.MM" --notes-file <release-body>
+   gh release create vYYYY.MM --title "vYYYY.MM" --notes-file release-notes/vYYYY.MM.md
    ```
 
    `.zenodo.json` at the repo root supplies the deposit metadata; do not inline
-   author or license data into the release for Zenodo's sake.
-9. Zenodo catches the release webhook and mints the DOI automatically. This is
+   author or license data into the release for Zenodo's sake. If the tag needs to
+   move because something merged wrong, do it before publishing: an unpublished
+   tag has no deposit and no DOI depending on it.
+6. Zenodo catches the release webhook and mints the DOI automatically. This is
    asynchronous. The DOI does not exist until after the release is published, so
-   the tagged snapshot itself will not contain the filled-in DOI. That is
-   expected.
+   the tagged snapshot itself does not contain its own DOI. That is expected.
+   Publishing the release also starts `release-doi.yaml`.
 
-### Phase C: fill the DOI (you do this, human supplies the number)
+### Phase C: record the DOI (automated; you review the PR)
 
-10. Ask the human for the **concept** DOI (the "all versions" DOI that resolves
-    to the latest snapshot), not the version DOI. Zenodo shows it only after the
-    first deposit exists.
-11. Fill it into the two placeholder spots:
-    - `overrides/home.html`: the DOI pill (currently `10.5281/zenodo.xxxxx`).
-      Set the concept DOI and make the pill a link to
-      `https://doi.org/<concept-doi>`.
-    - `docs/releases/index.md`: replace `CONCEPT_DOI` in the "How to cite" block
-      and `VERSION_DOI` in this release's entry with the real numbers (the
-      version DOI is per-release; the concept DOI is stable across all).
-12. Run `uv run mkdocs build --strict` and open a short follow-up PR for review.
+7. `release-doi.yaml` waits for the mint, then opens
+   `release: record the vYYYY.MM DOI`. Check two things on that PR: the DOI
+   resolves, and the version it belongs to is this release. Then the human
+   merges. The concept DOI is unchanged; only the version DOI is new.
+8. If that workflow did not run or Zenodo timed out, do it by hand:
 
-## Release body template
+   ```
+   uv run python scripts/fill_release_doi.py --version vYYYY.MM
+   uv run mkdocs build --strict
+   ```
+
+   The DOI is read from Zenodo, so do not ask the human for the number. Ask only
+   if the deposit cannot be reached at all, and then pass `--concept-doi` or edit
+   the two spots in `docs/releases/index.md` directly (the entry's DOI line and
+   the citation example).
+
+## What the scripts emit
+
+`scripts/prepare_release.py` implements the two formats below. They are
+documented here so a hand-written release matches, and so a change to one is
+made in both places.
+
+Release body (`release-notes/vYYYY.MM.md`, fed to `gh release create`):
 
 ```
 ## What changed
 
-<two to four sentences: what a reader gets from this snapshot. Practices
-added or reworded, status and endorsement changes, new library entries.>
+<what the diff against the previous tag shows: practices added, status moves,
+endorsements, revised pages, new library entries, failures logged. Replace with
+two to four sentences of summary when the month warrants it.>
 
 ## Practices in this snapshot
 
@@ -117,19 +160,24 @@ This is a dated snapshot of the living record at https://aiforscience.eu.
 The live site always shows the current state.
 ```
 
-## Releases page entry format
-
-Under `## Past releases` in `docs/releases/index.md`, newest first:
+Releases page entry, under `## Past releases` in `docs/releases/index.md`,
+newest first:
 
 ```
 ### vYYYY.MM (YYYY-MM-DD)
 
-<one or two sentences on what this snapshot contains.>
-DOI: VERSION_DOI · [GitHub release](https://github.com/<owner>/aiforscience.eu/releases/tag/vYYYY.MM)
+<ordinal snapshot, what it contains, what changed since the previous tag.>
+
+[GitHub release](https://github.com/<owner>/aiforscience.eu/releases/tag/vYYYY.MM)
 ```
 
-Use the repo's current `origin` owner for the link; do not hardcode an owner
-that may have changed.
+The owner comes from the repo's current `origin`; do not hardcode an owner that
+may have changed.
+
+`scripts/fill_release_doi.py` then turns the last line into
+`DOI: [<doi>](https://doi.org/<doi>) · [GitHub release](...)` and updates the
+citation example. No placeholder is ever published: an entry either has its DOI
+or has no DOI line at all.
 
 ## Style (hard rules)
 

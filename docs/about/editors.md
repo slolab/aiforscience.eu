@@ -74,6 +74,42 @@ A second commit then extended this practice.
 Both edited practice pages got a dated change-history bullet.
 On approval, the PR was merged, triggering an update to the website.
 
+## Monthly release
+
+Each month we create a dated snapshot: a git tag, a GitHub release, and a Zenodo deposit with its own DOI.
+Preparing the snapshot is automated.
+On the 25th, a release pull request is opened with the release notes and the [Releases](../releases/index.md) entry already drafted from what changed since the previous tag.
+Two parts then are human-edited: the summary of the month, which the draft states as a list of changes, and the practice statuses.
+The release SKILL has instructions to aid with this task (but needs to be used with a human in the loop).
+Merging the pull request is what commits the snapshot: the version is automatically tagged on merge.
+An editor publishes the GitHub release, using the created tag.
+That release triggers the Zenodo deposit and DOI minting.
+
+```mermaid
+flowchart TD
+    work["Changes merged throughout the month (<i>manual</i>)"]
+    pr["<i>Automated</i> release PR opened on the 25th"]
+    review{"Editor review (<i>manual</i>)"}
+    edits["Edits on the release branch"]
+    merge["Merge → <i>Automated</i> version tag"]
+    tag["Editor publishes the GitHub release (<i>manual</i>)"]
+    zenodo["<i>Automated</i> DOI minting by Zenodo"]
+    doi["<i>Automated</i> DOI record on the Releases page"]
+
+    work --> pr
+    pr --> review
+    review -->|needs work| edits
+    edits --> review
+    review -->|approved| merge
+    merge --> tag
+    tag --> zenodo
+    zenodo --> doi
+```
+
+The version DOI is minted from the published release, so it does not exist while the release pull request is open.
+Until a second, automatic pull request records it, the entry on the Releases page carries the release link and no DOI.
+The concept DOI is stable across all snapshots and always resolves to the newest one.
+
 ## Current editors
 
 - Sebastian Lobentanzer, Helmholtz Munich.

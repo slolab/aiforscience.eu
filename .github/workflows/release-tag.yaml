@@ -1,0 +1,93 @@
+name: Release tag
+
+# Tag the snapshot when the release PR merges, and stop there. The tag then
+# points at exactly the commit that was reviewed, instead of whatever main has
+# drifted to by the time someone tags by hand.
+#
+# Tagging is not publishing. Zenodo mints from the release-publication webhook,
+# not from a tag push, so nothing is archived and no DOI exists until an editor
+# runs `gh release create`. The command is posted on the merged PR.
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  tag:
+    # Only the monthly release PRs. The DOI PR uses release/vYYYY.MM-doi, which
+    # the exact-version check in the first step rejects.
+    if: >-
+      github.event.pull_request.merged == true
+      && startsWith(github.event.pull_request.head.ref, 'release/v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read the version from the branch name
+        id: version
+        env:
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: |
+          version="${BRANCH#release/}"
+          if ! printf '%s' "$version" | grep -Eq '^v[0-9]{4}\.[0-9]{2}$'; then
+            echo "$BRANCH is not a release branch; nothing to tag."
+            exit 0
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      # Check out the merge commit by sha, not the default ref for a
+      # pull_request event: refs/pull/<n>/merge is gone once the PR is closed.
+      # By sha, this also tags the reviewed state even if main has moved on.
+      - name: Checkout
+        if: steps.version.outputs.version != ''
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Tag the merge commit
+        if: steps.version.outputs.version != ''
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          SHA: ${{ github.event.pull_request.merge_commit_sha }}
+        run: |
+          if [ -z "$SHA" ]; then
+            echo "::error::the merged PR has no merge commit sha"
+            exit 1
+          fi
+          if git rev-parse -q --verify "refs/tags/$VERSION" >/dev/null; then
+            echo "TAGGED=false" >> "$GITHUB_ENV"
+            echo "Tag $VERSION already exists; leaving it alone." \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "$VERSION" -m "$VERSION" "$SHA"
+          git push origin "$VERSION"
+          echo "TAGGED=true" >> "$GITHUB_ENV"
+          echo "Tagged $VERSION at $SHA." | tee -a "$GITHUB_STEP_SUMMARY"
+
+      # The editor who merged is the one who decides to publish, so put the
+      # command where they just were.
+      - name: Say what is left to do
+        if: env.TAGGED == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.version.outputs.version }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          body=$(printf '%s\n' \
+            "Tagged \`$VERSION\` at the merge commit. Nothing is published or archived yet." \
+            "" \
+            "Publishing the release is what makes Zenodo archive the snapshot and mint the version DOI:" \
+            "" \
+            '```' \
+            "gh release create $VERSION --title \"$VERSION\" --notes-file release-notes/$VERSION.md" \
+            '```' \
+            "" \
+            "\`release-doi.yaml\` then waits for the mint and opens a one-line PR that records the DOI.")
+          gh pr comment "$PR" --body "$body"

@@ -128,7 +128,11 @@ and the future hover can address it. Ids are stable handles, not tied to wording
 - Editors review; a second editor merges anything that changes practice
   status or adds an endorsement.
 - Monthly release: tag `vYYYY.MM`, write a GitHub Release summary, mirror it
-  in docs/releases/index.md. Zenodo mints a DOI per release. The `release`
-  skill (.claude/skills/release/) drives this: it prepares the release,
-  updates the releases page, and fills the DOI, leaving the human to review,
-  merge, enable Zenodo, and supply the minted DOI.
+  in docs/releases/index.md. Zenodo mints a DOI per release. On the 25th,
+  `.github/workflows/release.yaml` runs `scripts/prepare_release.py` and opens
+  `release: vYYYY.MM` with both drafts already written, or skips if nothing
+  changed since the previous tag. Merging it tags the version at the merge
+  commit (`release-tag.yaml`). Publishing the release is the human step, and it
+  starts `release-doi.yaml`, which waits for the Zenodo mint and opens a second
+  PR recording the DOI. The `release` skill (.claude/skills/release/) covers
+  reviewing both PRs and preparing the release command.
