@@ -85,26 +85,7 @@ Merging the pull request is what commits the snapshot: the version is automatica
 An editor publishes the GitHub release, using the created tag.
 That release triggers the Zenodo deposit and DOI minting.
 
-```mermaid
-flowchart TD
-    work["Changes merged throughout the month (<i>manual</i>)"]
-    pr["<i>Automated</i> release PR opened on the 25th"]
-    review{"Editor review (<i>manual</i>)"}
-    edits["Edits on the release branch"]
-    merge["Merge → <i>Automated</i> version tag"]
-    tag["Editor publishes the GitHub release (<i>manual</i>)"]
-    zenodo["<i>Automated</i> DOI minting by Zenodo"]
-    doi["<i>Automated</i> DOI record on the Releases page"]
-
-    work --> pr
-    pr --> review
-    review -->|needs work| edits
-    edits --> review
-    review -->|approved| merge
-    merge --> tag
-    tag --> zenodo
-    zenodo --> doi
-```
+![Changes merged through the month lead to a release pull request opened automatically on the 25th. An editor reviews it, and edits go back on the release branch until it is approved. Merging tags the version automatically. An editor then publishes the GitHub release, Zenodo mints the DOI, and the DOI is recorded automatically on the Releases page.](../assets/diagrams/release-flow.svg)
 
 The version DOI is minted from the published release, so it does not exist while the release pull request is open.
 Until a second, automatic pull request records it, the entry on the Releases page carries the release link and no DOI.

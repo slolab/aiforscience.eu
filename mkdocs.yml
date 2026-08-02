@@ -58,14 +58,11 @@ markdown_extensions:
   - md_in_html
   - tables
   - pymdownx.details
-  # ```mermaid fences render as diagrams. Material's own integration handles
-  # them, which means the mermaid library is fetched from unpkg when a page
-  # that has a diagram is opened.
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+  # No mermaid custom fence on purpose. Material's integration renders diagrams
+  # in the browser, which pulls 3.4 MB of mermaid from unpkg on every page that
+  # has one. Diagrams are committed as SVG under docs/assets/diagrams/ instead,
+  # with the .mmd source beside them.
+  - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
       clickable_checkbox: true
