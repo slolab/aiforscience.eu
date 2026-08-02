@@ -40,6 +40,28 @@ theme:
 plugins:
   - search
   - tags
+  # Material links Roboto from fonts.googleapis.com by default, so every page
+  # view sends the visitor's IP to Google. This serves the stylesheet and the
+  # woff2 files from this domain instead.
+  #
+  # assets_include is an allowlist: with it set, the plugin touches these two
+  # hosts and nothing else. That is deliberate. giscus must keep loading from
+  # giscus.app (a local copy of its loader would pin a version, and it opens an
+  # iframe back to giscus.app either way), and Material's bundle names an unpkg
+  # mermaid URL that no page reaches any more, so fetching it would add 3.4 MB
+  # of dead weight.
+  #
+  # vendor/fonts is the plugin's cache and it is committed, so a build never
+  # fetches. That is not an optimisation. The plugin gives each request a five
+  # second timeout and no retry, so with an empty cache one slow response from
+  # Google fails the whole build under --strict, and every CI job builds cold.
+  # Refresh it by deleting the directory and building once, which is only needed
+  # when a Material upgrade changes the font URLs.
+  - privacy:
+      cache_dir: vendor/fonts
+      assets_include:
+        - fonts.googleapis.com/*
+        - fonts.gstatic.com/*
 
 # Render each best-practice title from its frontmatter `title` (the overview
 # list and each page's H1), so the title is spelled once, in the BP file.
