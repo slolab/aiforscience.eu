@@ -31,6 +31,9 @@ sources:
   - title: "Crossref and the Retraction Watch database (open since 2023)"
     ref: library/ref-crossref-retraction-watch-2023.md
     locator: "machine-readable retraction data"
+  - title: "Krebs, F(AI)2R: Verifiable AI Provenance as an Executable Skill (2026)"
+    ref: library/fai2r-verifiable-ai-provenance-2026.md
+    locator: "§IV claim-level records and the verification ladder; §VI citation audit and per-activity division of labour"
 layer: Method
 hitl: optional
 tags: [practitioner, provider, governance, draft]
@@ -103,9 +106,12 @@ A research agent has to pass citation and retraction status through to its outpu
   AI cannot be an author; use must be disclosed; humans remain accountable.
 - [NISO CREC RP-45-2024](../library/ref-niso-crec-2024.md) and [Crossref / Retraction Watch](../library/ref-crossref-retraction-watch-2023.md).
   The standard and the open data for propagating retraction status.
+- [Krebs, F(AI)2R: Verifiable AI Provenance as an Executable Skill (2026)](../library/fai2r-verifiable-ai-provenance-2026.md), §IV (claim-level records, the verification ladder whose top rungs only a human may grant) and §VI (citation audit against the citing sentence, per-activity human and agent attribution).
+  One working implementation, demonstrated on the paper's own production by its author: one operator, one domain, one session, self-audited. Downweighted, grounding only.
 
 ## Change history
 
+- 2026-08-03: Added the F(AI)2R provenance paper (Krebs 2026) as a supporting source on claim-level provenance and per-activity human and agent attribution, downweighted as a single self-audited demonstration (bp7-a1, bp7-a2).
 - 2026-07-27: Renumbered from BP06 to BP07 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instances (NISO CREC, Crossref/Retraction Watch, PROV, RO-Crate, CRediT).
 - 2026-07-26: Rewritten to add standards grounding (PROV-O, CRediT, ICMJE/COPE, NISO CREC, Crossref/Retraction Watch), fold in run-level recording (reproducibility) and disclosure of agent use, and cite the fabricated-citation and cite-retracted-work evidence as support.
