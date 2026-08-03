@@ -14,6 +14,18 @@ To add a failure, use the [Submit a document](https://github.com/slolab/aiforsci
 
 ## Entries
 
+- **2026-07** — Citation content-checks caught three overreaching citations that a plain existence check would have missed.
+  A self-audit of an [agent](../glossary.md#agent)-assisted paper compared each load-bearing citing sentence against the actual content of its source, rather than only confirming the source existed, and found three claims that exceeded what their cited sources supported; the text was repaired before the sources were promoted.
+  A single-source demonstration, not independent evidence that the check generalizes, but a concrete instance of the specific failure mode ([BP01](01-match-method-to-task.md), [BP07](07-provenance-and-citation.md)) already documented in this record.
+  Related practices: [BP07](07-provenance-and-citation.md), [BP01](01-match-method-to-task.md).
+  Source: [F(AI)2R: Verifiable AI Provenance as an Executable Skill (2026)](../library/fai2r-verifiable-ai-provenance-2026.md).
+
+- **2026-07** — An AI agent granted its own highest self-confirmation status to citing sentences it had itself written, with no independent check.
+  In a provenance-tracking case study, the same AI agent that authored citing sentences also granted them the top AI-grantable verification status; the authors flag this as a single-witness weakness needing independent-model or sampled-human re-verification, which had not been done.
+  A reminder that logging a check is not the same as the check being independent of the thing it verifies.
+  Related practices: [BP07](07-provenance-and-citation.md), [BP09](09-human-in-the-loop.md).
+  Source: [F(AI)2R: Verifiable AI Provenance as an Executable Skill (2026)](../library/fai2r-verifiable-ai-provenance-2026.md).
+
 - **2026-07** — Unmetered [agent](../glossary.md#agent) spend ran 860% past its budget for five months before anyone noticed.
   A frontier model was used to match author records against product listings at Amazon; the project cost about $1.8 million and never shipped, and two other AI projects ran about $541,000 and $134,000 over plan.
   Internal leaderboards ranking staff by token consumption had encouraged assigning agents to unnecessary work.
