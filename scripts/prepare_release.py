@@ -46,10 +46,12 @@ NOTES_DIR = REPO / "release-notes"
 BP_PREFIX = "docs/best-practices"
 LIB_PREFIX = "docs/library"
 FAILURES_PATH = f"{BP_PREFIX}/failures.md"
+LIBRARY_INDEX = f"{LIB_PREFIX}/index.md"
+PROVENANCE_PATH = "docs/assets/provenance.yml"
 
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)
 PRACTICE_FILE = re.compile(r"^\d\d-.+\.md$")
-FAILURE_ENTRY = re.compile(r"^- \*\*\d{4}-\d{2}\*\*", re.MULTILINE)
+ADDED_FAILURE = re.compile(r"^\+- \*\*\d{4}-\d{2}\*\*")
 VERSION = re.compile(r"^v(\d{4})\.(\d{2})$")
 PAST_RELEASES = "## Past releases"
 
@@ -202,24 +204,12 @@ def practices_at(rev: str | None) -> dict[str, Practice]:
     return found
 
 
-def library_at(rev: str | None) -> tuple[set[str], set[str]]:
-    """(distilled source slugs, reference work slugs)."""
-    if rev is None:
-        names = [p.name for p in sorted(LIB_DIR.glob("*.md"))]
-    else:
-        names = [Path(p).name for p in ls_tree(rev, LIB_PREFIX) if p.endswith(".md")]
-    slugs = {n[:-3] for n in names if n != "index.md"}
+def library() -> tuple[set[str], set[str]]:
+    """(distilled source slugs, reference work slugs) in the working tree."""
+    slugs = {p.stem for p in LIB_DIR.glob("*.md") if p.name != "index.md"}
     return {s for s in slugs if not s.startswith("ref-")}, {
         s for s in slugs if s.startswith("ref-")
     }
-
-
-def failures_at(rev: str | None) -> int:
-    if rev is None:
-        text = (REPO / FAILURES_PATH).read_text(encoding="utf-8")
-    else:
-        text = git_show(rev, FAILURES_PATH) or ""
-    return len(FAILURE_ENTRY.findall(text))
 
 
 # --------------------------------------------------------------------------- #
@@ -229,6 +219,7 @@ def failures_at(rev: str | None) -> int:
 @dataclass
 class Changes:
     previous: str | None
+    paths: list[tuple[str, str]] = field(default_factory=list)
     added: list[Practice] = field(default_factory=list)
     removed: list[str] = field(default_factory=list)
     status_moves: list[tuple[str, str, str]] = field(default_factory=list)
@@ -241,18 +232,54 @@ class Changes:
 
     @property
     def any(self) -> bool:
-        return bool(
-            self.added or self.removed or self.status_moves or self.endorsements
-            or self.revised or self.distilled_added or self.refs_added
-            or self.failures_added or self.other_pages
-        )
+        """Whether the month is worth a snapshot.
+
+        Read from the diff, not from the fields below: a kind of change this
+        script does not name yet must not make a month look unchanged. The
+        first release has no diff base and is always worth cutting.
+        """
+        return self.previous is None or bool(self.paths)
+
+
+def changed_paths(previous: str) -> list[tuple[str, str]]:
+    """(status letter, path) for everything under `docs` since `previous`.
+
+    One diff is the whole input to change detection. Compares the working tree
+    to the tag, so a local run sees uncommitted edits too. `docs/releases/` is
+    left out because this script writes it.
+    """
+    out = git("diff", "--name-status", previous, "--", "docs", check=False)
+    pairs = []
+    for line in out.splitlines():
+        fields = line.split("\t")
+        if len(fields) < 2:
+            continue
+        path = fields[-1]  # a rename is `R100 <old> <new>`: take the new path
+        if not path.startswith("docs/releases/"):
+            pairs.append((fields[0][0], path))
+    return pairs
+
+
+def added_failures(previous: str) -> int:
+    """Failure entries added since `previous`, counted from the diff.
+
+    Counting entries at both revisions instead would net out a month that
+    logged one failure and withdrew another. Rewording an entry's first line
+    counts as a new one; the log is append-only in practice, and the number
+    lands in a draft an editor reads.
+    """
+    out = git("diff", "-U0", previous, "--", FAILURES_PATH, check=False)
+    return len([line for line in out.splitlines() if ADDED_FAILURE.match(line)])
 
 
 def collect_changes(previous: str | None, current: dict[str, Practice]) -> Changes:
     changes = Changes(previous=previous)
     if previous is None:
         return changes
+    changes.paths = changed_paths(previous)
 
+    # Practices are keyed by practice_id, not by path, so renaming a page reads
+    # as a revision rather than a withdrawal and an addition.
     before = practices_at(previous)
     changes.added = [current[p] for p in sorted(set(current) - set(before))]
     changes.removed = sorted(set(before) - set(current))
@@ -265,38 +292,42 @@ def collect_changes(previous: str | None, current: dict[str, Practice]) -> Chang
         if gained:
             changes.endorsements.append((pid, gained))
 
-    # Any other edit to a practice page. Compares the working tree to the tag,
-    # so a local run sees uncommitted edits too.
-    touched = git("diff", "--name-only", previous, "--", BP_PREFIX, check=False)
-    added_paths = {p.path for p in changes.added}
-    by_path = {p.path: p.pid for p in current.values()}
-    changes.revised = sorted(
-        {
-            by_path[path]
-            for path in touched.splitlines()
-            if path in by_path and path not in added_paths
-        }
-    )
+    # Every changed path is claimed by one branch below. `other` is the catch-all
+    # so nothing goes unreported: pages outside the practices and the library,
+    # the provenance graph, and styling all change what a reader gets from the
+    # snapshot, and a month that only touched them is still a release.
+    added_pids = {p.pid for p in changes.added}
+    pid_of = {p.path: p.pid for p in current.values()}
+    revised: set[str] = set()
+    distilled: set[str] = set()
+    refs: set[str] = set()
+    other: set[str] = set()
+    for status, path in changes.paths:
+        gone = " (removed)" if status == "D" else ""
+        if path.startswith(f"{BP_PREFIX}/") and PRACTICE_FILE.match(Path(path).name):
+            pid = pid_of.get(path)
+            if pid and pid not in added_pids:
+                revised.add(pid)
+        elif path == FAILURES_PATH:
+            pass  # counted from the diff below
+        elif path.startswith(f"{LIB_PREFIX}/") and path != LIBRARY_INDEX:
+            slug = Path(path).stem
+            if status == "A":
+                (refs if slug.startswith("ref-") else distilled).add(slug)
+            else:
+                other.add(f"library/{slug}{gone}")
+        elif path == PROVENANCE_PATH:
+            other.add("provenance data")
+        elif path.endswith(".md"):
+            other.add(path[len("docs/"):-len(".md")] + gone)
+        else:
+            other.add("site assets")
 
-    distilled_before, refs_before = library_at(previous)
-    distilled_now, refs_now = library_at(None)
-    changes.distilled_added = sorted(distilled_now - distilled_before)
-    changes.refs_added = sorted(refs_now - refs_before)
-
-    changes.failures_added = max(0, failures_at(None) - failures_at(previous))
-
-    # Pages outside the practices and the library still change what a reader
-    # gets from the snapshot, so a month that only touched them is still a
-    # release. Generated data and the releases page itself do not count.
-    skip = (f"{BP_PREFIX}/", f"{LIB_PREFIX}/", "docs/assets/", "docs/releases/")
-    other = git("diff", "--name-only", previous, "--", "docs", check=False)
-    changes.other_pages = sorted(
-        {
-            path[len("docs/"):-len(".md")]
-            for path in other.splitlines()
-            if path.endswith(".md") and not path.startswith(skip)
-        }
-    )
+    changes.revised = sorted(revised)
+    changes.distilled_added = sorted(distilled)
+    changes.refs_added = sorted(refs)
+    changes.other_pages = sorted(other)
+    changes.failures_added = added_failures(previous)
     return changes
 
 
@@ -379,7 +410,7 @@ def contents_sentence(practices: dict[str, Practice]) -> str:
         status = f"all at `{counts[0][0]}` status"
     else:
         status = join_and([f"{num(c)} at `{s}`" for s, c in counts])
-    distilled, refs = library_at(None)
+    distilled, refs = library()
     return (
         f"{Num(total)} {plural(total, 'practice')}, {status}, with the failures "
         f"log and the library that grounds them: {num(len(distilled))} distilled "
