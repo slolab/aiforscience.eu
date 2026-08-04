@@ -21,7 +21,7 @@ comments: true
 
 A methods paper that proposes `aiprov`, a claim-level provenance vocabulary for AI-assisted work, and packages it as an executable skill that an AI coding agent runs during its own work.
 The method records a generating activity, an attributed agent, and a verification state for every claim, and enforces a verification ladder on which the highest rung an AI may itself grant is `ai-confirmed`; only a human agent can grant `human-confirmed` or `human-read`.
-The paper's own writing process is used as a one-session case study: 206 recorded activities, a citation audit that repaired three overreaching citations, and several recorded incidents (a working-directory overwrite, a broken CI build, a blocked publisher fetch).
+The paper's own writing process is used as a one-session case study: 244 recorded activities, a citation audit that repaired three overreaching citations, and several recorded incidents (a working-directory overwrite, a broken CI build, a blocked publisher fetch).
 The author states plainly that this is a demonstration, not a study: one operator, one domain, one session, with no independent replication and self-generated, self-audited evidence throughout.
 The author has a declared stake in the method's adoption (prior related work, self-citations, involvement in an adjacent specification effort).
 
