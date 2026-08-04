@@ -82,6 +82,7 @@ Each links to its bibliographic record.
 - [OWASP Top 10 for LLM Applications 2025](ref-owasp-llm-top10-2025.md)
 - [OWASP MCP Top 10](ref-owasp-mcp-top10.md)
 - [Invariant Labs, MCP tool poisoning (2025)](ref-invariant-tool-poisoning-2025.md)
+- [Self-propagating prompt injection in Copilot for Word (2026)](ref-copilot-word-ai-worm-2026.md)
 - [Official MCP Registry (2025)](ref-mcp-registry-2025.md)
 - [IETF AIPREF vocabulary (draft)](ref-ietf-aipref.md)
 - [COAR survey on AI bots and crawlers (2025)](ref-coar-ai-bots-2025.md)

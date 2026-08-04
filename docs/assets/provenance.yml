@@ -164,6 +164,11 @@ bp3-a6:  # public interfaces vulnerable to prompt injection
     stance: supports
   - ref: invariant-tool-poisoning-2025
     stance: supports
+bp3-a7:  # safety and omnipotence are on a tradeoff
+  - ref: copilot-word-ai-worm-2026
+    stance: supports
+    locator: "Closing thoughts"
+    quote: "the LLM must process external content to determine what it means, whether it is relevant, and whether it contains an attack. But by the time it makes that determination, the attacker-controlled tokens are already influencing the computation that produces it."
 
 # ------------------------------------------------------------------ BP04
 bp4-a1:  # limits belong in the system, not only in policy
@@ -321,6 +326,10 @@ bp7-a2:  # clear what a human did and what an agent did
   - ref: fai2r-verifiable-ai-provenance-2026
     stance: supports
     locator: "§IV Model, §VI Table III: attribution per activity rather than per idea"
+  - ref: copilot-word-ai-worm-2026
+    stance: supports
+    locator: "Implications; Impact"
+    quote: "Independently of prompt-injection prevention, generated documents should preserve provenance for source material and model-performed edits in metadata."
 
 # ------------------------------------------------------------------ BP08
 bp8-a1:  # run task-specific benchmarks before granting autonomy
@@ -382,6 +391,10 @@ bp9-a5:  # stating a level is necessary but not sufficient
     stance: supports
     locator: "agent-run code can transmit data without a deliberate upload"
     quote: "Study-participant-level information can therefore leave the approved environment without a deliberate upload"
+  - ref: copilot-word-ai-worm-2026
+    stance: supports
+    locator: "Stage 1; Disclosure status at publication"
+    quote: "This shows how effective the attack is at subtly changing the text in meaningful ways that easily elude even an attentive reviewer."
 
 # ------------------------------------------------------------------ BP10
 bp10-a1:  # some agents carry dual-use risk

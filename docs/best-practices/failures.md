@@ -14,6 +14,14 @@ To add a failure, use the [Submit a document](https://github.com/slolab/aiforsci
 
 ## Entries
 
+- **2026-07** — Hidden instructions in a shared document made an assistant alter the draft it was writing and copy the attack into that draft, which then compromised the next one.
+  A [prompt injection](../glossary.md#prompt-injection) concealed as white 8-point text in an attached Word file caused Copilot to halve every financial figure in a generated report and to append the same instructions, hidden the same way, to the output; a later drafting session reproduced the attack from that generated document alone, with the original file no longer attached.
+  Two vendor mitigations over a 144-day coordinated disclosure, one of them a model upgrade, closed the reported payloads but not the class, which still reproduced at publication.
+  Human review was the only mitigation available to customers, and the researcher had to instruct the model to announce its own edits because they were otherwise too subtle for a reviewer to notice.
+  Demonstrated in a commercial productivity suite, not observed in the wild and not in a scientific setting; the affected workflow, drafting a document from attached documents, is the one used for manuscripts, reviews, and reports.
+  Related practices: [BP03](03-register-and-vet-interfaces.md), [BP09](09-human-in-the-loop.md), [BP07](07-provenance-and-citation.md).
+  Source: [Self-propagating prompt injection in Copilot for Word (2026)](../library/ref-copilot-word-ai-worm-2026.md).
+
 - **2026-07** — Three citations in an [agent](../glossary.md#agent)-assisted paper claimed more than their cited sources supported.
   A self-audit compared each load-bearing citing sentence against the actual content of its source, rather than only confirming that the source existed, and found the three overreaches; the text was repaired before the sources were promoted.
   A plain existence check would have passed all three.
