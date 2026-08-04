@@ -304,6 +304,10 @@ bp7-a1:  # answers traceable to sources, open to audit
   - ref: mit-tech-review-retracted-2025
     stance: supports
     locator: "AI tools cite retracted papers unflagged"
+  - ref: fai2r-verifiable-ai-provenance-2026
+    stance: supports
+    locator: "§II trust gap, §IV Invariant I and Table I: reference existence separated from evidential support"
+    quote: "existence of a reference is machine-checkable, support for a claim is a judgement"
 bp7-a2:  # clear what a human did and what an agent did
   - ref: credit-2022
     stance: supports
@@ -314,6 +318,9 @@ bp7-a2:  # clear what a human did and what an agent did
   - ref: icmje-cope-2023
     stance: supports
     locator: "AI cannot be an author; disclosure required"
+  - ref: fai2r-verifiable-ai-provenance-2026
+    stance: supports
+    locator: "§IV Model, §VI Table III: attribution per activity rather than per idea"
 
 # ------------------------------------------------------------------ BP08
 bp8-a1:  # run task-specific benchmarks before granting autonomy

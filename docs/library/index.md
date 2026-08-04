@@ -30,6 +30,7 @@ whether it is for or against, lives in the provenance data (`assets/provenance.y
 | [Expectation–Realisation Gap for Agentic AI](expectation-realisation-gap-2026.md) | Lobentanzer (Helmholtz Munich) | February 2026 | Review of controlled trials on realised vs expected benefit; downweighted context (author is a contributor); grounds BP01 on heterogeneity and benefit planning, with optional context for BP06, BP08, BP09. |
 | [EU AI Omnibus](ai-omnibus-2026.md) | European Union | July 2026 | Largely out-of-scope regulatory simplification of the AI Act; grounds BP04 and BP10 on technical safeguards against foreseeable misuse, with context for BP03, BP08. |
 | [A safer framework for patient data in AI-for-Science grants](gagneur-rare-disease-patient-data-2026.md) | Gagneur (TU Munich) | July 2026 | Individual commentary on grant data terms; grounds BP04, BP02, BP09 on data-egress control, governed access, and effective oversight; flags a gap on controlled-access data in third-party training. |
+| [F(AI)2R: Verifiable AI Provenance as an Executable Skill](fai2r-verifiable-ai-provenance-2026.md) | Florian Krebs | July 2026 | Self-demonstrated claim-level provenance method; grounds BP07 on traceable, auditable agent output and human/agent attribution. Single-session, self-audited case study; author has a declared stake in the method. |
 
 ## Reference works
 
