@@ -14,8 +14,9 @@ To add a failure, use the [Submit a document](https://github.com/slolab/aiforsci
 
 ## Entries
 
-- **2026-07** — Citation content-checks caught three overreaching citations that a plain existence check would have missed.
-  A self-audit of an [agent](../glossary.md#agent)-assisted paper compared each load-bearing citing sentence against the actual content of its source, rather than only confirming the source existed, and found three claims that exceeded what their cited sources supported; the text was repaired before the sources were promoted.
+- **2026-07** — Three citations in an [agent](../glossary.md#agent)-assisted paper claimed more than their cited sources supported.
+  A self-audit compared each load-bearing citing sentence against the actual content of its source, rather than only confirming that the source existed, and found the three overreaches; the text was repaired before the sources were promoted.
+  A plain existence check would have passed all three.
   A single-source demonstration, not independent evidence that the check generalizes, but a concrete instance of the specific failure mode ([BP01](01-match-method-to-task.md), [BP07](07-provenance-and-citation.md)) already documented in this record.
   Related practices: [BP07](07-provenance-and-citation.md), [BP01](01-match-method-to-task.md).
   Source: [F(AI)2R: Verifiable AI Provenance as an Executable Skill (2026)](../library/fai2r-verifiable-ai-provenance-2026.md).
