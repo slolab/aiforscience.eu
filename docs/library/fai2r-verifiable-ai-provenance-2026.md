@@ -93,6 +93,7 @@ The method is designed to carry across domains, operators, and models, and this 
 
 **Overhead is non-trivial.** The case study reports roughly 12.6% of requests, 11.8% of output tokens, and 9% of computed cost attributable to the provenance method itself, with 87 of 222 commits being bookkeeping-only.
 
-**Author self-interest.** The author is a repeat contributor to this exact line of work (an earlier F(AI)2R paper and related prior work), is involved in an adjacent specification effort the paper proposes to integrate with, and five of the paper's own references are self-citations.
+**Author self-interest.** The author is a repeat contributor to this exact line of work (an earlier F(AI)2R paper and related prior work) and is involved in an adjacent specification effort the paper proposes to integrate with.
+Five of the paper's roughly seventy-five references are self-citations, a low ratio, and the method records self-citations as a distinct, machine-readable class (`aiprov:selfCitation`) rather than leaving them unmarked.
 No conventional conflict-of-interest statement appears in the source.
-This should weigh against treating the paper as independent evidence; it is evidence of one working implementation, offered by its own author.
+This should still weigh against treating the paper as independent evidence; it is evidence of one working implementation, offered by its own author.
