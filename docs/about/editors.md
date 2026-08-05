@@ -74,6 +74,23 @@ A second commit then extended this practice.
 Both edited practice pages got a dated change-history bullet.
 On approval, the PR was merged, triggering an update to the website.
 
+## Monthly release
+
+Each month we create a dated snapshot: a git tag, a GitHub release, and a Zenodo deposit with its own DOI.
+Preparing the snapshot is automated.
+On the 25th, a release pull request is opened with the release notes and the [Releases](../releases/index.md) entry already drafted from what changed since the previous tag.
+An editor then edits two parts: the summary of the month, which the draft states as a list of changes, and the practice statuses.
+An agent skill in the repository prepares those edits, and an editor decides what stands.
+Merging the pull request is what commits the snapshot: the version is automatically tagged on merge.
+An editor publishes the GitHub release, using the created tag.
+That release triggers the Zenodo deposit and DOI minting.
+
+![Changes merged through the month lead to a release pull request opened automatically on the 25th. An editor reviews it, and edits go back on the release branch until it is approved. Merging tags the version automatically. An editor then publishes the GitHub release, Zenodo mints the DOI, and the DOI is recorded automatically on the Releases page.](../assets/diagrams/release-flow.svg)
+
+The version DOI is minted from the published release, so it does not exist while the release pull request is open.
+Until a second, automatic pull request records it, the entry on the Releases page carries the release link and no DOI.
+The concept DOI is stable across all snapshots and always resolves to the newest one.
+
 ## Current editors
 
 - Sebastian Lobentanzer, Helmholtz Munich.

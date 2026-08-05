@@ -1,0 +1,24 @@
+%% Source for release-flow.svg. The SVG is what the site renders; this file is
+%% kept so the diagram stays editable. Nothing builds one from the other: after
+%% changing this, redraw the SVG by hand or with mermaid-cli, matching the
+%% palette in docs/assets/css/home.css.
+%%
+%% Teal is automated, orange is a human step.
+flowchart TD
+    work["Changes merged throughout the month"]
+    pr["Release PR opened on the 25th"]
+    review{"Editor review"}
+    edits["Edits on the release branch"]
+    merge["Merge, then the version is tagged"]
+    publish["Editor publishes the GitHub release"]
+    zenodo["Zenodo mints the DOI"]
+    doi["DOI recorded on the Releases page"]
+
+    work --> pr
+    pr --> review
+    review -->|needs work| edits
+    edits --> review
+    review -->|approved| merge
+    merge --> publish
+    publish --> zenodo
+    zenodo --> doi

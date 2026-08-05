@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 790" width="660" height="790" role="img" aria-labelledby="t d">
+  <title id="t">How a monthly release moves from the 25th to a minted DOI</title>
+  <desc id="d">Changes merged through the month lead to a release pull request opened automatically on the 25th. An editor reviews it; edits go back on the release branch until approved. Merging tags the version automatically. An editor then publishes the GitHub release, Zenodo mints the DOI, and the DOI is recorded automatically on the Releases page.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b6d75"/>
+    </marker>
+  </defs>
+
+  <style>
+    .box { stroke-width: 1.5; }
+    .auto { fill: #e6f2f7; stroke: #1892ab; }
+    .human { fill: #fdf1e3; stroke: #e08127; }
+    .lbl { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+           font-size: 13px; text-anchor: middle; }
+    .lbl-auto { fill: #0e6478; }
+    .lbl-human { fill: #8c4d10; }
+    .edge { stroke: #5b6d75; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+    .edge-lbl { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+                font-size: 11px; fill: #5b6d75; }
+    .key { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+           font-size: 11px; fill: #5b6d75; }
+  </style>
+
+  <!-- main column -->
+  <rect class="box human" rx="6" x="60" y="24" width="320" height="52"/>
+  <text class="lbl lbl-human" x="220" y="55">Changes merged throughout the month</text>
+
+  <rect class="box auto" rx="6" x="60" y="120" width="320" height="52"/>
+  <text class="lbl lbl-auto" x="220" y="151">Release PR opened on the 25th</text>
+
+  <rect class="box human" rx="6" x="60" y="216" width="320" height="52"/>
+  <text class="lbl lbl-human" x="220" y="247">Editor review</text>
+
+  <rect class="box auto" rx="6" x="60" y="380" width="320" height="52"/>
+  <text class="lbl lbl-auto" x="220" y="411">Merge, then the version is tagged</text>
+
+  <rect class="box human" rx="6" x="60" y="476" width="320" height="52"/>
+  <text class="lbl lbl-human" x="220" y="507">Editor publishes the GitHub release</text>
+
+  <rect class="box auto" rx="6" x="60" y="572" width="320" height="52"/>
+  <text class="lbl lbl-auto" x="220" y="603">Zenodo mints the DOI</text>
+
+  <rect class="box auto" rx="6" x="60" y="668" width="320" height="52"/>
+  <text class="lbl lbl-auto" x="220" y="699">DOI recorded on the Releases page</text>
+
+  <!-- review loop -->
+  <rect class="box human" rx="6" x="420" y="300" width="200" height="52"/>
+  <text class="lbl lbl-human" x="520" y="324">Edits on the</text>
+  <text class="lbl lbl-human" x="520" y="340">release branch</text>
+
+  <!-- edges, main column -->
+  <path class="edge" d="M220,76 V116"/>
+  <path class="edge" d="M220,172 V212"/>
+  <path class="edge" d="M220,268 V376"/>
+  <path class="edge" d="M220,432 V472"/>
+  <path class="edge" d="M220,528 V568"/>
+  <path class="edge" d="M220,624 V664"/>
+
+  <!-- edges, loop -->
+  <path class="edge" d="M380,242 H470 V296"/>
+  <path class="edge" d="M570,300 V226 H384"/>
+
+  <text class="edge-lbl" x="232" y="326">approved</text>
+  <text class="edge-lbl" x="480" y="274">needs work</text>
+
+  <!-- key -->
+  <rect class="box human" rx="3" x="60" y="750" width="14" height="14"/>
+  <text class="key" x="82" y="761">human step</text>
+  <rect class="box auto" rx="3" x="170" y="750" width="14" height="14"/>
+  <text class="key" x="192" y="761">automated</text>
+</svg>

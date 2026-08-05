@@ -9,6 +9,14 @@ applying agentic AI to science. MkDocs Material, deployed to GitHub Pages.
 - `uv run mkdocs serve` — local preview at http://127.0.0.1:8000
 - `uv run mkdocs build --strict` — build; fails on broken internal links. Run before every PR.
 
+Roboto is served from this domain, not from Google. The `privacy` plugin does
+that, and its cache (`vendor/fonts/`) is committed so no build fetches anything:
+the plugin allows five seconds per request with no retry, so a cold cache makes
+one slow response from Google fail a strict build. Refresh with
+`rm -rf vendor/fonts && uv run mkdocs build --strict`, needed only when a
+Material upgrade changes the font URLs. Only the two font hosts are rewritten;
+giscus is deliberately left loading from giscus.app.
+
 ## Writing style (hard rule)
 
 All prose on this site follows these rules. They apply to every page, every
@@ -128,7 +136,13 @@ and the future hover can address it. Ids are stable handles, not tied to wording
 - Editors review; a second editor merges anything that changes practice
   status or adds an endorsement.
 - Monthly release: tag `vYYYY.MM`, write a GitHub Release summary, mirror it
-  in docs/releases/index.md. Zenodo mints a DOI per release. The `release`
-  skill (.claude/skills/release/) drives this: it prepares the release,
-  updates the releases page, and fills the DOI, leaving the human to review,
-  merge, enable Zenodo, and supply the minted DOI.
+  in docs/releases/index.md. Zenodo mints a DOI per release. On the 25th,
+  `.github/workflows/release.yaml` runs `scripts/prepare_release.py` and opens
+  `release: vYYYY.MM` with both drafts already written, or skips if nothing
+  changed since the previous tag. One release PR is open at a time;
+  `release-drift.yaml` keeps a comment on it current with what has landed on
+  main since the drafts were written. Merging it tags the version at the merge
+  commit (`release-tag.yaml`). Publishing the release is the human step, and it
+  starts `release-doi.yaml`, which waits for the Zenodo mint and opens a second
+  PR recording the DOI. The `release` skill (.claude/skills/release/) covers
+  reviewing both PRs and preparing the release command.
