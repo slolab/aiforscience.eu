@@ -10,24 +10,31 @@ sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
     ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, items 3 and 5"
+    note: "Best Practice items 3 and 5."
   - title: "Agentic AI in the higher-education system (2026)"
     ref: library/hfd-agentic-ai-hochschulsystem-2026.md
     locator: "§3.3, hook 2"
+    note: "§3.3 (research-agent source requirements). Consistent with, grounding only."
   - title: "The FAIR Guiding Principles (Wilkinson et al. 2016)"
     ref: library/ref-fair-2016.md
     locator: "machine-actionability as the founding motivation"
+    note: "Machine-actionability as the founding motivation; agents make it concrete."
   - title: "W3C Data Catalog Vocabulary (DCAT) version 3 (2024 Recommendation)"
     ref: library/ref-dcat3-2024.md
     locator: "machine-readable dataset metadata"
+    note: "Domain-neutral standards for machine-readable data and model documentation."
   - title: "Croissant: a metadata format for ML-ready datasets (MLCommons 2024)"
     ref: library/ref-croissant-2024.md
     locator: "schema.org-based dataset description"
+    note: "Domain-neutral standards for machine-readable data and model documentation."
   - title: "Datasheets for Datasets (Gebru et al. 2021)"
     ref: library/ref-datasheets-2021.md
     locator: "documented dataset provenance and intended use"
+    note: "Domain-neutral standards for machine-readable data and model documentation."
   - title: "Model Cards for Model Reporting (Mitchell et al. 2019)"
     ref: library/ref-model-cards-2019.md
     locator: "structured model documentation"
+    note: "Domain-neutral standards for machine-readable data and model documentation."
 layer: Method
 hitl: n/a
 tags: [practitioner, provider, draft]
@@ -90,7 +97,9 @@ This work also benefits the people who use the resource directly, and current an
 - The same documentation is offered in a form an agent can read directly (plain text, markdown, structured metadata), not only as a rendered web page.
   A convention like `llms.txt` is one proposed approach, not yet a ratified standard.
 
-## Sources
+<!-- BP_SOURCES -->
+
+<!-- ## Sources
 
 - [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice items 3 and 5.
 - [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §3.3 (research-agent source requirements).
@@ -98,7 +107,7 @@ This work also benefits the people who use the resource directly, and current an
 - [FAIR Guiding Principles (Wilkinson et al. 2016)](../library/ref-fair-2016.md).
   Machine-actionability as the founding motivation; agents make it concrete.
 - [W3C DCAT v3 (2024)](../library/ref-dcat3-2024.md), [Croissant (MLCommons 2024)](../library/ref-croissant-2024.md), [Datasheets for Datasets (Gebru et al. 2021)](../library/ref-datasheets-2021.md), and [Model Cards (Mitchell et al. 2019)](../library/ref-model-cards-2019.md).
-  Domain-neutral standards for machine-readable data and model documentation.
+  Domain-neutral standards for machine-readable data and model documentation. -->
 
 ## Change history
 

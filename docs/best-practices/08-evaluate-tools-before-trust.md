@@ -10,18 +10,23 @@ sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
     ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Cautions and gaps (evaluation of skills/MCP servers as an open question)"
+    note: "Cautions and gaps: how to assess whether a skill or MCP server is useful and safe is recorded there as an open question and a candidate future practice."
   - title: "REFORMS: consensus-based recommendations for machine-learning-based science (Science Advances 2024)"
     ref: library/ref-reforms-2024.md
     locator: "reporting standards for ML-based science"
+    note: "Consensus reporting standards for machine-learning-based science."
   - title: "NeurIPS Paper Checklist / ML reproducibility checklist"
     ref: library/ref-neurips-checklist.md
     locator: "reproducibility and evaluation reporting"
+    note: "Reproducibility and evaluation reporting practice."
   - title: "MIT Project NANDA, The GenAI Divide (2025)"
     ref: library/mit-genai-divide-2025.md
     locator: "§6.2 p.20 benchmark on operational outcomes, not model benchmarks"
+    note: 'Enterprise field evidence that buyers who "benchmark tools on operational outcomes, not model benchmarks" succeed far more often; general benchmark scores do not predict fitness for a specific task (§6.2, pg. 20). Out-of-domain business report; cited as external context.'
   - title: "EU AI Omnibus (2026)"
     ref: library/ai-omnibus-2026.md
     locator: "Art 4a; Recital 9 (conditional basis for special-category data in bias detection)"
+    note: "Art 4a. The amended AI Act sets a conditional legal basis for processing special-category data to detect and correct bias, an evaluation dimension, subject to strict safeguards (bp8-a2)."
 layer: Operational
 hitl: n/a
 tags: [practitioner, provider, governance, draft]
@@ -85,7 +90,9 @@ A tool that looks capable in a demo can be wrong in ways that only representativ
 - Red-teaming and hallucination/confabulation testing are run as the safety-and-correctness side of the same evaluation, not a separate afterthought.
 - Evaluations follow an established checklist (for example REFORMS for ML-based science, or a reproducibility checklist), so different groups' results are comparable.
 
-## Sources
+<!-- BP_SOURCES -->
+
+<!-- ## Sources
 
 - [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Cautions and gaps: how to assess whether a skill or MCP server is useful and safe is recorded there as an open question and a candidate future practice.
 - [REFORMS reporting standards (Science Advances 2024)](../library/ref-reforms-2024.md).
@@ -95,7 +102,7 @@ A tool that looks capable in a demo can be wrong in ways that only representativ
 - [MIT Project NANDA, The GenAI Divide (2025)](../library/mit-genai-divide-2025.md).
   Enterprise field evidence that buyers who "benchmark tools on operational outcomes, not model benchmarks" succeed far more often; general benchmark scores do not predict fitness for a specific task (§6.2, pg. 20). Out-of-domain business report; cited as external context.
 - [EU AI Omnibus (2026)](../library/ai-omnibus-2026.md), Art 4a.
-  The amended AI Act sets a conditional legal basis for processing special-category data to detect and correct bias, an evaluation dimension, subject to strict safeguards (bp8-a2).
+  The amended AI Act sets a conditional legal basis for processing special-category data to detect and correct bias, an evaluation dimension, subject to strict safeguards (bp8-a2). -->
 
 ## Change history
 
