@@ -89,19 +89,6 @@ Both need to know what users are trying to do, and providers often do not, so le
 
 <!-- BP_SOURCES -->
 
-<!-- ## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice item 4, and the July 2026 discussion on providers' limited view of their users.
-- [Anthropic, Writing effective tools for agents (2025)](../library/ref-anthropic-writing-tools-2025.md).
-  Wrapping existing endpoints is a common error; build a few tools for high-impact workflows.
-  Vendor-primary grounding for this practice.
-- [Anthropic, Code execution with MCP (2025)](../library/ref-anthropic-code-execution-mcp-2025.md) and [Advanced tool use (2025)](../library/ref-anthropic-advanced-tool-use-2025.md).
-  Quantify the token cost of per-endpoint tool use and the accuracy loss from a large tool surface; document progressive disclosure as the alternative remedy.
-- [Model Context Protocol specification](../library/ref-mcp-spec.md).
-  The interface substrate the practice is about.
-- [MIT Project NANDA, The GenAI Divide (2025)](../library/mit-genai-divide-2025.md).
-  Enterprise field evidence that tools fail on workflow fit rather than model quality: custom systems stall due to "brittle workflows ... and misalignment with day-to-day operations", and buyers want a "deep understanding of our workflow" (pg. 3, pg. 15). Out-of-domain business report; cited as external context. -->
-
 ## Change history
 
 - 2026-07-27: Added The GenAI Divide (MIT NANDA 2025) as a supporting source on workflow fit (bp6-a1).

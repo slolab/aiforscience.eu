@@ -103,16 +103,6 @@ Stating and enforcing HITL levels fulfils part of [BP04](04-govern-autonomy-and-
 
 <!-- BP_SOURCES -->
 
-<!-- ## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice item 7.
-- [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §4.1 (explicit intervention points) and §6 (defined escalation and control).
-  Consistent with, grounding only.
-- [EU AI Act, Article 14](../library/ref-eu-ai-act.md) and [NIST Generative AI Profile (AI 600-1)](../library/ref-nist-ai-rmf.md).
-  Oversight must be effective and calibrated to risk; Article 14 names automation bias as a hazard the overseer must be able to counter.
-- [Elish, Moral Crumple Zones (2019)](../library/ref-elish-2019.md) and [Green, Flaws of Policies Requiring Human Oversight (2022)](../library/ref-green-2022.md).
-  Evidence that human oversight frequently fails in practice; a stated level must be designed for effectiveness. -->
-
 ## Change history
 
 - 2026-07-27: Renumbered from BP08 to BP09 on inserting the new BP01 (match the method to the task).

@@ -121,25 +121,6 @@ Knowing where an interface comes from, and keeping more than one option open, av
 
 <!-- BP_SOURCES -->
 
-<!-- ## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice items 8 and 9 (registration implies review; managing agent traffic through an approved channel).
-- [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §5.2 to 5.3 (deployer-versus-provider, infrastructure as a governance point).
-- [EU Expert Forum on Frontier AI (2026)](../library/ec-expert-forum-2026.md), §4.2.2 (provider diversity and openness).
-  Consistent with, grounding only.
-- [OWASP Top 10 for LLM Applications 2025](../library/ref-owasp-llm-top10-2025.md) and [OWASP MCP Top 10](../library/ref-owasp-mcp-top10.md).
-  Prompt injection (LLM01) and tool poisoning (MCP03) as the documented risks vetting guards against.
-- [Invariant Labs, tool poisoning attacks (2025)](../library/ref-invariant-tool-poisoning-2025.md).
-  How a poisoned tool description hides instructions from the user.
-- [Official MCP Registry (2025)](../library/ref-mcp-registry-2025.md).
-  Evidence that the official registry lists self-reported data and does not vet, so listing and vetting must be kept distinct.
-- [EU AI Act, Article 25](../library/ref-eu-ai-act.md).
-  Substantial modification can move provider responsibility to whoever changed the system.
-- [IETF AIPREF vocabulary (draft)](../library/ref-ietf-aipref.md).
-  Emerging machine-readable way to declare access preferences to automated clients.
-- [MIT Project NANDA, The GenAI Divide (2025)](../library/mit-genai-divide-2025.md).
-  Enterprise field evidence of a "shadow AI economy": unsanctioned personal-tool use outpaces governed deployment and often delivers better results (§3.3, pg. 8), so vetting should learn from observed usage rather than only restrict it. Out-of-domain business report; qualifies rather than grounds the practice. -->
-
 ## Change history
 
 - 2026-07-27: Added a "what it looks like in practice" example on shadow usage and vetting that learns from observed use, grounded in The GenAI Divide (MIT NANDA 2025) as a qualifier (bp3-a3).

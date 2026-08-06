@@ -127,33 +127,6 @@ This is the consensus position across the main governance frameworks (NIST, the 
 
 <!-- BP_SOURCES -->
 
-<!-- ## Sources
-
-- [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §4 to 6.
-  The "from guidelines to guardrails" framing is quoted at §5.2.
-  That quotation is attributed in the source paper to "Kassorla et al. (2026)", a reference we could not verify as a published work; the underlying point is independently supported by the frameworks below, which is what this practice relies on.
-- [EU Expert Forum on Frontier AI (2026)](../library/ec-expert-forum-2026.md), §4.2.3 (independent audit, evaluation and verification capacity).
-  Consistent with, grounding only.
-- [NIST AI RMF and Generative AI Profile](../library/ref-nist-ai-rmf.md).
-  GOVERN roles and accountability, a documented system inventory, and stop-build authority.
-- [EU AI Act, Articles 14 and 26](../library/ref-eu-ai-act.md).
-  Named natural persons for oversight and deployer duties.
-- [EU AI Omnibus (2026)](../library/ai-omnibus-2026.md), Art 5(1a)(a)(ii).
-  A provider is responsible where a prohibited output is a reasonably foreseeable and reproducible outcome absent adequate technical safeguards, which places the limit in the system rather than in policy (bp4-a1).
-- [OECD AI Principles (2024 update)](../library/ref-oecd-ai-principles-2024.md).
-  Traceability placed under Accountability.
-- [ISO/IEC 42001:2023](../library/ref-iso-42001-2023.md).
-  Assigned accountability, an AI system inventory, and governance as continual improvement.
-- [OpenAI, Practices for Governing Agentic AI Systems (2023)](../library/ref-openai-governing-agentic-ai-2023.md).
-  Constraining the action space, human accountability, and an action ledger.
-- [Chan et al., Visibility into AI Agents (FAccT 2024)](../library/ref-chan-visibility-2024.md).
-  Agent identifiers, real-time monitoring, and activity logging as the substrate of accountability.
-- [Kolt, Governing AI Agents (2025)](../library/ref-kolt-governing-agents-2025.md).
-  Legal treatment of agent accountability and control.
-- [European Commission JRC, The Role of AI in Scientific Research (JRC143482, 2025)](../library/ref-jrc-ai-in-science-2025.md).
-  AI as a tool with human accountability in science.
-  The HFD source attributes a "situated judgement is not automatable" claim to the JRC; we cite the JRC report for the accountability framing and do not attribute that exact wording to it without a located passage. -->
-
 ## Change history
 
 - 2026-07-31: Extended bp4-a3 to name resource and spend caps alongside permission scopes, autonomy limits, and shutdown paths, with matching Reasons, tab, and Example text. An agent inside every permission it was granted can still exhaust a budget, because a looping agent does not crash. Prompted by the reported Amazon cost overruns, recorded in the provenance data as a qualification on bp4-a3.

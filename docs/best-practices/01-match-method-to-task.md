@@ -114,28 +114,6 @@ Controlled trials show forecast gains from agentic tools are frequently miscalib
 
 <!-- BP_SOURCES -->
 
-<!-- ## Sources
-
-- [Anthropic, Building Effective AI Agents (2024)](../library/ref-anthropic-building-effective-agents-2024.md).
-  Prefer the simplest solution; use workflows for well-defined tasks and agents only when flexibility is needed at scale; agents trade latency and cost for performance.
-  Vendor-primary grounding.
-- [Kapoor et al., AI Agents That Matter (2024)](../library/ref-kapoor-agents-that-matter-2024.md).
-  Under cost-controlled evaluation, state-of-the-art agents are needlessly complex and simple baselines can match them.
-- [Bucher & Martini, Fine-Tuned "Small" LLMs Still Outperform Zero-Shot Generative Models (2024)](../library/ref-bucher-fine-tuned-2024.md).
-  A specialized smaller model can beat a general frontier model on a well-defined task.
-- [Kapoor & Narayanan, Leakage and the reproducibility crisis in ML-based science (2023)](../library/ref-kapoor-narayanan-leakage-2023.md).
-  Misapplied models produce over-optimistic, non-reproducible results across many fields.
-- [Walters & Wilder, Fabrication and errors in ChatGPT citations (2023)](../library/ref-walters-wilder-2023.md).
-  A concrete failure mode of using a frontier model where a retrieval method fits.
-- [JRC, The Role of AI in Scientific Research (2025)](../library/ref-jrc-ai-in-science-2025.md).
-  AI framed as a tool in science, a chosen instrument rather than a default.
-- [EU Expert Forum on Frontier AI (2026)](../library/ec-expert-forum-2026.md).
-  Domain-specific systems can outperform general-purpose models within their domains at far lower cost (§3.2.3), qualified by the report's caution that demand for smaller models is uncertain and that non-frontier access is an imperfect substitute for frontier access.
-- [MIT Project NANDA, The GenAI Divide (2025)](../library/mit-genai-divide-2025.md).
-  Enterprise field evidence that task type, not model capability, decides fit: users prefer AI for simple work but humans by 9-to-1 for complex or long-term work (§4.3, pg. 13). Out-of-domain business report; cited as external context.
-- [Lobentanzer, Expectation–Realisation Gap for Agentic AI (2026)](../library/expectation-realisation-gap-2026.md).
-  Review of controlled trials finding that forecast gains from agentic tools are miscalibrated and heterogeneous: constrained tasks sped up while expert high-context work was slowed, so method fit is decided per task and per user rather than by an average gain. Downweighted external context; the author is a contributor to this record.
--->
 ## Change history 
 
 - 2026-07-31: Added a costed Example from the reported Amazon cost overruns (bulk record matching through a frontier model, about $1.8m, 860% over budget, never shipped), labelled as an out-of-domain corporate case. Provenance edges added on bp1-a2 and bp1-a3.

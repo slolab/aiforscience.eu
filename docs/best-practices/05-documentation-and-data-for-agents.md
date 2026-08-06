@@ -99,16 +99,6 @@ This work also benefits the people who use the resource directly, and current an
 
 <!-- BP_SOURCES -->
 
-<!-- ## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice items 3 and 5.
-- [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §3.3 (research-agent source requirements).
-  Consistent with, grounding only.
-- [FAIR Guiding Principles (Wilkinson et al. 2016)](../library/ref-fair-2016.md).
-  Machine-actionability as the founding motivation; agents make it concrete.
-- [W3C DCAT v3 (2024)](../library/ref-dcat3-2024.md), [Croissant (MLCommons 2024)](../library/ref-croissant-2024.md), [Datasheets for Datasets (Gebru et al. 2021)](../library/ref-datasheets-2021.md), and [Model Cards (Mitchell et al. 2019)](../library/ref-model-cards-2019.md).
-  Domain-neutral standards for machine-readable data and model documentation. -->
-
 ## Change history
 
 - 2026-07-27: Renumbered from BP04 to BP05 on inserting the new BP01 (match the method to the task).

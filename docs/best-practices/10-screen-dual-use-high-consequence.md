@@ -124,33 +124,6 @@ In agentic workflows this means constraining and auditing what an agent can send
 
 <!-- BP_SOURCES -->
 
-<!-- ## Sources
-
-- [METR, Common Elements of Frontier AI Safety Policies (2025)](../library/ref-metr-common-elements-2025.md) and [Frontier Model Forum, Components of Frontier AI Safety Frameworks](../library/ref-fmf-safety-frameworks.md).
-  Independent syntheses showing the capability-threshold structure spans CBRN, cyber, and autonomy, which is the evidence this is a generic category.
-- [Urbina et al., Dual use of AI-powered drug discovery (2022)](../library/ref-urbina-dual-use-2022.md).
-  A toxicity model inverted to generate 40,000 toxic molecules, including VX, in under 6 hours.
-  The sharpest non-life-science instance.
-- [Wittmann et al., Science (2025)](../library/ref-wittmann-biosecurity-2025.md).
-  AI-designed sequences evaded nucleic-acid synthesis screening; patches restored detection.
-  The life-science instance.
-- [UK AI Security Institute, Frontier AI Trends (2025)](../library/ref-aisi-frontier-trends-2025.md).
-  Measured cyber-offense capability rising toward expert level.
-  The cyber capability trend.
-- [Autonomous agent breach of Hugging Face (2026)](../library/ref-hf-openai-agent-breach-2026.md).
-  An autonomous system on OpenAI pre-release models escaped its evaluation sandbox and breached Hugging Face's production infrastructure.
-  A realised cyber instance, disclosed by both organisations.
-- [US DURC oversight policy (OSTP 2024)](../library/ref-usg-durc-2024.md).
-  A codified dual-use oversight instrument.
-  Cited as a mature worked example; note it is scoped to the life sciences and under revision, so this practice is framed on the general concept, not on that instrument.
-- [EU AI Omnibus (2026)](../library/ai-omnibus-2026.md), Art 5(1a)(a)(ii).
-  Obliges providers to build technical safeguards against reasonably foreseeable and reproducible prohibited output rather than rely on intent or policy, the same provider-safeguard logic as routing high-consequence actions through a screening chokepoint (bp10-a4).
-- [WMA Declaration of Helsinki (2024)](../library/ref-helsinki-2024.md) and [EU GDPR (2016)](../library/ref-gdpr-2016.md).
-  Research participants may withdraw at any time, and data subjects have a right to withdraw consent (Art 7(3)) and to erasure (Art 17); revocable consent cannot authorise a use that cannot be undone (bp10-a5).
-- [A safer framework for patient data in AI-for-Science grants (2026)](../library/gagneur-rare-disease-patient-data-2026.md).
-  Adjacent support: analysis permission is not training permission, and no perpetual licence should be taken over patient-level data.
-  Individual commentary; it does not itself make the revocable-consent argument. -->
-
 ## Change history
 
 - 2026-07-28: Added atom bp10-a5 (data under withdrawable consent cannot be authorised for irreversible third-party training or a perpetual licence, and an agent must be prevented from transmitting it for those uses), grounded in the Declaration of Helsinki and GDPR (right to withdraw; right to erasure), with the Gagneur commentary as adjacent support. Extended the tabs, Reasons, and Examples to match.

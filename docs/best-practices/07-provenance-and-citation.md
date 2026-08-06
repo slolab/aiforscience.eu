@@ -104,22 +104,6 @@ A research agent has to pass citation and retraction status through to its outpu
 
 <!-- BP_SOURCES -->
 
-<!-- ## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice item 6.
-- [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §3.3 (source traceability, retraction notices) and §4.1 (situated judgement is not automatable).
-  Consistent with, grounding only.
-- [EU Expert Forum on Frontier AI (2026)](../library/ec-expert-forum-2026.md), §4.2.3 (evaluation and verification rest on traceability).
-  Consistent with, grounding only.
-- [W3C PROV-O (2013)](../library/ref-prov-o-2013.md) and [CRediT (ANSI/NISO Z39.104-2022)](../library/ref-credit-2022.md).
-  Machine-readable provenance and contribution attribution.
-- [ICMJE / COPE on AI and authorship (2023)](../library/ref-icmje-cope-2023.md).
-  AI cannot be an author; use must be disclosed; humans remain accountable.
-- [NISO CREC RP-45-2024](../library/ref-niso-crec-2024.md) and [Crossref / Retraction Watch](../library/ref-crossref-retraction-watch-2023.md).
-  The standard and the open data for propagating retraction status.
-- [Krebs, F(AI)2R: Verifiable AI Provenance as an Executable Skill (2026)](../library/fai2r-verifiable-ai-provenance-2026.md), §IV (claim-level records, the verification ladder whose top rungs only a human may grant) and §VI (citation audit against the citing sentence, per-activity human and agent attribution).
-  One working implementation, demonstrated on the paper's own production by its author: one operator, one domain, one session, self-audited. Downweighted, grounding only. -->
-
 ## Change history
 
 - 2026-08-03: Added the F(AI)2R provenance paper (Krebs 2026) as a supporting source on claim-level provenance and per-activity human and agent attribution, downweighted as a single self-audited demonstration (bp7-a1, bp7-a2).

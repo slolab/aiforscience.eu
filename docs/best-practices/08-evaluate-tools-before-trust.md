@@ -92,18 +92,6 @@ A tool that looks capable in a demo can be wrong in ways that only representativ
 
 <!-- BP_SOURCES -->
 
-<!-- ## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Cautions and gaps: how to assess whether a skill or MCP server is useful and safe is recorded there as an open question and a candidate future practice.
-- [REFORMS reporting standards (Science Advances 2024)](../library/ref-reforms-2024.md).
-  Consensus reporting standards for machine-learning-based science.
-- [NeurIPS Paper Checklist](../library/ref-neurips-checklist.md).
-  Reproducibility and evaluation reporting practice.
-- [MIT Project NANDA, The GenAI Divide (2025)](../library/mit-genai-divide-2025.md).
-  Enterprise field evidence that buyers who "benchmark tools on operational outcomes, not model benchmarks" succeed far more often; general benchmark scores do not predict fitness for a specific task (§6.2, pg. 20). Out-of-domain business report; cited as external context.
-- [EU AI Omnibus (2026)](../library/ai-omnibus-2026.md), Art 4a.
-  The amended AI Act sets a conditional legal basis for processing special-category data to detect and correct bias, an evaluation dimension, subject to strict safeguards (bp8-a2). -->
-
 ## Change history
 
 - 2026-07-27: Added the EU AI Omnibus (2026) as a qualifying source on bp8-a2 (conditional legal basis for special-category data in bias detection; Art 4a).

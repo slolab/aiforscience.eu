@@ -109,22 +109,6 @@ The load that automated clients now place on open resources makes governed acces
 
 <!-- BP_SOURCES -->
 
-<!-- ## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice items 1 and 2.
-  Provider stance and the resource typology.
-- [FAIR Guiding Principles (Wilkinson et al. 2016)](../library/ref-fair-2016.md).
-  Grounds machine-actionability as the general goal; the Accessible principle permits authentication, so "accessible" never meant "open without limit".
-- [ELIXIR Core Data Resources (Drysdale et al. 2020)](../library/ref-elixir-cdr-2020.md).
-  A concrete demand-and-importance typology with the top tier funded as infrastructure.
-  Life-science instance, cited as an example.
-- [bio.tools registry (Ison et al. 2019)](../library/ref-biotools-2019.md).
-  The light generic path for the long tail.
-  Life-science instance, cited as an example.
-- [COAR survey on AI bots and crawlers (2025)](../library/ref-coar-ai-bots-2025.md).
-  Evidence that open resources face heavy automated load and that blunt blocking also blocks real users.
-  Qualifies "default accessible" toward governed access. -->
-
 ## Change history
 
 - 2026-07-27: Renumbered from BP01 to BP02 on inserting the new BP01 (match the method to the task).
