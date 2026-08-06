@@ -126,6 +126,7 @@ This is the consensus position across the main governance frameworks (NIST, the 
 - A personal agent connected to a researcher's mail and files is entered in the institution's agent inventory and reviewed like any deployed one, because its broad access is part of the same risk.
 
 <!-- BP_SOURCES -->
+<!-- The H1 above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 

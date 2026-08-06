@@ -120,6 +120,7 @@ Knowing where an interface comes from, and keeping more than one option open, av
 - When the approved list is too narrow to do real work, people route around it: in one enterprise survey 40% of organisations bought an official tool while staff at over 90% used personal AI tools unofficially, often to better effect. A vetting process that watches what people actually reach for, and brings the useful cases into the trusted channel, holds up better than one that only blocks.
 
 <!-- BP_SOURCES -->
+<!-- The H1 above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 

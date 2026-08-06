@@ -113,6 +113,7 @@ Controlled trials show forecast gains from agentic tools are frequently miscalib
 - A group expects a large speedup from an agent and, before committing, writes down the expected net benefit against its current baseline with review and correction time subtracted; for its experienced users the projected gain is marginal, so it keeps the existing workflow and re-checks the estimate on a small pilot.
 
 <!-- BP_SOURCES -->
+<!-- The H1 above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history 
 

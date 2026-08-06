@@ -103,6 +103,7 @@ A research agent has to pass citation and retraction status through to its outpu
 - The agent supplies the traceable evidence and the person makes the call, remaining accountable for the judgement.
 
 <!-- BP_SOURCES -->
+<!-- The H1 above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 

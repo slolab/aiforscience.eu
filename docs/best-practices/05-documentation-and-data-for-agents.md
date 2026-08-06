@@ -98,6 +98,7 @@ This work also benefits the people who use the resource directly, and current an
   A convention like `llms.txt` is one proposed approach, not yet a ratified standard.
 
 <!-- BP_SOURCES -->
+<!-- The H1 above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 
