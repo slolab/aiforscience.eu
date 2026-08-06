@@ -10,33 +10,43 @@ sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
     ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, items 8 and 9"
+    note: "Best Practice items 8 and 9 (registration implies review; managing agent traffic through an approved channel)."
   - title: "Agentic AI in the higher-education system (2026)"
     ref: library/hfd-agentic-ai-hochschulsystem-2026.md
     locator: "§5.2-5.3, hooks 8 and 9"
+    note: "§5.2 to 5.3 (deployer-versus-provider, infrastructure as a governance point)."
   - title: "EU Expert Forum on Frontier AI (2026)"
     ref: library/ec-expert-forum-2026.md
     locator: "§4.2.2, hook 2"
+    note: "§4.2.2 (provider diversity and openness). Consistent with, grounding only."
   - title: "OWASP Top 10 for LLM Applications 2025 (LLM01 Prompt Injection)"
     ref: library/ref-owasp-llm-top10-2025.md
     locator: "LLM01; supply-chain risks"
+    note: "Prompt injection (LLM01) and tool poisoning (MCP03) as the documented risks vetting guards against."
   - title: "OWASP MCP Top 10 (MCP03 Tool Poisoning)"
     ref: library/ref-owasp-mcp-top10.md
     locator: "MCP03:2025 Tool Poisoning"
+    note: "Prompt injection (LLM01) and tool poisoning (MCP03) as the documented risks vetting guards against."
   - title: "Invariant Labs: MCP tool poisoning attacks (2025)"
     ref: library/ref-invariant-tool-poisoning-2025.md
     locator: "poisoned tool descriptions; rug pull"
+    note: "How a poisoned tool description hides instructions from the user."
   - title: "Official Model Context Protocol Registry (preview, 2025)"
     ref: library/ref-mcp-registry-2025.md
     locator: "listing of self-reported data; no security review"
+    note: "Evidence that the official registry lists self-reported data and does not vet, so listing and vetting must be kept distinct."
   - title: "EU AI Act, Article 25 (responsibilities along the value chain)"
     ref: library/ref-eu-ai-act.md
     locator: "substantial modification; deployer becomes provider"
+    note: "Substantial modification can move provider responsibility to whoever changed the system."
   - title: "IETF AIPREF: a vocabulary for expressing AI usage preferences (draft)"
     ref: library/ref-ietf-aipref.md
     locator: "machine-readable access preferences"
+    note: "Emerging machine-readable way to declare access preferences to automated clients."
   - title: "MIT Project NANDA, The GenAI Divide (2025)"
     ref: library/mit-genai-divide-2025.md
     locator: "§3.3 p.8 shadow AI outpaces governed deployment"
+    note: 'Enterprise field evidence of a "shadow AI economy": unsanctioned personal-tool use outpaces governed deployment and often delivers better results (§3.3, pg. 8), so vetting should learn from observed usage rather than only restrict it. Out-of-domain business report; qualifies rather than grounds the practice.'
 layer: Ecosystem
 hitl: mandatory
 tags: [provider, governance, draft]
@@ -109,24 +119,8 @@ Knowing where an interface comes from, and keeping more than one option open, av
 - An institution keeps more than one agent ecosystem in use, so a critical resource is not reachable only through a single vendor's channel.
 - When the approved list is too narrow to do real work, people route around it: in one enterprise survey 40% of organisations bought an official tool while staff at over 90% used personal AI tools unofficially, often to better effect. A vetting process that watches what people actually reach for, and brings the useful cases into the trusted channel, holds up better than one that only blocks.
 
-## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice items 8 and 9 (registration implies review; managing agent traffic through an approved channel).
-- [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §5.2 to 5.3 (deployer-versus-provider, infrastructure as a governance point).
-- [EU Expert Forum on Frontier AI (2026)](../library/ec-expert-forum-2026.md), §4.2.2 (provider diversity and openness).
-  Consistent with, grounding only.
-- [OWASP Top 10 for LLM Applications 2025](../library/ref-owasp-llm-top10-2025.md) and [OWASP MCP Top 10](../library/ref-owasp-mcp-top10.md).
-  Prompt injection (LLM01) and tool poisoning (MCP03) as the documented risks vetting guards against.
-- [Invariant Labs, tool poisoning attacks (2025)](../library/ref-invariant-tool-poisoning-2025.md).
-  How a poisoned tool description hides instructions from the user.
-- [Official MCP Registry (2025)](../library/ref-mcp-registry-2025.md).
-  Evidence that the official registry lists self-reported data and does not vet, so listing and vetting must be kept distinct.
-- [EU AI Act, Article 25](../library/ref-eu-ai-act.md).
-  Substantial modification can move provider responsibility to whoever changed the system.
-- [IETF AIPREF vocabulary (draft)](../library/ref-ietf-aipref.md).
-  Emerging machine-readable way to declare access preferences to automated clients.
-- [MIT Project NANDA, The GenAI Divide (2025)](../library/mit-genai-divide-2025.md).
-  Enterprise field evidence of a "shadow AI economy": unsanctioned personal-tool use outpaces governed deployment and often delivers better results (§3.3, pg. 8), so vetting should learn from observed usage rather than only restrict it. Out-of-domain business report; qualifies rather than grounds the practice.
+<!-- BP_SOURCES -->
+<!-- The H1 above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 

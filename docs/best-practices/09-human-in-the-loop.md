@@ -10,21 +10,27 @@ sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
     ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, item 7"
+    note: "Best Practice item 7."
   - title: "Agentic AI in the higher-education system (2026)"
     ref: library/hfd-agentic-ai-hochschulsystem-2026.md
     locator: "§4.1 and §6, hooks 3 and 11"
+    note: "§4.1 (explicit intervention points) and §6 (defined escalation and control). Consistent with, grounding only."
   - title: "EU AI Act, Article 14 (human oversight)"
     ref: library/ref-eu-ai-act.md
     locator: "oversight must be effective; automation bias named"
+    note: "Oversight must be effective and calibrated to risk; Article 14 names automation bias as a hazard the overseer must be able to counter."
   - title: "NIST Generative AI Profile (AI 600-1, 2024)"
     ref: library/ref-nist-ai-rmf.md
     locator: "oversight calibrated to risk"
+    note: "Oversight must be effective and calibrated to risk; Article 14 names automation bias as a hazard the overseer must be able to counter."
   - title: "Elish, Moral Crumple Zones (Engaging Science, Technology, and Society, 2019)"
     ref: library/ref-elish-2019.md
     locator: "the nominal human absorbs blame for uncontrollable systems"
+    note: "Evidence that human oversight frequently fails in practice; a stated level must be designed for effectiveness."
   - title: "Green, The Flaws of Policies Requiring Human Oversight of Government Algorithms (2022)"
     ref: library/ref-green-2022.md
     locator: "human-oversight mandates often fail to deliver"
+    note: "Evidence that human oversight frequently fails in practice; a stated level must be designed for effectiveness."
 layer: Operational
 hitl: in-process
 tags: [practitioner, provider, governance, draft]
@@ -95,15 +101,8 @@ Stating and enforcing HITL levels fulfils part of [BP04](04-govern-autonomy-and-
 - The stated level is enforced by the system rather than left to habit, which ties it to the guardrails in [BP04](04-govern-autonomy-and-accountability.md), and the HITL engagement is recorded in provenance ([BP07](07-provenance-and-citation.md)) so oversight is auditable instead of assumed.
 - A reviewer uploads a confidential manuscript to an external model against the stated boundary of the conference for a high-stakes task. They submit the AI-generated review without declaring the AI use. The conference had inserted a [prompt injection](../glossary.md#prompt-injection) into their review version and catches the reviewer with the prompted output form. The reviewer is barred from conference participation for two years.
 
-## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice item 7.
-- [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §4.1 (explicit intervention points) and §6 (defined escalation and control).
-  Consistent with, grounding only.
-- [EU AI Act, Article 14](../library/ref-eu-ai-act.md) and [NIST Generative AI Profile (AI 600-1)](../library/ref-nist-ai-rmf.md).
-  Oversight must be effective and calibrated to risk; Article 14 names automation bias as a hazard the overseer must be able to counter.
-- [Elish, Moral Crumple Zones (2019)](../library/ref-elish-2019.md) and [Green, Flaws of Policies Requiring Human Oversight (2022)](../library/ref-green-2022.md).
-  Evidence that human oversight frequently fails in practice; a stated level must be designed for effectiveness.
+<!-- BP_SOURCES -->
+<!-- The H1 above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 

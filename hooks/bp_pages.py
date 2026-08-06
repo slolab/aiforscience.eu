@@ -17,6 +17,7 @@ from pathlib import Path
 import yaml
 
 TITLE_PLACEHOLDER = "<!-- BP_TITLE -->"
+SOURCES_PLACEHOLDER = "<!-- BP_SOURCES -->"
 BP_PAGE = re.compile(r"best-practices/(\d\d)-.*\.md$")
 
 _FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)
@@ -27,14 +28,26 @@ def _load_meta(path):
     return yaml.safe_load(match.group(1)) if match else {}
 
 
+def _render_sources(sources):
+    source_list = '## Sources\n'
+    for sc in sources:
+        source_list = source_list + f'- [{sc["title"]}](../{sc["ref"]}). {sc["note"]}\n'
+    return(source_list)
+
+
 def on_page_markdown(markdown, page, config, files):
     match = BP_PAGE.match(page.file.src_uri)
-    if match and TITLE_PLACEHOLDER in markdown:
+    if not match:
+        return markdown
+    if TITLE_PLACEHOLDER in markdown:
         title = page.meta.get("title", "")
         # Title as the lead: a quiet "Best practice N" kicker above the title,
         # and the title itself as the H1 (styled small in home.css).
         kicker = f'<p class="afs-bp-kicker">Best practice {int(match.group(1))}</p>'
-        return markdown.replace(TITLE_PLACEHOLDER, f"{kicker}\n\n# {title}")
+        # TITLE_PLACEHOLDER
+        markdown = markdown.replace(TITLE_PLACEHOLDER, f"{kicker}\n\n# {title}")
+        # SOURCES_PLACEHOLDER
+        return markdown.replace(SOURCES_PLACEHOLDER, _render_sources(page.meta.get("sources", [])))
     return markdown
 
 

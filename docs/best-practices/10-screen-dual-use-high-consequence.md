@@ -10,36 +10,47 @@ sources:
   - title: "METR, Common Elements of Frontier AI Safety Policies (2025)"
     ref: library/ref-metr-common-elements-2025.md
     locator: "shared capability-threshold structure across CBRN, cyber, autonomy"
+    note: "Independent syntheses showing the capability-threshold structure spans CBRN, cyber, and autonomy, which is the evidence this is a generic category."
   - title: "Frontier Model Forum, Components of Frontier AI Safety Frameworks"
     ref: library/ref-fmf-safety-frameworks.md
     locator: "CBRN, offensive cyber, automated AI R&D as high-consequence domains"
+    note: "Independent syntheses showing the capability-threshold structure spans CBRN, cyber, and autonomy, which is the evidence this is a generic category."
   - title: "Urbina et al., Dual use of AI-powered drug discovery (Nature Machine Intelligence 2022)"
     ref: library/ref-urbina-dual-use-2022.md
     locator: "40,000 toxic molecules incl. VX generated in under 6 hours"
+    note: "A toxicity model inverted to generate 40,000 toxic molecules, including VX, in under 6 hours. The sharpest non-life-science instance."
   - title: "Wittmann et al., Strengthening nucleic acid biosecurity screening against generative protein design (Science 2025)"
     ref: library/ref-wittmann-biosecurity-2025.md
     locator: "AI-designed sequences evaded synthesis screening; patches restored detection"
+    note: "AI-designed sequences evaded nucleic-acid synthesis screening; patches restored detection. The life-science instance."
   - title: "UK AI Security Institute, Frontier AI Trends (2025)"
     ref: library/ref-aisi-frontier-trends-2025.md
     locator: "cyber-offense capability rising toward expert level"
+    note: "Measured cyber-offense capability rising toward expert level. The cyber capability trend."
   - title: "Autonomous agent breach of Hugging Face (Hugging Face; OpenAI, 2026)"
     ref: library/ref-hf-openai-agent-breach-2026.md
     locator: "autonomous agent escaped its evaluation sandbox and breached production infrastructure"
+    note: "An autonomous system on OpenAI pre-release models escaped its evaluation sandbox and breached Hugging Face's production infrastructure. A realised cyber instance, disclosed by both organisations."
   - title: "US Government Policy for Oversight of Dual Use Research of Concern (OSTP 2024)"
     ref: library/ref-usg-durc-2024.md
     locator: "codified DURC oversight (bio-scoped; under 2025 revision)"
+    note: "A codified dual-use oversight instrument. Cited as a mature worked example; note it is scoped to the life sciences and under revision, so this practice is framed on the general concept, not on that instrument."
   - title: "EU AI Omnibus (2026)"
     ref: library/ai-omnibus-2026.md
     locator: "Art 5(1a)(a)(ii); Recital 12 (provider safeguards against foreseeable prohibited output)"
+    note: "Art 5(1a)(a)(ii). Obliges providers to build technical safeguards against reasonably foreseeable and reproducible prohibited output rather than rely on intent or policy, the same provider-safeguard logic as routing high-consequence actions through a screening chokepoint (bp10-a4)."
   - title: "WMA Declaration of Helsinki (2024)"
     ref: library/ref-helsinki-2024.md
     locator: "voluntary participation; right to withdraw at any time"
+    note: "Research participants may withdraw at any time, and data subjects have a right to withdraw consent (Art 7(3)) and to erasure (Art 17); revocable consent cannot authorise a use that cannot be undone (bp10-a5)."
   - title: "EU General Data Protection Regulation (2016)"
     ref: library/ref-gdpr-2016.md
     locator: "Art 7(3) withdraw consent; Art 17 right to erasure"
+    note: "Research participants may withdraw at any time, and data subjects have a right to withdraw consent (Art 7(3)) and to erasure (Art 17); revocable consent cannot authorise a use that cannot be undone (bp10-a5)."
   - title: "A safer framework for patient data in AI-for-Science grants (2026)"
     ref: library/gagneur-rare-disease-patient-data-2026.md
     locator: "no perpetual licence; analysis is not training permission"
+    note: "Adjacent support: analysis permission is not training permission, and no perpetual licence should be taken over patient-level data. Individual commentary; it does not itself make the revocable-consent argument."
 layer: Operational
 hitl: mandatory
 tags: [practitioner, provider, governance, draft]
@@ -111,32 +122,8 @@ In agentic workflows this means constraining and auditing what an agent can send
     - Cyber: evaluating and limiting an agent's offensive-cyber uplift before it can act against real systems, after an autonomous system was shown to break out of containment.
 - Human-subjects data: an agent working on consented patient or genomic data is blocked from sending it to a third-party service that would train on it or take a perpetual licence, and grant or service terms requiring such a licence are refused, because consent for that data can be withdrawn and training cannot be undone.
 
-## Sources
-
-- [METR, Common Elements of Frontier AI Safety Policies (2025)](../library/ref-metr-common-elements-2025.md) and [Frontier Model Forum, Components of Frontier AI Safety Frameworks](../library/ref-fmf-safety-frameworks.md).
-  Independent syntheses showing the capability-threshold structure spans CBRN, cyber, and autonomy, which is the evidence this is a generic category.
-- [Urbina et al., Dual use of AI-powered drug discovery (2022)](../library/ref-urbina-dual-use-2022.md).
-  A toxicity model inverted to generate 40,000 toxic molecules, including VX, in under 6 hours.
-  The sharpest non-life-science instance.
-- [Wittmann et al., Science (2025)](../library/ref-wittmann-biosecurity-2025.md).
-  AI-designed sequences evaded nucleic-acid synthesis screening; patches restored detection.
-  The life-science instance.
-- [UK AI Security Institute, Frontier AI Trends (2025)](../library/ref-aisi-frontier-trends-2025.md).
-  Measured cyber-offense capability rising toward expert level.
-  The cyber capability trend.
-- [Autonomous agent breach of Hugging Face (2026)](../library/ref-hf-openai-agent-breach-2026.md).
-  An autonomous system on OpenAI pre-release models escaped its evaluation sandbox and breached Hugging Face's production infrastructure.
-  A realised cyber instance, disclosed by both organisations.
-- [US DURC oversight policy (OSTP 2024)](../library/ref-usg-durc-2024.md).
-  A codified dual-use oversight instrument.
-  Cited as a mature worked example; note it is scoped to the life sciences and under revision, so this practice is framed on the general concept, not on that instrument.
-- [EU AI Omnibus (2026)](../library/ai-omnibus-2026.md), Art 5(1a)(a)(ii).
-  Obliges providers to build technical safeguards against reasonably foreseeable and reproducible prohibited output rather than rely on intent or policy, the same provider-safeguard logic as routing high-consequence actions through a screening chokepoint (bp10-a4).
-- [WMA Declaration of Helsinki (2024)](../library/ref-helsinki-2024.md) and [EU GDPR (2016)](../library/ref-gdpr-2016.md).
-  Research participants may withdraw at any time, and data subjects have a right to withdraw consent (Art 7(3)) and to erasure (Art 17); revocable consent cannot authorise a use that cannot be undone (bp10-a5).
-- [A safer framework for patient data in AI-for-Science grants (2026)](../library/gagneur-rare-disease-patient-data-2026.md).
-  Adjacent support: analysis permission is not training permission, and no perpetual licence should be taken over patient-level data.
-  Individual commentary; it does not itself make the revocable-consent argument.
+<!-- BP_SOURCES -->
+<!-- The H1 above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 
