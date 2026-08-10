@@ -11,7 +11,7 @@ edit_uri: edit/main/docs/
 # report.
 not_in_nav: |
   /index.md
-  /for-decision-makers/index.md
+  /short-version/index.md
   /library/*-*.md
 
 # Watch the theme overrides too, so `mkdocs serve` hot-reloads edits to
@@ -40,6 +40,11 @@ theme:
 plugins:
   - search
   - tags
+  # Old paths kept alive so links published before a rename keep working.
+  # The page at /for-decision-makers/ moved to /short-version/ in 2026-08.
+  - redirects:
+      redirect_maps:
+        for-decision-makers/index.md: short-version/index.md
 
 # Render each best-practice title from its frontmatter `title` (the overview
 # list and each page's H1), so the title is spelled once, in the BP file.
