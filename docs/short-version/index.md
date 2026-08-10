@@ -12,7 +12,7 @@ AI Agents increasingly do work that previously required human experts.
 Our fundamental challenge is to decide which tasks they should handle and how.
 Suitable tasks need to be sufficiently trivial and contained that the AI system cannot cause lasting damage.
 Judgment, provenance, and accountability needs to stay with people.
-This page is the short version of the [record](../best-practices/01-match-method-to-task.md), written as the decisions to make: what to enable, what to resource, what to require.
+This page distills the [record](../best-practices/01-match-method-to-task.md) to facilitate decision-making: what to enable, what to resource, what to require.
 Each point links to the practice it comes from.
 
 <div class="afs-ai-strip" markdown="0" data-afs-ai-cta>
