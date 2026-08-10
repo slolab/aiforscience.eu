@@ -1,10 +1,14 @@
-"""MkDocs hook: keep best-practice titles spelled once.
+"""MkDocs hook: keep best-practice titles and sources spelled once.
 
-Each best-practice title lives only in the BP page's frontmatter. This hook
-renders two things from it, so no literal copy is kept in page bodies:
+Each best-practice title and source list lives only in the BP page's
+frontmatter. This hook renders three things from it, so no literal copy is
+kept in page bodies:
 
 - Each BP page's H1: the `<!-- BP_TITLE -->` placeholder becomes a
   "Best practice N" kicker plus the title as the page lead.
+- Each BP page's `## Sources` list: the `<!-- BP_SOURCES -->` placeholder
+  becomes one bullet per frontmatter `sources:` entry, linking the library
+  page and carrying its note.
 - Each BP page's sidebar nav label: from the page's frontmatter `nav_title`,
   so the short label lives in the page, not in mkdocs.yml.
 
