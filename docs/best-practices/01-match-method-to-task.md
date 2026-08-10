@@ -115,7 +115,7 @@ Controlled trials show forecast gains from agentic tools are frequently miscalib
 <!-- BP_SOURCES -->
 <!-- The Sources list above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
-## Change history 
+## Change history
 
 - 2026-07-31: Added a costed Example from the reported Amazon cost overruns (bulk record matching through a frontier model, about $1.8m, 860% over budget, never shipped), labelled as an out-of-domain corporate case. Provenance edges added on bp1-a2 and bp1-a3.
 - 2026-07-27: Added the Expectation–Realisation Gap review (Lobentanzer 2026) as downweighted context on heterogeneous, miscalibrated benefit, with a Reasons and Examples note that method choice includes stating and re-measuring expected net benefit with oversight cost deducted (bp1-a1, bp1-a3).
