@@ -18,11 +18,11 @@ sources:
   - title: "Anthropic, Code execution with MCP (2025)"
     ref: library/ref-anthropic-code-execution-mcp-2025.md
     locator: "token cost of per-endpoint tool use; progressive disclosure"
-    note: "Quantify the token cost of per-endpoint tool use and the accuracy loss from a large tool surface; document progressive disclosure as the alternative remedy."
+    note: "Measures the token cost of exposing one tool per endpoint, and presents progressive disclosure as the remedy."
   - title: "Anthropic, Advanced tool use (2025)"
     ref: library/ref-anthropic-advanced-tool-use-2025.md
     locator: "tool-surface size vs selection accuracy and cost"
-    note: "Quantify the token cost of per-endpoint tool use and the accuracy loss from a large tool surface; document progressive disclosure as the alternative remedy."
+    note: "Reports how a large tool surface raises token cost and lowers tool-selection accuracy."
   - title: "Model Context Protocol specification"
     ref: library/ref-mcp-spec.md
     locator: "the interface substrate (MCP servers, tools)"

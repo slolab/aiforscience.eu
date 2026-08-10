@@ -22,11 +22,11 @@ sources:
   - title: "OWASP Top 10 for LLM Applications 2025 (LLM01 Prompt Injection)"
     ref: library/ref-owasp-llm-top10-2025.md
     locator: "LLM01; supply-chain risks"
-    note: "Prompt injection (LLM01) and tool poisoning (MCP03) as the documented risks vetting guards against."
+    note: "Ranks prompt injection (LLM01) as the top risk for LLM applications, one of the documented risks vetting guards against."
   - title: "OWASP MCP Top 10 (MCP03 Tool Poisoning)"
     ref: library/ref-owasp-mcp-top10.md
     locator: "MCP03:2025 Tool Poisoning"
-    note: "Prompt injection (LLM01) and tool poisoning (MCP03) as the documented risks vetting guards against."
+    note: "Names tool poisoning (MCP03) as a supply-chain compromise of the agent interface itself."
   - title: "Invariant Labs: MCP tool poisoning attacks (2025)"
     ref: library/ref-invariant-tool-poisoning-2025.md
     locator: "poisoned tool descriptions; rug pull"

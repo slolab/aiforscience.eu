@@ -10,11 +10,11 @@ sources:
   - title: "METR, Common Elements of Frontier AI Safety Policies (2025)"
     ref: library/ref-metr-common-elements-2025.md
     locator: "shared capability-threshold structure across CBRN, cyber, autonomy"
-    note: "Independent syntheses showing the capability-threshold structure spans CBRN, cyber, and autonomy, which is the evidence this is a generic category."
+    note: "An independent synthesis of frontier safety policies finding one capability-threshold structure recurring across CBRN, cyber, and autonomy."
   - title: "Frontier Model Forum, Components of Frontier AI Safety Frameworks"
     ref: library/ref-fmf-safety-frameworks.md
     locator: "CBRN, offensive cyber, automated AI R&D as high-consequence domains"
-    note: "Independent syntheses showing the capability-threshold structure spans CBRN, cyber, and autonomy, which is the evidence this is a generic category."
+    note: "Names CBRN, offensive cyber, and automated AI R&D as the parallel high-consequence domains, which is the evidence the category is generic."
   - title: "Urbina et al., Dual use of AI-powered drug discovery (Nature Machine Intelligence 2022)"
     ref: library/ref-urbina-dual-use-2022.md
     locator: "40,000 toxic molecules incl. VX generated in under 6 hours"
@@ -42,11 +42,11 @@ sources:
   - title: "WMA Declaration of Helsinki (2024)"
     ref: library/ref-helsinki-2024.md
     locator: "voluntary participation; right to withdraw at any time"
-    note: "Research participants may withdraw at any time, and data subjects have a right to withdraw consent (Art 7(3)) and to erasure (Art 17); revocable consent cannot authorise a use that cannot be undone (bp10-a5)."
+    note: "Participation is voluntary and consent may be withdrawn at any time, so data held under it cannot be committed to a use that could not honour a withdrawal (bp10-a5)."
   - title: "EU General Data Protection Regulation (2016)"
     ref: library/ref-gdpr-2016.md
     locator: "Art 7(3) withdraw consent; Art 17 right to erasure"
-    note: "Research participants may withdraw at any time, and data subjects have a right to withdraw consent (Art 7(3)) and to erasure (Art 17); revocable consent cannot authorise a use that cannot be undone (bp10-a5)."
+    note: "Consent is revocable (Art 7(3)) and erasure is a right (Art 17), so personal data cannot be authorised for an irreversible use such as third-party training or a perpetual licence (bp10-a5)."
   - title: "A safer framework for patient data in AI-for-Science grants (2026)"
     ref: library/gagneur-rare-disease-patient-data-2026.md
     locator: "no perpetual licence; analysis is not training permission"

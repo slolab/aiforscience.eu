@@ -22,19 +22,19 @@ sources:
   - title: "W3C Data Catalog Vocabulary (DCAT) version 3 (2024 Recommendation)"
     ref: library/ref-dcat3-2024.md
     locator: "machine-readable dataset metadata"
-    note: "Domain-neutral standards for machine-readable data and model documentation."
+    note: "Domain-neutral vocabulary for machine-readable dataset and catalogue metadata."
   - title: "Croissant: a metadata format for ML-ready datasets (MLCommons 2024)"
     ref: library/ref-croissant-2024.md
     locator: "schema.org-based dataset description"
-    note: "Domain-neutral standards for machine-readable data and model documentation."
+    note: "Domain-neutral format describing ML-ready datasets on top of schema.org, so a dataset loads consistently across tools."
   - title: "Datasheets for Datasets (Gebru et al. 2021)"
     ref: library/ref-datasheets-2021.md
     locator: "documented dataset provenance and intended use"
-    note: "Domain-neutral standards for machine-readable data and model documentation."
+    note: "A structured record of a dataset's composition, collection, and recommended uses that travels with the data."
   - title: "Model Cards for Model Reporting (Mitchell et al. 2019)"
     ref: library/ref-model-cards-2019.md
     locator: "structured model documentation"
-    note: "Domain-neutral standards for machine-readable data and model documentation."
+    note: "Structured reporting of a model's intended use, performance across conditions, and known limits."
 layer: Method
 hitl: n/a
 tags: [practitioner, provider, draft]

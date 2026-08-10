@@ -22,11 +22,11 @@ sources:
   - title: "W3C PROV-O: the PROV Ontology (2013 Recommendation)"
     ref: library/ref-prov-o-2013.md
     locator: "machine-readable provenance"
-    note: "Machine-readable provenance and contribution attribution."
+    note: "An ontology for stating provenance in machine-readable form: which entities, activities, and agents produced a result."
   - title: "CRediT contributor roles taxonomy (ANSI/NISO Z39.104-2022)"
     ref: library/ref-credit-2022.md
     locator: "machine-readable contribution attribution"
-    note: "Machine-readable provenance and contribution attribution."
+    note: "A contributor-role taxonomy that records attribution at the byline, so human and agent contributions can be separated."
   - title: "ICMJE Recommendations and COPE position on AI and authorship (2023)"
     ref: library/ref-icmje-cope-2023.md
     locator: "AI cannot be an author; disclosure required; humans accountable"
@@ -34,11 +34,11 @@ sources:
   - title: "NISO CREC: Communication of Retractions, Removals, and Expressions of Concern (RP-45-2024)"
     ref: library/ref-niso-crec-2024.md
     locator: "transmitting retraction status to machine and human readers"
-    note: "The standard and the open data for propagating retraction status."
+    note: "The recommended practice for communicating retractions and expressions of concern as signals both systems and people can act on."
   - title: "Crossref and the Retraction Watch database (open since 2023)"
     ref: library/ref-crossref-retraction-watch-2023.md
     locator: "machine-readable retraction data"
-    note: "The standard and the open data for propagating retraction status."
+    note: "The open, machine-readable retraction data that makes propagating retraction status feasible."
   - title: "Krebs, F(AI)2R: Verifiable AI Provenance as an Executable Skill (2026)"
     ref: library/fai2r-verifiable-ai-provenance-2026.md
     locator: "§IV claim-level records and the verification ladder; §VI citation audit and per-activity division of labour"

@@ -18,19 +18,19 @@ sources:
   - title: "EU AI Act, Article 14 (human oversight)"
     ref: library/ref-eu-ai-act.md
     locator: "oversight must be effective; automation bias named"
-    note: "Oversight must be effective and calibrated to risk; Article 14 names automation bias as a hazard the overseer must be able to counter."
+    note: "Article 14 requires oversight to be effective, and names automation bias as a hazard the overseer must be able to counter."
   - title: "NIST Generative AI Profile (AI 600-1, 2024)"
     ref: library/ref-nist-ai-rmf.md
     locator: "oversight calibrated to risk"
-    note: "Oversight must be effective and calibrated to risk; Article 14 names automation bias as a hazard the overseer must be able to counter."
+    note: "Sets oversight calibrated to the risk level."
   - title: "Elish, Moral Crumple Zones (Engaging Science, Technology, and Society, 2019)"
     ref: library/ref-elish-2019.md
     locator: "the nominal human absorbs blame for uncontrollable systems"
-    note: "Evidence that human oversight frequently fails in practice; a stated level must be designed for effectiveness."
+    note: "Shows the nominal human in the loop can absorb blame for a system they cannot realistically control."
   - title: "Green, The Flaws of Policies Requiring Human Oversight of Government Algorithms (2022)"
     ref: library/ref-green-2022.md
     locator: "human-oversight mandates often fail to deliver"
-    note: "Evidence that human oversight frequently fails in practice; a stated level must be designed for effectiveness."
+    note: "Finds that mandates for human oversight of algorithms often fail to deliver the protections claimed for them, so a stated level has to be designed for effectiveness."
 layer: Operational
 hitl: in-process
 tags: [practitioner, provider, governance, draft]
