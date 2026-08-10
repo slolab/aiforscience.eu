@@ -91,7 +91,7 @@ A tool that looks capable in a demo can be wrong in ways that only representativ
 - Evaluations follow an established checklist (for example REFORMS for ML-based science, or a reproducibility checklist), so different groups' results are comparable.
 
 <!-- BP_SOURCES -->
-<!-- The H1 above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
+<!-- The Sources list above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 

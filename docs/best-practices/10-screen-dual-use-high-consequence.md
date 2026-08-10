@@ -123,7 +123,7 @@ In agentic workflows this means constraining and auditing what an agent can send
 - Human-subjects data: an agent working on consented patient or genomic data is blocked from sending it to a third-party service that would train on it or take a perpetual licence, and grant or service terms requiring such a licence are refused, because consent for that data can be withdrawn and training cannot be undone.
 
 <!-- BP_SOURCES -->
-<!-- The H1 above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
+<!-- The Sources list above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 

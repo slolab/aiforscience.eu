@@ -102,7 +102,7 @@ Stating and enforcing HITL levels fulfils part of [BP04](04-govern-autonomy-and-
 - A reviewer uploads a confidential manuscript to an external model against the stated boundary of the conference for a high-stakes task. They submit the AI-generated review without declaring the AI use. The conference had inserted a [prompt injection](../glossary.md#prompt-injection) into their review version and catches the reviewer with the prompted output form. The reviewer is barred from conference participation for two years.
 
 <!-- BP_SOURCES -->
-<!-- The H1 above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
+<!-- The Sources list above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 

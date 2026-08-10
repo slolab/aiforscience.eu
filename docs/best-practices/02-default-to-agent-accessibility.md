@@ -108,7 +108,7 @@ The load that automated clients now place on open resources makes governed acces
   Its logs cannot tell agents from people, which is why the limit is set at the resource rather than inferred from the client.
 
 <!-- BP_SOURCES -->
-<!-- The H1 above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
+<!-- The Sources list above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 

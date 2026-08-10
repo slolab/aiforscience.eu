@@ -88,7 +88,7 @@ Both need to know what users are trying to do, and providers often do not, so le
 - For a very large API, instead of hand-building a task tool for every workflow, the provider lets the agent write code against the endpoints (progressive disclosure and code execution).
 
 <!-- BP_SOURCES -->
-<!-- The H1 above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
+<!-- The Sources list above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 
