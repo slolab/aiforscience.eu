@@ -29,10 +29,12 @@ def _load_meta(path):
 
 
 def _render_sources(sources):
-    source_list = '## Sources\n'
-    for sc in sources:
-        source_list = source_list + f'- [{sc["title"]}](../{sc["ref"]}). {sc["note"]}\n'
-    return(source_list)
+    lines = ["## Sources", ""]
+    for source in sources:
+        bullet = f'- [{source["title"]}](../{source["ref"]}).'
+        note = source.get("note")
+        lines.append(f"{bullet} {note}" if note else bullet)
+    return "\n".join(lines)
 
 
 def on_page_markdown(markdown, page, config, files):
