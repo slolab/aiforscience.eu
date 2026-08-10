@@ -10,7 +10,7 @@ sources:
   - title: "Agentic AI in the higher-education system (2026)"
     ref: library/hfd-agentic-ai-hochschulsystem-2026.md
     locator: "§4-6, hooks 3, 5, 6, 7, 9, 10, 11, 12"
-    note: 'The "from guidelines to guardrails" framing is quoted at §5.2. That quotation is attributed in the source paper to "Kassorla et al. (2026)", a reference we could not verify as a published work; the underlying point is independently supported by the frameworks below, which is what this practice relies on.'
+    note: '§4 to 6. The "from guidelines to guardrails" framing is quoted at §5.2. That quotation is attributed in the source paper to "Kassorla et al. (2026)", a reference we could not verify as a published work; the underlying point is independently supported by the frameworks below, which is what this practice relies on.'
   - title: "EU Expert Forum on Frontier AI (2026)"
     ref: library/ec-expert-forum-2026.md
     locator: "§4.2.3, hooks 1 and 3"
