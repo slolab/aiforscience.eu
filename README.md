@@ -23,18 +23,11 @@ rules are in [CLAUDE.md](CLAUDE.md).
 
 ## Contributing
 
-See [aiforscience.eu/about/contribute](https://aiforscience.eu/about/contribute/).
-Short version: issue templates for proposing, challenging, and submitting
-documents; discussions for everything open-ended; PRs welcome. Contributors
-without a GitHub account can use the
-[AI for Science Google Group](https://groups.google.com/g/aiforscience)
-(aiforscience@googlegroups.com); editors carry input from there into the
-record.
-
-Document ingestion is AI-assisted and human-reviewed: drop a document into
-`sources/inbox/`, run the `distill` skill in a Claude Code session, review
-the drafted library entry, open a PR. Raw documents are never committed to
-`main`.
+What to contribute and through which route:
+[aiforscience.eu/about/contribute](https://aiforscience.eu/about/contribute/).
+How to work in this repository: [CONTRIBUTING.md](CONTRIBUTING.md).
+Everyone taking part is covered by the
+[code of conduct](CODE_OF_CONDUCT.md).
 
 ## Editors
 

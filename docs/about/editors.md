@@ -76,4 +76,6 @@ On approval, the PR was merged, triggering an update to the website.
 
 ## Current editors
 
-- Sebastian Lobentanzer, Helmholtz Munich.
+- Sebastian Lobentanzer, Helmholtz Munich. [sebastian.lobentanzer@helmholtz-munich.de](mailto:sebastian.lobentanzer@helmholtz-munich.de)
+
+Reports under the [code of conduct](code-of-conduct.md) go to any editor named here.
