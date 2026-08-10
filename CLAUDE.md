@@ -46,8 +46,8 @@ endorsed_by:
 sources:
   - title: <source title>
     ref: <path under docs/, e.g. library/ec-expert-forum-2026.md, or URL>
-    locator: "<section/page, e.g. §5.3, p. 28>"
-    note: "free text describing the locator; an evaluative caveat about the source's weight or status"
+    locator: "<where in the source, e.g. §5.3, p. 28>"
+    note: "<what this source contributes to this practice, plus any caveat about its weight or status>"
 layer: Operational | Method | Ecosystem   # internal only for now: not shown on pages, not in tags, not explained
 hitl: mandatory | optional | in-process | final-check | n/a
 tags: [<audience roles, one or more: practitioner/provider/governance>, <status>]
@@ -68,7 +68,13 @@ Body sections, in this order, all present:
    tabs even when one is thin; say plainly when a role is barely affected.
 3. `## Reasons` — why the practice matters.
 4. `## Examples` — concrete examples of what it looks like in practice.
-5. `## Change history` — dated bullets, newest first. Git log is the full record.
+5. `<!-- BP_SOURCES -->` — the placeholder where `hooks/bp_pages.py` generates
+   the `## Sources` list from the frontmatter `sources:`. Sources are entered in
+   the frontmatter only; never write the bullets by hand. Each entry renders as
+   one bullet: the linked title, then its `note`. The `locator` is a record of
+   where in the source the support sits; it is not rendered, so a note that
+   needs to name a section states it itself.
+6. `## Change history` — dated bullets, newest first. Git log is the full record.
 
 Status, endorsements, and the last-reviewed date come from the frontmatter and
 render in the page's info rail ("About this practice"), so there is no metadata
