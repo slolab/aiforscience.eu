@@ -46,10 +46,10 @@ def on_page_markdown(markdown, page, config, files):
         # Title as the lead: a quiet "Best practice N" kicker above the title,
         # and the title itself as the H1 (styled small in home.css).
         kicker = f'<p class="afs-bp-kicker">Best practice {int(match.group(1))}</p>'
-        # TITLE_PLACEHOLDER
         markdown = markdown.replace(TITLE_PLACEHOLDER, f"{kicker}\n\n# {title}")
-        # SOURCES_PLACEHOLDER
-        return markdown.replace(SOURCES_PLACEHOLDER, _render_sources(page.meta.get("sources", [])))
+    if SOURCES_PLACEHOLDER in markdown:
+        sources = page.meta.get("sources") or []
+        markdown = markdown.replace(SOURCES_PLACEHOLDER, _render_sources(sources))
     return markdown
 
 
