@@ -5,6 +5,10 @@ description = "Source for aiforscience.eu"
 requires-python = ">=3.11"
 dependencies = [
     "mkdocs-material>=9.6",
+    # Pinned: 1.2.3 moved to the ProperDocs org, depends on properdocs (a second
+    # copy of the docs engine) instead of mkdocs, and prints a switch-to-us
+    # banner on every build. 1.2.2 is the last release that depends on mkdocs.
+    "mkdocs-redirects==1.2.2",
 ]
 
 [tool.uv]

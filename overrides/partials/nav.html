@@ -1,6 +1,6 @@
 {#-
-  Override of Material's primary nav. Adds a "For decision-makers" card at the
-  top (the short read for administrators and regulators). The site title and
+  Override of Material's primary nav. Adds a "The short version" card at the
+  top (the record read as decisions). The site title and
   repository source are kept for the mobile drawer and hidden on desktop via CSS
   (see home.css), so the card is the first thing on the desktop left rail.
 -#}
@@ -24,21 +24,21 @@
       {% include "partials/source.html" %}
     </div>
   {% endif %}
-  {% if page and page.url.startswith("for-decision-makers") %}
+  {% if page and page.url.startswith("short-version") %}
     <div class="afs-nav-card afs-nav-card--current" aria-current="page">
-      <span class="afs-nav-card__title">For decision-makers</span>
-      <span class="afs-nav-card__sub">The short read for administrators and regulators</span>
+      <span class="afs-nav-card__title">The short version</span>
+      <span class="afs-nav-card__sub">Every practice as a decision: what to enable, resource, and require</span>
     </div>
   {% else %}
-    <a class="afs-nav-card" href="{{ 'for-decision-makers/' | url }}">
-      <span class="afs-nav-card__title">For decision-makers →</span>
-      <span class="afs-nav-card__sub">The short read for administrators and regulators</span>
+    <a class="afs-nav-card" href="{{ 'short-version/' | url }}">
+      <span class="afs-nav-card__title">The short version →</span>
+      <span class="afs-nav-card__sub">Every practice as a decision: what to enable, resource, and require</span>
     </a>
   {% endif %}
-  {#- On the decision-makers page the full practices list would compete with
+  {#- On the short-version page the full practices list would compete with
       the digest, so it is replaced by one subtle card back to the record
       (the same practice-1 target as the home hero button). -#}
-  {% if page and page.url.startswith("for-decision-makers") %}
+  {% if page and page.url.startswith("short-version") %}
     <a class="afs-nav-card afs-nav-card--practices" href="{{ 'best-practices/01-match-method-to-task/' | url }}">
       <span class="afs-nav-card__title">← The practices</span>
       <span class="afs-nav-card__sub">The full record this summary is based on</span>
