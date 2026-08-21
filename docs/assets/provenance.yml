@@ -216,6 +216,13 @@ bp4-a5:  # named human owner for each responsibility
   - ref: jrc-ai-in-science-2025
     stance: supports
     locator: "human accountability in science"
+  - ref: ec-art50-transparency-guidelines-2026
+    stance: supports
+    locator: "§6.2.3, point 138: editorial responsibility, named and publicly findable"
+    quote: "the identity and contact details of the legal person, the natural person or the function with editorial responsibility should be made publicly available on an easily findable location"
+  - ref: transparency-cop-2026
+    stance: supports
+    locator: "Section 2, Commitment 4(a): name, role and contact details"
 bp4-a6:  # actions logged under an attributable identity
   - ref: chan-visibility-2024
     stance: supports
@@ -233,6 +240,10 @@ bp4-a6:  # actions logged under an attributable identity
     stance: supports
     locator: "protected research tier: audit what the agent can access and send"
     quote: "allow institutions to audit what the agent can access and send"
+  - ref: ec-art50-transparency-guidelines-2026
+    stance: supports
+    locator: "§3.1.1, point 31 and §3.1.2, point 36 with footnote 21: verifiable agent identity and the principal it acts for"
+    quote: "AI agents must be designed and developed in such a way that they disclose both their artificial nature and the person on whose behalf they are acting"
 
 # ------------------------------------------------------------------ BP05
 bp5-a1:  # documentation, data, metadata are now an interface
@@ -321,6 +332,17 @@ bp7-a2:  # clear what a human did and what an agent did
   - ref: fai2r-verifiable-ai-provenance-2026
     stance: supports
     locator: "§IV Model, §VI Table III: attribution per activity rather than per idea"
+  - ref: eu-ai-act
+    stance: supports
+    locator: "Art 50(2) and 50(4), in application 2 August 2026"
+    quote: "shall ensure that the outputs of the AI system are marked in a machine-readable format and detectable as artificially generated or manipulated"
+  - ref: ec-art50-transparency-guidelines-2026
+    stance: supports
+    locator: "§3.1.1, point 31: self-disclosure at authorisation, reporting and validation steps; §6.2.1, point 131: scientific developments count as matters of public interest"
+    quote: "AI agents should also disclose themselves, to the persons instructing them at key steps (e.g. at the point of authorisation, reporting, validation etc.) and at every new interaction"
+  - ref: transparency-cop-2026
+    stance: supports
+    locator: "Section 1, Sub-measures 1.1.1 and 1.1.2: signed, time-stamped metadata plus an imperceptible watermark"
 
 # ------------------------------------------------------------------ BP08
 bp8-a1:  # run task-specific benchmarks before granting autonomy
@@ -382,6 +404,19 @@ bp9-a5:  # stating a level is necessary but not sufficient
     stance: supports
     locator: "agent-run code can transmit data without a deliberate upload"
     quote: "Study-participant-level information can therefore leave the approved environment without a deliberate upload"
+  - ref: ec-art50-transparency-guidelines-2026
+    stance: supports
+    locator: "§6.2.3, points 134-135: what counts as human review, and what does not"
+    quote: "Superficial, solely formal or procedural checks (e.g. spell-checking or grammatical correction), the mere existence of an editorial policy, automated review processes or cursory editorial approval without substantive engagement by the human reviewer or the editorial entity, cannot fulfil the conditions for human review or editorial control"
+bp9-a6:  # HITL engagement provenance recorded per BP07
+  - ref: ec-art50-transparency-guidelines-2026
+    stance: supports
+    locator: "§6.2.3, point 136: a later AI edit voids the human check, so the order has to be known"
+    quote: "Any substantive AI intervention occurring after the human review or editorial control process has taken place will therefore cause the exception to become void."
+  - ref: transparency-cop-2026
+    stance: qualifies
+    locator: "Section 2, Commitment 4(b): a review policy is required, per-instance records are not"
+    quote: "This does not entail having to document individual instances of human review or editorial control over individual text publications."
 
 # ------------------------------------------------------------------ BP10
 bp10-a1:  # some agents carry dual-use risk
