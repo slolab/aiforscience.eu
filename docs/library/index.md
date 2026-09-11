@@ -29,6 +29,7 @@ whether it is for or against, lives in the provenance data (`assets/provenance.y
 | [The GenAI Divide](mit-genai-divide-2025.md) | MIT Project NANDA | July 2025 | Out-of-domain enterprise report; grounds BP01, BP06, BP08 on task fit, workflow design, and outcome-based evaluation; qualifies BP03. |
 | [Expectation–Realisation Gap for Agentic AI](expectation-realisation-gap-2026.md) | Lobentanzer (Helmholtz Munich) | February 2026 | Review of controlled trials on realised vs expected benefit; downweighted context (author is a contributor); grounds BP01 on heterogeneity and benefit planning, with optional context for BP06, BP08, BP09. |
 | [EU AI Omnibus](ai-omnibus-2026.md) | European Union | July 2026 | Largely out-of-scope regulatory simplification of the AI Act; grounds BP04 and BP10 on technical safeguards against foreseeable misuse, with context for BP03, BP08. |
+| [Commission Guidelines on Article 50 transparency](ec-art50-transparency-guidelines-2026.md) | European Commission | July 2026 | The regulator's reading of the AI Act transparency duties that apply from 2 August 2026; grounds BP04, BP07, BP09 on agent self-disclosure, marking of AI-generated content, named editorial responsibility, and what counts as human review. Confirms that the scientific research exclusion covers Article 50. |
 | [A safer framework for patient data in AI-for-Science grants](gagneur-rare-disease-patient-data-2026.md) | Gagneur (TU Munich) | July 2026 | Individual commentary on grant data terms; grounds BP04, BP02, BP09 on data-egress control, governed access, and effective oversight; flags a gap on controlled-access data in third-party training. |
 | [F(AI)2R: Verifiable AI Provenance as an Executable Skill](fai2r-verifiable-ai-provenance-2026.md) | Florian Krebs | July 2026 | Self-demonstrated claim-level provenance method; grounds BP07 on traceable, auditable agent output and human/agent attribution. Single-session, self-audited case study; author has a declared stake in the method. |
 
@@ -64,11 +65,12 @@ Each links to its bibliographic record.
 - [Crossref and the Retraction Watch database (2023)](ref-crossref-retraction-watch-2023.md)
 - [Fabricated citations from LLMs (Walters & Wilder 2023)](ref-walters-wilder-2023.md)
 - [AI tools cite retracted papers (MIT Technology Review 2025)](ref-mit-tech-review-retracted-2025.md)
+- [Code of Practice on Transparency of AI-generated Content (2026)](ref-transparency-cop-2026.md)
 
 **Governance and risk frameworks**
 
 - [NIST AI Risk Management Framework (2023, 2024)](ref-nist-ai-rmf.md)
-- [EU AI Act (2024)](ref-eu-ai-act.md)
+- [EU AI Act (2024, amended 2026)](ref-eu-ai-act.md)
 - [OECD AI Principles (2024)](ref-oecd-ai-principles-2024.md)
 - [ISO/IEC 42001:2023](ref-iso-42001-2023.md)
 - [OpenAI, Practices for Governing Agentic AI Systems (2023)](ref-openai-governing-agentic-ai-2023.md)
