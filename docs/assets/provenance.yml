@@ -79,6 +79,10 @@ bp1-a4:  # frontier model where a specialized method fits -> avoidable failure m
   - ref: kapoor-narayanan-leakage-2023
     stance: supports
     locator: "leakage across 294 papers in 17 fields; over-optimistic, non-reproducible"
+  - ref: fda-genai-medical-devices-2026
+    stance: supports
+    locator: "§II, p. 2: failure modes generative systems add over traditional software"
+    quote: "confabulations (or hallucinations) that may appear authentic to users, uncertainty in the bounds of a device’s intended use, limited visibility into underlying third-party foundation models, and performance degradation of the device and its components across test environments and in real-world applications across the TPLC"
 
 # ------------------------------------------------------------------ BP02
 bp2-a2:  # programmatic use often indistinguishable from human users
@@ -159,11 +163,19 @@ bp3-a5:  # vetting is separate; discoverable is not automatically safe
     locator: "official registry lists self-reported data; runs no security review"
   - ref: owasp-mcp-top10
     stance: supports
+  - ref: fda-genai-medical-devices-2026
+    stance: supports
+    locator: "§VII.A, p. 22: a Foundation Model Master File documents the model; the sponsor still has to demonstrate the system built on it"
+    quote: "sponsors would remain responsible for independently demonstrating the safety and effectiveness of their own device built on a foundation model"
 bp3-a6:  # public interfaces vulnerable to prompt injection
   - ref: owasp-llm-top10-2025
     stance: supports
   - ref: invariant-tool-poisoning-2025
     stance: supports
+  - ref: fda-genai-medical-devices-2026
+    stance: supports
+    locator: "Appendix A, A.1, p. 26"
+    quote: "resistance to prompt injection through user inputs, retrieved content, and tool outputs"
 
 # ------------------------------------------------------------------ BP04
 bp4-a1:  # limits belong in the system, not only in policy
@@ -204,6 +216,15 @@ bp4-a3:  # limits in permission scopes, autonomy limits, shutdown paths
   - ref: amazon-ai-cost-overruns-2026
     stance: qualifies
     locator: "resource consumption is a fourth limit; an agent within its permissions and autonomy limit can still cause harm by spending"
+  - ref: fda-genai-medical-devices-2026
+    stance: supports
+    locator: "Appendix A, A.1, p. 26; §VI.C, p. 20-21 (change control, including unplanned third-party model updates)"
+    quote: "compliance with human-oversight checkpoints before irreversible or high-consequence actions"
+bp4-a4:  # regardless of implemented safeguards, something can always go wrong
+  - ref: fda-genai-medical-devices-2026
+    stance: supports
+    locator: "§II, p. 3; §VI, p. 19: premarket evidence cannot capture performance, so monitoring continues after deployment"
+    quote: "important for premarket evidence to be complemented by postmarket evidence gathered through robust device performance monitoring approaches"
 bp4-a5:  # named human owner for each responsibility
   - ref: openai-governing-agentic-ai-2023
     stance: supports
@@ -216,6 +237,10 @@ bp4-a5:  # named human owner for each responsibility
   - ref: jrc-ai-in-science-2025
     stance: supports
     locator: "human accountability in science"
+  - ref: fda-genai-medical-devices-2026
+    stance: supports
+    locator: "§V, p. 10 (Freyer et al. on accountability); §VI.D, question 21, p. 21"
+    quote: "how can these roles be structured without diffusing manufacturer accountability?"
 bp4-a6:  # actions logged under an attributable identity
   - ref: chan-visibility-2024
     stance: supports
@@ -308,6 +333,10 @@ bp7-a1:  # answers traceable to sources, open to audit
     stance: supports
     locator: "§II trust gap, §IV Invariant I and Table I: reference existence separated from evidential support"
     quote: "existence of a reference is machine-checkable, support for a claim is a judgement"
+  - ref: fda-genai-medical-devices-2026
+    stance: supports
+    locator: "§IV, p. 8: an output whose basis the user cannot evaluate moves higher on the consequences axis; question 1, p. 9 lists traceability to primary sources as a candidate risk dimension"
+    quote: "independently evaluate the basis for the output (and therefore the function may migrate higher on the consequences axis)"
 bp7-a2:  # clear what a human did and what an agent did
   - ref: credit-2022
     stance: supports
@@ -334,6 +363,14 @@ bp8-a1:  # run task-specific benchmarks before granting autonomy
   - ref: elixir-ai-strategy-2026
     stance: supports
     locator: "Introduction, p.2: curated, expert-validated benchmarks are a community endeavour"
+  - ref: fda-genai-medical-devices-2026
+    stance: supports
+    locator: "§V.B.2, p. 13: scope, methods, rubrics, adjudicators, and acceptance criteria set before testing"
+    quote: "sponsors would define the scope of testing based on the device’s intended use and risk profile, prespecify evaluation methods, describe and justify scoring rubrics, identify qualified expert adjudicators where applicable, and prespecify and justify acceptance criteria"
+  - ref: fda-genai-medical-devices-2026
+    stance: qualifies
+    locator: "§VI, p. 19: some evidence only arrives in use; evaluation continues after deployment with re-benchmarking triggers"
+    quote: "CDRH is considering whether it is appropriate to accept greater premarket uncertainty regarding a GenAI-enabled device’s benefit-risk profile through greater reliance on postmarket monitoring."
 bp8-a2:  # prove suitability before informing scientific work
   - ref: elixir-tf-agentic-ai-2026
     stance: supports
@@ -356,6 +393,15 @@ bp8-a3:  # no good general proxy for correctness in individual use
     stance: supports
     locator: "§6.2, pg. 20"
     quote: "Benchmarked tools on operational outcomes, not model benchmarks"
+  - ref: fda-genai-medical-devices-2026
+    stance: supports
+    locator: "§V.B, p. 12 (public benchmark assets); §V.A, p. 11 (evaluate the deployed configuration, not the foundation model alone)"
+    quote: "challenges with publicly available benchmarking assets due to data contamination, saturation, and lack of representativeness of real-world conditions"
+bp8-a5:  # the adopter measures performance on representative tasks and records how it fails
+  - ref: fda-genai-medical-devices-2026
+    stance: supports
+    locator: "§V.C, p. 14; §V.C.1, p. 15 (shadow deployment); Appendix A, R.1, p. 25-26 (repeated runs, paraphrases, ordering, long conversations)"
+    quote: "device benchmarking, as described above and however thorough, may not fully establish how a GenAI-enabled device will perform in real clinical use"
 
 # ------------------------------------------------------------------ BP09
 bp9-a1:  # state the HITL level for each use case
@@ -368,6 +414,11 @@ bp9-a1:  # state the HITL level for each use case
   - ref: nist-ai-rmf
     stance: supports
     locator: "AI 600-1: oversight calibrated to risk"
+bp9-a2:  # HITL ranges from mandatory to optional, in-process to final check
+  - ref: fda-genai-medical-devices-2026
+    stance: supports
+    locator: "§IV, p. 6"
+    quote: "A function that acts with continuous healthcare professional (HCP) supervision is meaningfully different from a function that acts in fully autonomous fashion."
 bp9-a5:  # stating a level is necessary but not sufficient
   - ref: elish-2019
     stance: supports
@@ -382,6 +433,10 @@ bp9-a5:  # stating a level is necessary but not sufficient
     stance: supports
     locator: "agent-run code can transmit data without a deliberate upload"
     quote: "Study-participant-level information can therefore leave the approved environment without a deliberate upload"
+  - ref: fda-genai-medical-devices-2026
+    stance: supports
+    locator: "§IV, p. 7 (a disclaimer does not make an output less directive); Appendix A, E.4, p. 25 (automation bias from fluency)"
+    quote: "a patient-facing informational function may not become any less directive because it includes a “talk to your doctor” or an “I am not a medical professional” statement"
 
 # ------------------------------------------------------------------ BP10
 bp10-a1:  # some agents carry dual-use risk
@@ -425,3 +480,7 @@ bp10-a4:  # high-consequence actions through a screening chokepoint
     stance: supports
     locator: "Art 5(1a)(a)(ii); Recital 12"
     quote: "provider must build technical safeguards against reasonably foreseeable and reproducible prohibited output, not rely on intent or policy"
+  - ref: fda-genai-medical-devices-2026
+    stance: supports
+    locator: "§IV, p. 7 (action-taking functions rank highest on the activity axis); Appendix A, A.1, p. 26"
+    quote: "compliance with human-oversight checkpoints before irreversible or high-consequence actions"
