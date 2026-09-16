@@ -1237,7 +1237,7 @@ body {
   margin-bottom: 0;
 }
 
-/* Only the governance card links onward, to the decision-makers' digest. */
+/* Only the governance card links onward, to the short version. */
 .afs-audience-card__link {
   display: inline-block;
   margin-top: 0.7rem;
@@ -1611,7 +1611,7 @@ body {
     overflow: visible !important;
   }
   /* Site title and repository source belong to the mobile drawer; hide them on
-     the desktop rail so the "For decision-makers" card sits at the top. */
+     the desktop rail so the "The short version" card sits at the top. */
   .md-nav--primary > .md-nav__title,
   .md-nav--primary > .md-nav__source {
     display: none;
@@ -1623,7 +1623,7 @@ body {
   }
 }
 
-/* "For decision-makers" card at the top of the left nav (mirrors the right-rail
+/* "The short version" card at the top of the left nav (mirrors the right-rail
    "About this practice" card). */
 .afs-nav-card {
   display: block;
@@ -1641,13 +1641,13 @@ a.afs-nav-card:focus-visible {
 }
 
 /* Subtle "back to the practices" card, shown in place of the full practices
-   list on the decision-makers page so it does not detract from the digest. */
+   list on the short-version page so it does not detract from the digest. */
 .afs-nav-card--practices {
   background: transparent;
   border-style: dashed;
 }
 
-/* Greyed, non-clickable when already on the decision-makers page. */
+/* Greyed, non-clickable when already on the short-version page. */
 .afs-nav-card--current {
   opacity: 0.55;
   cursor: default;

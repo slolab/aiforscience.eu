@@ -28,7 +28,8 @@ Proposals, challenges, and comments sent there are carried into the record by th
 The Google Group doubles as a mailing list, so sign up if you'd like to stay up to date.
 
 **Edit directly.** Every page has an edit button that opens a pull request.
-Follow the conventions in the repository's CLAUDE.md (page structure, metadata schema, writing style).
+[CONTRIBUTING.md](https://github.com/slolab/aiforscience.eu/blob/main/CONTRIBUTING.md) covers working in the repository: the checks to run, the branch convention, and the licence your contribution carries.
+The conventions for page structure, metadata schema, and writing style are in [CLAUDE.md](https://github.com/slolab/aiforscience.eu/blob/main/CLAUDE.md).
 
 **Join the editor group.** If you want to help maintain the record, see [Become an editor](editors.md).
 
@@ -44,3 +45,8 @@ Follow the conventions in the repository's CLAUDE.md (page structure, metadata s
 Editors review all input in the open.
 Accepted practices start as **draft**, move to **reviewed** when the editor group accepts them, and to **endorsed** when a named organisation formally backs them.
 See [Governance](governance.md) for details.
+
+## Code of conduct
+
+Everyone taking part is covered by the [code of conduct](code-of-conduct.md).
+It applies in the repository, in Discussions, on the Google Group, on the monthly call, and at events held under the AI for Science name.

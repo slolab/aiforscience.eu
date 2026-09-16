@@ -1,10 +1,14 @@
-"""MkDocs hook: keep best-practice titles spelled once.
+"""MkDocs hook: keep best-practice titles and sources spelled once.
 
-Each best-practice title lives only in the BP page's frontmatter. This hook
-renders two things from it, so no literal copy is kept in page bodies:
+Each best-practice title and source list lives only in the BP page's
+frontmatter. This hook renders three things from it, so no literal copy is
+kept in page bodies:
 
 - Each BP page's H1: the `<!-- BP_TITLE -->` placeholder becomes a
   "Best practice N" kicker plus the title as the page lead.
+- Each BP page's `## Sources` list: the `<!-- BP_SOURCES -->` placeholder
+  becomes one bullet per frontmatter `sources:` entry, linking the library
+  page and carrying its note.
 - Each BP page's sidebar nav label: from the page's frontmatter `nav_title`,
   so the short label lives in the page, not in mkdocs.yml.
 
@@ -17,6 +21,7 @@ from pathlib import Path
 import yaml
 
 TITLE_PLACEHOLDER = "<!-- BP_TITLE -->"
+SOURCES_PLACEHOLDER = "<!-- BP_SOURCES -->"
 BP_PAGE = re.compile(r"best-practices/(\d\d)-.*\.md$")
 
 _FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)
@@ -27,14 +32,28 @@ def _load_meta(path):
     return yaml.safe_load(match.group(1)) if match else {}
 
 
+def _render_sources(sources):
+    lines = ["## Sources", ""]
+    for source in sources:
+        bullet = f'- [{source["title"]}](../{source["ref"]}).'
+        note = source.get("note")
+        lines.append(f"{bullet} {note}" if note else bullet)
+    return "\n".join(lines)
+
+
 def on_page_markdown(markdown, page, config, files):
     match = BP_PAGE.match(page.file.src_uri)
-    if match and TITLE_PLACEHOLDER in markdown:
+    if not match:
+        return markdown
+    if TITLE_PLACEHOLDER in markdown:
         title = page.meta.get("title", "")
         # Title as the lead: a quiet "Best practice N" kicker above the title,
         # and the title itself as the H1 (styled small in home.css).
         kicker = f'<p class="afs-bp-kicker">Best practice {int(match.group(1))}</p>'
-        return markdown.replace(TITLE_PLACEHOLDER, f"{kicker}\n\n# {title}")
+        markdown = markdown.replace(TITLE_PLACEHOLDER, f"{kicker}\n\n# {title}")
+    if SOURCES_PLACEHOLDER in markdown:
+        sources = page.meta.get("sources") or []
+        markdown = markdown.replace(SOURCES_PLACEHOLDER, _render_sources(sources))
     return markdown
 
 

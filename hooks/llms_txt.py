@@ -2,8 +2,8 @@
 
 Non-technical readers cannot run an MCP server, and this site hosts no chatbot.
 So the record is emitted at build time in the shapes assistants already read,
-and the "Ask your own assistant" block on the decision-makers page points a
-reader's own ChatGPT or Claude at them:
+and the "Ask your own assistant" block on the short version points a reader's
+own ChatGPT or Claude at them:
 
 - ``/llms.txt``      a grouped index of the pages, per the llms.txt convention;
 - ``/llms-full.txt`` the whole record in one file, for an assistant to ingest;
@@ -26,14 +26,14 @@ _PAGES = []
 # Friendly labels for the top-level section a page sits in. Anything else falls
 # back to the directory name, or "Pages" for files at the docs root.
 _SECTION_LABELS = {
-    "for-decision-makers": "For decision-makers",
+    "short-version": "The short version",
     "best-practices": "Best practices",
     "library": "Library",
     "about": "About",
     "releases": "Releases",
 }
 _SECTION_ORDER = [
-    "for-decision-makers",
+    "short-version",
     "best-practices",
     "library",
     "about",

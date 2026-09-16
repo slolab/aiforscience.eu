@@ -10,18 +10,23 @@ sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
     ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, items 1 and 2"
+    note: "Best Practice items 1 and 2. Provider stance and the resource typology."
   - title: "The FAIR Guiding Principles for scientific data management and stewardship (Wilkinson et al. 2016)"
     ref: library/ref-fair-2016.md
     locator: "machine-actionability; Accessible principle (auth permitted)"
+    note: 'Grounds machine-actionability as the general goal; the Accessible principle permits authentication, so "accessible" never meant "open without limit".'
   - title: "The ELIXIR Core Data Resources (Drysdale et al. 2020)"
     ref: library/ref-elixir-cdr-2020.md
     locator: "selection by demand and importance"
+    note: "A concrete demand-and-importance typology with the top tier funded as infrastructure. Life-science instance, cited as an example."
   - title: "The bio.tools registry of software tools and data resources (Ison et al. 2019)"
     ref: library/ref-biotools-2019.md
     locator: "registry model for the long tail"
+    note: "The light generic path for the long tail. Life-science instance, cited as an example."
   - title: "COAR survey: the impact of AI bots and crawlers on open repositories (2025)"
     ref: library/ref-coar-ai-bots-2025.md
     locator: "load and the blocking dilemma"
+    note: 'Evidence that open resources face heavy automated load and that blunt blocking also blocks real users. Qualifies "default accessible" toward governed access.'
 layer: Ecosystem
 hitl: n/a
 tags: [provider, governance, draft]
@@ -102,21 +107,8 @@ The load that automated clients now place on open resources makes governed acces
 - A resource keeps a default-open path but authenticates and rate-shapes automated traffic, so a burst of agent calls does not knock it over for its human users.
   Its logs cannot tell agents from people, which is why the limit is set at the resource rather than inferred from the client.
 
-## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice items 1 and 2.
-  Provider stance and the resource typology.
-- [FAIR Guiding Principles (Wilkinson et al. 2016)](../library/ref-fair-2016.md).
-  Grounds machine-actionability as the general goal; the Accessible principle permits authentication, so "accessible" never meant "open without limit".
-- [ELIXIR Core Data Resources (Drysdale et al. 2020)](../library/ref-elixir-cdr-2020.md).
-  A concrete demand-and-importance typology with the top tier funded as infrastructure.
-  Life-science instance, cited as an example.
-- [bio.tools registry (Ison et al. 2019)](../library/ref-biotools-2019.md).
-  The light generic path for the long tail.
-  Life-science instance, cited as an example.
-- [COAR survey on AI bots and crawlers (2025)](../library/ref-coar-ai-bots-2025.md).
-  Evidence that open resources face heavy automated load and that blunt blocking also blocks real users.
-  Qualifies "default accessible" toward governed access.
+<!-- BP_SOURCES -->
+<!-- The Sources list above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 

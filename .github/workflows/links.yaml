@@ -55,6 +55,16 @@ jobs:
       # not indicate rot: 403 and 429 are bot mitigation, and 202 is what
       # EUR-Lex returns for every one of its URL forms (ELI, OJ, CELEX) when
       # fetched by a client it does not recognise as a browser.
+      #
+      # The theme puts an "edit this page" link on every page, so the built
+      # site carries one github.com URL per page, 87 of them at present. Checked
+      # in one burst they trip GitHub's rate limiting, which answers with
+      # retry-after 300. lychee caps that to 60s and retries, and most of its
+      # workers spend the run asleep. Unrelated hosts queued behind that backlog
+      # ran past the request timeout and were reported as rot. Excluding the
+      # edit links costs no coverage: they are generated from the page being
+      # rendered, so they cannot go stale on their own, and the repository URL
+      # they all share is still checked. It took the check from 3m25s to 3s.
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
@@ -62,8 +72,10 @@ jobs:
             --no-progress
             --cache
             --max-cache-age 3d
+            --timeout 30
             --accept 200,201,202,204,206,301,302,303,307,308,403,429
             --root-dir ${{ github.workspace }}/site
             --exclude 'https://aiforscience\.eu'
+            --exclude 'https://github\.com/slolab/aiforscience\.eu/edit/'
             'site/**/*.html'
           fail: true
