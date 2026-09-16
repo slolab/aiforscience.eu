@@ -105,6 +105,7 @@ Each links to its bibliographic record.
 - [NeurIPS Paper Checklist](ref-neurips-checklist.md)
 - [DOME recommendations for ML validation in biology (2021)](ref-dome-2021.md)
 - [Open and Sustainable AI in the life sciences (OSAI, 2025)](ref-osai-2025.md)
+- [LLM Evaluators Recognize and Favor Their Own Generations (Panickssery et al. 2024)](ref-panickssery-self-preference-2024.md)
 
 **Dual-use and frontier safety**
 

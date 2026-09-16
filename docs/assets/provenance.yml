@@ -357,6 +357,15 @@ bp8-a3:  # no good general proxy for correctness in individual use
     locator: "§6.2, pg. 20"
     quote: "Benchmarked tools on operational outcomes, not model benchmarks"
 
+bp8-a6:  # a same-family model judge is not independent; some human judgement, in proportion to the stakes
+  - ref: panickssery-self-preference-2024
+    stance: supports
+    locator: "Abstract"
+    quote: "a linear correlation between self-recognition capability and the strength of self-preference bias"
+  - ref: fai2r-verifiable-ai-provenance-2026
+    stance: supports
+    locator: "single-witness weakness: the authoring agent granted its own top verification status; independent-model or sampled-human re-verification flagged as needed"
+
 # ------------------------------------------------------------------ BP09
 bp9-a1:  # state the HITL level for each use case
   - ref: elixir-tf-agentic-ai-2026
