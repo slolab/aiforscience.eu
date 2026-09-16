@@ -7,7 +7,7 @@ body:
     id: statement
     attributes:
       label: The practice, as an imperative
-      placeholder: 'Example: "Make provenance and citation first-class."'
+      placeholder: 'Example: "Make every agent answer traceable and citable."'
     validations:
       required: true
   - type: textarea

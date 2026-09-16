@@ -322,6 +322,18 @@ bp7-a2:  # clear what a human did and what an agent did
     stance: supports
     locator: "§IV Model, §VI Table III: attribution per activity rather than per idea"
 
+bp7-a3:  # sources cited with a persistent identifier where one exists
+  - ref: fair-2016
+    stance: supports
+    locator: "F1"
+    quote: "(meta)data are assigned a globally unique and persistent identifier"
+  - ref: walters-wilder-2023
+    stance: supports
+    locator: "fabricated and erroneous bibliographic citations; an identifier is what would have resolved or failed them"
+  - ref: crossref-retraction-watch-2023
+    stance: supports
+    locator: "retraction data keyed by DOI"
+
 # ------------------------------------------------------------------ BP08
 bp8-a1:  # run task-specific benchmarks before granting autonomy
   - ref: reforms-2024
