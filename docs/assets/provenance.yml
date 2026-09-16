@@ -321,6 +321,22 @@ bp7-a2:  # clear what a human did and what an agent did
   - ref: fai2r-verifiable-ai-provenance-2026
     stance: supports
     locator: "§IV Model, §VI Table III: attribution per activity rather than per idea"
+  - ref: faia-2026
+    stance: supports
+    locator: "attribution flags human-created / AI-assisted / AI-generated; activity codes; system attribution"
+    quote: "FAIA provides a vocabulary and technical framework for machine-readable, persistent, and verifiable disclosure of AI involvement"
+
+bp7-a3:  # sources cited with a persistent identifier where one exists
+  - ref: fair-2016
+    stance: supports
+    locator: "F1"
+    quote: "(meta)data are assigned a globally unique and persistent identifier"
+  - ref: walters-wilder-2023
+    stance: supports
+    locator: "fabricated and erroneous bibliographic citations; an identifier is what would have resolved or failed them"
+  - ref: crossref-retraction-watch-2023
+    stance: supports
+    locator: "retraction data keyed by DOI"
 
 # ------------------------------------------------------------------ BP08
 bp8-a1:  # run task-specific benchmarks before granting autonomy
