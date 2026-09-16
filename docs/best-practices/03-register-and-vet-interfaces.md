@@ -47,6 +47,10 @@ sources:
     ref: library/mit-genai-divide-2025.md
     locator: "§3.3 p.8 shadow AI outpaces governed deployment"
     note: 'Enterprise field evidence of a "shadow AI economy": unsanctioned personal-tool use outpaces governed deployment and often delivers better results (§3.3, pg. 8), so vetting should learn from observed usage rather than only restrict it. Out-of-domain business report; qualifies rather than grounds the practice.'
+  - title: "Måløy, Self-propagating prompt injection in Copilot for Word (2026)"
+    ref: library/ref-copilot-word-ai-worm-2026.md
+    locator: "Security boundary and observed behavior; Impact; Closing thoughts"
+    note: "Coordinated disclosure showing that a document shared through email or an internal SharePoint site can carry hidden instructions that steer the assistant, and that the assistant can copy them into its own output, which then carries the attack on (bp3-a5). Also the tradeoff argument: the model has to read the content to judge it, so a filter in front moves the exposure rather than removing it (bp3-a7). A proof of concept in a commercial productivity suite, not an incident observed in science; grounding only."
 layer: Ecosystem
 hitl: mandatory
 tags: [provider, governance, draft]
@@ -82,18 +86,21 @@ comments: true
     Prefer interfaces that have been vetted, not just listed.
     Before trusting one with your data or actions, check who maintains it, when it was reviewed, and what it is allowed to do.
     Presence in a registry is not a safety check on its own: an unvetted interface can carry prompt-injection or malware risk you cannot see from its description.
+    The same holds for what an agent reads: a document from a shared folder can carry hidden instructions, so check what the agent read and what it changed before you reuse its output.
 
 === "For providers"
 
     List your interfaces through a channel that records their source and maintainer, and have them vetted (reviewed or signed) before they are trusted.
     Route agent traffic through an approved, identified channel so you can shape and rate-limit it by identity, which beats blocking addresses that also blocks real users.
     If you adapt or repurpose someone else's interface, you may take on the duties of its provider.
+    If your service lets an agent read documents or data from shared locations, treat that content as untrusted input whatever its origin.
 
 === "For governance"
 
     Treat listing and vetting as two things: an inventory and a safety check.
     Back a trusted channel, require listed interfaces to record their source and review date, and make vetting (not mere registration) the point where risk is assessed.
     Keep more than one provider in use so the institution is not locked to a single vendor.
+    Extend vetting to the content agents read: a file is not vetted by being stored on an internal server.
 
 ## Reasons
 
@@ -103,6 +110,9 @@ Prompt injection is the top-ranked risk in the OWASP Top 10 for LLM Applications
 This is why listing and vetting are different acts.
 A registry that only lists (like the official MCP Registry, which records self-reported data and runs no security review) makes interfaces discoverable but guarantees nothing about safety.
 Vetting, a review or a signed provenance record, is what lets a user trust an interface.
+The same holds for the content an agent reads.
+A document that reaches the model from a shared folder or a colleague's email is part of the interface surface: hidden instructions in it can steer the agent, and the agent can copy them into its own output, which then carries the attack to the next reader.
+Where a file is stored says nothing about what it contains, so trusting the source does not replace checking the content.
 The same approved channel also makes traffic manageable: identified agent traffic can be shaped and rate-limited per identity, whereas blocking addresses also blocks real users, and modern bots rotate addresses anyway.
 Knowing where an interface comes from, and keeping more than one option open, avoids lock-in to a single provider.
 
@@ -113,6 +123,9 @@ Knowing where an interface comes from, and keeping more than one option open, av
 - A provider publishes its interface through a channel that records source, maintainer, and review date and signs it, so a user can see it was reviewed before trusting it with their data or actions.
 - An agent with web search and code execution reads a public repository issue that contains injected instructions and runs them; a colleague's agent, limited to a fixed set of read-only tools, is unaffected but can do less.
   The reach that makes an agent useful is the same reach that exposes it, so the safeguard has to match the capability.
+- A researcher drafts a report with an assistant from documents in the group's shared folder, which everyone treats as safe.
+  One file carries instructions in white 8-point text; the assistant halves every figure in the draft and appends the same hidden instructions to it, so a colleague who later drafts from that report is hit with the original file long gone.
+  Nothing had vetted what the agent read, and the assistant's own output became the next carrier (demonstrated in a commercial office suite under coordinated disclosure, not observed in science).
 - A resource routes agent calls through an approved, identified channel and rate-limits per identity, instead of blocking address ranges that also lock out real users.
   It declares what automated clients may do in machine-readable form; the emerging IETF AIPREF vocabulary is one instance.
 - A group fine-tunes and repackages someone else's interface and ships it under their own name, without realising that under the EU AI Act a substantial modification can move the provider's duties onto them (the threshold is defined for high-risk systems and its exact bounds are still being clarified).
@@ -124,6 +137,7 @@ Knowing where an interface comes from, and keeping more than one option open, av
 
 ## Change history
 
+- 2026-09-16: Added the trusted-source point to the tabs, Reasons, and Examples (a document in an internal shared folder is not vetted by its location; the agent's output can carry the injection on), following editor review of the Copilot for Word disclosure (Måløy 2026), which is added as a source on bp3-a5 and bp3-a7. Atom wording unchanged.
 - 2026-07-27: Added a "what it looks like in practice" example on shadow usage and vetting that learns from observed use, grounded in The GenAI Divide (MIT NANDA 2025) as a qualifier (bp3-a3).
 - 2026-07-27: Renumbered from BP02 to BP03 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instances (IETF AIPREF, EU AI Act Article 25) and cross-references.
