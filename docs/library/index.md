@@ -44,6 +44,7 @@ Each links to its bibliographic record.
 - [Fine-tuned small LLMs beat zero-shot frontier models (Bucher & Martini 2024)](ref-bucher-fine-tuned-2024.md)
 - [Leakage and the reproducibility crisis in ML-based science (Kapoor & Narayanan 2023)](ref-kapoor-narayanan-leakage-2023.md)
 - [Unmetered agent spend at Amazon (2026)](ref-amazon-ai-cost-overruns-2026.md)
+- [How Is ChatGPT's Behavior Changing Over Time? (Chen, Zaharia & Zou 2023)](ref-chen-chatgpt-drift-2023.md)
 
 **Data and metadata standards**
 
