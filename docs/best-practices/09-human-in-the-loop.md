@@ -4,7 +4,7 @@ nav_title: "State human-in-the-loop requirements"
 practice_id: BP-09
 status: draft
 first_added: 2026-07-25
-last_reviewed: 2026-07-26
+last_reviewed: 2026-09-16
 endorsed_by: []
 sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
@@ -91,6 +91,7 @@ Pipelines need to be assessed for realistically achievable volumes.
 The four labels used here (mandatory / optional, in-process / final check) are a useful shorthand, not settled standards.
 Agent autonomy is a spectrum from tight supervision to full autonomy.
 Stating and enforcing HITL levels fulfils part of [BP04](04-govern-autonomy-and-accountability.md) at the single use case level.
+The HITL level governs who checks each output while the agent runs; whether the tool should be trusted at all is settled beforehand by evaluation ([BP08](08-evaluate-tools-before-trust.md)).
 
 ## Examples
 
@@ -106,6 +107,7 @@ Stating and enforcing HITL levels fulfils part of [BP04](04-govern-autonomy-and-
 
 ## Change history
 
+- 2026-09-16: Challenge [#32](https://github.com/slolab/aiforscience.eu/issues/32). Reasons state the boundary with BP08: the HITL level governs who checks each output during operation; whether to trust the tool at all is settled beforehand by evaluation.
 - 2026-07-27: Renumbered from BP08 to BP09 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns (unstated level, rubber-stamping at volume), replacing restatements of the practice.
 - 2026-07-26: Renumbered from BP08 to BP09 in the reordering.
