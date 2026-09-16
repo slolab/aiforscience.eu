@@ -153,7 +153,7 @@ bp3-a3:  # publish through a channel that lists and vets
     stance: qualifies
     locator: "§3.3, pg. 8"
     quote: "workers from over 90% of the companies we surveyed reported regular use of personal AI tools for work tasks ... This 'shadow AI' often delivers better ROI than formal initiatives"
-bp3-a5:  # vetting is separate; neither discoverable nor from a trusted source is automatically safe
+bp3-a5:  # vetting is separate; discoverable is not automatically safe
   - ref: mcp-registry-2025
     stance: supports
     locator: "official registry lists self-reported data; runs no security review"

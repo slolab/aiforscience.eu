@@ -72,7 +72,7 @@ comments: true
   { #bp3-a3 }
 - Listing makes an interface discoverable and records where it comes from and who maintains it.
   { #bp3-a4 }
-- Vetting is a separate step; neither a discoverable interface nor content from a trusted source (e.g., a document in an internal shared folder) is automatically safe.
+- Vetting is a separate step; a discoverable interface is not automatically safe.
   { .afs-practice__pivot #bp3-a5 }
 - Public interfaces (e.g., public GitHub repositories) are generally vulnerable to [prompt injection](../glossary.md#prompt-injection) attacks.
   { #bp3-a6 }
@@ -137,7 +137,7 @@ Knowing where an interface comes from, and keeping more than one option open, av
 
 ## Change history
 
-- 2026-09-16: Extended bp3-a5 to content from trusted sources (a document in an internal shared folder is not vetted by its location), following editor review of the Copilot for Word disclosure (Måløy 2026), which is added as a source on bp3-a5 and bp3-a7, with matching tab, Reasons, and Example text.
+- 2026-09-16: Added the trusted-source point to the tabs, Reasons, and Examples (a document in an internal shared folder is not vetted by its location; the agent's output can carry the injection on), following editor review of the Copilot for Word disclosure (Måløy 2026), which is added as a source on bp3-a5 and bp3-a7. Atom wording unchanged.
 - 2026-07-27: Added a "what it looks like in practice" example on shadow usage and vetting that learns from observed use, grounded in The GenAI Divide (MIT NANDA 2025) as a qualifier (bp3-a3).
 - 2026-07-27: Renumbered from BP02 to BP03 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instances (IETF AIPREF, EU AI Act Article 25) and cross-references.
