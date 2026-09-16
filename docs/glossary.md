@@ -61,7 +61,7 @@ Human in the loop (HITL) { #hitl }
 
 Interface { #interface }
 :   A component added to an agent's [harness](#harness) so it can reach a tool, data source, or action outside the model, for example an [MCP](#mcp) server, a skill, or a plugin.
-    An interface runs code and acts for the user, so it is where much of the risk enters, which is why interfaces are registered and vetted (see [Register, vet, and manage agent interfaces](best-practices/03-register-and-vet-interfaces.md)).
+    An interface runs code, supplies instructions the model follows, or both, and acts for the user, so it is where much of the risk enters, which is why interfaces are registered and vetted (see [Register, vet, and manage agent interfaces](best-practices/03-register-and-vet-interfaces.md)).
 
 Living record { #living-record }
 :   This site.
