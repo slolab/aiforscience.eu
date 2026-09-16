@@ -4,7 +4,7 @@ nav_title: "Write documentation and data for agents"
 practice_id: BP-05
 status: draft
 first_added: 2026-07-25
-last_reviewed: 2026-07-26
+last_reviewed: 2026-09-16
 endorsed_by: []
 sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
@@ -56,6 +56,8 @@ comments: true
   { #bp5-a3 }
 - Precise documentation helps human users and agents alike.
   { #bp5-a4 }
+- Whether a resource gets its own maintained agent interface is decided in [BP02](02-default-to-agent-accessibility.md); this practice applies to every resource's documentation and metadata regardless of that decision.
+  { #bp5-a5 }
 
 </div>
 
@@ -102,6 +104,7 @@ This work also benefits the people who use the resource directly, and current an
 
 ## Change history
 
+- 2026-09-16: Challenge [#29](https://github.com/slolab/aiforscience.eu/issues/29). Added bp5-a5 stating the boundary with BP02: BP02 decides whether a resource gets a maintained interface; this practice applies to every resource's documentation and metadata regardless.
 - 2026-07-27: Renumbered from BP04 to BP05 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instances (DCAT, Croissant, datasheets, model cards, Bioschemas, llms.txt).
 - 2026-07-26: Rewritten to be domain-neutral (FAIR, DCAT, Croissant, datasheets, and model cards as the general anchors; Bioschemas and SPARQL/Cypher demoted to labelled examples), to add tool descriptions alongside datasets, and to flag `llms.txt` as a proposed convention rather than a standard.
