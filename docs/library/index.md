@@ -31,6 +31,8 @@ whether it is for or against, lives in the provenance data (`assets/provenance.y
 | [EU AI Omnibus](ai-omnibus-2026.md) | European Union | July 2026 | Largely out-of-scope regulatory simplification of the AI Act; grounds BP04 and BP10 on technical safeguards against foreseeable misuse, with context for BP03, BP08. |
 | [A safer framework for patient data in AI-for-Science grants](gagneur-rare-disease-patient-data-2026.md) | Gagneur (TU Munich) | July 2026 | Individual commentary on grant data terms; grounds BP04, BP02, BP09 on data-egress control, governed access, and effective oversight; flags a gap on controlled-access data in third-party training. |
 | [F(AI)2R: Verifiable AI Provenance as an Executable Skill](fai2r-verifiable-ai-provenance-2026.md) | Florian Krebs | July 2026 | Self-demonstrated claim-level provenance method; grounds BP07 on traceable, auditable agent output and human/agent attribution. Single-session, self-audited case study; author has a declared stake in the method. |
+| [Living guidelines on the responsible use of generative AI in research](era-living-guidelines-genai-2026.md) | European Commission, DG Research and Innovation, with the ERA Forum | May 2026 (third version) | Non-binding guidance to researchers, organisations, and funders; grounds BP07, BP10, BP01, BP02 on disclosure, data sent to external tools, tool fit, and self-governed hosting; source of the proposed BP04 atoms on service terms. |
+| [EDPB Opinion 28/2024 on personal data in AI models](edpb-opinion-ai-models-2024.md) | European Data Protection Board | December 2024 | Supervisory authorities' position on models trained on personal data; grounds BP10 (models not anonymous by default; remedies reach the model), BP03 (self-declaration is not compliance), BP04 (technical measures); legal ground for the proposed BP04 atoms. |
 
 ## Reference works
 
@@ -120,3 +122,13 @@ Each links to its bibliographic record.
 
 - [WMA Declaration of Helsinki (2024)](ref-helsinki-2024.md)
 - [EU General Data Protection Regulation (2016)](ref-gdpr-2016.md)
+- [EDPS decision on the European Commission's use of Microsoft 365 (2024)](ref-edps-commission-m365-2024.md)
+- [EDPB-EDPS assessment of the US CLOUD Act (2019)](ref-edpb-edps-cloud-act-2019.md)
+- [Microsoft France before the French Senate inquiry on public procurement (2025)](ref-senat-microsoft-hearing-2025.md)
+- [Court-ordered retention of ChatGPT logs in the New York Times litigation (2025)](ref-openai-preservation-order-2025.md)
+- [Anthropic consumer terms update: training on chats by default (2025)](ref-anthropic-consumer-terms-2025.md)
+- [Dutch DPA: AI chatbot use leads to data breaches (2024)](ref-dutch-dpa-chatbot-breaches-2024.md)
+- [DSK guidance: Artificial intelligence and data protection (2024)](ref-dsk-ki-datenschutz-2024.md)
+- [CNIL and CIANum: Agentic AI and personal data protection (2026)](ref-cnil-cianum-agentic-ai-2026.md)
+- [AEPD guidance on agentic AI from a data protection perspective (2026)](ref-aepd-agentic-ai-2026.md)
+- [European Health Data Space Regulation (2025)](ref-ehds-2025.md)
