@@ -321,6 +321,10 @@ bp7-a2:  # clear what a human did and what an agent did
   - ref: fai2r-verifiable-ai-provenance-2026
     stance: supports
     locator: "§IV Model, §VI Table III: attribution per activity rather than per idea"
+  - ref: faia-2026
+    stance: supports
+    locator: "attribution flags human-created / AI-assisted / AI-generated; activity codes; system attribution"
+    quote: "FAIA provides a vocabulary and technical framework for machine-readable, persistent, and verifiable disclosure of AI involvement"
 
 bp7-a3:  # sources cited with a persistent identifier where one exists
   - ref: fair-2016
