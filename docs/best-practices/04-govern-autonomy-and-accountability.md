@@ -51,6 +51,10 @@ sources:
     ref: library/ref-jrc-ai-in-science-2025.md
     locator: "AI as tool; human accountability in science"
     note: 'AI as a tool with human accountability in science. The HFD source attributes a "situated judgement is not automatable" claim to the JRC; we cite the JRC report for the accountability framing and do not attribute that exact wording to it without a located passage.'
+  - title: "Måløy, Self-propagating prompt injection in Copilot for Word (2026)"
+    ref: library/ref-copilot-word-ai-worm-2026.md
+    locator: "Closing thoughts (interpreter analogy; LLMs all the way down)"
+    note: "Argues that a model cannot be relied on to judge whether the content it reads is safe, because that content is already shaping the judgement, and that a second model placed in front of it inherits the same exposure; two vendor mitigations, one of them a model upgrade, did not close the class (bp4-a2). A proof of concept in a commercial productivity suite, not an incident observed in science; grounding only."
 layer: Ecosystem
 hitl: n/a
 tags: [governance, provider, draft]
@@ -119,6 +123,8 @@ This is the consensus position across the main governance frameworks (NIST, the 
 - A policy document says the agent must not delete production records, but nothing in the system stops it; a [prompt-injected](../glossary.md#prompt-injection) instruction gets it to do exactly that.
   The rule was written, not enforced.
 - The same agent runs with a scoped token that carries no delete permission and a shutdown control a named on-call engineer can trigger, so the injected instruction fails because the action was never available to it.
+- A vendor answers a document-borne injection in a drafting assistant with a detector in front of the model and a model upgrade; the reported payloads stop working, but the class still reproduces at publication, because the assistant still has to read the document in order to judge it.
+  Whatever closes the class has to limit what the assistant can do with what it read, since it cannot reliably be told what to ignore (demonstrated in a commercial office suite under coordinated disclosure, not observed in science).
 - After an agent writes a wrong value to a shared dataset, the team traces it through the action ledger to the run, the model version, and the role that owned that workflow, and closes the gap.
 - Responsibility for an agent sits with "the department" in general; when it misbehaves, no one is answerable and no one has clear authority to shut it down.
 - An agent runs against a token ceiling set per run and an alert at half of it; when a misconfiguration sends it looping over the same records, it stops at the ceiling instead of billing for months against a budget that existed only on paper.
@@ -130,6 +136,7 @@ This is the consensus position across the main governance frameworks (NIST, the 
 
 ## Change history
 
+- 2026-09-16: Added the Copilot for Word disclosure (Måløy 2026) as a supporting source on bp4-a2, with an Example: a detector model and a model upgrade closed the reported payloads but not the class, because the model has to read the content in order to judge it.
 - 2026-07-31: Extended bp4-a3 to name resource and spend caps alongside permission scopes, autonomy limits, and shutdown paths, with matching Reasons, tab, and Example text. An agent inside every permission it was granted can still exhaust a budget, because a looping agent does not crash. Prompted by the reported Amazon cost overruns, recorded in the provenance data as a qualification on bp4-a3.
 - 2026-07-27: Added the EU AI Omnibus (2026) as a supporting source on bp4-a1 (technical safeguards in the system, not policy; Art 5(1a) foreseeable-misuse standard).
 - 2026-07-27: Renumbered from BP03 to BP04 on inserting the new BP01 (match the method to the task).

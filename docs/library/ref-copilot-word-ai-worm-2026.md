@@ -6,7 +6,7 @@ issuing_body: "Håkon Måløy (independent researcher)"
 published: 2026
 doi_or_url: https://enklypesalt.com/posts/context-collapse-part3-ai-worming-through-word/
 added_on: 2026-08-04
-grounds: [BP-03, BP-07, BP-09]
+grounds: [BP-03, BP-04, BP-07, BP-09]
 tags: [library, reference]
 comments: true
 ---
@@ -25,8 +25,10 @@ Demonstrated in a commercial productivity suite, not observed in the wild and no
 
 ## Role in the record
 
-- Grounds [BP03](../best-practices/03-register-and-vet-interfaces.md): the exposure follows from the agent having to read external content in order to judge it, so filtering does not remove it; a document that reaches the model's context is part of the interface surface, and the injection can be written back out into the agent's own output.
-- Grounds [BP09](../best-practices/09-human-in-the-loop.md): the only mitigation offered to customers is human review of the attached and the generated document, and the payload was invisible (white text, small font) while the edits it caused were too subtle to spot, so the check works only if it shows the reviewer what the model read and what the model changed.
+- Grounds [BP03](../best-practices/03-register-and-vet-interfaces.md): a document that reaches the model's context is part of the interface surface, and one shared through email or an internal SharePoint site carries the attack as well as one from outside, so where content comes from does not vet it; the injection can also be written back out into the agent's own output, which becomes the next carrier.
+  The exposure follows from the agent having to read the content in order to judge it, so filtering moves it rather than removes it.
+- Grounds [BP04](../best-practices/04-govern-autonomy-and-accountability.md): the model cannot be relied on to judge whether what it reads is safe, because that content is already shaping the judgement, and a second model placed in front of it inherits the same exposure; two vendor mitigations, one of them a model upgrade, closed the reported payloads but not the class.
 - Grounds [BP07](../best-practices/07-provenance-and-citation.md): the author's own recommendation is that generated documents preserve provenance for source material and model-performed edits in metadata; approved Copilot edits left no visible trace, which is what made the manipulation untraceable afterwards.
+- Grounds [BP09](../best-practices/09-human-in-the-loop.md): the only mitigation offered to customers is human review of the attached and the generated document, and the payload was invisible (white text, small font) while the edits it caused were too subtle to spot, so the check works only if it shows the reviewer what the model read and what the model changed.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

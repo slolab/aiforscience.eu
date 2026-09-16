@@ -31,6 +31,10 @@ sources:
     ref: library/ref-green-2022.md
     locator: "human-oversight mandates often fail to deliver"
     note: "Finds that mandates for human oversight of algorithms often fail to deliver the protections claimed for them, so a stated level has to be designed for effectiveness."
+  - title: "Måløy, Self-propagating prompt injection in Copilot for Word (2026)"
+    ref: library/ref-copilot-word-ai-worm-2026.md
+    locator: "Stage 1; Disclosure status at publication"
+    note: "Human review of the attached and the generated document was the only mitigation offered to customers, and both the payload (white 8-point text) and the edits it caused were too subtle for an attentive reviewer to catch until the model was made to announce its own edits, so a check that does not show what the model read and changed fails in deployment (bp9-a5). A proof of concept in a commercial productivity suite, not an incident observed in science; grounding only."
 layer: Operational
 hitl: in-process
 tags: [practitioner, provider, governance, draft]
@@ -98,6 +102,10 @@ Stating and enforcing HITL levels fulfils part of [BP04](04-govern-autonomy-and-
 - Every use case instead declares its level from a short list (mandatory, optional, in-process, final check), and a workflow that declares none is understood to run at full autonomy, so the choice is explicit.
 - A pipeline has a mandatory "human approves each item" step, but at hundreds of items an hour the reviewer clicks approve without reading; the check exists on paper and fails in practice.
 - The check is designed so the human can actually judge: it shows what changed, at a realistic volume, with approve, edit, veto, and stop, and the strength of the check is set by the stakes.
+- A drafting assistant's only safeguard is that a person reviews the attached documents and the generated one.
+  The hidden instructions in one attachment are white 8-point text and the figures the assistant halved look plausible, so an attentive reviewer misses both; the manipulation surfaces only once the assistant is told to announce its own edits.
+  A review step that shows a clean-looking document, without what the model read and what it changed, is a check that exists on paper.
+  That record of what the model read and changed is the provenance [BP07](07-provenance-and-citation.md) asks for (demonstrated in a commercial office suite under coordinated disclosure, not observed in science).
 - The stated level is enforced by the system rather than left to habit, which ties it to the guardrails in [BP04](04-govern-autonomy-and-accountability.md), and the HITL engagement is recorded in provenance ([BP07](07-provenance-and-citation.md)) so oversight is auditable instead of assumed.
 - A reviewer uploads a confidential manuscript to an external model against the stated boundary of the conference for a high-stakes task. They submit the AI-generated review without declaring the AI use. The conference had inserted a [prompt injection](../glossary.md#prompt-injection) into their review version and catches the reviewer with the prompted output form. The reviewer is barred from conference participation for two years.
 
@@ -106,6 +114,7 @@ Stating and enforcing HITL levels fulfils part of [BP04](04-govern-autonomy-and-
 
 ## Change history
 
+- 2026-09-16: Added the Copilot for Word disclosure (Måløy 2026) as a supporting source on bp9-a5, with an Example: human review that does not show what the model read and changed missed both the hidden payload and the edits it caused.
 - 2026-07-27: Renumbered from BP08 to BP09 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns (unstated level, rubber-stamping at volume), replacing restatements of the practice.
 - 2026-07-26: Renumbered from BP08 to BP09 in the reordering.

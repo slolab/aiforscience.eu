@@ -153,12 +153,16 @@ bp3-a3:  # publish through a channel that lists and vets
     stance: qualifies
     locator: "§3.3, pg. 8"
     quote: "workers from over 90% of the companies we surveyed reported regular use of personal AI tools for work tasks ... This 'shadow AI' often delivers better ROI than formal initiatives"
-bp3-a5:  # vetting is separate; discoverable is not automatically safe
+bp3-a5:  # vetting is separate; neither discoverable nor from a trusted source is automatically safe
   - ref: mcp-registry-2025
     stance: supports
     locator: "official registry lists self-reported data; runs no security review"
   - ref: owasp-mcp-top10
     stance: supports
+  - ref: copilot-word-ai-worm-2026
+    stance: supports
+    locator: "Security boundary and observed behavior; Impact; Disclosure status at publication (customer mitigations)"
+    quote: "organizations that are not aware that they are affected by the attack are also likely to spread it to other organizations through collaborative efforts on shared Microsoft SharePoint sites or shared Microsoft Teams."
 bp3-a6:  # public interfaces vulnerable to prompt injection
   - ref: owasp-llm-top10-2025
     stance: supports
@@ -198,6 +202,10 @@ bp4-a2:  # an agent cannot be persuaded, only prevented
     locator: "constraining the action space"
   - ref: deepmind-agi-safety-2025
     stance: supports
+  - ref: copilot-word-ai-worm-2026
+    stance: supports
+    locator: "Closing thoughts (interpreter analogy; LLMs all the way down)"
+    quote: "Relying on the model to detect XPIAs therefore resembles asking an interpreter to execute an untrusted program to determine whether that program is safe to execute."
 bp4-a3:  # limits in permission scopes, autonomy limits, shutdown paths
   - ref: nist-ai-rmf
     stance: supports
