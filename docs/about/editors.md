@@ -19,7 +19,7 @@ The process is described in [How the record works](how-the-record-works.md), gov
 - Review incoming proposals and challenges, and decide whether a submission becomes a practice, is integrated into an existing practice, or is declined with a stated reason.
 - Distill submitted documents into library entries with quotes and locators.
   Drafting is AI-assisted; the editor is accountable for all decisions.
-- Keep practices current: update the review date, move status from draft to reviewed, record endorsements.
+- Keep practices current: update the [review date](how-the-record-works.md#review-date) after going through a page in full, move status from draft to reviewed, record endorsements.
 - Provide a second review to change status to reviewed.
 
 Editors do not own practices individually, and editing does not commit their institution to anything.
