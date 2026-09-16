@@ -6,7 +6,7 @@ issuing_body: "Wilkinson et al., Scientific Data"
 published: 2016
 doi_or_url: https://doi.org/10.1038/sdata.2016.18
 added_on: 2026-07-27
-grounds: [BP-02, BP-05]
+grounds: [BP-02, BP-05, BP-07]
 tags: [library, reference]
 comments: true
 ---
@@ -24,5 +24,6 @@ A set of principles for making data findable, accessible, interoperable, and reu
 
 - Grounds [BP02](../best-practices/02-default-to-agent-accessibility.md): machine-actionability as the general goal behind default agent-accessibility. The Accessible principle permits authentication, so "accessible" never meant "open without limit".
 - Grounds [BP05](../best-practices/05-documentation-and-data-for-agents.md): documentation and metadata as an interface machines operate from.
+- Grounds [BP07](../best-practices/07-provenance-and-citation.md): F1, a globally unique and persistent identifier, is the condition for a cited source to resolve and be checked by machine.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.
