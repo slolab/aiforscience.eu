@@ -76,6 +76,11 @@ On approval, the PR was merged, triggering an update to the website.
 
 ## Current editors
 
+- Santiago Casas, German Aerospace Center (DLR). [GitHub](https://github.com/santiagocasas)
+- Gavin Farrell, University of Padova. [GitHub](https://github.com/gavinf97)
+- Till Korten, Helmholtz-Zentrum Dresden-Rossendorf (HZDR). [GitHub](https://github.com/thawn)
 - Sebastian Lobentanzer, Helmholtz Munich. [sebastian.lobentanzer@helmholtz-munich.de](mailto:sebastian.lobentanzer@helmholtz-munich.de)
+- Marek Ostaszewski, Luxembourg Centre for Systems Biomedicine, University of Luxembourg. [GitHub](https://github.com/mjostaszewski)
+- Fotis E. Psomopoulos, Institute of Applied Biosciences, CERTH. [GitHub](https://github.com/fpsom)
 
 Reports under the [code of conduct](code-of-conduct.md) go to any editor named here.
