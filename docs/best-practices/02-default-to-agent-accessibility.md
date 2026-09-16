@@ -1,10 +1,10 @@
 ---
-title: Default to agent-accessibility; prioritise effort by demand and importance
-nav_title: "Default to agent-accessibility"
+title: Make resources agent-accessible by default; prioritise effort by demand and importance
+nav_title: "Make resources agent-accessible by default"
 practice_id: BP-02
 status: draft
 first_added: 2026-07-25
-last_reviewed: 2026-07-26
+last_reviewed: 2026-09-16
 endorsed_by: []
 sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
@@ -42,7 +42,7 @@ comments: true
 
 - [Agents](../glossary.md#agent) use resources like humans do: databases, public endpoints, code, tools, and documents.
   { #bp2-a1 }
-- Often, programmatic use by agents cannot be distinguished from human users.
+- Often, programmatic use by agents cannot be distinguished from human use, so a limit inferred from the client does not work.
   { #bp2-a2 }
 - Resources should be [machine-actionable](../glossary.md#machine-actionable) and discoverable by default.
   { #bp2-a3 }
@@ -112,6 +112,7 @@ The load that automated clients now place on open resources makes governed acces
 
 ## Change history
 
+- 2026-09-16: Challenge [#26](https://github.com/slolab/aiforscience.eu/issues/26). Retitled from "Default to agent-accessibility" to "Make resources agent-accessible by default", so the title states an action while keeping the default stance; page slug unchanged. bp2-a2 now states its consequence (a limit inferred from the client does not work) instead of leaving it to the last Example.
 - 2026-07-27: Renumbered from BP01 to BP02 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns, replacing restatements of the practice; kept the labelled life-science instances (Core Data Resources, bio.tools).
 - 2026-07-26: Rewritten to be domain-neutral (FAIR as the general anchor; ELIXIR and bio.tools demoted to labelled examples) and to replace "open to agents" with machine-actionable, discoverable, and governed-per-tier, grounded in FAIR and the COAR load survey.
