@@ -4,7 +4,7 @@ nav_title: "Register and vet interfaces"
 practice_id: BP-03
 status: draft
 first_added: 2026-07-25
-last_reviewed: 2026-07-26
+last_reviewed: 2026-09-16
 endorsed_by: []
 sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
@@ -62,7 +62,7 @@ comments: true
 
 - An [agent](../glossary.md#agent) reaches tools, data, and actions outside the model through [interfaces](../glossary.md#interface) (e.g., [MCP](../glossary.md#mcp) servers, skills, plugins).
   { #bp3-a1 }
-- Each interface runs code and acts for the user, so each is a point where risk enters.
+- Each interface runs code, supplies instructions the model follows, or both, and acts for the user, so each is a point where risk enters.
   { #bp3-a2 }
 - Interfaces should be published through a channel that lists and vets them.
   { #bp3-a3 }
@@ -82,6 +82,7 @@ comments: true
     Prefer interfaces that have been vetted, not just listed.
     Before trusting one with your data or actions, check who maintains it, when it was reviewed, and what it is allowed to do.
     Presence in a registry is not a safety check on its own: an unvetted interface can carry prompt-injection or malware risk you cannot see from its description.
+    If your institution keeps no vetted list, ask for one; until then, treat every interface as unvetted.
 
 === "For providers"
 
@@ -97,11 +98,13 @@ comments: true
 
 ## Reasons
 
-An agent interface runs code and acts for the user.
-A malicious or careless one can carry malware or prompt-injection attacks hidden in a tool description, which the model reads but the user does not see.
+An agent interface runs code, supplies instructions the model follows, or both, and acts for the user.
+A malicious or careless one can carry malware, or prompt-injection attacks hidden in a tool description or a skill file, which the model reads but the user does not see.
 Prompt injection is the top-ranked risk in the OWASP Top 10 for LLM Applications, and tool poisoning is a documented attack on agent interfaces specifically.
 This is why listing and vetting are different acts.
 A registry that only lists (like the official MCP Registry, which records self-reported data and runs no security review) makes interfaces discoverable but guarantees nothing about safety.
+No shared channel that vets agent interfaces is established yet.
+Today the trusted channel is the institution's own approved list, with source, maintainer, and review date recorded for each entry; the agent inventory in [BP04](04-govern-autonomy-and-accountability.md) is the natural place for it.
 Vetting, a review or a signed provenance record, is what lets a user trust an interface.
 The same approved channel also makes traffic manageable: identified agent traffic can be shaped and rate-limited per identity, whereas blocking addresses also blocks real users, and modern bots rotate addresses anyway.
 Knowing where an interface comes from, and keeping more than one option open, avoids lock-in to a single provider.
@@ -110,6 +113,8 @@ Knowing where an interface comes from, and keeping more than one option open, av
 
 - A lab installs an MCP server because a public registry lists it and it has many stars, treating the listing as a safety check.
   The tool description carries instructions the model reads but the user never sees, and the agent leaks data on first use; nothing in the listing had vetted it.
+- A researcher installs a skill from a public repository to format their analyses.
+  The skill runs no code of its own, but one line in its instructions tells the agent to also post results to an external endpoint, and the agent follows it; the risk was in the text the user never read.
 - A provider publishes its interface through a channel that records source, maintainer, and review date and signs it, so a user can see it was reviewed before trusting it with their data or actions.
 - An agent with web search and code execution reads a public repository issue that contains injected instructions and runs them; a colleague's agent, limited to a fixed set of read-only tools, is unaffected but can do less.
   The reach that makes an agent useful is the same reach that exposes it, so the safeguard has to match the capability.
@@ -124,6 +129,7 @@ Knowing where an interface comes from, and keeping more than one option open, av
 
 ## Change history
 
+- 2026-09-16: Challenge [#27](https://github.com/slolab/aiforscience.eu/issues/27). bp3-a2 and the first Reasons sentence now say an interface runs code, supplies instructions the model follows, or both, since a skill executes nothing itself; the glossary "Interface" entry matches. Reasons state that no shared vetting channel exists yet and that the institution's approved list is the trusted channel today, with a matching practitioner-tab line. Added a skill-instruction Example. "Reaches" in bp3-a1 kept as the record's term.
 - 2026-07-27: Added a "what it looks like in practice" example on shadow usage and vetting that learns from observed use, grounded in The GenAI Divide (MIT NANDA 2025) as a qualifier (bp3-a3).
 - 2026-07-27: Renumbered from BP02 to BP03 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instances (IETF AIPREF, EU AI Act Article 25) and cross-references.

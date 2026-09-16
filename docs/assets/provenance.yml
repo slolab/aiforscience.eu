@@ -135,7 +135,7 @@ bp2-a7:  # sort resources into types to prioritise effort
     locator: "registry for the long tail"
 
 # ------------------------------------------------------------------ BP03
-bp3-a2:  # each interface runs code; a point where risk enters
+bp3-a2:  # each interface runs code or supplies instructions; a point where risk enters
   - ref: owasp-llm-top10-2025
     stance: supports
     locator: "LLM01 prompt injection"
