@@ -4,7 +4,7 @@ nav_title: "Screen for dual-use and high-consequence risk"
 practice_id: BP-10
 status: draft
 first_added: 2026-07-26
-last_reviewed: 2026-07-28
+last_reviewed: 2026-09-16
 endorsed_by: []
 sources:
   - title: "METR, Common Elements of Frontier AI Safety Policies (2025)"
@@ -82,6 +82,7 @@ comments: true
     If your agent can act where a mistake or misuse could cause serious harm (ordering synthesis, running code against live systems, driving instruments), do not connect it to that capability without screening.
     Route high-consequence actions through providers or controls that screen them, and expect the agent to refuse dual-use requests.
     The same holds for data you cannot take back: never let an agent send data held under withdrawable consent to a service that will train on it or take a perpetual licence, and do not accept terms that authorise this.
+    Whether sensitive data may leave your controlled environment at all, to which service, and under which terms, is a limit on the agent under [BP04](04-govern-autonomy-and-accountability.md); this practice covers the irreversible case.
 
 === "For providers"
 
@@ -110,6 +111,8 @@ Training a third-party model on data, or granting a perpetual licence over it, c
 When the consent behind that data can be withdrawn, as it can be for human-subjects data under research ethics and data-protection law, no one can validly authorise a use that could not later honour a withdrawal.
 The safeguard is the same as for any irreversible harm: prevent the action before it happens.
 In agentic workflows this means constraining and auditing what an agent can send outward, because an agent that runs code and reads files can transmit such data without a deliberate upload.
+Everyday handling of personal or confidential data (whether it may leave the controlled environment, to which service, under which terms) is one of the limits set on the agent in [BP04](04-govern-autonomy-and-accountability.md).
+The research-ethics and data-protection rules themselves (consent, ethics approval, data-protection law) are established norms the record cites rather than restates.
 
 ## Examples
 
@@ -127,6 +130,7 @@ In agentic workflows this means constraining and auditing what an agent can send
 
 ## Change history
 
+- 2026-09-16: Challenge [#33](https://github.com/slolab/aiforscience.eu/issues/33). Practitioner tab and Reasons state where everyday sensitive-data handling sits: whether data may leave the controlled environment, to which service, under which terms, is a limit on the agent under BP04; this practice covers the irreversible case (bp10-a5). Research-ethics and data-protection norms are cited, not restated (see the mission's method boundary).
 - 2026-07-28: Added atom bp10-a5 (data under withdrawable consent cannot be authorised for irreversible third-party training or a perpetual licence, and an agent must be prevented from transmitting it for those uses), grounded in the Declaration of Helsinki and GDPR (right to withdraw; right to erasure), with the Gagneur commentary as adjacent support. Extended the tabs, Reasons, and Examples to match.
 - 2026-07-27: Added the EU AI Omnibus (2026) as a supporting source on bp10-a4 (provider safeguards against foreseeable prohibited output; Art 5(1a)).
 - 2026-07-27: Renumbered from BP09 to BP10 on inserting the new BP01 (match the method to the task).

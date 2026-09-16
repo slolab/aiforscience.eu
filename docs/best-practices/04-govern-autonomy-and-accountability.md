@@ -4,7 +4,7 @@ nav_title: "Govern agent autonomy and accountability"
 practice_id: BP-04
 status: draft
 first_added: 2026-07-25
-last_reviewed: 2026-07-26
+last_reviewed: 2026-09-16
 endorsed_by: []
 sources:
   - title: "Agentic AI in the higher-education system (2026)"
@@ -106,6 +106,7 @@ A policy document tells a person what to do.
 It does nothing to a system that only follows the actions it is allowed to take.
 As agents get more autonomous, the gap between written rules and enforced limits becomes the main risk.
 To close it, put the limits where they take effect: what the agent can access, how far it can act without a human, how much it may consume, and when it must stop or escalate.
+Where it may send data, and under which service terms, belongs on that list; the irreversible case (training a third-party model on data held under withdrawable consent, or a perpetual licence over it) is screened under [BP10](10-screen-dual-use-high-consequence.md).
 Consumption belongs in that list because an agent that loops does not crash.
 It keeps working, and it keeps billing, so an unmetered run can exhaust a budget while staying inside every permission it was granted.
 Accountability has to be just as concrete.
@@ -130,6 +131,7 @@ This is the consensus position across the main governance frameworks (NIST, the 
 
 ## Change history
 
+- 2026-09-16: Challenge [#33](https://github.com/slolab/aiforscience.eu/issues/33). Reasons name where an agent may send data, and under which service terms, as one of its limits, with the irreversible case referred to BP10. The atoms that carry this limit are proposed in the data-protection ingestion (PR #22).
 - 2026-07-31: Extended bp4-a3 to name resource and spend caps alongside permission scopes, autonomy limits, and shutdown paths, with matching Reasons, tab, and Example text. An agent inside every permission it was granted can still exhaust a budget, because a looping agent does not crash. Prompted by the reported Amazon cost overruns, recorded in the provenance data as a qualification on bp4-a3.
 - 2026-07-27: Added the EU AI Omnibus (2026) as a supporting source on bp4-a1 (technical safeguards in the system, not policy; Art 5(1a) foreseeable-misuse standard).
 - 2026-07-27: Renumbered from BP03 to BP04 on inserting the new BP01 (match the method to the task).

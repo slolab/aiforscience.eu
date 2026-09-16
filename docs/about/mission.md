@@ -33,6 +33,8 @@ The record also draws a method boundary.
 It covers the practice of applying agents to scientific work.
 The design and validation of AI methods as scientific instruments (predictors, generative models, classifiers) have their own established community norms (FAIR, DOME, model cards, datasheets, REFORMS).
 The record cites these rather than restating them, and treats an agent or model as a method chosen for a task, not a default (see [Match the method to the task](../best-practices/01-match-method-to-task.md)).
+Research ethics and data protection (consent, ethics approval, data-protection law) are likewise established norms the record cites rather than restates.
+What the record covers is what changes when an agent handles the data: where it may send it, under which terms, and with which limits enforced in the system (see [Govern agent autonomy and accountability](../best-practices/04-govern-autonomy-and-accountability.md) and [Screen agents for dual-use and high-consequence risk](../best-practices/10-screen-dual-use-high-consequence.md)).
 
 The [library](../library/index.md) likewise extracts relevant context from the cited materials.
 
