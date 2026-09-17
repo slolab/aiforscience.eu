@@ -31,7 +31,12 @@ Everyone taking part is covered by the
 
 ## Editors
 
+- Santiago Casas (German Aerospace Center, DLR)
+- Gavin Farrell (University of Padova)
+- Till Korten (Helmholtz-Zentrum Dresden-Rossendorf, HZDR)
 - Sebastian Lobentanzer (Helmholtz Munich)
+- Marek Ostaszewski (Luxembourg Centre for Systems Biomedicine, University of Luxembourg)
+- Fotis E. Psomopoulos (Institute of Applied Biosciences, CERTH)
 
 The role, the time it takes, and how to join:
 [aiforscience.eu/about/editors](https://aiforscience.eu/about/editors/).
