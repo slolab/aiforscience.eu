@@ -31,11 +31,23 @@ def _load_meta(path):
     match = _FRONTMATTER.match(path.read_text(encoding="utf-8"))
     return yaml.safe_load(match.group(1)) if match else {}
 
+def _load_library_meta(path):
+    """Load frontmatter from a library page, or return empty dict on error."""
+    match = _FRONTMATTER.match(path.read_text(encoding="utf-8"))
+    if not match:
+        return {}
+    try:
+        return yaml.safe_load(match.group(1)) or {}
+    except yaml.YAMLError:
+        # A malformed library frontmatter must not break the provenance hook;
+        # fall back to no metadata (the file stem is used as the title).
+        return {}
 
 def _render_sources(sources):
     lines = ["## Sources", ""]
     for source in sources:
-        bullet = f'- [{source["title"]}](../{source["ref"]}).'
+        ref = _load_library_meta(Path("./docs/" + source.get('ref')))
+        bullet = f'- [{ref.get('title')}](../{source.get('ref')}).'
         note = source.get("note")
         lines.append(f"{bullet} {note}" if note else bullet)
     return "\n".join(lines)
