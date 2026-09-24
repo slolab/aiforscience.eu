@@ -7,32 +7,25 @@ first_added: 2026-07-25
 last_reviewed: 2026-07-26
 endorsed_by: []
 sources:
-  - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
-    ref: library/elixir-tf-agentic-ai-2026.md
+  - ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, items 3 and 5"
     note: "Best Practice items 3 and 5."
-  - title: "Agentic AI in the higher-education system (2026)"
-    ref: library/hfd-agentic-ai-hochschulsystem-2026.md
+  - ref: library/hfd-agentic-ai-hochschulsystem-2026.md
     locator: "§3.3, hook 2"
     note: "§3.3 (research-agent source requirements). Consistent with, grounding only."
-  - title: "The FAIR Guiding Principles (Wilkinson et al. 2016)"
-    ref: library/ref-fair-2016.md
+  - ref: library/ref-fair-2016.md
     locator: "machine-actionability as the founding motivation"
     note: "Machine-actionability as the founding motivation; agents make it concrete."
-  - title: "W3C Data Catalog Vocabulary (DCAT) version 3 (2024 Recommendation)"
-    ref: library/ref-dcat3-2024.md
+  - ref: library/ref-dcat3-2024.md
     locator: "machine-readable dataset metadata"
     note: "Domain-neutral vocabulary for machine-readable dataset and catalogue metadata."
-  - title: "Croissant: a metadata format for ML-ready datasets (MLCommons 2024)"
-    ref: library/ref-croissant-2024.md
+  - ref: library/ref-croissant-2024.md
     locator: "schema.org-based dataset description"
     note: "Domain-neutral format describing ML-ready datasets on top of schema.org, so a dataset loads consistently across tools."
-  - title: "Datasheets for Datasets (Gebru et al. 2021)"
-    ref: library/ref-datasheets-2021.md
+  - ref: library/ref-datasheets-2021.md
     locator: "documented dataset provenance and intended use"
     note: "A structured record of a dataset's composition, collection, and recommended uses that travels with the data."
-  - title: "Model Cards for Model Reporting (Mitchell et al. 2019)"
-    ref: library/ref-model-cards-2019.md
+  - ref: library/ref-model-cards-2019.md
     locator: "structured model documentation"
     note: "Structured reporting of a model's intended use, performance across conditions, and known limits."
 layer: Method
