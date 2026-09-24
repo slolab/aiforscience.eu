@@ -1,5 +1,6 @@
 ---
 title: A safer framework for patient data in AI-for-Science grants (2026)
+ref_id: gagneur-rare-disease-patient-data-2026
 source_type: other
 issuing_body: Julien Gagneur (Technical University of Munich)
 published: July 2026
