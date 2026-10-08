@@ -19,7 +19,7 @@ A disclosure of self-propagating prompt injection in an office assistant was add
 The library holds nine distilled sources and 55 reference works, and the failures log six entries.
 Five editors joined the editor group, and the "Last reviewed" date on each practice is now defined as the date an editor last went through the whole page.
 
-DOI: VERSION_DOI · [GitHub release](https://github.com/slolab/aiforscience.eu/releases/tag/v2026.09)
+DOI: [10.5281/zenodo.23236850](https://doi.org/10.5281/zenodo.23236850) · [GitHub release](https://github.com/slolab/aiforscience.eu/releases/tag/v2026.09)
 
 ### v2026.08 (2026-08-31)
 
@@ -44,7 +44,7 @@ DOI: [10.5281/zenodo.21709876](https://doi.org/10.5281/zenodo.21709876) · [GitH
 
 Cite the record by release, not by URL alone:
 
-> AI for Science contributors. *Best Practices for Agentic AI in Science*, release 2026.09. https://aiforscience.eu, DOI: VERSION_DOI.
+> AI for Science contributors. *Best Practices for Agentic AI in Science*, release 2026.09. https://aiforscience.eu, DOI: 10.5281/zenodo.23236850.
 
 Each release has its own version DOI.
 The concept DOI [10.5281/zenodo.21709875](https://doi.org/10.5281/zenodo.21709875) is stable across all releases and resolves to the latest snapshot.
