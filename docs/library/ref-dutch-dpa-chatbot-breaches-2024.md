@@ -6,7 +6,7 @@ issuing_body: "Autoriteit Persoonsgegevens (Dutch Data Protection Authority)"
 published: 2024
 doi_or_url: https://www.autoriteitpersoonsgegevens.nl/en/current/caution-use-of-ai-chatbot-may-lead-to-data-breaches
 added_on: 2026-09-05
-grounds: [BP-04, BP-10]
+grounds: [BP-04, BP-10, BP-11]
 tags: [library, reference]
 comments: true
 ---

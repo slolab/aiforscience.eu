@@ -19,14 +19,14 @@ To add a failure, use the [Submit a document](https://github.com/slolab/aiforsci
   The going-forward obligation ended on 26 September 2025; a 20-million-log de-identified sample was later ordered produced to the plaintiffs.
   The written retention policy did not hold; the tiers where non-retention was built into the system did.
   Reported outside science; the structure applies to any lab whose members use a consumer or standard-tier AI account for work.
-  Related practices: [BP04](04-govern-autonomy-and-accountability.md), [BP10](10-screen-dual-use-high-consequence.md).
+  Related practices: [BP11](11-decide-where-research-data-may-go.md), [BP04](04-govern-autonomy-and-accountability.md), [BP10](10-screen-dual-use-high-consequence.md).
   Source: [Court-ordered retention of ChatGPT logs in the New York Times litigation (2025)](../library/ref-openai-preservation-order-2025.md).
 
 - **2026-09** — Staff entered patient data into a consumer AI chatbot against their organisation's rules; the regulator treated it as a data breach.
   The Dutch Data Protection Authority reported several breach notifications in 2024 in which employees had entered personal data into AI chatbots, among them a general-practice employee who entered patients' medical data "contrary to the agreements" and a telecom employee who entered a file of customer addresses.
   The regulator's point: most chatbot providers store everything entered, so the data left the organisation's control the moment it was typed in; a written rule did not prevent it.
   Reported outside research; the same tool is at hand in every lab.
-  Related practices: [BP04](04-govern-autonomy-and-accountability.md), [BP10](10-screen-dual-use-high-consequence.md).
+  Related practices: [BP11](11-decide-where-research-data-may-go.md), [BP04](04-govern-autonomy-and-accountability.md), [BP10](10-screen-dual-use-high-consequence.md).
   Source: [Dutch DPA: AI chatbot use leads to data breaches (2024)](../library/ref-dutch-dpa-chatbot-breaches-2024.md).
 
 - **2026-07** — Hidden instructions in a shared document made an assistant alter the draft it was writing and copy the attack into that draft, which then compromised the next one.

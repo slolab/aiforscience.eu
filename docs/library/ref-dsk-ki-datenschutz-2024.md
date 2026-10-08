@@ -6,7 +6,7 @@ issuing_body: "Datenschutzkonferenz (conference of the German federal and state 
 published: 2024
 doi_or_url: https://www.datenschutzkonferenz-online.de/media/oh/20240506_DSK_Orientierungshilfe_KI_und_Datenschutz.pdf
 added_on: 2026-09-05
-grounds: [BP-04, BP-10]
+grounds: [BP-04, BP-10, BP-11]
 tags: [library, reference]
 comments: true
 ---
@@ -31,7 +31,7 @@ A companion guidance on technical and organisational measures for developing and
 
 - Grounds [BP10](../best-practices/10-screen-dual-use-high-consequence.md) (bp10-a5): a regulator's preference for applications that do not train on inputs, stated as a selection criterion.
 - Grounds [BP04](../best-practices/04-govern-autonomy-and-accountability.md) (bp4-a1): the training and history settings are fixed in the account at setup, not left to each user's discretion.
-- Context for the BP04 atoms proposed in the [ERA guidelines entry](era-living-guidelines-genai-2026.md): work accounts, a processor agreement, and a closed system are the three elements that proposal asks institutions to supply.
+- Grounds [BP11](../best-practices/11-decide-where-research-data-may-go.md) (bp11-a2, bp11-a3): work accounts, a processor agreement, and a closed system are the three elements bp11-a3 and the BP11 governance tab ask institutions to supply.
 - Limits: German-language guidance addressed to controllers under German and EU law; the translations here are the record's own. It concerns chatbots used by people, not agents.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

@@ -6,7 +6,7 @@ issuing_body: "European Data Protection Supervisor"
 published: 2024
 doi_or_url: https://www.edps.europa.eu/system/files/2024-03/24-03-08-edps-investigation-ec-microsoft365_en.pdf
 added_on: 2026-09-05
-grounds: [BP-04]
+grounds: [BP-04, BP-11]
 tags: [library, reference]
 comments: true
 ---
@@ -33,7 +33,7 @@ The Commission (Case T-262/24) and Microsoft Ireland (Case T-265/24) challenged 
 ## Role in the record
 
 - Grounds [BP04](../best-practices/04-govern-autonomy-and-accountability.md) (bp4-a1): compliance was reached through contract terms and technical and organisational measures, not through written policy; the provider's standard terms did not meet the institution's legal duties until they were renegotiated.
-- Context for the BP04 atoms proposed in the [ERA guidelines entry](era-living-guidelines-genai-2026.md): the largest EU institution needed a bespoke contract to use a US cloud suite lawfully. A research institution using an AI service under consumer or standard terms is in the position the Commission was found to be in.
+- Grounds [BP11](../best-practices/11-decide-where-research-data-may-go.md) (bp11-a3): the largest EU institution needed a bespoke contract to use a US cloud suite lawfully. A research institution using an AI service under consumer or standard terms is in the position the Commission was found to be in.
 - Limits: the case concerns an office suite, not an AI service, and an EU institution under Regulation (EU) 2018/1725 rather than a Member State body under the GDPR. The provisions are parallel, and the reasoning transfers; the numbering does not.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

@@ -6,7 +6,7 @@ issuing_body: "Agencia Española de Protección de Datos"
 published: 2026
 doi_or_url: https://www.aepd.es/guias/orientaciones-ia-agentica.pdf
 added_on: 2026-09-05
-grounds: [BP-04]
+grounds: [BP-04, BP-11]
 tags: [library, reference]
 comments: true
 ---
@@ -29,7 +29,7 @@ Among threats, an agent with screen access "puede procesar información de terce
 ## Role in the record
 
 - Grounds [BP04](../best-practices/04-govern-autonomy-and-accountability.md) (bp4-a1, bp4-a3): configuring which services an agent may reach is a permission scope set by the controller, and the terms of each reachable service are part of that decision.
-- Context for the BP04 atoms proposed in the [ERA guidelines entry](era-living-guidelines-genai-2026.md): a supervisory authority states that evaluating the provider's terms, Article 28 status, transfers, and retention is the deployer's duty, and that alternatives should be sought where the service is disproportionate.
+- Grounds [BP11](../best-practices/11-decide-where-research-data-may-go.md) (bp11-a2, bp11-a3, bp11-a4, bp11-a5): a supervisory authority states that evaluating the provider's terms, Article 28 status, transfers, and retention is the deployer's duty, and that alternatives should be sought where the service is disproportionate.
 - Limits: Spanish-language, addressed to controllers under Spanish and EU law; translations here are the record's own. Not research-specific.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

@@ -533,3 +533,84 @@ bp10-a4:  # high-consequence actions through a screening chokepoint
     stance: supports
     locator: "Art 5(1a)(a)(ii); Recital 12"
     quote: "provider must build technical safeguards against reasonably foreseeable and reproducible prohibited output, not rely on intent or policy"
+
+# ------------------------------------------------------------------ BP11
+bp11-a1:  # sending data to an AI service hands it to the provider under the service's terms
+  - ref: era-living-guidelines-genai-2026
+    stance: supports
+    locator: "Recommendations for researchers 3, p. 8: uploaded input could be used for other purposes, such as training"
+    quote: "Researchers remain mindful that generated or uploaded input (text, data, prompts, images, etc.) could be used for other purposes, such as the training of AI models."
+  - ref: dutch-dpa-chatbot-breaches-2024
+    stance: supports
+    locator: "regulator: entered data is stored by the provider and leaves the organisation's control"
+    quote: "Most companies behind the chatbots store all data entered."
+bp11-a2:  # account tier and contract decide training, retention, and who else can reach the data
+  - ref: anthropic-consumer-terms-2025
+    stance: supports
+    locator: "consumer plans train by default with five-year retention; commercial terms exclude training"
+    quote: "We will train new models using data from Free, Pro, and Max accounts when this setting is on."
+  - ref: openai-preservation-order-2025
+    stance: supports
+    locator: "13 May 2025 order: consumer and standard-API logs preserved despite deletion; zero-data-retention endpoints unaffected"
+    quote: "preserve and segregate all output log data that would otherwise be deleted on a going forward basis until further order of the Court"
+  - ref: dsk-ki-datenschutz-2024
+    stance: supports
+    locator: "§2.5 para 43: training and history settings fixed in the account at setup"
+    quote: "bereits bei Inbetriebnahme eines Accounts so gewählt werden, dass keine Eingabedaten zu Trainingszwecken verarbeitet werden"
+  - ref: era-living-guidelines-genai-2026
+    stance: supports
+    locator: "Recommendations for researchers 3, pp. 8-9: check privacy options, who manages the tool, where it runs"
+    quote: "They check, for example, their institutional guidelines, the privacy options of the tools, who is managing the tool (public or private institutions, companies, etc.), where the tool is running and implications for any information uploaded."
+  - ref: aepd-agentic-ai-2026
+    stance: supports
+    locator: "pp. 57-58: online service contracts do not fit the local legal regime and change unilaterally"
+    quote: "los contratos no se ajustan al régimen jurídico local, los términos de los contratos cambian unilateralmente, e incluso el objeto del contrato se altera sin previo aviso"
+bp11-a3:  # protected data goes only to a service under a fitting contract, or stays in a governed environment
+  - ref: gdpr
+    stance: supports
+    locator: "Art 6 lawful basis; Art 28 processor contract; Art 32 security; Arts 44 to 49 transfer basis"
+  - ref: edpb-opinion-ai-models-2024
+    stance: supports
+    locator: "para 126: each controller ensures and demonstrates the lawfulness of its own processing"
+    quote: "each controller should ensure the lawfulness of the processing it conducts and be able to demonstrate it"
+  - ref: dsk-ki-datenschutz-2024
+    stance: supports
+    locator: "§2.1 para 33: processor agreement usually required; §2.4 para 41: work accounts so staff need no private ones; §1.7 para 20: closed systems preferable"
+    quote: "Technisch geschlossene Systeme sind daher aus datenschutzrechtlicher Sicht vorzugswürdig"
+  - ref: aepd-agentic-ai-2026
+    stance: supports
+    locator: "p. 34: check Article 28, international transfers, and retention; seek alternatives where the service is disproportionate"
+    quote: "si es proporcional el uso de dicho servicio o es más conveniente buscar alternativas"
+  - ref: edps-commission-m365-2024
+    stance: supports
+    locator: "2025 closure: compliance reached through renegotiated contract terms"
+    quote: "Through updated contractual, technical, and organisational measures, it has ensured that Microsoft and sub-processors process data solely based on documented instructions"
+  - ref: era-living-guidelines-genai-2026
+    stance: supports
+    locator: "Recommendations for researchers 3, p. 8: no upload without assurances against re-use; Recommendations for research organisations 4, p. 10: self-governed tools"
+    quote: "taking care not to upload it into an external AI system unless there are assurances that the data will not be re-used"
+  - ref: dutch-dpa-chatbot-breaches-2024
+    stance: supports
+    locator: "GP practice case: patient data entered into a consumer chatbot, treated as a data breach"
+    quote: "an employee of a GP practice had entered medical data of patients into an AI chatbot, contrary to the agreements"
+  - ref: ehds-2025
+    stance: supports
+    locator: "Art 73(1)-(2): access only in a secure processing environment; only non-personal data may leave (health-data instance)"
+bp11-a4:  # an agent on a hosted model sends everything it reads to the provider; reading discloses
+  - ref: gagneur-rare-disease-patient-data-2026
+    stance: supports
+    locator: "hook 1: agents transmit material to the external service operating them; data leaves without a deliberate upload"
+    quote: "AI agents may run code, inspect results, and transmit relevant material to the external service operating it. Study-participant-level information can therefore leave the approved environment without a deliberate upload"
+  - ref: aepd-agentic-ai-2026
+    stance: supports
+    locator: "p. 52: an agent with screen access can process third parties' information for unauthorised purposes, including exfiltration to external servers"
+    quote: "puede procesar información de terceros abierta en el escritorio ... para finalidades no autorizadas por esos terceros, como el entrenamiento de modelos o la exfiltración a servidores externos"
+bp11-a5:  # for an agent, the services it may send data to are a limit set in the system
+  - ref: aepd-agentic-ai-2026
+    stance: supports
+    locator: "p. 34: configure which services agents may access; evaluate each service's contracts or terms of service"
+    quote: "evaluar los contratos o términos de servicio, revisar las cláusulas de protección de datos"
+  - ref: cnil-cianum-agentic-ai-2026
+    stance: supports
+    locator: "pp. 14-15: classify actions per connected service by risk, including sending data outside the system"
+    quote: "il peut être utile de classer les actions possibles sur chaque service par niveau de risque (accès à des données, modification et suppression de donnés, envoi de données hors système et typologie de données traitées : financières, de santé, etc.)"

@@ -51,6 +51,26 @@ sources:
     ref: library/gagneur-rare-disease-patient-data-2026.md
     locator: "no perpetual licence; analysis is not training permission"
     note: "Adjacent support: analysis permission is not training permission, and no perpetual licence should be taken over patient-level data. Individual commentary; it does not itself make the revocable-consent argument."
+  - title: "Living guidelines on the responsible use of generative AI in research (European Commission and ERA Forum, 2026)"
+    ref: library/era-living-guidelines-genai-2026.md
+    locator: "Recommendations for researchers 3, p. 8"
+    note: "Tells researchers that uploaded input may be used to train models, and not to upload sensitive work without assurances against re-use (bp10-a5). Non-binding."
+  - title: "EDPB Opinion 28/2024 on personal data in AI models (2024)"
+    ref: library/edpb-opinion-ai-models-2024.md
+    locator: "paras 34, 114"
+    note: "A model trained on personal data is not anonymous by default, and the remedy for unlawful training can reach the model itself (bp10-a5)."
+  - title: "Anthropic consumer terms update: training on chats by default (2025)"
+    ref: library/ref-anthropic-consumer-terms-2025.md
+    locator: "consumer plans versus commercial terms"
+    note: "Consumer accounts train on inputs by default with five-year retention; commercial terms exclude training. The account tier, not the data, decides (bp10-a5). One provider at one date."
+  - title: "Dutch DPA: AI chatbot use leads to data breaches (2024)"
+    ref: library/ref-dutch-dpa-chatbot-breaches-2024.md
+    locator: "2024 breach notifications"
+    note: "A regulator states that most chatbot providers store all data entered (bp10-a5). Outside research."
+  - title: "DSK guidance: Artificial intelligence and data protection (2024)"
+    ref: library/ref-dsk-ki-datenschutz-2024.md
+    locator: "§1.9 para 24; §1.7 para 20"
+    note: "German regulators prefer applications that do not train on inputs, and closed systems (bp10-a5)."
 layer: Operational
 hitl: mandatory
 tags: [practitioner, provider, governance, draft]
@@ -108,6 +128,7 @@ The evidence that the risk is real spans domains too: an AI model repurposed for
 Some high-consequence actions are irreversible in a second sense: they cannot be walked back once taken.
 Training a third-party model on data, or granting a perpetual licence over it, cannot be undone, and the data cannot be reliably removed from the model afterwards.
 When the consent behind that data can be withdrawn, as it can be for human-subjects data under research ethics and data-protection law, no one can validly authorise a use that could not later honour a withdrawal.
+Whether data may leave a controlled environment at all, and under which terms, is [BP11](11-decide-where-research-data-may-go.md); this practice covers the irreversible case.
 The safeguard is the same as for any irreversible harm: prevent the action before it happens.
 In agentic workflows this means constraining and auditing what an agent can send outward, because an agent that runs code and reads files can transmit such data without a deliberate upload.
 
@@ -127,6 +148,8 @@ In agentic workflows this means constraining and auditing what an agent can send
 
 ## Change history
 
+- 2026-10-08: Added a Reasons cross-reference to the new [BP11](11-decide-where-research-data-may-go.md), which covers whether data may leave a controlled environment at all.
+- 2026-10-08: Added five supporting sources on bp10-a5 showing that training on inputs is the default on consumer tiers: the Commission's living guidelines on generative AI in research, EDPB Opinion 28/2024, Anthropic's consumer terms, the Dutch DPA's breach notices, and the German DSK guidance.
 - 2026-07-28: Added atom bp10-a5 (data under withdrawable consent cannot be authorised for irreversible third-party training or a perpetual licence, and an agent must be prevented from transmitting it for those uses), grounded in the Declaration of Helsinki and GDPR (right to withdraw; right to erasure), with the Gagneur commentary as adjacent support. Extended the tabs, Reasons, and Examples to match.
 - 2026-07-27: Added the EU AI Omnibus (2026) as a supporting source on bp10-a4 (provider safeguards against foreseeable prohibited output; Art 5(1a)).
 - 2026-07-27: Renumbered from BP09 to BP10 on inserting the new BP01 (match the method to the task).

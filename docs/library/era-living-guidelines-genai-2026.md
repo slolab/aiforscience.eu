@@ -47,7 +47,7 @@ Audiences: practitioners, governance.
 
 **4. Check who runs the tool, where it runs, and under which privacy options.**
 The document: "They check, for example, their institutional guidelines, the privacy options of the tools, who is managing the tool (public or private institutions, companies, etc.), where the tool is running and implications for any information uploaded. This could range from closed environments, hosting on a third-party infrastructure with guaranteed privacy, to open internet-accessible platforms" (Recommendations for researchers, 3, pp. 8-9).
-Relevance: the operator, the location, and the terms of a tool decide what happens to uploaded data; the proposed practice change below turns this per-researcher check into an institutional decision and an agent limit.
+Relevance: the operator, the location, and the terms of a tool decide what happens to uploaded data; [BP11](../best-practices/11-decide-where-research-data-may-go.md) (bp11-a1 to bp11-a3) turns this per-researcher check into an institutional decision and an agent limit.
 Audiences: practitioners, governance, providers.
 
 **5. Pick the tool that fits the task.**
@@ -83,9 +83,9 @@ Audiences: practitioners, governance.
 | Hook | Supports | In tension with |
 |---|---|---|
 | 1 | [BP07](../best-practices/07-provenance-and-citation.md) (bp7-a2) | |
-| 2 | [BP10](../best-practices/10-screen-dual-use-high-consequence.md) (bp10-a5); the proposed BP04 atoms below | |
-| 3 | the proposed BP04 atoms below; context for [BP10](../best-practices/10-screen-dual-use-high-consequence.md) | |
-| 4 | the proposed BP04 atoms below; context for [BP03](../best-practices/03-register-and-vet-interfaces.md) vetting | |
+| 2 | [BP10](../best-practices/10-screen-dual-use-high-consequence.md) (bp10-a5); [BP11](../best-practices/11-decide-where-research-data-may-go.md) (bp11-a1 to bp11-a3) | |
+| 3 | [BP11](../best-practices/11-decide-where-research-data-may-go.md) (bp11-a1 to bp11-a3); context for [BP10](../best-practices/10-screen-dual-use-high-consequence.md) | |
+| 4 | [BP11](../best-practices/11-decide-where-research-data-may-go.md) (bp11-a1 to bp11-a3); context for [BP03](../best-practices/03-register-and-vet-interfaces.md) vetting | |
 | 5 | [BP01](../best-practices/01-match-method-to-task.md) (bp1-a1) | |
 | 6 | [BP09](../best-practices/09-human-in-the-loop.md) governance tab (peer review) | |
 | 7 | [BP02](../best-practices/02-default-to-agent-accessibility.md) (bp2-a4); [BP04](../best-practices/04-govern-autonomy-and-accountability.md) governance tab (inventory) | |
@@ -95,26 +95,16 @@ Audiences: practitioners, governance.
 No contradictions.
 One difference in framing: the guidelines address generative AI tools operated by a person, and put the checks on that person.
 The record addresses agents that act on their own, where the researcher may never see what is sent.
-That difference is why the proposal below moves the check from the researcher's habits into the institution's contracts and the agent's configured limits.
+That difference is why BP04 moves the check from the researcher's habits into the institution's contracts and the agent's configured limits.
 
 ## Proposed changes to practices
 
-These are proposals for editor review, not applied here.
-The [EDPB Opinion 28/2024](edpb-opinion-ai-models-2024.md) entry and the reference works added with this entry point to the same proposal.
+Proposals for editor review; applied items are ticked.
+The [EDPB Opinion 28/2024](edpb-opinion-ai-models-2024.md) entry and the reference works added with this entry ground the same practice.
 
-- [ ] **Two new atoms on [BP04](../best-practices/04-govern-autonomy-and-accountability.md)**, placed after bp4-a3 and before the pivot, with ids bp4-a7 and bp4-a8 (ids are stable handles, not reading-order numbers). Draft text:
-    - "Which external services an agent may send data to, and under which service terms, is one of these limits." `{ #bp4-a7 }`
-    - "Personal, confidential, or controlled-access data may reach an external service only under a contract that fits the data's legal regime (a processor agreement, training and long retention excluded, a lawful transfer basis), or it stays in an environment the institution governs; a consumer account does not meet this." `{ #bp4-a8 }`
-- [ ] **Tab additions for BP04.**
-    Practitioners: "Do not send personal, confidential, or controlled-access data to an AI service through a personal or consumer account. Use the account or deployment your institution has contracted, check whether inputs are used for training and how long they are kept, and keep such data local when no contracted route exists."
-    Providers: "Offer a tier that excludes training and long retention, processes under a contract and in a location that fit the customer's legal regime, and state plainly which legal process can reach the data. Make that tier the default for institutional customers."
-    Governance: "Contract the AI services staff use (processor agreement, training excluded, transfer basis) and provide institutional accounts, so no one needs a consumer account for work. State which data classes may reach which tier. Hosting in the EU at a provider under US jurisdiction does not by itself remove the reach of US legal process; decide what that means for each data class."
-- [ ] **Two examples for BP04.**
-    "A researcher's consumer chatbot account trains on inputs by default and keeps them for five years; the same provider's institutional tier excludes training and keeps them for 30 days. Which account a lab uses is a governance decision."
-    "A US court orders a provider to preserve all consumer and standard-API chat logs, including ones users deleted; enterprise and zero-retention customers are excluded. The tier decided what 'delete' meant."
-- [ ] Add this entry to the `sources:` of [BP07](../best-practices/07-provenance-and-citation.md), [BP10](../best-practices/10-screen-dual-use-high-consequence.md), [BP01](../best-practices/01-match-method-to-task.md), and [BP02](../best-practices/02-default-to-agent-accessibility.md); the provenance edges are in place.
+- [x] **New practice [BP11](../best-practices/11-decide-where-research-data-may-go.md)**, "Decide where research data may be sent". Drafted here as two BP04 atoms with tab text and two examples; on editor review it became its own practice, because deciding which data may go to which service applies to people using AI tools as well as to agents. The drafted bp4-a8 became bp11-a3 and bp4-a7 became bp11-a5.
+- [x] Add this entry to the `sources:` of [BP07](../best-practices/07-provenance-and-citation.md), [BP10](../best-practices/10-screen-dual-use-high-consequence.md), [BP01](../best-practices/01-match-method-to-task.md), and [BP02](../best-practices/02-default-to-agent-accessibility.md); the provenance edges are in place.
 - [ ] Optionally note in the [BP09](../best-practices/09-human-in-the-loop.md) governance tab that the Commission's guidelines make the same point for funders' proposal evaluation.
-- [x] No new practice page. The document grounds existing practices and two new atoms on an existing practice; it does not pass the gate for its own page.
 
 ## Cautions and gaps
 

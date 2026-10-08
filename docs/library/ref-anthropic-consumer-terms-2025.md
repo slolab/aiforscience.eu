@@ -6,7 +6,7 @@ issuing_body: "Anthropic"
 published: 2025
 doi_or_url: https://www.anthropic.com/news/updates-to-our-consumer-terms
 added_on: 2026-09-05
-grounds: [BP-10]
+grounds: [BP-10, BP-11]
 tags: [library, reference]
 comments: true
 ---
@@ -29,7 +29,7 @@ The privacy policy states that personal data "is transferred to our servers in t
 ## Role in the record
 
 - Grounds [BP10](../best-practices/10-screen-dual-use-high-consequence.md) (bp10-a5): a documented case where the account tier, not the data, decides whether inputs train a model and how long they are kept. A researcher working from a personal account has accepted terms under which controlled-access data cannot lawfully be placed.
-- Context for the BP04 atoms proposed in the [ERA guidelines entry](era-living-guidelines-genai-2026.md).
+- Grounds [BP11](../best-practices/11-decide-where-research-data-may-go.md) (bp11-a2): the account tier decides training and retention. Source for the account-tier Example.
 - Limits: one provider's terms at one date; terms change, and the current text should be checked before it is relied on. The record already carries this provider's grant terms through the [Gagneur entry](gagneur-rare-disease-patient-data-2026.md); this reference concerns the consumer terms, a separate document. Other providers' consumer tiers are not documented here.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

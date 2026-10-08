@@ -6,7 +6,7 @@ issuing_body: "European Data Protection Board and European Data Protection Super
 published: 2019
 doi_or_url: https://www.edpb.europa.eu/our-work-tools/our-documents/letters/edpb-edps-joint-response-libe-committee-impact-us-cloud-act_en
 added_on: 2026-09-05
-grounds: [BP-04]
+grounds: [BP-11]
 tags: [library, reference]
 comments: true
 ---
@@ -26,7 +26,7 @@ Providers under US jurisdiction that hold data of EU data subjects therefore fac
 
 ## Role in the record
 
-- Context for the [BP04](../best-practices/04-govern-autonomy-and-accountability.md) governance tab and for the BP04 atoms proposed in the [ERA guidelines entry](era-living-guidelines-genai-2026.md): where an agent's model provider is under US jurisdiction, storage location in the EU does not remove the provider's exposure to US legal process. The record cites this as a constraint on provider choice for personal and confidential research data. The wider debate about digital sovereignty is outside the record's scope, and the record takes no position on it.
+- Context for the [BP11](../best-practices/11-decide-where-research-data-may-go.md) governance tab: where an agent's model provider is under US jurisdiction, storage location in the EU does not remove the provider's exposure to US legal process. The record cites this as a constraint on provider choice for personal and confidential research data. The wider debate about digital sovereignty is outside the record's scope, and the record takes no position on it.
 - Limits: the assessment predates the EU-US Data Privacy Framework (2023) and the General Court's Latombe judgment upholding it (Case T-553/23, 3 September 2025, under appeal as C-703/25 P). Those instruments concern commercial transfers, not law-enforcement access, so the Article 48 analysis stands; the editor should check for later EDPB statements.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

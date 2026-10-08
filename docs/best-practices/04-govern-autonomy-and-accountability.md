@@ -116,6 +116,7 @@ Accountability has to be just as concrete.
 If responsibility sits with "the institution" in general, no one is answerable; it has to sit with named roles, with clear paths to escalate and to shut an agent down.
 Accountability also needs a record: if an agent's actions are not logged under an attributable identity, no one can reconstruct what it did or hold the right role answerable.
 Personal agents with broad access to mail, files, and calendars sit outside all of this, so governance has to cover individual use, not only institutional deployments.
+Which external services an agent may send data to is one of its permission scopes; which data may go to which service at all is [BP11](11-decide-where-research-data-may-go.md).
 This is the consensus position across the main governance frameworks (NIST, the EU AI Act, OECD, ISO/IEC 42001), which agree on enforced limits, named accountability, an agent inventory, logging, and independent review.
 
 ## Examples
@@ -136,6 +137,7 @@ This is the consensus position across the main governance frameworks (NIST, the 
 
 ## Change history
 
+- 2026-10-08: Added a Reasons cross-reference to the new [BP11](11-decide-where-research-data-may-go.md) (where research data may go). The services an agent may send data to stay a permission scope here.
 - 2026-09-16: Added the Copilot for Word disclosure (Måløy 2026) as a supporting source on bp4-a2, with an Example: a detector model and a model upgrade closed the reported payloads but not the class, because the model has to read the content in order to judge it.
 - 2026-07-31: Extended bp4-a3 to name resource and spend caps alongside permission scopes, autonomy limits, and shutdown paths, with matching Reasons, tab, and Example text. An agent inside every permission it was granted can still exhaust a budget, because a looping agent does not crash. Prompted by the reported Amazon cost overruns, recorded in the provenance data as a qualification on bp4-a3.
 - 2026-07-27: Added the EU AI Omnibus (2026) as a supporting source on bp4-a1 (technical safeguards in the system, not policy; Art 5(1a) foreseeable-misuse standard).

@@ -75,8 +75,8 @@ Audiences: providers.
 |---|---|---|
 | 1 | [BP10](../best-practices/10-screen-dual-use-high-consequence.md) (bp10-a5) | |
 | 2 | [BP03](../best-practices/03-register-and-vet-interfaces.md) (bp3-a5) | |
-| 3 | the proposed BP04 atoms (see the [ERA guidelines entry](era-living-guidelines-genai-2026.md)) | |
-| 4 | the proposed BP04 atoms; context for [BP03](../best-practices/03-register-and-vet-interfaces.md) | |
+| 3 | [BP11](../best-practices/11-decide-where-research-data-may-go.md) (bp11-a3) | |
+| 4 | [BP11](../best-practices/11-decide-where-research-data-may-go.md) (bp11-a3); context for [BP03](../best-practices/03-register-and-vet-interfaces.md) | |
 | 5 | [BP03](../best-practices/03-register-and-vet-interfaces.md) (bp3-a5) | |
 | 6 | [BP10](../best-practices/10-screen-dual-use-high-consequence.md) (bp10-a5) | |
 | 7 | [BP04](../best-practices/04-govern-autonomy-and-accountability.md) (bp4-a1) | |
@@ -87,10 +87,10 @@ It says the organisation deploying the model has to check, and has to be able to
 
 ## Proposed changes to practices
 
-These are proposals for editor review, not applied here.
+Proposals for editor review; applied items are ticked.
 
-- [ ] Add this entry to the `sources:` of [BP10](../best-practices/10-screen-dual-use-high-consequence.md) (bp10-a5) and [BP03](../best-practices/03-register-and-vet-interfaces.md) (bp3-a5); the provenance edges are in place.
-- [ ] Cite hooks 3 and 4 as the legal ground for the two BP04 atoms proposed in the [ERA guidelines entry](era-living-guidelines-genai-2026.md): the institution is the controller, and checking the provider is its duty.
+- [x] Add this entry to the `sources:` of [BP10](../best-practices/10-screen-dual-use-high-consequence.md) (bp10-a5) and [BP03](../best-practices/03-register-and-vet-interfaces.md) (bp3-a5); the provenance edges are in place.
+- [x] Cite hooks 3 and 4 as the legal ground for [BP11](../best-practices/11-decide-where-research-data-may-go.md) atom bp11-a3 (drafted in the [ERA guidelines entry](era-living-guidelines-genai-2026.md)): the institution is the controller, and checking the provider is its duty.
 - [ ] Consider one sentence in the [BP03](../best-practices/03-register-and-vet-interfaces.md) governance tab: vetting covers the model behind an interface as well as the interface itself (source and lawfulness of its training data), with this Opinion as the source.
 - [x] No new practice page.
 

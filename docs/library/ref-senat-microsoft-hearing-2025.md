@@ -6,7 +6,7 @@ issuing_body: "Sénat (France), commission d'enquête sur la commande publique"
 published: 2025
 doi_or_url: https://www.senat.fr/compte-rendu-commissions/20250609/ce_commande_publique.html
 added_on: 2026-09-05
-grounds: [BP-04]
+grounds: [BP-11]
 tags: [library, reference]
 comments: true
 ---
@@ -24,7 +24,7 @@ The witness described the process for contesting requests the company considers 
 
 ## Role in the record
 
-- Context for the [BP04](../best-practices/04-govern-autonomy-and-accountability.md) governance tab and for the BP04 atoms proposed in the [ERA guidelines entry](era-living-guidelines-genai-2026.md): a US provider's own legal director confirms, on the record, that EU hosting does not remove the reach of US legal process. It is the practical counterpart of the [EDPB-EDPS CLOUD Act assessment](ref-edpb-edps-cloud-act-2019.md).
+- Context for the [BP11](../best-practices/11-decide-where-research-data-may-go.md) governance tab: a US provider's own legal director confirms, on the record, that EU hosting does not remove the reach of US legal process. It is the practical counterpart of the [EDPB-EDPS CLOUD Act assessment](ref-edpb-edps-cloud-act-2019.md).
 - Limits: the hearing concerns a general cloud suite sold to the French public sector, not an AI service, and one provider. The point transfers to any service run by a provider under US jurisdiction; the record does not extend it further than that.
 
 Atom-level for/against detail and quotes are in the provenance data (`assets/provenance.yml`), keyed by practice atom.

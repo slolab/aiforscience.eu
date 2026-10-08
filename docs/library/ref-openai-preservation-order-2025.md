@@ -6,7 +6,7 @@ issuing_body: "US District Court for the Southern District of New York (order); 
 published: 2025
 doi_or_url: https://openai.com/index/response-to-nyt-data-demands/
 added_on: 2026-09-05
-grounds: [BP-04, BP-10]
+grounds: [BP-04, BP-10, BP-11]
 tags: [library, reference]
 comments: true
 ---
@@ -28,7 +28,7 @@ In January 2026 the district judge affirmed orders requiring production of a sam
 ## Role in the record
 
 - Grounds [BP04](../best-practices/04-govern-autonomy-and-accountability.md) (bp4-a1): a written deletion promise was overridden by a court order for four months; only the tiers with retention excluded in the system (zero-data-retention endpoints) were unaffected.
-- Context for [BP10](../best-practices/10-screen-dual-use-high-consequence.md) (bp10-a5) and for the BP04 atoms proposed in the [ERA guidelines entry](era-living-guidelines-genai-2026.md): the account tier decided what "delete" meant, and a provider under US jurisdiction can be compelled to keep data that EU law says must be erased.
+- Context for [BP10](../best-practices/10-screen-dual-use-high-consequence.md) (bp10-a5) and grounds [BP11](../best-practices/11-decide-where-research-data-may-go.md) (bp11-a2): the account tier decided what "delete" meant, and a provider under US jurisdiction can be compelled to keep data that EU law says must be erased.
 - Recorded in the [Failures log](../best-practices/failures.md).
 - Limits: the case is US civil litigation over copyright, outside science; the structure (tier decides exposure, legal process overrides terms) is what transfers. The primary order is on the court docket; the plan-by-plan detail comes from the provider's own statement.
 

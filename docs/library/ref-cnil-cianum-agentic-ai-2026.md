@@ -6,7 +6,7 @@ issuing_body: "Commission nationale de l'informatique et des libertés (CNIL) an
 published: 2026
 doi_or_url: https://www.cnil.fr/sites/default/files/2026-07/ia-cianum-cnil.pdf
 added_on: 2026-09-05
-grounds: [BP-04, BP-09]
+grounds: [BP-04, BP-09, BP-11]
 tags: [library, reference]
 comments: true
 ---

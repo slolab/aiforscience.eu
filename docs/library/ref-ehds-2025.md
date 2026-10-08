@@ -6,7 +6,7 @@ issuing_body: "European Union"
 published: 2025
 doi_or_url: https://eur-lex.europa.eu/eli/reg/2025/327/oj
 added_on: 2026-09-05
-grounds: [BP-02, BP-04]
+grounds: [BP-02, BP-04, BP-11]
 tags: [library, reference]
 comments: true
 ---
