@@ -96,6 +96,12 @@ Status meanings: `draft` (proposed, under discussion), `reviewed` (accepted by
 the editor group), `endorsed` (formally backed by at least one named
 organisation or task force).
 
+`last_reviewed` is the date an editor last went through the whole page and
+confirmed it stands. It is not the date of the last edit; git records that.
+Move it when a challenge or a review of that page is resolved, or after a
+deliberate re-read. Do not move it for a grounding note, a new source, or a
+new Example.
+
 ### Library pages (docs/library/)
 
 The library is the provenance store for the practices. Everything used to model

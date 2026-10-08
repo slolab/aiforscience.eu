@@ -43,6 +43,10 @@ sources:
     ref: library/fai2r-verifiable-ai-provenance-2026.md
     locator: "§IV claim-level records and the verification ladder; §VI citation audit and per-activity division of labour"
     note: "§IV (claim-level records, the verification ladder whose top rungs only a human may grant) and §VI (citation audit against the citing sentence, per-activity human and agent attribution). One working implementation, demonstrated on the paper's own production by its author: one operator, one domain, one session, self-audited. Downweighted, grounding only."
+  - title: "Måløy, Self-propagating prompt injection in Copilot for Word (2026)"
+    ref: library/ref-copilot-word-ai-worm-2026.md
+    locator: "Implications; Impact"
+    note: "Recommends that generated documents preserve provenance for source material and model-performed edits in metadata; in the proof of concept, approved assistant edits left no visible trace, which is what made the manipulation untraceable afterwards (bp7-a2). A proof of concept in a commercial productivity suite, not an incident observed in science; grounding only."
 layer: Method
 hitl: optional
 tags: [practitioner, provider, governance, draft]
@@ -99,6 +103,9 @@ A research agent has to pass citation and retraction status through to its outpu
   The NISO CREC recommended practice and the open Crossref/Retraction Watch data make this checkable.
 - An agent-written passage is pasted into a manuscript with no marking; a co-author cannot tell which text and which analysis were the agent's, and authorship and error-tracing get muddled.
 - Human and agent contributions are labelled, in outputs and in anything the agent writes to, agent use is disclosed where the work is published, and the trace is machine-readable (for example W3C PROV, RO-Crate, or CRediT) so it can be checked automatically.
+- An assistant's edits to a report are accepted with no record of which passages it changed or which attached file drove them.
+  When the figures turn out to have been halved by hidden instructions ([prompt injection](../glossary.md#prompt-injection)) in one attachment, no one can tell the model's edits from the authors' or say which source introduced them.
+  Provenance for source material and for model-performed edits, kept with the document, is what would make the change traceable; a reviewer without it has nothing to check against ([BP09](09-human-in-the-loop.md)).
 - The run is recorded: model version, inputs, and tool calls kept so a surprising result can be re-examined and, where possible, re-run.
 - The agent supplies the traceable evidence and the person makes the call, remaining accountable for the judgement.
 
@@ -107,6 +114,7 @@ A research agent has to pass citation and retraction status through to its outpu
 
 ## Change history
 
+- 2026-09-16: Added the Copilot for Word disclosure (Måløy 2026) as a supporting source on bp7-a2, with an Example: assistant edits accepted without a record of what changed or which attachment drove them cannot be traced afterwards.
 - 2026-08-03: Added the F(AI)2R provenance paper (Krebs 2026) as a supporting source on claim-level provenance and per-activity human and agent attribution, downweighted as a single self-audited demonstration (bp7-a1, bp7-a2).
 - 2026-07-27: Renumbered from BP06 to BP07 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instances (NISO CREC, Crossref/Retraction Watch, PROV, RO-Crate, CRediT).

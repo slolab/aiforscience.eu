@@ -1,5 +1,6 @@
 ---
 title: The GenAI Divide (2025)
+ref_id: mit-genai-divide-2025
 source_type: report
 issuing_body: MIT Project NANDA (Challapally, Pease, Raskar, Chari)
 published: 2025 (July)

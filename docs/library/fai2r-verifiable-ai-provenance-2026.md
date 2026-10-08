@@ -1,5 +1,6 @@
 ---
 title: "F(AI)2R: Verifiable AI Provenance as an Executable Skill (2026)"
+ref_id: fai2r-verifiable-ai-provenance-2026
 source_type: preprint
 issuing_body: "Florian Krebs"
 published: 2026 (July)
