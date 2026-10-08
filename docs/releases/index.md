@@ -10,6 +10,17 @@ Each release receives a DOI via Zenodo.
 
 ## Past releases
 
+### v2026.09 (2026-10-08)
+
+Third dated snapshot.
+Ten practices, all at `draft` status, with no endorsements yet.
+It captures the record as of 22 September 2026.
+A disclosure of self-propagating prompt injection in an office assistant was added as a reference work and grounds BP-03, BP-04, BP-07, and BP-09; BP-03 now states that a document is not vetted by where it is stored.
+The library holds nine distilled sources and 55 reference works, and the failures log six entries.
+Five editors joined the editor group, and the "Last reviewed" date on each practice is now defined as the date an editor last went through the whole page.
+
+DOI: VERSION_DOI · [GitHub release](https://github.com/slolab/aiforscience.eu/releases/tag/v2026.09)
+
 ### v2026.08 (2026-08-31)
 
 Second dated snapshot.
@@ -33,7 +44,7 @@ DOI: [10.5281/zenodo.21709876](https://doi.org/10.5281/zenodo.21709876) · [GitH
 
 Cite the record by release, not by URL alone:
 
-> AI for Science contributors. *Best Practices for Agentic AI in Science*, release 2026.08. https://aiforscience.eu, DOI: 10.5281/zenodo.22645685.
+> AI for Science contributors. *Best Practices for Agentic AI in Science*, release 2026.09. https://aiforscience.eu, DOI: VERSION_DOI.
 
 Each release has its own version DOI.
 The concept DOI [10.5281/zenodo.21709875](https://doi.org/10.5281/zenodo.21709875) is stable across all releases and resolves to the latest snapshot.
