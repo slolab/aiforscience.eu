@@ -4,7 +4,7 @@ nav_title: "Default to agent-accessibility"
 practice_id: BP-02
 status: draft
 first_added: 2026-07-25
-last_reviewed: 2026-07-26
+last_reviewed: 2026-09-16
 endorsed_by: []
 sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
@@ -54,6 +54,8 @@ comments: true
   { #bp2-a6 }
 - Sorting resources into types based on usage and importance can help prioritise maintenance effort.
   { #bp2-a7 }
+- This practice decides which resources get a maintained interface and how much to invest; what any interface, documentation, and metadata must contain is [BP05](05-documentation-and-data-for-agents.md).
+  { #bp2-a8 }
 
 </div>
 
@@ -112,6 +114,7 @@ The load that automated clients now place on open resources makes governed acces
 
 ## Change history
 
+- 2026-09-16: Challenge [#29](https://github.com/slolab/aiforscience.eu/issues/29). Added bp2-a8 stating the boundary with BP05: this practice decides which resources get a maintained interface and how much to invest; BP05 says what any interface, documentation, and metadata must contain.
 - 2026-07-27: Renumbered from BP01 to BP02 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns, replacing restatements of the practice; kept the labelled life-science instances (Core Data Resources, bio.tools).
 - 2026-07-26: Rewritten to be domain-neutral (FAIR as the general anchor; ELIXIR and bio.tools demoted to labelled examples) and to replace "open to agents" with machine-actionable, discoverable, and governed-per-tier, grounded in FAIR and the COAR load survey.
