@@ -7,32 +7,25 @@ first_added: 2026-07-25
 last_reviewed: 2026-07-26
 endorsed_by: []
 sources:
-  - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
-    ref: library/elixir-tf-agentic-ai-2026.md
+  - ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, item 7"
     note: "Best Practice item 7."
-  - title: "Agentic AI in the higher-education system (2026)"
-    ref: library/hfd-agentic-ai-hochschulsystem-2026.md
+  - ref: library/hfd-agentic-ai-hochschulsystem-2026.md
     locator: "§4.1 and §6, hooks 3 and 11"
     note: "§4.1 (explicit intervention points) and §6 (defined escalation and control). Consistent with, grounding only."
-  - title: "EU AI Act, Article 14 (human oversight)"
-    ref: library/ref-eu-ai-act.md
+  - ref: library/ref-eu-ai-act.md
     locator: "oversight must be effective; automation bias named"
     note: "Article 14 requires oversight to be effective, and names automation bias as a hazard the overseer must be able to counter."
-  - title: "NIST Generative AI Profile (AI 600-1, 2024)"
-    ref: library/ref-nist-ai-rmf.md
+  - ref: library/ref-nist-ai-rmf.md
     locator: "oversight calibrated to risk"
     note: "Sets oversight calibrated to the risk level."
-  - title: "Elish, Moral Crumple Zones (Engaging Science, Technology, and Society, 2019)"
-    ref: library/ref-elish-2019.md
+  - ref: library/ref-elish-2019.md
     locator: "the nominal human absorbs blame for uncontrollable systems"
     note: "Shows the nominal human in the loop can absorb blame for a system they cannot realistically control."
-  - title: "Green, The Flaws of Policies Requiring Human Oversight of Government Algorithms (2022)"
-    ref: library/ref-green-2022.md
+  - ref: library/ref-green-2022.md
     locator: "human-oversight mandates often fail to deliver"
     note: "Finds that mandates for human oversight of algorithms often fail to deliver the protections claimed for them, so a stated level has to be designed for effectiveness."
-  - title: "Måløy, Self-propagating prompt injection in Copilot for Word (2026)"
-    ref: library/ref-copilot-word-ai-worm-2026.md
+  - ref: library/ref-copilot-word-ai-worm-2026.md
     locator: "Stage 1; Disclosure status at publication"
     note: "Human review of the attached and the generated document was the only mitigation offered to customers, and both the payload (white 8-point text) and the edits it caused were too subtle for an attentive reviewer to catch until the model was made to announce its own edits, so a check that does not show what the model read and changed fails in deployment (bp9-a5). A proof of concept in a commercial productivity suite, not an incident observed in science; grounding only."
 layer: Operational
