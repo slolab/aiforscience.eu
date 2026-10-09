@@ -64,7 +64,7 @@ Audiences: practitioners, providers, governance.
 
 | Hook | Supports | In tension with |
 |---|---|---|
-| 1 | [BP09](../best-practices/09-human-in-the-loop.md) (bp9-a5); context for [BP03](../best-practices/03-register-and-vet-interfaces.md) | |
+| 1 | [BP09](../best-practices/09-human-in-the-loop.md) (bp9-a5); [BP11](../best-practices/11-decide-where-research-data-may-go.md) (bp11-a4); context for [BP03](../best-practices/03-register-and-vet-interfaces.md) | |
 | 2 | context for [BP04](../best-practices/04-govern-autonomy-and-accountability.md) governance | |
 | 3 | context for [BP04](../best-practices/04-govern-autonomy-and-accountability.md), [BP02](../best-practices/02-default-to-agent-accessibility.md) | |
 | 4 | [BP04](../best-practices/04-govern-autonomy-and-accountability.md) (bp4-a1, bp4-a6), [BP02](../best-practices/02-default-to-agent-accessibility.md) (bp2-a4) | |
