@@ -4,7 +4,7 @@ nav_title: "Match the method to the task"
 practice_id: BP-01
 status: draft
 first_added: 2026-07-27
-last_reviewed: 2026-07-27
+last_reviewed: 2026-09-16
 endorsed_by: []
 sources:
   - title: "Anthropic, Building Effective AI Agents (2024)"
@@ -27,6 +27,10 @@ sources:
     ref: library/ref-walters-wilder-2023.md
     locator: "55% (GPT-3.5) / 18% (GPT-4) of citations fabricated"
     note: "A concrete failure mode of using a frontier model where a retrieval method fits."
+  - title: "Chen, Zaharia & Zou, How Is ChatGPT's Behavior Changing Over Time? (2023)"
+    ref: library/ref-chen-chatgpt-drift-2023.md
+    locator: "GPT-4 prime-number accuracy 84% (March 2023) to 51% (June 2023) under the same service name"
+    note: "Measured the same hosted model service changing behaviour within months, so a hosted frontier model is a dependency the adopter does not control and a validated workflow can need revalidation."
   - title: "JRC, The Role of AI in Scientific Research (2025)"
     ref: library/ref-jrc-ai-in-science-2025.md
     locator: "AI as a tool in science"
@@ -59,7 +63,7 @@ comments: true
 - First decide whether the task at hand requires an [agent](../glossary.md#agent).
 - Choose the method that fits the task; an agent or a frontier language model is one option among several.
   { #bp1-a1 }
-- Prefer scripts, pipelines, workflows, and smaller models (often cheaper, faster, more maintainable).
+- Prefer scripts, pipelines, workflows, and smaller models (often cheaper, faster, inspectable, and more maintainable).
   { #bp1-a2 }
 - Agentic autonomy earns its cost when the task needs flexible, model-driven decisions at scale.
   { .afs-practice__pivot #bp1-a3 }
@@ -73,7 +77,7 @@ comments: true
 
     Before reaching for an agent, ask whether a script, a fixed workflow, or an existing specialized model already does the job as well or better.
     Keep the frontier model for the open-ended, judgement-heavy steps where its flexibility is the point.
-    A method that fits the task is usually cheapest to run and easiest to reproduce.
+    A method that fits the task is usually cheapest to run and easiest to reproduce, and it does not change under you when a provider updates its model.
 
 === "For providers"
 
@@ -93,6 +97,7 @@ comments: true
 An agent is a general instrument, and general instruments are rarely the most efficient way to do a fixed job.
 Vendor engineering guidance is explicit: start with the simplest approach, and add agentic complexity only when a task needs flexible, model-driven decisions at scale.
 Agents trade latency and cost for that flexibility.
+A hosted frontier model is also a dependency the adopter does not control: the provider can retire or change the version, and a workflow validated on the old one has to be revalidated with no way to reproduce the original run.
 When real cost is measured, complex agents often fail to beat simple baselines.
 On well-specified tasks, a specialized or fine-tuned model can be more accurate than a larger general model, at a fraction of the cost.
 The reverse choice has a record of concrete harm in science: a frontier model asked to supply references fabricates a large share of them, and treating a model as a scientific instrument without method rigour produces over-optimistic results that do not reproduce.
@@ -117,6 +122,7 @@ Controlled trials show forecast gains from agentic tools are frequently miscalib
 
 ## Change history
 
+- 2026-09-16: Challenge [#25](https://github.com/slolab/aiforscience.eu/issues/25). Added "inspectable" to bp1-a2, and a Reasons line that a hosted frontier model is a dependency the adopter does not control, so a provider's version change can force revalidation. Grounded in Chen, Zaharia & Zou (2023) on measured behaviour drift of a hosted model; provenance edge on bp1-a2.
 - 2026-07-31: Added a costed Example from the reported Amazon cost overruns (bulk record matching through a frontier model, about $1.8m, 860% over budget, never shipped), labelled as an out-of-domain corporate case. Provenance edges added on bp1-a2 and bp1-a3.
 - 2026-07-27: Added the Expectation–Realisation Gap review (Lobentanzer 2026) as downweighted context on heterogeneous, miscalibrated benefit, with a Reasons and Examples note that method choice includes stating and re-measuring expected net benefit with oversight cost deducted (bp1-a1, bp1-a3).
 - 2026-07-27: Added The GenAI Divide (MIT NANDA 2025) as a supporting source on task-based method fit (bp1-a1).
