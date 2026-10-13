@@ -7,48 +7,37 @@ first_added: 2026-07-25
 last_reviewed: 2026-07-26
 endorsed_by: []
 sources:
-  - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
-    ref: library/elixir-tf-agentic-ai-2026.md
+  - ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, items 8 and 9"
     note: "Best Practice items 8 and 9 (registration implies review; managing agent traffic through an approved channel)."
-  - title: "Agentic AI in the higher-education system (2026)"
-    ref: library/hfd-agentic-ai-hochschulsystem-2026.md
+  - ref: library/hfd-agentic-ai-hochschulsystem-2026.md
     locator: "§5.2-5.3, hooks 8 and 9"
     note: "§5.2 to 5.3 (deployer-versus-provider, infrastructure as a governance point)."
-  - title: "EU Expert Forum on Frontier AI (2026)"
-    ref: library/ec-expert-forum-2026.md
+  - ref: library/ec-expert-forum-2026.md
     locator: "§4.2.2, hook 2"
     note: "§4.2.2 (provider diversity and openness). Consistent with, grounding only."
-  - title: "OWASP Top 10 for LLM Applications 2025 (LLM01 Prompt Injection)"
-    ref: library/ref-owasp-llm-top10-2025.md
+  - ref: library/ref-owasp-llm-top10-2025.md
     locator: "LLM01; supply-chain risks"
     note: "Ranks prompt injection (LLM01) as the top risk for LLM applications, one of the documented risks vetting guards against."
-  - title: "OWASP MCP Top 10 (MCP03 Tool Poisoning)"
-    ref: library/ref-owasp-mcp-top10.md
+  - ref: library/ref-owasp-mcp-top10.md
     locator: "MCP03:2025 Tool Poisoning"
     note: "Names tool poisoning (MCP03) as a supply-chain compromise of the agent interface itself."
-  - title: "Invariant Labs: MCP tool poisoning attacks (2025)"
-    ref: library/ref-invariant-tool-poisoning-2025.md
+  - ref: library/ref-invariant-tool-poisoning-2025.md
     locator: "poisoned tool descriptions; rug pull"
     note: "How a poisoned tool description hides instructions from the user."
-  - title: "Official Model Context Protocol Registry (preview, 2025)"
-    ref: library/ref-mcp-registry-2025.md
+  - ref: library/ref-mcp-registry-2025.md
     locator: "listing of self-reported data; no security review"
     note: "Evidence that the official registry lists self-reported data and does not vet, so listing and vetting must be kept distinct."
-  - title: "EU AI Act, Article 25 (responsibilities along the value chain)"
-    ref: library/ref-eu-ai-act.md
+  - ref: library/ref-eu-ai-act.md
     locator: "substantial modification; deployer becomes provider"
     note: "Substantial modification can move provider responsibility to whoever changed the system."
-  - title: "IETF AIPREF: a vocabulary for expressing AI usage preferences (draft)"
-    ref: library/ref-ietf-aipref.md
+  - ref: library/ref-ietf-aipref.md
     locator: "machine-readable access preferences"
     note: "Emerging machine-readable way to declare access preferences to automated clients."
-  - title: "MIT Project NANDA, The GenAI Divide (2025)"
-    ref: library/mit-genai-divide-2025.md
+  - ref: library/mit-genai-divide-2025.md
     locator: "§3.3 p.8 shadow AI outpaces governed deployment"
     note: 'Enterprise field evidence of a "shadow AI economy": unsanctioned personal-tool use outpaces governed deployment and often delivers better results (§3.3, pg. 8), so vetting should learn from observed usage rather than only restrict it. Out-of-domain business report; qualifies rather than grounds the practice.'
-  - title: "Måløy, Self-propagating prompt injection in Copilot for Word (2026)"
-    ref: library/ref-copilot-word-ai-worm-2026.md
+  - ref: library/ref-copilot-word-ai-worm-2026.md
     locator: "Security boundary and observed behavior; Impact; Closing thoughts"
     note: "Coordinated disclosure showing that a document shared through email or an internal SharePoint site can carry hidden instructions that steer the assistant, and that the assistant can copy them into its own output, which then carries the attack on (bp3-a5). Also the tradeoff argument: the model has to read the content to judge it, so a filter in front moves the exposure rather than removing it (bp3-a7). A proof of concept in a commercial productivity suite, not an incident observed in science; grounding only."
 layer: Ecosystem

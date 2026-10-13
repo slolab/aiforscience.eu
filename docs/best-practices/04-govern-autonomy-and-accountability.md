@@ -7,52 +7,40 @@ first_added: 2026-07-25
 last_reviewed: 2026-07-26
 endorsed_by: []
 sources:
-  - title: "Agentic AI in the higher-education system (2026)"
-    ref: library/hfd-agentic-ai-hochschulsystem-2026.md
+  - ref: library/hfd-agentic-ai-hochschulsystem-2026.md
     locator: "§4-6, hooks 3, 5, 6, 7, 9, 10, 11, 12"
     note: '§4 to 6. The "from guidelines to guardrails" framing is quoted at §5.2. That quotation is attributed in the source paper to "Kassorla et al. (2026)", a reference we could not verify as a published work; the underlying point is independently supported by the frameworks below, which is what this practice relies on.'
-  - title: "EU Expert Forum on Frontier AI (2026)"
-    ref: library/ec-expert-forum-2026.md
+  - ref: library/ec-expert-forum-2026.md
     locator: "§4.2.3, hooks 1 and 3"
     note: "§4.2.3 (independent audit, evaluation and verification capacity). Consistent with, grounding only."
-  - title: "NIST AI Risk Management Framework (AI 100-1, 2023) and Generative AI Profile (AI 600-1, 2024)"
-    ref: library/ref-nist-ai-rmf.md
+  - ref: library/ref-nist-ai-rmf.md
     locator: "GOVERN function; system inventory; stop-build authority"
     note: "GOVERN roles and accountability, a documented system inventory, and stop-build authority."
-  - title: "EU AI Act, Articles 14 and 26"
-    ref: library/ref-eu-ai-act.md
+  - ref: library/ref-eu-ai-act.md
     locator: "human oversight; deployer duties"
     note: "Named natural persons for oversight and deployer duties."
-  - title: "EU AI Omnibus (2026)"
-    ref: library/ai-omnibus-2026.md
+  - ref: library/ai-omnibus-2026.md
     locator: "Art 5(1a)(a)(ii); Recital 12 (foreseeable-misuse standard)"
     note: "Art 5(1a)(a)(ii). A provider is responsible where a prohibited output is a reasonably foreseeable and reproducible outcome absent adequate technical safeguards, which places the limit in the system rather than in policy (bp4-a1)."
-  - title: "OECD AI Principles (2019, updated 2024)"
-    ref: library/ref-oecd-ai-principles-2024.md
+  - ref: library/ref-oecd-ai-principles-2024.md
     locator: "accountability; traceability"
     note: "Traceability placed under Accountability."
-  - title: "ISO/IEC 42001:2023, AI management systems"
-    ref: library/ref-iso-42001-2023.md
+  - ref: library/ref-iso-42001-2023.md
     locator: "assigned accountability; AI system inventory; continual improvement"
     note: "Assigned accountability, an AI system inventory, and governance as continual improvement."
-  - title: "OpenAI, Practices for Governing Agentic AI Systems (2023)"
-    ref: library/ref-openai-governing-agentic-ai-2023.md
+  - ref: library/ref-openai-governing-agentic-ai-2023.md
     locator: "constraining the action space; human accountability; action ledger"
     note: "Constraining the action space, human accountability, and an action ledger."
-  - title: "Chan et al., Visibility into AI Agents (ACM FAccT 2024)"
-    ref: library/ref-chan-visibility-2024.md
+  - ref: library/ref-chan-visibility-2024.md
     locator: "agent identifiers, real-time monitoring, activity logging"
     note: "Agent identifiers, real-time monitoring, and activity logging as the substrate of accountability."
-  - title: "Kolt, Governing AI Agents (Notre Dame Law Review, 2025)"
-    ref: library/ref-kolt-governing-agents-2025.md
+  - ref: library/ref-kolt-governing-agents-2025.md
     locator: "accountability and control of agents"
     note: "Legal treatment of agent accountability and control."
-  - title: "European Commission JRC, The Role of AI in Scientific Research (JRC143482, 2025)"
-    ref: library/ref-jrc-ai-in-science-2025.md
+  - ref: library/ref-jrc-ai-in-science-2025.md
     locator: "AI as tool; human accountability in science"
     note: 'AI as a tool with human accountability in science. The HFD source attributes a "situated judgement is not automatable" claim to the JRC; we cite the JRC report for the accountability framing and do not attribute that exact wording to it without a located passage.'
-  - title: "Måløy, Self-propagating prompt injection in Copilot for Word (2026)"
-    ref: library/ref-copilot-word-ai-worm-2026.md
+  - ref: library/ref-copilot-word-ai-worm-2026.md
     locator: "Closing thoughts (interpreter analogy; LLMs all the way down)"
     note: "Argues that a model cannot be relied on to judge whether the content it reads is safe, because that content is already shaping the judgement, and that a second model placed in front of it inherits the same exposure; two vendor mitigations, one of them a model upgrade, did not close the class (bp4-a2). A proof of concept in a commercial productivity suite, not an incident observed in science; grounding only."
 layer: Ecosystem

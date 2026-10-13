@@ -7,44 +7,34 @@ first_added: 2026-07-25
 last_reviewed: 2026-07-26
 endorsed_by: []
 sources:
-  - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
-    ref: library/elixir-tf-agentic-ai-2026.md
+  - ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, item 6"
     note: "Best Practice item 6."
-  - title: "Agentic AI in the higher-education system (2026)"
-    ref: library/hfd-agentic-ai-hochschulsystem-2026.md
+  - ref: library/hfd-agentic-ai-hochschulsystem-2026.md
     locator: "§3.3 and §4.1, hooks 2 and 4"
     note: "§3.3 (source traceability, retraction notices) and §4.1 (situated judgement is not automatable). Consistent with, grounding only."
-  - title: "EU Expert Forum on Frontier AI (2026)"
-    ref: library/ec-expert-forum-2026.md
+  - ref: library/ec-expert-forum-2026.md
     locator: "§4.2.3, hook 1"
     note: "§4.2.3 (evaluation and verification rest on traceability). Consistent with, grounding only."
-  - title: "W3C PROV-O: the PROV Ontology (2013 Recommendation)"
-    ref: library/ref-prov-o-2013.md
+  - ref: library/ref-prov-o-2013.md
     locator: "machine-readable provenance"
     note: "An ontology for stating provenance in machine-readable form: which entities, activities, and agents produced a result."
-  - title: "CRediT contributor roles taxonomy (ANSI/NISO Z39.104-2022)"
-    ref: library/ref-credit-2022.md
+  - ref: library/ref-credit-2022.md
     locator: "machine-readable contribution attribution"
     note: "A contributor-role taxonomy that records attribution at the byline, so human and agent contributions can be separated."
-  - title: "ICMJE Recommendations and COPE position on AI and authorship (2023)"
-    ref: library/ref-icmje-cope-2023.md
+  - ref: library/ref-icmje-cope-2023.md
     locator: "AI cannot be an author; disclosure required; humans accountable"
     note: "AI cannot be an author; use must be disclosed; humans remain accountable."
-  - title: "NISO CREC: Communication of Retractions, Removals, and Expressions of Concern (RP-45-2024)"
-    ref: library/ref-niso-crec-2024.md
+  - ref: library/ref-niso-crec-2024.md
     locator: "transmitting retraction status to machine and human readers"
     note: "The recommended practice for communicating retractions and expressions of concern as signals both systems and people can act on."
-  - title: "Crossref and the Retraction Watch database (open since 2023)"
-    ref: library/ref-crossref-retraction-watch-2023.md
+  - ref: library/ref-crossref-retraction-watch-2023.md
     locator: "machine-readable retraction data"
     note: "The open, machine-readable retraction data that makes propagating retraction status feasible."
-  - title: "Krebs, F(AI)2R: Verifiable AI Provenance as an Executable Skill (2026)"
-    ref: library/fai2r-verifiable-ai-provenance-2026.md
+  - ref: library/fai2r-verifiable-ai-provenance-2026.md
     locator: "§IV claim-level records and the verification ladder; §VI citation audit and per-activity division of labour"
     note: "§IV (claim-level records, the verification ladder whose top rungs only a human may grant) and §VI (citation audit against the citing sentence, per-activity human and agent attribution). One working implementation, demonstrated on the paper's own production by its author: one operator, one domain, one session, self-audited. Downweighted, grounding only."
-  - title: "Måløy, Self-propagating prompt injection in Copilot for Word (2026)"
-    ref: library/ref-copilot-word-ai-worm-2026.md
+  - ref: library/ref-copilot-word-ai-worm-2026.md
     locator: "Implications; Impact"
     note: "Recommends that generated documents preserve provenance for source material and model-performed edits in metadata; in the proof of concept, approved assistant edits left no visible trace, which is what made the manipulation untraceable afterwards (bp7-a2). A proof of concept in a commercial productivity suite, not an incident observed in science; grounding only."
 layer: Method
