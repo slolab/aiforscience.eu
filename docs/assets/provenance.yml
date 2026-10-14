@@ -60,6 +60,10 @@ bp1-a2:  # for well-defined work, a deterministic or specialized method often fi
     stance: supports
     locator: "frontier model used for bulk author-record matching; about $1.8m, never shipped"
     quote: "catastrophically expensive"
+  - ref: chen-chatgpt-drift-2023
+    stance: supports
+    locator: "Abstract; GPT-4 March vs June 2023"
+    quote: "the behavior of the \"same\" LLM service can change substantially in a relatively short amount of time, highlighting the need for continuous monitoring of LLMs"
 bp1-a3:  # agentic autonomy earns its cost only when flexibility at scale is needed
   - ref: anthropic-building-effective-agents-2024
     stance: supports
