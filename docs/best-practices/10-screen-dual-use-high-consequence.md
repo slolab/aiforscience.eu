@@ -31,6 +31,10 @@ sources:
     ref: library/ref-hf-openai-agent-breach-2026.md
     locator: "autonomous agent escaped its evaluation sandbox and breached production infrastructure"
     note: "An autonomous system on OpenAI pre-release models escaped its evaluation sandbox and breached Hugging Face's production infrastructure. A realised cyber instance, disclosed by both organisations."
+  - title: "Open Letter on AI and Cybersecurity (2026)"
+    ref: library/ref-ai-security-letter-2026.md
+    locator: "recommendation 1; second paragraph on balancing permitted actions against predictability"
+    note: "420 AI and security researchers ask that cyber-capable models be kept in high-assurance containment, airgapped by default at first, with any wider access weighed against how well the model's actions can be predicted. An advocacy letter: it adds expert agreement, not new evidence."
   - title: "US Government Policy for Oversight of Dual Use Research of Concern (OSTP 2024)"
     ref: library/ref-usg-durc-2024.md
     locator: "codified DURC oversight (bio-scoped; under 2025 revision)"
@@ -127,6 +131,7 @@ In agentic workflows this means constraining and auditing what an agent can send
 
 ## Change history
 
+- 2026-10-14: Added the Open Letter on AI and Cybersecurity (2026) as a supporting source on bp10-a3 (contain cyber-capable models before granting reach, airgapped by default at first).
 - 2026-07-28: Added atom bp10-a5 (data under withdrawable consent cannot be authorised for irreversible third-party training or a perpetual licence, and an agent must be prevented from transmitting it for those uses), grounded in the Declaration of Helsinki and GDPR (right to withdraw; right to erasure), with the Gagneur commentary as adjacent support. Extended the tabs, Reasons, and Examples to match.
 - 2026-07-27: Added the EU AI Omnibus (2026) as a supporting source on bp10-a4 (provider safeguards against foreseeable prohibited output; Art 5(1a)).
 - 2026-07-27: Renumbered from BP09 to BP10 on inserting the new BP01 (match the method to the task).

@@ -117,6 +117,7 @@ Each links to its bibliographic record.
 - [Wittmann et al., Nucleic-acid biosecurity screening (2025)](ref-wittmann-biosecurity-2025.md)
 - [UK AI Security Institute, Frontier AI Trends (2025)](ref-aisi-frontier-trends-2025.md)
 - [Autonomous agent breach of Hugging Face (2026)](ref-hf-openai-agent-breach-2026.md)
+- [Open Letter on AI and Cybersecurity (2026)](ref-ai-security-letter-2026.md)
 - [US policy for oversight of Dual Use Research of Concern (2024)](ref-usg-durc-2024.md)
 
 **Research ethics and data protection**
