@@ -460,6 +460,10 @@ bp10-a3:  # evaluate misuse capability against set thresholds
   - ref: fmf-safety-frameworks
     stance: supports
     locator: "CBRN, cyber, autonomy as parallel domains"
+  - ref: ai-security-letter-2026
+    stance: supports
+    locator: "recommendation 1; second paragraph"
+    quote: "the range of model actions permitted by a containment system needs to be balanced with our currently limited ability to predict that the model’s actions will not result in a security failure"
 bp10-a5:  # revocable consent cannot authorise irreversible training
   - ref: helsinki
     stance: supports
