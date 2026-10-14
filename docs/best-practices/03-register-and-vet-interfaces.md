@@ -51,6 +51,10 @@ sources:
     ref: library/ref-copilot-word-ai-worm-2026.md
     locator: "Security boundary and observed behavior; Impact; Closing thoughts"
     note: "Coordinated disclosure showing that a document shared through email or an internal SharePoint site can carry hidden instructions that steer the assistant, and that the assistant can copy them into its own output, which then carries the attack on (bp3-a5). Also the tradeoff argument: the model has to read the content to judge it, so a filter in front moves the exposure rather than removing it (bp3-a7). A proof of concept in a commercial productivity suite, not an incident observed in science; grounding only."
+  - title: "EDPB Opinion 28/2024 on personal data in AI models (2024)"
+    ref: library/edpb-opinion-ai-models-2024.md
+    locator: "paras 131, 134"
+    note: "A provider's self-declaration of conformity is not a conclusive finding of GDPR compliance, and a mere assertion of model anonymity is not enough (bp3-a5)."
 layer: Ecosystem
 hitl: mandatory
 tags: [provider, governance, draft]
@@ -137,6 +141,7 @@ Knowing where an interface comes from, and keeping more than one option open, av
 
 ## Change history
 
+- 2026-10-08: Added EDPB Opinion 28/2024 as a supporting source on bp3-a5 (a self-declaration of compliance is not a finding of compliance).
 - 2026-09-16: Added the trusted-source point to the tabs, Reasons, and Examples (a document in an internal shared folder is not vetted by its location; the agent's output can carry the injection on), following editor review of the Copilot for Word disclosure (Måløy 2026), which is added as a source on bp3-a5 and bp3-a7. Atom wording unchanged.
 - 2026-07-27: Added a "what it looks like in practice" example on shadow usage and vetting that learns from observed use, grounded in The GenAI Divide (MIT NANDA 2025) as a qualifier (bp3-a3).
 - 2026-07-27: Renumbered from BP02 to BP03 on inserting the new BP01 (match the method to the task).

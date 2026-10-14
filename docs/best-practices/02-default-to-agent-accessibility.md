@@ -27,6 +27,14 @@ sources:
     ref: library/ref-coar-ai-bots-2025.md
     locator: "load and the blocking dilemma"
     note: 'Evidence that open resources face heavy automated load and that blunt blocking also blocks real users. Qualifies "default accessible" toward governed access.'
+  - title: "Living guidelines on the responsible use of generative AI in research (European Commission and ERA Forum, 2026)"
+    ref: library/era-living-guidelines-genai-2026.md
+    locator: "Recommendations for research organisations 4, p. 10"
+    note: "Research organisations provide locally hosted or self-governed tools so staff can work with their data under data protection and confidentiality (bp2-a4). Non-binding."
+  - title: "European Health Data Space Regulation (Regulation (EU) 2025/327)"
+    ref: library/ref-ehds-2025.md
+    locator: "Art 73(1)-(2)"
+    note: "Access to health data only inside a secure processing environment, from which only non-personal data may leave: the legal form of access the resource governs (bp2-a4). Health-data instance, cited as an example."
 layer: Ecosystem
 hitl: n/a
 tags: [provider, governance, draft]
@@ -112,6 +120,7 @@ The load that automated clients now place on open resources makes governed acces
 
 ## Change history
 
+- 2026-10-08: Added the Commission's living guidelines on generative AI in research (2026) and the European Health Data Space Regulation as supporting sources on bp2-a4 (self-governed hosting; secure processing environment).
 - 2026-07-27: Renumbered from BP01 to BP02 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns, replacing restatements of the practice; kept the labelled life-science instances (Core Data Resources, bio.tools).
 - 2026-07-26: Rewritten to be domain-neutral (FAIR as the general anchor; ELIXIR and bio.tools demoted to labelled examples) and to replace "open to agents" with machine-actionable, discoverable, and governed-per-tier, grounded in FAIR and the COAR load survey.

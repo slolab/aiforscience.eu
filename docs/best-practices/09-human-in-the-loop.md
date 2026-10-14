@@ -35,6 +35,10 @@ sources:
     ref: library/ref-copilot-word-ai-worm-2026.md
     locator: "Stage 1; Disclosure status at publication"
     note: "Human review of the attached and the generated document was the only mitigation offered to customers, and both the payload (white 8-point text) and the edits it caused were too subtle for an attentive reviewer to catch until the model was made to announce its own edits, so a check that does not show what the model read and changed fails in deployment (bp9-a5). A proof of concept in a commercial productivity suite, not an incident observed in science; grounding only."
+  - title: "CNIL and CIANum: Agentic AI and personal data protection (2026)"
+    ref: library/ref-cnil-cianum-agentic-ai-2026.md
+    locator: "p. 14"
+    note: "Human intervention required for actions whose consequences are judged critical, with the user choosing which actions need it (bp9-a1). Exploratory, non-binding."
 layer: Operational
 hitl: in-process
 tags: [practitioner, provider, governance, draft]
@@ -114,6 +118,7 @@ Stating and enforcing HITL levels fulfils part of [BP04](04-govern-autonomy-and-
 
 ## Change history
 
+- 2026-10-08: Added the CNIL and CIANum note on agentic AI (2026) as a supporting source on bp9-a1 (human validation for critical actions).
 - 2026-09-16: Added the Copilot for Word disclosure (Måløy 2026) as a supporting source on bp9-a5, with an Example: human review that does not show what the model read and changed missed both the hidden payload and the edits it caused.
 - 2026-07-27: Renumbered from BP08 to BP09 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns (unstated level, rubber-stamping at volume), replacing restatements of the practice.

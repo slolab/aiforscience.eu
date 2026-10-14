@@ -100,6 +100,7 @@ nav:
       - best-practices/08-evaluate-tools-before-trust.md
       - best-practices/09-human-in-the-loop.md
       - best-practices/10-screen-dual-use-high-consequence.md
+      - best-practices/11-decide-where-research-data-may-go.md
       - "Failures log": best-practices/failures.md
   - Background:
       - Library: library/index.md
