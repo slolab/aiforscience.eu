@@ -1,5 +1,6 @@
 ---
 title: "ELIXIR AI strategy (2026)"
+ref_id: elixir-ai-strategy-2026
 source_type: strategy paper
 issuing_body: ELIXIR Europe
 published: June 2026 (version 1.0)

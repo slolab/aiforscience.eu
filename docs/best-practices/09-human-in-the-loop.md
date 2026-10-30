@@ -4,27 +4,41 @@ nav_title: "State human-in-the-loop requirements"
 practice_id: BP-09
 status: draft
 first_added: 2026-07-25
-last_reviewed: 2026-07-26
+last_reviewed: 2026-09-16
 endorsed_by: []
 sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
     ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, item 7"
+    note: "Best Practice item 7."
   - title: "Agentic AI in the higher-education system (2026)"
     ref: library/hfd-agentic-ai-hochschulsystem-2026.md
     locator: "§4.1 and §6, hooks 3 and 11"
+    note: "§4.1 (explicit intervention points) and §6 (defined escalation and control). Consistent with, grounding only."
   - title: "EU AI Act, Article 14 (human oversight)"
     ref: library/ref-eu-ai-act.md
     locator: "oversight must be effective; automation bias named"
+    note: "Article 14 requires oversight to be effective, and names automation bias as a hazard the overseer must be able to counter."
   - title: "NIST Generative AI Profile (AI 600-1, 2024)"
     ref: library/ref-nist-ai-rmf.md
     locator: "oversight calibrated to risk"
+    note: "Sets oversight calibrated to the risk level."
   - title: "Elish, Moral Crumple Zones (Engaging Science, Technology, and Society, 2019)"
     ref: library/ref-elish-2019.md
     locator: "the nominal human absorbs blame for uncontrollable systems"
+    note: "Shows the nominal human in the loop can absorb blame for a system they cannot realistically control."
   - title: "Green, The Flaws of Policies Requiring Human Oversight of Government Algorithms (2022)"
     ref: library/ref-green-2022.md
     locator: "human-oversight mandates often fail to deliver"
+    note: "Finds that mandates for human oversight of algorithms often fail to deliver the protections claimed for them, so a stated level has to be designed for effectiveness."
+  - title: "Måløy, Self-propagating prompt injection in Copilot for Word (2026)"
+    ref: library/ref-copilot-word-ai-worm-2026.md
+    locator: "Stage 1; Disclosure status at publication"
+    note: "Human review of the attached and the generated document was the only mitigation offered to customers, and both the payload (white 8-point text) and the edits it caused were too subtle for an attentive reviewer to catch until the model was made to announce its own edits, so a check that does not show what the model read and changed fails in deployment (bp9-a5). A proof of concept in a commercial productivity suite, not an incident observed in science; grounding only."
+  - title: "CNIL and CIANum: Agentic AI and personal data protection (2026)"
+    ref: library/ref-cnil-cianum-agentic-ai-2026.md
+    locator: "p. 14"
+    note: "Human intervention required for actions whose consequences are judged critical, with the user choosing which actions need it (bp9-a1). Exploratory, non-binding."
 layer: Operational
 hitl: in-process
 tags: [practitioner, provider, governance, draft]
@@ -85,6 +99,7 @@ Pipelines need to be assessed for realistically achievable volumes.
 The four labels used here (mandatory / optional, in-process / final check) are a useful shorthand, not settled standards.
 Agent autonomy is a spectrum from tight supervision to full autonomy.
 Stating and enforcing HITL levels fulfils part of [BP04](04-govern-autonomy-and-accountability.md) at the single use case level.
+The HITL level decides where people check or intervene in a workflow, during or after a run; whether the tool is fit for the task at all is settled by evaluation ([BP08](08-evaluate-tools-before-trust.md)), before reliance and again when the tool or the task changes.
 
 ## Examples
 
@@ -92,21 +107,21 @@ Stating and enforcing HITL levels fulfils part of [BP04](04-govern-autonomy-and-
 - Every use case instead declares its level from a short list (mandatory, optional, in-process, final check), and a workflow that declares none is understood to run at full autonomy, so the choice is explicit.
 - A pipeline has a mandatory "human approves each item" step, but at hundreds of items an hour the reviewer clicks approve without reading; the check exists on paper and fails in practice.
 - The check is designed so the human can actually judge: it shows what changed, at a realistic volume, with approve, edit, veto, and stop, and the strength of the check is set by the stakes.
+- A drafting assistant's only safeguard is that a person reviews the attached documents and the generated one.
+  The hidden instructions in one attachment are white 8-point text and the figures the assistant halved look plausible, so an attentive reviewer misses both; the manipulation surfaces only once the assistant is told to announce its own edits.
+  A review step that shows a clean-looking document, without what the model read and what it changed, is a check that exists on paper.
+  That record of what the model read and changed is the provenance [BP07](07-provenance-and-citation.md) asks for (demonstrated in a commercial office suite under coordinated disclosure, not observed in science).
 - The stated level is enforced by the system rather than left to habit, which ties it to the guardrails in [BP04](04-govern-autonomy-and-accountability.md), and the HITL engagement is recorded in provenance ([BP07](07-provenance-and-citation.md)) so oversight is auditable instead of assumed.
 - A reviewer uploads a confidential manuscript to an external model against the stated boundary of the conference for a high-stakes task. They submit the AI-generated review without declaring the AI use. The conference had inserted a [prompt injection](../glossary.md#prompt-injection) into their review version and catches the reviewer with the prompted output form. The reviewer is barred from conference participation for two years.
 
-## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice item 7.
-- [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §4.1 (explicit intervention points) and §6 (defined escalation and control).
-  Consistent with, grounding only.
-- [EU AI Act, Article 14](../library/ref-eu-ai-act.md) and [NIST Generative AI Profile (AI 600-1)](../library/ref-nist-ai-rmf.md).
-  Oversight must be effective and calibrated to risk; Article 14 names automation bias as a hazard the overseer must be able to counter.
-- [Elish, Moral Crumple Zones (2019)](../library/ref-elish-2019.md) and [Green, Flaws of Policies Requiring Human Oversight (2022)](../library/ref-green-2022.md).
-  Evidence that human oversight frequently fails in practice; a stated level must be designed for effectiveness.
+<!-- BP_SOURCES -->
+<!-- The Sources list above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 
+- 2026-10-08: Added the CNIL and CIANum note on agentic AI (2026) as a supporting source on bp9-a1 (human validation for critical actions).
+- 2026-09-16: Challenge [#32](https://github.com/slolab/aiforscience.eu/issues/32). Reasons state the boundary with BP08 by purpose: the HITL level decides where people check or intervene, during or after a run; whether the tool is fit for the task is settled by evaluation, before reliance and again when the tool or task changes.
+- 2026-09-16: Added the Copilot for Word disclosure (Måløy 2026) as a supporting source on bp9-a5, with an Example: human review that does not show what the model read and changed missed both the hidden payload and the edits it caused.
 - 2026-07-27: Renumbered from BP08 to BP09 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns (unstated level, rubber-stamping at volume), replacing restatements of the practice.
 - 2026-07-26: Renumbered from BP08 to BP09 in the reordering.

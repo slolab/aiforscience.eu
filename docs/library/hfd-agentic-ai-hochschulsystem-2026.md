@@ -1,5 +1,6 @@
 ---
 title: "Agentic AI in the higher-education system (2026)"
+ref_id: hfd-agentic-ai-hochschulsystem-2026
 source_type: strategy paper
 issuing_body: Hochschulforum Digitalisierung / KI-Campus (Stifterverband)
 published: 2026-05 (May 2026)

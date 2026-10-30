@@ -10,21 +10,27 @@ sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
     ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, item 4; July 2026 discussion"
+    note: "Best Practice item 4, and the July 2026 discussion on providers' limited view of their users."
   - title: "Anthropic, Writing effective tools for agents (2025)"
     ref: library/ref-anthropic-writing-tools-2025.md
     locator: "avoid wrapping existing endpoints; consolidate into task tools"
+    note: "Wrapping existing endpoints is a common error; build a few tools for high-impact workflows. Vendor-primary grounding for this practice."
   - title: "Anthropic, Code execution with MCP (2025)"
     ref: library/ref-anthropic-code-execution-mcp-2025.md
     locator: "token cost of per-endpoint tool use; progressive disclosure"
+    note: "Measures the token cost of exposing one tool per endpoint, and presents progressive disclosure as the remedy."
   - title: "Anthropic, Advanced tool use (2025)"
     ref: library/ref-anthropic-advanced-tool-use-2025.md
     locator: "tool-surface size vs selection accuracy and cost"
+    note: "Reports how a large tool surface raises token cost and lowers tool-selection accuracy."
   - title: "Model Context Protocol specification"
     ref: library/ref-mcp-spec.md
     locator: "the interface substrate (MCP servers, tools)"
+    note: "The interface substrate the practice is about."
   - title: "MIT Project NANDA, The GenAI Divide (2025)"
     ref: library/mit-genai-divide-2025.md
     locator: "Executive Summary p.3; §5.1 p.15 tools fail on workflow fit"
+    note: 'Enterprise field evidence that tools fail on workflow fit rather than model quality: custom systems stall due to "brittle workflows ... and misalignment with day-to-day operations", and buyers want a "deep understanding of our workflow" (pg. 3, pg. 15). Out-of-domain business report; cited as external context.'
 layer: Method
 hitl: n/a
 tags: [provider, practitioner, draft]
@@ -81,18 +87,8 @@ Both need to know what users are trying to do, and providers often do not, so le
 - A spike of many tiny calls aimed at one goal flags an interface that is misaligned with how it is used, and prompts a redesign.
 - For a very large API, instead of hand-building a task tool for every workflow, the provider lets the agent write code against the endpoints (progressive disclosure and code execution).
 
-## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice item 4, and the July 2026 discussion on providers' limited view of their users.
-- [Anthropic, Writing effective tools for agents (2025)](../library/ref-anthropic-writing-tools-2025.md).
-  Wrapping existing endpoints is a common error; build a few tools for high-impact workflows.
-  Vendor-primary grounding for this practice.
-- [Anthropic, Code execution with MCP (2025)](../library/ref-anthropic-code-execution-mcp-2025.md) and [Advanced tool use (2025)](../library/ref-anthropic-advanced-tool-use-2025.md).
-  Quantify the token cost of per-endpoint tool use and the accuracy loss from a large tool surface; document progressive disclosure as the alternative remedy.
-- [Model Context Protocol specification](../library/ref-mcp-spec.md).
-  The interface substrate the practice is about.
-- [MIT Project NANDA, The GenAI Divide (2025)](../library/mit-genai-divide-2025.md).
-  Enterprise field evidence that tools fail on workflow fit rather than model quality: custom systems stall due to "brittle workflows ... and misalignment with day-to-day operations", and buyers want a "deep understanding of our workflow" (pg. 3, pg. 15). Out-of-domain business report; cited as external context.
+<!-- BP_SOURCES -->
+<!-- The Sources list above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 

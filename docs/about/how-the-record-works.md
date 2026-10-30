@@ -33,3 +33,11 @@ A new one gets its own page only if it passes all of these:
 | <span class="afs-badge afs-badge--draft">draft</span> | Proposed, under discussion. |
 | <span class="afs-badge afs-badge--reviewed">reviewed</span> | Accepted by the editor group. |
 | <span class="afs-badge afs-badge--endorsed">endorsed</span> | Formally backed by at least one named organisation or task force. |
+
+## Review date
+
+Each practice page shows a "Last reviewed" date.
+It is the date an editor last went through the whole page and confirmed it stands, not the date of the last edit.
+Editors set it when a challenge or a review of that page is resolved, or after a deliberate re-read.
+Adding a source or an example does not move it.
+The full edit history is in the [repository](https://github.com/slolab/aiforscience.eu).

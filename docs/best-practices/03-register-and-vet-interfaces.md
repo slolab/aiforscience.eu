@@ -4,39 +4,57 @@ nav_title: "Register and vet interfaces"
 practice_id: BP-03
 status: draft
 first_added: 2026-07-25
-last_reviewed: 2026-07-26
+last_reviewed: 2026-09-16
 endorsed_by: []
 sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
     ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, items 8 and 9"
+    note: "Best Practice items 8 and 9 (registration implies review; managing agent traffic through an approved channel)."
   - title: "Agentic AI in the higher-education system (2026)"
     ref: library/hfd-agentic-ai-hochschulsystem-2026.md
     locator: "§5.2-5.3, hooks 8 and 9"
+    note: "§5.2 to 5.3 (deployer-versus-provider, infrastructure as a governance point)."
   - title: "EU Expert Forum on Frontier AI (2026)"
     ref: library/ec-expert-forum-2026.md
     locator: "§4.2.2, hook 2"
+    note: "§4.2.2 (provider diversity and openness). Consistent with, grounding only."
   - title: "OWASP Top 10 for LLM Applications 2025 (LLM01 Prompt Injection)"
     ref: library/ref-owasp-llm-top10-2025.md
     locator: "LLM01; supply-chain risks"
+    note: "Ranks prompt injection (LLM01) as the top risk for LLM applications, one of the documented risks vetting guards against."
   - title: "OWASP MCP Top 10 (MCP03 Tool Poisoning)"
     ref: library/ref-owasp-mcp-top10.md
     locator: "MCP03:2025 Tool Poisoning"
+    note: "Names tool poisoning (MCP03) as a supply-chain compromise of the agent interface itself."
   - title: "Invariant Labs: MCP tool poisoning attacks (2025)"
     ref: library/ref-invariant-tool-poisoning-2025.md
     locator: "poisoned tool descriptions; rug pull"
+    note: "How a poisoned tool description hides instructions from the user."
   - title: "Official Model Context Protocol Registry (preview, 2025)"
     ref: library/ref-mcp-registry-2025.md
     locator: "listing of self-reported data; no security review"
+    note: "Evidence that the official registry lists self-reported data and does not vet, so listing and vetting must be kept distinct."
   - title: "EU AI Act, Article 25 (responsibilities along the value chain)"
     ref: library/ref-eu-ai-act.md
     locator: "substantial modification; deployer becomes provider"
+    note: "Substantial modification can move provider responsibility to whoever changed the system."
   - title: "IETF AIPREF: a vocabulary for expressing AI usage preferences (draft)"
     ref: library/ref-ietf-aipref.md
     locator: "machine-readable access preferences"
+    note: "Emerging machine-readable way to declare access preferences to automated clients."
   - title: "MIT Project NANDA, The GenAI Divide (2025)"
     ref: library/mit-genai-divide-2025.md
     locator: "§3.3 p.8 shadow AI outpaces governed deployment"
+    note: 'Enterprise field evidence of a "shadow AI economy": unsanctioned personal-tool use outpaces governed deployment and often delivers better results (§3.3, pg. 8), so vetting should learn from observed usage rather than only restrict it. Out-of-domain business report; qualifies rather than grounds the practice.'
+  - title: "Måløy, Self-propagating prompt injection in Copilot for Word (2026)"
+    ref: library/ref-copilot-word-ai-worm-2026.md
+    locator: "Security boundary and observed behavior; Impact; Closing thoughts"
+    note: "Coordinated disclosure showing that a document shared through email or an internal SharePoint site can carry hidden instructions that steer the assistant, and that the assistant can copy them into its own output, which then carries the attack on (bp3-a5). Also the tradeoff argument: the model has to read the content to judge it, so a filter in front moves the exposure rather than removing it (bp3-a7). A proof of concept in a commercial productivity suite, not an incident observed in science; grounding only."
+  - title: "EDPB Opinion 28/2024 on personal data in AI models (2024)"
+    ref: library/edpb-opinion-ai-models-2024.md
+    locator: "paras 131, 134"
+    note: "A provider's self-declaration of conformity is not a conclusive finding of GDPR compliance, and a mere assertion of model anonymity is not enough (bp3-a5)."
 layer: Ecosystem
 hitl: mandatory
 tags: [provider, governance, draft]
@@ -52,7 +70,7 @@ comments: true
 
 - An [agent](../glossary.md#agent) reaches tools, data, and actions outside the model through [interfaces](../glossary.md#interface) (e.g., [MCP](../glossary.md#mcp) servers, skills, plugins).
   { #bp3-a1 }
-- Each interface runs code and acts for the user, so each is a point where risk enters.
+- Each interface runs code, supplies instructions the model follows, or both, and acts for the user, so each is a point where risk enters.
   { #bp3-a2 }
 - Interfaces should be published through a channel that lists and vets them.
   { #bp3-a3 }
@@ -72,27 +90,36 @@ comments: true
     Prefer interfaces that have been vetted, not just listed.
     Before trusting one with your data or actions, check who maintains it, when it was reviewed, and what it is allowed to do.
     Presence in a registry is not a safety check on its own: an unvetted interface can carry prompt-injection or malware risk you cannot see from its description.
+    The same holds for what an agent reads: a document from a shared folder can carry hidden instructions, so check what the agent read and what it changed before you reuse its output.
+    If your institution keeps no vetted list, ask for one; until then, treat every interface as unvetted.
 
 === "For providers"
 
     List your interfaces through a channel that records their source and maintainer, and have them vetted (reviewed or signed) before they are trusted.
     Route agent traffic through an approved, identified channel so you can shape and rate-limit it by identity, which beats blocking addresses that also blocks real users.
     If you adapt or repurpose someone else's interface, you may take on the duties of its provider.
+    If your service lets an agent read documents or data from shared locations, treat that content as untrusted input whatever its origin.
 
 === "For governance"
 
     Treat listing and vetting as two things: an inventory and a safety check.
     Back a trusted channel, require listed interfaces to record their source and review date, and make vetting (not mere registration) the point where risk is assessed.
     Keep more than one provider in use so the institution is not locked to a single vendor.
+    Extend vetting to the content agents read: a file is not vetted by being stored on an internal server.
 
 ## Reasons
 
-An agent interface runs code and acts for the user.
-A malicious or careless one can carry malware or prompt-injection attacks hidden in a tool description, which the model reads but the user does not see.
+An agent interface runs code, supplies instructions the model follows, or both, and acts for the user.
+A malicious or careless one can carry malware, or prompt-injection attacks hidden in a tool description or a skill file, which the model reads but the user does not see.
 Prompt injection is the top-ranked risk in the OWASP Top 10 for LLM Applications, and tool poisoning is a documented attack on agent interfaces specifically.
 This is why listing and vetting are different acts.
 A registry that only lists (like the official MCP Registry, which records self-reported data and runs no security review) makes interfaces discoverable but guarantees nothing about safety.
+No shared channel that vets agent interfaces is established yet.
+Today the trusted channel is the institution's own approved list, with source, maintainer, and review date recorded for each entry; the agent inventory in [BP04](04-govern-autonomy-and-accountability.md) is the natural place for it.
 Vetting, a review or a signed provenance record, is what lets a user trust an interface.
+The same holds for the content an agent reads.
+A document that reaches the model from a shared folder or a colleague's email is part of the interface surface: hidden instructions in it can steer the agent, and the agent can copy them into its own output, which then carries the attack to the next reader.
+Where a file is stored says nothing about what it contains, so trusting the source does not replace checking the content.
 The same approved channel also makes traffic manageable: identified agent traffic can be shaped and rate-limited per identity, whereas blocking addresses also blocks real users, and modern bots rotate addresses anyway.
 Knowing where an interface comes from, and keeping more than one option open, avoids lock-in to a single provider.
 
@@ -100,36 +127,28 @@ Knowing where an interface comes from, and keeping more than one option open, av
 
 - A lab installs an MCP server because a public registry lists it and it has many stars, treating the listing as a safety check.
   The tool description carries instructions the model reads but the user never sees, and the agent leaks data on first use; nothing in the listing had vetted it.
+- A researcher installs a skill from a public repository to format their analyses.
+  The skill runs no code of its own, but one line in its instructions tells the agent to also post results to an external endpoint, and the agent follows it; the risk was in the text the user never read.
 - A provider publishes its interface through a channel that records source, maintainer, and review date and signs it, so a user can see it was reviewed before trusting it with their data or actions.
 - An agent with web search and code execution reads a public repository issue that contains injected instructions and runs them; a colleague's agent, limited to a fixed set of read-only tools, is unaffected but can do less.
   The reach that makes an agent useful is the same reach that exposes it, so the safeguard has to match the capability.
+- A researcher drafts a report with an assistant from documents in the group's shared folder, which everyone treats as safe.
+  One file carries instructions in white 8-point text; the assistant halves every figure in the draft and appends the same hidden instructions to it, so a colleague who later drafts from that report is hit with the original file long gone.
+  Nothing had vetted what the agent read, and the assistant's own output became the next carrier (demonstrated in a commercial office suite under coordinated disclosure, not observed in science).
 - A resource routes agent calls through an approved, identified channel and rate-limits per identity, instead of blocking address ranges that also lock out real users.
   It declares what automated clients may do in machine-readable form; the emerging IETF AIPREF vocabulary is one instance.
 - A group fine-tunes and repackages someone else's interface and ships it under their own name, without realising that under the EU AI Act a substantial modification can move the provider's duties onto them (the threshold is defined for high-risk systems and its exact bounds are still being clarified).
 - An institution keeps more than one agent ecosystem in use, so a critical resource is not reachable only through a single vendor's channel.
 - When the approved list is too narrow to do real work, people route around it: in one enterprise survey 40% of organisations bought an official tool while staff at over 90% used personal AI tools unofficially, often to better effect. A vetting process that watches what people actually reach for, and brings the useful cases into the trusted channel, holds up better than one that only blocks.
 
-## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice items 8 and 9 (registration implies review; managing agent traffic through an approved channel).
-- [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §5.2 to 5.3 (deployer-versus-provider, infrastructure as a governance point).
-- [EU Expert Forum on Frontier AI (2026)](../library/ec-expert-forum-2026.md), §4.2.2 (provider diversity and openness).
-  Consistent with, grounding only.
-- [OWASP Top 10 for LLM Applications 2025](../library/ref-owasp-llm-top10-2025.md) and [OWASP MCP Top 10](../library/ref-owasp-mcp-top10.md).
-  Prompt injection (LLM01) and tool poisoning (MCP03) as the documented risks vetting guards against.
-- [Invariant Labs, tool poisoning attacks (2025)](../library/ref-invariant-tool-poisoning-2025.md).
-  How a poisoned tool description hides instructions from the user.
-- [Official MCP Registry (2025)](../library/ref-mcp-registry-2025.md).
-  Evidence that the official registry lists self-reported data and does not vet, so listing and vetting must be kept distinct.
-- [EU AI Act, Article 25](../library/ref-eu-ai-act.md).
-  Substantial modification can move provider responsibility to whoever changed the system.
-- [IETF AIPREF vocabulary (draft)](../library/ref-ietf-aipref.md).
-  Emerging machine-readable way to declare access preferences to automated clients.
-- [MIT Project NANDA, The GenAI Divide (2025)](../library/mit-genai-divide-2025.md).
-  Enterprise field evidence of a "shadow AI economy": unsanctioned personal-tool use outpaces governed deployment and often delivers better results (§3.3, pg. 8), so vetting should learn from observed usage rather than only restrict it. Out-of-domain business report; qualifies rather than grounds the practice.
+<!-- BP_SOURCES -->
+<!-- The Sources list above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 
+- 2026-10-08: Added EDPB Opinion 28/2024 as a supporting source on bp3-a5 (a self-declaration of compliance is not a finding of compliance).
+- 2026-09-16: Challenge [#27](https://github.com/slolab/aiforscience.eu/issues/27). bp3-a2 and the first Reasons sentence now say an interface runs code, supplies instructions the model follows, or both, since a skill executes nothing itself; the glossary "Interface" entry matches. Reasons state that no shared vetting channel exists yet and that the institution's approved list is the trusted channel today, with a matching practitioner-tab line. Added a skill-instruction Example. "Reaches" in bp3-a1 kept as the record's term.
+- 2026-09-16: Added the trusted-source point to the tabs, Reasons, and Examples (a document in an internal shared folder is not vetted by its location; the agent's output can carry the injection on), following editor review of the Copilot for Word disclosure (Måløy 2026), which is added as a source on bp3-a5 and bp3-a7. Atom wording unchanged.
 - 2026-07-27: Added a "what it looks like in practice" example on shadow usage and vetting that learns from observed use, grounded in The GenAI Divide (MIT NANDA 2025) as a qualifier (bp3-a3).
 - 2026-07-27: Renumbered from BP02 to BP03 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instances (IETF AIPREF, EU AI Act Article 25) and cross-references.

@@ -1,5 +1,6 @@
 ---
 title: "EU Expert Forum on Frontier AI (2026)"
+ref_id: ec-expert-forum-2026
 source_type: policy report
 issuing_body: European Commission, European AI Office
 published: 2026-07 (July 2026; first meeting April 2026)

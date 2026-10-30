@@ -4,30 +4,37 @@ nav_title: "Write documentation and data for agents"
 practice_id: BP-05
 status: draft
 first_added: 2026-07-25
-last_reviewed: 2026-07-26
+last_reviewed: 2026-09-16
 endorsed_by: []
 sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
     ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, items 3 and 5"
+    note: "Best Practice items 3 and 5."
   - title: "Agentic AI in the higher-education system (2026)"
     ref: library/hfd-agentic-ai-hochschulsystem-2026.md
     locator: "§3.3, hook 2"
+    note: "§3.3 (research-agent source requirements). Consistent with, grounding only."
   - title: "The FAIR Guiding Principles (Wilkinson et al. 2016)"
     ref: library/ref-fair-2016.md
     locator: "machine-actionability as the founding motivation"
+    note: "Machine-actionability as the founding motivation; agents make it concrete."
   - title: "W3C Data Catalog Vocabulary (DCAT) version 3 (2024 Recommendation)"
     ref: library/ref-dcat3-2024.md
     locator: "machine-readable dataset metadata"
+    note: "Domain-neutral vocabulary for machine-readable dataset and catalogue metadata."
   - title: "Croissant: a metadata format for ML-ready datasets (MLCommons 2024)"
     ref: library/ref-croissant-2024.md
     locator: "schema.org-based dataset description"
+    note: "Domain-neutral format describing ML-ready datasets on top of schema.org, so a dataset loads consistently across tools."
   - title: "Datasheets for Datasets (Gebru et al. 2021)"
     ref: library/ref-datasheets-2021.md
     locator: "documented dataset provenance and intended use"
+    note: "A structured record of a dataset's composition, collection, and recommended uses that travels with the data."
   - title: "Model Cards for Model Reporting (Mitchell et al. 2019)"
     ref: library/ref-model-cards-2019.md
     locator: "structured model documentation"
+    note: "Structured reporting of a model's intended use, performance across conditions, and known limits."
 layer: Method
 hitl: n/a
 tags: [practitioner, provider, draft]
@@ -49,6 +56,8 @@ comments: true
   { #bp5-a3 }
 - Precise documentation helps human users and agents alike.
   { #bp5-a4 }
+- Whether a resource gets its own maintained agent interface is decided in [BP02](02-default-to-agent-accessibility.md); this practice applies to every resource's documentation and metadata regardless of that decision.
+  { #bp5-a5 }
 
 </div>
 
@@ -90,18 +99,12 @@ This work also benefits the people who use the resource directly, and current an
 - The same documentation is offered in a form an agent can read directly (plain text, markdown, structured metadata), not only as a rendered web page.
   A convention like `llms.txt` is one proposed approach, not yet a ratified standard.
 
-## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice items 3 and 5.
-- [Agentic AI in the higher-education system (2026)](../library/hfd-agentic-ai-hochschulsystem-2026.md), §3.3 (research-agent source requirements).
-  Consistent with, grounding only.
-- [FAIR Guiding Principles (Wilkinson et al. 2016)](../library/ref-fair-2016.md).
-  Machine-actionability as the founding motivation; agents make it concrete.
-- [W3C DCAT v3 (2024)](../library/ref-dcat3-2024.md), [Croissant (MLCommons 2024)](../library/ref-croissant-2024.md), [Datasheets for Datasets (Gebru et al. 2021)](../library/ref-datasheets-2021.md), and [Model Cards (Mitchell et al. 2019)](../library/ref-model-cards-2019.md).
-  Domain-neutral standards for machine-readable data and model documentation.
+<!-- BP_SOURCES -->
+<!-- The Sources list above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 
+- 2026-09-16: Challenge [#29](https://github.com/slolab/aiforscience.eu/issues/29). Added bp5-a5 stating the boundary with BP02: BP02 decides whether a resource gets a maintained interface; this practice applies to every resource's documentation and metadata regardless.
 - 2026-07-27: Renumbered from BP04 to BP05 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns; kept the labelled instances (DCAT, Croissant, datasheets, model cards, Bioschemas, llms.txt).
 - 2026-07-26: Rewritten to be domain-neutral (FAIR, DCAT, Croissant, datasheets, and model cards as the general anchors; Bioschemas and SPARQL/Cypher demoted to labelled examples), to add tool descriptions alongside datasets, and to flag `llms.txt` as a proposed convention rather than a standard.

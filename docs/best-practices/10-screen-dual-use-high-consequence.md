@@ -10,36 +10,67 @@ sources:
   - title: "METR, Common Elements of Frontier AI Safety Policies (2025)"
     ref: library/ref-metr-common-elements-2025.md
     locator: "shared capability-threshold structure across CBRN, cyber, autonomy"
+    note: "An independent synthesis of frontier safety policies finding one capability-threshold structure recurring across CBRN, cyber, and autonomy."
   - title: "Frontier Model Forum, Components of Frontier AI Safety Frameworks"
     ref: library/ref-fmf-safety-frameworks.md
     locator: "CBRN, offensive cyber, automated AI R&D as high-consequence domains"
+    note: "Names CBRN, offensive cyber, and automated AI R&D as the parallel high-consequence domains, which is the evidence the category is generic."
   - title: "Urbina et al., Dual use of AI-powered drug discovery (Nature Machine Intelligence 2022)"
     ref: library/ref-urbina-dual-use-2022.md
     locator: "40,000 toxic molecules incl. VX generated in under 6 hours"
+    note: "A toxicity model inverted to generate 40,000 toxic molecules, including VX, in under 6 hours. The sharpest non-life-science instance."
   - title: "Wittmann et al., Strengthening nucleic acid biosecurity screening against generative protein design (Science 2025)"
     ref: library/ref-wittmann-biosecurity-2025.md
     locator: "AI-designed sequences evaded synthesis screening; patches restored detection"
+    note: "AI-designed sequences evaded nucleic-acid synthesis screening; patches restored detection. The life-science instance."
   - title: "UK AI Security Institute, Frontier AI Trends (2025)"
     ref: library/ref-aisi-frontier-trends-2025.md
     locator: "cyber-offense capability rising toward expert level"
+    note: "Measured cyber-offense capability rising toward expert level. The cyber capability trend."
   - title: "Autonomous agent breach of Hugging Face (Hugging Face; OpenAI, 2026)"
     ref: library/ref-hf-openai-agent-breach-2026.md
     locator: "autonomous agent escaped its evaluation sandbox and breached production infrastructure"
+    note: "An autonomous system on OpenAI pre-release models escaped its evaluation sandbox and breached Hugging Face's production infrastructure. A realised cyber instance, disclosed by both organisations."
   - title: "US Government Policy for Oversight of Dual Use Research of Concern (OSTP 2024)"
     ref: library/ref-usg-durc-2024.md
     locator: "codified DURC oversight (bio-scoped; under 2025 revision)"
+    note: "A codified dual-use oversight instrument. Cited as a mature worked example; note it is scoped to the life sciences and under revision, so this practice is framed on the general concept, not on that instrument."
   - title: "EU AI Omnibus (2026)"
     ref: library/ai-omnibus-2026.md
     locator: "Art 5(1a)(a)(ii); Recital 12 (provider safeguards against foreseeable prohibited output)"
+    note: "Art 5(1a)(a)(ii). Obliges providers to build technical safeguards against reasonably foreseeable and reproducible prohibited output rather than rely on intent or policy, the same provider-safeguard logic as routing high-consequence actions through a screening chokepoint (bp10-a4)."
   - title: "WMA Declaration of Helsinki (2024)"
     ref: library/ref-helsinki-2024.md
     locator: "voluntary participation; right to withdraw at any time"
+    note: "Participation is voluntary and consent may be withdrawn at any time, so data held under it cannot be committed to a use that could not honour a withdrawal (bp10-a5)."
   - title: "EU General Data Protection Regulation (2016)"
     ref: library/ref-gdpr-2016.md
     locator: "Art 7(3) withdraw consent; Art 17 right to erasure"
+    note: "Consent is revocable (Art 7(3)) and erasure is a right (Art 17), so personal data cannot be authorised for an irreversible use such as third-party training or a perpetual licence (bp10-a5)."
   - title: "A safer framework for patient data in AI-for-Science grants (2026)"
     ref: library/gagneur-rare-disease-patient-data-2026.md
     locator: "no perpetual licence; analysis is not training permission"
+    note: "Adjacent support: analysis permission is not training permission, and no perpetual licence should be taken over patient-level data. Individual commentary; it does not itself make the revocable-consent argument."
+  - title: "Living guidelines on the responsible use of generative AI in research (European Commission and ERA Forum, 2026)"
+    ref: library/era-living-guidelines-genai-2026.md
+    locator: "Recommendations for researchers 3, p. 8"
+    note: "Tells researchers that uploaded input may be used to train models, and not to upload sensitive work without assurances against re-use (bp10-a5). Non-binding."
+  - title: "EDPB Opinion 28/2024 on personal data in AI models (2024)"
+    ref: library/edpb-opinion-ai-models-2024.md
+    locator: "paras 34, 114"
+    note: "A model trained on personal data is not anonymous by default, and the remedy for unlawful training can reach the model itself (bp10-a5)."
+  - title: "Anthropic consumer terms update: training on chats by default (2025)"
+    ref: library/ref-anthropic-consumer-terms-2025.md
+    locator: "consumer plans versus commercial terms"
+    note: "Consumer accounts train on inputs by default with five-year retention; commercial terms exclude training. The account tier, not the data, decides (bp10-a5). One provider at one date."
+  - title: "Dutch DPA: AI chatbot use leads to data breaches (2024)"
+    ref: library/ref-dutch-dpa-chatbot-breaches-2024.md
+    locator: "2024 breach notifications"
+    note: "A regulator states that most chatbot providers store all data entered (bp10-a5). Outside research."
+  - title: "DSK guidance: Artificial intelligence and data protection (2024)"
+    ref: library/ref-dsk-ki-datenschutz-2024.md
+    locator: "§1.9 para 24; §1.7 para 20"
+    note: "German regulators prefer applications that do not train on inputs, and closed systems (bp10-a5)."
 layer: Operational
 hitl: mandatory
 tags: [practitioner, provider, governance, draft]
@@ -97,6 +128,7 @@ The evidence that the risk is real spans domains too: an AI model repurposed for
 Some high-consequence actions are irreversible in a second sense: they cannot be walked back once taken.
 Training a third-party model on data, or granting a perpetual licence over it, cannot be undone, and the data cannot be reliably removed from the model afterwards.
 When the consent behind that data can be withdrawn, as it can be for human-subjects data under research ethics and data-protection law, no one can validly authorise a use that could not later honour a withdrawal.
+Whether data may leave a controlled environment at all, and under which terms, is [BP11](11-decide-where-research-data-may-go.md); this practice covers the irreversible case.
 The safeguard is the same as for any irreversible harm: prevent the action before it happens.
 In agentic workflows this means constraining and auditing what an agent can send outward, because an agent that runs code and reads files can transmit such data without a deliberate upload.
 
@@ -111,35 +143,13 @@ In agentic workflows this means constraining and auditing what an agent can send
     - Cyber: evaluating and limiting an agent's offensive-cyber uplift before it can act against real systems, after an autonomous system was shown to break out of containment.
 - Human-subjects data: an agent working on consented patient or genomic data is blocked from sending it to a third-party service that would train on it or take a perpetual licence, and grant or service terms requiring such a licence are refused, because consent for that data can be withdrawn and training cannot be undone.
 
-## Sources
-
-- [METR, Common Elements of Frontier AI Safety Policies (2025)](../library/ref-metr-common-elements-2025.md) and [Frontier Model Forum, Components of Frontier AI Safety Frameworks](../library/ref-fmf-safety-frameworks.md).
-  Independent syntheses showing the capability-threshold structure spans CBRN, cyber, and autonomy, which is the evidence this is a generic category.
-- [Urbina et al., Dual use of AI-powered drug discovery (2022)](../library/ref-urbina-dual-use-2022.md).
-  A toxicity model inverted to generate 40,000 toxic molecules, including VX, in under 6 hours.
-  The sharpest non-life-science instance.
-- [Wittmann et al., Science (2025)](../library/ref-wittmann-biosecurity-2025.md).
-  AI-designed sequences evaded nucleic-acid synthesis screening; patches restored detection.
-  The life-science instance.
-- [UK AI Security Institute, Frontier AI Trends (2025)](../library/ref-aisi-frontier-trends-2025.md).
-  Measured cyber-offense capability rising toward expert level.
-  The cyber capability trend.
-- [Autonomous agent breach of Hugging Face (2026)](../library/ref-hf-openai-agent-breach-2026.md).
-  An autonomous system on OpenAI pre-release models escaped its evaluation sandbox and breached Hugging Face's production infrastructure.
-  A realised cyber instance, disclosed by both organisations.
-- [US DURC oversight policy (OSTP 2024)](../library/ref-usg-durc-2024.md).
-  A codified dual-use oversight instrument.
-  Cited as a mature worked example; note it is scoped to the life sciences and under revision, so this practice is framed on the general concept, not on that instrument.
-- [EU AI Omnibus (2026)](../library/ai-omnibus-2026.md), Art 5(1a)(a)(ii).
-  Obliges providers to build technical safeguards against reasonably foreseeable and reproducible prohibited output rather than rely on intent or policy, the same provider-safeguard logic as routing high-consequence actions through a screening chokepoint (bp10-a4).
-- [WMA Declaration of Helsinki (2024)](../library/ref-helsinki-2024.md) and [EU GDPR (2016)](../library/ref-gdpr-2016.md).
-  Research participants may withdraw at any time, and data subjects have a right to withdraw consent (Art 7(3)) and to erasure (Art 17); revocable consent cannot authorise a use that cannot be undone (bp10-a5).
-- [A safer framework for patient data in AI-for-Science grants (2026)](../library/gagneur-rare-disease-patient-data-2026.md).
-  Adjacent support: analysis permission is not training permission, and no perpetual licence should be taken over patient-level data.
-  Individual commentary; it does not itself make the revocable-consent argument.
+<!-- BP_SOURCES -->
+<!-- The Sources list above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 
+- 2026-10-08: Added a Reasons cross-reference to the new [BP11](11-decide-where-research-data-may-go.md), which covers whether data may leave a controlled environment at all.
+- 2026-10-08: Added five supporting sources on bp10-a5 showing that training on inputs is the default on consumer tiers: the Commission's living guidelines on generative AI in research, EDPB Opinion 28/2024, Anthropic's consumer terms, the Dutch DPA's breach notices, and the German DSK guidance.
 - 2026-07-28: Added atom bp10-a5 (data under withdrawable consent cannot be authorised for irreversible third-party training or a perpetual licence, and an agent must be prevented from transmitting it for those uses), grounded in the Declaration of Helsinki and GDPR (right to withdraw; right to erasure), with the Gagneur commentary as adjacent support. Extended the tabs, Reasons, and Examples to match.
 - 2026-07-27: Added the EU AI Omnibus (2026) as a supporting source on bp10-a4 (provider safeguards against foreseeable prohibited output; Art 5(1a)).
 - 2026-07-27: Renumbered from BP09 to BP10 on inserting the new BP01 (match the method to the task).

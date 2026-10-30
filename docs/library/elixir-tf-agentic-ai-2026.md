@@ -1,5 +1,6 @@
 ---
 title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
+ref_id: elixir-tf-agentic-ai-2026
 source_type: other
 issuing_body: ELIXIR Europe, AI Ecosystem Focus Group, TF Agentic AI
 published: 2026 (rolling document; meetings May to July 2026)

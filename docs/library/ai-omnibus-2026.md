@@ -1,5 +1,6 @@
 ---
 title: EU AI Omnibus (2026)
+ref_id: ai-omnibus-2026
 source_type: policy report
 issuing_body: European Union
 published: 2026, in force 27 July 2026 (proposed 19 November 2025)

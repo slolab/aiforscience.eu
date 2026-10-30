@@ -4,24 +4,33 @@ nav_title: "Evaluate tools before trust"
 practice_id: BP-08
 status: draft
 first_added: 2026-07-26
-last_reviewed: 2026-07-26
+last_reviewed: 2026-09-16
 endorsed_by: []
 sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
     ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Cautions and gaps (evaluation of skills/MCP servers as an open question)"
+    note: "Cautions and gaps: how to assess whether a skill or MCP server is useful and safe is recorded there as an open question and a candidate future practice."
   - title: "REFORMS: consensus-based recommendations for machine-learning-based science (Science Advances 2024)"
     ref: library/ref-reforms-2024.md
     locator: "reporting standards for ML-based science"
+    note: "Consensus reporting standards for machine-learning-based science."
   - title: "NeurIPS Paper Checklist / ML reproducibility checklist"
     ref: library/ref-neurips-checklist.md
     locator: "reproducibility and evaluation reporting"
+    note: "Reproducibility and evaluation reporting practice."
   - title: "MIT Project NANDA, The GenAI Divide (2025)"
     ref: library/mit-genai-divide-2025.md
     locator: "§6.2 p.20 benchmark on operational outcomes, not model benchmarks"
+    note: 'Enterprise field evidence that buyers who "benchmark tools on operational outcomes, not model benchmarks" succeed far more often; general benchmark scores do not predict fitness for a specific task (§6.2, pg. 20). Out-of-domain business report; cited as external context.'
   - title: "EU AI Omnibus (2026)"
     ref: library/ai-omnibus-2026.md
     locator: "Art 4a; Recital 9 (conditional basis for special-category data in bias detection)"
+    note: "Art 4a. The amended AI Act sets a conditional legal basis for processing special-category data to detect and correct bias, an evaluation dimension, subject to strict safeguards (bp8-a2)."
+  - title: "Panickssery, Bowman & Feng, LLM Evaluators Recognize and Favor Their Own Generations (2024)"
+    ref: library/ref-panickssery-self-preference-2024.md
+    locator: "Abstract; self-recognition correlates with self-preference"
+    note: "Measured self-preference in LLM evaluators: a model scores its own outputs higher than human annotators do, and the bias grows with its ability to recognise its own text. A judge from the same family as the system under test is not independent evidence (bp8-a6)."
 layer: Operational
 hitl: n/a
 tags: [practitioner, provider, governance, draft]
@@ -41,10 +50,14 @@ comments: true
   { #bp8-a2 }
 - For LLM-driven systems, there is no good general proxy (e.g., leaderboards) for their correctness in individual applications.
   { #bp8-a3 }
-- Benchmarking is separate from safety ([BP03](03-register-and-vet-interfaces.md)) and auditability ([BP07](07-provenance-and-citation.md)).
+- Benchmarking is separate from safety ([BP03](03-register-and-vet-interfaces.md)), auditability ([BP07](07-provenance-and-citation.md)), and human oversight ([BP09](09-human-in-the-loop.md)): it asks whether the tool is fit for the task.
   { .afs-practice__pivot #bp8-a4 }
-- It is the adopter measuring a tool's performance on representative tasks and recording how it fails.
+- Benchmarking should be performed before introducing and relying on a solution, and again when the tool or the task changes.
+  { #bp8-a7 }
+- It is the adopter measuring a tool's performance on representative tasks against an independent reference, and recording how it fails.
   { #bp8-a5 }
+- A model is not an independent judge of its own outputs, and a model from the same family shares its failure modes; some human judgement is part of the evidence, in proportion to the stakes.
+  { #bp8-a6 }
 
 </div>
 
@@ -52,11 +65,13 @@ comments: true
 
     A tool being available, popular, or well-described is not evidence that it is correct for your task.
     Before you rely on its output, run it on cases where you know the answer, check it across repeated runs, and note where it breaks.
+    Do not let a model from the same family grade the results for you; where a model does act as judge, check a sample of its verdicts yourself, against reference answers and criteria fixed before you see the results.
     Keep that evidence; it is what justifies trusting the result.
 
 === "For providers"
 
     Publish evaluation evidence for what you ship: how the tool was tested, on what tasks, with what error rate and known failure modes.
+    Say who or what judged the outputs, and how much of that judgement was human.
     Make it easy for adopters to reproduce your evaluation.
     Benchmark scores on general tasks do not tell a user whether the tool is reliable for theirs.
 
@@ -71,10 +86,19 @@ comments: true
 Whether a tool is safe to connect and whether it is correct are different questions, answered by different people.
 Registration and vetting ([BP03](03-register-and-vet-interfaces.md)) concern security at connect time; provenance and auditability ([BP07](07-provenance-and-citation.md)) concern the ability to trace answers after execution.
 Evaluation (this practice) concerns accuracy and reliability at use time.
+Human oversight ([BP09](09-human-in-the-loop.md)) decides where people check or intervene in a workflow, during or after a run; evaluation decides whether the tool is fit for the task at all, before reliance and again when the tool or the task changes.
 Goodhart's law states that a metric that becomes the target ceases to be a good metric; LLM leaderboards today decide on highest-volume investments for frontier AI companies.
 Evaluation is the task of users, adopters, and community; only they know the task *and* possess the necessary stakes and incentives to desire an objective evaluation.
 The evidence is clear that this cannot be skipped: a single benchmark score does not predict deployment reliability, agents vary run to run, and [confabulation](../glossary.md#confabulation) is common.
 A tool that looks capable in a demo can be wrong in ways that only representative testing reveals.
+The measuring instrument matters too.
+A language model asked to judge outputs favours its own generations; this self-preference has been measured.
+Models from the same family share training data and failure modes, so this practice also treats a same-family judge as not independent.
+That step is a precaution: the study tested models judging their own outputs, not their relatives'.
+The [failures log](failures.md) records an agent granting its own top verification status.
+Some human judgement, in proportion to the stakes, belongs in the evidence.
+It makes the evaluation independent only when it uses reference answers and criteria fixed before the results are seen.
+A person reviewing outputs without either tends to accept plausible output (automation bias, see [BP09](09-human-in-the-loop.md)).
 
 ## Examples
 
@@ -84,21 +108,14 @@ A tool that looks capable in a demo can be wrong in ways that only representativ
 - A provider ships evaluation evidence with the tool (tasks, metrics, error rate, known failure modes) that an adopter can reproduce, not only a feature description.
 - Red-teaming and hallucination/confabulation testing are run as the safety-and-correctness side of the same evaluation, not a separate afterthought.
 - Evaluations follow an established checklist (for example REFORMS for ML-based science, or a reproducibility checklist), so different groups' results are comparable.
+- A team scores its literature agent with a judge model from the same vendor family and reports a high pass rate; a sample re-checked by hand shows the judge waved through the same misreadings the agent made, so the score measured agreement, not correctness.
 
-## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Cautions and gaps: how to assess whether a skill or MCP server is useful and safe is recorded there as an open question and a candidate future practice.
-- [REFORMS reporting standards (Science Advances 2024)](../library/ref-reforms-2024.md).
-  Consensus reporting standards for machine-learning-based science.
-- [NeurIPS Paper Checklist](../library/ref-neurips-checklist.md).
-  Reproducibility and evaluation reporting practice.
-- [MIT Project NANDA, The GenAI Divide (2025)](../library/mit-genai-divide-2025.md).
-  Enterprise field evidence that buyers who "benchmark tools on operational outcomes, not model benchmarks" succeed far more often; general benchmark scores do not predict fitness for a specific task (§6.2, pg. 20). Out-of-domain business report; cited as external context.
-- [EU AI Omnibus (2026)](../library/ai-omnibus-2026.md), Art 4a.
-  The amended AI Act sets a conditional legal basis for processing special-category data to detect and correct bias, an evaluation dimension, subject to strict safeguards (bp8-a2).
+<!-- BP_SOURCES -->
+<!-- The Sources list above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 
+- 2026-09-16: Challenge [#32](https://github.com/slolab/aiforscience.eu/issues/32). bp8-a5 now measures against an independent reference; new bp8-a6 says a same-family model judge is not independent and that some human judgement is part of the evidence, in proportion to the stakes, grounded in Panickssery, Bowman & Feng (2024) and the single-witness entry in the failures log. bp8-a4 and Reasons add the boundary with BP09 by purpose, and new bp8-a7 states when to benchmark: BP08 decides whether a tool is fit for the task, before reliance and again when the tool or task changes; BP09 decides where people check or intervene. Reasons separate the measured finding (a model favours its own outputs) from the precaution drawn from it (same-family judges), and say a human check is independent only against reference answers and criteria fixed in advance. Tabs and Examples extended to match.
 - 2026-07-27: Added the EU AI Omnibus (2026) as a qualifying source on bp8-a2 (conditional legal basis for special-category data in bias detection; Art 4a).
 - 2026-07-27: Added The GenAI Divide (MIT NANDA 2025) as a supporting source on outcome-based evaluation over benchmark scores (bp8-a3).
 - 2026-07-27: Renumbered from BP07 to BP08 on inserting the new BP01 (match the method to the task).

@@ -238,9 +238,10 @@ body {
 }
 
 /* Material assumes the mobile drawer header uses the primary colour and makes
-   its source card white. This site has a white drawer, so keep the repository
-   name and facts readable there. */
-.md-nav--primary .md-source {
+   its title and source card white. This site has a white drawer, so keep the
+   site name and the repository name and facts readable there. */
+.md-nav--primary .md-source,
+.md-nav--primary > .md-nav__title[for="__drawer"] {
   color: var(--afs-ink);
 }
 
@@ -853,13 +854,23 @@ body {
 }
 
 /* On the landing page, drop Material's content-area top margin and the empty
-   sidebars so the first (dark) section meets the hero with no white gap. */
+   sidebars so the first (dark) section meets the hero with no white gap.
+   Desktop only: below 76.25em the primary sidebar is the off-canvas drawer
+   behind the header menu button, and hiding it leaves only the grey overlay. */
 .md-main__inner:has(.afs-home-body) {
   margin-top: 0;
 }
 
-.md-main:has(.afs-home-body) .md-sidebar {
-  display: none;
+@media screen and (min-width: 76.25em) {
+  .md-main:has(.afs-home-body) .md-sidebar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 76.234em) {
+  .md-main:has(.afs-home-body) .md-sidebar--secondary {
+    display: none;
+  }
 }
 
 .md-content__inner:has(.afs-home-body) {
@@ -1237,7 +1248,7 @@ body {
   margin-bottom: 0;
 }
 
-/* Only the governance card links onward, to the decision-makers' digest. */
+/* Only the governance card links onward, to the short version. */
 .afs-audience-card__link {
   display: inline-block;
   margin-top: 0.7rem;
@@ -1611,7 +1622,7 @@ body {
     overflow: visible !important;
   }
   /* Site title and repository source belong to the mobile drawer; hide them on
-     the desktop rail so the "For decision-makers" card sits at the top. */
+     the desktop rail so the "The short version" card sits at the top. */
   .md-nav--primary > .md-nav__title,
   .md-nav--primary > .md-nav__source {
     display: none;
@@ -1623,7 +1634,7 @@ body {
   }
 }
 
-/* "For decision-makers" card at the top of the left nav (mirrors the right-rail
+/* "The short version" card at the top of the left nav (mirrors the right-rail
    "About this practice" card). */
 .afs-nav-card {
   display: block;
@@ -1641,13 +1652,13 @@ a.afs-nav-card:focus-visible {
 }
 
 /* Subtle "back to the practices" card, shown in place of the full practices
-   list on the decision-makers page so it does not detract from the digest. */
+   list on the short-version page so it does not detract from the digest. */
 .afs-nav-card--practices {
   background: transparent;
   border-style: dashed;
 }
 
-/* Greyed, non-clickable when already on the decision-makers page. */
+/* Greyed, non-clickable when already on the short-version page. */
 .afs-nav-card--current {
   opacity: 0.55;
   cursor: default;

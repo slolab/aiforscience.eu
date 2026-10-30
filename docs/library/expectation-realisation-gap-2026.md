@@ -1,5 +1,6 @@
 ---
 title: "Expectation–Realisation Gap for Agentic AI (2026)"
+ref_id: expectation-realisation-gap-2026
 source_type: preprint
 issuing_body: Sebastian Lobentanzer (Helmholtz Munich)
 published: 2026 (February)

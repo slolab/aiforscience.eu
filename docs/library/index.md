@@ -29,7 +29,11 @@ whether it is for or against, lives in the provenance data (`assets/provenance.y
 | [The GenAI Divide](mit-genai-divide-2025.md) | MIT Project NANDA | July 2025 | Out-of-domain enterprise report; grounds BP01, BP06, BP08 on task fit, workflow design, and outcome-based evaluation; qualifies BP03. |
 | [Expectation–Realisation Gap for Agentic AI](expectation-realisation-gap-2026.md) | Lobentanzer (Helmholtz Munich) | February 2026 | Review of controlled trials on realised vs expected benefit; downweighted context (author is a contributor); grounds BP01 on heterogeneity and benefit planning, with optional context for BP06, BP08, BP09. |
 | [EU AI Omnibus](ai-omnibus-2026.md) | European Union | July 2026 | Largely out-of-scope regulatory simplification of the AI Act; grounds BP04 and BP10 on technical safeguards against foreseeable misuse, with context for BP03, BP08. |
+| [Commission Guidelines on Article 50 transparency](ec-art50-transparency-guidelines-2026.md) | European Commission | July 2026 | The regulator's reading of the AI Act transparency duties that apply from 2 August 2026; grounds BP04, BP07, BP09 on agent self-disclosure, marking of AI-generated content, named editorial responsibility, and what counts as human review. Confirms that the scientific research exclusion covers Article 50. |
 | [A safer framework for patient data in AI-for-Science grants](gagneur-rare-disease-patient-data-2026.md) | Gagneur (TU Munich) | July 2026 | Individual commentary on grant data terms; grounds BP04, BP02, BP09 on data-egress control, governed access, and effective oversight; flags a gap on controlled-access data in third-party training. |
+| [F(AI)2R: Verifiable AI Provenance as an Executable Skill](fai2r-verifiable-ai-provenance-2026.md) | Florian Krebs | July 2026 | Self-demonstrated claim-level provenance method; grounds BP07 on traceable, auditable agent output and human/agent attribution. Single-session, self-audited case study; author has a declared stake in the method. |
+| [Living guidelines on the responsible use of generative AI in research](era-living-guidelines-genai-2026.md) | European Commission, DG Research and Innovation, with the ERA Forum | May 2026 (third version) | Non-binding guidance to researchers, organisations, and funders; grounds BP07, BP10, BP01, BP02 on disclosure, data sent to external tools, tool fit, and self-governed hosting; source of BP11 (where research data may go). |
+| [EDPB Opinion 28/2024 on personal data in AI models](edpb-opinion-ai-models-2024.md) | European Data Protection Board | December 2024 | Supervisory authorities' position on models trained on personal data; grounds BP10 (models not anonymous by default; remedies reach the model), BP03 (self-declaration is not compliance), BP04 (technical measures); legal ground for BP11 (the deployer checks the provider). |
 
 ## Reference works
 
@@ -43,6 +47,7 @@ Each links to its bibliographic record.
 - [Fine-tuned small LLMs beat zero-shot frontier models (Bucher & Martini 2024)](ref-bucher-fine-tuned-2024.md)
 - [Leakage and the reproducibility crisis in ML-based science (Kapoor & Narayanan 2023)](ref-kapoor-narayanan-leakage-2023.md)
 - [Unmetered agent spend at Amazon (2026)](ref-amazon-ai-cost-overruns-2026.md)
+- [How Is ChatGPT's Behavior Changing Over Time? (Chen, Zaharia & Zou 2024)](ref-chen-chatgpt-drift-2023.md)
 
 **Data and metadata standards**
 
@@ -63,11 +68,13 @@ Each links to its bibliographic record.
 - [Crossref and the Retraction Watch database (2023)](ref-crossref-retraction-watch-2023.md)
 - [Fabricated citations from LLMs (Walters & Wilder 2023)](ref-walters-wilder-2023.md)
 - [AI tools cite retracted papers (MIT Technology Review 2025)](ref-mit-tech-review-retracted-2025.md)
+- [Code of Practice on Transparency of AI-generated Content (2026)](ref-transparency-cop-2026.md)
+- [FAIA: FAIR AI Attribution White Paper (2026)](ref-faia-2026.md)
 
 **Governance and risk frameworks**
 
 - [NIST AI Risk Management Framework (2023, 2024)](ref-nist-ai-rmf.md)
-- [EU AI Act (2024)](ref-eu-ai-act.md)
+- [EU AI Act (2024, amended 2026)](ref-eu-ai-act.md)
 - [OECD AI Principles (2024)](ref-oecd-ai-principles-2024.md)
 - [ISO/IEC 42001:2023](ref-iso-42001-2023.md)
 - [OpenAI, Practices for Governing Agentic AI Systems (2023)](ref-openai-governing-agentic-ai-2023.md)
@@ -81,6 +88,7 @@ Each links to its bibliographic record.
 - [OWASP Top 10 for LLM Applications 2025](ref-owasp-llm-top10-2025.md)
 - [OWASP MCP Top 10](ref-owasp-mcp-top10.md)
 - [Invariant Labs, MCP tool poisoning (2025)](ref-invariant-tool-poisoning-2025.md)
+- [Self-propagating prompt injection in Copilot for Word (2026)](ref-copilot-word-ai-worm-2026.md)
 - [Official MCP Registry (2025)](ref-mcp-registry-2025.md)
 - [IETF AIPREF vocabulary (draft)](ref-ietf-aipref.md)
 - [COAR survey on AI bots and crawlers (2025)](ref-coar-ai-bots-2025.md)
@@ -104,6 +112,7 @@ Each links to its bibliographic record.
 - [NeurIPS Paper Checklist](ref-neurips-checklist.md)
 - [DOME recommendations for ML validation in biology (2021)](ref-dome-2021.md)
 - [Open and Sustainable AI in the life sciences (OSAI, 2025)](ref-osai-2025.md)
+- [LLM Evaluators Recognize and Favor Their Own Generations (Panickssery et al. 2024)](ref-panickssery-self-preference-2024.md)
 
 **Dual-use and frontier safety**
 
@@ -119,3 +128,13 @@ Each links to its bibliographic record.
 
 - [WMA Declaration of Helsinki (2024)](ref-helsinki-2024.md)
 - [EU General Data Protection Regulation (2016)](ref-gdpr-2016.md)
+- [EDPS decision on the European Commission's use of Microsoft 365 (2024)](ref-edps-commission-m365-2024.md)
+- [EDPB-EDPS assessment of the US CLOUD Act (2019)](ref-edpb-edps-cloud-act-2019.md)
+- [Microsoft France before the French Senate inquiry on public procurement (2025)](ref-senat-microsoft-hearing-2025.md)
+- [Court-ordered retention of ChatGPT logs in the New York Times litigation (2025)](ref-openai-preservation-order-2025.md)
+- [Anthropic consumer terms update: training on chats by default (2025)](ref-anthropic-consumer-terms-2025.md)
+- [Dutch DPA: AI chatbot use leads to data breaches (2024)](ref-dutch-dpa-chatbot-breaches-2024.md)
+- [DSK guidance: Artificial intelligence and data protection (2024)](ref-dsk-ki-datenschutz-2024.md)
+- [CNIL and CIANum: Agentic AI and personal data protection (2026)](ref-cnil-cianum-agentic-ai-2026.md)
+- [AEPD guidance on agentic AI from a data protection perspective (2026)](ref-aepd-agentic-ai-2026.md)
+- [European Health Data Space Regulation (2025)](ref-ehds-2025.md)

@@ -1,0 +1,36 @@
+{#-
+  Site-wide base for aiforscience.eu: page title and link-preview metadata.
+  Material renders "<page title> - <site name>", which repeats on the home page
+  (its title is the site name), so the home page uses the site name alone.
+  The Open Graph and Twitter tags give link previews a title, description, and
+  the card image at docs/assets/img/social-card.png (regenerate it with
+  scripts/social_card.py).
+-#}
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  {% if page.is_homepage or not page.title %}
+    <title>{{ config.site_name }}: best practices for agentic AI in science</title>
+  {% else %}
+    <title>{{ page.title | striptags }} - {{ config.site_name }}</title>
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+  {% set og_title = config.site_name if page.is_homepage or not page.title else page.title | striptags %}
+  {% set og_desc = page.meta.description if page.meta and page.meta.description else config.site_description %}
+  {% set og_image = config.site_url ~ "assets/img/social-card.png" %}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  <meta property="og:title" content="{{ og_title | e }}">
+  <meta property="og:description" content="{{ og_desc | e }}">
+  {% if page.canonical_url %}<meta property="og:url" content="{{ page.canonical_url }}">{% endif %}
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AI for Science: best practices for agentic AI in science">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ og_title | e }}">
+  <meta name="twitter:description" content="{{ og_desc | e }}">
+  <meta name="twitter:image" content="{{ og_image }}">
+{% endblock %}

@@ -1,18 +1,18 @@
 ---
-title: For decision-makers
+title: The short version
 tags: [governance]
 comments: true
 ---
 
-# For decision-makers
+# The short version
 
 Agentic AI only works if the deployed agents have autonomy.
 This autonomy comes with technical, economic, and societal risks.
 AI Agents increasingly do work that previously required human experts.
 Our fundamental challenge is to decide which tasks they should handle and how.
-Suitable tasks need to be sufficiently trivial and contained that the AI system cannot cause lasting damage.
+Suitable tasks need to be sufficiently low-risk and contained that the AI system cannot cause lasting damage.
 Judgment, provenance, and accountability needs to stay with people.
-This page is the short version of the [record](../best-practices/01-match-method-to-task.md) for the people who decide what to enable, resource, and require.
+This page distills the [record](../best-practices/01-match-method-to-task.md) to facilitate decision-making: what to enable, what to resource, what to require.
 Each point links to the practice it comes from.
 
 <div class="afs-ai-strip" markdown="0" data-afs-ai-cta>
@@ -50,6 +50,9 @@ Each point is tagged by the kind of decision it is (<span class="afs-badge afs-b
 - <span class="afs-badge afs-badge--risk">Risk</span> **Policy that a system ignores.** The gap between written rules and enforced limits is the main risk as agents get more autonomous.
   Personal agents connected to staff mail, files, and calendars are part of the institution's risk even when no one deployed them centrally.
   See [BP04](../best-practices/04-govern-autonomy-and-accountability.md).
+- <span class="afs-badge afs-badge--require">Require</span> **Contracted AI services for research data.** What happens to data sent to an AI service is set by the account tier and the contract: training, retention, and who else can reach it.
+  Contract the services staff use, provide institutional accounts, and state which data classes may reach which service, so no one puts personal or confidential data into a consumer account.
+  See [BP11](../best-practices/11-decide-where-research-data-may-go.md).
 - <span class="afs-badge afs-badge--require">Require</span> **Evaluation before reliance.** A tool being popular, available, or convincing in a demo is not evidence that it is correct for your work.
   Require that tools feeding into results or decisions are tested on representative tasks first, in proportion to the stakes.
   See [BP08](../best-practices/08-evaluate-tools-before-trust.md).
@@ -95,6 +98,7 @@ Each item links to the practice that defines it.
 - [ ] Independent evaluation or audit where the stakes are high. ([BP08](../best-practices/08-evaluate-tools-before-trust.md))
 - [ ] Interfaces that record a maintainer and a review date. ([BP03](../best-practices/03-register-and-vet-interfaces.md))
 - [ ] An inventory of the agents in use, including personal ones. ([BP04](../best-practices/04-govern-autonomy-and-accountability.md))
+- [ ] Contracted AI services and institutional accounts, with a rule for which data classes may reach which service. ([BP11](../best-practices/11-decide-where-research-data-may-go.md))
 - [ ] A stated, enforced human-in-the-loop level for each use case. ([BP09](../best-practices/09-human-in-the-loop.md))
 - [ ] Outputs that carry their sources, with human and agent contributions labelled. ([BP07](../best-practices/07-provenance-and-citation.md))
 - [ ] Evaluation evidence recorded before a tool is relied on. ([BP08](../best-practices/08-evaluate-tools-before-trust.md))

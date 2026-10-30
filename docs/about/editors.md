@@ -19,7 +19,7 @@ The process is described in [How the record works](how-the-record-works.md), gov
 - Review incoming proposals and challenges, and decide whether a submission becomes a practice, is integrated into an existing practice, or is declined with a stated reason.
 - Distill submitted documents into library entries with quotes and locators.
   Drafting is AI-assisted; the editor is accountable for all decisions.
-- Keep practices current: update the review date, move status from draft to reviewed, record endorsements.
+- Keep practices current: update the [review date](how-the-record-works.md#review-date) after going through a page in full, move status from draft to reviewed, record endorsements.
 - Provide a second review to change status to reviewed.
 
 Editors do not own practices individually, and editing does not commit their institution to anything.
@@ -93,4 +93,11 @@ The concept DOI is stable across all snapshots and always resolves to the newest
 
 ## Current editors
 
-- Sebastian Lobentanzer, Helmholtz Munich.
+- Santiago Casas, German Aerospace Center (DLR). [GitHub](https://github.com/santiagocasas)
+- Gavin Farrell, University of Padova. [GitHub](https://github.com/gavinf97)
+- Till Korten, Helmholtz-Zentrum Dresden-Rossendorf (HZDR). [GitHub](https://github.com/thawn)
+- Sebastian Lobentanzer, Helmholtz Munich. [sebastian.lobentanzer@helmholtz-munich.de](mailto:sebastian.lobentanzer@helmholtz-munich.de)
+- Marek Ostaszewski, Luxembourg Centre for Systems Biomedicine, University of Luxembourg. [GitHub](https://github.com/mjostaszewski)
+- Fotis Psomopoulos, Institute of Applied Biosciences, Centre for Research and Technology Hellas (INAB|CERTH). [GitHub](https://github.com/fpsom)
+
+Reports under the [code of conduct](code-of-conduct.md) go to any editor named here.

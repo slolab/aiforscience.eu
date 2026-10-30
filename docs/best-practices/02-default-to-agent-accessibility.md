@@ -1,27 +1,40 @@
 ---
-title: Default to agent-accessibility; prioritise effort by demand and importance
-nav_title: "Default to agent-accessibility"
+title: Make resources agent-accessible by default; prioritise effort by demand and importance
+nav_title: "Make resources agent-accessible by default"
 practice_id: BP-02
 status: draft
 first_added: 2026-07-25
-last_reviewed: 2026-07-26
+last_reviewed: 2026-09-16
 endorsed_by: []
 sources:
   - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
     ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, items 1 and 2"
+    note: "Best Practice items 1 and 2. Provider stance and the resource typology."
   - title: "The FAIR Guiding Principles for scientific data management and stewardship (Wilkinson et al. 2016)"
     ref: library/ref-fair-2016.md
     locator: "machine-actionability; Accessible principle (auth permitted)"
+    note: 'Grounds machine-actionability as the general goal; the Accessible principle permits authentication, so "accessible" never meant "open without limit".'
   - title: "The ELIXIR Core Data Resources (Drysdale et al. 2020)"
     ref: library/ref-elixir-cdr-2020.md
     locator: "selection by demand and importance"
+    note: "A concrete demand-and-importance typology with the top tier funded as infrastructure. Life-science instance, cited as an example."
   - title: "The bio.tools registry of software tools and data resources (Ison et al. 2019)"
     ref: library/ref-biotools-2019.md
     locator: "registry model for the long tail"
+    note: "The light generic path for the long tail. Life-science instance, cited as an example."
   - title: "COAR survey: the impact of AI bots and crawlers on open repositories (2025)"
     ref: library/ref-coar-ai-bots-2025.md
     locator: "load and the blocking dilemma"
+    note: 'Evidence that open resources face heavy automated load and that blunt blocking also blocks real users. Qualifies "default accessible" toward governed access.'
+  - title: "Living guidelines on the responsible use of generative AI in research (European Commission and ERA Forum, 2026)"
+    ref: library/era-living-guidelines-genai-2026.md
+    locator: "Recommendations for research organisations 4, p. 10"
+    note: "Research organisations provide locally hosted or self-governed tools so staff can work with their data under data protection and confidentiality (bp2-a4). Non-binding."
+  - title: "European Health Data Space Regulation (Regulation (EU) 2025/327)"
+    ref: library/ref-ehds-2025.md
+    locator: "Art 73(1)-(2)"
+    note: "Access to health data only inside a secure processing environment, from which only non-personal data may leave: the legal form of access the resource governs (bp2-a4). Health-data instance, cited as an example."
 layer: Ecosystem
 hitl: n/a
 tags: [provider, governance, draft]
@@ -37,7 +50,7 @@ comments: true
 
 - [Agents](../glossary.md#agent) use resources like humans do: databases, public endpoints, code, tools, and documents.
   { #bp2-a1 }
-- Often, programmatic use by agents cannot be distinguished from human users.
+- Often, programmatic use by agents cannot be distinguished from human use, so access or rate limits based on guessing who the client is do not work.
   { #bp2-a2 }
 - Resources should be [machine-actionable](../glossary.md#machine-actionable) and discoverable by default.
   { #bp2-a3 }
@@ -49,6 +62,8 @@ comments: true
   { #bp2-a6 }
 - Sorting resources into types based on usage and importance can help prioritise maintenance effort.
   { #bp2-a7 }
+- This practice decides which resources get a maintained interface and how much to invest; what any interface, documentation, and metadata must contain is covered in [BP05](05-documentation-and-data-for-agents.md).
+  { #bp2-a8 }
 
 </div>
 
@@ -102,24 +117,14 @@ The load that automated clients now place on open resources makes governed acces
 - A resource keeps a default-open path but authenticates and rate-shapes automated traffic, so a burst of agent calls does not knock it over for its human users.
   Its logs cannot tell agents from people, which is why the limit is set at the resource rather than inferred from the client.
 
-## Sources
-
-- [ELIXIR TF Agentic AI: agenda and rolling best practice (2026)](../library/elixir-tf-agentic-ai-2026.md), Best Practice items 1 and 2.
-  Provider stance and the resource typology.
-- [FAIR Guiding Principles (Wilkinson et al. 2016)](../library/ref-fair-2016.md).
-  Grounds machine-actionability as the general goal; the Accessible principle permits authentication, so "accessible" never meant "open without limit".
-- [ELIXIR Core Data Resources (Drysdale et al. 2020)](../library/ref-elixir-cdr-2020.md).
-  A concrete demand-and-importance typology with the top tier funded as infrastructure.
-  Life-science instance, cited as an example.
-- [bio.tools registry (Ison et al. 2019)](../library/ref-biotools-2019.md).
-  The light generic path for the long tail.
-  Life-science instance, cited as an example.
-- [COAR survey on AI bots and crawlers (2025)](../library/ref-coar-ai-bots-2025.md).
-  Evidence that open resources face heavy automated load and that blunt blocking also blocks real users.
-  Qualifies "default accessible" toward governed access.
+<!-- BP_SOURCES -->
+<!-- The Sources list above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 
+- 2026-10-08: Added the Commission's living guidelines on generative AI in research (2026) and the European Health Data Space Regulation as supporting sources on bp2-a4 (self-governed hosting; secure processing environment).
+- 2026-09-16: Challenge [#29](https://github.com/slolab/aiforscience.eu/issues/29). Added bp2-a8 stating the boundary with BP05: this practice decides which resources get a maintained interface and how much to invest; BP05 says what any interface, documentation, and metadata must contain.
+- 2026-09-16: Challenge [#26](https://github.com/slolab/aiforscience.eu/issues/26). Retitled from "Default to agent-accessibility" to "Make resources agent-accessible by default", so the title states an action while keeping the default stance; page slug unchanged. bp2-a2 now states its consequence (access or rate limits based on guessing who the client is do not work) instead of leaving it to the last Example.
 - 2026-07-27: Renumbered from BP01 to BP02 on inserting the new BP01 (match the method to the task).
 - 2026-07-27: Rewrote Examples as concrete scenarios (actor, action, outcome), including anti-patterns, replacing restatements of the practice; kept the labelled life-science instances (Core Data Resources, bio.tools).
 - 2026-07-26: Rewritten to be domain-neutral (FAIR as the general anchor; ELIXIR and bio.tools demoted to labelled examples) and to replace "open to agents" with machine-actionable, discoverable, and governed-per-tier, grounded in FAIR and the COAR load survey.

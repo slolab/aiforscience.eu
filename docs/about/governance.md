@@ -37,3 +37,5 @@ A practice can also be retired; retired practices remain in the git history and 
 Disagreement is valuable content.
 If organisations or contributors hold different positions on a practice, the practice page records the positions and who holds them, rather than forcing a false consensus.
 The "Challenge a practice" issue template exists for exactly this.
+
+How disagreement is expressed is covered by the [code of conduct](code-of-conduct.md).
