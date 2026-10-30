@@ -14,6 +14,14 @@ To add a failure, use the [Submit a document](https://github.com/slolab/aiforsci
 
 ## Entries
 
+- **2026-10** — A researcher lost two years of work kept only in a chat assistant's history.
+  A plant scientist had used a ChatGPT Plus account daily for grant applications, publication revisions, lectures and exams; after he switched off the account's data-consent setting, the chats and project folders were deleted.
+  The published results survived; the prompts, iterations and project folders behind them did not, which the author compares to losing the laboratory notebooks behind published research.
+  The provider confirmed that deleted content cannot be recovered and recommended personal backups of professional work.
+  Universities that license the institutional tier warn of the same outcome when a licence or contract ends, and some state that no complete export is available.
+  Related practices: [BP07](07-provenance-and-citation.md).
+  Source: [Two years of academic work lost from a ChatGPT account (Bucher, Nature 2026)](../library/ref-bucher-chatgpt-data-loss-2026.md); [University guidance on ChatGPT Edu content when a licence ends (2026)](../library/ref-chatgpt-edu-licence-end-2026.md).
+
 - **2026-09** — A court order overrode a provider's deletion promise for consumer and standard-API chat logs for four months.
   In May 2025 a US federal court ordered OpenAI to preserve all ChatGPT output logs that would otherwise be deleted, including logs users had deleted and logs whose deletion privacy law required; the order covered Free, Plus, Pro, and Team accounts and API use without a zero-data-retention agreement, and excluded Enterprise, Edu, and zero-data-retention API customers.
   The going-forward obligation ended on 26 September 2025; a 20-million-log de-identified sample was later ordered produced to the plaintiffs.

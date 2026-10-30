@@ -51,6 +51,18 @@ sources:
     ref: library/era-living-guidelines-genai-2026.md
     locator: "Recommendations for researchers 1 and 2, pp. 7-8"
     note: "Researchers stay accountable for AI-assisted content, AI is not an author, and substantial use is noted in the methods section (bp7-a2). Non-binding."
+  - title: "DFG Code of Conduct: Guidelines for Safeguarding Good Research Practice (2019)"
+    ref: library/ref-dfg-code-of-conduct-2019.md
+    locator: "Guideline 17, Archiving"
+    note: "Guideline 17 asks for research data and central materials to be backed up and normally archived for ten years, which a provider's chat history does not guarantee (bp7-a1)."
+  - title: "Two years of academic work lost from a ChatGPT account (Bucher, Nature 2026)"
+    ref: library/ref-bucher-chatgpt-data-loss-2026.md
+    locator: "full column, including OpenAI's statement to Nature ('No going back')"
+    note: "A researcher lost two years of prompts, iterations and project folders behind grant applications, teaching materials and publications after a settings change; the published results survived, the record of how they were made did not. OpenAI confirmed that deleted content cannot be recovered and recommended personal backups (bp7-a1). A single first-person account; grounding only."
+  - title: "University guidance on ChatGPT Edu content when a licence ends (2026)"
+    ref: library/ref-chatgpt-edu-licence-end-2026.md
+    locator: "Politecnico di Torino, Washington University in St. Louis, San José State University IT pages"
+    note: "Three universities state that content is lost when a licence, an employment, or the institution's contract ends, and that a complete export is not available (bp7-a1). Institutional policy pages, not a documented loss."
 layer: Method
 hitl: optional
 tags: [practitioner, provider, governance, draft]
@@ -77,6 +89,7 @@ comments: true
     Keep the link between a result and its evidence, and mark what the agent produced and what you did, so the work can be checked and cited later.
     Disclose agent use where it matters (in a paper, a report, a review).
     You are still accountable for the judgement, whatever the agent found.
+    Keep the work that matters (drafts, analyses, decisions) in your own repository or institutional storage; a provider's chat history is not a record and can disappear.
 
 === "For providers"
 
@@ -90,6 +103,7 @@ comments: true
     Provenance comes before audit and trust.
     Require that agent outputs be traceable, that human and agent contributions be clearly separated, and that agent use be disclosed where results are published.
     Use that trace as the basis for independent evaluation where the stakes are high.
+    Research records have to outlive any one AI service: before cancelling or switching a licence, plan how users export their work, and do not let a provider's history be the only copy.
 
 ## Reasons
 
@@ -112,12 +126,19 @@ A research agent has to pass citation and retraction status through to its outpu
   Provenance for source material and for model-performed edits, kept with the document, is what would make the change traceable; a reviewer without it has nothing to check against ([BP09](09-human-in-the-loop.md)).
 - The run is recorded: model version, inputs, and tool calls kept so a surprising result can be re-examined and, where possible, re-run.
 - The agent supplies the traceable evidence and the person makes the call, remaining accountable for the judgement.
+- A researcher who used a chat assistant daily for two years changes one account setting, and the chats and project folders behind grant applications, teaching material and manuscript drafts are deleted; the provider cannot restore them.
+  The published papers and lectures survive, but the prompts and iterations behind them, the equivalent of a lab notebook, are gone.
+  Regular exports to the researcher's own files would have kept them.
+- An institution cancels its chat-assistant licences for some staff, and users find that projects and drafts existed only in the provider's history.
+  Some universities state in advance that content is lost when the licence or the contract ends and that the institutional tier offers no complete export.
+  Asking users to move their work to their own storage before the cutover, and keeping it there from the start, prevents the loss.
 
 <!-- BP_SOURCES -->
 <!-- The Sources list above is generated from this page's frontmatter sources by hooks/bp_pages.py. Edit `sources:`, not here. -->
 
 ## Change history
 
+- 2026-10-30: Added keeping work outside the provider's chat history to the practitioner and governance tabs, with two Examples (a researcher's account deleted after a settings change; content lost when an institution's licence ends), grounded in the DFG Code of Conduct (Guideline 17), Bucher (Nature 2026), and university guidance on ChatGPT Edu (bp7-a1).
 - 2026-10-08: Added the Commission's living guidelines on generative AI in research (2026) as a supporting source on bp7-a2 (AI is not an author; substantial use disclosed).
 - 2026-09-16: Added the Copilot for Word disclosure (Måløy 2026) as a supporting source on bp7-a2, with an Example: assistant edits accepted without a record of what changed or which attachment drove them cannot be traced afterwards.
 - 2026-08-03: Added the F(AI)2R provenance paper (Krebs 2026) as a supporting source on claim-level provenance and per-activity human and agent attribution, downweighted as a single self-audited demonstration (bp7-a1, bp7-a2).
