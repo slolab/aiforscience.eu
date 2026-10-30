@@ -3,3 +3,6 @@ site/
 __pycache__/
 .DS_Store
 .lycheecache
+
+# The privacy plugin's cache lives in vendor/fonts and is committed.
+.cache/

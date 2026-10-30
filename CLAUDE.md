@@ -9,6 +9,14 @@ applying agentic AI to science. MkDocs Material, deployed to GitHub Pages.
 - `uv run mkdocs serve` — local preview at http://127.0.0.1:8000
 - `uv run mkdocs build --strict` — build; fails on broken internal links. Run before every PR.
 
+Roboto is served from this domain, not from Google. The `privacy` plugin does
+that, and its cache (`vendor/fonts/`) is committed so no build fetches anything:
+the plugin allows five seconds per request with no retry, so a cold cache makes
+one slow response from Google fail a strict build. Refresh with
+`rm -rf vendor/fonts && uv run mkdocs build --strict`, needed only when a
+Material upgrade changes the font URLs. Only the two font hosts are rewritten;
+giscus is deliberately left loading from giscus.app.
+
 ## Writing style (hard rule)
 
 All prose on this site follows these rules. They apply to every page, every
