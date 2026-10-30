@@ -391,6 +391,17 @@ bp7-a1:  # answers traceable to sources, open to audit
     stance: supports
     locator: "§II trust gap, §IV Invariant I and Table I: reference existence separated from evidential support"
     quote: "existence of a reference is machine-checkable, support for a claim is a judgement"
+  - ref: dfg-code-of-conduct-2019
+    stance: supports
+    locator: "Guideline 17, Archiving: research data archived for ten years"
+    quote: "archived in an accessible and identifiable manner for a period of ten years"
+  - ref: bucher-chatgpt-data-loss-2026
+    stance: supports
+    locator: "work kept only in a provider's chat history was deleted and could not be recovered"
+  - ref: chatgpt-edu-licence-end-2026
+    stance: supports
+    locator: "content lost when the licence or contract ends; no complete export"
+    quote: "OpenAI does not allow a complete export of the data"
 bp7-a2:  # clear what a human did and what an agent did
   - ref: credit-2022
     stance: supports

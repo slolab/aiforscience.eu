@@ -68,6 +68,9 @@ Each links to its bibliographic record.
 - [Fabricated citations from LLMs (Walters & Wilder 2023)](ref-walters-wilder-2023.md)
 - [AI tools cite retracted papers (MIT Technology Review 2025)](ref-mit-tech-review-retracted-2025.md)
 - [Code of Practice on Transparency of AI-generated Content (2026)](ref-transparency-cop-2026.md)
+- [DFG Code of Conduct: Guidelines for Safeguarding Good Research Practice (2019)](ref-dfg-code-of-conduct-2019.md)
+- [Two years of academic work lost from a ChatGPT account (Bucher, Nature 2026)](ref-bucher-chatgpt-data-loss-2026.md)
+- [University guidance on ChatGPT Edu content when a licence ends (2026)](ref-chatgpt-edu-licence-end-2026.md)
 
 **Governance and risk frameworks**
 
