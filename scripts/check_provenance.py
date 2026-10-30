@@ -14,7 +14,7 @@ those silent drops into a hard error, mirroring the hook's join semantics:
 - valid stance = supports | qualifies | contradicts.
 
 It also checks that every `sources:` entry in a best-practice page points to a
-file that exists. Run: `uv run python scripts/check_provenance.py`.
+file that exists, and that every library entry has a frontmatter `title`. Run: `uv run python scripts/check_provenance.py`.
 """
 
 from __future__ import annotations
@@ -124,10 +124,19 @@ def check_page_sources(errors: list[str]) -> None:
                 )
 
 
+def check_library_titles(errors: list[str]) -> None:
+    for path in sorted(LIBRARY.glob("*.md")):
+        if path.name == "index.md":
+            continue
+        if not str(load_frontmatter(path).get("title") or "").strip():
+            errors.append(f"library/{path.name}: missing frontmatter 'title'")
+
+
 def main() -> int:
     errors: list[str] = []
     check_provenance(errors)
     check_page_sources(errors)
+    check_library_titles(errors)
     if errors:
         print(f"Provenance check failed with {len(errors)} error(s):\n")
         for e in errors:

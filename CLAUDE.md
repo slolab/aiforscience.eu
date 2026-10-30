@@ -44,8 +44,8 @@ last_reviewed: YYYY-MM-DD
 endorsed_by:
   - <org or task force>
 sources:
-  - title: <source title>
-    ref: <path under docs/, e.g. library/ec-expert-forum-2026.md, or URL>
+  - ref: <path under library/, e.g. library/ec-expert-forum-2026.md, or URL>
+    title: "<link text; only for a URL ref, which has no library page to read it from>"
     locator: "<where in the source, e.g. §5.3, p. 28>"
     note: "<what this source contributes to this practice, plus any caveat about its weight or status>"
 layer: Operational | Method | Ecosystem   # internal only for now: not shown on pages, not in tags, not explained
@@ -73,7 +73,10 @@ Body sections, in this order, all present:
    the frontmatter only; never write the bullets by hand. Each entry renders as
    one bullet: the linked title, then its `note`. The `locator` is a record of
    where in the source the support sits; it is not rendered, so a note that
-   needs to name a section states it itself.
+   needs to name a section states it itself. The link text is the library
+   page's `title`, which names the whole work. So when the support sits in one
+   article, part, or companion document of a regulation, standard, or
+   framework (for example "Article 14", "AI 600-1"), the note names it.
 6. `## Change history` — dated bullets, newest first. Git log is the full record.
 
 Status, endorsements, and the last-reviewed date come from the frontmatter and

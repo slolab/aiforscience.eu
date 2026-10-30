@@ -59,7 +59,13 @@ out of scope, say so in the Summary and keep the entry short.
      document justifies (new practice, changed wording, added source, status
      change). Where a proposal creates or reworks a practice, draft the
      per-audience tab text (the Practitioners, Providers, Governance tabs
-     shown directly under the practice statement) as part of the proposal. These are proposals for
+     shown directly under the practice statement) as part of the proposal.
+     A proposal that adds a source to a practice page gives its `ref`,
+     `locator`, and `note`. The rendered bullet shows only the library title
+     and the note, so when the support sits in one article, part, or companion
+     document of a regulation, standard, or framework, the note names it
+     ("Article 14 requires ...").
+     These are proposals for
      human review. Never apply them to the practice pages yourself in the
      same session unless the user asks.
    - **Cautions and gaps**: what the document does not support, framings to

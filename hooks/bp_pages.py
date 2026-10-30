@@ -31,11 +31,33 @@ def _load_meta(path):
     match = _FRONTMATTER.match(path.read_text(encoding="utf-8"))
     return yaml.safe_load(match.group(1)) if match else {}
 
+def _load_library_meta(path):
+    """Load frontmatter from a library page, or return empty dict on error."""
+    match = _FRONTMATTER.match(path.read_text(encoding="utf-8"))
+    if not match:
+        return {}
+    try:
+        return yaml.safe_load(match.group(1)) or {}
+    except yaml.YAMLError:
+        # A malformed library frontmatter must not break the build; fall back
+        # to no metadata (the file stem is used as the title).
+        return {}
 
-def _render_sources(sources):
+def _render_sources(sources, docs_dir):
     lines = ["## Sources", ""]
     for source in sources:
-        bullet = f'- [{source["title"]}](../{source["ref"]}).'
+        target = source.get("ref") or ""
+        if target.startswith(("http://", "https://")):
+            # External source: no library page to read, so the title comes
+            # from the entry itself, falling back to the bare URL.
+            bullet = f"- [{source.get('title') or target}]({target})."
+        else:
+            # Resolve against docs_dir, not the working directory, so the
+            # build runs from anywhere. check_provenance.py reports a missing
+            # file or title; the file stem keeps the bullet readable meanwhile.
+            path = Path(docs_dir) / target
+            meta = _load_library_meta(path) if path.is_file() else {}
+            bullet = f"- [{meta.get('title') or path.stem}](../{target})."
         note = source.get("note")
         lines.append(f"{bullet} {note}" if note else bullet)
     return "\n".join(lines)
@@ -53,7 +75,7 @@ def on_page_markdown(markdown, page, config, files):
         markdown = markdown.replace(TITLE_PLACEHOLDER, f"{kicker}\n\n# {title}")
     if SOURCES_PLACEHOLDER in markdown:
         sources = page.meta.get("sources") or []
-        markdown = markdown.replace(SOURCES_PLACEHOLDER, _render_sources(sources))
+        markdown = markdown.replace(SOURCES_PLACEHOLDER, _render_sources(sources, config["docs_dir"]))
     return markdown
 
 

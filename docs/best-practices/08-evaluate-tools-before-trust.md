@@ -7,28 +7,22 @@ first_added: 2026-07-26
 last_reviewed: 2026-09-16
 endorsed_by: []
 sources:
-  - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
-    ref: library/elixir-tf-agentic-ai-2026.md
+  - ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Cautions and gaps (evaluation of skills/MCP servers as an open question)"
     note: "Cautions and gaps: how to assess whether a skill or MCP server is useful and safe is recorded there as an open question and a candidate future practice."
-  - title: "REFORMS: consensus-based recommendations for machine-learning-based science (Science Advances 2024)"
-    ref: library/ref-reforms-2024.md
+  - ref: library/ref-reforms-2024.md
     locator: "reporting standards for ML-based science"
     note: "Consensus reporting standards for machine-learning-based science."
-  - title: "NeurIPS Paper Checklist / ML reproducibility checklist"
-    ref: library/ref-neurips-checklist.md
+  - ref: library/ref-neurips-checklist.md
     locator: "reproducibility and evaluation reporting"
     note: "Reproducibility and evaluation reporting practice."
-  - title: "MIT Project NANDA, The GenAI Divide (2025)"
-    ref: library/mit-genai-divide-2025.md
+  - ref: library/mit-genai-divide-2025.md
     locator: "§6.2 p.20 benchmark on operational outcomes, not model benchmarks"
     note: 'Enterprise field evidence that buyers who "benchmark tools on operational outcomes, not model benchmarks" succeed far more often; general benchmark scores do not predict fitness for a specific task (§6.2, pg. 20). Out-of-domain business report; cited as external context.'
-  - title: "EU AI Omnibus (2026)"
-    ref: library/ai-omnibus-2026.md
+  - ref: library/ai-omnibus-2026.md
     locator: "Art 4a; Recital 9 (conditional basis for special-category data in bias detection)"
     note: "Art 4a. The amended AI Act sets a conditional legal basis for processing special-category data to detect and correct bias, an evaluation dimension, subject to strict safeguards (bp8-a2)."
-  - title: "Panickssery, Bowman & Feng, LLM Evaluators Recognize and Favor Their Own Generations (2024)"
-    ref: library/ref-panickssery-self-preference-2024.md
+  - ref: library/ref-panickssery-self-preference-2024.md
     locator: "Abstract; self-recognition correlates with self-preference"
     note: "Measured self-preference in LLM evaluators: a model scores its own outputs higher than human annotators do, and the bias grows with its ability to recognise its own text. A judge from the same family as the system under test is not independent evidence (bp8-a6)."
 layer: Operational

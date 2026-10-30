@@ -7,34 +7,27 @@ first_added: 2026-07-25
 last_reviewed: 2026-09-16
 endorsed_by: []
 sources:
-  - title: "ELIXIR TF Agentic AI: agenda and rolling best practice (2026)"
-    ref: library/elixir-tf-agentic-ai-2026.md
+  - ref: library/elixir-tf-agentic-ai-2026.md
     locator: "Best Practice, items 1 and 2"
     note: "Best Practice items 1 and 2. Provider stance and the resource typology."
-  - title: "The FAIR Guiding Principles for scientific data management and stewardship (Wilkinson et al. 2016)"
-    ref: library/ref-fair-2016.md
+  - ref: library/ref-fair-2016.md
     locator: "machine-actionability; Accessible principle (auth permitted)"
     note: 'Grounds machine-actionability as the general goal; the Accessible principle permits authentication, so "accessible" never meant "open without limit".'
-  - title: "The ELIXIR Core Data Resources (Drysdale et al. 2020)"
-    ref: library/ref-elixir-cdr-2020.md
+  - ref: library/ref-elixir-cdr-2020.md
     locator: "selection by demand and importance"
     note: "A concrete demand-and-importance typology with the top tier funded as infrastructure. Life-science instance, cited as an example."
-  - title: "The bio.tools registry of software tools and data resources (Ison et al. 2019)"
-    ref: library/ref-biotools-2019.md
+  - ref: library/ref-biotools-2019.md
     locator: "registry model for the long tail"
     note: "The light generic path for the long tail. Life-science instance, cited as an example."
-  - title: "COAR survey: the impact of AI bots and crawlers on open repositories (2025)"
-    ref: library/ref-coar-ai-bots-2025.md
+  - ref: library/ref-coar-ai-bots-2025.md
     locator: "load and the blocking dilemma"
     note: 'Evidence that open resources face heavy automated load and that blunt blocking also blocks real users. Qualifies "default accessible" toward governed access.'
-  - title: "Living guidelines on the responsible use of generative AI in research (European Commission and ERA Forum, 2026)"
-    ref: library/era-living-guidelines-genai-2026.md
+  - ref: library/era-living-guidelines-genai-2026.md
     locator: "Recommendations for research organisations 4, p. 10"
     note: "Research organisations provide locally hosted or self-governed tools so staff can work with their data under data protection and confidentiality (bp2-a4). Non-binding."
-  - title: "European Health Data Space Regulation (Regulation (EU) 2025/327)"
-    ref: library/ref-ehds-2025.md
+  - ref: library/ref-ehds-2025.md
     locator: "Art 73(1)-(2)"
-    note: "Access to health data only inside a secure processing environment, from which only non-personal data may leave: the legal form of access the resource governs (bp2-a4). Health-data instance, cited as an example."
+    note: "Article 73 allows access to health data only inside a secure processing environment, from which only non-personal data may leave: the legal form of access the resource governs (bp2-a4). Health-data instance, cited as an example."
 layer: Ecosystem
 hitl: n/a
 tags: [provider, governance, draft]

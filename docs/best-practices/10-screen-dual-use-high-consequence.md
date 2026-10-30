@@ -7,68 +7,52 @@ first_added: 2026-07-26
 last_reviewed: 2026-07-28
 endorsed_by: []
 sources:
-  - title: "METR, Common Elements of Frontier AI Safety Policies (2025)"
-    ref: library/ref-metr-common-elements-2025.md
+  - ref: library/ref-metr-common-elements-2025.md
     locator: "shared capability-threshold structure across CBRN, cyber, autonomy"
     note: "An independent synthesis of frontier safety policies finding one capability-threshold structure recurring across CBRN, cyber, and autonomy."
-  - title: "Frontier Model Forum, Components of Frontier AI Safety Frameworks"
-    ref: library/ref-fmf-safety-frameworks.md
+  - ref: library/ref-fmf-safety-frameworks.md
     locator: "CBRN, offensive cyber, automated AI R&D as high-consequence domains"
     note: "Names CBRN, offensive cyber, and automated AI R&D as the parallel high-consequence domains, which is the evidence the category is generic."
-  - title: "Urbina et al., Dual use of AI-powered drug discovery (Nature Machine Intelligence 2022)"
-    ref: library/ref-urbina-dual-use-2022.md
+  - ref: library/ref-urbina-dual-use-2022.md
     locator: "40,000 toxic molecules incl. VX generated in under 6 hours"
     note: "A toxicity model inverted to generate 40,000 toxic molecules, including VX, in under 6 hours. The sharpest non-life-science instance."
-  - title: "Wittmann et al., Strengthening nucleic acid biosecurity screening against generative protein design (Science 2025)"
-    ref: library/ref-wittmann-biosecurity-2025.md
+  - ref: library/ref-wittmann-biosecurity-2025.md
     locator: "AI-designed sequences evaded synthesis screening; patches restored detection"
     note: "AI-designed sequences evaded nucleic-acid synthesis screening; patches restored detection. The life-science instance."
-  - title: "UK AI Security Institute, Frontier AI Trends (2025)"
-    ref: library/ref-aisi-frontier-trends-2025.md
+  - ref: library/ref-aisi-frontier-trends-2025.md
     locator: "cyber-offense capability rising toward expert level"
     note: "Measured cyber-offense capability rising toward expert level. The cyber capability trend."
-  - title: "Autonomous agent breach of Hugging Face (Hugging Face; OpenAI, 2026)"
-    ref: library/ref-hf-openai-agent-breach-2026.md
+  - ref: library/ref-hf-openai-agent-breach-2026.md
     locator: "autonomous agent escaped its evaluation sandbox and breached production infrastructure"
     note: "An autonomous system on OpenAI pre-release models escaped its evaluation sandbox and breached Hugging Face's production infrastructure. A realised cyber instance, disclosed by both organisations."
-  - title: "US Government Policy for Oversight of Dual Use Research of Concern (OSTP 2024)"
-    ref: library/ref-usg-durc-2024.md
+  - ref: library/ref-usg-durc-2024.md
     locator: "codified DURC oversight (bio-scoped; under 2025 revision)"
     note: "A codified dual-use oversight instrument. Cited as a mature worked example; note it is scoped to the life sciences and under revision, so this practice is framed on the general concept, not on that instrument."
-  - title: "EU AI Omnibus (2026)"
-    ref: library/ai-omnibus-2026.md
+  - ref: library/ai-omnibus-2026.md
     locator: "Art 5(1a)(a)(ii); Recital 12 (provider safeguards against foreseeable prohibited output)"
     note: "Art 5(1a)(a)(ii). Obliges providers to build technical safeguards against reasonably foreseeable and reproducible prohibited output rather than rely on intent or policy, the same provider-safeguard logic as routing high-consequence actions through a screening chokepoint (bp10-a4)."
-  - title: "WMA Declaration of Helsinki (2024)"
-    ref: library/ref-helsinki-2024.md
+  - ref: library/ref-helsinki-2024.md
     locator: "voluntary participation; right to withdraw at any time"
     note: "Participation is voluntary and consent may be withdrawn at any time, so data held under it cannot be committed to a use that could not honour a withdrawal (bp10-a5)."
-  - title: "EU General Data Protection Regulation (2016)"
-    ref: library/ref-gdpr-2016.md
+  - ref: library/ref-gdpr-2016.md
     locator: "Art 7(3) withdraw consent; Art 17 right to erasure"
     note: "Consent is revocable (Art 7(3)) and erasure is a right (Art 17), so personal data cannot be authorised for an irreversible use such as third-party training or a perpetual licence (bp10-a5)."
-  - title: "A safer framework for patient data in AI-for-Science grants (2026)"
-    ref: library/gagneur-rare-disease-patient-data-2026.md
+  - ref: library/gagneur-rare-disease-patient-data-2026.md
     locator: "no perpetual licence; analysis is not training permission"
     note: "Adjacent support: analysis permission is not training permission, and no perpetual licence should be taken over patient-level data. Individual commentary; it does not itself make the revocable-consent argument."
-  - title: "Living guidelines on the responsible use of generative AI in research (European Commission and ERA Forum, 2026)"
-    ref: library/era-living-guidelines-genai-2026.md
+  - ref: library/era-living-guidelines-genai-2026.md
     locator: "Recommendations for researchers 3, p. 8"
     note: "Tells researchers that uploaded input may be used to train models, and not to upload sensitive work without assurances against re-use (bp10-a5). Non-binding."
-  - title: "EDPB Opinion 28/2024 on personal data in AI models (2024)"
-    ref: library/edpb-opinion-ai-models-2024.md
+  - ref: library/edpb-opinion-ai-models-2024.md
     locator: "paras 34, 114"
     note: "A model trained on personal data is not anonymous by default, and the remedy for unlawful training can reach the model itself (bp10-a5)."
-  - title: "Anthropic consumer terms update: training on chats by default (2025)"
-    ref: library/ref-anthropic-consumer-terms-2025.md
+  - ref: library/ref-anthropic-consumer-terms-2025.md
     locator: "consumer plans versus commercial terms"
     note: "Consumer accounts train on inputs by default with five-year retention; commercial terms exclude training. The account tier, not the data, decides (bp10-a5). One provider at one date."
-  - title: "Dutch DPA: AI chatbot use leads to data breaches (2024)"
-    ref: library/ref-dutch-dpa-chatbot-breaches-2024.md
+  - ref: library/ref-dutch-dpa-chatbot-breaches-2024.md
     locator: "2024 breach notifications"
     note: "A regulator states that most chatbot providers store all data entered (bp10-a5). Outside research."
-  - title: "DSK guidance: Artificial intelligence and data protection (2024)"
-    ref: library/ref-dsk-ki-datenschutz-2024.md
+  - ref: library/ref-dsk-ki-datenschutz-2024.md
     locator: "§1.9 para 24; §1.7 para 20"
     note: "German regulators prefer applications that do not train on inputs, and closed systems (bp10-a5)."
 layer: Operational

@@ -7,60 +7,46 @@ first_added: 2026-10-08
 last_reviewed: 2026-10-27
 endorsed_by: []
 sources:
-  - title: "EU General Data Protection Regulation (Regulation (EU) 2016/679)"
-    ref: library/ref-gdpr-2016.md
+  - ref: library/ref-gdpr-2016.md
     locator: "Arts 6, 9, 28, 32, 44 to 49"
-    note: "Sending personal data to a service is processing: it needs a lawful basis, an Article 9 exception for special-category data, a processor contract, appropriate security, and a transfer basis for a provider outside the EU, also when the provider does not train on the data (bp11-a3)."
-  - title: "EDPB Opinion 28/2024 on personal data in AI models (2024)"
-    ref: library/edpb-opinion-ai-models-2024.md
+    note: "Sending personal data to a service is processing: it needs a lawful basis (Article 6), an Article 9 exception for special-category data, a processor contract (Article 28), appropriate security (Article 32), and a transfer basis for a provider outside the EU (Articles 44 to 49), also when the provider does not train on the data (bp11-a3)."
+  - ref: library/edpb-opinion-ai-models-2024.md
     locator: "paras 126, 129-130"
     note: "The organisation deploying a model is a controller for its own processing and has to check the provider (bp11-a3)."
-  - title: "Living guidelines on the responsible use of generative AI in research (European Commission and ERA Forum, 2026)"
-    ref: library/era-living-guidelines-genai-2026.md
+  - ref: library/era-living-guidelines-genai-2026.md
     locator: "Recommendations for researchers 3, pp. 8-9; Recommendations for research organisations 4, p. 10"
     note: "Uploaded input may be used for other purposes such as training; researchers check who runs a tool, where, and under which privacy options, and do not upload sensitive work without assurances against re-use; organisations provide tools they govern themselves (bp11-a1, bp11-a2, bp11-a3). Non-binding, and written for tools a person uses, not agents."
-  - title: "EDPS decision on the European Commission's use of Microsoft 365 (2024)"
-    ref: library/ref-edps-commission-m365-2024.md
+  - ref: library/ref-edps-commission-m365-2024.md
     locator: "2024 decision; 2025 closure"
     note: "The provider's standard terms did not meet the institution's legal duties; compliance came from a renegotiated contract and technical measures (bp11-a3). An office suite and an EU institution, not an AI service; the decision is challenged before the General Court."
-  - title: "Dutch DPA: AI chatbot use leads to data breaches (2024)"
-    ref: library/ref-dutch-dpa-chatbot-breaches-2024.md
+  - ref: library/ref-dutch-dpa-chatbot-breaches-2024.md
     locator: "2024 breach notifications; GP practice case"
     note: "Most chatbot providers store all data entered; staff entered patient data into a consumer chatbot against written rules, and the regulator treated it as a data breach (bp11-a1, bp11-a3). Outside research."
-  - title: "Anthropic consumer terms update: training on chats by default (2025)"
-    ref: library/ref-anthropic-consumer-terms-2025.md
+  - ref: library/ref-anthropic-consumer-terms-2025.md
     locator: "consumer plans versus commercial terms"
     note: "Consumer accounts train on inputs by default with five-year retention; commercial terms exclude training (bp11-a2). One provider at one date."
-  - title: "Court-ordered retention of ChatGPT logs in the New York Times litigation (2025)"
-    ref: library/ref-openai-preservation-order-2025.md
+  - ref: library/ref-openai-preservation-order-2025.md
     locator: "13 May 2025 order; provider statement on covered tiers"
     note: "A court order overrode a written deletion promise for consumer and standard-API tiers; zero-retention tiers were unaffected (bp11-a2). US copyright litigation, outside science."
-  - title: "DSK guidance: Artificial intelligence and data protection (2024)"
-    ref: library/ref-dsk-ki-datenschutz-2024.md
+  - ref: library/ref-dsk-ki-datenschutz-2024.md
     locator: "§1.7 para 20; §2.1 para 33; §2.4 para 41; §2.5 para 43"
     note: "German regulators: closed systems preferable, a processor agreement, work accounts so staff need no private ones, and training settings fixed at account setup (bp11-a2, bp11-a3)."
-  - title: "AEPD guidance on agentic AI from a data protection perspective (2026)"
-    ref: library/ref-aepd-agentic-ai-2026.md
+  - ref: library/ref-aepd-agentic-ai-2026.md
     locator: "pp. 34, 52, 57-58"
     note: "The deployer configures which services an agent may reach and evaluates each service's terms, Article 28 status, transfers, and retention; online service terms change unilaterally; an agent with screen access can send third parties' information to external servers (bp11-a2, bp11-a3, bp11-a4, bp11-a5)."
-  - title: "CNIL and CIANum: Agentic AI and personal data protection (2026)"
-    ref: library/ref-cnil-cianum-agentic-ai-2026.md
+  - ref: library/ref-cnil-cianum-agentic-ai-2026.md
     locator: "pp. 14-15"
     note: "Actions classified by risk per connected service, including sending data outside the system (bp11-a5). Exploratory, non-binding."
-  - title: "A safer framework for patient data in AI-for-Science grants (2026)"
-    ref: library/gagneur-rare-disease-patient-data-2026.md
+  - ref: library/gagneur-rare-disease-patient-data-2026.md
     locator: "hook 1"
     note: "An agent that runs code and inspects results transmits material to the service operating it, so participant-level data can leave an approved environment without a deliberate upload (bp11-a4). A commentary arguing from risk, not a measured incident."
-  - title: "European Health Data Space Regulation (Regulation (EU) 2025/327)"
-    ref: library/ref-ehds-2025.md
+  - ref: library/ref-ehds-2025.md
     locator: "Art 73"
-    note: "Access only inside a secure processing environment, from which no personal data may leave (bp11-a3). Health-data instance, cited as an example."
-  - title: "EDPB-EDPS assessment of the US CLOUD Act (2019)"
-    ref: library/ref-edpb-edps-cloud-act-2019.md
+    note: "Article 73 allows access only inside a secure processing environment, from which no personal data may leave (bp11-a3). Health-data instance, cited as an example."
+  - ref: library/ref-edpb-edps-cloud-act-2019.md
     locator: "Article 48 analysis"
     note: "A CLOUD Act order is not in itself a legal ground for transfer under Article 48 GDPR. Context for the governance tab on EU hosting at a provider under US jurisdiction; no atom rests on it."
-  - title: "Microsoft France before the French Senate inquiry on public procurement (2025)"
-    ref: library/ref-senat-microsoft-hearing-2025.md
+  - ref: library/ref-senat-microsoft-hearing-2025.md
     locator: "hearing of 10 June 2025"
     note: "A US provider's legal director could not guarantee under oath that EU-hosted data stays out of US hands. Context for the governance tab; no atom rests on it."
 layer: Operational
