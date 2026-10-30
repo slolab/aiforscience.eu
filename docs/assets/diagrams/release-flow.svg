@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 790" width="660" height="790" role="img" aria-labelledby="t d">
-  <title id="t">How a monthly release moves from the 25th to a minted DOI</title>
-  <desc id="d">Changes merged through the month lead to a release pull request opened automatically on the 25th. An editor reviews it; edits go back on the release branch until approved. Merging tags the version automatically. An editor then publishes the GitHub release, Zenodo mints the DOI, and the DOI is recorded automatically on the Releases page.</desc>
+  <title id="t">How a monthly release moves from the 1st to a minted DOI</title>
+  <desc id="d">Changes merged through the month lead to a release pull request opened automatically on the 1st. An editor reviews it; edits go back on the release branch until approved. Merging tags the version automatically. An editor then publishes the GitHub release, Zenodo mints the DOI, and the DOI is recorded automatically on the Releases page.</desc>
 
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -28,7 +28,7 @@
   <text class="lbl lbl-human" x="220" y="55">Changes merged throughout the month</text>
 
   <rect class="box auto" rx="6" x="60" y="120" width="320" height="52"/>
-  <text class="lbl lbl-auto" x="220" y="151">Release PR opened on the 25th</text>
+  <text class="lbl lbl-auto" x="220" y="151">Release PR opened on the 1st</text>
 
   <rect class="box human" rx="6" x="60" y="216" width="320" height="52"/>
   <text class="lbl lbl-human" x="220" y="247">Editor review</text>

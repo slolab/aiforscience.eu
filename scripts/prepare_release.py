@@ -3,9 +3,9 @@
 update the releases page.
 
 This is the mechanical half of the `release` skill's Phase A. Everything it
-writes is checkable from the repository itself: the version from the release
-month, the practice list and statuses from frontmatter, the changes from the
-diff against the previous tag, the library and failure counts from the files.
+writes is checkable from the repository itself: the version from the month
+the release covers (the month before the run), the practice list and statuses
+from frontmatter, the changes from the diff against the previous tag, the library and failure counts from the files.
 Nothing is tagged and nothing is published. The prose is a factual summary; a
 reviewer edits it on the release branch if the snapshot deserves a narrative.
 
@@ -31,7 +31,7 @@ import re
 import subprocess
 import sys
 from dataclasses import dataclass, field
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 import yaml
@@ -625,7 +625,8 @@ def emit_outputs(values: dict[str, str]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--version", help="release version vYYYY.MM (default: the current month)"
+        "--version",
+        help="release version vYYYY.MM (default: the previous month, the one just ended)",
     )
     parser.add_argument(
         "--previous", help="tag to diff against (default: the newest other tag)"
@@ -644,7 +645,9 @@ def main() -> int:
         if args.date
         else datetime.now(timezone.utc).date()
     )
-    version = args.version or f"v{today.year}.{today.month:02d}"
+    # The workflow runs on the 1st and releases the month that just ended.
+    covered = today.replace(day=1) - timedelta(days=1)
+    version = args.version or f"v{covered.year}.{covered.month:02d}"
     if not VERSION.match(version):
         sys.exit(f"version '{version}' is not vYYYY.MM")
 

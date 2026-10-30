@@ -16,7 +16,7 @@ review at each gate.
 
 ## The split
 
-`.github/workflows/release.yaml` (automated, 25th of each month):
+`.github/workflows/release.yaml` (automated, 1st of each month, for the month just ended):
 
 - runs `scripts/prepare_release.py`, which determines the version, diffs against
   the previous tag, writes the release body to `release-notes/vYYYY.MM.md`, and
@@ -73,13 +73,14 @@ Raise this before any repo move, not after.
 ## Version scheme
 
 Calendar versioning, monthly: `vYYYY.MM` (example: `v2026.07`). The version is
-the release month, not a semver bump. Do not infer a version from commit types.
+the month the release covers, not a semver bump: the run on 1 November
+prepares `v2026.10`. Do not infer a version from commit types.
 
 ## Procedure
 
 ### Phase A: prepare (the workflow drafts it, you review, human merges)
 
-The 25th-of-the-month workflow has usually opened the PR already. Check with
+The workflow on the 1st has usually opened the PR already. Check with
 `gh pr list --search "release:" --state open`. Your work is the judgement the
 script cannot make:
 

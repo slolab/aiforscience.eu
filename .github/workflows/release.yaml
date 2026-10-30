@@ -2,9 +2,9 @@ name: Release PR
 
 # Cutting a citable snapshot stays a human act: an editor reads what the month
 # changed, and the tag is what Zenodo mints a DOI from. Only the mechanical half
-# is automated here. On the 25th this drafts the release body from the diff
-# against the previous tag, updates the releases page, and opens a PR for the
-# editor group. Nothing is tagged, nothing is published, no DOI is minted.
+# is automated here. On the 1st this drafts the release body for the month
+# that just ended from the diff against the previous tag, updates the releases
+# page, and opens a PR for the editor group. Nothing is tagged, nothing is published, no DOI is minted.
 #
 # The PR is opened with GITHUB_TOKEN, and PRs opened that way do not trigger
 # other workflows, so ci.yaml will not run on it. The same two checks it runs
@@ -12,11 +12,11 @@ name: Release PR
 
 on:
   schedule:
-    - cron: "0 6 25 * *" # 25th of each month, 06:00 UTC
+    - cron: "0 6 1 * *" # 1st of each month, 06:00 UTC: releases the month just ended
   workflow_dispatch:
     inputs:
       version:
-        description: "Version to prepare (vYYYY.MM). Defaults to the current month."
+        description: "Version to prepare (vYYYY.MM). Defaults to the previous month, the one just ended."
         required: false
         type: string
       force:
