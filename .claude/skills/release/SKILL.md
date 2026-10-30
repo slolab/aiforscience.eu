@@ -85,18 +85,19 @@ script cannot make:
 
 1. Read the PR. `uv run python scripts/prepare_release.py --dry-run` prints the
    same drafts locally without writing anything.
-2. Rewrite `## What changed` in `release-notes/vYYYY.MM.md` if the month
-   deserves a summary rather than a list of facts. Two to four sentences.
-   Leave the practice list alone: it is generated from frontmatter.
-3. Check the statuses against what the editor group actually accepted, and the
-   entry date in `docs/releases/index.md` against when the tag will land.
-   The script dates the entry the day it ran.
-4. Read the `release-drift.yaml` comment on the PR. It lists what has landed on
+2. Read the `release-drift.yaml` comment on the PR. It lists what has landed on
    main since the drafts were written. Those commits are in the snapshot
    regardless, because the tag lands on the merge commit, so decide whether the
-   notes have to account for them. Redrafting with `-f refresh=true` picks them
-   up and discards any edits made on the branch, so do it before step 2, not
-   after.
+   notes have to account for them. If they do, redraft now with
+   `gh workflow run release.yaml -f version=vYYYY.MM -f refresh=true`.
+   Redrafting discards any edits made on the branch, which is why it comes
+   before the edits in steps 3 and 4.
+3. Rewrite `## What changed` in `release-notes/vYYYY.MM.md` if the month
+   deserves a summary rather than a list of facts. Two to four sentences.
+   Leave the practice list alone: it is generated from frontmatter.
+4. Check the statuses against what the editor group actually accepted, and the
+   entry date in `docs/releases/index.md` against when the tag will land.
+   The script dates the entry the day it ran.
 5. Run `uv run mkdocs build --strict` after any edit.
 
 If there is no PR, the month had no changes, the month is already tagged, an
