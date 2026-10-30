@@ -397,7 +397,8 @@ bp7-a1:  # answers traceable to sources, open to audit
     quote: "archived in an accessible and identifiable manner for a period of ten years"
   - ref: bucher-chatgpt-data-loss-2026
     stance: supports
-    locator: "work kept only in a provider's chat history was deleted and could not be recovered"
+    locator: "the process record behind published work, kept only in a provider's chat history, was deleted and could not be recovered"
+    quote: "Losing it was like losing the laboratory notebooks behind published research"
   - ref: chatgpt-edu-licence-end-2026
     stance: supports
     locator: "content lost when the licence or contract ends; no complete export"

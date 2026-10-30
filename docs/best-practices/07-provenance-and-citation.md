@@ -57,8 +57,8 @@ sources:
     note: "Guideline 17 asks for research data and central materials to be backed up and normally archived for ten years, which a provider's chat history does not guarantee (bp7-a1)."
   - title: "Two years of academic work lost from a ChatGPT account (Bucher, Nature 2026)"
     ref: library/ref-bucher-chatgpt-data-loss-2026.md
-    locator: "subtitle and opening paragraph; OpenAI response as reported in press coverage"
-    note: "A researcher lost the chats and project folders behind grant applications, teaching materials and publication drafts after a settings change; the provider said deleted chats cannot be recovered and advised personal backups (bp7-a1). A single first-person account; grounding only."
+    locator: "full column, including OpenAI's statement to Nature ('No going back')"
+    note: "A researcher lost two years of prompts, iterations and project folders behind grant applications, teaching materials and publications after a settings change; the published results survived, the record of how they were made did not. OpenAI confirmed that deleted content cannot be recovered and recommended personal backups (bp7-a1). A single first-person account; grounding only."
   - title: "University guidance on ChatGPT Edu content when a licence ends (2026)"
     ref: library/ref-chatgpt-edu-licence-end-2026.md
     locator: "Politecnico di Torino, Washington University in St. Louis, San José State University IT pages"
@@ -127,7 +127,8 @@ A research agent has to pass citation and retraction status through to its outpu
 - The run is recorded: model version, inputs, and tool calls kept so a surprising result can be re-examined and, where possible, re-run.
 - The agent supplies the traceable evidence and the person makes the call, remaining accountable for the judgement.
 - A researcher who used a chat assistant daily for two years changes one account setting, and the chats and project folders behind grant applications, teaching material and manuscript drafts are deleted; the provider cannot restore them.
-  Drafts kept in the researcher's own files would have survived.
+  The published papers and lectures survive, but the prompts and iterations behind them, the equivalent of a lab notebook, are gone.
+  Regular exports to the researcher's own files would have kept them.
 - An institution cancels its chat-assistant licences for some staff, and users find that projects and drafts existed only in the provider's history.
   Some universities state in advance that content is lost when the licence or the contract ends and that the institutional tier offers no complete export.
   Asking users to move their work to their own storage before the cutover, and keeping it there from the start, prevents the loss.
