@@ -1,0 +1,107 @@
+name: Release DOI
+
+# The version DOI is minted by Zenodo from the published release, so it cannot
+# be in the release PR. This workflow closes that gap: when a release is
+# published it waits for the mint, records the DOI on the releases page, and
+# opens a one-line PR. Until it merges, the entry simply carries no DOI, which
+# is accurate rather than half-finished.
+#
+# As with release.yaml, the PR is opened with GITHUB_TOKEN, so ci.yaml will not
+# run on it and the strict build runs here instead.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Released version (vYYYY.MM). Defaults to the newest tag."
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: release-doi
+  cancel-in-progress: false
+
+jobs:
+  fill:
+    # Only calendar-versioned snapshots go to Zenodo.
+    if: >-
+      github.event_name == 'workflow_dispatch'
+      || startsWith(github.event.release.tag_name, 'v2')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main # the PR is based on main, not on the tag
+          fetch-depth: 0
+          fetch-tags: true # the version defaults to the newest tag
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: uv sync
+
+      # Zenodo mints asynchronously. The script polls the concept record and
+      # only accepts a deposit whose version matches this tag, so it cannot
+      # record the previous month's DOI while the new one is in flight.
+      - name: Wait for the mint and record the DOI
+        id: doi
+        env:
+          VERSION_INPUT: ${{ github.event.inputs.version || github.event.release.tag_name }}
+        run: |
+          uv run python scripts/fill_release_doi.py \
+            ${VERSION_INPUT:+--version "$VERSION_INPUT"} \
+            --pr-body-out "${{ runner.temp }}/pr-body.md"
+
+      - name: Check for an open DOI PR
+        if: steps.doi.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.doi.outputs.version }}
+        run: |
+          open_pr=$(gh pr list --head "release/$VERSION-doi" --state open \
+            --json number --jq '.[0].number // empty')
+          if [ -n "$open_pr" ]; then
+            echo "GO=false" >> "$GITHUB_ENV"
+            echo "PR #$open_pr already records the $VERSION DOI." \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo "GO=true" >> "$GITHUB_ENV"
+          fi
+
+      - name: Strict build
+        if: env.GO == 'true'
+        run: uv run mkdocs build --strict
+
+      - name: Open the DOI PR
+        if: env.GO == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.doi.outputs.version }}
+          DOI: ${{ steps.doi.outputs.doi }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "release/$VERSION-doi"
+          git add docs/releases/index.md
+          git commit -m "release: record the $VERSION DOI ($DOI)"
+          git push --force-with-lease origin "release/$VERSION-doi"
+          url=$(gh pr create --base main --head "release/$VERSION-doi" \
+            --title "release: record the $VERSION DOI" \
+            --body-file "${{ runner.temp }}/pr-body.md")
+          echo "Opened $url" | tee -a "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,110 @@
+name: Release drift
+
+# The release drafts are a snapshot of the day they were prepared. Anything
+# merged after that is still in the snapshot, because the tag lands on the merge
+# commit, but it is not in the release notes or in the releases-page entry.
+#
+# Redrafting on every push would keep the two in step, but it force-pushes the
+# release branch and discards whatever the reviewer wrote there. So this only
+# says what has landed, in one comment kept current on the open release PR, and
+# leaves the decision to redraft to the reviewer.
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: write
+
+# Only the newest count is worth having, so an in-flight run can be dropped.
+concurrency:
+  group: release-drift
+  cancel-in-progress: true
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say what has landed since the drafts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          # The same pattern release.yaml uses: monthly release PRs only, never
+          # the release/vYYYY.MM-doi ones.
+          pr=$(gh pr list --state open --limit 100 \
+            --json number,headRefName,headRefOid \
+            --jq '.[] | "\(.number) \(.headRefName) \(.headRefOid)"' \
+            | grep -E ' release/v[0-9]{4}\.[0-9]{2} ' || true)
+          if [ -z "$pr" ]; then
+            echo "No open release PR; nothing to report." \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          number=$(printf '%s' "$pr" | awk 'NR == 1 {print $1}')
+          branch=$(printf '%s' "$pr" | awk 'NR == 1 {print $2}')
+          head=$(printf '%s' "$pr" | awk 'NR == 1 {print $3}')
+          version="${branch#release/}"
+
+          # Comparing against the PR head, not against a date, so commits the
+          # reviewer already pulled onto the release branch do not count.
+          compare=$(gh api "repos/$REPO/compare/$head...$SHA")
+          ahead=$(printf '%s' "$compare" | jq -r '.ahead_by')
+
+          # One comment, kept current. A new one per push would bury the PR.
+          id=$(gh api "repos/$REPO/issues/$number/comments" --paginate \
+            --jq '.[] | select(.body | startswith("<!-- release-drift -->")) | .id' \
+            | head -1)
+
+          if [ "$ahead" -eq 0 ]; then
+            if [ -z "$id" ]; then
+              echo "PR #$number is current with main." \
+                | tee -a "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            body=$(printf '%s\n' \
+              "<!-- release-drift -->" \
+              "The drafts are current with \`main\` again. Nothing has landed since they were prepared.")
+          else
+            if [ "$ahead" -eq 1 ]; then
+              phrase="commit has"
+            else
+              phrase="commits have"
+            fi
+            # Newest last, matching the order they appear in the log.
+            listed=$(printf '%s' "$compare" \
+              | jq -r '.commits[-10:][] | "- `\(.sha[0:7])` \(.commit.message | split("\n")[0])"')
+            if [ "$ahead" -gt 10 ]; then
+              listed=$(printf '%s\n' "$listed" \
+                "" \
+                "The $((ahead - 10)) older ones are not listed.")
+            fi
+            body=$(printf '%s\n' \
+              "<!-- release-drift -->" \
+              "**$ahead $phrase landed on \`main\` since these drafts were prepared.**" \
+              "" \
+              "The tag lands on the merge commit, not on the commit the drafts were written from, so this work is in the snapshot either way. It is not in the release notes or in the releases-page entry." \
+              "" \
+              "$listed" \
+              "" \
+              "Redraft if the notes should account for them. This replaces any edits made on this branch:" \
+              "" \
+              '```' \
+              "gh workflow run release.yaml -f version=$version -f refresh=true" \
+              '```')
+          fi
+
+          if [ -n "$id" ]; then
+            jq -n --arg body "$body" '{body: $body}' \
+              | gh api --silent --input - -X PATCH \
+                "repos/$REPO/issues/comments/$id"
+          else
+            jq -n --arg body "$body" '{body: $body}' \
+              | gh api --silent --input - \
+                "repos/$REPO/issues/$number/comments"
+          fi
+          echo "PR #$number: $ahead ahead of the drafts." \
+            | tee -a "$GITHUB_STEP_SUMMARY"
