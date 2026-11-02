@@ -6,10 +6,10 @@ title: Events
 
 ## Monthly meeting
 
-An open call, once a month (time TBD).
-Link will be shared here.
+A call on the first Wednesday of every month, 14:00 Central European Time (CET/CEST).
+For now, the monthly meeting of the ELIXIR Task Force on Agentic AI serves as this call.
 Discuss practices under review, new challenges, documents entering the library.
-Anyone may join, listen, or bring a case.
+To get an invitation, write to the [AI for Science Google Group](https://groups.google.com/g/aiforscience) or to [aiforscience@googlegroups.com](mailto:aiforscience@googlegroups.com).
 
 ## Other events
 
