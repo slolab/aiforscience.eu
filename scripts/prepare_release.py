@@ -6,8 +6,8 @@ This is the mechanical half of the `release` skill's Phase A. Everything it
 writes is checkable from the repository itself: the version from the month
 the release covers (the month before the run), the practice list and statuses
 from frontmatter, the changes from the diff against the previous tag, the library and failure counts from the files.
-Nothing is tagged and nothing is published. The prose is a factual summary; a
-reviewer edits it on the release branch if the snapshot deserves a narrative.
+Nothing is tagged and nothing is published. The prose is a list of facts; a
+reviewer rewrites it on the release branch as a summary before merging.
 
 Outputs:
 
@@ -441,7 +441,7 @@ def render_notes(practices: dict[str, Practice], changes: Changes) -> str:
             "",
             *practice_list(practices),
             "",
-            "This is a dated snapshot of the living record at https://aiforscience.eu.",
+            "This is a dated snapshot of the practices at https://aiforscience.eu.",
             "The live site always shows the current state.",
             "",
         ]
@@ -556,13 +556,16 @@ def render_pr_body(
             f"(previous: {prev}). Nothing is tagged and nothing is published yet.",
             "",
             "The drafts below are assembled from the diff against the previous "
-            "tag and from practice frontmatter. They state facts, not a "
-            "narrative. Edit them on this branch if the snapshot deserves one.",
+            "tag and from practice frontmatter. They list facts: a page counts "
+            "as revised even when only its frontmatter changed. Rewrite the "
+            "summary on this branch before merging (step 3 of the `release` "
+            "skill).",
             "",
             "## Review",
             "",
-            f"- [ ] `## What changed` in `{notes_path}` reads as a summary of "
-            "this snapshot.",
+            f"- [ ] `## What changed` in `{notes_path}` and the "
+            "`docs/releases/index.md` entry are rewritten as a summary: what "
+            "changed in each practice, not a list of files.",
             "- [ ] The statuses in the practice list match what the editor "
             "group accepted.",
             "- [ ] The `docs/releases/index.md` entry says what the snapshot "

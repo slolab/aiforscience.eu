@@ -148,5 +148,7 @@ and the future hover can address it. Ids are stable handles, not tied to wording
   what has landed on main since the drafts were written. Merging it tags the version at the merge
   commit (`release-tag.yaml`). Publishing the release is the human step, and it
   starts `release-doi.yaml`, which waits for the Zenodo mint and opens a second
-  PR recording the DOI. The `release` skill (.claude/skills/release/) covers
-  reviewing both PRs and preparing the release command.
+  PR recording the DOI. The drafted summary is a list of facts from the diff;
+  every release PR gets a written pass before merging. The `release` skill
+  (.claude/skills/release/) covers that pass, reviewing both PRs, and
+  preparing the release command.

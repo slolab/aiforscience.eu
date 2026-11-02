@@ -93,9 +93,20 @@ script cannot make:
    `gh workflow run release.yaml -f version=vYYYY.MM -f refresh=true`.
    Redrafting discards any edits made on the branch, which is why it comes
    before the edits in steps 3 and 4.
-3. Rewrite `## What changed` in `release-notes/vYYYY.MM.md` if the month
-   deserves a summary rather than a list of facts. Two to four sentences.
-   Leave the practice list alone: it is generated from frontmatter.
+3. Rewrite the summary. Do this every month: the draft is a list of facts
+   from the diff, and it is not fit to publish as it stands. It counts a page
+   as revised when only its frontmatter changed (a source added, a `title:`
+   removed), and its "Also updated" line is a list of file paths. Read the
+   merged PRs instead
+   (`git log --merges --first-parent <previous tag>..main`, then
+   `gh pr view <n>`) and write what changed in each practice: practices added,
+   atoms reworded or added, titles changed, challenges resolved, status moves,
+   endorsements. Drop pages whose change a reader would not notice. Rewrite
+   both places: `## What changed` in `release-notes/vYYYY.MM.md` (two to six
+   sentences) and the entry text in `docs/releases/index.md` (same content,
+   shorter, in the style of the earlier entries). Keep the counts the script
+   computed (practices, sources, failures logged); they are correct. Leave the
+   practice list alone: it is generated from frontmatter.
 4. Check the statuses against what the editor group actually accepted, and the
    entry date in `docs/releases/index.md` against when the tag will land.
    The script dates the entry the day it ran.
@@ -176,14 +187,14 @@ Release body (`release-notes/vYYYY.MM.md`, fed to `gh release create`):
 ## What changed
 
 <what the diff against the previous tag shows: practices added, status moves,
-endorsements, revised pages, new library entries, failures logged. Replace with
-two to four sentences of summary when the month warrants it.>
+endorsements, revised pages, new library entries, failures logged. Step 3
+replaces this with a written summary before the PR merges.>
 
 ## Practices in this snapshot
 
 <one line per practice: BP-NN, title, status.>
 
-This is a dated snapshot of the living record at https://aiforscience.eu.
+This is a dated snapshot of the practices at https://aiforscience.eu.
 The live site always shows the current state.
 ```
 

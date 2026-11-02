@@ -79,8 +79,11 @@ On approval, the PR was merged, triggering an update to the website.
 Each month we create a dated snapshot: a git tag, a GitHub release, and a Zenodo deposit with its own DOI.
 Preparing the snapshot is automated.
 On the 1st of each month, a release pull request for the month just ended is opened with the release notes and the [Releases](../releases/index.md) entry already drafted from what changed since the previous tag.
-An editor then edits two parts: the summary of the month, which the draft states as a list of changes, and the practice statuses.
-An agent skill in the repository prepares those edits, and an editor decides what stands.
+The draft is a list of facts taken from the diff: which pages changed, how many sources were added.
+It cannot tell a reworded practice from a metadata edit, and it does not say what a change was about.
+So every release pull request gets a written pass before it is merged.
+An editor, or an agent using the `release` skill in the repository, rewrites the summary of the month in the release notes and in the Releases entry, naming what changed in each practice.
+The editor checks the practice statuses and decides what stands.
 Merging the pull request is what commits the snapshot: the version is automatically tagged on merge.
 An editor publishes the GitHub release, using the created tag.
 That release triggers the Zenodo deposit and DOI minting.
