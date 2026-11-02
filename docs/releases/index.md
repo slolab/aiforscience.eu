@@ -21,7 +21,7 @@ BP-02 and BP-07 have new titles; BP-02 and BP-05 now state the boundary between 
 The library holds twelve distilled sources and 69 reference works, and the failures log eight entries.
 Source lists on the practice pages now take each title from the library page.
 
-DOI: VERSION_DOI · [GitHub release](https://github.com/slolab/aiforscience.eu/releases/tag/v2026.10)
+DOI: [10.5281/zenodo.23891345](https://doi.org/10.5281/zenodo.23891345) · [GitHub release](https://github.com/slolab/aiforscience.eu/releases/tag/v2026.10)
 
 ### v2026.09 (2026-10-08)
 
@@ -57,7 +57,7 @@ DOI: [10.5281/zenodo.21709876](https://doi.org/10.5281/zenodo.21709876) · [GitH
 
 Cite the record by release, not by URL alone:
 
-> AI for Science contributors. *Best Practices for Agentic AI in Science*, release 2026.10. https://aiforscience.eu, DOI: VERSION_DOI.
+> AI for Science contributors. *Best Practices for Agentic AI in Science*, release 2026.10. https://aiforscience.eu, DOI: 10.5281/zenodo.23891345.
 
 Each release has its own version DOI.
 The concept DOI [10.5281/zenodo.21709875](https://doi.org/10.5281/zenodo.21709875) is stable across all releases and resolves to the latest snapshot.
