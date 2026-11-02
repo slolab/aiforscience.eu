@@ -10,6 +10,19 @@ Each release receives a DOI via Zenodo.
 
 ## Past releases
 
+### v2026.10 (2026-11-02)
+
+Fourth dated snapshot.
+Eleven practices, all at `draft` status, with no endorsements yet.
+It captures the practices as of 30 October 2026.
+BP-11, Decide where research data may be sent, is new; it is grounded in EU data protection guidance, AI-provider terms, and two failures-log entries in which chat data left an organisation's control.
+Seven challenges raised on GitHub were resolved: BP-01 names model drift as a reason for method choice, BP-03 states that an interface runs code, supplies instructions, or both, BP-04 covers agents on a group's own shared infrastructure, BP-07 requires persistent identifiers, and BP-08 requires a judge independent of the tool under evaluation.
+BP-02 and BP-07 have new titles; BP-02 and BP-05 now state the boundary between them, as do BP-08 and BP-09.
+The library holds twelve distilled sources and 69 reference works, and the failures log eight entries.
+Source lists on the practice pages now take each title from the library page.
+
+DOI: VERSION_DOI · [GitHub release](https://github.com/slolab/aiforscience.eu/releases/tag/v2026.10)
+
 ### v2026.09 (2026-10-08)
 
 Third dated snapshot.
@@ -44,7 +57,7 @@ DOI: [10.5281/zenodo.21709876](https://doi.org/10.5281/zenodo.21709876) · [GitH
 
 Cite the record by release, not by URL alone:
 
-> AI for Science contributors. *Best Practices for Agentic AI in Science*, release 2026.09. https://aiforscience.eu, DOI: 10.5281/zenodo.23236850.
+> AI for Science contributors. *Best Practices for Agentic AI in Science*, release 2026.10. https://aiforscience.eu, DOI: VERSION_DOI.
 
 Each release has its own version DOI.
 The concept DOI [10.5281/zenodo.21709875](https://doi.org/10.5281/zenodo.21709875) is stable across all releases and resolves to the latest snapshot.
