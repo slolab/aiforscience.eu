@@ -9,7 +9,12 @@ Endorsement is recorded per practice, not wholesale: an organisation backs the s
 
 ## Contributing organisations
 
+- **Helmholtz Association**: Germany's largest research organisation, made up of independent research centres.
+- **Helmholtz Munich**: Helmholtz research centre.
 - **Helmholtz AI**: task force on AI for science; origin of the running best practice model used here.
+- **ELIXIR**: the European infrastructure for life science data.
+  This effort grew out of the Task Force on Agentic AI in ELIXIR's AI Ecosystem Focus Group.
+  ELIXIR as a whole has not endorsed the practices.
 
 ## Joining
 
