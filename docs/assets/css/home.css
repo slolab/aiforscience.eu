@@ -813,7 +813,7 @@ body {
 .afs-trust-strip__label {
   flex: none;
   color: var(--afs-muted);
-  font-size: 0.66rem;
+  font-size: 0.87rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -826,7 +826,28 @@ body {
   object-fit: contain;
 }
 
+/* The PARTNERS label and both Helmholtz logos share one letter height,
+   0.62rem: the Helmholtz Munich SVG is only its letters, so its height is the
+   letter height. The Helmholtz AI PNG has padding: its "HELMHOLTZ" letters
+   fill 96 of 286 pixel rows, so 0.62 * 286 / 96 = 1.85rem. The label's
+   capitals are about 0.71 of its font size (0.87rem). The ELIXIR emblem (4:3)
+   is sized by eye. */
+.afs-trust-strip__logo--wordmark {
+  height: 0.62rem;
+}
+
+.afs-trust-strip__logo--helmholtz-ai {
+  height: 1.85rem;
+}
+
+.afs-trust-strip__logo--emblem {
+  height: 1.9rem;
+}
+
 .afs-trust-strip__note {
+  /* Shrinks and wraps first, so the invite link stays on the logo row. */
+  flex: 1 1 12rem;
+  min-width: 0;
   color: var(--afs-muted);
   font-size: 0.72rem;
 }
