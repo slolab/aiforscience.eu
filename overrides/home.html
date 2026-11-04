@@ -30,16 +30,19 @@
               so the choice of assistant costs no space in the hero. A native
               <details> element, so it opens and closes without JavaScript;
               ai_cta.js only adds close-on-outside-click, Escape, and the copy
-              actions. Gemini has no prompt-in-URL parameter, so its item
-              copies the prompt and opens Gemini for the reader to paste. -#}
+              action. ChatGPT and Claude take a prompt in the URL. Gemini and
+              most other assistants do not, so the last item copies a prompt
+              with the short version's text in it, ready to paste anywhere,
+              including assistants that cannot open links. -#}
           {%- set afs_prompt = "Read the AI for Science best practices for agentic AI in research at https://aiforscience.eu/llms-full.txt and answer my questions using only that source, citing the practice each point comes from. My question: " -%}
-          <details class="afs-ai-menu" data-afs-ai-cta data-afs-ai-prompt="{{ afs_prompt }}">
+          <details class="afs-ai-menu" data-afs-ai-cta
+            data-afs-ai-intro="Answer my questions using only the AI for Science best practices for agentic AI in research, summarised below. Cite the practice each point comes from. The full practices are at https://aiforscience.eu/llms-full.txt."
+            data-afs-ai-outro="My question: ">
             <summary class="afs-ai-menu__toggle">Ask your AI assistant <span class="afs-ai-menu__caret" aria-hidden="true">▾</span></summary>
             <div class="afs-ai-menu__panel">
               <a class="afs-ai-menu__item" rel="noopener noreferrer" target="_blank" href="https://chatgpt.com/?q={{ afs_prompt | urlencode }}">ChatGPT</a>
               <a class="afs-ai-menu__item" rel="noopener noreferrer" target="_blank" href="https://claude.ai/new?q={{ afs_prompt | urlencode }}">Claude</a>
-              <a class="afs-ai-menu__item" rel="noopener noreferrer" target="_blank" href="https://gemini.google.com/app" data-afs-ai-copy-prompt>Gemini <span class="afs-ai-menu__hint">copies the prompt to paste</span></a>
-              <button class="afs-ai-menu__item" type="button" data-afs-ai-copy="{{ 'short-version/index.md' | url }}">Copy as Markdown <span class="afs-ai-menu__hint">the short version</span></button>
+              <button class="afs-ai-menu__item" type="button" data-afs-ai-copy="{{ 'short-version/index.md' | url }}" data-afs-ai-wrap>Gemini or another assistant <span class="afs-ai-menu__hint">copies a prompt to paste</span></button>
             </div>
           </details>
         </div>

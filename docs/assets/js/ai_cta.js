@@ -7,20 +7,24 @@
  *  - wires each "Copy as Markdown" button ([data-afs-ai-copy]) to a Markdown
  *    mirror written by hooks/llms_txt.py: the attribute's value if it has one,
  *    otherwise the current page's index.md. Falls back to copying the page URL;
- *  - for links marked [data-afs-ai-copy-prompt] (Gemini, which takes no prompt
- *    in the URL), copies the block's data-afs-ai-prompt before the link opens;
+ *  - with [data-afs-ai-wrap], wraps the copied Markdown in the block's
+ *    data-afs-ai-intro and data-afs-ai-outro, so it pastes as a ready prompt
+ *    into Gemini or any assistant that takes no prompt in the URL;
  *  - closes the hero's <details> menu on an outside click or Escape.
  */
 (function () {
   "use strict";
 
   function initCta(cta) {
+    var intro = cta.getAttribute("data-afs-ai-intro") || "";
+    var outro = cta.getAttribute("data-afs-ai-outro") || "";
     var copyBtns = cta.querySelectorAll("[data-afs-ai-copy]");
     Array.prototype.forEach.call(copyBtns, function (copyBtn) {
       var src = copyBtn.getAttribute("data-afs-ai-copy") || "index.md";
       var mdUrl = new URL(src, window.location.href).href;
+      var wrap = copyBtn.hasAttribute("data-afs-ai-wrap");
       copyBtn.addEventListener("click", function () {
-        fetch(mdUrl)
+        var text = fetch(mdUrl)
           .then(function (r) {
             if (!r.ok) throw new Error("no mirror");
             return r.text();
@@ -28,25 +32,17 @@
           .catch(function () {
             return window.location.href;
           })
-          .then(function (text) {
-            return navigator.clipboard.writeText(text);
-          })
+          .then(function (md) {
+            if (!wrap) return md;
+            return intro + "\n\n---\n\n" + md.trim() + "\n\n---\n\n" + outro;
+          });
+        copyText(text)
           .then(function () {
-            flash(copyBtn, "Copied");
+            flash(copyBtn, wrap ? "Copied. Paste it into your assistant." : "Copied");
           })
           .catch(function () {
             flash(copyBtn, "Copy failed");
           });
-      });
-    });
-
-    var prompt = cta.getAttribute("data-afs-ai-prompt");
-    var promptLinks = cta.querySelectorAll("[data-afs-ai-copy-prompt]");
-    Array.prototype.forEach.call(promptLinks, function (link) {
-      link.addEventListener("click", function () {
-        if (prompt && navigator.clipboard) {
-          navigator.clipboard.writeText(prompt).catch(function () {});
-        }
       });
     });
 
@@ -61,6 +57,26 @@
         }
       });
     }
+  }
+
+  // Copy a promised string. Safari only allows clipboard writes started inside
+  // the click, so hand it a ClipboardItem that resolves after the fetch.
+  function copyText(textPromise) {
+    if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+      var item = new ClipboardItem({
+        "text/plain": textPromise.then(function (t) {
+          return new Blob([t], { type: "text/plain" });
+        }),
+      });
+      return navigator.clipboard.write([item]).catch(function () {
+        return textPromise.then(function (t) {
+          return navigator.clipboard.writeText(t);
+        });
+      });
+    }
+    return textPromise.then(function (t) {
+      return navigator.clipboard.writeText(t);
+    });
   }
 
   // Swap the label briefly. innerHTML, so a button's hint span survives.
