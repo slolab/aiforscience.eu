@@ -41,7 +41,7 @@ sources:
     locator: "no perpetual licence; analysis is not training permission"
     note: "Adjacent support: analysis permission is not training permission, and no perpetual licence should be taken over patient-level data. Individual commentary; it does not itself make the revocable-consent argument."
   - ref: library/era-living-guidelines-genai-2026.md
-    locator: "Recommendations for researchers 3, p. 8"
+    locator: "§2 recommendation 3, pp. 5-6 (fourth version)"
     note: "Tells researchers that uploaded input may be used to train models, and not to upload sensitive work without assurances against re-use (bp10-a5). Non-binding."
   - ref: library/edpb-opinion-ai-models-2024.md
     locator: "paras 34, 114"

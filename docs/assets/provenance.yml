@@ -37,8 +37,8 @@ bp1-a1:  # method fit; an agent or frontier model is one option, not the default
     quote: "there is currently no stable, globally positive treatment effect for agentic AI. Average headline figures ... will systematically misrepresent the benefit realised by any specific user, team, or organisation"
   - ref: era-living-guidelines-genai-2026
     stance: supports
-    locator: "Recommendations for researchers 5, p. 9"
-    quote: "evaluating whether and which AI tool is best suited for the intended task"
+    locator: "§1 principles, p. 4; §2 recommendation 5, p. 6 (fourth version)"
+    quote: "Always consider whether AI is the right and best tool for a particular task"
 bp1-a2:  # for well-defined work, a deterministic or specialized method often fits better
   - ref: kapoor-agents-that-matter-2024
     stance: supports
@@ -126,8 +126,8 @@ bp2-a4:  # access governed by resource
     quote: "sensitive data remain within an institutionally approved environment, with analysis against those data performed locally or through an approved secure-processing arrangement"
   - ref: era-living-guidelines-genai-2026
     stance: supports
-    locator: "Recommendations for research organisations 4, p. 10: locally hosted or self-governed tools"
-    quote: "implement locally hosted or cloud-based generative AI tools that they govern themselves. This enables their employees to feed their scientific data into a tool that ensures data protection and confidentiality"
+    locator: "§3 recommendation 4, p. 9 (fourth version): locally hosted or self-governed tools"
+    quote: "implement locally hosted or cloud-based generative AI tools that they govern themselves. This enables their employees to feed their scientific data into a tool that ensures data protection, confidentiality and research security"
   - ref: ehds-2025
     stance: supports
     locator: "Art 73(1) access only through a secure processing environment; Art 73(2) only non-personal data may be downloaded (health-data instance)"
@@ -188,6 +188,10 @@ bp3-a6:  # public interfaces vulnerable to prompt injection
     stance: supports
   - ref: invariant-tool-poisoning-2025
     stance: supports
+  - ref: era-living-guidelines-genai-2026
+    stance: supports
+    locator: "§4 recommendation 6, p. 11; footnote 22: hidden prompts in applications and proposals"
+    quote: "Research funding organisations remain aware that content may contain hidden prompts or invisible instructions intended to influence generative AI tools."
 bp3-a7:  # safety and omnipotence are on a tradeoff
   - ref: copilot-word-ai-worm-2026
     stance: supports
@@ -292,6 +296,10 @@ bp4-a5:  # named human owner for each responsibility
   - ref: transparency-cop-2026
     stance: supports
     locator: "Section 2, Commitment 4(a): name, role and contact details"
+  - ref: era-living-guidelines-genai-2026
+    stance: supports
+    locator: "§2 recommendations 1 and 4, pp. 5-6; §5 Agentic AI, p. 12"
+    quote: "The use of AI agents may never be considered a delegation of control or responsibility."
 bp4-a6:  # actions logged under an attributable identity
   - ref: chan-visibility-2024
     stance: supports
@@ -395,6 +403,10 @@ bp7-a1:  # answers traceable to sources, open to audit
     stance: supports
     locator: "§II trust gap, §IV Invariant I and Table I: reference existence separated from evidential support"
     quote: "existence of a reference is machine-checkable, support for a claim is a judgement"
+  - ref: era-living-guidelines-genai-2026
+    stance: supports
+    locator: "§2 recommendation 2, p. 5: retain prompts, logs, model versions where needed to audit; retention left to authors"
+    quote: "Authors decide whether prompts, logs, model versions, parameters and other information should be retained or shared, based on whether these are needed to understand, reproduce or audit the research, or to assess its validity."
 bp7-a2:  # clear what a human did and what an agent did
   - ref: credit-2022
     stance: supports
@@ -410,8 +422,8 @@ bp7-a2:  # clear what a human did and what an agent did
     locator: "§IV Model, §VI Table III: attribution per activity rather than per idea"
   - ref: era-living-guidelines-genai-2026
     stance: supports
-    locator: "Recommendations for researchers 1 and 2, pp. 7-8: accountable for AI-assisted content; AI not an author; substantial use noted in the methods section"
-    quote: "AI systems are neither authors nor co-authors. Authorship implies agency and responsibility, so it lies with human researchers."
+    locator: "§2 recommendations 1 and 2, p. 5 (fourth version): accountable for AI-assisted content; AI not an author; disclose what AI tools contributed"
+    quote: "Researchers disclose which AI tools or systems were used substantially in their research or reporting processes and describe what they contributed or were used for."
   - ref: copilot-word-ai-worm-2026
     stance: supports
     locator: "Implications; Impact"
@@ -464,6 +476,10 @@ bp8-a2:  # prove suitability before informing scientific work
     stance: qualifies
     locator: "Art 4a; Recital 9"
     quote: "conditional legal basis to process special-category data to detect and correct bias, subject to strict safeguards"
+  - ref: era-living-guidelines-genai-2026
+    stance: supports
+    locator: "§5 Use of AI in peer review, p. 13: assess suitability before deploying a tool"
+    quote: "Before deploying any AI tool, editors and reviewers should first assess whether it is the most suitable and reliable means of performing the specific task"
 bp8-a3:  # no good general proxy for correctness in individual use
   - ref: reforms-2024
     stance: supports
@@ -503,6 +519,15 @@ bp9-a1:  # state the HITL level for each use case
     stance: supports
     locator: "p. 14: human intervention required for consequences judged critical; user chooses which actions need validation"
     quote: "Il est également possible de limiter le degré d'autonomie en imposant une intervention humaine pour des conséquences jugées critiques."
+  - ref: era-living-guidelines-genai-2026
+    stance: supports
+    locator: "§2 recommendation 1, p. 5: checkpoints for critical decisions in agent workflows"
+    quote: "researchers identify and ensure relevant check points throughout the process to ensure that critical decisions (for example methodological) are validated by the researchers."
+bp9-a2:  # HITL can be mandatory or optional, from in-process control to a final check
+  - ref: era-living-guidelines-genai-2026
+    stance: supports
+    locator: "footnote 29, p. 17: human-in-the-loop, human-on-the-loop, human-in-command"
+    quote: "HITL involves human intervention in every decision cycle of the system, which in many cases is neither possible nor desirable. HOTL involves human intervention during the design cycle of the system and monitoring how the system operates."
 bp9-a5:  # stating a level is necessary but not sufficient
   - ref: elish-2019
     stance: supports
@@ -534,6 +559,10 @@ bp9-a6:  # HITL engagement provenance recorded per BP07
     stance: qualifies
     locator: "Section 2, Commitment 4(b): a review policy is required, per-instance records are not"
     quote: "This does not entail having to document individual instances of human review or editorial control over individual text publications."
+  - ref: era-living-guidelines-genai-2026
+    stance: supports
+    locator: "§2 recommendation 2, p. 5: describe oversight and verification strategies"
+    quote: "Researchers also describe meaningful information about oversight and verification strategies (such as measures to identify hallucinations, mitigate bias, etc.)"
 
 # ------------------------------------------------------------------ BP10
 bp10-a1:  # some agents carry dual-use risk
@@ -569,7 +598,7 @@ bp10-a5:  # revocable consent cannot authorise irreversible training
     quote: "Permission to analyse them does not imply permission to transfer them, or derived patient-level information, to a third party for model training or product development"
   - ref: era-living-guidelines-genai-2026
     stance: supports
-    locator: "Recommendations for researchers 3, p. 8: uploaded input may train models; do not upload sensitive work without assurances"
+    locator: "§2 recommendation 3, pp. 5-6 (fourth version): uploaded input may train models; do not upload sensitive work without assurances"
     quote: "they protect unpublished or sensitive work (such as their own or others' unpublished work) by taking care not to upload it into an external AI system unless there are assurances that the data will not be re-used, e.g., to train future language models"
   - ref: edpb-opinion-ai-models-2024
     stance: supports
@@ -602,7 +631,7 @@ bp10-a4:  # high-consequence actions through a screening chokepoint
 bp11-a1:  # sending data to an AI service hands it to the provider under the service's terms
   - ref: era-living-guidelines-genai-2026
     stance: supports
-    locator: "Recommendations for researchers 3, p. 8: uploaded input could be used for other purposes, such as training"
+    locator: "§2 recommendation 3, p. 5 (fourth version): uploaded input could be used for other purposes, such as training"
     quote: "Researchers remain mindful that generated or uploaded input (text, data, prompts, images, etc.) could be used for other purposes, such as the training of AI models."
   - ref: dutch-dpa-chatbot-breaches-2024
     stance: supports
@@ -623,8 +652,8 @@ bp11-a2:  # account tier and contract decide training, retention, and who else c
     quote: "bereits bei Inbetriebnahme eines Accounts so gewählt werden, dass keine Eingabedaten zu Trainingszwecken verarbeitet werden"
   - ref: era-living-guidelines-genai-2026
     stance: supports
-    locator: "Recommendations for researchers 3, pp. 8-9: check privacy options, who manages the tool, where it runs"
-    quote: "They check, for example, their institutional guidelines, the privacy options of the tools, who is managing the tool (public or private institutions, companies, etc.), where the tool is running and implications for any information uploaded."
+    locator: "§2 recommendation 3, p. 6 (fourth version): check privacy options, who owns or manages the tool, where it runs"
+    quote: "They check, for example, their institutional guidelines, the privacy options of the tools, who is owning or managing the tool (public or private institutions, companies, etc.), where the tool is running and implications for any information uploaded."
   - ref: aepd-agentic-ai-2026
     stance: supports
     locator: "pp. 57-58: online service contracts do not fit the local legal regime and change unilaterally"
@@ -651,7 +680,7 @@ bp11-a3:  # protected data goes only to a service under a fitting contract, or s
     quote: "Through updated contractual, technical, and organisational measures, it has ensured that Microsoft and sub-processors process data solely based on documented instructions"
   - ref: era-living-guidelines-genai-2026
     stance: supports
-    locator: "Recommendations for researchers 3, p. 8: no upload without assurances against re-use; Recommendations for research organisations 4, p. 10: self-governed tools"
+    locator: "§2 recommendation 3, pp. 5-6: no upload without assurances against re-use; §3 recommendation 4, p. 9: self-governed tools (fourth version)"
     quote: "taking care not to upload it into an external AI system unless there are assurances that the data will not be re-used"
   - ref: dutch-dpa-chatbot-breaches-2024
     stance: supports
@@ -678,3 +707,7 @@ bp11-a5:  # for an agent, the services it may send data to are a limit set in th
     stance: supports
     locator: "pp. 14-15: classify actions per connected service by risk, including sending data outside the system"
     quote: "il peut être utile de classer les actions possibles sur chaque service par niveau de risque (accès à des données, modification et suppression de donnés, envoi de données hors système et typologie de données traitées : financières, de santé, etc.)"
+  - ref: era-living-guidelines-genai-2026
+    stance: qualifies
+    locator: "§2 recommendation 3, p. 6: the researcher instructs and constrains an agent given sensitive data; the record holds instructions alone are insufficient"
+    quote: "If an AI agent is granted access to sensitive information following a suitability assessment, the researcher shall instruct and constrain potential confidentiality breaches and remain accountable for how the agent uses that sensitive information."
