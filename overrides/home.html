@@ -39,7 +39,7 @@
           <details class="afs-ai-menu" data-afs-ai-cta
             data-afs-ai-intro="Answer my questions using only the AI for Science best practices for agentic AI in research, summarised below. Cite the practice each point comes from. The full practices are at https://aiforscience.eu/llms-full.txt."
             data-afs-ai-outro="My question: ">
-            <summary class="afs-ai-menu__toggle">Ask your AI assistant <svg class="afs-ai-menu__caret" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <summary class="afs-ai-menu__toggle">Ask your AI assistant <svg class="afs-hero-note__arrow" viewBox="0 0 40 60" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M36 3 C 36 30, 26 48, 6 52"/><path d="M13 46 L 6 52 L 13 57"/></svg><svg class="afs-ai-menu__caret" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
             <div class="afs-ai-menu__panel">
               <a class="afs-ai-menu__item" rel="noopener noreferrer" target="_blank" href="https://chatgpt.com/?q={{ afs_prompt | urlencode }}">ChatGPT</a>
               <a class="afs-ai-menu__item" rel="noopener noreferrer" target="_blank" href="https://claude.ai/new?q={{ afs_prompt | urlencode }}">Claude</a>
@@ -48,15 +48,13 @@
           </details>
         </div>
 
-        {#- Note in the space beside the buttons, with an arrow to the
-            "Ask your AI assistant" menu. Beside the buttons only when the
-            column is wide enough; below them, without the arrow, otherwise. -#}
+        {#- Note in the space beside the buttons, top-aligned with them. The
+            arrow to it lives in the menu's <summary> (absolutely placed in
+            the gap), so its tip stays on the button whatever the note's
+            height. Beside the buttons only when the column is wide enough;
+            below them, without the arrow, otherwise. -#}
         <div class="afs-hero-note">
-          <p class="afs-hero-note__text">These practices are directed at humans. They are generic to allow broad compatibility. To put them in your context, we recommend connecting them to your AI assistant.</p>
-          <svg class="afs-hero-note__arrow" viewBox="0 0 64 40" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M58 3 C 56 22, 38 33, 7 34"/>
-            <path d="M14 28 L 7 34 L 14 39"/>
-          </svg>
+          <p class="afs-hero-note__text">These practices are directed at humans. They are generic to allow broad compatibility. To put them in your context, connect them to your AI assistant.</p>
         </div>
         </div>
       </div>

@@ -491,25 +491,30 @@ body {
 @container (min-width: 600px) {
   .afs-hero__cta {
     flex-direction: row;
-    align-items: flex-end;
-    gap: 1.5rem;
+    align-items: flex-start;
+    gap: 2.25rem;
   }
 
-  /* Bottom padding lifts the arrow tip to the middle of the menu button. */
   .afs-hero-note {
-    display: flex;
     flex: 1 1 0;
-    flex-direction: column;
     min-width: 0;
-    padding-bottom: 0.85rem;
   }
 
+  /* In the gap between the menu button and the note: tip at the button's
+     vertical middle (0.867 of the arrow's height), tail rising to the note. */
   .afs-hero-note__arrow {
     display: block;
-    width: 4rem;
-    height: 2.5rem;
-    margin: 0.35rem 0 0 -1.35rem;
+    position: absolute;
+    left: calc(100% + 0.35rem);
+    bottom: calc(50% - 0.43rem);
+    width: 1.9rem;
+    height: 3.2rem;
     color: rgba(127, 214, 232, 0.75);
+    pointer-events: none;
+  }
+
+  .afs-ai-menu__toggle {
+    position: relative;
   }
 }
 
