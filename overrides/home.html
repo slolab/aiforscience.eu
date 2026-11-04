@@ -25,6 +25,23 @@
         <div class="afs-hero__actions">
           <a class="afs-hero__actions--primary" href="{{ 'best-practices/01-match-method-to-task/' | url }}">Explore the practices →</a>
           <a href="{{ 'short-version/' | url }}">The short version →</a>
+
+          {#- "Ask your AI assistant": one low button that opens a small menu,
+              so the choice of assistant costs no space in the hero. A native
+              <details> element, so it opens and closes without JavaScript;
+              ai_cta.js only adds close-on-outside-click, Escape, and the copy
+              actions. Gemini has no prompt-in-URL parameter, so its item
+              copies the prompt and opens Gemini for the reader to paste. -#}
+          {%- set afs_prompt = "Read the AI for Science best practices for agentic AI in research at https://aiforscience.eu/llms-full.txt and answer my questions using only that source, citing the practice each point comes from. My question: " -%}
+          <details class="afs-ai-menu" data-afs-ai-cta data-afs-ai-prompt="{{ afs_prompt }}">
+            <summary class="afs-ai-menu__toggle">Ask your AI assistant <span class="afs-ai-menu__caret" aria-hidden="true">▾</span></summary>
+            <div class="afs-ai-menu__panel">
+              <a class="afs-ai-menu__item" rel="noopener noreferrer" target="_blank" href="https://chatgpt.com/?q={{ afs_prompt | urlencode }}">ChatGPT</a>
+              <a class="afs-ai-menu__item" rel="noopener noreferrer" target="_blank" href="https://claude.ai/new?q={{ afs_prompt | urlencode }}">Claude</a>
+              <a class="afs-ai-menu__item" rel="noopener noreferrer" target="_blank" href="https://gemini.google.com/app" data-afs-ai-copy-prompt>Gemini <span class="afs-ai-menu__hint">copies the prompt to paste</span></a>
+              <button class="afs-ai-menu__item" type="button" data-afs-ai-copy="{{ 'short-version/index.md' | url }}">Copy as Markdown <span class="afs-ai-menu__hint">the short version</span></button>
+            </div>
+          </details>
         </div>
       </div>
 
