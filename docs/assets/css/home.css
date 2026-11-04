@@ -489,33 +489,72 @@ body {
 
 /* px, not rem: Material raises the root font size on wide screens. */
 @container (min-width: 600px) {
+  /* Grows into the height the stretched hero column leaves (two-column hero
+     only; see the media query below), capped so the buttons do not drift. */
   .afs-hero__cta {
+    --afs-cta-gap: 2.25rem;
+    flex: 1 1 auto;
     flex-direction: row;
-    align-items: flex-start;
-    gap: 2.25rem;
+    align-items: stretch;
+    gap: var(--afs-cta-gap);
+    max-height: 14rem;
+  }
+
+  .afs-hero__actions {
+    justify-content: space-between;
   }
 
   .afs-hero-note {
+    display: flex;
     flex: 1 1 0;
+    flex-direction: column;
     min-width: 0;
   }
 
-  /* In the gap between the menu button and the note: tip at the button's
-     vertical middle (0.867 of the arrow's height), tail rising to the note. */
+  /* An L-shaped line: down from the bottom of the box, round the corner, left
+     to the button. Its height stretches with the space below the box; the
+     bottom margin puts the horizontal leg at the middle of the menu button
+     (its height in rem, halved). The ::before is the arrowhead. */
   .afs-hero-note__arrow {
+    --afs-arrow: rgba(127, 214, 232, 0.75);
+    position: relative;
     display: block;
-    position: absolute;
-    left: calc(100% + 0.35rem);
-    bottom: calc(50% - 0.43rem);
-    width: 1.9rem;
-    height: 3.2rem;
-    color: rgba(127, 214, 232, 0.75);
-    pointer-events: none;
+    flex: 1 0 1.6rem;
+    width: calc(var(--afs-cta-gap) - 0.45rem + 1.6rem);
+    margin: 0 0 1.15rem calc(-1 * var(--afs-cta-gap) + 0.45rem);
+    border-right: 1.5px solid var(--afs-arrow);
+    border-bottom: 1.5px solid var(--afs-arrow);
+    border-bottom-right-radius: 1rem;
   }
 
-  .afs-ai-menu__toggle {
-    position: relative;
+  .afs-hero-note__arrow::before {
+    content: "";
+    position: absolute;
+    left: 1px;
+    bottom: -5px;
+    width: 8px;
+    height: 8px;
+    border-left: 1.5px solid var(--afs-arrow);
+    border-bottom: 1.5px solid var(--afs-arrow);
+    transform: rotate(45deg);
   }
+}
+
+/* Two-column hero: stretch the left column to the height of the practices
+   panel. When the note sits beside the buttons, the buttons spread into that
+   height (container query above), so the last button ends near the panel's
+   bottom instead of leaving a gap below. */
+@media screen and (min-width: 46em) {
+  .afs-hero__grid {
+    align-items: stretch;
+  }
+
+  .afs-hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
 }
 
 .afs-hero__actions > a {
