@@ -23,7 +23,7 @@ sources:
     locator: "load and the blocking dilemma"
     note: 'Evidence that open resources face heavy automated load and that blunt blocking also blocks real users. Qualifies "default accessible" toward governed access.'
   - ref: library/era-living-guidelines-genai-2026.md
-    locator: "Recommendations for research organisations 4, p. 10"
+    locator: "§3 recommendation 4, pp. 9-10 (fourth version)"
     note: "Research organisations provide locally hosted or self-governed tools so staff can work with their data under data protection and confidentiality (bp2-a4). Non-binding."
   - ref: library/ref-ehds-2025.md
     locator: "Art 73(1)-(2)"

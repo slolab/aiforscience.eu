@@ -14,7 +14,7 @@ sources:
     locator: "paras 126, 129-130"
     note: "The organisation deploying a model is a controller for its own processing and has to check the provider (bp11-a3)."
   - ref: library/era-living-guidelines-genai-2026.md
-    locator: "Recommendations for researchers 3, pp. 8-9; Recommendations for research organisations 4, p. 10"
+    locator: "§2 recommendation 3, pp. 5-6; §3 recommendation 4, p. 9 (fourth version)"
     note: "Uploaded input may be used for other purposes such as training; researchers check who runs a tool, where, and under which privacy options, and do not upload sensitive work without assurances against re-use; organisations provide tools they govern themselves (bp11-a1, bp11-a2, bp11-a3). Non-binding, and written for tools a person uses, not agents."
   - ref: library/ref-edps-commission-m365-2024.md
     locator: "2024 decision; 2025 closure"

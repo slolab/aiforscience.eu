@@ -41,8 +41,8 @@ sources:
     locator: "Implications; Impact"
     note: "Recommends that generated documents preserve provenance for source material and model-performed edits in metadata; in the proof of concept, approved assistant edits left no visible trace, which is what made the manipulation untraceable afterwards (bp7-a2). A proof of concept in a commercial productivity suite, not an incident observed in science; grounding only."
   - ref: library/era-living-guidelines-genai-2026.md
-    locator: "Recommendations for researchers 1 and 2, pp. 7-8"
-    note: "Researchers stay accountable for AI-assisted content, AI is not an author, and substantial use is noted in the methods section (bp7-a2). Non-binding."
+    locator: "§2 recommendations 1 and 2, p. 5 (fourth version)"
+    note: "Researchers stay accountable for AI-assisted content, AI is not an author, and researchers disclose which tools they used substantially and what those tools contributed (bp7-a2). Non-binding."
   - ref: library/ref-faia-2026.md
     locator: "attribution flags, activity codes, system attribution; ISCC-bound JSON-LD declarations"
     note: "A machine-readable vocabulary for disclosing whether and how an AI system contributed to content (human-created, AI-assisted, AI-generated), bound to the content by ISCC fingerprint. Version 0.9 white paper from a company-led consortium; an emerging instance for bp7-a2, not an established standard."
