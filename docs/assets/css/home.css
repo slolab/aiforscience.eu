@@ -390,7 +390,9 @@ body {
 
 .afs-hero__grid {
   position: relative;
-  z-index: 1;
+  /* Above the citation and partner strips (z-index 1), so the open
+     "Ask your AI assistant" menu floats over them. */
+  z-index: 2;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: clamp(1.5rem, 4vw, 3.5rem);
@@ -457,7 +459,7 @@ body {
   margin-top: 1.6rem;
 }
 
-.afs-hero__actions a {
+.afs-hero__actions > a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -472,24 +474,118 @@ body {
     border-color 140ms ease, transform 140ms ease;
 }
 
-.afs-hero__actions a.afs-hero__actions--primary {
+.afs-hero__actions > a.afs-hero__actions--primary {
   background: var(--afs-accent);
   border-color: var(--afs-accent);
   color: #ffffff;
 }
 
-.afs-hero__actions a:hover,
-.afs-hero__actions a:focus-visible {
+.afs-hero__actions > a:hover,
+.afs-hero__actions > a:focus-visible {
   background: #ffffff;
   border-color: #ffffff;
   color: var(--afs-accent-dark);
 }
 
-.afs-hero__actions a.afs-hero__actions--primary:hover,
-.afs-hero__actions a.afs-hero__actions--primary:focus-visible {
+.afs-hero__actions > a.afs-hero__actions--primary:hover,
+.afs-hero__actions > a.afs-hero__actions--primary:focus-visible {
   background: #7fd6e8;
   border-color: #7fd6e8;
   color: #06161d;
+}
+
+/* "Ask your AI assistant": a third, lower hero button that opens a small menu
+   (ChatGPT, Claude, Gemini, Copy as Markdown). A <details> element; the panel
+   floats over the strips below, so opening it does not move the layout.
+   Behaviour in ai_cta.js. */
+.afs-ai-menu {
+  position: relative;
+}
+
+.afs-ai-menu__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.82rem;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 140ms ease, color 140ms ease,
+    border-color 140ms ease;
+}
+
+.afs-ai-menu__toggle::-webkit-details-marker {
+  display: none;
+}
+
+.afs-ai-menu__toggle:hover,
+.afs-ai-menu__toggle:focus-visible,
+.afs-ai-menu[open] > .afs-ai-menu__toggle {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+}
+
+.afs-ai-menu__caret {
+  font-size: 0.7rem;
+  transition: transform 140ms ease;
+}
+
+.afs-ai-menu[open] .afs-ai-menu__caret {
+  transform: rotate(180deg);
+}
+
+.afs-ai-menu__panel {
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + 0.35rem);
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: #0c2530;
+  box-shadow: 0 0.6rem 1.6rem rgba(0, 0, 0, 0.35);
+}
+
+.afs-ai-menu__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.05rem;
+  padding: 0.4rem 0.65rem;
+  border: 0;
+  border-radius: 5px;
+  background: none;
+  color: rgba(255, 255, 255, 0.9);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.afs-ai-menu__item:hover,
+.afs-ai-menu__item:focus-visible,
+.afs-ai-menu__item[data-afs-copied="true"] {
+  background: rgba(127, 214, 232, 0.16);
+  color: #ffffff;
+}
+
+.afs-ai-menu__hint {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.68rem;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
 /* The ten-practices index in the hero: a compact, scannable list that puts the
