@@ -49,13 +49,15 @@
         </div>
 
         {#- Note in the space beside the buttons, top-aligned with them. The
-            arrow is a CSS line from the bottom of the box to the middle of
-            the "Ask your AI assistant" button; it stretches with the space
-            between them. Beside the buttons only when the column is wide
+            arrow runs from under the box to the middle of the "Ask your AI
+            assistant" button; its curve stretches with the space between. Beside the buttons only when the column is wide
             enough; below them, without the arrow, otherwise. -#}
         <div class="afs-hero-note">
           <p class="afs-hero-note__text">These practices are directed at humans. They are generic to allow broad compatibility. To put them in your context, connect them to your AI assistant.</p>
-          <span class="afs-hero-note__arrow" aria-hidden="true"></span>
+          <span class="afs-hero-note__arrow" aria-hidden="true">
+            <svg class="afs-hero-note__curve" viewBox="0 0 100 100" preserveAspectRatio="none" fill="none"><path d="M94 0 C 94 72, 62 100, 4 100" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+            <svg class="afs-hero-note__head" viewBox="0 0 10 10" fill="none"><path d="M6 1 L 1 5 L 6 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
         </div>
         </div>
       </div>

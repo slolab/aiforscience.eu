@@ -462,7 +462,7 @@ body {
   flex-direction: column;
   align-items: stretch;
   width: fit-content;
-  gap: 0.7rem;
+  gap: 0.8rem;
 }
 
 /* Note beside the hero buttons, pointing at the "Ask your AI assistant" menu.
@@ -489,19 +489,13 @@ body {
 
 /* px, not rem: Material raises the root font size on wide screens. */
 @container (min-width: 600px) {
-  /* Grows into the height the stretched hero column leaves (two-column hero
-     only; see the media query below), capped so the buttons do not drift. */
+  /* Note and buttons as one unit: tops aligned, the note as tall as the
+     button stack, the arrow taking whatever height is left below the box. */
   .afs-hero__cta {
-    --afs-cta-gap: 2.25rem;
-    flex: 1 1 auto;
+    --afs-cta-gap: 2rem;
     flex-direction: row;
     align-items: stretch;
     gap: var(--afs-cta-gap);
-    max-height: 14rem;
-  }
-
-  .afs-hero__actions {
-    justify-content: space-between;
   }
 
   .afs-hero-note {
@@ -511,50 +505,39 @@ body {
     min-width: 0;
   }
 
-  /* An L-shaped line: down from the bottom of the box, round the corner, left
-     to the button. Its height stretches with the space below the box; the
-     bottom margin puts the horizontal leg at the middle of the menu button
-     (its height in rem, halved). The ::before is the arrowhead. */
+  /* Curved arrow from under the box to the middle of the menu button. The
+     curve stretches to the free height (the path starts with a vertical and
+     ends with a horizontal tangent, so it stays smooth at any size); the
+     arrowhead is a fixed-size piece at its tip. The bottom margin is half the
+     menu button's height, less half the arrowhead. */
   .afs-hero-note__arrow {
-    --afs-arrow: rgba(127, 214, 232, 0.75);
     position: relative;
     display: block;
-    flex: 1 0 1.6rem;
-    width: calc(var(--afs-cta-gap) - 0.45rem + 1.6rem);
-    margin: 0 0 1.15rem calc(-1 * var(--afs-cta-gap) + 0.45rem);
-    border-right: 1.5px solid var(--afs-arrow);
-    border-bottom: 1.5px solid var(--afs-arrow);
-    border-bottom-right-radius: 1rem;
+    flex: 1 0 1.4rem;
+    width: calc(var(--afs-cta-gap) - 0.35rem + 2.4rem);
+    margin: 0.3rem 0 calc(1.15rem - 5px) calc(-1 * var(--afs-cta-gap) + 0.35rem);
+    color: rgba(127, 214, 232, 0.75);
   }
 
-  .afs-hero-note__arrow::before {
-    content: "";
+  .afs-hero-note__curve,
+  .afs-hero-note__head {
     position: absolute;
-    left: 1px;
-    bottom: -5px;
-    width: 8px;
-    height: 8px;
-    border-left: 1.5px solid var(--afs-arrow);
-    border-bottom: 1.5px solid var(--afs-arrow);
-    transform: rotate(45deg);
-  }
-}
-
-/* Two-column hero: stretch the left column to the height of the practices
-   panel. When the note sits beside the buttons, the buttons spread into that
-   height (container query above), so the last button ends near the panel's
-   bottom instead of leaving a gap below. */
-@media screen and (min-width: 46em) {
-  .afs-hero__grid {
-    align-items: stretch;
+    overflow: visible;
   }
 
-  .afs-hero__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .afs-hero-note__curve {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 5px);
   }
 
+  .afs-hero-note__head {
+    left: 0;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .afs-hero__actions > a {
