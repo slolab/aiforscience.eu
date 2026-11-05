@@ -245,6 +245,10 @@ bp4-a1:  # limits belong in the system, not only in policy
   - ref: aepd-agentic-ai-2026
     stance: supports
     locator: "p. 34: configure agents to determine which services they may access; evaluate each service's terms"
+  - ref: appliedai-ai-act-governance-2025
+    stance: supports
+    locator: "§3, Layer 2, p. 20: requirements built into shared infrastructure; a failed data-quality gate blocks deployment"
+    quote: "A data validation step fails if data quality thresholds (defined by governance) aren't met, blocking deployment."
 bp4-a2:  # an agent cannot be persuaded, only prevented
   - ref: openai-governing-agentic-ai-2023
     stance: supports
@@ -292,6 +296,10 @@ bp4-a5:  # named human owner for each responsibility
   - ref: transparency-cop-2026
     stance: supports
     locator: "Section 2, Commitment 4(a): name, role and contact details"
+  - ref: appliedai-ai-act-governance-2025
+    stance: qualifies
+    locator: "§3, p. 16: governance as functions that may span or combine stakeholders"
+    quote: "These layers are not related to individual roles but to a set of functions, related skills, or \"hats\" that may span over multiple stakeholders or be consolidated depending on the size and structure of the organization."
 bp4-a6:  # actions logged under an attributable identity
   - ref: chan-visibility-2024
     stance: supports
@@ -320,6 +328,10 @@ bp4-a6:  # actions logged under an attributable identity
     stance: supports
     locator: "§3.1.1, point 31 and §3.1.2, point 36 with footnote 21: verifiable agent identity and the principal it acts for"
     quote: "AI agents must be designed and developed in such a way that they disclose both their artificial nature and the person on whose behalf they are acting"
+  - ref: appliedai-ai-act-governance-2025
+    stance: supports
+    locator: "§4, Record-Keeping, p. 36: log who, what, when, outcomes; define log access"
+    quote: "Comprehensive Logs: Capture who, what, when, and outcomes of key events"
 
 # ------------------------------------------------------------------ BP05
 bp5-a1:  # documentation, data, metadata are now an interface
@@ -395,6 +407,10 @@ bp7-a1:  # answers traceable to sources, open to audit
     stance: supports
     locator: "§II trust gap, §IV Invariant I and Table I: reference existence separated from evidential support"
     quote: "existence of a reference is machine-checkable, support for a claim is a judgement"
+  - ref: appliedai-ai-act-governance-2025
+    stance: supports
+    locator: "§4, Data Provisioning & Documentation, p. 34: data lineage and versioning"
+    quote: "Data lineage and versioning between data sources, transformations and features used to train and test ML models"
 bp7-a2:  # clear what a human did and what an agent did
   - ref: credit-2022
     stance: supports
@@ -456,6 +472,10 @@ bp8-a1:  # run task-specific benchmarks before granting autonomy
   - ref: elixir-ai-strategy-2026
     stance: supports
     locator: "Introduction, p.2: curated, expert-validated benchmarks are a community endeavour"
+  - ref: appliedai-ai-act-governance-2025
+    stance: supports
+    locator: "§4, Accuracy, p. 45: metrics and thresholds set with domain experts and documented as quality gates"
+    quote: "Specify and document the target thresholds and quality gates to continue with the AI use case"
 bp8-a2:  # prove suitability before informing scientific work
   - ref: elixir-tf-agentic-ai-2026
     stance: supports
@@ -503,6 +523,10 @@ bp9-a1:  # state the HITL level for each use case
     stance: supports
     locator: "p. 14: human intervention required for consequences judged critical; user chooses which actions need validation"
     quote: "Il est également possible de limiter le degré d'autonomie en imposant une intervention humaine pour des conséquences jugées critiques."
+  - ref: appliedai-ai-act-governance-2025
+    stance: supports
+    locator: "§4, Tradeoffs for Article 14, p. 43: oversight level set by risk, context, and autonomy"
+    quote: "Based on the risk, context and level of autonomy you need to select your trade off"
 bp9-a5:  # stating a level is necessary but not sufficient
   - ref: elish-2019
     stance: supports
@@ -525,6 +549,10 @@ bp9-a5:  # stating a level is necessary but not sufficient
     stance: supports
     locator: "§6.2.3, points 134-135: what counts as human review, and what does not"
     quote: "Superficial, solely formal or procedural checks (e.g. spell-checking or grammatical correction), the mere existence of an editorial policy, automated review processes or cursory editorial approval without substantive engagement by the human reviewer or the editorial entity, cannot fulfil the conditions for human review or editorial control"
+  - ref: appliedai-ai-act-governance-2025
+    stance: supports
+    locator: "§4, Human Oversight, p. 42: no opt-in by default, warnings, rotating overseers against automation bias"
+    quote: "Identify what organizational measures can prevent the overseer from over-relying on the AI system, including, e.g., rotating human overseer at appropriate times"
 bp9-a6:  # HITL engagement provenance recorded per BP07
   - ref: ec-art50-transparency-guidelines-2026
     stance: supports
