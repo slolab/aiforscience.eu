@@ -5,9 +5,9 @@ best practices for applying agentic AI to science.
 
 The site is a running document. It aggregates what task forces and
 institutions learn about agentic AI in scientific work, revises it at the
-pace of the field, and versions it for citation. It grows out of task-force
-work on AI for science, starting with Helmholtz AI, and is built to take
-more organisations on board.
+pace of the field, and versions it for citation. It grows out of two
+task forces that worked in parallel, in Helmholtz AI and in ELIXIR, and is
+built to take more organisations on board.
 
 ## Development
 

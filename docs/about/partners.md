@@ -9,7 +9,14 @@ Endorsement is recorded per practice, not wholesale: an organisation backs the s
 
 ## Contributing organisations
 
+The practices grew out of two task forces that worked in parallel: the Helmholtz AI task force on AI for science and the ELIXIR Task Force on Agentic AI.
+
+- **Helmholtz Association**: Germany's largest research organisation, made up of independent research centres.
+- **Helmholtz Munich**: Helmholtz research centre.
 - **Helmholtz AI**: task force on AI for science; origin of the running best practice model used here.
+- **ELIXIR**: the European infrastructure for life science data.
+  Its Task Force on Agentic AI is part of the AI Ecosystem Focus Group.
+  ELIXIR as a whole has not endorsed the practices.
 
 ## Joining
 
